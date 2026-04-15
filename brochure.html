@@ -501,21 +501,40 @@
     width: 100%; height: 100%; object-fit: cover;
     filter: contrast(1.02) saturate(0.92);
   }
+  .company .hero-img::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(21,17,12,0.55) 100%);
+    pointer-events: none;
+  }
   .company .hero-img .overlay {
-    position: absolute; left: 16mm; bottom: 18mm; right: 16mm;
-    color: #fff;
+    position: absolute; left: 16mm; bottom: 22mm; right: 16mm;
+    color: #fff; z-index: 2;
+    display: flex; flex-direction: column; gap: 12px;
   }
   .company .hero-img .overlay .established {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 11px; letter-spacing: 0.2em;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    opacity: 0.85;
-    margin-bottom: 8px;
+    color: #e4dcc6;
+    margin: 0;
   }
   .company .hero-img .overlay .name {
-    height: 38px; width: auto; display: block;
-    filter: drop-shadow(0 2px 20px rgba(0,0,0,0.35));
+    height: 34px; width: auto; display: block;
+    filter: drop-shadow(0 2px 20px rgba(0,0,0,0.4));
+    margin: 0;
   }
+  .company .hero-img .overlay .sub-brand {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.72);
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    max-width: 80mm;
+  }
+  /* Suppress duplicate frame-bot brand text on company page (already in overlay) */
+  .company .frame-bot > span:first-child { visibility: hidden; }
 
   .company .right {
     padding: 22mm 22mm 20mm 18mm;
@@ -1042,6 +1061,7 @@
     <div class="overlay">
       <div class="established" data-i18n="p6.est">Established 2017 · Seongnam, Korea</div>
       <img class="name" src="images/BRITZMEDI_LOGO_white.svg" alt="BRITZMEDI">
+      <div class="sub-brand" data-i18n="p6.sub_brand">NEWCHAE · BRITZMEDI CO., LTD.</div>
     </div>
   </div>
   <div class="right">
@@ -1301,6 +1321,7 @@ const DICT = {
     "p5.pa2.p": "KIPO · Registered 2020",
 
     "p6.est": "Established 2017 · Seongnam, Korea",
+    "p6.sub_brand": "NEWCHAE · BRITZMEDI CO., LTD.",
     "p6.eyebrow": "The Company Behind NEWCHAE",
     "p6.h2": "A Korean medical device<br>maker, by design.",
     "p6.lead": "BRITZMEDI specializes in aesthetic medical technology. FDA-registered contract manufacturer, ISO 13485:2016 certified, with full in-house R&D and production.",
@@ -1349,7 +1370,7 @@ const DICT = {
     "p7.web": "Web"
   },
   ko: {
-    "frame.brand": "NEWCHAE · 브리츠메디(주)",
+    "frame.brand": "NEWCHAE · (주)브리츠메디",
     "nav.overview": "개요", "nav.product": "제품 · 3-모드 시스템",
     "nav.specs": "임상 & 사양", "nav.tech": "기술",
     "nav.company": "회사", "nav.partner": "파트너십 & 문의",
@@ -1416,6 +1437,7 @@ const DICT = {
     "p5.pa2.p": "한국특허청 · 2020 등록",
 
     "p6.est": "2017년 설립 · 경기 성남",
+    "p6.sub_brand": "NEWCHAE · (주)브리츠메디",
     "p6.eyebrow": "뉴채를 만든 회사",
     "p6.h2": "설계부터 제조까지,<br>한국 의료기기 제조사.",
     "p6.lead": "브리츠메디는 미용 의료기기에 특화된 제조사입니다. 미국 FDA 위탁 제조사 등록, ISO 13485:2016 인증, 자체 R&D 및 생산 시설을 보유하고 있습니다.",
