@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NEWCHAE — Product Brochure</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --ivory: #f6f1e8;
@@ -783,6 +783,38 @@
     color: #fff; margin-bottom: 10px;
   }
   :lang(ko) .oem .right .tech-card h3 { font-family: 'Noto Serif KR', serif; font-size: 22px; }
+
+  /* Japanese overrides */
+  :lang(ja) body { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+  :lang(ja) .serif { font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 400; }
+  :lang(ja) .display { font-family: 'Noto Serif JP', serif; font-size: 64px; font-weight: 300; line-height: 1.1; }
+  :lang(ja) h2 { font-family: 'Noto Serif JP', serif; font-size: 32px; font-weight: 400; }
+  :lang(ja) .cover-right .corner-tag { font-family: 'Noto Serif JP', serif; font-style: normal; font-size: 14px; }
+  :lang(ja) .overview .left-img .overlay { font-family: 'Noto Serif JP', serif; font-style: normal; font-size: 18px; }
+  :lang(ja) .mode-card h3 { font-family: 'Noto Serif JP', serif; font-size: 26px; }
+  :lang(ja) .clinical .big-stat .meta .metric { font-family: 'Noto Serif JP', serif; font-size: 22px; }
+  :lang(ja) .tech .adv-col h3 { font-family: 'Noto Serif JP', serif; font-size: 16px; }
+  :lang(ja) .tech .adv-col.conv h3 { font-style: normal; }
+  :lang(ja) .model-card h3 { font-family: 'Noto Serif JP', serif; font-size: 22px; }
+  :lang(ja) .partner .foot .val.serif { font-family: 'Noto Serif JP', serif; font-size: 16px; }
+  :lang(ja) .oem .left .italic-accent { font-style: normal; font-family: 'Noto Serif JP', serif; }
+  :lang(ja) .oem .right .tech-card h3 { font-family: 'Noto Serif JP', serif; font-size: 22px; }
+
+  /* Thai overrides */
+  :lang(th) body { font-family: 'Noto Sans Thai', 'Inter', sans-serif; }
+  :lang(th) .serif { font-family: 'Noto Serif Thai', 'Cormorant Garamond', serif; font-weight: 400; }
+  :lang(th) .display { font-family: 'Noto Serif Thai', serif; font-size: 58px; font-weight: 400; line-height: 1.15; }
+  :lang(th) h2 { font-family: 'Noto Serif Thai', serif; font-size: 30px; font-weight: 400; }
+  :lang(th) .cover-right .corner-tag { font-family: 'Noto Serif Thai', serif; font-style: normal; font-size: 14px; }
+  :lang(th) .overview .left-img .overlay { font-family: 'Noto Serif Thai', serif; font-style: normal; font-size: 17px; line-height: 1.5; }
+  :lang(th) .mode-card h3 { font-family: 'Noto Serif Thai', serif; font-size: 24px; }
+  :lang(th) .clinical .big-stat .meta .metric { font-family: 'Noto Serif Thai', serif; font-size: 20px; }
+  :lang(th) .tech .adv-col h3 { font-family: 'Noto Serif Thai', serif; font-size: 15px; }
+  :lang(th) .tech .adv-col.conv h3 { font-style: normal; }
+  :lang(th) .model-card h3 { font-family: 'Noto Serif Thai', serif; font-size: 20px; }
+  :lang(th) .partner .foot .val.serif { font-family: 'Noto Serif Thai', serif; font-size: 15px; }
+  :lang(th) .oem .left .italic-accent { font-style: normal; font-family: 'Noto Serif Thai', serif; }
+  :lang(th) .oem .right .tech-card h3 { font-family: 'Noto Serif Thai', serif; font-size: 20px; }
   .oem .right .tech-card p {
     font-size: 10.5px; color: #d9d2bf; line-height: 1.6;
     max-width: 100mm;
@@ -819,6 +851,9 @@
 <div class="controls" id="controls">
   <button data-lang="en" class="active">EN</button>
   <button data-lang="ko">KO</button>
+  <button data-lang="ja">JA</button>
+  <button data-lang="th">TH</button>
+  <button data-lang="vi">VI</button>
   <div class="sep"></div>
   <button class="print-btn" onclick="window.print()">PDF ↓</button>
 </div>
@@ -1484,6 +1519,354 @@ const DICT = {
     "p7.resp": "응답 시간", "p7.resp_v": "24시간 이내",
     "p7.hours": "영업 시간", "p7.hours_v": "평일 · 09:00–18:00 (KST)",
     "p7.web": "웹사이트"
+  },
+  ja: {
+    "frame.brand": "NEWCHAE · BRITZMEDI CO., LTD.",
+    "nav.overview": "概要", "nav.product": "製品 · 3モードシステム",
+    "nav.specs": "臨床 & 仕様", "nav.tech": "テクノロジー",
+    "nav.company": "会社", "nav.partner": "パートナーシップ & お問い合わせ",
+    "nav.oem": "OEM / ODM · 技術ライセンシング",
+
+    "cover.kicker": "製品ブローシャー · 2026",
+    "cover.sub": "RF・EMS・ELPの3つのプロフェッショナル技術を、1台のホームケアデバイスに。韓国の医療機器メーカー・ブリッツメディが自社設計・製造しています。",
+    "cover.quote": "「はじめてのときめきを、<br>毎日に。」",
+
+    "p2.eyebrow": "NEWCHAEとは",
+    "p2.overlay": "「3つのプロ技術を<br>毎日のルーティンに。」",
+    "p2.h2": "韓国で設計された<br>3-in-1 ビューティデバイス。",
+    "p2.lead": "NEWCHAE SHOTはRF・EMS・ELPを1台のホームケアデバイスに統合。2017年より稼働する韓国の医療機器メーカー・ブリッツメディが設計・製造しています。",
+    "p2.body": "2週間の継続使用で、肌密度 <strong class=\"accent\">48%</strong> 向上、毛穴サイズ <strong class=\"accent\">74%</strong> 縮小が臨床的に確認されました。",
+    "p2.s1": "販売国", "p2.s1c": "韓国 · 台湾 · 中国 · タイ · ベトナム",
+    "p2.s2": "コア技術",
+    "p2.s3": "肌密度 ↑", "p2.s3c": "2週間後",
+    "p2.s4": "毛穴サイズ ↓", "p2.s4c": "2週間後",
+    "p2.src": "出典:韓国皮膚科学研究所 · 2週間臨床試験",
+
+    "p3.eyebrow": "3モードシステム",
+    "p3.h2": "3つのモード。<br>1台のデバイス。",
+    "p3.lead": "各モードは特定のスキンケア目的に最適化された周波数を使用。ブリッツメディのエンジニアが精密にチューニングしています。",
+    "p3.m1.h": "RFモード",
+    "p3.m1.p": "真皮深層部に熱エネルギーを伝え、コラーゲンの活性をサポート。内側から肌のハリを強化します。",
+    "p3.m2.h": "EMSモード",
+    "p3.m2.p": "微弱電流で表情筋を優しく刺激し、フェイスラインを整え、輪郭を引き締めます。",
+    "p3.m3.h": "ELPモード",
+    "p3.m3.p": "肌バリアに一時的なマイクロ経路を形成し、針を使わずにスキンケア成分の浸透をサポートします。",
+
+    "p4.eyebrow": "臨床データ",
+    "p4.h2": "2週間で<br>実証されました。",
+    "p4.c1.h": "肌密度", "p4.c1.d": "2週間独立臨床試験",
+    "p4.c2.h": "毛穴サイズ", "p4.c2.d": "14日間で目に見える縮小",
+    "p4.src": "出典:韓国皮膚科学研究所 · 独立臨床試験",
+    "p4.eyebrow2": "技術仕様",
+    "p4.h2b": "グローバル基準で<br>設計。",
+    "spec.model": "モデル", "spec.battery": "バッテリー", "spec.charging": "充電",
+    "spec.modes": "モード", "spec.rfpower": "RF出力", "spec.freq": "周波数",
+    "spec.dim": "サイズ / 重量", "spec.cert": "認証",
+    "p4.box": "セット内容",
+    "p4.b1": "NEWCHAE SHOT 本体",
+    "p4.b2": "USB-C充電ケーブル · トラベルポーチ",
+    "p4.b3": "取扱説明書(多言語)",
+
+    "p5.eyebrow": "コア技術",
+    "p5.h2": "誇張ではなく、<br>特許で証明された技術。",
+    "p5.lead": "登録RF特許2件。約10年にわたる自社R&Dが、すべてのショットに。",
+    "p5.adv.badge": "NEWCHAE マルチショットRF",
+    "p5.adv.h": "NEWCHAEの強み",
+    "p5.adv.l1": "<strong>マルチチャンネル送電</strong> — 複数チャンネルで同時にエネルギーを分散。",
+    "p5.adv.l2": "<strong>真皮層の均一加熱</strong> — ホットスポットなく、目標深度まで均等に到達。",
+    "p5.adv.l3": "<strong>低出力・高効能</strong> — 表面は安全に、効果は深く。",
+    "p5.adv.l4": "<strong>特許設計</strong> — ブリッツメディ保有のKIPO登録RF特許2件。",
+    "p5.lim.badge": "従来のRF",
+    "p5.lim.h": "従来方式の限界",
+    "p5.lim.l1": "単一チャンネル送電のため、エネルギーが1点に集中します。",
+    "p5.lim.l2": "不均一な熱分布で表面にホットスポットが発生することがあります。",
+    "p5.lim.l3": "目標深度に到達するため、より高い出力が必要です。",
+    "p5.lim.l4": "敏感肌に不快感を与えるリスクが高まります。",
+    "p5.pa1.h": "RF熱治療デバイス",
+    "p5.pa1.p": "韓国特許庁 · 2020年登録",
+    "p5.pa2.h": "分割電極RFデバイス",
+    "p5.pa2.p": "韓国特許庁 · 2020年登録",
+
+    "p6.est": "2017年設立 · 韓国・城南",
+    "p6.sub_brand": "NEWCHAE · BRITZMEDI CO., LTD.",
+    "p6.eyebrow": "NEWCHAEを生んだ会社",
+    "p6.h2": "設計から製造まで、<br>韓国の医療機器メーカー。",
+    "p6.lead": "ブリッツメディは美容医療機器に特化したメーカー。米国FDA登録受託製造者、ISO 13485:2016認証、自社R&Dと生産設備を有しています。",
+    "p6.s1": "設立", "p6.s2": "特許", "p6.s3": "商標", "p6.s4": "登録製造者",
+    "p6.c1": "品質マネジメント", "p6.c2": "韓国食薬処認証",
+    "p6.c3": "受託製造者", "p6.c4": "韓国",
+    "p6.c5": "欧州", "p6.c6": "米国",
+    "p6.addr": "製造所所在地", "p6.lic": "食薬処ライセンス",
+    "p6.lic_p": "医療機器製造業許可<br>第 <strong class=\"accent\">6044</strong> 号",
+
+    "p7.eyebrow": "パートナーシップモデル",
+    "p7.h2": "NEWCHAEを貴社の<br>市場へ。",
+    "p7.lead": "市場戦略に合ったパートナーシップ形態をお選びください。すべてのモデルにマーケティングおよび規制文書のフルサポートが含まれます。",
+    "p7.m1.h": "ディストリビューター",
+    "p7.m1.p": "貴市場での独占権。数量に応じた段階価格。年間コミットメントなし。",
+    "p7.m2.h": "ホールセール",
+    "p7.m2.p": "既存小売チャネル向けの数量ベース一括発注。非独占・柔軟な発注。",
+    "p7.oem_hint": "→ OEM / ODMをお探しですか?次のページをご覧ください。",
+    "p7.moq": "最小発注数", "p7.units": "台",
+
+    "p8.eyebrow": "OEM / ODM",
+    "p8.h2": "<span class=\"italic-accent\">ブリッツメディ</span><br>の技術力で。",
+    "p8.lead": "臨床で実証され特許で保護されたRFプラットフォームの上に、貴社ブランドを構築。回路からパッケージまで、韓国の医療機器メーカーが一貫対応します。",
+    "p8.c1.t": "特許保護コア技術",
+    "p8.c1.d": "KIPO登録RF特許2件を貴社製品へ適用。",
+    "p8.c2.t": "ISO 13485:2016生産",
+    "p8.c2.d": "医療グレードQMS、韓国食薬処GMP認証製造。",
+    "p8.c3.t": "フルカスタム設計",
+    "p8.c3.d": "ブランディング・筐体色・パッケージ・仕様調整まで市場に合わせて対応。",
+    "p8.c4.t": "自社R&D → 生産",
+    "p8.c4.d": "回路設計から最終組立まで、城南の本社で一括処理。",
+    "p8.c5.t": "グローバル認証サポート",
+    "p8.c5.d": "輸出対象市場に向けたKC・CE・FCC認証対応。",
+    "p8.c6.t": "FDA登録製造者",
+    "p8.c6.d": "ブリッツメディは米国FDA登録受託製造者です。",
+    "p8.contact_oem": "OEM / ODM お問い合わせ",
+    "p8.badge": "貴社のブランド · 私たちのエンジニアリング",
+    "p8.tc.h": "単なるサプライヤーではなく、<br>製造パートナー。",
+    "p8.tc.p": "私たちがコア技術・グローバル認証・臨床データを提供。貴社がブランド・市場・ビジョンをお持ちください。",
+    "p8.moq": "最小発注数", "p8.units": "台",
+    "p8.lead_time": "納期", "p8.days": "日",
+    "p7.contact": "グローバルお問い合わせ",
+    "p7.email": "メール", "p7.phone": "電話",
+    "p7.resp": "返信時間", "p7.resp_v": "24時間以内",
+    "p7.hours": "営業時間", "p7.hours_v": "月〜金 · 9:00–18:00 KST",
+    "p7.web": "ウェブ"
+  },
+  th: {
+    "frame.brand": "NEWCHAE · BRITZMEDI CO., LTD.",
+    "nav.overview": "ภาพรวม", "nav.product": "ผลิตภัณฑ์ · ระบบ 3 โหมด",
+    "nav.specs": "ผลทางคลินิก & สเปก", "nav.tech": "เทคโนโลยี",
+    "nav.company": "บริษัท", "nav.partner": "พาร์ทเนอร์ชิป & ติดต่อ",
+    "nav.oem": "OEM / ODM · การให้สิทธิ์เทคโนโลยี",
+
+    "cover.kicker": "โบรชัวร์ผลิตภัณฑ์ · 2026",
+    "cover.sub": "อุปกรณ์ความงาม RF 3-in-1 — RF, EMS และ ELP รวมอยู่ในเครื่องเดียวสำหรับใช้ที่บ้าน ออกแบบและผลิตโดยผู้ผลิตเครื่องมือแพทย์จากเกาหลี",
+    "cover.quote": "\"สัมผัสความตื่นเต้นครั้งแรก<br>ได้ทุกวัน\"",
+
+    "p2.eyebrow": "NEWCHAE คืออะไร",
+    "p2.overlay": "\"สามเทคโนโลยีมืออาชีพ<br>ในรูทีนรายวัน\"",
+    "p2.h2": "อุปกรณ์ความงาม 3-in-1<br>ออกแบบในเกาหลี",
+    "p2.lead": "NEWCHAE SHOT รวม RF, EMS และ ELP ไว้ในอุปกรณ์ใช้ที่บ้านเพียงเครื่องเดียว ออกแบบและผลิตโดย BRITZMEDI ผู้ผลิตเครื่องมือแพทย์จากเกาหลีตั้งแต่ปี 2017",
+    "p2.body": "ได้รับการพิสูจน์ทางคลินิกว่าเพิ่มความหนาแน่นของผิว <strong class=\"accent\">48%</strong> และลดขนาดรูขุมขน <strong class=\"accent\">74%</strong> ภายใน 2 สัปดาห์",
+    "p2.s1": "ประเทศ", "p2.s1c": "เกาหลี · ไต้หวัน · จีน · ไทย · เวียดนาม",
+    "p2.s2": "เทคโนโลยีหลัก",
+    "p2.s3": "ความหนาแน่นผิว ↑", "p2.s3c": "หลัง 2 สัปดาห์",
+    "p2.s4": "ขนาดรูขุมขน ↓", "p2.s4c": "หลัง 2 สัปดาห์",
+    "p2.src": "ที่มา: สถาบันวิทยาศาสตร์ผิวหนังเกาหลี · การศึกษาทางคลินิก 2 สัปดาห์",
+
+    "p3.eyebrow": "ระบบ 3 โหมด",
+    "p3.h2": "สามโหมด<br>ในเครื่องเดียว",
+    "p3.lead": "แต่ละโหมดใช้ความถี่เฉพาะที่ปรับให้เหมาะกับเป้าหมายการดูแลผิว ปรับแต่งอย่างแม่นยำโดยวิศวกร BRITZMEDI",
+    "p3.m1.h": "โหมด RF",
+    "p3.m1.p": "ส่งพลังงานความร้อนสู่ชั้นผิวลึก กระตุ้นคอลลาเจนและเพิ่มความกระชับจากภายใน",
+    "p3.m2.h": "โหมด EMS",
+    "p3.m2.p": "กระตุ้นกล้ามเนื้อใบหน้าด้วยกระแสไฟฟ้าอ่อน ช่วยกระชับรูปหน้าและขอบกราม",
+    "p3.m3.h": "โหมด ELP",
+    "p3.m3.p": "เพิ่มการดูดซึมของสารบำรุงผิวโดยสร้างเส้นทางเล็ก ๆ ชั่วคราวในเกราะผิว โดยไม่ต้องใช้เข็ม",
+
+    "p4.eyebrow": "หลักฐานทางคลินิก",
+    "p4.h2": "พิสูจน์ใน<br>สองสัปดาห์",
+    "p4.c1.h": "ความหนาแน่นของผิว", "p4.c1.d": "การศึกษาอิสระ 2 สัปดาห์",
+    "p4.c2.h": "ขนาดรูขุมขน", "p4.c2.d": "ลดลงเห็นผลใน 14 วัน",
+    "p4.src": "ที่มา: สถาบันวิทยาศาสตร์ผิวหนังเกาหลี · การศึกษาทางคลินิกอิสระ",
+    "p4.eyebrow2": "สเปกทางเทคนิค",
+    "p4.h2b": "สร้างตาม<br>มาตรฐานสากล",
+    "spec.model": "รุ่น", "spec.battery": "แบตเตอรี่", "spec.charging": "การชาร์จ",
+    "spec.modes": "โหมด", "spec.rfpower": "กำลัง RF", "spec.freq": "ความถี่",
+    "spec.dim": "ขนาด / น้ำหนัก", "spec.cert": "การรับรอง",
+    "p4.box": "ในกล่อง",
+    "p4.b1": "เครื่อง NEWCHAE SHOT",
+    "p4.b2": "สาย USB-C · กระเป๋าใส่",
+    "p4.b3": "คู่มือผู้ใช้ (หลายภาษา)",
+
+    "p5.eyebrow": "เทคโนโลยีหลัก",
+    "p5.h2": "สร้างบนสิทธิบัตร<br>ไม่ใช่คำโฆษณา",
+    "p5.lead": "สิทธิบัตร RF จดทะเบียน 2 ฉบับ งานวิจัยและพัฒนาภายในเกือบ 10 ปี",
+    "p5.adv.badge": "NEWCHAE Multi-Shot RF",
+    "p5.adv.h": "ข้อได้เปรียบ",
+    "p5.adv.l1": "<strong>การส่งพลังงานหลายช่อง</strong> — กระจายพลังงานพร้อมกันหลายช่อง",
+    "p5.adv.l2": "<strong>ความร้อนกระจายสม่ำเสมอ</strong> — เข้าถึงชั้นเป้าหมายโดยไม่มีจุดร้อน",
+    "p5.adv.l3": "<strong>กำลังต่ำ ประสิทธิภาพสูง</strong> — ผิวปลอดภัยกว่า ผลลัพธ์ลึกกว่า",
+    "p5.adv.l4": "<strong>ออกแบบด้วยสิทธิบัตร</strong> — สิทธิบัตร RF ของ BRITZMEDI 2 ฉบับ",
+    "p5.lim.badge": "RF แบบเดิม",
+    "p5.lim.h": "ข้อจำกัด",
+    "p5.lim.l1": "การส่งพลังงานช่องเดียวทำให้พลังงานกระจุกที่จุดเดียว",
+    "p5.lim.l2": "การกระจายความร้อนไม่สม่ำเสมออาจก่อให้เกิดจุดร้อนบนผิว",
+    "p5.lim.l3": "ต้องใช้กำลังสูงขึ้นเพื่อเข้าถึงความลึกเป้าหมาย",
+    "p5.lim.l4": "มีความเสี่ยงต่อผิวบอบบางมากขึ้น",
+    "p5.pa1.h": "เครื่องบำบัดความร้อน RF",
+    "p5.pa1.p": "KIPO · จดทะเบียน 2020",
+    "p5.pa2.h": "อุปกรณ์ RF อิเล็กโทรดแบ่งส่วน",
+    "p5.pa2.p": "KIPO · จดทะเบียน 2020",
+
+    "p6.est": "ก่อตั้ง 2017 · ซองนัม เกาหลี",
+    "p6.sub_brand": "NEWCHAE · BRITZMEDI CO., LTD.",
+    "p6.eyebrow": "บริษัทเบื้องหลัง NEWCHAE",
+    "p6.h2": "ผู้ผลิตเครื่องมือแพทย์<br>จากเกาหลีโดยแท้",
+    "p6.lead": "BRITZMEDI เชี่ยวชาญด้านเทคโนโลยีการแพทย์ความงาม ผู้รับจ้างผลิตที่จดทะเบียน FDA ได้รับรอง ISO 13485:2016 มี R&D และการผลิตครบวงจรในองค์กร",
+    "p6.s1": "ก่อตั้ง", "p6.s2": "สิทธิบัตร", "p6.s3": "เครื่องหมายการค้า", "p6.s4": "จดทะเบียน",
+    "p6.c1": "การจัดการคุณภาพ", "p6.c2": "รับรองโดยเกาหลี",
+    "p6.c3": "ผู้รับจ้างผลิต", "p6.c4": "เกาหลี",
+    "p6.c5": "ยุโรป", "p6.c6": "สหรัฐฯ",
+    "p6.addr": "ที่อยู่โรงงานผลิต", "p6.lic": "ใบอนุญาต MFDS",
+    "p6.lic_p": "ใบอนุญาตการผลิต<br>เลขที่ <strong class=\"accent\">6044</strong>",
+
+    "p7.eyebrow": "รูปแบบพาร์ทเนอร์ชิป",
+    "p7.h2": "นำ NEWCHAE<br>สู่ตลาดของคุณ",
+    "p7.lead": "เลือกรูปแบบพาร์ทเนอร์ชิปที่เหมาะกับกลยุทธ์ตลาดของคุณ ทุกรูปแบบรวมการสนับสนุนด้านการตลาดและเอกสารกำกับครบถ้วน",
+    "p7.m1.h": "ผู้จัดจำหน่าย",
+    "p7.m1.p": "สิทธิ์พิเศษในตลาดของคุณ ราคาเป็นขั้นตามปริมาณสั่งซื้อ ไม่มีข้อผูกมัดรายปี",
+    "p7.m2.h": "ขายส่ง",
+    "p7.m2.p": "คำสั่งซื้อจำนวนมากสำหรับช่องทางค้าปลีกที่มีอยู่ ไม่ผูกขาด สั่งซื้อยืดหยุ่น",
+    "p7.oem_hint": "→ กำลังมองหา OEM / ODM? ดูหน้าถัดไป",
+    "p7.moq": "MOQ", "p7.units": "เครื่อง",
+
+    "p8.eyebrow": "OEM / ODM",
+    "p8.h2": "ขับเคลื่อนด้วยเทคโนโลยี<br><span class=\"italic-accent\">BRITZMEDI</span>",
+    "p8.lead": "สร้างแบรนด์ของคุณบนแพลตฟอร์ม RF ที่พิสูจน์ทางคลินิกและมีสิทธิบัตรคุ้มครอง ตั้งแต่วงจรถึงบรรจุภัณฑ์ ดูแลทุกขั้นตอนโดยผู้ผลิตเครื่องมือแพทย์จากเกาหลี",
+    "p8.c1.t": "เทคโนโลยีแกนคุ้มครองสิทธิบัตร",
+    "p8.c1.d": "สิทธิบัตร RF ของ KIPO 2 ฉบับ นำมาใช้กับผลิตภัณฑ์ของคุณ",
+    "p8.c2.t": "การผลิต ISO 13485:2016",
+    "p8.c2.d": "QMS ระดับการแพทย์ ผลิตที่ได้รับ GMP จาก MFDS เกาหลี",
+    "p8.c3.t": "ออกแบบเฉพาะเต็มรูปแบบ",
+    "p8.c3.d": "แบรนด์ สี บรรจุภัณฑ์ และการปรับสเปกให้เข้ากับตลาดของคุณ",
+    "p8.c4.t": "R&D ในองค์กร → การผลิต",
+    "p8.c4.d": "จากแผงวงจรสู่การประกอบขั้นสุดท้าย ทั้งหมดในซองนัม",
+    "p8.c5.t": "การรับรองระดับโลก",
+    "p8.c5.d": "รองรับ KC, CE, FCC สำหรับตลาดส่งออกเป้าหมาย",
+    "p8.c6.t": "ผู้รับจ้างผลิตที่จดทะเบียน FDA",
+    "p8.c6.d": "BRITZMEDI เป็นผู้รับจ้างผลิตที่จดทะเบียน U.S. FDA",
+    "p8.contact_oem": "สอบถาม OEM / ODM",
+    "p8.badge": "แบรนด์ของคุณ · วิศวกรรมของเรา",
+    "p8.tc.h": "พาร์ทเนอร์การผลิต<br>ไม่ใช่แค่ซัพพลายเออร์",
+    "p8.tc.p": "เรานำเทคโนโลยีหลัก การรับรองระดับโลก และข้อมูลคลินิก คุณนำแบรนด์ ตลาด และวิสัยทัศน์",
+    "p8.moq": "MOQ", "p8.units": "เครื่อง",
+    "p8.lead_time": "ระยะเวลาผลิต", "p8.days": "วัน",
+    "p7.contact": "สอบถามทั่วโลก",
+    "p7.email": "อีเมล", "p7.phone": "โทรศัพท์",
+    "p7.resp": "เวลาตอบกลับ", "p7.resp_v": "ภายใน 24 ชั่วโมง",
+    "p7.hours": "เวลาทำการ", "p7.hours_v": "จ.–ศ. · 9:00–18:00 KST",
+    "p7.web": "เว็บไซต์"
+  },
+  vi: {
+    "frame.brand": "NEWCHAE · BRITZMEDI CO., LTD.",
+    "nav.overview": "TỔNG QUAN", "nav.product": "SẢN PHẨM · HỆ THỐNG 3 CHẾ ĐỘ",
+    "nav.specs": "LÂM SÀNG & THÔNG SỐ", "nav.tech": "CÔNG NGHỆ",
+    "nav.company": "CÔNG TY", "nav.partner": "ĐỐI TÁC & LIÊN HỆ",
+    "nav.oem": "OEM / ODM · CẤP PHÉP CÔNG NGHỆ",
+
+    "cover.kicker": "Catalogue Sản Phẩm · 2026",
+    "cover.sub": "Thiết bị làm đẹp RF 3-trong-1 — RF, EMS và ELP tích hợp trong một thiết bị dùng tại nhà, được thiết kế và sản xuất bởi nhà sản xuất thiết bị y tế Hàn Quốc.",
+    "cover.quote": "\"Cảm nhận sự hứng khởi đầu tiên,<br>mỗi ngày.\"",
+
+    "p2.eyebrow": "NEWCHAE là gì",
+    "p2.overlay": "\"Ba công nghệ chuyên nghiệp,<br>gói gọn trong nghi thức hằng ngày.\"",
+    "p2.h2": "Thiết bị làm đẹp 3-trong-1,<br>thiết kế tại Hàn Quốc.",
+    "p2.lead": "NEWCHAE SHOT kết hợp RF, EMS và ELP trong một thiết bị dùng tại nhà duy nhất. Được thiết kế và sản xuất bởi BRITZMEDI — nhà sản xuất thiết bị y tế Hàn Quốc hoạt động từ 2017.",
+    "p2.body": "Được chứng minh lâm sàng giúp tăng mật độ da <strong class=\"accent\">48%</strong> và thu nhỏ lỗ chân lông <strong class=\"accent\">74%</strong> chỉ sau hai tuần sử dụng đều đặn.",
+    "p2.s1": "Quốc gia", "p2.s1c": "HQ · ĐL · TQ · TL · VN",
+    "p2.s2": "Công nghệ cốt lõi",
+    "p2.s3": "Mật độ da ↑", "p2.s3c": "Sau 2 tuần",
+    "p2.s4": "Lỗ chân lông ↓", "p2.s4c": "Sau 2 tuần",
+    "p2.src": "Nguồn: Viện Khoa học Da liễu Hàn Quốc · Nghiên cứu lâm sàng 2 tuần",
+
+    "p3.eyebrow": "Hệ thống 3 chế độ",
+    "p3.h2": "Ba chế độ.<br>Một thiết bị.",
+    "p3.lead": "Mỗi chế độ sử dụng một tần số riêng được tối ưu cho mục tiêu chăm sóc da cụ thể — được tinh chỉnh bởi các kỹ sư BRITZMEDI.",
+    "p3.m1.h": "Chế độ RF",
+    "p3.m1.p": "Truyền năng lượng nhiệt vào lớp hạ bì sâu để hỗ trợ collagen và củng cố độ săn chắc của da từ bên trong.",
+    "p3.m2.h": "Chế độ EMS",
+    "p3.m2.p": "Kích thích cơ mặt bằng dòng điện vi mô nhẹ nhàng, giúp săn chắc đường nét gương mặt và định hình đường hàm.",
+    "p3.m3.h": "Chế độ ELP",
+    "p3.m3.p": "Tăng cường hấp thu hoạt chất chăm sóc da bằng cách tạo các vi đường tạm thời qua hàng rào da mà không cần kim.",
+
+    "p4.eyebrow": "Bằng chứng lâm sàng",
+    "p4.h2": "Chứng minh trong<br>hai tuần.",
+    "p4.c1.h": "Mật độ da", "p4.c1.d": "Nghiên cứu độc lập 2 tuần",
+    "p4.c2.h": "Lỗ chân lông", "p4.c2.d": "Giảm thấy rõ trong 14 ngày",
+    "p4.src": "Nguồn: Viện Khoa học Da liễu Hàn Quốc · Nghiên cứu lâm sàng độc lập",
+    "p4.eyebrow2": "Thông số kỹ thuật",
+    "p4.h2b": "Đạt chuẩn<br>toàn cầu.",
+    "spec.model": "Model", "spec.battery": "Pin", "spec.charging": "Sạc",
+    "spec.modes": "Chế độ", "spec.rfpower": "Công suất RF", "spec.freq": "Tần số",
+    "spec.dim": "Kích thước / Khối lượng", "spec.cert": "Chứng nhận",
+    "p4.box": "Trong hộp",
+    "p4.b1": "Thiết bị chính NEWCHAE SHOT",
+    "p4.b2": "Cáp sạc USB-C · Túi du lịch",
+    "p4.b3": "Hướng dẫn sử dụng (đa ngôn ngữ)",
+
+    "p5.eyebrow": "Công nghệ cốt lõi",
+    "p5.h2": "Xây trên bằng sáng chế,<br>không phải quảng cáo.",
+    "p5.lead": "Hai bằng sáng chế RF đã đăng ký. Gần một thập kỷ R&D nội bộ trong mỗi cú bắn.",
+    "p5.adv.badge": "NEWCHAE Multi-Shot RF",
+    "p5.adv.h": "Ưu điểm",
+    "p5.adv.l1": "<strong>Truyền đa kênh</strong> — năng lượng phân bổ đồng thời qua nhiều kênh.",
+    "p5.adv.l2": "<strong>Nhiệt đồng đều ở hạ bì</strong> — thâm nhập đồng nhất đến lớp mục tiêu, không có điểm nóng.",
+    "p5.adv.l3": "<strong>Công suất thấp, hiệu quả cao</strong> — bề mặt an toàn hơn, hiệu quả sâu hơn.",
+    "p5.adv.l4": "<strong>Thiết kế được cấp bằng sáng chế</strong> — 2 bằng sáng chế RF của KIPO do BRITZMEDI sở hữu.",
+    "p5.lim.badge": "RF thông thường",
+    "p5.lim.h": "Hạn chế",
+    "p5.lim.l1": "Truyền đơn kênh tập trung năng lượng tại một điểm.",
+    "p5.lim.l2": "Phân bố nhiệt không đồng đều có thể gây điểm nóng trên bề mặt.",
+    "p5.lim.l3": "Cần công suất cao hơn để đạt độ sâu mục tiêu.",
+    "p5.lim.l4": "Rủi ro khó chịu cao hơn trên da nhạy cảm.",
+    "p5.pa1.h": "Thiết bị điều trị nhiệt RF",
+    "p5.pa1.p": "KIPO · Đăng ký 2020",
+    "p5.pa2.h": "Thiết bị RF điện cực phân đoạn",
+    "p5.pa2.p": "KIPO · Đăng ký 2020",
+
+    "p6.est": "Thành lập 2017 · Seongnam, Hàn Quốc",
+    "p6.sub_brand": "NEWCHAE · BRITZMEDI CO., LTD.",
+    "p6.eyebrow": "Công ty đứng sau NEWCHAE",
+    "p6.h2": "Nhà sản xuất thiết bị y tế<br>Hàn Quốc đích thực.",
+    "p6.lead": "BRITZMEDI chuyên về công nghệ y tế thẩm mỹ. Nhà sản xuất hợp đồng đăng ký FDA, chứng nhận ISO 13485:2016, với R&D và sản xuất nội bộ đầy đủ.",
+    "p6.s1": "Thành lập", "p6.s2": "Bằng sáng chế", "p6.s3": "Nhãn hiệu", "p6.s4": "Đăng ký",
+    "p6.c1": "Quản lý chất lượng", "p6.c2": "Chứng nhận Hàn Quốc",
+    "p6.c3": "Nhà sản xuất hợp đồng", "p6.c4": "Hàn Quốc",
+    "p6.c5": "Châu Âu", "p6.c6": "Hoa Kỳ",
+    "p6.addr": "Địa chỉ nhà máy", "p6.lic": "Giấy phép MFDS",
+    "p6.lic_p": "Giấy phép sản xuất<br>Số <strong class=\"accent\">6044</strong>",
+
+    "p7.eyebrow": "Mô hình đối tác",
+    "p7.h2": "Đưa NEWCHAE<br>đến thị trường của bạn.",
+    "p7.lead": "Chọn cấu trúc đối tác phù hợp với chiến lược thị trường. Tất cả các mô hình đều bao gồm hỗ trợ đầy đủ về marketing và hồ sơ pháp lý.",
+    "p7.m1.h": "Nhà phân phối",
+    "p7.m1.p": "Độc quyền tại thị trường của bạn. Giá bậc thang theo số lượng. Không cam kết hằng năm.",
+    "p7.m2.h": "Bán sỉ",
+    "p7.m2.p": "Đơn hàng số lượng lớn cho các kênh bán lẻ hiện có. Không độc quyền, linh hoạt.",
+    "p7.oem_hint": "→ Tìm OEM / ODM? Xem trang tiếp theo.",
+    "p7.moq": "MOQ", "p7.units": "máy",
+
+    "p8.eyebrow": "OEM / ODM",
+    "p8.h2": "Được hỗ trợ bởi<br>công nghệ <span class=\"italic-accent\">BRITZMEDI</span>.",
+    "p8.lead": "Xây dựng thương hiệu của bạn trên nền tảng RF đã được chứng minh lâm sàng và bảo vệ bằng sáng chế. Từ bo mạch đến bao bì — mọi công đoạn do nhà sản xuất thiết bị y tế Hàn Quốc thực hiện nội bộ.",
+    "p8.c1.t": "Công nghệ lõi có sáng chế",
+    "p8.c1.d": "Hai bằng sáng chế RF KIPO được cấp phép vào sản phẩm của bạn.",
+    "p8.c2.t": "Sản xuất ISO 13485:2016",
+    "p8.c2.d": "QMS cấp y tế, sản xuất chứng nhận GMP của MFDS.",
+    "p8.c3.t": "Thiết kế tùy chỉnh toàn diện",
+    "p8.c3.d": "Thương hiệu, màu vỏ, bao bì và điều chỉnh thông số để phù hợp thị trường.",
+    "p8.c4.t": "R&D nội bộ → Sản xuất",
+    "p8.c4.d": "Từ bảng mạch đến lắp ráp cuối cùng, tất cả dưới một mái nhà tại Seongnam.",
+    "p8.c5.t": "Chứng nhận toàn cầu",
+    "p8.c5.d": "Hỗ trợ KC, CE, FCC cho thị trường xuất khẩu mục tiêu.",
+    "p8.c6.t": "Nhà sản xuất đăng ký FDA",
+    "p8.c6.d": "BRITZMEDI là nhà sản xuất hợp đồng đăng ký U.S. FDA.",
+    "p8.contact_oem": "Liên hệ OEM / ODM",
+    "p8.badge": "Thương hiệu của bạn · Kỹ thuật của chúng tôi",
+    "p8.tc.h": "Đối tác sản xuất,<br>không chỉ là nhà cung cấp.",
+    "p8.tc.p": "Chúng tôi mang công nghệ cốt lõi, chứng nhận toàn cầu và dữ liệu lâm sàng. Bạn mang thương hiệu, thị trường và tầm nhìn.",
+    "p8.moq": "MOQ", "p8.units": "máy",
+    "p8.lead_time": "Thời gian giao", "p8.days": "ngày",
+    "p7.contact": "Liên hệ toàn cầu",
+    "p7.email": "Email", "p7.phone": "Điện thoại",
+    "p7.resp": "Phản hồi", "p7.resp_v": "Trong vòng 24 giờ",
+    "p7.hours": "Giờ làm việc", "p7.hours_v": "T2–T6 · 9:00–18:00 KST",
+    "p7.web": "Web"
   }
 };
 
