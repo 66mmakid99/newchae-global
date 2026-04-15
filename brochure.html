@@ -399,26 +399,63 @@
   }
   .tech .txt h2 { margin-top: 6px; }
   .tech .txt p { margin-top: 14px; max-width: 110mm; }
-  .tech .compare {
-    margin-top: 14mm;
+  .tech .adv-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: 4mm; margin-top: 10mm;
+  }
+  .tech .adv-col {
+    padding: 8mm 7mm 9mm;
     border: 1px solid var(--line);
+    display: flex; flex-direction: column;
+  }
+  .tech .adv-col.newchae {
     background: var(--ivory);
+    border-top: 3px solid var(--lilac);
   }
-  .tech .compare .row {
-    display: flex; justify-content: space-between;
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--line);
+  .tech .adv-col.conv {
+    background: transparent;
+    border-top: 3px solid var(--line);
   }
-  .tech .compare .row:last-child { border-bottom: none; }
-  .tech .compare .row .lbl {
-    font-size: 9px; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--mute);
-    font-weight: 600;
+  .tech .adv-col .badge {
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--lilac); margin-bottom: 4px;
   }
-  .tech .compare .row .val {
-    font-size: 11.5px; color: var(--ink); font-weight: 500;
+  .tech .adv-col.conv .badge { color: var(--mute); }
+  .tech .adv-col h3 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 19px; font-weight: 500; color: var(--ink);
+    margin-bottom: 10px; letter-spacing: -0.005em;
   }
-  .tech .compare .row.hi .val { color: var(--lilac); font-weight: 600; }
+  :lang(ko) .tech .adv-col h3 { font-family: 'Noto Serif KR', serif; font-size: 16px; }
+  .tech .adv-col.conv h3 { color: var(--graphite); font-style: italic; }
+  :lang(ko) .tech .adv-col.conv h3 { font-style: normal; }
+  .tech .adv-col ul {
+    list-style: none; margin-top: 4px;
+    display: flex; flex-direction: column; gap: 9px;
+  }
+  .tech .adv-col li {
+    font-size: 10.5px; line-height: 1.55;
+    padding-left: 14px; position: relative;
+  }
+  .tech .adv-col.newchae li {
+    color: var(--ink);
+  }
+  .tech .adv-col.newchae li::before {
+    content: '';
+    position: absolute; left: 0; top: 7px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--lilac);
+  }
+  .tech .adv-col.newchae li strong { color: var(--ink); font-weight: 600; }
+  .tech .adv-col.conv li {
+    color: var(--mute);
+  }
+  .tech .adv-col.conv li::before {
+    content: '—';
+    position: absolute; left: 0; top: 0;
+    color: var(--mute); font-weight: 600;
+  }
   .tech .img-side {
     position: relative;
     background: var(--sand);
@@ -493,14 +530,23 @@
   .company .key {
     text-align: left;
     border-top: 1px solid var(--ink);
-    padding-top: 10px;
+    padding-top: 12px;
+    display: flex; flex-direction: column;
   }
   .company .key .num {
+    height: 38px;
+    display: flex; align-items: flex-end;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 32px; font-weight: 400; line-height: 1;
+    font-size: 36px; font-weight: 500; line-height: 1;
     color: var(--ink);
+    letter-spacing: -0.01em;
   }
-  .company .key .num.s { font-size: 22px; color: var(--lilac); }
+  .company .key .num.s {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px; font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--lilac);
+  }
   .company .key .lbl {
     font-size: 9px; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--graphite);
@@ -834,25 +880,28 @@
   <div class="txt">
     <div class="eyebrow" data-i18n="p5.eyebrow">Core Technology</div>
     <h2 data-i18n="p5.h2">Built on patents,<br>not hype.</h2>
-    <p class="lead" data-i18n="p5.lead">Two registered RF patents. Nearly a decade of in-house R&amp;D.</p>
-    <p data-i18n="p5.body">Unlike conventional single-channel RF devices, NEWCHAE's patented multi-shot system distributes energy across multiple channels simultaneously — delivering higher efficacy at lower power, and reducing surface discomfort while reaching the target dermal layer uniformly.</p>
+    <p class="lead" data-i18n="p5.lead">Two registered RF patents. Nearly a decade of in-house R&amp;D behind every shot.</p>
 
-    <div class="compare">
-      <div class="row">
-        <span class="lbl" data-i18n="p5.t1">Conventional RF</span>
-        <span class="val" data-i18n="p5.v1">Single channel</span>
+    <div class="adv-grid">
+      <div class="adv-col newchae">
+        <div class="badge" data-i18n="p5.adv.badge">NEWCHAE Multi-Shot RF</div>
+        <h3 data-i18n="p5.adv.h">The advantages</h3>
+        <ul>
+          <li data-i18n="p5.adv.l1"><strong>Multi-channel delivery</strong> — energy distributed across multiple channels simultaneously.</li>
+          <li data-i18n="p5.adv.l2"><strong>Uniform dermal heat</strong> — even penetration reaches the target layer without hot spots.</li>
+          <li data-i18n="p5.adv.l3"><strong>Lower power, higher efficacy</strong> — safer surface, deeper effect.</li>
+          <li data-i18n="p5.adv.l4"><strong>Patent-protected design</strong> — 2 KIPO registered RF patents held by BRITZMEDI.</li>
+        </ul>
       </div>
-      <div class="row hi">
-        <span class="lbl" data-i18n="p5.t2">NEWCHAE RF</span>
-        <span class="val" data-i18n="p5.v2">Multi-channel shot</span>
-      </div>
-      <div class="row">
-        <span class="lbl" data-i18n="p5.t3">Heat Distribution</span>
-        <span class="val" data-i18n="p5.v3">Uniform across dermis</span>
-      </div>
-      <div class="row">
-        <span class="lbl" data-i18n="p5.t4">Power Required</span>
-        <span class="val" data-i18n="p5.v4">Lower · Safer</span>
+      <div class="adv-col conv">
+        <div class="badge" data-i18n="p5.lim.badge">Conventional RF</div>
+        <h3 data-i18n="p5.lim.h">The limitations</h3>
+        <ul>
+          <li data-i18n="p5.lim.l1">Single-channel delivery concentrates energy at one point.</li>
+          <li data-i18n="p5.lim.l2">Uneven heat distribution can cause surface hot spots.</li>
+          <li data-i18n="p5.lim.l3">Higher power required to reach target depth.</li>
+          <li data-i18n="p5.lim.l4">Greater risk of discomfort on sensitive skin.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1063,12 +1112,19 @@ const DICT = {
 
     "p5.eyebrow": "Core Technology",
     "p5.h2": "Built on patents,<br>not hype.",
-    "p5.lead": "Two registered RF patents. Nearly a decade of in-house R&D.",
-    "p5.body": "Unlike conventional single-channel RF devices, NEWCHAE's patented multi-shot system distributes energy across multiple channels simultaneously — delivering higher efficacy at lower power, and reducing surface discomfort while reaching the target dermal layer uniformly.",
-    "p5.t1": "Conventional RF", "p5.v1": "Single channel",
-    "p5.t2": "NEWCHAE RF", "p5.v2": "Multi-channel shot",
-    "p5.t3": "Heat Distribution", "p5.v3": "Uniform across dermis",
-    "p5.t4": "Power Required", "p5.v4": "Lower · Safer",
+    "p5.lead": "Two registered RF patents. Nearly a decade of in-house R&D behind every shot.",
+    "p5.adv.badge": "NEWCHAE Multi-Shot RF",
+    "p5.adv.h": "The advantages",
+    "p5.adv.l1": "<strong>Multi-channel delivery</strong> — energy distributed across multiple channels simultaneously.",
+    "p5.adv.l2": "<strong>Uniform dermal heat</strong> — even penetration reaches the target layer without hot spots.",
+    "p5.adv.l3": "<strong>Lower power, higher efficacy</strong> — safer surface, deeper effect.",
+    "p5.adv.l4": "<strong>Patent-protected design</strong> — 2 KIPO registered RF patents held by BRITZMEDI.",
+    "p5.lim.badge": "Conventional RF",
+    "p5.lim.h": "The limitations",
+    "p5.lim.l1": "Single-channel delivery concentrates energy at one point.",
+    "p5.lim.l2": "Uneven heat distribution can cause surface hot spots.",
+    "p5.lim.l3": "Higher power required to reach target depth.",
+    "p5.lim.l4": "Greater risk of discomfort on sensitive skin.",
     "p5.pa1.h": "RF Thermal Treatment Device",
     "p5.pa1.p": "KIPO · Registered 2020",
     "p5.pa2.h": "Segmented Electrode RF Device",
@@ -1149,12 +1205,19 @@ const DICT = {
 
     "p5.eyebrow": "핵심 기술",
     "p5.h2": "화려한 수사가 아닌,<br>특허로 입증된 기술.",
-    "p5.lead": "등록 RF 특허 2건. 약 10년간의 자체 R&D.",
-    "p5.body": "기존의 단일 채널 RF 디바이스와 달리, 뉴채의 특허 받은 멀티샷 시스템은 여러 채널에 에너지를 동시에 분산합니다. 더 낮은 출력으로 높은 효능을 달성하고, 표면 불편감을 줄이며, 목표 진피층에 에너지를 균일하게 전달합니다.",
-    "p5.t1": "기존 RF", "p5.v1": "단일 채널",
-    "p5.t2": "뉴채 RF", "p5.v2": "멀티 채널 샷",
-    "p5.t3": "열 분산", "p5.v3": "진피층 전반 균일",
-    "p5.t4": "필요 출력", "p5.v4": "낮음 · 안전",
+    "p5.lead": "등록 RF 특허 2건. 약 10년간의 자체 R&D가 모든 샷에 담겨 있습니다.",
+    "p5.adv.badge": "뉴채 멀티샷 RF",
+    "p5.adv.h": "뉴채의 장점",
+    "p5.adv.l1": "<strong>멀티 채널 전달</strong> — 여러 채널로 에너지를 동시에 분산합니다.",
+    "p5.adv.l2": "<strong>균일한 진피층 가열</strong> — 핫스팟 없이 목표 깊이까지 고르게 도달합니다.",
+    "p5.adv.l3": "<strong>낮은 출력, 높은 효능</strong> — 표면은 안전하게, 효과는 깊게.",
+    "p5.adv.l4": "<strong>특허 기반 설계</strong> — 브리츠메디 보유 KIPO 등록 RF 특허 2건.",
+    "p5.lim.badge": "기존 RF",
+    "p5.lim.h": "기존 방식의 한계",
+    "p5.lim.l1": "단일 채널 전달로 에너지가 한 점에 집중됩니다.",
+    "p5.lim.l2": "불균일한 열 분산으로 표면에 핫스팟이 발생할 수 있습니다.",
+    "p5.lim.l3": "목표 깊이까지 도달하려면 더 높은 출력이 필요합니다.",
+    "p5.lim.l4": "민감한 피부에 불편감을 줄 위험이 큽니다.",
     "p5.pa1.h": "RF 열 치료 디바이스",
     "p5.pa1.p": "한국특허청 · 2020 등록",
     "p5.pa2.h": "분할 전극 RF 디바이스",
