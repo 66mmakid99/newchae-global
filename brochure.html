@@ -677,6 +677,111 @@
   .controls .print-btn { background: var(--cream); color: var(--ink); border-color: var(--cream); }
   .controls .print-btn:hover { background: #fff; }
 
+  /* ================================================================ */
+  /* ============ PAGE 8 — OEM / ODM ============ */
+  /* ================================================================ */
+  .oem {
+    grid-template-columns: 1.15fr 1fr;
+    background: var(--ivory);
+  }
+  .oem .left {
+    padding: 24mm 14mm 20mm 22mm;
+    display: flex; flex-direction: column;
+  }
+  .oem .left .eyebrow { margin-top: 4px; }
+  .oem .left h2 { margin-top: 6px; }
+  .oem .left .italic-accent {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-style: italic; font-weight: 300;
+    color: var(--lilac);
+  }
+  :lang(ko) .oem .left .italic-accent { font-style: normal; font-family: 'Noto Serif KR', serif; }
+  .oem .left .lead { margin-top: 16px; max-width: 130mm; }
+  .oem .caps {
+    margin-top: 14mm;
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 6mm 8mm;
+  }
+  .oem .cap {
+    padding-left: 16px;
+    position: relative;
+  }
+  .oem .cap::before {
+    content: ''; position: absolute; left: 0; top: 8px;
+    width: 8px; height: 1px; background: var(--lilac);
+  }
+  .oem .cap .t {
+    font-size: 10.5px; font-weight: 600;
+    color: var(--ink); letter-spacing: 0.02em;
+    margin-bottom: 3px;
+  }
+  .oem .cap .d {
+    font-size: 10px; color: var(--mute); line-height: 1.5;
+  }
+  .oem .left .bottom-strip {
+    margin-top: auto; padding-top: 10mm;
+    border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .oem .left .bottom-strip .lbl {
+    font-size: 9px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--mute);
+    font-weight: 600;
+  }
+  .oem .left .bottom-strip .copy {
+    font-size: 9px; color: var(--mute); text-align: right;
+  }
+
+  .oem .right {
+    position: relative;
+    background: linear-gradient(145deg, #e8dfc9 0%, #c9b89a 100%);
+    overflow: hidden;
+  }
+  .oem .right img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    mix-blend-mode: multiply;
+    filter: contrast(1.03) saturate(0.9);
+  }
+  .oem .right::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(21,17,12,0.2) 0%, rgba(21,17,12,0.72) 100%);
+  }
+  .oem .right .tech-card {
+    position: absolute; left: 12mm; right: 12mm; bottom: 18mm;
+    z-index: 2; color: var(--cream);
+    border-left: 2px solid var(--lilac);
+    padding-left: 12mm;
+  }
+  .oem .right .tech-card .badge {
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--lilac); margin-bottom: 12px;
+  }
+  .oem .right .tech-card h3 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 26px; font-weight: 400; line-height: 1.15;
+    color: #fff; margin-bottom: 10px;
+  }
+  :lang(ko) .oem .right .tech-card h3 { font-family: 'Noto Serif KR', serif; font-size: 22px; }
+  .oem .right .tech-card p {
+    font-size: 10.5px; color: #d9d2bf; line-height: 1.6;
+    max-width: 100mm;
+  }
+  .oem .right .tech-card .moq-inline {
+    margin-top: 14px; padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    display: flex; gap: 20px; align-items: baseline;
+  }
+  .oem .right .tech-card .moq-inline .k {
+    font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #bdb49d; font-weight: 600;
+  }
+  .oem .right .tech-card .moq-inline .v {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500; color: #fff;
+  }
+
   @page { size: A4 landscape; margin: 0; }
   @media print {
     html, body { background: #fff; }
@@ -726,7 +831,7 @@
   </div>
   <div class="frame-bot">
     <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
-    <span class="num">01 / 07</span>
+    <span class="num">01 / 08</span>
   </div>
 </section>
 
@@ -773,7 +878,7 @@
   </div>
   <div class="frame-bot">
     <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
-    <span class="num">02 / 07</span>
+    <span class="num">02 / 08</span>
   </div>
 </section>
 
@@ -815,7 +920,7 @@
   </div>
   <div class="frame-bot">
     <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
-    <span class="num">03 / 07</span>
+    <span class="num">03 / 08</span>
   </div>
 </section>
 
@@ -871,7 +976,7 @@
   </div>
   <div class="frame-bot">
     <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
-    <span class="num">04 / 07</span>
+    <span class="num">04 / 08</span>
   </div>
 </section>
 
@@ -926,7 +1031,7 @@
   </div>
   <div class="frame-bot">
     <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
-    <span class="num">05 / 07</span>
+    <span class="num">05 / 08</span>
   </div>
 </section>
 
@@ -989,7 +1094,7 @@
   </div>
   <div class="frame-bot">
     <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
-    <span class="num">06 / 07</span>
+    <span class="num">06 / 08</span>
   </div>
 </section>
 
@@ -1001,7 +1106,7 @@
     <p class="lead" data-i18n="p7.lead">Choose the partnership structure that fits your market strategy. All models include full marketing and regulatory documentation support.</p>
   </div>
 
-  <div class="models">
+  <div class="models" style="grid-template-columns: 1fr 1fr; gap: 8mm; max-width: 220mm;">
     <div class="model-card">
       <div class="idx">01 · MODEL</div>
       <h3 data-i18n="p7.m1.h">Distributor</h3>
@@ -1020,16 +1125,8 @@
         <span class="val">100 <span style="font-size: 10px; color: var(--mute);" data-i18n="p7.units">units</span></span>
       </div>
     </div>
-    <div class="model-card">
-      <div class="idx">03 · MODEL</div>
-      <h3 data-i18n="p7.m3.h">OEM / ODM</h3>
-      <p data-i18n="p7.m3.p">Custom branding and specifications built on NEWCHAE core technology. Your brand, our engineering.</p>
-      <div class="moq-row">
-        <span class="lbl" data-i18n="p7.moq">MOQ</span>
-        <span class="val">2,000 <span style="font-size: 10px; color: var(--mute);" data-i18n="p7.units">units</span></span>
-      </div>
-    </div>
   </div>
+  <p style="margin-top: 6mm; font-size: 10.5px; color: var(--mute); font-style: italic;" data-i18n="p7.oem_hint">→ Looking for OEM / ODM? See the next page.</p>
 
   <div class="foot">
     <div>
@@ -1058,7 +1155,79 @@
   </div>
   <div class="frame-bot">
     <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
-    <span class="num">07 / 07</span>
+    <span class="num">07 / 08</span>
+  </div>
+</section>
+
+<!-- ================== PAGE 8 — OEM / ODM ================== -->
+<section class="page oem">
+  <div class="left">
+    <div class="eyebrow" data-i18n="p8.eyebrow">OEM / ODM</div>
+    <h2 data-i18n="p8.h2">Powered by<br><span class="italic-accent">BRITZMEDI</span> technology.</h2>
+    <p class="lead" data-i18n="p8.lead">Build your own brand on top of a clinically proven, patent-protected RF platform. From circuit to packaging — every step handled in-house by a Korean medical device manufacturer.</p>
+
+    <div class="caps">
+      <div class="cap">
+        <div class="t" data-i18n="p8.c1.t">Patent-Protected Core</div>
+        <div class="d" data-i18n="p8.c1.d">Two KIPO registered RF patents licensed into your product.</div>
+      </div>
+      <div class="cap">
+        <div class="t" data-i18n="p8.c2.t">ISO 13485:2016 Production</div>
+        <div class="d" data-i18n="p8.c2.d">Medical-grade QMS, MFDS GMP certified manufacturing.</div>
+      </div>
+      <div class="cap">
+        <div class="t" data-i18n="p8.c3.t">Full Custom Design</div>
+        <div class="d" data-i18n="p8.c3.d">Branding, housing color, packaging, and spec tuning to match your market.</div>
+      </div>
+      <div class="cap">
+        <div class="t" data-i18n="p8.c4.t">In-House R&amp;D → Production</div>
+        <div class="d" data-i18n="p8.c4.d">From circuit board to final assembly, all under one roof in Seongnam.</div>
+      </div>
+      <div class="cap">
+        <div class="t" data-i18n="p8.c5.t">Global Certifications</div>
+        <div class="d" data-i18n="p8.c5.d">KC, CE, FCC support for your target export markets.</div>
+      </div>
+      <div class="cap">
+        <div class="t" data-i18n="p8.c6.t">FDA-Registered Manufacturer</div>
+        <div class="d" data-i18n="p8.c6.d">BRITZMEDI is a U.S. FDA registered contract manufacturer.</div>
+      </div>
+    </div>
+
+    <div class="bottom-strip">
+      <div>
+        <div class="lbl" data-i18n="p8.contact_oem">OEM / ODM Inquiry</div>
+        <div style="font-family: 'Cormorant Garamond','Noto Serif KR',serif; font-size: 18px; color: var(--ink); margin-top: 4px;">sh.lee@britzmedi.co.kr</div>
+      </div>
+      <div class="copy">© 2026<br>BRITZMEDI Co., Ltd.</div>
+    </div>
+  </div>
+
+  <div class="right">
+    <img src="images/newchea cream summer.png" alt="NEWCHAE OEM">
+    <div class="tech-card">
+      <div class="badge" data-i18n="p8.badge">Your Brand · Our Engineering</div>
+      <h3 data-i18n="p8.tc.h">A manufacturing partner,<br>not just a supplier.</h3>
+      <p data-i18n="p8.tc.p">We bring the core technology, global certifications, and clinical data. You bring the brand, the market, and the vision.</p>
+      <div class="moq-inline">
+        <div>
+          <div class="k" data-i18n="p8.moq">MOQ</div>
+          <div class="v">2,000 <span style="font-size: 11px; color: #bdb49d;" data-i18n="p8.units">units</span></div>
+        </div>
+        <div>
+          <div class="k" data-i18n="p8.lead_time">Lead Time</div>
+          <div class="v">30–45 <span style="font-size: 11px; color: #bdb49d;" data-i18n="p8.days">days</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="frame-top">
+    <span>BRITZMEDI</span>
+    <span data-i18n="nav.oem">OEM / ODM · TECHNOLOGY LICENSING</span>
+  </div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
+    <span class="num">08 / 08</span>
   </div>
 </section>
 
@@ -1069,6 +1238,7 @@ const DICT = {
     "nav.overview": "OVERVIEW", "nav.product": "PRODUCT · 3-MODE SYSTEM",
     "nav.specs": "CLINICAL & SPECIFICATIONS", "nav.tech": "TECHNOLOGY",
     "nav.company": "COMPANY", "nav.partner": "PARTNERSHIP & CONTACT",
+    "nav.oem": "OEM / ODM · TECHNOLOGY LICENSING",
 
     "cover.kicker": "Product Brochure · 2026",
     "cover.sub": "A three-in-one RF beauty device — RF, EMS and ELP, engineered into a single home-use device by a Korean medical device manufacturer.",
@@ -1148,9 +1318,30 @@ const DICT = {
     "p7.m1.p": "Exclusive rights for your market. Tiered pricing based on order volume. No annual commitment.",
     "p7.m2.h": "Wholesale",
     "p7.m2.p": "Volume-based bulk orders for existing retail channels. Non-exclusive, flexible ordering.",
-    "p7.m3.h": "OEM / ODM",
-    "p7.m3.p": "Custom branding and specifications built on NEWCHAE core technology. Your brand, our engineering.",
+    "p7.oem_hint": "→ Looking for OEM / ODM? See the next page.",
     "p7.moq": "MOQ", "p7.units": "units",
+
+    "p8.eyebrow": "OEM / ODM",
+    "p8.h2": "Powered by<br><span class=\"italic-accent\">BRITZMEDI</span> technology.",
+    "p8.lead": "Build your own brand on top of a clinically proven, patent-protected RF platform. From circuit to packaging — every step handled in-house by a Korean medical device manufacturer.",
+    "p8.c1.t": "Patent-Protected Core",
+    "p8.c1.d": "Two KIPO registered RF patents licensed into your product.",
+    "p8.c2.t": "ISO 13485:2016 Production",
+    "p8.c2.d": "Medical-grade QMS, MFDS GMP certified manufacturing.",
+    "p8.c3.t": "Full Custom Design",
+    "p8.c3.d": "Branding, housing color, packaging, and spec tuning to match your market.",
+    "p8.c4.t": "In-House R&D → Production",
+    "p8.c4.d": "From circuit board to final assembly, all under one roof in Seongnam.",
+    "p8.c5.t": "Global Certifications",
+    "p8.c5.d": "KC, CE, FCC support for your target export markets.",
+    "p8.c6.t": "FDA-Registered Manufacturer",
+    "p8.c6.d": "BRITZMEDI is a U.S. FDA registered contract manufacturer.",
+    "p8.contact_oem": "OEM / ODM Inquiry",
+    "p8.badge": "Your Brand · Our Engineering",
+    "p8.tc.h": "A manufacturing partner,<br>not just a supplier.",
+    "p8.tc.p": "We bring the core technology, global certifications, and clinical data. You bring the brand, the market, and the vision.",
+    "p8.moq": "MOQ", "p8.units": "units",
+    "p8.lead_time": "Lead Time", "p8.days": "days",
     "p7.contact": "Global Inquiry",
     "p7.email": "Email", "p7.phone": "Phone",
     "p7.resp": "Response", "p7.resp_v": "Within 24 hours",
@@ -1162,6 +1353,7 @@ const DICT = {
     "nav.overview": "개요", "nav.product": "제품 · 3-모드 시스템",
     "nav.specs": "임상 & 사양", "nav.tech": "기술",
     "nav.company": "회사", "nav.partner": "파트너십 & 문의",
+    "nav.oem": "OEM / ODM · 기술 라이선싱",
 
     "cover.kicker": "제품 브로셔 · 2026",
     "cover.sub": "RF, EMS, ELP 세 가지 전문 기술을 하나의 홈케어 디바이스에 담았습니다. 한국 의료기기 제조사 브리츠메디가 직접 설계·제조합니다.",
@@ -1241,9 +1433,30 @@ const DICT = {
     "p7.m1.p": "해당 시장 독점권. 주문 수량 기반 단계별 가격. 연간 약정 없음.",
     "p7.m2.h": "도매",
     "p7.m2.p": "기존 리테일 채널을 위한 벌크 오더. 비독점, 유연한 발주.",
-    "p7.m3.h": "OEM / ODM",
-    "p7.m3.p": "뉴채 핵심 기술 기반의 커스텀 브랜딩 및 사양. 고객사 브랜드, 저희 엔지니어링.",
+    "p7.oem_hint": "→ OEM / ODM을 찾고 계신가요? 다음 페이지를 참고해 주세요.",
     "p7.moq": "최소 주문 수량", "p7.units": "대",
+
+    "p8.eyebrow": "OEM / ODM",
+    "p8.h2": "<span class=\"italic-accent\">브리츠메디</span>의<br>기술력으로.",
+    "p8.lead": "임상으로 입증되고 특허로 보호된 RF 플랫폼 위에 귀사의 브랜드를 구축하세요. 회로 설계부터 패키징까지 — 한국 의료기기 제조사가 모든 공정을 자체 수행합니다.",
+    "p8.c1.t": "특허 보호 코어 기술",
+    "p8.c1.d": "한국특허청 등록 RF 특허 2건을 귀사 제품에 적용.",
+    "p8.c2.t": "ISO 13485:2016 생산",
+    "p8.c2.d": "의료기기 품질경영시스템, 한국 식약처 GMP 인증 제조.",
+    "p8.c3.t": "완전 커스텀 설계",
+    "p8.c3.d": "브랜딩, 하우징 색상, 패키징, 사양 튜닝까지 시장에 맞춰 조정.",
+    "p8.c4.t": "자체 R&D → 생산",
+    "p8.c4.d": "회로 설계부터 최종 조립까지 성남 본사에서 일괄 처리.",
+    "p8.c5.t": "글로벌 인증 지원",
+    "p8.c5.d": "타겟 수출 시장을 위한 KC, CE, FCC 인증 지원.",
+    "p8.c6.t": "FDA 등록 제조사",
+    "p8.c6.d": "브리츠메디는 미국 FDA 등록 위탁 제조사입니다.",
+    "p8.contact_oem": "OEM / ODM 문의",
+    "p8.badge": "귀사의 브랜드 · 저희의 엔지니어링",
+    "p8.tc.h": "단순 공급사가 아닌,<br>제조 파트너.",
+    "p8.tc.p": "저희는 핵심 기술, 글로벌 인증, 임상 데이터를 제공합니다. 귀사는 브랜드, 시장, 비전을 가져오세요.",
+    "p8.moq": "최소 주문 수량", "p8.units": "대",
+    "p8.lead_time": "납기", "p8.days": "일",
     "p7.contact": "글로벌 문의",
     "p7.email": "이메일", "p7.phone": "전화",
     "p7.resp": "응답 시간", "p7.resp_v": "24시간 이내",
