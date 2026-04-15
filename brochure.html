@@ -117,11 +117,15 @@
     position: relative; z-index: 2;
   }
   .cover-left .house {
+    display: flex; align-items: center; gap: 14px;
     font-family: 'Inter', sans-serif;
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.35em; color: var(--ink);
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em; color: var(--graphite);
   }
-  .cover-left .house span { color: var(--lilac); }
+  .cover-left .house img { height: 18px; width: auto; display: block; }
+  .cover-left .house .divider {
+    width: 1px; height: 14px; background: var(--line);
+  }
   .cover-title { margin-top: 0; }
   .cover-title .line {
     width: 60px; height: 2px; background: var(--lilac);
@@ -472,12 +476,9 @@
     margin-bottom: 8px;
   }
   .company .hero-img .overlay .name {
-    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
-    font-size: 42px; font-weight: 400; line-height: 1;
-    letter-spacing: -0.01em;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    height: 38px; width: auto; display: block;
+    filter: drop-shadow(0 2px 20px rgba(0,0,0,0.35));
   }
-  :lang(ko) .company .hero-img .overlay .name { font-family: 'Noto Serif KR', serif; font-size: 32px; }
 
   .company .right {
     padding: 22mm 22mm 20mm 18mm;
@@ -655,7 +656,11 @@
 <!-- ================== PAGE 1 — COVER ================== -->
 <section class="page cover">
   <div class="cover-left">
-    <div class="house">BRITZMEDI <span>— SINCE 2017</span></div>
+    <div class="house">
+      <img src="images/BRITZMEDI_LOGO_black.svg" alt="BRITZMEDI">
+      <span class="divider"></span>
+      <span>SINCE 2017</span>
+    </div>
 
     <div class="cover-title">
       <div class="line"></div>
@@ -882,7 +887,7 @@
     <img src="images/newchea black and white4.png" alt="BRITZMEDI">
     <div class="overlay">
       <div class="established" data-i18n="p6.est">Established 2017 · Seongnam, Korea</div>
-      <div class="name">BRITZMEDI</div>
+      <img class="name" src="images/BRITZMEDI_LOGO_white.svg" alt="BRITZMEDI">
     </div>
   </div>
   <div class="right">
@@ -985,7 +990,7 @@
     </div>
     <div>
       <div class="lbl" data-i18n="p7.phone">Phone</div>
-      <div class="val">+82-70-XXXX-XXXX</div>
+      <div class="val">+82-10-6525-9442</div>
       <div class="lbl" style="margin-top: 8px;" data-i18n="p7.resp">Response</div>
       <div class="val" data-i18n="p7.resp_v">Within 24 hours</div>
     </div>
