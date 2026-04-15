@@ -4,117 +4,647 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NEWCHAE — Product Brochure</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ivory: #faf8f4;
-    --sand: #efeae0;
-    --ink: #1a1a1a;
-    --graphite: #555;
+    --ivory: #f6f1e8;
+    --cream: #faf6ed;
+    --sand: #ebe3d1;
+    --ink: #15110c;
+    --graphite: #5a5347;
+    --mute: #8a8275;
     --lilac: #8b7aa8;
-    --line: #d8d2c4;
+    --rose: #c9a8a0;
+    --line: #d4cbb8;
+    --dark: #1a1610;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { background: #e5e3de; font-family: 'Inter', -apple-system, 'Noto Sans KR', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  html, body {
+    background: #ddd8ce;
+    font-family: 'Inter', -apple-system, 'Noto Sans KR', sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  :lang(ko) body { font-family: 'Noto Sans KR', 'Inter', sans-serif; }
 
-  /* A4 page */
+  /* ========== A4 LANDSCAPE PAGE ========== */
   .page {
-    width: 210mm;
-    min-height: 297mm;
-    padding: 22mm 20mm;
-    margin: 12mm auto;
-    background: var(--ivory);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    width: 297mm;
+    height: 210mm;
+    margin: 10mm auto;
+    background: var(--cream);
+    box-shadow: 0 6px 32px rgba(0,0,0,0.14);
     position: relative;
+    overflow: hidden;
     page-break-after: always;
-    display: flex;
-    flex-direction: column;
+    display: grid;
   }
   .page:last-child { page-break-after: auto; }
 
-  .page-num { position: absolute; bottom: 12mm; right: 20mm; font-size: 10px; color: var(--graphite); letter-spacing: 0.15em; }
-  .brand-mark { position: absolute; top: 12mm; left: 20mm; font-size: 11px; font-weight: 600; letter-spacing: 0.25em; color: var(--ink); }
-  .brand-right { position: absolute; top: 12mm; right: 20mm; font-size: 10px; letter-spacing: 0.12em; color: var(--graphite); text-transform: uppercase; }
+  /* Page frame */
+  .frame-top, .frame-bot {
+    position: absolute; left: 16mm; right: 16mm;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--mute); font-weight: 500;
+    z-index: 10;
+  }
+  .frame-top { top: 9mm; }
+  .frame-bot { bottom: 9mm; }
+  .frame-bot .num { color: var(--ink); font-weight: 600; letter-spacing: 0.15em; }
 
-  h1, h2, h3, h4 { font-weight: 500; letter-spacing: -0.01em; }
-  h1 { font-size: 56px; line-height: 1.05; }
-  h2 { font-size: 30px; line-height: 1.2; margin-bottom: 12px; }
-  h3 { font-size: 17px; line-height: 1.3; margin-bottom: 6px; }
-  h4 { font-size: 13px; line-height: 1.3; margin-bottom: 4px; }
-  p  { font-size: 12.5px; line-height: 1.65; color: var(--graphite); }
-  .lead { font-size: 15px; line-height: 1.55; color: var(--ink); }
-  .eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lilac); margin-bottom: 14px; }
+  /* ========== Typography ========== */
+  .serif { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; }
+  :lang(ko) .serif { font-family: 'Noto Serif KR', 'Cormorant Garamond', serif; font-weight: 400; }
+
+  h1, h2, h3, h4 { font-weight: 400; letter-spacing: -0.015em; color: var(--ink); }
+  .display {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 88px; line-height: 0.95; font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+  :lang(ko) .display { font-family: 'Noto Serif KR', serif; font-size: 68px; font-weight: 300; line-height: 1.05; }
+
+  h2 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 42px; line-height: 1.08; font-weight: 400;
+  }
+  :lang(ko) h2 { font-family: 'Noto Serif KR', serif; font-size: 34px; font-weight: 400; }
+
+  h3 { font-size: 16px; line-height: 1.3; font-weight: 500; letter-spacing: -0.005em; }
+  h4 { font-size: 12px; line-height: 1.3; font-weight: 600; letter-spacing: 0.02em; }
+
+  p { font-size: 11.5px; line-height: 1.7; color: var(--graphite); font-weight: 400; }
+  .lead { font-size: 14px; line-height: 1.55; color: var(--ink); font-weight: 400; }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px; font-weight: 600;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--lilac); margin-bottom: 14px;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before {
+    content: ''; width: 24px; height: 1px; background: var(--lilac);
+  }
   strong { color: var(--ink); font-weight: 600; }
-  .accent { color: var(--lilac); }
+  .accent { color: var(--lilac); font-weight: 500; }
 
-  /* Cover */
-  .cover { justify-content: space-between; background: var(--ivory); }
-  .cover-top { }
-  .cover-mid h1 { font-size: 72px; font-weight: 300; }
-  .cover-mid .tag { font-size: 18px; color: var(--graphite); margin-top: 24px; max-width: 140mm; line-height: 1.5; }
-  .cover-bot { display: flex; justify-content: space-between; align-items: flex-end; font-size: 11px; color: var(--graphite); }
-  .cover-bot .certs { letter-spacing: 0.15em; }
+  /* ========== Buttons/Chips ========== */
+  .chip {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    background: transparent;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--graphite);
+    margin-right: 6px;
+  }
 
-  /* Generic layout helpers */
-  .section-title { margin-bottom: 28px; }
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14mm; margin-top: 8mm; }
-  .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8mm; margin-top: 8mm; }
-  .four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6mm; margin-top: 8mm; }
+  /* ================================================================ */
+  /* ============ PAGE 1 — COVER ============ */
+  /* ================================================================ */
+  .cover {
+    grid-template-columns: 1.05fr 1fr;
+    background: var(--cream);
+  }
+  .cover-left {
+    padding: 32mm 16mm 20mm 22mm;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; z-index: 2;
+  }
+  .cover-left .house {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.35em; color: var(--ink);
+  }
+  .cover-left .house span { color: var(--lilac); }
+  .cover-title { margin-top: 0; }
+  .cover-title .line {
+    width: 60px; height: 2px; background: var(--lilac);
+    margin-bottom: 22px;
+  }
+  .cover-title .kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--graphite); margin-bottom: 18px;
+  }
+  .cover-title h1 { margin-top: 0; }
+  .cover-title .shot {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--lilac);
+  }
+  .cover-title .sub {
+    font-size: 13.5px; color: var(--graphite);
+    max-width: 110mm; margin-top: 22px; line-height: 1.6;
+  }
+  .cover-left .meta {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-top: 12mm; border-top: 1px solid var(--line);
+  }
+  .cover-left .meta .cert {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.18em; color: var(--ink);
+  }
+  .cover-left .meta .model {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 0.12em; color: var(--graphite);
+    text-transform: uppercase;
+  }
+  .cover-right {
+    background: linear-gradient(135deg, #e8dfc9 0%, #d4c6a8 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-right img {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+    filter: contrast(1.05) saturate(0.9);
+  }
+  .cover-right::after {
+    content: ''; position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(26,22,16,0.35) 100%);
+  }
+  .cover-right .corner-tag {
+    position: absolute; bottom: 20mm; right: 16mm; z-index: 2;
+    color: #faf6ed;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-weight: 300;
+    font-size: 18px;
+    text-align: right;
+    max-width: 120mm;
+    line-height: 1.4;
+  }
+  :lang(ko) .cover-right .corner-tag { font-family: 'Noto Serif KR', serif; font-style: normal; font-size: 14px; }
 
-  .card { border: 1px solid var(--line); padding: 6mm; background: #fff; }
-  .card .tag { font-size: 9px; letter-spacing: 0.2em; color: var(--lilac); text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
-  .card .sub { font-size: 10px; color: var(--graphite); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  /* ================================================================ */
+  /* ============ PAGE 2 — OVERVIEW ============ */
+  /* ================================================================ */
+  .overview {
+    grid-template-columns: 1fr 1.1fr;
+    background: var(--ivory);
+  }
+  .overview .left-img {
+    position: relative; background: var(--sand);
+    overflow: hidden;
+  }
+  .overview .left-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(0.15) contrast(1.02);
+  }
+  .overview .left-img .overlay {
+    position: absolute; left: 16mm; bottom: 16mm; right: 16mm;
+    color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 22px; font-weight: 300;
+    line-height: 1.35;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+  }
+  :lang(ko) .overview .left-img .overlay { font-family: 'Noto Serif KR', serif; font-style: normal; font-size: 18px; }
+  .overview .right-content {
+    padding: 22mm 22mm 20mm 18mm;
+    display: flex; flex-direction: column;
+  }
+  .overview h2 { margin-top: 6px; }
+  .overview .intro { margin-top: 20px; max-width: 120mm; }
+  .overview .stats {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1px; background: var(--line);
+    margin-top: 28px;
+    border: 1px solid var(--line);
+  }
+  .overview .stat {
+    background: var(--cream);
+    padding: 14px 16px;
+  }
+  .overview .stat .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px; line-height: 1; font-weight: 300;
+    color: var(--ink);
+  }
+  .overview .stat .num.hi { color: var(--lilac); }
+  .overview .stat .lbl {
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--graphite); margin-top: 6px;
+  }
+  .overview .stat .cap { font-size: 10px; color: var(--mute); margin-top: 2px; }
+  .overview .footnote {
+    margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line);
+    font-size: 10px; color: var(--mute); letter-spacing: 0.04em;
+  }
 
-  .stat { text-align: center; padding: 8mm 2mm; border: 1px solid var(--line); background: #fff; }
-  .stat .num { font-size: 34px; font-weight: 300; color: var(--ink); }
-  .stat .num.hi { color: var(--lilac); font-weight: 400; }
-  .stat .lbl { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--graphite); margin-top: 4px; }
+  /* ================================================================ */
+  /* ============ PAGE 3 — THREE MODES ============ */
+  /* ================================================================ */
+  .modes {
+    grid-template-rows: auto 1fr;
+    background: var(--cream);
+    padding: 22mm 18mm 18mm;
+  }
+  .modes .head { max-width: 170mm; }
+  .modes .head h2 { margin-top: 6px; }
+  .modes .head p { margin-top: 14px; max-width: 140mm; }
+  .modes .grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 8mm;
+    margin-top: 14mm;
+  }
+  .mode-card {
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    padding: 14mm 10mm 12mm;
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+  .mode-card .big-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.3em;
+    color: var(--lilac);
+    margin-bottom: 16px;
+  }
+  .mode-card h3 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 32px; font-weight: 400; line-height: 1;
+    margin-bottom: 6px;
+  }
+  :lang(ko) .mode-card h3 { font-family: 'Noto Serif KR', serif; font-size: 26px; }
+  .mode-card .freq {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--graphite);
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .mode-card p { font-size: 11.5px; flex: 1; }
+  .mode-card .tag-ribbon {
+    position: absolute; top: 0; right: 12mm;
+    background: var(--ink); color: var(--cream);
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 0.2em;
+    padding: 8px 14px;
+  }
+  .mode-card.lilac .tag-ribbon { background: var(--lilac); }
+  .mode-card.rose .tag-ribbon { background: var(--rose); color: #fff; }
 
-  table.spec { width: 100%; border-collapse: collapse; font-size: 11.5px; margin-top: 4mm; }
-  table.spec td { padding: 7px 0; border-bottom: 1px solid var(--line); }
-  table.spec td:first-child { color: var(--graphite); width: 42%; text-transform: uppercase; letter-spacing: 0.06em; font-size: 10px; }
-  table.spec td:last-child { color: var(--ink); font-weight: 500; }
+  /* ================================================================ */
+  /* ============ PAGE 4 — CLINICAL + SPECS ============ */
+  /* ================================================================ */
+  .clinical {
+    grid-template-columns: 1.15fr 1fr;
+    background: var(--ivory);
+  }
+  .clinical .left {
+    padding: 22mm 14mm 20mm 22mm;
+    display: flex; flex-direction: column;
+    border-right: 1px solid var(--line);
+  }
+  .clinical .left h2 { margin-top: 6px; }
+  .clinical .big-stats {
+    display: grid; grid-template-rows: 1fr 1fr;
+    margin-top: 16mm; gap: 10mm;
+    flex: 1;
+  }
+  .clinical .big-stat {
+    display: grid; grid-template-columns: auto 1fr;
+    align-items: center; gap: 16mm;
+  }
+  .clinical .big-stat .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px; font-weight: 300; line-height: 0.85;
+    color: var(--lilac);
+    letter-spacing: -0.03em;
+  }
+  .clinical .big-stat .value .sup {
+    font-size: 48px; vertical-align: super;
+  }
+  .clinical .big-stat .meta {}
+  .clinical .big-stat .meta .metric {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 26px; font-weight: 400; color: var(--ink);
+  }
+  :lang(ko) .clinical .big-stat .meta .metric { font-family: 'Noto Serif KR', serif; font-size: 22px; }
+  .clinical .big-stat .meta .desc {
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--graphite); margin-top: 4px;
+  }
+  .clinical .src {
+    margin-top: auto; padding-top: 10mm;
+    font-size: 9px; color: var(--mute);
+    letter-spacing: 0.08em;
+  }
+  .clinical .right {
+    padding: 22mm 22mm 20mm 14mm;
+    display: flex; flex-direction: column;
+  }
+  .spec-table { width: 100%; border-collapse: collapse; margin-top: 12mm; }
+  .spec-table tr { border-bottom: 1px solid var(--line); }
+  .spec-table tr:last-child { border-bottom: none; }
+  .spec-table td { padding: 8.5px 0; font-size: 10.5px; vertical-align: top; }
+  .spec-table td:first-child {
+    color: var(--mute); width: 45%;
+    font-size: 9px; letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 600;
+    padding-right: 8px;
+  }
+  .spec-table td:last-child {
+    color: var(--ink); font-weight: 500;
+    font-family: 'Inter', sans-serif;
+  }
+  .clinical .right .box {
+    margin-top: 10mm;
+    padding: 10mm;
+    background: var(--cream);
+    border: 1px solid var(--line);
+  }
+  .clinical .right .box h4 { margin-bottom: 8px; }
+  .clinical .right .box ul { list-style: none; }
+  .clinical .right .box li {
+    font-size: 10.5px; padding: 5px 0;
+    color: var(--ink);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .clinical .right .box li::before {
+    content: '—'; color: var(--lilac); font-weight: 600;
+  }
 
-  .divider { height: 1px; background: var(--line); margin: 6mm 0; }
-  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8mm; }
-  .chip { font-size: 10px; padding: 5px 10px; border: 1px solid var(--line); background: #fff; letter-spacing: 0.08em; text-transform: uppercase; color: var(--graphite); }
+  /* ================================================================ */
+  /* ============ PAGE 5 — TECHNOLOGY ============ */
+  /* ================================================================ */
+  .tech {
+    grid-template-columns: 1fr 1fr;
+    background: var(--cream);
+  }
+  .tech .txt {
+    padding: 22mm 14mm 20mm 22mm;
+    display: flex; flex-direction: column;
+  }
+  .tech .txt h2 { margin-top: 6px; }
+  .tech .txt p { margin-top: 14px; max-width: 110mm; }
+  .tech .compare {
+    margin-top: 14mm;
+    border: 1px solid var(--line);
+    background: var(--ivory);
+  }
+  .tech .compare .row {
+    display: flex; justify-content: space-between;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .tech .compare .row:last-child { border-bottom: none; }
+  .tech .compare .row .lbl {
+    font-size: 9px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--mute);
+    font-weight: 600;
+  }
+  .tech .compare .row .val {
+    font-size: 11.5px; color: var(--ink); font-weight: 500;
+  }
+  .tech .compare .row.hi .val { color: var(--lilac); font-weight: 600; }
+  .tech .img-side {
+    position: relative;
+    background: var(--sand);
+    overflow: hidden;
+  }
+  .tech .img-side img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(0.1) contrast(1.03);
+  }
+  .tech .img-side .patents {
+    position: absolute; left: 14mm; right: 14mm; bottom: 18mm;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4mm;
+  }
+  .tech .patent {
+    background: rgba(22, 18, 12, 0.88);
+    backdrop-filter: blur(4px);
+    color: var(--cream);
+    padding: 10mm 8mm;
+    border-left: 2px solid var(--lilac);
+  }
+  .tech .patent .no {
+    font-size: 9px; letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--lilac); font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .tech .patent h3 { color: #fff; font-size: 13px; margin-bottom: 6px; }
+  .tech .patent .off { font-size: 9px; color: #c8c0ae; letter-spacing: 0.06em; }
 
-  .cta-block { border-top: 1px solid var(--line); padding-top: 8mm; margin-top: auto; }
-  .cta-block .label { font-size: 10px; color: var(--graphite); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 4px; }
-  .cta-block .val { font-size: 14px; color: var(--ink); font-weight: 500; }
+  /* ================================================================ */
+  /* ============ PAGE 6 — COMPANY ============ */
+  /* ================================================================ */
+  .company {
+    grid-template-columns: 1fr 1.2fr;
+    background: var(--ivory);
+  }
+  .company .hero-img {
+    position: relative;
+    background: var(--sand);
+    overflow: hidden;
+  }
+  .company .hero-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: contrast(1.02) saturate(0.92);
+  }
+  .company .hero-img .overlay {
+    position: absolute; left: 16mm; bottom: 18mm; right: 16mm;
+    color: #fff;
+  }
+  .company .hero-img .overlay .established {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 8px;
+  }
+  .company .hero-img .overlay .name {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 42px; font-weight: 400; line-height: 1;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.35);
+  }
+  :lang(ko) .company .hero-img .overlay .name { font-family: 'Noto Serif KR', serif; font-size: 32px; }
 
-  ul.clean { list-style: none; }
-  ul.clean li { padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
+  .company .right {
+    padding: 22mm 22mm 20mm 18mm;
+    display: flex; flex-direction: column;
+  }
+  .company .right h2 { margin-top: 6px; }
+  .company .right .lead { margin-top: 14px; max-width: 130mm; }
+  .company .keys {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 4mm; margin-top: 12mm;
+  }
+  .company .key {
+    text-align: left;
+    border-top: 1px solid var(--ink);
+    padding-top: 10px;
+  }
+  .company .key .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 400; line-height: 1;
+    color: var(--ink);
+  }
+  .company .key .num.s { font-size: 22px; color: var(--lilac); }
+  .company .key .lbl {
+    font-size: 9px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--graphite);
+    margin-top: 6px; font-weight: 600;
+  }
+  .company .certs-row {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--line);
+    border: 1px solid var(--line);
+    margin-top: 10mm;
+  }
+  .company .cert {
+    background: var(--cream);
+    padding: 10px 12px;
+  }
+  .company .cert .nm {
+    font-size: 11px; font-weight: 600;
+    color: var(--ink); margin-bottom: 2px;
+  }
+  .company .cert .dc {
+    font-size: 9px; color: var(--mute);
+  }
+  .company .addr {
+    margin-top: auto; padding-top: 10mm;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8mm;
+    border-top: 1px solid var(--line);
+  }
+  .company .addr .lbl {
+    font-size: 9px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--mute);
+    font-weight: 600; margin-bottom: 6px;
+  }
+  .company .addr p { font-size: 10.5px; color: var(--ink); line-height: 1.55; }
 
-  /* Language switcher (screen only) */
+  /* ================================================================ */
+  /* ============ PAGE 7 — PARTNERSHIP + CONTACT ============ */
+  /* ================================================================ */
+  .partner {
+    grid-template-rows: auto auto 1fr auto;
+    background: var(--cream);
+    padding: 22mm 22mm 16mm;
+  }
+  .partner .head { max-width: 180mm; }
+  .partner .head h2 { margin-top: 6px; }
+  .partner .head p { margin-top: 12px; max-width: 150mm; }
+  .partner .models {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 6mm; margin-top: 12mm;
+  }
+  .model-card {
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    padding: 10mm 10mm 10mm;
+    position: relative;
+  }
+  .model-card .idx {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.2em; color: var(--lilac);
+    margin-bottom: 12px;
+  }
+  .model-card h3 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 26px; font-weight: 400; line-height: 1;
+    margin-bottom: 10px;
+  }
+  :lang(ko) .model-card h3 { font-family: 'Noto Serif KR', serif; font-size: 22px; }
+  .model-card p { font-size: 11px; }
+  .model-card .moq-row {
+    margin-top: 10mm; padding-top: 10px;
+    border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .model-card .moq-row .lbl {
+    font-size: 9px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--mute);
+    font-weight: 600;
+  }
+  .model-card .moq-row .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500; color: var(--ink);
+  }
+  .partner .foot {
+    margin-top: auto;
+    border-top: 1px solid var(--line);
+    padding-top: 8mm;
+    display: grid; grid-template-columns: 1.3fr 1fr 1fr auto;
+    gap: 10mm; align-items: end;
+  }
+  .partner .foot .eyebrow { margin-bottom: 6px; }
+  .partner .foot .lbl {
+    font-size: 9px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--mute);
+    font-weight: 600; margin-bottom: 4px;
+  }
+  .partner .foot .val {
+    font-size: 13px; color: var(--ink); font-weight: 500;
+    font-family: 'Inter', sans-serif;
+  }
+  .partner .foot .val.serif {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 20px; font-weight: 400;
+  }
+  :lang(ko) .partner .foot .val.serif { font-family: 'Noto Serif KR', serif; font-size: 16px; }
+  .partner .foot .copy { font-size: 9px; color: var(--mute); text-align: right; }
+
+  /* ================================================================ */
+  /* ============ Controls + Print ============ */
+  /* ================================================================ */
   .controls {
-    position: fixed; top: 16px; right: 16px; z-index: 100;
-    background: var(--ink); color: #fff; padding: 8px; border-radius: 4px;
-    display: flex; gap: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    position: fixed; top: 20px; right: 20px; z-index: 1000;
+    background: var(--dark); color: #fff; padding: 10px;
+    display: flex; gap: 6px; border-radius: 2px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     font-family: 'Inter', sans-serif;
   }
   .controls button {
-    background: transparent; color: #fff; border: 1px solid #555;
-    padding: 6px 10px; font-size: 11px; letter-spacing: 0.1em;
-    cursor: pointer; font-weight: 600; text-transform: uppercase;
+    background: transparent; color: #fff;
+    border: 1px solid #3a3530;
+    padding: 8px 12px; font-size: 10px;
+    letter-spacing: 0.15em; cursor: pointer;
+    font-weight: 600; text-transform: uppercase;
+    font-family: inherit;
   }
   .controls button.active { background: var(--lilac); border-color: var(--lilac); }
-  .controls button:hover:not(.active) { border-color: #888; }
-  .controls .sep { width: 1px; background: #444; margin: 0 4px; }
-  .controls .print-btn { background: #fff; color: var(--ink); border-color: #fff; }
+  .controls button:hover:not(.active) { border-color: #6a635a; }
+  .controls .sep { width: 1px; background: #3a3530; margin: 0 4px; }
+  .controls .print-btn { background: var(--cream); color: var(--ink); border-color: var(--cream); }
+  .controls .print-btn:hover { background: #fff; }
 
-  /* Print rules */
-  @page { size: A4; margin: 0; }
+  @page { size: A4 landscape; margin: 0; }
   @media print {
     html, body { background: #fff; }
     .controls { display: none !important; }
-    .page { margin: 0; box-shadow: none; page-break-after: always; width: 210mm; height: 297mm; }
+    .page {
+      margin: 0; box-shadow: none;
+      width: 297mm; height: 210mm;
+      page-break-after: always;
+    }
     .page:last-child { page-break-after: auto; }
   }
 </style>
 </head>
 <body>
 
-<!-- Language + Print controls -->
 <div class="controls" id="controls">
   <button data-lang="en" class="active">EN</button>
   <button data-lang="ko">KO</button>
@@ -122,501 +652,538 @@
   <button class="print-btn" onclick="window.print()">PDF ↓</button>
 </div>
 
-<!-- ============ PAGE 1 — COVER ============ -->
+<!-- ================== PAGE 1 — COVER ================== -->
 <section class="page cover">
-  <div class="brand-mark">BRITZMEDI</div>
-  <div class="brand-right" data-i18n="cover.tagmark">PRODUCT BROCHURE · 2026</div>
+  <div class="cover-left">
+    <div class="house">BRITZMEDI <span>— SINCE 2017</span></div>
 
-  <div class="cover-mid" style="margin-top: 30mm;">
-    <div class="eyebrow" data-i18n="cover.eyebrow">Daily Facial Device · Made in Korea</div>
-    <h1>NEWCHAE<br><span style="font-weight: 500; color: var(--lilac);">SHOT</span></h1>
-    <p class="tag" data-i18n="cover.tag">A three-in-one RF beauty device — RF, EMS, and ELP technologies engineered into a single home-use device by BRITZMEDI, a Korean medical device manufacturer.</p>
-  </div>
+    <div class="cover-title">
+      <div class="line"></div>
+      <div class="kicker" data-i18n="cover.kicker">Product Brochure · 2026</div>
+      <h1 class="display">NEWCHAE<br><span class="shot">Shot.</span></h1>
+      <p class="sub" data-i18n="cover.sub">A three-in-one RF beauty device — RF, EMS and ELP, engineered into a single home-use device by a Korean medical device manufacturer.</p>
+    </div>
 
-  <div class="cover-bot">
-    <div class="certs">KC · CE · FCC · ISO 13485</div>
-    <div data-i18n="cover.model">Model BD-ERD24NWP</div>
+    <div class="meta">
+      <div class="cert">KC · CE · FCC · ISO 13485</div>
+      <div class="model">Model BD-ERD24NWP</div>
+    </div>
   </div>
-  <div class="page-num">01</div>
+  <div class="cover-right">
+    <img src="images/newchea black and white2.png" alt="NEWCHAE SHOT">
+    <div class="corner-tag" data-i18n="cover.quote">"Feel the first-time excitement,<br>every day."</div>
+  </div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
+    <span class="num">01 / 07</span>
+  </div>
 </section>
 
-<!-- ============ PAGE 2 — OVERVIEW ============ -->
-<section class="page">
-  <div class="brand-mark">NEWCHAE</div>
-  <div class="brand-right" data-i18n="nav.overview">OVERVIEW</div>
-
-  <div style="margin-top: 18mm;">
+<!-- ================== PAGE 2 — OVERVIEW ================== -->
+<section class="page overview">
+  <div class="left-img">
+    <img src="images/newchea flower and cream.png" alt="NEWCHAE lifestyle">
+    <div class="overlay" data-i18n="p2.overlay">"Three professional technologies,<br>distilled into one daily ritual."</div>
+  </div>
+  <div class="right-content">
     <div class="eyebrow" data-i18n="p2.eyebrow">What is NEWCHAE</div>
     <h2 data-i18n="p2.h2">A 3-in-1 beauty device,<br>engineered in Korea.</h2>
-    <p class="lead" style="margin-top: 10mm; max-width: 150mm;" data-i18n="p2.lead">NEWCHAE SHOT combines three professional-grade technologies — RF, EMS, and ELP — into a single home-use device. Designed and manufactured by BRITZMEDI, a Korean medical device maker since 2017.</p>
-    <p style="margin-top: 6mm; max-width: 150mm;" data-i18n="p2.body">Clinically proven to improve skin density by <strong class="accent">48%</strong> and reduce pore size by <strong class="accent">74%</strong> in just two weeks of consistent use.</p>
-  </div>
+    <p class="lead intro" data-i18n="p2.lead">NEWCHAE SHOT combines RF, EMS, and ELP into a single home-use device. Designed and manufactured by BRITZMEDI — a Korean medical device maker operating since 2017.</p>
+    <p style="margin-top: 14px; max-width: 120mm;" data-i18n="p2.body">Clinically proven to improve skin density by <strong class="accent">48%</strong> and reduce pore size by <strong class="accent">74%</strong> in just two weeks of consistent use.</p>
 
-  <div class="four-col" style="margin-top: 18mm;">
-    <div class="stat"><div class="num">5</div><div class="lbl" data-i18n="p2.s1">Countries</div></div>
-    <div class="stat"><div class="num">3</div><div class="lbl" data-i18n="p2.s2">Technologies</div></div>
-    <div class="stat"><div class="num hi">48%</div><div class="lbl" data-i18n="p2.s3">Skin Density ↑</div></div>
-    <div class="stat"><div class="num hi">74%</div><div class="lbl" data-i18n="p2.s4">Pore Size ↓</div></div>
-  </div>
+    <div class="stats">
+      <div class="stat">
+        <div class="num">5</div>
+        <div class="lbl" data-i18n="p2.s1">Countries</div>
+        <div class="cap" data-i18n="p2.s1c">KR · TW · CN · TH · VN</div>
+      </div>
+      <div class="stat">
+        <div class="num">3</div>
+        <div class="lbl" data-i18n="p2.s2">Core Technologies</div>
+        <div class="cap">RF · EMS · ELP</div>
+      </div>
+      <div class="stat">
+        <div class="num hi">48<span style="font-size: 24px;">%</span></div>
+        <div class="lbl" data-i18n="p2.s3">Skin Density ↑</div>
+        <div class="cap" data-i18n="p2.s3c">After 2 weeks</div>
+      </div>
+      <div class="stat">
+        <div class="num hi">74<span style="font-size: 24px;">%</span></div>
+        <div class="lbl" data-i18n="p2.s4">Pore Size ↓</div>
+        <div class="cap" data-i18n="p2.s4c">After 2 weeks</div>
+      </div>
+    </div>
 
-  <div class="divider" style="margin-top: 18mm;"></div>
-  <div>
-    <div class="eyebrow" data-i18n="p2.gp">Global Presence</div>
-    <p data-i18n="p2.gp_body">Currently distributed in Korea, Taiwan, China, Thailand, and Vietnam — with expansion into additional markets planned for 2026.</p>
+    <div class="footnote" data-i18n="p2.src">Source: Korea Institute of Dermatological Sciences · 2-week clinical study</div>
   </div>
-
-  <div class="page-num">02</div>
+  <div class="frame-top">
+    <span>NEWCHAE</span>
+    <span data-i18n="nav.overview">OVERVIEW</span>
+  </div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
+    <span class="num">02 / 07</span>
+  </div>
 </section>
 
-<!-- ============ PAGE 3 — PRODUCT / 3 MODES ============ -->
-<section class="page">
-  <div class="brand-mark">NEWCHAE</div>
-  <div class="brand-right" data-i18n="nav.product">PRODUCT</div>
-
-  <div style="margin-top: 18mm;">
+<!-- ================== PAGE 3 — THREE MODES ================== -->
+<section class="page modes">
+  <div class="head">
     <div class="eyebrow" data-i18n="p3.eyebrow">3-Mode System</div>
     <h2 data-i18n="p3.h2">Three modes.<br>One device.</h2>
-    <p class="lead" style="margin-top: 8mm; max-width: 150mm;" data-i18n="p3.lead">Each mode uses a distinct frequency optimized for a specific skincare goal.</p>
+    <p class="lead" data-i18n="p3.lead">Each mode uses a distinct frequency optimized for a specific skincare goal — precisely tuned by BRITZMEDI engineers.</p>
   </div>
 
-  <div class="three-col" style="margin-top: 14mm;">
-    <div class="card">
-      <div class="tag">GLOW</div>
+  <div class="grid">
+    <div class="mode-card">
+      <div class="tag-ribbon">GLOW</div>
+      <div class="big-num">01 · MODE</div>
       <h3 data-i18n="p3.m1.h">RF Mode</h3>
-      <div class="sub">1 MHz</div>
-      <p data-i18n="p3.m1.p">Delivers thermal energy into the deep dermal layer to support collagen activity and skin firmness.</p>
+      <div class="freq">1 MHz Radiofrequency</div>
+      <p data-i18n="p3.m1.p">Delivers thermal energy into the deep dermal layer to support collagen activity and strengthen skin firmness from within.</p>
     </div>
-    <div class="card">
-      <div class="tag">TONE</div>
+    <div class="mode-card lilac">
+      <div class="tag-ribbon">TONE</div>
+      <div class="big-num">02 · MODE</div>
       <h3 data-i18n="p3.m2.h">EMS Mode</h3>
-      <div class="sub">1 KHz</div>
-      <p data-i18n="p3.m2.p">Stimulates facial muscles through gentle micro-currents for facial contour toning.</p>
+      <div class="freq">1 KHz Microcurrent</div>
+      <p data-i18n="p3.m2.p">Stimulates facial muscles through gentle micro-currents, helping to tone facial contours and define the jawline.</p>
     </div>
-    <div class="card">
-      <div class="tag">BOOST</div>
+    <div class="mode-card rose">
+      <div class="tag-ribbon">BOOST</div>
+      <div class="big-num">03 · MODE</div>
       <h3 data-i18n="p3.m3.h">ELP Mode</h3>
-      <div class="sub">5–20 KHz</div>
-      <p data-i18n="p3.m3.p">Enhances absorption of skincare actives through temporary micro-pathways in the skin barrier.</p>
+      <div class="freq">5–20 KHz Electroporation</div>
+      <p data-i18n="p3.m3.p">Enhances absorption of skincare actives by forming temporary micro-pathways in the skin barrier without needles.</p>
     </div>
   </div>
 
-  <div class="divider" style="margin-top: 16mm;"></div>
-  <div>
-    <div class="eyebrow" data-i18n="p3.clinical">Clinical Evidence · 2-Week Study</div>
-    <div class="two-col" style="gap: 8mm; margin-top: 6mm;">
-      <div style="display: flex; align-items: baseline; gap: 10mm;">
-        <div style="font-size: 44px; font-weight: 300; color: var(--lilac);">+48%</div>
-        <div>
-          <div style="font-size: 13px; font-weight: 500;" data-i18n="p3.c1.h">Skin Density</div>
-          <p style="font-size: 11px;" data-i18n="p3.c1.p">Improvement after 2 weeks</p>
-        </div>
-      </div>
-      <div style="display: flex; align-items: baseline; gap: 10mm;">
-        <div style="font-size: 44px; font-weight: 300; color: var(--lilac);">−74%</div>
-        <div>
-          <div style="font-size: 13px; font-weight: 500;" data-i18n="p3.c2.h">Pore Size</div>
-          <p style="font-size: 11px;" data-i18n="p3.c2.p">Reduction after 2 weeks</p>
-        </div>
-      </div>
-    </div>
-    <p style="font-size: 10px; color: var(--graphite); margin-top: 6mm;" data-i18n="p3.src">Source: Korea Institute of Dermatological Sciences</p>
+  <div class="frame-top">
+    <span>NEWCHAE</span>
+    <span data-i18n="nav.product">PRODUCT · 3-MODE SYSTEM</span>
   </div>
-
-  <div class="page-num">03</div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
+    <span class="num">03 / 07</span>
+  </div>
 </section>
 
-<!-- ============ PAGE 4 — SPECIFICATIONS ============ -->
-<section class="page">
-  <div class="brand-mark">NEWCHAE</div>
-  <div class="brand-right" data-i18n="nav.specs">SPECIFICATIONS</div>
-
-  <div style="margin-top: 18mm;">
-    <div class="eyebrow" data-i18n="p4.eyebrow">Technical Details</div>
-    <h2 data-i18n="p4.h2">Built to global standards.</h2>
-    <p class="lead" style="margin-top: 8mm; max-width: 150mm;" data-i18n="p4.lead">Every component — from battery cells to charging port — is engineered for international certification and long-term reliability.</p>
+<!-- ================== PAGE 4 — CLINICAL + SPECS ================== -->
+<section class="page clinical">
+  <div class="left">
+    <div class="eyebrow" data-i18n="p4.eyebrow">Clinical Evidence</div>
+    <h2 data-i18n="p4.h2">Proven in<br>two weeks.</h2>
+    <div class="big-stats">
+      <div class="big-stat">
+        <div class="value">+48<span class="sup">%</span></div>
+        <div class="meta">
+          <div class="metric" data-i18n="p4.c1.h">Skin Density</div>
+          <div class="desc" data-i18n="p4.c1.d">Independent 2-Week Study</div>
+        </div>
+      </div>
+      <div class="big-stat">
+        <div class="value">−74<span class="sup">%</span></div>
+        <div class="meta">
+          <div class="metric" data-i18n="p4.c2.h">Pore Size</div>
+          <div class="desc" data-i18n="p4.c2.d">Visible Reduction in 14 Days</div>
+        </div>
+      </div>
+    </div>
+    <div class="src" data-i18n="p4.src">Source: Korea Institute of Dermatological Sciences · Independent clinical study</div>
   </div>
-
-  <div class="two-col" style="margin-top: 12mm; gap: 14mm;">
-    <table class="spec">
+  <div class="right">
+    <div class="eyebrow" data-i18n="p4.eyebrow2">Technical Specifications</div>
+    <h2 style="font-size: 28px;" data-i18n="p4.h2b">Built to global<br>standards.</h2>
+    <table class="spec-table">
       <tr><td data-i18n="spec.model">Model</td><td>BD-ERD24NWP</td></tr>
-      <tr><td data-i18n="spec.rating">Rating</td><td>DC 5V, &gt;1A</td></tr>
       <tr><td data-i18n="spec.battery">Battery</td><td>3.6V · 3,350mAh · Samsung SDI</td></tr>
-      <tr><td data-i18n="spec.charging">Charging</td><td>USB-C</td></tr>
+      <tr><td data-i18n="spec.charging">Charging</td><td>USB-C · DC 5V, &gt;1A</td></tr>
       <tr><td data-i18n="spec.modes">Modes</td><td>RF / EMS / ELP</td></tr>
-      <tr><td data-i18n="spec.rfpower">RF Power</td><td>Max 8W</td></tr>
-      <tr><td data-i18n="spec.rffreq">RF Frequency</td><td>1 MHz</td></tr>
+      <tr><td data-i18n="spec.rfpower">RF Power</td><td>Max 8W @ 1 MHz</td></tr>
+      <tr><td data-i18n="spec.freq">Frequencies</td><td>1 MHz / 1 KHz / 5–20 KHz</td></tr>
+      <tr><td data-i18n="spec.dim">Dimensions</td><td>54 × 50 × 191 mm · 567 g</td></tr>
+      <tr><td data-i18n="spec.cert">Certifications</td><td>KC · CE · FCC · Made in Korea</td></tr>
     </table>
-    <table class="spec">
-      <tr><td data-i18n="spec.emsfreq">EMS Frequency</td><td>1 KHz</td></tr>
-      <tr><td data-i18n="spec.elpfreq">ELP Frequency</td><td>5–20 KHz</td></tr>
-      <tr><td data-i18n="spec.vib">Vibration</td><td>10,000 rpm</td></tr>
-      <tr><td data-i18n="spec.dim">Dimensions</td><td>54 × 50 × 191 mm</td></tr>
-      <tr><td data-i18n="spec.weight">Weight</td><td>567 g</td></tr>
-      <tr><td data-i18n="spec.cert">Certifications</td><td>KC · CE · FCC</td></tr>
-      <tr><td data-i18n="spec.origin">Origin</td><td>Made in Korea</td></tr>
-    </table>
-  </div>
 
-  <div class="divider" style="margin-top: 14mm;"></div>
-  <div>
-    <div class="eyebrow" data-i18n="p4.box">What's in the Box</div>
-    <ul class="clean" style="max-width: 170mm; margin-top: 4mm;">
-      <li data-i18n="p4.b1">NEWCHAE SHOT Main Device</li>
-      <li data-i18n="p4.b2">USB-C Charging Cable</li>
-      <li data-i18n="p4.b3">Travel Pouch</li>
-      <li data-i18n="p4.b4">User Manual (Multi-language)</li>
-      <li style="color: var(--graphite);" data-i18n="p4.b5">Optional: Peptide Lifting Cream (80ml)</li>
-    </ul>
+    <div class="box">
+      <h4 data-i18n="p4.box">What's in the Box</h4>
+      <ul>
+        <li data-i18n="p4.b1">NEWCHAE SHOT Main Device</li>
+        <li data-i18n="p4.b2">USB-C Charging Cable · Travel Pouch</li>
+        <li data-i18n="p4.b3">User Manual (Multi-language)</li>
+      </ul>
+    </div>
   </div>
-
-  <div class="page-num">04</div>
+  <div class="frame-top">
+    <span>NEWCHAE</span>
+    <span data-i18n="nav.specs">CLINICAL & SPECIFICATIONS</span>
+  </div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
+    <span class="num">04 / 07</span>
+  </div>
 </section>
 
-<!-- ============ PAGE 5 — TECHNOLOGY ============ -->
-<section class="page">
-  <div class="brand-mark">NEWCHAE</div>
-  <div class="brand-right" data-i18n="nav.tech">TECHNOLOGY</div>
-
-  <div style="margin-top: 18mm;">
+<!-- ================== PAGE 5 — TECHNOLOGY ================== -->
+<section class="page tech">
+  <div class="txt">
     <div class="eyebrow" data-i18n="p5.eyebrow">Core Technology</div>
     <h2 data-i18n="p5.h2">Built on patents,<br>not hype.</h2>
-    <p class="lead" style="margin-top: 8mm; max-width: 150mm;" data-i18n="p5.lead">Two registered RF patents. Nearly a decade of in-house R&amp;D. Zero outsourcing.</p>
-  </div>
+    <p class="lead" data-i18n="p5.lead">Two registered RF patents. Nearly a decade of in-house R&amp;D. Zero outsourcing.</p>
+    <p data-i18n="p5.body">Unlike conventional single-channel RF devices, NEWCHAE's patented multi-shot system distributes energy across multiple channels simultaneously — delivering higher efficacy at lower power, and reducing surface discomfort while reaching the target dermal layer uniformly.</p>
 
-  <div class="two-col" style="margin-top: 14mm;">
-    <div>
-      <h3 data-i18n="p5.mc.h">Multi-Shot RF Technology</h3>
-      <p style="margin-top: 6mm;" data-i18n="p5.mc.p1">Unlike conventional single-channel RF devices, NEWCHAE's patented multi-shot system distributes energy across multiple channels simultaneously.</p>
-      <p style="margin-top: 4mm;" data-i18n="p5.mc.p2">The result: higher efficacy at lower power levels, reducing the risk of surface discomfort while delivering energy uniformly to the target dermal layer.</p>
-    </div>
-    <div class="card" style="padding: 8mm;">
-      <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--line);">
-        <span style="font-size: 10px; color: var(--graphite); text-transform: uppercase; letter-spacing: 0.08em;" data-i18n="p5.t1">Conventional RF</span>
-        <span style="font-size: 11px; font-weight: 500;" data-i18n="p5.v1">Single channel</span>
+    <div class="compare">
+      <div class="row">
+        <span class="lbl" data-i18n="p5.t1">Conventional RF</span>
+        <span class="val" data-i18n="p5.v1">Single channel</span>
       </div>
-      <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--line);">
-        <span style="font-size: 10px; color: var(--graphite); text-transform: uppercase; letter-spacing: 0.08em;" data-i18n="p5.t2">NEWCHAE RF</span>
-        <span style="font-size: 11px; font-weight: 600; color: var(--lilac);" data-i18n="p5.v2">Multi-channel shot</span>
+      <div class="row hi">
+        <span class="lbl" data-i18n="p5.t2">NEWCHAE RF</span>
+        <span class="val" data-i18n="p5.v2">Multi-channel shot</span>
       </div>
-      <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--line);">
-        <span style="font-size: 10px; color: var(--graphite); text-transform: uppercase; letter-spacing: 0.08em;" data-i18n="p5.t3">Heat Distribution</span>
-        <span style="font-size: 11px; font-weight: 500;" data-i18n="p5.v3">Uniform</span>
+      <div class="row">
+        <span class="lbl" data-i18n="p5.t3">Heat Distribution</span>
+        <span class="val" data-i18n="p5.v3">Uniform across dermis</span>
       </div>
-      <div style="display: flex; justify-content: space-between; padding: 6px 0;">
-        <span style="font-size: 10px; color: var(--graphite); text-transform: uppercase; letter-spacing: 0.08em;" data-i18n="p5.t4">Power Required</span>
-        <span style="font-size: 11px; font-weight: 500;" data-i18n="p5.v4">Lower</span>
+      <div class="row">
+        <span class="lbl" data-i18n="p5.t4">Power Required</span>
+        <span class="val" data-i18n="p5.v4">Lower · Safer</span>
       </div>
     </div>
   </div>
-
-  <div class="divider" style="margin-top: 14mm;"></div>
-  <div>
-    <div class="eyebrow" data-i18n="p5.ip">Registered Patents</div>
-    <div class="two-col" style="gap: 8mm; margin-top: 4mm;">
-      <div class="card">
-        <div class="sub">Patent No. 10-2113199</div>
-        <h3 style="font-size: 14px;" data-i18n="p5.pa1.h">RF Thermal Treatment Device</h3>
-        <p style="margin-top: 4px; font-size: 10px;" data-i18n="p5.pa1.p">KIPO · Registered 2020 · BRITZMEDI Co., Ltd.</p>
+  <div class="img-side">
+    <img src="images/newchea black and white3.png" alt="NEWCHAE technology">
+    <div class="patents">
+      <div class="patent">
+        <div class="no">Patent No. 10-2113199</div>
+        <h3 data-i18n="p5.pa1.h">RF Thermal Treatment Device</h3>
+        <div class="off" data-i18n="p5.pa1.p">KIPO · Registered 2020</div>
       </div>
-      <div class="card">
-        <div class="sub">Patent No. 10-2118901</div>
-        <h3 style="font-size: 14px;" data-i18n="p5.pa2.h">Segmented Electrode RF Device</h3>
-        <p style="margin-top: 4px; font-size: 10px;" data-i18n="p5.pa2.p">KIPO · Registered 2020 · BRITZMEDI Co., Ltd.</p>
+      <div class="patent">
+        <div class="no">Patent No. 10-2118901</div>
+        <h3 data-i18n="p5.pa2.h">Segmented Electrode RF Device</h3>
+        <div class="off" data-i18n="p5.pa2.p">KIPO · Registered 2020</div>
       </div>
     </div>
   </div>
-
-  <div class="page-num">05</div>
+  <div class="frame-top">
+    <span>BRITZMEDI</span>
+    <span data-i18n="nav.tech">TECHNOLOGY</span>
+  </div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
+    <span class="num">05 / 07</span>
+  </div>
 </section>
 
-<!-- ============ PAGE 6 — COMPANY ============ -->
-<section class="page">
-  <div class="brand-mark">BRITZMEDI</div>
-  <div class="brand-right" data-i18n="nav.company">COMPANY</div>
-
-  <div style="margin-top: 18mm;">
+<!-- ================== PAGE 6 — COMPANY ================== -->
+<section class="page company">
+  <div class="hero-img">
+    <img src="images/newchea black and white4.png" alt="BRITZMEDI">
+    <div class="overlay">
+      <div class="established" data-i18n="p6.est">Established 2017 · Seongnam, Korea</div>
+      <div class="name">BRITZMEDI</div>
+    </div>
+  </div>
+  <div class="right">
     <div class="eyebrow" data-i18n="p6.eyebrow">The Company Behind NEWCHAE</div>
-    <h2 data-i18n="p6.h2">BRITZMEDI Co., Ltd.</h2>
-    <p class="lead" style="margin-top: 8mm; max-width: 150mm;" data-i18n="p6.lead">A Korean medical device manufacturer specializing in aesthetic technology since 2017. FDA-registered contract manufacturer, ISO 13485:2016 certified.</p>
-  </div>
+    <h2 data-i18n="p6.h2">A Korean medical device<br>maker, by design.</h2>
+    <p class="lead" data-i18n="p6.lead">BRITZMEDI specializes in aesthetic medical technology. FDA-registered contract manufacturer, ISO 13485:2016 certified, with full in-house R&amp;D and production.</p>
 
-  <div class="four-col" style="margin-top: 12mm;">
-    <div class="stat"><div class="num">2017</div><div class="lbl" data-i18n="p6.s1">Founded</div></div>
-    <div class="stat"><div class="num">11</div><div class="lbl" data-i18n="p6.s2">Patents</div></div>
-    <div class="stat"><div class="num">5</div><div class="lbl" data-i18n="p6.s3">Trademarks</div></div>
-    <div class="stat"><div class="num hi" style="font-size: 28px; padding-top: 6px;">FDA</div><div class="lbl" data-i18n="p6.s4">Registered</div></div>
-  </div>
-
-  <div class="divider" style="margin-top: 14mm;"></div>
-  <div>
-    <div class="eyebrow" data-i18n="p6.cert">Certifications &amp; Quality</div>
-    <div class="three-col" style="margin-top: 4mm; gap: 6mm;">
-      <div class="card"><h4>ISO 13485:2016</h4><p style="font-size: 10px;" data-i18n="p6.cert1">Medical Device Quality Management</p></div>
-      <div class="card"><h4>GMP</h4><p style="font-size: 10px;" data-i18n="p6.cert2">Korea MFDS Certified</p></div>
-      <div class="card"><h4>FDA</h4><p style="font-size: 10px;" data-i18n="p6.cert3">Registered Contract Manufacturer</p></div>
-      <div class="card"><h4>KC</h4><p style="font-size: 10px;" data-i18n="p6.cert4">Korea Certification</p></div>
-      <div class="card"><h4>CE</h4><p style="font-size: 10px;" data-i18n="p6.cert5">European Conformity</p></div>
-      <div class="card"><h4>FCC</h4><p style="font-size: 10px;" data-i18n="p6.cert6">U.S. Federal Communications</p></div>
-    </div>
-  </div>
-
-  <div class="divider" style="margin-top: 14mm;"></div>
-  <div>
-    <div class="eyebrow" data-i18n="p6.mfg">Manufacturing</div>
-    <div class="two-col" style="margin-top: 4mm;">
-      <div>
-        <div class="sub" data-i18n="p6.addr">Address</div>
-        <p style="font-size: 12px; color: var(--ink);">1211-ho, Kranz Techno<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Republic of Korea</p>
+    <div class="keys">
+      <div class="key">
+        <div class="num">2017</div>
+        <div class="lbl" data-i18n="p6.s1">Founded</div>
       </div>
-      <div>
-        <div class="sub" data-i18n="p6.lic">License</div>
-        <p style="font-size: 12px; color: var(--ink);" data-i18n="p6.lic_p">MFDS Manufacturing License<br>No. <strong class="accent">6044</strong></p>
+      <div class="key">
+        <div class="num">11</div>
+        <div class="lbl" data-i18n="p6.s2">Patents</div>
+      </div>
+      <div class="key">
+        <div class="num">5</div>
+        <div class="lbl" data-i18n="p6.s3">Trademarks</div>
+      </div>
+      <div class="key">
+        <div class="num s">FDA</div>
+        <div class="lbl" data-i18n="p6.s4">Registered</div>
       </div>
     </div>
-  </div>
 
-  <div class="page-num">06</div>
+    <div class="certs-row">
+      <div class="cert"><div class="nm">ISO 13485:2016</div><div class="dc" data-i18n="p6.c1">Quality Management</div></div>
+      <div class="cert"><div class="nm">MFDS GMP</div><div class="dc" data-i18n="p6.c2">Korea Certified</div></div>
+      <div class="cert"><div class="nm">FDA</div><div class="dc" data-i18n="p6.c3">Contract Manufacturer</div></div>
+      <div class="cert"><div class="nm">KC</div><div class="dc" data-i18n="p6.c4">Korea</div></div>
+      <div class="cert"><div class="nm">CE</div><div class="dc" data-i18n="p6.c5">Europe</div></div>
+      <div class="cert"><div class="nm">FCC</div><div class="dc" data-i18n="p6.c6">USA</div></div>
+    </div>
+
+    <div class="addr">
+      <div>
+        <div class="lbl" data-i18n="p6.addr">Manufacturing Address</div>
+        <p>1211-ho, Kranz Techno<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do, Korea</p>
+      </div>
+      <div>
+        <div class="lbl" data-i18n="p6.lic">MFDS License</div>
+        <p data-i18n="p6.lic_p">Manufacturing License<br>No. <strong class="accent">6044</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="frame-top">
+    <span>BRITZMEDI</span>
+    <span data-i18n="nav.company">COMPANY</span>
+  </div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
+    <span class="num">06 / 07</span>
+  </div>
 </section>
 
-<!-- ============ PAGE 7 — PARTNERSHIP + CONTACT ============ -->
-<section class="page">
-  <div class="brand-mark">NEWCHAE</div>
-  <div class="brand-right" data-i18n="nav.partner">PARTNERSHIP</div>
-
-  <div style="margin-top: 18mm;">
+<!-- ================== PAGE 7 — PARTNERSHIP ================== -->
+<section class="page partner">
+  <div class="head">
     <div class="eyebrow" data-i18n="p7.eyebrow">Partnership Models</div>
-    <h2 data-i18n="p7.h2">Three ways to work with us.</h2>
-    <p class="lead" style="margin-top: 8mm; max-width: 150mm;" data-i18n="p7.lead">Choose the partnership structure that fits your market strategy. All models include full marketing and regulatory documentation support.</p>
+    <h2 data-i18n="p7.h2">Let's bring NEWCHAE<br>to your market.</h2>
+    <p class="lead" data-i18n="p7.lead">Choose the partnership structure that fits your market strategy. All models include full marketing and regulatory documentation support.</p>
   </div>
 
-  <div class="three-col" style="margin-top: 12mm;">
-    <div class="card">
+  <div class="models">
+    <div class="model-card">
+      <div class="idx">01 · MODEL</div>
       <h3 data-i18n="p7.m1.h">Distributor</h3>
-      <p style="margin-top: 6px;" data-i18n="p7.m1.p">Exclusive rights for your market. Tiered pricing based on order volume.</p>
-      <div class="divider" style="margin: 6mm 0 3mm;"></div>
-      <div class="sub" data-i18n="p7.moq">MOQ</div>
-      <div style="font-size: 14px; font-weight: 500;">2,000 <span data-i18n="p7.units">units</span></div>
+      <p data-i18n="p7.m1.p">Exclusive rights for your market. Tiered pricing based on order volume. No annual commitment.</p>
+      <div class="moq-row">
+        <span class="lbl" data-i18n="p7.moq">MOQ</span>
+        <span class="val">2,000 <span style="font-size: 10px; color: var(--mute);" data-i18n="p7.units">units</span></span>
+      </div>
     </div>
-    <div class="card">
+    <div class="model-card">
+      <div class="idx">02 · MODEL</div>
       <h3 data-i18n="p7.m2.h">Wholesale</h3>
-      <p style="margin-top: 6px;" data-i18n="p7.m2.p">Volume-based bulk orders for existing retail channels. Non-exclusive.</p>
-      <div class="divider" style="margin: 6mm 0 3mm;"></div>
-      <div class="sub" data-i18n="p7.moq">MOQ</div>
-      <div style="font-size: 14px; font-weight: 500;">100 <span data-i18n="p7.units">units</span></div>
+      <p data-i18n="p7.m2.p">Volume-based bulk orders for existing retail channels. Non-exclusive, flexible ordering.</p>
+      <div class="moq-row">
+        <span class="lbl" data-i18n="p7.moq">MOQ</span>
+        <span class="val">100 <span style="font-size: 10px; color: var(--mute);" data-i18n="p7.units">units</span></span>
+      </div>
     </div>
-    <div class="card">
+    <div class="model-card">
+      <div class="idx">03 · MODEL</div>
       <h3 data-i18n="p7.m3.h">OEM / ODM</h3>
-      <p style="margin-top: 6px;" data-i18n="p7.m3.p">Custom branding and specifications based on NEWCHAE core technology.</p>
-      <div class="divider" style="margin: 6mm 0 3mm;"></div>
-      <div class="sub" data-i18n="p7.moq">MOQ</div>
-      <div style="font-size: 14px; font-weight: 500;">2,000 <span data-i18n="p7.units">units</span></div>
+      <p data-i18n="p7.m3.p">Custom branding and specifications built on NEWCHAE core technology. Your brand, our engineering.</p>
+      <div class="moq-row">
+        <span class="lbl" data-i18n="p7.moq">MOQ</span>
+        <span class="val">2,000 <span style="font-size: 10px; color: var(--mute);" data-i18n="p7.units">units</span></span>
+      </div>
     </div>
   </div>
 
-  <div class="cta-block">
-    <div class="eyebrow" data-i18n="p7.contact">Global Inquiry</div>
-    <div class="two-col" style="margin-top: 6mm;">
-      <div>
-        <div class="label" data-i18n="p7.email">Email</div>
-        <div class="val">sh.lee@britzmedi.co.kr</div>
-      </div>
-      <div>
-        <div class="label" data-i18n="p7.resp">Response Time</div>
-        <div class="val" data-i18n="p7.resp_v">Within 24 hours · Mon–Fri, 9:00–18:00 KST</div>
-      </div>
+  <div class="foot">
+    <div>
+      <div class="eyebrow" data-i18n="p7.contact">Global Inquiry</div>
+      <div class="lbl" data-i18n="p7.email">Email</div>
+      <div class="val serif">sh.lee@britzmedi.co.kr</div>
     </div>
-    <div class="chips">
-      <span class="chip">KC</span><span class="chip">CE</span><span class="chip">FCC</span>
-      <span class="chip">ISO 13485</span><span class="chip">FDA Registered</span><span class="chip">MFDS GMP</span>
+    <div>
+      <div class="lbl" data-i18n="p7.phone">Phone</div>
+      <div class="val">+82-70-XXXX-XXXX</div>
+      <div class="lbl" style="margin-top: 8px;" data-i18n="p7.resp">Response</div>
+      <div class="val" data-i18n="p7.resp_v">Within 24 hours</div>
     </div>
-    <p style="font-size: 9px; color: var(--graphite); margin-top: 10mm; text-align: center;">© 2026 BRITZMEDI Co., Ltd. · All rights reserved.</p>
+    <div>
+      <div class="lbl" data-i18n="p7.hours">Office Hours</div>
+      <div class="val" data-i18n="p7.hours_v">Mon–Fri · 9:00–18:00 KST</div>
+      <div class="lbl" style="margin-top: 8px;" data-i18n="p7.web">Web</div>
+      <div class="val">newchae-global.pages.dev</div>
+    </div>
+    <div class="copy">© 2026<br>BRITZMEDI Co., Ltd.<br>All rights reserved.</div>
   </div>
 
-  <div class="page-num">07</div>
+  <div class="frame-top">
+    <span>NEWCHAE</span>
+    <span data-i18n="nav.partner">PARTNERSHIP & CONTACT</span>
+  </div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI CO., LTD.</span>
+    <span class="num">07 / 07</span>
+  </div>
 </section>
 
 <script>
-// ===== i18n dictionaries =====
 const DICT = {
   en: {
-    "nav.overview": "OVERVIEW", "nav.product": "PRODUCT", "nav.specs": "SPECIFICATIONS",
-    "nav.tech": "TECHNOLOGY", "nav.company": "COMPANY", "nav.partner": "PARTNERSHIP",
-    "cover.tagmark": "PRODUCT BROCHURE · 2026",
-    "cover.eyebrow": "Daily Facial Device · Made in Korea",
-    "cover.tag": "A three-in-one RF beauty device — RF, EMS, and ELP technologies engineered into a single home-use device by BRITZMEDI, a Korean medical device manufacturer.",
-    "cover.model": "Model BD-ERD24NWP",
+    "frame.brand": "NEWCHAE · BRITZMEDI CO., LTD.",
+    "nav.overview": "OVERVIEW", "nav.product": "PRODUCT · 3-MODE SYSTEM",
+    "nav.specs": "CLINICAL & SPECIFICATIONS", "nav.tech": "TECHNOLOGY",
+    "nav.company": "COMPANY", "nav.partner": "PARTNERSHIP & CONTACT",
+
+    "cover.kicker": "Product Brochure · 2026",
+    "cover.sub": "A three-in-one RF beauty device — RF, EMS and ELP, engineered into a single home-use device by a Korean medical device manufacturer.",
+    "cover.quote": "\"Feel the first-time excitement,<br>every day.\"",
 
     "p2.eyebrow": "What is NEWCHAE",
+    "p2.overlay": "\"Three professional technologies,<br>distilled into one daily ritual.\"",
     "p2.h2": "A 3-in-1 beauty device,<br>engineered in Korea.",
-    "p2.lead": "NEWCHAE SHOT combines three professional-grade technologies — RF, EMS, and ELP — into a single home-use device. Designed and manufactured by BRITZMEDI, a Korean medical device maker since 2017.",
+    "p2.lead": "NEWCHAE SHOT combines RF, EMS, and ELP into a single home-use device. Designed and manufactured by BRITZMEDI — a Korean medical device maker operating since 2017.",
     "p2.body": "Clinically proven to improve skin density by <strong class=\"accent\">48%</strong> and reduce pore size by <strong class=\"accent\">74%</strong> in just two weeks of consistent use.",
-    "p2.s1": "Countries", "p2.s2": "Technologies", "p2.s3": "Skin Density ↑", "p2.s4": "Pore Size ↓",
-    "p2.gp": "Global Presence",
-    "p2.gp_body": "Currently distributed in Korea, Taiwan, China, Thailand, and Vietnam — with expansion into additional markets planned for 2026.",
+    "p2.s1": "Countries", "p2.s1c": "KR · TW · CN · TH · VN",
+    "p2.s2": "Core Technologies",
+    "p2.s3": "Skin Density ↑", "p2.s3c": "After 2 weeks",
+    "p2.s4": "Pore Size ↓", "p2.s4c": "After 2 weeks",
+    "p2.src": "Source: Korea Institute of Dermatological Sciences · 2-week clinical study",
 
     "p3.eyebrow": "3-Mode System",
     "p3.h2": "Three modes.<br>One device.",
-    "p3.lead": "Each mode uses a distinct frequency optimized for a specific skincare goal.",
+    "p3.lead": "Each mode uses a distinct frequency optimized for a specific skincare goal — precisely tuned by BRITZMEDI engineers.",
     "p3.m1.h": "RF Mode",
-    "p3.m1.p": "Delivers thermal energy into the deep dermal layer to support collagen activity and skin firmness.",
+    "p3.m1.p": "Delivers thermal energy into the deep dermal layer to support collagen activity and strengthen skin firmness from within.",
     "p3.m2.h": "EMS Mode",
-    "p3.m2.p": "Stimulates facial muscles through gentle micro-currents for facial contour toning.",
+    "p3.m2.p": "Stimulates facial muscles through gentle micro-currents, helping to tone facial contours and define the jawline.",
     "p3.m3.h": "ELP Mode",
-    "p3.m3.p": "Enhances absorption of skincare actives through temporary micro-pathways in the skin barrier.",
-    "p3.clinical": "Clinical Evidence · 2-Week Study",
-    "p3.c1.h": "Skin Density", "p3.c1.p": "Improvement after 2 weeks",
-    "p3.c2.h": "Pore Size", "p3.c2.p": "Reduction after 2 weeks",
-    "p3.src": "Source: Korea Institute of Dermatological Sciences",
+    "p3.m3.p": "Enhances absorption of skincare actives by forming temporary micro-pathways in the skin barrier without needles.",
 
-    "p4.eyebrow": "Technical Details",
-    "p4.h2": "Built to global standards.",
-    "p4.lead": "Every component — from battery cells to charging port — is engineered for international certification and long-term reliability.",
-    "spec.model": "Model", "spec.rating": "Rating", "spec.battery": "Battery",
-    "spec.charging": "Charging", "spec.modes": "Modes", "spec.rfpower": "RF Power",
-    "spec.rffreq": "RF Frequency", "spec.emsfreq": "EMS Frequency", "spec.elpfreq": "ELP Frequency",
-    "spec.vib": "Vibration", "spec.dim": "Dimensions", "spec.weight": "Weight",
-    "spec.cert": "Certifications", "spec.origin": "Origin",
+    "p4.eyebrow": "Clinical Evidence",
+    "p4.h2": "Proven in<br>two weeks.",
+    "p4.c1.h": "Skin Density", "p4.c1.d": "Independent 2-Week Study",
+    "p4.c2.h": "Pore Size", "p4.c2.d": "Visible Reduction in 14 Days",
+    "p4.src": "Source: Korea Institute of Dermatological Sciences · Independent clinical study",
+    "p4.eyebrow2": "Technical Specifications",
+    "p4.h2b": "Built to global<br>standards.",
+    "spec.model": "Model", "spec.battery": "Battery", "spec.charging": "Charging",
+    "spec.modes": "Modes", "spec.rfpower": "RF Power", "spec.freq": "Frequencies",
+    "spec.dim": "Dimensions / Weight", "spec.cert": "Certifications",
     "p4.box": "What's in the Box",
-    "p4.b1": "NEWCHAE SHOT Main Device", "p4.b2": "USB-C Charging Cable",
-    "p4.b3": "Travel Pouch", "p4.b4": "User Manual (Multi-language)",
-    "p4.b5": "Optional: Peptide Lifting Cream (80ml)",
+    "p4.b1": "NEWCHAE SHOT Main Device",
+    "p4.b2": "USB-C Charging Cable · Travel Pouch",
+    "p4.b3": "User Manual (Multi-language)",
 
     "p5.eyebrow": "Core Technology",
     "p5.h2": "Built on patents,<br>not hype.",
     "p5.lead": "Two registered RF patents. Nearly a decade of in-house R&D. Zero outsourcing.",
-    "p5.mc.h": "Multi-Shot RF Technology",
-    "p5.mc.p1": "Unlike conventional single-channel RF devices, NEWCHAE's patented multi-shot system distributes energy across multiple channels simultaneously.",
-    "p5.mc.p2": "The result: higher efficacy at lower power levels, reducing the risk of surface discomfort while delivering energy uniformly to the target dermal layer.",
+    "p5.body": "Unlike conventional single-channel RF devices, NEWCHAE's patented multi-shot system distributes energy across multiple channels simultaneously — delivering higher efficacy at lower power, and reducing surface discomfort while reaching the target dermal layer uniformly.",
     "p5.t1": "Conventional RF", "p5.v1": "Single channel",
     "p5.t2": "NEWCHAE RF", "p5.v2": "Multi-channel shot",
-    "p5.t3": "Heat Distribution", "p5.v3": "Uniform",
-    "p5.t4": "Power Required", "p5.v4": "Lower",
-    "p5.ip": "Registered Patents",
+    "p5.t3": "Heat Distribution", "p5.v3": "Uniform across dermis",
+    "p5.t4": "Power Required", "p5.v4": "Lower · Safer",
     "p5.pa1.h": "RF Thermal Treatment Device",
-    "p5.pa1.p": "KIPO · Registered 2020 · BRITZMEDI Co., Ltd.",
+    "p5.pa1.p": "KIPO · Registered 2020",
     "p5.pa2.h": "Segmented Electrode RF Device",
-    "p5.pa2.p": "KIPO · Registered 2020 · BRITZMEDI Co., Ltd.",
+    "p5.pa2.p": "KIPO · Registered 2020",
 
+    "p6.est": "Established 2017 · Seongnam, Korea",
     "p6.eyebrow": "The Company Behind NEWCHAE",
-    "p6.h2": "BRITZMEDI Co., Ltd.",
-    "p6.lead": "A Korean medical device manufacturer specializing in aesthetic technology since 2017. FDA-registered contract manufacturer, ISO 13485:2016 certified.",
+    "p6.h2": "A Korean medical device<br>maker, by design.",
+    "p6.lead": "BRITZMEDI specializes in aesthetic medical technology. FDA-registered contract manufacturer, ISO 13485:2016 certified, with full in-house R&D and production.",
     "p6.s1": "Founded", "p6.s2": "Patents", "p6.s3": "Trademarks", "p6.s4": "Registered",
-    "p6.cert": "Certifications & Quality",
-    "p6.cert1": "Medical Device Quality Management",
-    "p6.cert2": "Korea MFDS Certified",
-    "p6.cert3": "Registered Contract Manufacturer",
-    "p6.cert4": "Korea Certification",
-    "p6.cert5": "European Conformity",
-    "p6.cert6": "U.S. Federal Communications",
-    "p6.mfg": "Manufacturing",
-    "p6.addr": "Address", "p6.lic": "License",
-    "p6.lic_p": "MFDS Manufacturing License<br>No. <strong class=\"accent\">6044</strong>",
+    "p6.c1": "Quality Management", "p6.c2": "Korea Certified",
+    "p6.c3": "Contract Manufacturer", "p6.c4": "Korea",
+    "p6.c5": "Europe", "p6.c6": "USA",
+    "p6.addr": "Manufacturing Address", "p6.lic": "MFDS License",
+    "p6.lic_p": "Manufacturing License<br>No. <strong class=\"accent\">6044</strong>",
 
     "p7.eyebrow": "Partnership Models",
-    "p7.h2": "Three ways to work with us.",
+    "p7.h2": "Let's bring NEWCHAE<br>to your market.",
     "p7.lead": "Choose the partnership structure that fits your market strategy. All models include full marketing and regulatory documentation support.",
     "p7.m1.h": "Distributor",
-    "p7.m1.p": "Exclusive rights for your market. Tiered pricing based on order volume.",
+    "p7.m1.p": "Exclusive rights for your market. Tiered pricing based on order volume. No annual commitment.",
     "p7.m2.h": "Wholesale",
-    "p7.m2.p": "Volume-based bulk orders for existing retail channels. Non-exclusive.",
+    "p7.m2.p": "Volume-based bulk orders for existing retail channels. Non-exclusive, flexible ordering.",
     "p7.m3.h": "OEM / ODM",
-    "p7.m3.p": "Custom branding and specifications based on NEWCHAE core technology.",
+    "p7.m3.p": "Custom branding and specifications built on NEWCHAE core technology. Your brand, our engineering.",
     "p7.moq": "MOQ", "p7.units": "units",
     "p7.contact": "Global Inquiry",
-    "p7.email": "Email", "p7.resp": "Response Time",
-    "p7.resp_v": "Within 24 hours · Mon–Fri, 9:00–18:00 KST"
+    "p7.email": "Email", "p7.phone": "Phone",
+    "p7.resp": "Response", "p7.resp_v": "Within 24 hours",
+    "p7.hours": "Office Hours", "p7.hours_v": "Mon–Fri · 9:00–18:00 KST",
+    "p7.web": "Web"
   },
   ko: {
-    "nav.overview": "개요", "nav.product": "제품", "nav.specs": "사양",
-    "nav.tech": "기술", "nav.company": "회사", "nav.partner": "파트너십",
-    "cover.tagmark": "제품 브로셔 · 2026",
-    "cover.eyebrow": "데일리 페이셜 디바이스 · 메이드 인 코리아",
-    "cover.tag": "RF, EMS, ELP 세 가지 기술을 하나로 통합한 홈케어 뷰티 디바이스. 한국 의료기기 제조사 브리츠메디가 자체 설계·제조합니다.",
-    "cover.model": "모델 BD-ERD24NWP",
+    "frame.brand": "NEWCHAE · 브리츠메디(주)",
+    "nav.overview": "개요", "nav.product": "제품 · 3-모드 시스템",
+    "nav.specs": "임상 & 사양", "nav.tech": "기술",
+    "nav.company": "회사", "nav.partner": "파트너십 & 문의",
+
+    "cover.kicker": "제품 브로셔 · 2026",
+    "cover.sub": "RF, EMS, ELP 세 가지 전문 기술을 하나의 홈케어 디바이스에 담았습니다. 한국 의료기기 제조사 브리츠메디가 직접 설계·제조합니다.",
+    "cover.quote": "\"처음 그 설렘을,<br>매일 느낄 수 있도록.\"",
 
     "p2.eyebrow": "뉴채란",
+    "p2.overlay": "\"세 가지 전문 기술을<br>하나의 데일리 루틴으로.\"",
     "p2.h2": "한국에서 설계한<br>3-in-1 뷰티 디바이스.",
-    "p2.lead": "뉴채 샷은 전문가급 기술 세 가지 — RF, EMS, ELP — 를 하나의 홈케어 디바이스에 통합했습니다. 2017년 설립된 한국 의료기기 제조사 브리츠메디가 직접 설계하고 생산합니다.",
+    "p2.lead": "뉴채 샷은 RF, EMS, ELP 세 가지 기술을 하나의 홈케어 디바이스에 통합했습니다. 2017년부터 운영되는 한국 의료기기 제조사 브리츠메디가 직접 설계·생산합니다.",
     "p2.body": "2주간 꾸준히 사용 시 피부 밀도 <strong class=\"accent\">48%</strong> 증가, 모공 크기 <strong class=\"accent\">74%</strong> 감소가 임상적으로 확인되었습니다.",
-    "p2.s1": "판매국", "p2.s2": "핵심 기술", "p2.s3": "피부 밀도 ↑", "p2.s4": "모공 크기 ↓",
-    "p2.gp": "글로벌 진출 현황",
-    "p2.gp_body": "현재 한국, 대만, 중국, 태국, 베트남에서 판매 중이며, 2026년 추가 시장 진출을 계획하고 있습니다.",
+    "p2.s1": "판매 국가", "p2.s1c": "한국 · 대만 · 중국 · 태국 · 베트남",
+    "p2.s2": "핵심 기술",
+    "p2.s3": "피부 밀도 ↑", "p2.s3c": "2주 후",
+    "p2.s4": "모공 크기 ↓", "p2.s4c": "2주 후",
+    "p2.src": "출처: 한국피부과학연구소 · 2주 임상 시험",
 
     "p3.eyebrow": "3-모드 시스템",
-    "p3.h2": "세 가지 모드,<br>하나의 디바이스.",
-    "p3.lead": "각 모드는 특정 스킨케어 목적에 최적화된 주파수를 사용합니다.",
+    "p3.h2": "세 가지 모드.<br>하나의 디바이스.",
+    "p3.lead": "각 모드는 특정 스킨케어 목적에 최적화된 주파수를 사용합니다. 브리츠메디 엔지니어가 정밀하게 튜닝했습니다.",
     "p3.m1.h": "RF 모드",
-    "p3.m1.p": "진피 심층부에 열 에너지를 전달해 콜라겐 활성과 피부 탄력을 돕습니다.",
+    "p3.m1.p": "진피 심층부에 열 에너지를 전달하여 콜라겐 활성을 돕고, 안에서부터 피부 탄력을 강화합니다.",
     "p3.m2.h": "EMS 모드",
-    "p3.m2.p": "미세 전류로 얼굴 근육을 자극해 페이셜 컨투어 토닝을 제공합니다.",
+    "p3.m2.p": "미세 전류로 얼굴 근육을 부드럽게 자극하여 페이셜 컨투어를 정돈하고 턱선을 정의합니다.",
     "p3.m3.h": "ELP 모드",
-    "p3.m3.p": "피부 장벽에 일시적인 마이크로 경로를 형성해 스킨케어 유효 성분 흡수를 돕습니다.",
-    "p3.clinical": "임상 결과 · 2주 시험",
-    "p3.c1.h": "피부 밀도", "p3.c1.p": "2주 후 개선",
-    "p3.c2.h": "모공 크기", "p3.c2.p": "2주 후 감소",
-    "p3.src": "출처: 한국피부과학연구소",
+    "p3.m3.p": "피부 장벽에 일시적인 마이크로 경로를 형성해 주사 없이 스킨케어 유효 성분 흡수를 돕습니다.",
 
-    "p4.eyebrow": "기술 사양",
-    "p4.h2": "글로벌 기준으로 설계되었습니다.",
-    "p4.lead": "배터리 셀부터 충전 포트까지 — 모든 부품이 국제 인증과 장기 신뢰성을 위해 엔지니어링되었습니다.",
-    "spec.model": "모델", "spec.rating": "정격", "spec.battery": "배터리",
-    "spec.charging": "충전", "spec.modes": "모드", "spec.rfpower": "RF 출력",
-    "spec.rffreq": "RF 주파수", "spec.emsfreq": "EMS 주파수", "spec.elpfreq": "ELP 주파수",
-    "spec.vib": "진동", "spec.dim": "크기", "spec.weight": "무게",
-    "spec.cert": "인증", "spec.origin": "원산지",
+    "p4.eyebrow": "임상 결과",
+    "p4.h2": "2주 만에<br>입증되었습니다.",
+    "p4.c1.h": "피부 밀도", "p4.c1.d": "2주 독립 임상 시험",
+    "p4.c2.h": "모공 크기", "p4.c2.d": "14일 만의 가시적 감소",
+    "p4.src": "출처: 한국피부과학연구소 · 독립 임상 시험",
+    "p4.eyebrow2": "기술 사양",
+    "p4.h2b": "글로벌 기준으로<br>설계되었습니다.",
+    "spec.model": "모델", "spec.battery": "배터리", "spec.charging": "충전",
+    "spec.modes": "모드", "spec.rfpower": "RF 출력", "spec.freq": "주파수",
+    "spec.dim": "크기 / 무게", "spec.cert": "인증",
     "p4.box": "구성품",
-    "p4.b1": "뉴채 샷 본체", "p4.b2": "USB-C 충전 케이블",
-    "p4.b3": "트래블 파우치", "p4.b4": "사용자 매뉴얼 (다국어)",
-    "p4.b5": "선택: 펩타이드 리프팅 크림 (80ml)",
+    "p4.b1": "뉴채 샷 본체",
+    "p4.b2": "USB-C 충전 케이블 · 트래블 파우치",
+    "p4.b3": "사용자 매뉴얼 (다국어)",
 
     "p5.eyebrow": "핵심 기술",
     "p5.h2": "화려한 수사가 아닌,<br>특허로 입증된 기술.",
     "p5.lead": "등록 RF 특허 2건. 약 10년간의 자체 R&D. 외주 0%.",
-    "p5.mc.h": "멀티샷 RF 기술",
-    "p5.mc.p1": "기존의 단일 채널 RF 디바이스와 달리, 뉴채의 특허 받은 멀티샷 시스템은 여러 채널에 에너지를 동시에 분산합니다.",
-    "p5.mc.p2": "그 결과, 더 낮은 출력으로 높은 효능을 달성하며 표면 불편감 위험을 줄이고 목표 진피층에 에너지를 균일하게 전달합니다.",
+    "p5.body": "기존의 단일 채널 RF 디바이스와 달리, 뉴채의 특허 받은 멀티샷 시스템은 여러 채널에 에너지를 동시에 분산합니다. 더 낮은 출력으로 높은 효능을 달성하고, 표면 불편감을 줄이며, 목표 진피층에 에너지를 균일하게 전달합니다.",
     "p5.t1": "기존 RF", "p5.v1": "단일 채널",
     "p5.t2": "뉴채 RF", "p5.v2": "멀티 채널 샷",
-    "p5.t3": "열 분산", "p5.v3": "균일",
-    "p5.t4": "필요 출력", "p5.v4": "낮음",
-    "p5.ip": "등록 특허",
+    "p5.t3": "열 분산", "p5.v3": "진피층 전반 균일",
+    "p5.t4": "필요 출력", "p5.v4": "낮음 · 안전",
     "p5.pa1.h": "RF 열 치료 디바이스",
-    "p5.pa1.p": "특허청 · 2020 등록 · 브리츠메디(주)",
+    "p5.pa1.p": "한국특허청 · 2020 등록",
     "p5.pa2.h": "분할 전극 RF 디바이스",
-    "p5.pa2.p": "특허청 · 2020 등록 · 브리츠메디(주)",
+    "p5.pa2.p": "한국특허청 · 2020 등록",
 
+    "p6.est": "2017년 설립 · 경기 성남",
     "p6.eyebrow": "뉴채를 만든 회사",
-    "p6.h2": "브리츠메디(주)",
-    "p6.lead": "2017년부터 미용기기 분야에 특화된 한국의 의료기기 제조사입니다. 미국 FDA 위탁 제조사 등록, ISO 13485:2016 인증 보유.",
+    "p6.h2": "설계부터 제조까지,<br>한국 의료기기 제조사.",
+    "p6.lead": "브리츠메디는 미용 의료기기에 특화된 제조사입니다. 미국 FDA 위탁 제조사 등록, ISO 13485:2016 인증, 자체 R&D 및 생산 시설을 보유하고 있습니다.",
     "p6.s1": "설립", "p6.s2": "특허", "p6.s3": "상표", "p6.s4": "등록 제조사",
-    "p6.cert": "인증 & 품질",
-    "p6.cert1": "의료기기 품질경영시스템",
-    "p6.cert2": "한국 식약처 GMP 인증",
-    "p6.cert3": "미국 FDA 위탁 제조사 등록",
-    "p6.cert4": "한국 인증",
-    "p6.cert5": "유럽 적합성 인증",
-    "p6.cert6": "미국 연방통신위원회 인증",
-    "p6.mfg": "제조 시설",
-    "p6.addr": "주소", "p6.lic": "제조업 허가",
-    "p6.lic_p": "식약처 의료기기 제조업 허가<br>제 <strong class=\"accent\">6044</strong>호",
+    "p6.c1": "품질 경영시스템", "p6.c2": "한국 식약처 인증",
+    "p6.c3": "위탁 제조사", "p6.c4": "한국",
+    "p6.c5": "유럽", "p6.c6": "미국",
+    "p6.addr": "제조 시설 주소", "p6.lic": "식약처 허가",
+    "p6.lic_p": "의료기기 제조업 허가<br>제 <strong class=\"accent\">6044</strong>호",
 
     "p7.eyebrow": "파트너십 모델",
-    "p7.h2": "세 가지 협력 방식.",
-    "p7.lead": "시장 전략에 맞는 파트너십 구조를 선택하세요. 모든 모델에는 전체 마케팅 및 인허가 문서 지원이 포함됩니다.",
-    "p7.m1.h": "총판 (Distributor)",
-    "p7.m1.p": "해당 시장 독점권. 주문 수량 기반의 단계별 가격 적용.",
-    "p7.m2.h": "도매 (Wholesale)",
-    "p7.m2.p": "기존 리테일 채널을 위한 벌크 오더. 비독점.",
+    "p7.h2": "뉴채를 귀하의<br>시장으로.",
+    "p7.lead": "시장 전략에 맞는 파트너십 구조를 선택하세요. 모든 모델에 전체 마케팅 및 인허가 문서 지원이 포함됩니다.",
+    "p7.m1.h": "총판",
+    "p7.m1.p": "해당 시장 독점권. 주문 수량 기반 단계별 가격. 연간 약정 없음.",
+    "p7.m2.h": "도매",
+    "p7.m2.p": "기존 리테일 채널을 위한 벌크 오더. 비독점, 유연한 발주.",
     "p7.m3.h": "OEM / ODM",
-    "p7.m3.p": "뉴채의 핵심 기술 기반 커스텀 브랜딩 및 사양 제작.",
+    "p7.m3.p": "뉴채 핵심 기술 기반의 커스텀 브랜딩 및 사양. 고객사 브랜드, 저희 엔지니어링.",
     "p7.moq": "최소 주문 수량", "p7.units": "대",
     "p7.contact": "글로벌 문의",
-    "p7.email": "이메일", "p7.resp": "응답 시간",
-    "p7.resp_v": "24시간 이내 · 평일 09:00–18:00 (KST)"
+    "p7.email": "이메일", "p7.phone": "전화",
+    "p7.resp": "응답 시간", "p7.resp_v": "24시간 이내",
+    "p7.hours": "영업 시간", "p7.hours_v": "평일 · 09:00–18:00 (KST)",
+    "p7.web": "웹사이트"
   }
 };
 
-// ===== i18n engine =====
 function applyLang(lang) {
   const dict = DICT[lang] || DICT.en;
   document.documentElement.lang = lang;
@@ -634,7 +1201,6 @@ document.querySelectorAll('#controls button[data-lang]').forEach(btn => {
   btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
 });
 
-// Initial language (URL ?lang=ko OR saved OR browser OR en)
 (function() {
   const urlLang = new URLSearchParams(location.search).get('lang');
   const saved = (() => { try { return localStorage.getItem('brochure-lang'); } catch(e) { return null; }})();
