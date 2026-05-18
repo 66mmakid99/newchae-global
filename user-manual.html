@@ -401,7 +401,7 @@
   /* ============ PAGE 7 — TECH FEATURE ============ */
   .tech-page {
     grid-template-columns: 1fr;
-    background: var(--dark); color: #faf6ed;
+    background: var(--ivory);
   }
   .tech-inner {
     padding: 26mm 22mm 20mm 22mm;
@@ -411,22 +411,20 @@
     align-items: start;
   }
   .tech-left {}
-  .tech-left .eyebrow { color: var(--rose); }
-  .tech-left .eyebrow::before { background: var(--rose); }
-  .tech-left h2 { color: #faf6ed; margin-bottom: 18px; font-size: 38px; }
+  .tech-left h2 { margin-bottom: 18px; font-size: 38px; }
   .tech-features {
     list-style: none; padding: 0;
   }
   .tech-features li {
     padding: 9px 0;
-    border-bottom: 1px solid rgba(250,246,237,0.1);
+    border-bottom: 1px solid var(--line);
     font-size: 11px; line-height: 1.6;
-    color: rgba(250,246,237,0.75);
+    color: var(--graphite);
     display: flex; align-items: flex-start; gap: 10px;
   }
   .tech-features .feat-icon {
     flex-shrink: 0; width: 6px; height: 6px;
-    border-radius: 50%; background: var(--rose);
+    border-radius: 50%; background: var(--lilac);
     margin-top: 6px;
   }
   .tech-right {
@@ -439,11 +437,11 @@
   .tech-badge {
     display: inline-block;
     padding: 6px 14px; margin-top: 16px;
-    background: rgba(250,246,237,0.1);
-    border: 1px solid rgba(250,246,237,0.15);
+    background: var(--cream);
+    border: 1px solid var(--line);
     font-size: 10px; font-weight: 500;
     letter-spacing: 0.15em; text-transform: uppercase;
-    color: rgba(250,246,237,0.6);
+    color: var(--graphite);
   }
 
   /* ============ PAGE 8 — PRECAUTIONS ============ */
@@ -519,30 +517,29 @@
   }
   .qa-right {
     padding: 28mm 22mm 20mm 14mm;
-    background: var(--dark); color: #faf6ed;
+    background: var(--cream);
+    border-left: 1px solid var(--line);
     display: flex; flex-direction: column;
   }
-  .qa-right .eyebrow { color: var(--rose); }
-  .qa-right .eyebrow::before { background: var(--rose); }
-  .qa-right h2 { color: #faf6ed; margin-bottom: 16px; }
+  .qa-right h2 { margin-bottom: 16px; }
   .spec-row {
     display: flex; justify-content: space-between;
     padding: 7px 0;
-    border-bottom: 1px solid rgba(250,246,237,0.12);
+    border-bottom: 1px solid var(--line);
     font-size: 10.5px;
   }
-  .spec-row .label { color: rgba(250,246,237,0.6); }
-  .spec-row .val { color: #faf6ed; font-weight: 500; text-align: right; }
+  .spec-row .label { color: var(--mute); }
+  .spec-row .val { color: var(--ink); font-weight: 500; text-align: right; }
   .spec-footer {
     margin-top: auto;
     padding-top: 14px;
-    border-top: 1px solid rgba(250,246,237,0.12);
+    border-top: 1px solid var(--line);
   }
-  .spec-footer p { color: rgba(250,246,237,0.5); font-size: 9px; line-height: 1.6; }
+  .spec-footer p { color: var(--mute); font-size: 9px; line-height: 1.6; }
   .spec-footer .logo-foot {
     font-family: 'Inter', sans-serif;
     font-size: 11px; font-weight: 700;
-    letter-spacing: 0.2em; color: rgba(250,246,237,0.3);
+    letter-spacing: 0.2em; color: var(--sand);
     margin-top: 10px;
   }
 
@@ -773,7 +770,7 @@
 
 <!-- ========== PAGE 7 — TECH FEATURE ========== -->
 <section class="page tech-page">
-  <div class="frame-top" style="color: rgba(250,246,237,0.35);"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.tech">Technology</span></div>
+  <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.tech">Technology</span></div>
   <div class="tech-inner">
     <div class="tech-left">
       <div class="eyebrow" data-i18n="p7.eyebrow">Special Features</div>
@@ -798,7 +795,7 @@
       <div class="tech-badge" data-i18n="p7.badge">Based on TORR RF · Professional Multi-Channel Technology</div>
     </div>
   </div>
-  <div class="frame-bot" style="color: rgba(250,246,237,0.35);"><span>NEWCHAE User Manual</span><span class="num" style="color: rgba(250,246,237,0.6);">07</span></div>
+  <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">07</span></div>
 </section>
 
 <!-- ========== PAGE 8 — PRECAUTIONS ========== -->
