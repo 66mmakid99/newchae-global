@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEWCHAE — User Manual</title>
+<meta name="description" content="NEWCHAE SHOT user manual. How to use RF, EMS, and ELP modes. Multilingual: EN, KO, JA, TH, VI.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #f6f1e8;
+    --cream: #faf6ed;
+    --sand: #ebe3d1;
+    --ink: #15110c;
+    --graphite: #5a5347;
+    --mute: #8a8275;
+    --lilac: #8b7aa8;
+    --rose: #c9a8a0;
+    --line: #d4cbb8;
+    --dark: #1a1610;
+    --warn: #c4775a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: #ddd8ce;
+    font-family: 'Inter', -apple-system, 'Noto Sans KR', sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  :lang(ko) body { font-family: 'Noto Sans KR', 'Inter', sans-serif; }
+  :lang(ja) body { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+  :lang(th) body { font-family: 'Noto Sans Thai', 'Inter', sans-serif; }
+
+  .page {
+    width: 297mm; height: 210mm;
+    margin: 10mm auto;
+    background: var(--cream);
+    box-shadow: 0 6px 32px rgba(0,0,0,0.14);
+    position: relative; overflow: hidden;
+    page-break-after: always;
+    display: grid;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  .frame-top, .frame-bot {
+    position: absolute; left: 16mm; right: 16mm;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--mute); font-weight: 500;
+    z-index: 10;
+  }
+  .frame-top { top: 9mm; }
+  .frame-bot { bottom: 9mm; }
+  .frame-bot .num { color: var(--ink); font-weight: 600; letter-spacing: 0.15em; }
+
+  .serif { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; }
+  :lang(ko) .serif { font-family: 'Noto Serif KR', 'Cormorant Garamond', serif; font-weight: 400; }
+  :lang(ja) .serif { font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 400; }
+  :lang(th) .serif { font-family: 'Noto Serif Thai', 'Cormorant Garamond', serif; font-weight: 400; }
+
+  h1, h2, h3, h4 { font-weight: 400; letter-spacing: -0.015em; color: var(--ink); }
+  .display {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 88px; line-height: 0.95; font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+  :lang(ko) .display { font-family: 'Noto Serif KR', serif; font-size: 68px; font-weight: 300; line-height: 1.05; }
+
+  h2 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 42px; line-height: 1.08; font-weight: 400;
+  }
+  :lang(ko) h2 { font-family: 'Noto Serif KR', serif; font-size: 34px; font-weight: 400; }
+  :lang(ja) h2 { font-family: 'Noto Serif JP', serif; font-size: 34px; font-weight: 400; }
+
+  h3 { font-size: 16px; line-height: 1.3; font-weight: 500; letter-spacing: -0.005em; }
+  h4 { font-size: 12px; line-height: 1.3; font-weight: 600; letter-spacing: 0.02em; }
+
+  p { font-size: 11.5px; line-height: 1.7; color: var(--graphite); font-weight: 400; }
+  .lead { font-size: 14px; line-height: 1.55; color: var(--ink); font-weight: 400; }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px; font-weight: 600;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--lilac); margin-bottom: 14px;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--lilac); }
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* ============ PAGE 1 — COVER ============ */
+  .cover {
+    grid-template-columns: 1.05fr 1fr;
+    background: var(--cream);
+  }
+  .cover-left {
+    padding: 32mm 16mm 20mm 22mm;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; z-index: 2;
+  }
+  .cover-left .house {
+    display: flex; align-items: center; gap: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em; color: var(--graphite);
+  }
+  .cover-title { margin-top: 0; }
+  .cover-title .line { width: 60px; height: 2px; background: var(--lilac); margin-bottom: 22px; }
+  .cover-title .kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--graphite); margin-bottom: 18px;
+  }
+  .cover-title .sub {
+    font-size: 13.5px; color: var(--graphite);
+    max-width: 110mm; margin-top: 22px; line-height: 1.6;
+  }
+  .cover-left .meta {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-top: 12mm; border-top: 1px solid var(--line);
+  }
+  .cover-left .meta .cert {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.18em; color: var(--ink);
+  }
+  .cover-left .meta .model {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 0.12em; color: var(--graphite);
+    text-transform: uppercase;
+  }
+  .cover-right {
+    background: linear-gradient(135deg, #e8dfc9 0%, #d4c6a8 100%);
+    position: relative; overflow: hidden;
+  }
+  .cover-right img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    mix-blend-mode: multiply;
+    filter: contrast(1.05) saturate(0.9);
+  }
+  .cover-right::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(26,22,16,0.35) 100%);
+  }
+
+  /* ============ PAGE 2 — PARTS & CONTENTS ============ */
+  .parts-page {
+    grid-template-columns: 1.1fr 1fr;
+    background: var(--ivory);
+  }
+  .parts-left {
+    padding: 28mm 14mm 20mm 22mm;
+    display: flex; flex-direction: column;
+  }
+  .parts-left .eyebrow { margin-bottom: 16px; }
+  .parts-left h2 { margin-bottom: 20px; }
+  .part-list {
+    list-style: none; padding: 0; margin-top: 16px;
+  }
+  .part-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 11.5px; color: var(--graphite); line-height: 1.6;
+  }
+  .part-list .num-circle {
+    flex-shrink: 0; width: 22px; height: 22px;
+    border-radius: 50%; border: 1.5px solid var(--lilac);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 600; color: var(--lilac);
+    margin-top: 2px;
+  }
+  .parts-right {
+    padding: 28mm 22mm 20mm 14mm;
+    display: flex; flex-direction: column;
+  }
+  .pkg-title { margin-bottom: 16px; }
+  .pkg-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; margin-top: 12px;
+  }
+  .pkg-item {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 14px 16px;
+    font-size: 11px; font-weight: 500; color: var(--graphite);
+    text-align: center;
+  }
+
+  /* ============ PAGE 3 — BASIC OPERATION ============ */
+  .operation-page {
+    grid-template-columns: 1fr;
+    background: var(--cream);
+  }
+  .operation-inner {
+    padding: 28mm 22mm 20mm 22mm;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .op-block { }
+  .op-block h3 { margin-bottom: 10px; }
+  .op-block p { margin-bottom: 8px; }
+  .op-steps {
+    list-style: none; padding: 0; margin-top: 10px; counter-reset: step;
+  }
+  .op-steps li {
+    position: relative; padding: 6px 0 6px 28px;
+    font-size: 11px; line-height: 1.65; color: var(--graphite);
+    counter-increment: step;
+  }
+  .op-steps li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 6px;
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--lilac); color: #fff;
+    font-size: 10px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .op-info {
+    background: var(--ivory);
+    padding: 12px 16px; margin-top: 8px;
+    font-size: 10.5px; color: var(--graphite); line-height: 1.65;
+    border-left: 3px solid var(--lilac);
+  }
+  .op-info strong { font-size: 10.5px; }
+
+  /* ============ PAGE 4 — HOW TO USE MODES ============ */
+  .modes-page {
+    grid-template-columns: 1fr;
+    background: var(--ivory);
+  }
+  .modes-inner {
+    padding: 28mm 22mm 20mm 22mm;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .mode-block {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 18px 16px;
+    display: flex; flex-direction: column;
+  }
+  .mode-tag {
+    display: inline-block;
+    padding: 4px 10px; margin-bottom: 10px;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: #fff; background: var(--lilac);
+    align-self: flex-start;
+  }
+  .mode-block h3 { margin-bottom: 6px; font-size: 15px; }
+  .mode-block .mode-desc {
+    font-size: 10.5px; color: var(--graphite); line-height: 1.6;
+    margin-bottom: 10px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .mode-block .mode-freq {
+    font-size: 10px; font-weight: 600; color: var(--lilac);
+    letter-spacing: 0.05em; margin-bottom: 8px;
+  }
+  .mode-steps {
+    list-style: none; padding: 0; counter-reset: ms;
+  }
+  .mode-steps li {
+    padding: 4px 0 4px 22px; position: relative;
+    font-size: 10px; line-height: 1.55; color: var(--graphite);
+    counter-increment: ms;
+  }
+  .mode-steps li::before {
+    content: counter(ms);
+    position: absolute; left: 0; top: 5px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--sand); color: var(--ink);
+    font-size: 9px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .mode-tip {
+    margin-top: auto; padding-top: 8px;
+    font-size: 9.5px; color: var(--mute); line-height: 1.55;
+    border-top: 1px solid var(--line);
+  }
+
+  /* ============ PAGE 5 — PRECAUTIONS ============ */
+  .caution-page {
+    grid-template-columns: 1fr;
+    background: var(--cream);
+  }
+  .caution-inner {
+    padding: 28mm 22mm 20mm 22mm;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .caution-col {}
+  .caution-col h3 { margin-bottom: 12px; }
+  .caution-list {
+    list-style: none; padding: 0;
+  }
+  .caution-list li {
+    padding: 5px 0 5px 18px; position: relative;
+    font-size: 10.5px; line-height: 1.6; color: var(--graphite);
+  }
+  .caution-list li::before {
+    content: '—';
+    position: absolute; left: 0; color: var(--warn);
+    font-weight: 600;
+  }
+  .warn-box {
+    background: #fdf6f3;
+    border: 1px solid #e8cfc6;
+    padding: 14px 16px; margin-top: 12px;
+  }
+  .warn-box h4 { color: var(--warn); margin-bottom: 8px; }
+  .warn-list {
+    list-style: none; padding: 0;
+  }
+  .warn-list li {
+    padding: 4px 0 4px 16px; position: relative;
+    font-size: 10px; line-height: 1.55; color: var(--graphite);
+  }
+  .warn-list li::before {
+    content: '⚠'; position: absolute; left: 0;
+    font-size: 9px; color: var(--warn);
+  }
+  .storage-box {
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    padding: 14px 16px; margin-top: 12px;
+  }
+  .storage-box h4 { margin-bottom: 8px; color: var(--graphite); }
+
+  /* ============ PAGE 6 — Q&A + SPECS ============ */
+  .qa-page {
+    grid-template-columns: 1.3fr 0.7fr;
+    background: var(--ivory);
+  }
+  .qa-left {
+    padding: 28mm 14mm 20mm 22mm;
+    overflow: hidden;
+  }
+  .qa-left h2 { margin-bottom: 14px; }
+  .qa-item {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .qa-item .q {
+    font-size: 10.5px; font-weight: 600; color: var(--ink);
+    line-height: 1.5; margin-bottom: 3px;
+  }
+  .qa-item .a {
+    font-size: 10px; color: var(--graphite);
+    line-height: 1.55;
+  }
+  .qa-right {
+    padding: 28mm 22mm 20mm 14mm;
+    background: var(--dark); color: #faf6ed;
+    display: flex; flex-direction: column;
+  }
+  .qa-right .eyebrow { color: var(--rose); }
+  .qa-right .eyebrow::before { background: var(--rose); }
+  .qa-right h2 { color: #faf6ed; margin-bottom: 16px; }
+  .spec-row {
+    display: flex; justify-content: space-between;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(250,246,237,0.12);
+    font-size: 10.5px;
+  }
+  .spec-row .label { color: rgba(250,246,237,0.6); }
+  .spec-row .val { color: #faf6ed; font-weight: 500; text-align: right; }
+  .spec-footer {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(250,246,237,0.12);
+  }
+  .spec-footer p { color: rgba(250,246,237,0.5); font-size: 9px; line-height: 1.6; }
+  .spec-footer .logo-foot {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.2em; color: rgba(250,246,237,0.3);
+    margin-top: 10px;
+  }
+
+  /* ============ CONTROLS ============ */
+  #controls {
+    position: fixed; top: 16px; right: 16px;
+    display: flex; gap: 6px; z-index: 9999;
+    background: rgba(21,17,12,0.85); backdrop-filter: blur(12px);
+    padding: 6px 10px; border-radius: 6px;
+  }
+  #controls button {
+    background: transparent; border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.7); padding: 5px 10px;
+    font-size: 11px; font-weight: 500; cursor: pointer;
+    border-radius: 3px; transition: all 0.2s;
+  }
+  #controls button:hover { background: rgba(255,255,255,0.1); }
+  #controls button.active {
+    background: var(--lilac); border-color: var(--lilac);
+    color: #fff; font-weight: 600;
+  }
+  #controls button.dl {
+    background: var(--lilac); border-color: var(--lilac);
+    color: #fff; font-weight: 600; letter-spacing: 0.05em;
+  }
+
+  @media print {
+    body { background: white; }
+    #controls { display: none !important; }
+    .page {
+      margin: 0; box-shadow: none;
+      width: 297mm; height: 210mm;
+    }
+  }
+  @page { size: A4 landscape; margin: 0; }
+</style>
+</head>
+<body>
+
+<div id="controls">
+  <button data-lang="en" class="active">EN</button>
+  <button data-lang="ko">KO</button>
+  <button data-lang="ja">JA</button>
+  <button data-lang="th">TH</button>
+  <button data-lang="vi">VI</button>
+  <button class="dl" onclick="window.print()">↓ PDF</button>
+</div>
+
+<!-- ========== PAGE 1 — COVER ========== -->
+<section class="page cover">
+  <div class="cover-left">
+    <div class="house" data-i18n="frame.brand">NEWCHAE · BRITZMEDI</div>
+    <div class="cover-title">
+      <div class="line"></div>
+      <div class="kicker" data-i18n="cover.kicker">User Manual · 2026</div>
+      <h1 class="display">NEWCHAE</h1>
+      <p class="sub" data-i18n="cover.sub">Complete guide to your NEWCHAE SHOT — device parts, operation, modes, precautions, and product specifications.</p>
+    </div>
+    <div class="meta">
+      <div class="cert">KC · CE · FCC</div>
+      <div class="model">BD-ERD24NWP</div>
+    </div>
+  </div>
+  <div class="cover-right">
+    <img src="images/product-hero.jpg" alt="NEWCHAE SHOT">
+  </div>
+</section>
+
+<!-- ========== PAGE 2 — PARTS & PACKAGE ========== -->
+<section class="page parts-page">
+  <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.parts">Device Parts & Package</span></div>
+  <div class="parts-left">
+    <div class="eyebrow" data-i18n="p2.eyebrow">Device Overview</div>
+    <h2 data-i18n="p2.h2">Names of<br>Each Part.</h2>
+    <ol class="part-list">
+      <li><span class="num-circle">1</span><span data-i18n="p2.part1">Electrode Head — Skin Contact Electrode</span></li>
+      <li><span class="num-circle">2</span><span data-i18n="p2.part2">Level Indicator — Displays Output Levels 1 / 2 / 3</span></li>
+      <li><span class="num-circle">3</span><span data-i18n="p2.part3">Mode Indicator — Displays RF / EMS / ELP Modes</span></li>
+      <li><span class="num-circle">4</span><span data-i18n="p2.part4">Power Button — Power ON/OFF &amp; Level Selection (1/2/3)</span></li>
+      <li><span class="num-circle">5</span><span data-i18n="p2.part5">Mode Button (M) — Mode Selection &amp; Vibration ON/OFF</span></li>
+      <li><span class="num-circle">6</span><span data-i18n="p2.part6">Charging Port — USB-C Type Charging Cable</span></li>
+    </ol>
+  </div>
+  <div class="parts-right">
+    <div class="eyebrow pkg-title" data-i18n="p2.pkg_eyebrow">Package Contents</div>
+    <h2 data-i18n="p2.pkg_h2">What's in<br>the Box.</h2>
+    <div class="pkg-grid">
+      <div class="pkg-item" data-i18n="p2.pkg1">NEWCHAE SHOT<br>Main Device</div>
+      <div class="pkg-item" data-i18n="p2.pkg2">USB-C<br>Charging Cable</div>
+      <div class="pkg-item" data-i18n="p2.pkg3">Product<br>Pouch</div>
+      <div class="pkg-item" data-i18n="p2.pkg4">User Manual</div>
+    </div>
+    <div class="op-info" style="margin-top: 20px;">
+      <strong data-i18n="p2.cycle_title">Recommended Usage Cycle</strong><br>
+      <span data-i18n="p2.cycle_body">Day 1: RF → Day 2: EMS → Day 3: ELP → Day 4: RF → …<br>Use each mode 2–3 times per week, up to 10 minutes per session.</span>
+    </div>
+  </div>
+  <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">02</span></div>
+</section>
+
+<!-- ========== PAGE 3 — BASIC OPERATION ========== -->
+<section class="page operation-page">
+  <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.operation">Basic Operation</span></div>
+  <div class="operation-inner">
+    <div class="op-block">
+      <div class="eyebrow" data-i18n="p3.eyebrow">Basic Operation</div>
+      <h2 data-i18n="p3.h2">Power &amp;<br>Controls.</h2>
+      <h3 data-i18n="p3.power_h" style="margin-top: 18px;">Power ON / OFF</h3>
+      <ol class="op-steps">
+        <li data-i18n="p3.on">Press and hold the power button for 1–2 seconds to turn ON.</li>
+        <li data-i18n="p3.mode">Press the M button briefly to select the operating mode (RF / EMS / ELP).</li>
+        <li data-i18n="p3.level">Press the power button briefly to select the level (1 / 2 / 3).</li>
+        <li data-i18n="p3.off">Press and hold the power button for 1–2 seconds to turn OFF.</li>
+      </ol>
+      <div class="op-info" style="margin-top: 14px;">
+        <strong data-i18n="p3.auto_off_h">Auto-Off</strong><br>
+        <span data-i18n="p3.auto_off">The device automatically turns off after 10 minutes of operation. A notification sound occurs every 2 minutes 30 seconds during use.</span>
+      </div>
+    </div>
+    <div class="op-block">
+      <div class="eyebrow" data-i18n="p3.eyebrow2">Additional Controls</div>
+      <h3 data-i18n="p3.vib_h" style="margin-top: 32px;">Vibration Setting</h3>
+      <p data-i18n="p3.vib_p">Press and hold the M button for 1–2 seconds to toggle vibration on or off.</p>
+
+      <h3 data-i18n="p3.charge_h" style="margin-top: 18px;">Battery Charging</h3>
+      <ol class="op-steps">
+        <li data-i18n="p3.charge1">Connect the USB-C cable with an appropriate adapter.</li>
+        <li data-i18n="p3.charge2">Level indicator LEDs blink while charging.</li>
+        <li data-i18n="p3.charge3">All LEDs are lit when fully charged.</li>
+        <li data-i18n="p3.charge4">The device will not operate while the charger is connected.</li>
+      </ol>
+
+      <h3 data-i18n="p3.low_h" style="margin-top: 18px;">Low Battery</h3>
+      <p data-i18n="p3.low_p">When the battery is low, the LEDs will blink when you try to power on, but the device will not start. Please charge before use.</p>
+    </div>
+  </div>
+  <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">03</span></div>
+</section>
+
+<!-- ========== PAGE 4 — HOW TO USE MODES ========== -->
+<section class="page modes-page">
+  <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.modes">How to Use Each Mode</span></div>
+  <div class="modes-inner">
+    <div class="mode-block">
+      <div class="mode-tag">GLOW</div>
+      <h3 data-i18n="p4.rf_h">RF Mode</h3>
+      <div class="mode-freq">1 MHz</div>
+      <p class="mode-desc" data-i18n="p4.rf_desc">High-frequency energy penetrates deep into the skin for volume management. Use 2–3 times per week, up to 10 minutes.</p>
+      <ol class="mode-steps">
+        <li data-i18n="p4.rf_s1">Cleanse face with lukewarm water.</li>
+        <li data-i18n="p4.rf_s2">Apply NEWCHAE cream generously over the treatment area.</li>
+        <li data-i18n="p4.rf_s3">Turn on device and select RF mode &amp; level.</li>
+        <li data-i18n="p4.rf_s4">Hold electrode head against skin — a beep signals to move to next area.</li>
+        <li data-i18n="p4.rf_s5">Move from inside to outside of the treatment area.</li>
+      </ol>
+      <div class="mode-tip" data-i18n="p4.rf_tip">Do not apply more than two consecutive shots to the same area. Always start at Level 1.</div>
+    </div>
+    <div class="mode-block">
+      <div class="mode-tag">TONE</div>
+      <h3 data-i18n="p4.ems_h">EMS Mode</h3>
+      <div class="mode-freq">1 KHz</div>
+      <p class="mode-desc" data-i18n="p4.ems_desc">Medium-frequency electrical energy improves skin elasticity and contour management. Use 2–3 times per week, up to 10 minutes.</p>
+      <ol class="mode-steps">
+        <li data-i18n="p4.ems_s1">Cleanse face with lukewarm water.</li>
+        <li data-i18n="p4.ems_s2">Apply NEWCHAE cream generously over the treatment area.</li>
+        <li data-i18n="p4.ems_s3">Turn on device and select EMS mode &amp; level.</li>
+        <li data-i18n="p4.ems_s4">Glide electrode head upward — bottom to top, inside to outside.</li>
+      </ol>
+      <div class="mode-tip" data-i18n="p4.ems_tip">Start at Level 1. Avoid excessive stimulation in one area. Excessive stimulation may cause skin irritation.</div>
+    </div>
+    <div class="mode-block">
+      <div class="mode-tag">BOOST</div>
+      <h3 data-i18n="p4.elp_h">ELP Mode</h3>
+      <div class="mode-freq">5–20 KHz</div>
+      <p class="mode-desc" data-i18n="p4.elp_desc">Electroporation aids absorption of active ingredients in cosmetics. Use 2–3 times per week, up to 10 minutes.</p>
+      <ol class="mode-steps">
+        <li data-i18n="p4.elp_s1">Cleanse face with lukewarm water.</li>
+        <li data-i18n="p4.elp_s2">Apply NEWCHAE cream generously over the treatment area.</li>
+        <li data-i18n="p4.elp_s3">Turn on device and select ELP mode &amp; level.</li>
+        <li data-i18n="p4.elp_s4">Massage in slow circles — inside to outside, bottom to top.</li>
+      </ol>
+      <div class="mode-tip" data-i18n="p4.elp_tip">Start at Level 1. Avoid excessive stimulation in one area. Excessive stimulation may cause skin irritation.</div>
+    </div>
+  </div>
+  <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">04</span></div>
+</section>
+
+<!-- ========== PAGE 5 — PRECAUTIONS ========== -->
+<section class="page caution-page">
+  <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.caution">Precautions</span></div>
+  <div class="caution-inner">
+    <div class="caution-col">
+      <div class="eyebrow" data-i18n="p5.eyebrow">Precautions</div>
+      <h2 data-i18n="p5.h2">Before<br>You Begin.</h2>
+      <ul class="caution-list" style="margin-top: 14px;">
+        <li data-i18n="p5.c1">Read the user manual thoroughly before use.</li>
+        <li data-i18n="p5.c2">Consult a specialist if you are undergoing skin treatment or have allergies.</li>
+        <li data-i18n="p5.c3">Do not use if you have a metal allergy.</li>
+        <li data-i18n="p5.c4">Keep out of reach of children.</li>
+        <li data-i18n="p5.c5">Do not use with heart disease, acute conditions, or implanted devices (pacemaker, neurostimulator).</li>
+        <li data-i18n="p5.c6">For sensitive skin, perform a patch test on the wrist first.</li>
+        <li data-i18n="p5.c7">After facial surgery, use only after full recovery.</li>
+        <li data-i18n="p5.c8">Mild stinging, warmth, or redness may occur within 24 hours and typically resolves in 2–3 days.</li>
+        <li data-i18n="p5.c9">Avoid using around the eyes or on the throat area.</li>
+        <li data-i18n="p5.c10">Always start at Level 1. Do not apply more than two shots to one area.</li>
+        <li data-i18n="p5.c11">Do not handle with wet hands or expose to strong impacts.</li>
+        <li data-i18n="p5.c12">This product is not a medical device and should not be used for medical treatment.</li>
+      </ul>
+    </div>
+    <div class="caution-col">
+      <div class="warn-box">
+        <h4 data-i18n="p5.warn_h">⚠ Warning</h4>
+        <ul class="warn-list">
+          <li data-i18n="p5.w1">Do not immerse the main unit in water.</li>
+          <li data-i18n="p5.w2">Ensure no liquids enter the main unit.</li>
+          <li data-i18n="p5.w3">Do not use near bathtubs, showers, or pools.</li>
+          <li data-i18n="p5.w4">Do not disassemble the product.</li>
+          <li data-i18n="p5.w5">Do not place near heat sources — may cause fire.</li>
+          <li data-i18n="p5.w6">If unusual noise, smell, or smoke occurs, stop use and contact customer service.</li>
+          <li data-i18n="p5.w7">Do not use a product that has been submerged in water.</li>
+        </ul>
+      </div>
+      <div class="storage-box">
+        <h4 data-i18n="p5.store_h">Storage Instructions</h4>
+        <ul class="caution-list">
+          <li data-i18n="p5.st1">Wipe with a wet tissue, then dry gently with a soft cloth.</li>
+          <li data-i18n="p5.st2">Store away from direct sunlight in a cool, dry place.</li>
+          <li data-i18n="p5.st3">Prevent damage from strong pressure or impacts.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">05</span></div>
+</section>
+
+<!-- ========== PAGE 6 — Q&A + SPECIFICATIONS ========== -->
+<section class="page qa-page">
+  <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.qa">Q&amp;A &amp; Specifications</span></div>
+  <div class="qa-left">
+    <div class="eyebrow" data-i18n="p6.eyebrow">Frequently Asked Questions</div>
+    <h2 data-i18n="p6.h2">Q&amp;A.</h2>
+    <div class="qa-item"><p class="q" data-i18n="p6.q1">Q1. Can I use the device every day?</p><p class="a" data-i18n="p6.a1">Yes. We recommend adjusting time and frequency to your skin condition. Generally, use each mode 2–3 times per week.</p></div>
+    <div class="qa-item"><p class="q" data-i18n="p6.q2">Q2. How do I clean the device?</p><p class="a" data-i18n="p6.a2">Wipe the electrode head with a wet tissue, then dry gently with a soft cloth or towel.</p></div>
+    <div class="qa-item"><p class="q" data-i18n="p6.q3">Q3. I am pregnant. Can I use it?</p><p class="a" data-i18n="p6.a3">Pregnant women and children are advised not to use the device. Consult your physician before use.</p></div>
+    <div class="qa-item"><p class="q" data-i18n="p6.q4">Q4. How long should I use per day?</p><p class="a" data-i18n="p6.a4">Recommended daily usage is 10 minutes. Adjust based on your skin condition.</p></div>
+    <div class="qa-item"><p class="q" data-i18n="p6.q5">Q5. Must I use NEWCHAE Cream?</p><p class="a" data-i18n="p6.a5">Other products may work, but may reduce RF energy delivery. NEWCHAE Cream is formulated to enhance energy delivery and active ingredient penetration.</p></div>
+    <div class="qa-item"><p class="q" data-i18n="p6.q6">Q6. How is NEWCHAE different from other RF devices?</p><p class="a" data-i18n="p6.a6">NEWCHAE uses multi-channel technology from professional products for deeper, more concentrated energy. EMS medium-frequency maintains elasticity longer. ELP enhances active ingredient penetration.</p></div>
+    <div class="qa-item"><p class="q" data-i18n="p6.q7">Q7. The device won't turn on.</p><p class="a" data-i18n="p6.a7">Charge the device, or disconnect the cable if already charging. If the issue persists, contact customer service. Warranty: 1 year from purchase.</p></div>
+    <div class="qa-item"><p class="q" data-i18n="p6.q8">Q8. I don't feel vibration.</p><p class="a" data-i18n="p6.a8">Press and hold the M button for 3 seconds to toggle vibration. All modes work normally even without vibration.</p></div>
+  </div>
+  <div class="qa-right">
+    <div class="eyebrow" data-i18n="p6.spec_eyebrow">Specifications</div>
+    <h2 data-i18n="p6.spec_h2">Product<br>Specs.</h2>
+    <div class="spec-row"><span class="label" data-i18n="spec.name">Product Name</span><span class="val">NEWCHAE SHOT</span></div>
+    <div class="spec-row"><span class="label" data-i18n="spec.model">Model</span><span class="val">BD-ERD24NWP</span></div>
+    <div class="spec-row"><span class="label" data-i18n="spec.input">Input</span><span class="val">DC 5V, 1A+ (USB-C)</span></div>
+    <div class="spec-row"><span class="label" data-i18n="spec.battery">Battery</span><span class="val">3.6V, 3,350mAh</span></div>
+    <div class="spec-row"><span class="label" data-i18n="spec.modes">Modes</span><span class="val">RF / EMS / ELP</span></div>
+    <div class="spec-row"><span class="label" data-i18n="spec.rf">RF</span><span class="val">1 MHz · Max 8W</span></div>
+    <div class="spec-row"><span class="label" data-i18n="spec.ems">EMS</span><span class="val">1 KHz</span></div>
+    <div class="spec-row"><span class="label" data-i18n="spec.elp">ELP</span><span class="val">5–20 KHz</span></div>
+    <div class="spec-row"><span class="label" data-i18n="spec.vib">Vibration</span><span class="val">10,000 rpm</span></div>
+    <div class="spec-row"><span class="label" data-i18n="spec.dim">Dimensions</span><span class="val">54 × 50 × 191 mm</span></div>
+    <div class="spec-row"><span class="label" data-i18n="spec.weight">Weight</span><span class="val">567 g</span></div>
+    <div class="spec-row"><span class="label" data-i18n="spec.cert">Certifications</span><span class="val">KC · CE · FCC</span></div>
+    <div class="spec-row"><span class="label" data-i18n="spec.mfr">Manufacturer</span><span class="val">BRITZMEDI Co., Ltd.</span></div>
+    <div class="spec-row"><span class="label" data-i18n="spec.origin">Origin</span><span class="val">South Korea</span></div>
+    <div class="spec-footer">
+      <p data-i18n="p6.footer">BRITZMEDI Co., Ltd. · Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, Republic of Korea</p>
+      <div class="logo-foot">NEWCHAE</div>
+    </div>
+  </div>
+  <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">06</span></div>
+</section>
+
+<script>
+const DICT = {
+  en: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.parts": "Device Parts & Package", "nav.operation": "Basic Operation",
+    "nav.modes": "How to Use Each Mode", "nav.caution": "Precautions",
+    "nav.qa": "Q&A & Specifications",
+
+    "cover.kicker": "User Manual · 2026",
+    "cover.sub": "Complete guide to your NEWCHAE SHOT — device parts, operation, modes, precautions, and product specifications.",
+
+    "p2.eyebrow": "Device Overview",
+    "p2.h2": "Names of<br>Each Part.",
+    "p2.part1": "Electrode Head — Skin Contact Electrode",
+    "p2.part2": "Level Indicator — Displays Output Levels 1 / 2 / 3",
+    "p2.part3": "Mode Indicator — Displays RF / EMS / ELP Modes",
+    "p2.part4": "Power Button — Power ON/OFF & Level Selection (1/2/3)",
+    "p2.part5": "Mode Button (M) — Mode Selection & Vibration ON/OFF",
+    "p2.part6": "Charging Port — USB-C Type Charging Cable",
+    "p2.pkg_eyebrow": "Package Contents",
+    "p2.pkg_h2": "What's in<br>the Box.",
+    "p2.pkg1": "NEWCHAE SHOT<br>Main Device", "p2.pkg2": "USB-C<br>Charging Cable",
+    "p2.pkg3": "Product<br>Pouch", "p2.pkg4": "User Manual",
+    "p2.cycle_title": "Recommended Usage Cycle",
+    "p2.cycle_body": "Day 1: RF → Day 2: EMS → Day 3: ELP → Day 4: RF → …<br>Use each mode 2–3 times per week, up to 10 minutes per session.",
+
+    "p3.eyebrow": "Basic Operation",
+    "p3.h2": "Power &<br>Controls.",
+    "p3.power_h": "Power ON / OFF",
+    "p3.on": "Press and hold the power button for 1–2 seconds to turn ON.",
+    "p3.mode": "Press the M button briefly to select the operating mode (RF / EMS / ELP).",
+    "p3.level": "Press the power button briefly to select the level (1 / 2 / 3).",
+    "p3.off": "Press and hold the power button for 1–2 seconds to turn OFF.",
+    "p3.auto_off_h": "Auto-Off",
+    "p3.auto_off": "The device automatically turns off after 10 minutes of operation. A notification sound occurs every 2 minutes 30 seconds during use.",
+    "p3.eyebrow2": "Additional Controls",
+    "p3.vib_h": "Vibration Setting",
+    "p3.vib_p": "Press and hold the M button for 1–2 seconds to toggle vibration on or off.",
+    "p3.charge_h": "Battery Charging",
+    "p3.charge1": "Connect the USB-C cable with an appropriate adapter.",
+    "p3.charge2": "Level indicator LEDs blink while charging.",
+    "p3.charge3": "All LEDs are lit when fully charged.",
+    "p3.charge4": "The device will not operate while the charger is connected.",
+    "p3.low_h": "Low Battery",
+    "p3.low_p": "When the battery is low, the LEDs will blink when you try to power on, but the device will not start. Please charge before use.",
+
+    "p4.rf_h": "RF Mode", "p4.rf_desc": "High-frequency energy penetrates deep into the skin for volume management. Use 2–3 times per week, up to 10 minutes.",
+    "p4.rf_s1": "Cleanse face with lukewarm water.",
+    "p4.rf_s2": "Apply NEWCHAE cream generously over the treatment area.",
+    "p4.rf_s3": "Turn on device and select RF mode & level.",
+    "p4.rf_s4": "Hold electrode head against skin — a beep signals to move to next area.",
+    "p4.rf_s5": "Move from inside to outside of the treatment area.",
+    "p4.rf_tip": "Do not apply more than two consecutive shots to the same area. Always start at Level 1. Lower the level for forehead and around the eyes.",
+
+    "p4.ems_h": "EMS Mode", "p4.ems_desc": "Medium-frequency electrical energy improves skin elasticity and contour management. Use 2–3 times per week, up to 10 minutes.",
+    "p4.ems_s1": "Cleanse face with lukewarm water.",
+    "p4.ems_s2": "Apply NEWCHAE cream generously over the treatment area.",
+    "p4.ems_s3": "Turn on device and select EMS mode & level.",
+    "p4.ems_s4": "Glide electrode head upward — bottom to top, inside to outside.",
+    "p4.ems_tip": "Start at Level 1. Avoid excessive stimulation in one area. Excessive stimulation may cause skin irritation.",
+
+    "p4.elp_h": "ELP Mode", "p4.elp_desc": "Electroporation aids absorption of active ingredients in cosmetics. Use 2–3 times per week, up to 10 minutes.",
+    "p4.elp_s1": "Cleanse face with lukewarm water.",
+    "p4.elp_s2": "Apply NEWCHAE cream generously over the treatment area.",
+    "p4.elp_s3": "Turn on device and select ELP mode & level.",
+    "p4.elp_s4": "Massage in slow circles — inside to outside, bottom to top.",
+    "p4.elp_tip": "Start at Level 1. Avoid excessive stimulation in one area. Excessive stimulation may cause skin irritation.",
+
+    "p5.eyebrow": "Precautions",
+    "p5.h2": "Before<br>You Begin.",
+    "p5.c1": "Read the user manual thoroughly before use.",
+    "p5.c2": "Consult a specialist if you are undergoing skin treatment or have allergies.",
+    "p5.c3": "Do not use if you have a metal allergy.",
+    "p5.c4": "Keep out of reach of children.",
+    "p5.c5": "Do not use with heart disease, acute conditions, or implanted devices (pacemaker, neurostimulator).",
+    "p5.c6": "For sensitive skin, perform a patch test on the wrist first.",
+    "p5.c7": "After facial surgery, use only after full recovery.",
+    "p5.c8": "Mild stinging, warmth, or redness may occur within 24 hours and typically resolves in 2–3 days.",
+    "p5.c9": "Avoid using around the eyes or on the throat area.",
+    "p5.c10": "Always start at Level 1. Do not apply more than two shots to one area.",
+    "p5.c11": "Do not handle with wet hands or expose to strong impacts.",
+    "p5.c12": "This product is not a medical device and should not be used for medical treatment.",
+    "p5.warn_h": "⚠ Warning",
+    "p5.w1": "Do not immerse the main unit in water.",
+    "p5.w2": "Ensure no liquids enter the main unit.",
+    "p5.w3": "Do not use near bathtubs, showers, or pools.",
+    "p5.w4": "Do not disassemble the product.",
+    "p5.w5": "Do not place near heat sources — may cause fire.",
+    "p5.w6": "If unusual noise, smell, or smoke occurs, stop use and contact customer service.",
+    "p5.w7": "Do not use a product that has been submerged in water.",
+    "p5.store_h": "Storage Instructions",
+    "p5.st1": "Wipe with a wet tissue, then dry gently with a soft cloth.",
+    "p5.st2": "Store away from direct sunlight in a cool, dry place.",
+    "p5.st3": "Prevent damage from strong pressure or impacts.",
+
+    "p6.eyebrow": "Frequently Asked Questions",
+    "p6.h2": "Q&A.",
+    "p6.q1": "Q1. Can I use the device every day?",
+    "p6.a1": "Yes. We recommend adjusting time and frequency to your skin condition. Generally, use each mode 2–3 times per week.",
+    "p6.q2": "Q2. How do I clean the device?",
+    "p6.a2": "Wipe the electrode head with a wet tissue, then dry gently with a soft cloth or towel.",
+    "p6.q3": "Q3. I am pregnant. Can I use it?",
+    "p6.a3": "Pregnant women and children are advised not to use the device. Consult your physician before use.",
+    "p6.q4": "Q4. How long should I use per day?",
+    "p6.a4": "Recommended daily usage is 10 minutes. Adjust based on your skin condition.",
+    "p6.q5": "Q5. Must I use NEWCHAE Cream?",
+    "p6.a5": "Other products may work, but may reduce RF energy delivery. NEWCHAE Cream is formulated to enhance energy delivery and active ingredient penetration.",
+    "p6.q6": "Q6. How is NEWCHAE different from other RF devices?",
+    "p6.a6": "NEWCHAE uses multi-channel technology from professional products for deeper, more concentrated energy. EMS medium-frequency maintains elasticity longer. ELP enhances active ingredient penetration.",
+    "p6.q7": "Q7. The device won't turn on.",
+    "p6.a7": "Charge the device, or disconnect the cable if already charging. If the issue persists, contact customer service. Warranty: 1 year from purchase.",
+    "p6.q8": "Q8. I don't feel vibration.",
+    "p6.a8": "Press and hold the M button for 3 seconds to toggle vibration. All modes work normally even without vibration.",
+    "p6.spec_eyebrow": "Specifications",
+    "p6.spec_h2": "Product<br>Specs.",
+    "spec.name": "Product Name", "spec.model": "Model", "spec.input": "Input",
+    "spec.battery": "Battery", "spec.modes": "Modes", "spec.rf": "RF",
+    "spec.ems": "EMS", "spec.elp": "ELP", "spec.vib": "Vibration",
+    "spec.dim": "Dimensions", "spec.weight": "Weight", "spec.cert": "Certifications",
+    "spec.mfr": "Manufacturer", "spec.origin": "Origin",
+    "p6.footer": "BRITZMEDI Co., Ltd. · Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, Republic of Korea"
+  },
+  ko: {
+    "frame.brand": "NEWCHAE · 브리츠메디",
+    "nav.parts": "구성품 및 부품", "nav.operation": "기본 조작법",
+    "nav.modes": "모드별 사용법", "nav.caution": "사용 시 주의사항",
+    "nav.qa": "Q&A 및 제품 사양",
+
+    "cover.kicker": "사용 설명서 · 2026",
+    "cover.sub": "NEWCHAE SHOT의 모든 것 — 부품 명칭, 기본 조작, 모드별 사용법, 주의사항, 제품 사양까지.",
+
+    "p2.eyebrow": "부품 명칭",
+    "p2.h2": "각 부분의<br>명칭.",
+    "p2.part1": "전극 헤드 — 피부 접촉 전극",
+    "p2.part2": "레벨 표시등 — 출력 레벨 1 / 2 / 3 표시",
+    "p2.part3": "모드 표시등 — RF / EMS / ELP 모드 표시",
+    "p2.part4": "전원 버튼 — 전원 ON/OFF 및 레벨 선택 (1/2/3)",
+    "p2.part5": "모드 버튼 (M) — 모드 전환 및 진동 ON/OFF",
+    "p2.part6": "충전 포트 — USB-C 타입 충전 케이블",
+    "p2.pkg_eyebrow": "구성품",
+    "p2.pkg_h2": "패키지<br>구성.",
+    "p2.pkg1": "NEWCHAE SHOT<br>본체", "p2.pkg2": "USB-C<br>충전 케이블",
+    "p2.pkg3": "제품<br>파우치", "p2.pkg4": "사용 설명서",
+    "p2.cycle_title": "권장 사용 주기",
+    "p2.cycle_body": "1일차: RF → 2일차: EMS → 3일차: ELP → 4일차: RF → …<br>각 모드 주 2~3회, 1회 최대 10분 사용을 권장합니다.",
+
+    "p3.eyebrow": "기본 조작법",
+    "p3.h2": "전원 &amp;<br>조작.",
+    "p3.power_h": "전원 ON / OFF",
+    "p3.on": "전원 버튼을 1~2초 길게 눌러 전원을 켭니다.",
+    "p3.mode": "M 버튼을 짧게 눌러 작동 모드를 선택합니다 (RF / EMS / ELP).",
+    "p3.level": "전원 버튼을 짧게 눌러 레벨을 선택합니다 (1 / 2 / 3).",
+    "p3.off": "전원 버튼을 1~2초 길게 눌러 전원을 끕니다.",
+    "p3.auto_off_h": "자동 종료",
+    "p3.auto_off": "10분 사용 후 자동으로 전원이 꺼집니다. 사용 중 2분 30초마다 알림음이 울립니다.",
+    "p3.eyebrow2": "추가 기능",
+    "p3.vib_h": "진동 설정",
+    "p3.vib_p": "M 버튼을 1~2초 길게 눌러 진동을 켜거나 끌 수 있습니다.",
+    "p3.charge_h": "배터리 충전",
+    "p3.charge1": "적합한 어댑터와 USB-C 케이블을 연결합니다.",
+    "p3.charge2": "충전 중 레벨 표시등이 깜박입니다.",
+    "p3.charge3": "완충 시 모든 표시등이 점등됩니다.",
+    "p3.charge4": "충전기가 연결된 상태에서는 기기가 작동하지 않습니다.",
+    "p3.low_h": "배터리 부족",
+    "p3.low_p": "배터리가 부족하면 전원을 켤 때 LED가 깜박이지만 기기가 켜지지 않습니다. 충전 후 사용해 주세요.",
+
+    "p4.rf_h": "RF 모드", "p4.rf_desc": "고주파 에너지가 피부 깊숙이 침투하여 볼륨 관리에 도움을 줍니다. 주 2~3회, 1회 최대 10분 사용.",
+    "p4.rf_s1": "미온수로 얼굴을 깨끗이 세안합니다.",
+    "p4.rf_s2": "전극 헤드가 충분히 덮이도록 뉴채 크림을 넉넉히 도포합니다.",
+    "p4.rf_s3": "기기를 켜고 RF 모드와 레벨을 선택합니다.",
+    "p4.rf_s4": "전극 헤드를 피부에 밀착하면 RF 샷이 작동됩니다. 비프음이 울리면 다음 부위로 이동합니다.",
+    "p4.rf_s5": "얼굴 안쪽에서 바깥쪽으로 전극 헤드를 이동합니다.",
+    "p4.rf_tip": "같은 부위에 연속 2회 이상 샷을 하지 마세요. 항상 레벨 1부터 시작하세요. 이마와 눈 주위는 레벨을 낮추세요.",
+
+    "p4.ems_h": "EMS 모드", "p4.ems_desc": "중주파 전기 에너지가 피부 탄력과 윤곽 관리에 도움을 줍니다. 주 2~3회, 1회 최대 10분 사용.",
+    "p4.ems_s1": "미온수로 얼굴을 깨끗이 세안합니다.",
+    "p4.ems_s2": "전극 헤드가 충분히 덮이도록 뉴채 크림을 넉넉히 도포합니다.",
+    "p4.ems_s3": "기기를 켜고 EMS 모드와 레벨을 선택합니다.",
+    "p4.ems_s4": "전극 헤드를 피부에 밀착한 후 아래에서 위로, 안쪽에서 바깥쪽으로 부드럽게 이동합니다.",
+    "p4.ems_tip": "레벨 1부터 시작하세요. 한 부위에 과도한 자극을 피하세요. 과도한 자극은 피부 손상을 유발할 수 있습니다.",
+
+    "p4.elp_h": "ELP 모드", "p4.elp_desc": "전기천공으로 화장품 유효 성분의 흡수를 돕습니다. 주 2~3회, 1회 최대 10분 사용.",
+    "p4.elp_s1": "미온수로 얼굴을 깨끗이 세안합니다.",
+    "p4.elp_s2": "전극 헤드가 충분히 덮이도록 뉴채 크림을 넉넉히 도포합니다.",
+    "p4.elp_s3": "기기를 켜고 ELP 모드와 레벨을 선택합니다.",
+    "p4.elp_s4": "전극 헤드를 피부에 밀착한 후 천천히 작은 원을 그리며 안쪽에서 바깥쪽, 아래에서 위로 마사지합니다.",
+    "p4.elp_tip": "레벨 1부터 시작하세요. 한 부위에 과도한 자극을 피하세요. 과도한 자극은 피부 손상을 유발할 수 있습니다.",
+
+    "p5.eyebrow": "사용 시 주의사항",
+    "p5.h2": "사용 전<br>확인.",
+    "p5.c1": "사용 전 사용 설명서를 충분히 읽어 주세요.",
+    "p5.c2": "피부 치료 중이거나 알레르기가 있는 경우 전문의와 상담 후 사용하세요.",
+    "p5.c3": "금속 알레르기가 있는 경우 사용하지 마세요.",
+    "p5.c4": "어린이의 손이 닿지 않는 곳에 보관하세요.",
+    "p5.c5": "심장 질환, 급성 질환 또는 체내 이식 장치(심박조율기, 신경자극기 등)가 있는 경우 사용하지 마세요.",
+    "p5.c6": "민감성 피부의 경우 손목에 패치 테스트를 먼저 진행하세요.",
+    "p5.c7": "안면 수술 후에는 완전히 회복된 후 사용하세요.",
+    "p5.c8": "사용 후 24시간 이내에 경미한 따끔거림, 온감, 붉어짐이 발생할 수 있으며 보통 2~3일 내에 사라집니다.",
+    "p5.c9": "눈 주위와 목 부위에는 사용을 피하세요.",
+    "p5.c10": "항상 레벨 1부터 시작하세요. 한 부위에 2회 이상 연속 샷을 하지 마세요.",
+    "p5.c11": "젖은 손으로 다루거나 강한 충격에 노출시키지 마세요.",
+    "p5.c12": "이 제품은 의료기기가 아니며 의료 목적으로 사용할 수 없습니다.",
+    "p5.warn_h": "⚠ 경고",
+    "p5.w1": "본체를 물에 담그지 마세요.",
+    "p5.w2": "본체에 물이나 화장품이 들어가지 않도록 주의하세요.",
+    "p5.w3": "욕조, 샤워실, 수영장 등 물과 직접 접촉할 수 있는 장소에서 사용하지 마세요.",
+    "p5.w4": "제품을 분해하지 마세요.",
+    "p5.w5": "열원 근처에 두지 마세요 — 화재의 원인이 될 수 있습니다.",
+    "p5.w6": "이상한 소리, 냄새, 연기가 발생하면 즉시 사용을 중단하고 고객센터에 연락하세요.",
+    "p5.w7": "물에 빠진 제품은 건조 후에도 사용하지 마세요.",
+    "p5.store_h": "보관 방법",
+    "p5.st1": "물티슈로 닦은 후 부드러운 마른 천으로 가볍게 건조시킵니다.",
+    "p5.st2": "직사광선을 피하고 서늘하고 건조한 곳에 보관하세요.",
+    "p5.st3": "강한 압력이나 충격으로 인한 파손을 방지하세요.",
+
+    "p6.eyebrow": "자주 묻는 질문",
+    "p6.h2": "Q&A.",
+    "p6.q1": "Q1. 매일 사용해도 되나요?",
+    "p6.a1": "네, 매일 사용 가능합니다. 피부 상태에 따라 시간과 빈도를 조절하세요. 일반적으로 각 모드 주 2~3회 사용을 권장합니다.",
+    "p6.q2": "Q2. 기기 세척은 어떻게 하나요?",
+    "p6.a2": "전극 헤드를 물티슈로 닦은 후 부드러운 마른 천이나 타올로 가볍게 건조시키세요.",
+    "p6.q3": "Q3. 임산부도 사용할 수 있나요?",
+    "p6.a3": "임산부와 어린이는 사용을 자제해 주세요. 사용 전 반드시 의사와 상담하세요.",
+    "p6.q4": "Q4. 하루에 얼마나 사용해야 하나요?",
+    "p6.a4": "1일 권장 사용 시간은 10분입니다. 피부 상태에 따라 조절하세요.",
+    "p6.q5": "Q5. 뉴채 크림을 꼭 써야 하나요?",
+    "p6.a5": "다른 제품도 사용 가능하지만 RF 에너지 전달 효과가 감소할 수 있습니다. 뉴채 크림은 에너지 전달과 유효 성분 침투를 극대화하도록 설계되었습니다.",
+    "p6.q6": "Q6. 다른 RF 기기와 뭐가 다른가요?",
+    "p6.a6": "NEWCHAE는 전문 제품의 멀티채널 기술을 적용해 더 깊고 집중적인 에너지를 전달합니다. EMS 중주파가 탄력을 오래 유지하고, ELP가 유효 성분 침투를 강화합니다.",
+    "p6.q7": "Q7. 기기가 켜지지 않아요.",
+    "p6.a7": "충전 후 사용하거나, 충전 중이라면 케이블을 분리 후 다시 시도하세요. 문제가 계속되면 고객센터에 문의하세요. A/S 보증기간: 구매일로부터 1년.",
+    "p6.q8": "Q8. 진동이 느껴지지 않아요.",
+    "p6.a8": "M 버튼을 3초간 길게 눌러 진동을 켜세요. 진동 모드가 꺼져 있어도 모든 기능은 정상 작동합니다.",
+    "p6.spec_eyebrow": "제품 사양",
+    "p6.spec_h2": "제품<br>스펙.",
+    "spec.name": "제품명", "spec.model": "모델명", "spec.input": "입력",
+    "spec.battery": "배터리", "spec.modes": "모드", "spec.rf": "RF",
+    "spec.ems": "EMS", "spec.elp": "ELP", "spec.vib": "진동",
+    "spec.dim": "크기", "spec.weight": "무게", "spec.cert": "인증",
+    "spec.mfr": "제조사", "spec.origin": "원산지",
+    "p6.footer": "브리츠메디 주식회사 · 경기도 성남시 중원구 둔촌대로 388, 크란츠테크노 1211호"
+  },
+  ja: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.parts": "各部名称と付属品", "nav.operation": "基本操作",
+    "nav.modes": "各モードの使い方", "nav.caution": "使用上の注意",
+    "nav.qa": "Q&A・製品仕様",
+
+    "cover.kicker": "ユーザーマニュアル · 2026",
+    "cover.sub": "NEWCHAE SHOTの完全ガイド — 各部名称、基本操作、モード別使用法、注意事項、製品仕様。",
+
+    "p2.eyebrow": "各部名称",
+    "p2.h2": "各部の<br>名称。",
+    "p2.part1": "電極ヘッド — 肌接触電極",
+    "p2.part2": "レベル表示 — 出力レベル 1 / 2 / 3 表示",
+    "p2.part3": "モード表示 — RF / EMS / ELP モード表示",
+    "p2.part4": "電源ボタン — 電源ON/OFF＆レベル選択（1/2/3）",
+    "p2.part5": "モードボタン（M） — モード切替＆振動ON/OFF",
+    "p2.part6": "充電ポート — USB-Cタイプ充電ケーブル",
+    "p2.pkg_eyebrow": "付属品",
+    "p2.pkg_h2": "パッケージ<br>内容。",
+    "p2.pkg1": "NEWCHAE SHOT<br>本体", "p2.pkg2": "USB-C<br>充電ケーブル",
+    "p2.pkg3": "製品<br>ポーチ", "p2.pkg4": "取扱説明書",
+    "p2.cycle_title": "推奨使用サイクル",
+    "p2.cycle_body": "1日目：RF → 2日目：EMS → 3日目：ELP → 4日目：RF → …<br>各モード週2〜3回、1回最大10分の使用を推奨します。",
+
+    "p3.eyebrow": "基本操作",
+    "p3.h2": "電源と<br>操作。",
+    "p3.power_h": "電源 ON / OFF",
+    "p3.on": "電源ボタンを1〜2秒長押しして電源をオンにします。",
+    "p3.mode": "Mボタンを短く押してモードを選択します（RF / EMS / ELP）。",
+    "p3.level": "電源ボタンを短く押してレベルを選択します（1 / 2 / 3）。",
+    "p3.off": "電源ボタンを1〜2秒長押しして電源をオフにします。",
+    "p3.auto_off_h": "自動オフ",
+    "p3.auto_off": "10分間の使用後、自動的に電源がオフになります。使用中は2分30秒ごとに通知音が鳴ります。",
+    "p3.eyebrow2": "追加機能",
+    "p3.vib_h": "振動設定",
+    "p3.vib_p": "Mボタンを1〜2秒長押しして振動のオン/オフを切り替えます。",
+    "p3.charge_h": "バッテリー充電",
+    "p3.charge1": "適切なアダプターとUSB-Cケーブルを接続します。",
+    "p3.charge2": "充電中はレベル表示LEDが点滅します。",
+    "p3.charge3": "満充電時にはすべてのLEDが点灯します。",
+    "p3.charge4": "充電器接続中は機器が動作しません。",
+    "p3.low_h": "バッテリー残量不足",
+    "p3.low_p": "バッテリー残量が少ないと、電源を入れようとするとLEDが点滅しますが起動しません。充電してからご使用ください。",
+
+    "p4.rf_h": "RFモード", "p4.rf_desc": "高周波エネルギーが肌深部に浸透し、ボリューム管理を助けます。週2〜3回、最大10分使用。",
+    "p4.rf_s1": "ぬるま湯で顔を洗います。",
+    "p4.rf_s2": "電極ヘッドを覆うようにNEWCHAEクリームをたっぷり塗布します。",
+    "p4.rf_s3": "機器の電源を入れ、RFモードとレベルを選択します。",
+    "p4.rf_s4": "電極ヘッドを肌に密着させます。ビープ音が鳴ったら次の部位に移動します。",
+    "p4.rf_s5": "顔の内側から外側に向かって移動します。",
+    "p4.rf_tip": "同じ部位への連続2回以上のショットは避けてください。常にレベル1から開始。額や目元はレベルを下げてください。",
+
+    "p4.ems_h": "EMSモード", "p4.ems_desc": "中周波電気エネルギーが肌の弾力と輪郭管理を改善します。週2〜3回、最大10分使用。",
+    "p4.ems_s1": "ぬるま湯で顔を洗います。",
+    "p4.ems_s2": "電極ヘッドを覆うようにNEWCHAEクリームをたっぷり塗布します。",
+    "p4.ems_s3": "機器の電源を入れ、EMSモードとレベルを選択します。",
+    "p4.ems_s4": "電極ヘッドを肌に密着させ、下から上、内側から外側に優しく滑らせます。",
+    "p4.ems_tip": "レベル1から開始。一箇所への過度な刺激は避けてください。過度な刺激は肌トラブルの原因になります。",
+
+    "p4.elp_h": "ELPモード", "p4.elp_desc": "電気穿孔が化粧品の有効成分の吸収を助けます。週2〜3回、最大10分使用。",
+    "p4.elp_s1": "ぬるま湯で顔を洗います。",
+    "p4.elp_s2": "電極ヘッドを覆うようにNEWCHAEクリームをたっぷり塗布します。",
+    "p4.elp_s3": "機器の電源を入れ、ELPモードとレベルを選択します。",
+    "p4.elp_s4": "電極ヘッドを肌に密着させ、内側から外側に小さな円を描くようにマッサージします。",
+    "p4.elp_tip": "レベル1から開始。一箇所への過度な刺激は避けてください。過度な刺激は肌トラブルの原因になります。",
+
+    "p5.eyebrow": "使用上の注意",
+    "p5.h2": "使用前に<br>ご確認。",
+    "p5.c1": "使用前に取扱説明書をよくお読みください。",
+    "p5.c2": "皮膚治療中やアレルギーのある方は専門医に相談してください。",
+    "p5.c3": "金属アレルギーの方は使用しないでください。",
+    "p5.c4": "お子様の手の届かない場所に保管してください。",
+    "p5.c5": "心臓疾患、急性疾患、体内植込み機器（ペースメーカー、神経刺激装置等）をお持ちの方は使用しないでください。",
+    "p5.c6": "敏感肌の方は手首でパッチテストを行ってください。",
+    "p5.c7": "顔面手術後は完全に回復してから使用してください。",
+    "p5.c8": "使用後24時間以内に軽い刺激感、温感、赤みが出る場合がありますが、通常2〜3日で治まります。",
+    "p5.c9": "目の周りや喉の部位への使用は避けてください。",
+    "p5.c10": "常にレベル1から開始してください。一箇所に2回以上のショットを行わないでください。",
+    "p5.c11": "濡れた手で扱ったり、強い衝撃を与えないでください。",
+    "p5.c12": "本製品は医療機器ではなく、医療目的に使用できません。",
+    "p5.warn_h": "⚠ 警告",
+    "p5.w1": "本体を水に浸さないでください。",
+    "p5.w2": "本体に液体が入らないようにしてください。",
+    "p5.w3": "浴槽、シャワー、プール付近では使用しないでください。",
+    "p5.w4": "製品を分解しないでください。",
+    "p5.w5": "熱源の近くに置かないでください — 火災の原因になります。",
+    "p5.w6": "異音、異臭、煙が発生した場合は直ちに使用を中止しカスタマーサービスに連絡してください。",
+    "p5.w7": "水没した製品は乾燥後も使用しないでください。",
+    "p5.store_h": "保管方法",
+    "p5.st1": "ウェットティッシュで拭いた後、柔らかい乾いた布で優しく乾かします。",
+    "p5.st2": "直射日光を避け、涼しく乾燥した場所に保管してください。",
+    "p5.st3": "強い圧力や衝撃による破損を防いでください。",
+
+    "p6.eyebrow": "よくある質問",
+    "p6.h2": "Q&A.",
+    "p6.q1": "Q1. 毎日使えますか？",
+    "p6.a1": "はい。肌の状態に合わせて時間と頻度を調整してください。一般的に各モード週2〜3回の使用を推奨します。",
+    "p6.q2": "Q2. お手入れ方法は？",
+    "p6.a2": "電極ヘッドをウェットティッシュで拭き、柔らかい乾いた布で優しく乾かしてください。",
+    "p6.q3": "Q3. 妊娠中でも使えますか？",
+    "p6.a3": "妊娠中の方とお子様の使用はお控えください。使用前に医師にご相談ください。",
+    "p6.q4": "Q4. 1日の使用時間は？",
+    "p6.a4": "1日の推奨使用時間は10分です。肌の状態に合わせて調整してください。",
+    "p6.q5": "Q5. NEWCHAE クリームは必須ですか？",
+    "p6.a5": "他の製品も使用可能ですが、RFエネルギーの伝達効果が低下する場合があります。NEWCHAEクリームはエネルギー伝達と有効成分の浸透を最大化するよう設計されています。",
+    "p6.q6": "Q6. 他のRF機器との違いは？",
+    "p6.a6": "NEWCHAEは専門機器のマルチチャネル技術を採用し、より深く集中的なエネルギーを届けます。EMS中周波が弾力を長く維持し、ELPが有効成分の浸透を強化します。",
+    "p6.q7": "Q7. 電源が入りません。",
+    "p6.a7": "充電後にお試しください。充電中の場合はケーブルを外して再度お試しください。問題が続く場合はカスタマーサービスにご連絡ください。保証期間：購入日から1年。",
+    "p6.q8": "Q8. 振動を感じません。",
+    "p6.a8": "Mボタンを3秒長押しして振動を切り替えてください。振動モードがオフでもすべての機能は正常に動作します。",
+    "p6.spec_eyebrow": "製品仕様",
+    "p6.spec_h2": "製品<br>スペック。",
+    "spec.name": "製品名", "spec.model": "モデル名", "spec.input": "入力",
+    "spec.battery": "バッテリー", "spec.modes": "モード", "spec.rf": "RF",
+    "spec.ems": "EMS", "spec.elp": "ELP", "spec.vib": "振動",
+    "spec.dim": "寸法", "spec.weight": "重量", "spec.cert": "認証",
+    "spec.mfr": "製造元", "spec.origin": "原産国",
+    "p6.footer": "BRITZMEDI Co., Ltd. · 京畿道城南市中原区屯村大路388 クランツテクノ1211号"
+  },
+  th: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.parts": "ชิ้นส่วนและอุปกรณ์", "nav.operation": "การใช้งานเบื้องต้น",
+    "nav.modes": "วิธีใช้แต่ละโหมด", "nav.caution": "ข้อควรระวัง",
+    "nav.qa": "คำถามที่พบบ่อยและสเปค",
+
+    "cover.kicker": "คู่มือการใช้งาน · 2026",
+    "cover.sub": "คู่มือ NEWCHAE SHOT ฉบับสมบูรณ์ — ชิ้นส่วน, การใช้งาน, โหมดต่างๆ, ข้อควรระวัง และสเปคผลิตภัณฑ์",
+
+    "p2.eyebrow": "ชิ้นส่วนต่างๆ",
+    "p2.h2": "ส่วนประกอบ<br>ของอุปกรณ์",
+    "p2.part1": "หัวอิเล็กโทรด — อิเล็กโทรดสัมผัสผิว",
+    "p2.part2": "ไฟแสดงระดับ — แสดงระดับ 1 / 2 / 3",
+    "p2.part3": "ไฟแสดงโหมด — แสดงโหมด RF / EMS / ELP",
+    "p2.part4": "ปุ่มเปิด/ปิด — เปิด/ปิดเครื่อง และเลือกระดับ (1/2/3)",
+    "p2.part5": "ปุ่มโหมด (M) — เลือกโหมด และเปิด/ปิดการสั่น",
+    "p2.part6": "พอร์ตชาร์จ — สาย USB-C",
+    "p2.pkg_eyebrow": "อุปกรณ์ในกล่อง",
+    "p2.pkg_h2": "สิ่งที่<br>อยู่ในกล่อง",
+    "p2.pkg1": "NEWCHAE SHOT<br>ตัวเครื่อง", "p2.pkg2": "สาย<br>ชาร์จ USB-C",
+    "p2.pkg3": "กระเป๋า<br>ใส่เครื่อง", "p2.pkg4": "คู่มือการใช้งาน",
+    "p2.cycle_title": "รอบการใช้งานที่แนะนำ",
+    "p2.cycle_body": "วันที่ 1: RF → วันที่ 2: EMS → วันที่ 3: ELP → วันที่ 4: RF → …<br>ใช้แต่ละโหมดสัปดาห์ละ 2–3 ครั้ง ครั้งละไม่เกิน 10 นาที",
+
+    "p3.eyebrow": "การใช้งานเบื้องต้น",
+    "p3.h2": "เปิด/ปิด<br>และการควบคุม",
+    "p3.power_h": "เปิด / ปิดเครื่อง",
+    "p3.on": "กดปุ่มเปิด/ปิดค้างไว้ 1–2 วินาที เพื่อเปิดเครื่อง",
+    "p3.mode": "กดปุ่ม M สั้นๆ เพื่อเลือกโหมด (RF / EMS / ELP)",
+    "p3.level": "กดปุ่มเปิด/ปิดสั้นๆ เพื่อเลือกระดับ (1 / 2 / 3)",
+    "p3.off": "กดปุ่มเปิด/ปิดค้างไว้ 1–2 วินาที เพื่อปิดเครื่อง",
+    "p3.auto_off_h": "ปิดอัตโนมัติ",
+    "p3.auto_off": "เครื่องจะปิดอัตโนมัติหลังใช้งาน 10 นาที มีเสียงแจ้งเตือนทุก 2 นาที 30 วินาที",
+    "p3.eyebrow2": "ฟังก์ชันเพิ่มเติม",
+    "p3.vib_h": "การตั้งค่าการสั่น",
+    "p3.vib_p": "กดปุ่ม M ค้างไว้ 1–2 วินาที เพื่อเปิด/ปิดการสั่น",
+    "p3.charge_h": "การชาร์จแบตเตอรี่",
+    "p3.charge1": "เสียบสาย USB-C กับอะแดปเตอร์ที่เหมาะสม",
+    "p3.charge2": "ไฟแสดงระดับจะกะพริบขณะชาร์จ",
+    "p3.charge3": "เมื่อชาร์จเต็ม ไฟทุกดวงจะติดสว่าง",
+    "p3.charge4": "เครื่องไม่สามารถใช้งานขณะต่อสายชาร์จ",
+    "p3.low_h": "แบตเตอรี่ต่ำ",
+    "p3.low_p": "เมื่อแบตเตอรี่ต่ำ ไฟ LED จะกะพริบเมื่อเปิดเครื่องแต่จะไม่ทำงาน กรุณาชาร์จก่อนใช้งาน",
+
+    "p4.rf_h": "โหมด RF", "p4.rf_desc": "พลังงานความถี่สูงเจาะลึกผิวเพื่อบำรุงผิว ใช้สัปดาห์ละ 2–3 ครั้ง ครั้งละไม่เกิน 10 นาที",
+    "p4.rf_s1": "ล้างหน้าด้วยน้ำอุ่น",
+    "p4.rf_s2": "ทาครีม NEWCHAE ให้ทั่วบริเวณที่ต้องการดูแล",
+    "p4.rf_s3": "เปิดเครื่องและเลือกโหมด RF พร้อมระดับ",
+    "p4.rf_s4": "แนบหัวอิเล็กโทรดกับผิว — เสียงบี๊ปจะแจ้งให้เลื่อนไปบริเวณถัดไป",
+    "p4.rf_s5": "เลื่อนจากด้านในไปด้านนอกของบริเวณที่ดูแล",
+    "p4.rf_tip": "ห้ามยิงเกิน 2 ครั้งติดต่อกันในจุดเดียว เริ่มจากระดับ 1 เสมอ ลดระดับเมื่อใช้บริเวณหน้าผากและรอบดวงตา",
+
+    "p4.ems_h": "โหมด EMS", "p4.ems_desc": "พลังงานไฟฟ้าความถี่กลางช่วยปรับปรุงความยืดหยุ่นและรูปทรงใบหน้า ใช้สัปดาห์ละ 2–3 ครั้ง ครั้งละไม่เกิน 10 นาที",
+    "p4.ems_s1": "ล้างหน้าด้วยน้ำอุ่น",
+    "p4.ems_s2": "ทาครีม NEWCHAE ให้ทั่วบริเวณที่ต้องการดูแล",
+    "p4.ems_s3": "เปิดเครื่องและเลือกโหมด EMS พร้อมระดับ",
+    "p4.ems_s4": "เลื่อนหัวอิเล็กโทรดขึ้น — จากล่างขึ้นบน, จากในออกนอก",
+    "p4.ems_tip": "เริ่มจากระดับ 1 หลีกเลี่ยงการกระตุ้นมากเกินไปในจุดเดียว การกระตุ้นมากเกินอาจทำให้ผิวระคายเคือง",
+
+    "p4.elp_h": "โหมด ELP", "p4.elp_desc": "อิเล็กโทรโพเรชันช่วยดูดซึมสารออกฤทธิ์ ใช้สัปดาห์ละ 2–3 ครั้ง ครั้งละไม่เกิน 10 นาที",
+    "p4.elp_s1": "ล้างหน้าด้วยน้ำอุ่น",
+    "p4.elp_s2": "ทาครีม NEWCHAE ให้ทั่วบริเวณที่ต้องการดูแล",
+    "p4.elp_s3": "เปิดเครื่องและเลือกโหมด ELP พร้อมระดับ",
+    "p4.elp_s4": "นวดเป็นวงกลมช้าๆ — จากด้านในออกด้านนอก จากล่างขึ้นบน",
+    "p4.elp_tip": "เริ่มจากระดับ 1 หลีกเลี่ยงการกระตุ้นมากเกินไปในจุดเดียว การกระตุ้นมากเกินอาจทำให้ผิวระคายเคือง",
+
+    "p5.eyebrow": "ข้อควรระวัง",
+    "p5.h2": "ก่อน<br>เริ่มใช้งาน",
+    "p5.c1": "อ่านคู่มือการใช้งานอย่างละเอียดก่อนใช้",
+    "p5.c2": "หากกำลังรักษาผิวหรือมีอาการแพ้ ปรึกษาแพทย์ก่อนใช้",
+    "p5.c3": "ห้ามใช้หากแพ้โลหะ",
+    "p5.c4": "เก็บให้พ้นมือเด็ก",
+    "p5.c5": "ห้ามใช้หากเป็นโรคหัวใจ, ป่วยเฉียบพลัน หรือมีอุปกรณ์ฝังในร่างกาย",
+    "p5.c6": "สำหรับผิวแพ้ง่าย ทดสอบที่ข้อมือก่อน",
+    "p5.c7": "หลังผ่าตัดใบหน้า ใช้หลังฟื้นตัวเต็มที่เท่านั้น",
+    "p5.c8": "อาจรู้สึกแสบเล็กน้อย อุ่น หรือแดงภายใน 24 ชม. จะหายภายใน 2–3 วัน",
+    "p5.c9": "หลีกเลี่ยงการใช้รอบดวงตาและบริเวณลำคอ",
+    "p5.c10": "เริ่มจากระดับ 1 เสมอ ห้ามยิงเกิน 2 ครั้งในจุดเดียว",
+    "p5.c11": "ห้ามจับด้วยมือเปียกหรือกระแทกแรง",
+    "p5.c12": "ผลิตภัณฑ์นี้ไม่ใช่เครื่องมือแพทย์ ห้ามใช้เพื่อวัตถุประสงค์ทางการแพทย์",
+    "p5.warn_h": "⚠ คำเตือน",
+    "p5.w1": "ห้ามจุ่มตัวเครื่องในน้ำ",
+    "p5.w2": "ระวังอย่าให้ของเหลวเข้าตัวเครื่อง",
+    "p5.w3": "ห้ามใช้ใกล้อ่างอาบน้ำ, ฝักบัว หรือสระว่ายน้ำ",
+    "p5.w4": "ห้ามถอดแยกชิ้นส่วน",
+    "p5.w5": "ห้ามวางใกล้แหล่งความร้อน — อาจเกิดไฟไหม้",
+    "p5.w6": "หากมีเสียง, กลิ่น หรือควันผิดปกติ หยุดใช้ทันทีและติดต่อศูนย์บริการ",
+    "p5.w7": "ห้ามใช้ผลิตภัณฑ์ที่เคยจมน้ำ",
+    "p5.store_h": "วิธีเก็บรักษา",
+    "p5.st1": "เช็ดด้วยทิชชูเปียก แล้วเช็ดแห้งด้วยผ้านุ่ม",
+    "p5.st2": "เก็บในที่เย็นแห้ง หลีกเลี่ยงแสงแดดโดยตรง",
+    "p5.st3": "ป้องกันความเสียหายจากแรงกดหรือกระแทก",
+
+    "p6.eyebrow": "คำถามที่พบบ่อย",
+    "p6.h2": "Q&A.",
+    "p6.q1": "Q1. ใช้ได้ทุกวันไหม?",
+    "p6.a1": "ได้ ปรับเวลาและความถี่ตามสภาพผิว แนะนำใช้แต่ละโหมดสัปดาห์ละ 2–3 ครั้ง",
+    "p6.q2": "Q2. ทำความสะอาดอย่างไร?",
+    "p6.a2": "เช็ดหัวอิเล็กโทรดด้วยทิชชูเปียก แล้วเช็ดแห้งด้วยผ้านุ่ม",
+    "p6.q3": "Q3. ตั้งครรภ์ใช้ได้ไหม?",
+    "p6.a3": "สตรีมีครรภ์และเด็กไม่แนะนำให้ใช้ ปรึกษาแพทย์ก่อนใช้",
+    "p6.q4": "Q4. ใช้วันละนานเท่าไหร่?",
+    "p6.a4": "แนะนำวันละ 10 นาที ปรับตามสภาพผิว",
+    "p6.q5": "Q5. ต้องใช้ครีม NEWCHAE ไหม?",
+    "p6.a5": "ใช้ผลิตภัณฑ์อื่นได้ แต่ประสิทธิภาพการส่ง RF อาจลดลง ครีม NEWCHAE ออกแบบมาเพื่อเพิ่มประสิทธิภาพการนำพลังงาน",
+    "p6.q6": "Q6. NEWCHAE ต่างจากเครื่อง RF อื่นอย่างไร?",
+    "p6.a6": "NEWCHAE ใช้เทคโนโลยีมัลติแชนแนลจากเครื่องระดับมืออาชีพ EMS รักษาความยืดหยุ่นได้นาน ELP เพิ่มการดูดซึมสารออกฤทธิ์",
+    "p6.q7": "Q7. เปิดเครื่องไม่ได้",
+    "p6.a7": "ชาร์จก่อนใช้ หรือถอดสายชาร์จแล้วลองใหม่ หากยังมีปัญหา ติดต่อศูนย์บริการ รับประกัน 1 ปี",
+    "p6.q8": "Q8. ไม่รู้สึกสั่น",
+    "p6.a8": "กดปุ่ม M ค้าง 3 วินาทีเพื่อเปิดการสั่น ทุกโหมดทำงานปกติแม้ปิดการสั่น",
+    "p6.spec_eyebrow": "สเปคผลิตภัณฑ์",
+    "p6.spec_h2": "สเปค<br>ผลิตภัณฑ์",
+    "spec.name": "ชื่อผลิตภัณฑ์", "spec.model": "รุ่น", "spec.input": "อินพุต",
+    "spec.battery": "แบตเตอรี่", "spec.modes": "โหมด", "spec.rf": "RF",
+    "spec.ems": "EMS", "spec.elp": "ELP", "spec.vib": "การสั่น",
+    "spec.dim": "ขนาด", "spec.weight": "น้ำหนัก", "spec.cert": "การรับรอง",
+    "spec.mfr": "ผู้ผลิต", "spec.origin": "ประเทศผู้ผลิต",
+    "p6.footer": "BRITZMEDI Co., Ltd. · Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, Republic of Korea"
+  },
+  vi: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.parts": "Bộ phận & Phụ kiện", "nav.operation": "Thao tác cơ bản",
+    "nav.modes": "Cách sử dụng từng chế độ", "nav.caution": "Lưu ý khi sử dụng",
+    "nav.qa": "Hỏi đáp & Thông số",
+
+    "cover.kicker": "Hướng dẫn sử dụng · 2026",
+    "cover.sub": "Hướng dẫn đầy đủ NEWCHAE SHOT — bộ phận, thao tác, chế độ, lưu ý và thông số sản phẩm.",
+
+    "p2.eyebrow": "Tổng quan thiết bị",
+    "p2.h2": "Tên<br>các bộ phận.",
+    "p2.part1": "Đầu điện cực — Điện cực tiếp xúc da",
+    "p2.part2": "Đèn báo mức — Hiển thị mức 1 / 2 / 3",
+    "p2.part3": "Đèn báo chế độ — Hiển thị chế độ RF / EMS / ELP",
+    "p2.part4": "Nút nguồn — Bật/Tắt & Chọn mức (1/2/3)",
+    "p2.part5": "Nút chế độ (M) — Chọn chế độ & Bật/Tắt rung",
+    "p2.part6": "Cổng sạc — Cáp sạc USB-C",
+    "p2.pkg_eyebrow": "Phụ kiện đi kèm",
+    "p2.pkg_h2": "Trong hộp<br>có gì.",
+    "p2.pkg1": "NEWCHAE SHOT<br>Thiết bị chính", "p2.pkg2": "Cáp sạc<br>USB-C",
+    "p2.pkg3": "Túi đựng<br>sản phẩm", "p2.pkg4": "Sách hướng dẫn",
+    "p2.cycle_title": "Chu kỳ sử dụng khuyến nghị",
+    "p2.cycle_body": "Ngày 1: RF → Ngày 2: EMS → Ngày 3: ELP → Ngày 4: RF → …<br>Mỗi chế độ 2–3 lần/tuần, mỗi lần tối đa 10 phút.",
+
+    "p3.eyebrow": "Thao tác cơ bản",
+    "p3.h2": "Nguồn &<br>Điều khiển.",
+    "p3.power_h": "Bật / Tắt nguồn",
+    "p3.on": "Nhấn giữ nút nguồn 1–2 giây để bật.",
+    "p3.mode": "Nhấn ngắn nút M để chọn chế độ (RF / EMS / ELP).",
+    "p3.level": "Nhấn ngắn nút nguồn để chọn mức (1 / 2 / 3).",
+    "p3.off": "Nhấn giữ nút nguồn 1–2 giây để tắt.",
+    "p3.auto_off_h": "Tự động tắt",
+    "p3.auto_off": "Thiết bị tự động tắt sau 10 phút sử dụng. Âm thanh thông báo phát mỗi 2 phút 30 giây.",
+    "p3.eyebrow2": "Chức năng bổ sung",
+    "p3.vib_h": "Cài đặt rung",
+    "p3.vib_p": "Nhấn giữ nút M 1–2 giây để bật/tắt rung.",
+    "p3.charge_h": "Sạc pin",
+    "p3.charge1": "Kết nối cáp USB-C với bộ chuyển đổi phù hợp.",
+    "p3.charge2": "Đèn LED mức nhấp nháy khi đang sạc.",
+    "p3.charge3": "Tất cả LED sáng khi sạc đầy.",
+    "p3.charge4": "Thiết bị không hoạt động khi đang cắm sạc.",
+    "p3.low_h": "Pin yếu",
+    "p3.low_p": "Khi pin yếu, đèn LED nhấp nháy khi bật nhưng thiết bị không khởi động. Vui lòng sạc trước khi sử dụng.",
+
+    "p4.rf_h": "Chế độ RF", "p4.rf_desc": "Năng lượng tần số cao thâm nhập sâu vào da để quản lý thể tích. Sử dụng 2–3 lần/tuần, tối đa 10 phút.",
+    "p4.rf_s1": "Rửa mặt bằng nước ấm.",
+    "p4.rf_s2": "Thoa kem NEWCHAE đều lên vùng cần chăm sóc.",
+    "p4.rf_s3": "Bật thiết bị và chọn chế độ RF cùng mức.",
+    "p4.rf_s4": "Áp đầu điện cực lên da — tiếng bíp báo hiệu chuyển sang vùng tiếp theo.",
+    "p4.rf_s5": "Di chuyển từ trong ra ngoài vùng điều trị.",
+    "p4.rf_tip": "Không bắn quá 2 lần liên tiếp trên cùng một vùng. Luôn bắt đầu từ Mức 1. Giảm mức khi sử dụng vùng trán và quanh mắt.",
+
+    "p4.ems_h": "Chế độ EMS", "p4.ems_desc": "Năng lượng điện tần số trung bình cải thiện độ đàn hồi và đường nét khuôn mặt. 2–3 lần/tuần, tối đa 10 phút.",
+    "p4.ems_s1": "Rửa mặt bằng nước ấm.",
+    "p4.ems_s2": "Thoa kem NEWCHAE đều lên vùng cần chăm sóc.",
+    "p4.ems_s3": "Bật thiết bị và chọn chế độ EMS cùng mức.",
+    "p4.ems_s4": "Trượt đầu điện cực hướng lên — từ dưới lên trên, từ trong ra ngoài.",
+    "p4.ems_tip": "Bắt đầu từ Mức 1. Tránh kích thích quá mức ở một vùng. Kích thích quá mức có thể gây kích ứng da.",
+
+    "p4.elp_h": "Chế độ ELP", "p4.elp_desc": "Điện di giúp hấp thu hoạt chất mỹ phẩm. Sử dụng 2–3 lần/tuần, tối đa 10 phút.",
+    "p4.elp_s1": "Rửa mặt bằng nước ấm.",
+    "p4.elp_s2": "Thoa kem NEWCHAE đều lên vùng cần chăm sóc.",
+    "p4.elp_s3": "Bật thiết bị và chọn chế độ ELP cùng mức.",
+    "p4.elp_s4": "Massage theo vòng tròn nhỏ chậm — từ trong ra ngoài, từ dưới lên trên.",
+    "p4.elp_tip": "Bắt đầu từ Mức 1. Tránh kích thích quá mức ở một vùng. Kích thích quá mức có thể gây kích ứng da.",
+
+    "p5.eyebrow": "Lưu ý khi sử dụng",
+    "p5.h2": "Trước khi<br>bắt đầu.",
+    "p5.c1": "Đọc kỹ hướng dẫn sử dụng trước khi dùng.",
+    "p5.c2": "Tham khảo ý kiến bác sĩ nếu đang điều trị da hoặc có dị ứng.",
+    "p5.c3": "Không sử dụng nếu dị ứng kim loại.",
+    "p5.c4": "Để xa tầm tay trẻ em.",
+    "p5.c5": "Không sử dụng nếu mắc bệnh tim, bệnh cấp tính hoặc có thiết bị cấy ghép.",
+    "p5.c6": "Da nhạy cảm nên thử ở cổ tay trước.",
+    "p5.c7": "Sau phẫu thuật mặt, chỉ sử dụng khi đã hồi phục hoàn toàn.",
+    "p5.c8": "Có thể cảm thấy châm chích nhẹ, nóng hoặc đỏ trong 24 giờ, thường hết trong 2–3 ngày.",
+    "p5.c9": "Tránh sử dụng quanh mắt và vùng cổ họng.",
+    "p5.c10": "Luôn bắt đầu từ Mức 1. Không bắn quá 2 lần trên một vùng.",
+    "p5.c11": "Không cầm bằng tay ướt hoặc để va đập mạnh.",
+    "p5.c12": "Sản phẩm này không phải thiết bị y tế và không dùng cho mục đích điều trị.",
+    "p5.warn_h": "⚠ Cảnh báo",
+    "p5.w1": "Không nhúng thiết bị vào nước.",
+    "p5.w2": "Đảm bảo không có chất lỏng lọt vào thiết bị.",
+    "p5.w3": "Không sử dụng gần bồn tắm, vòi sen hoặc hồ bơi.",
+    "p5.w4": "Không tháo rời sản phẩm.",
+    "p5.w5": "Không đặt gần nguồn nhiệt — có thể gây cháy.",
+    "p5.w6": "Nếu có tiếng ồn, mùi hoặc khói bất thường, ngừng sử dụng và liên hệ dịch vụ khách hàng.",
+    "p5.w7": "Không sử dụng sản phẩm đã bị ngâm nước.",
+    "p5.store_h": "Hướng dẫn bảo quản",
+    "p5.st1": "Lau bằng khăn ướt, sau đó lau khô nhẹ bằng vải mềm.",
+    "p5.st2": "Bảo quản nơi mát, khô, tránh ánh nắng trực tiếp.",
+    "p5.st3": "Tránh hư hỏng do áp lực mạnh hoặc va đập.",
+
+    "p6.eyebrow": "Câu hỏi thường gặp",
+    "p6.h2": "Hỏi đáp.",
+    "p6.q1": "Q1. Có thể dùng mỗi ngày không?",
+    "p6.a1": "Có. Điều chỉnh thời gian và tần suất theo tình trạng da. Khuyến nghị mỗi chế độ 2–3 lần/tuần.",
+    "p6.q2": "Q2. Vệ sinh thiết bị thế nào?",
+    "p6.a2": "Lau đầu điện cực bằng khăn ướt, sau đó lau khô bằng vải mềm.",
+    "p6.q3": "Q3. Đang mang thai có dùng được không?",
+    "p6.a3": "Phụ nữ mang thai và trẻ em không nên sử dụng. Tham khảo bác sĩ trước khi dùng.",
+    "p6.q4": "Q4. Nên dùng bao lâu mỗi ngày?",
+    "p6.a4": "Thời gian khuyến nghị là 10 phút/ngày. Điều chỉnh theo tình trạng da.",
+    "p6.q5": "Q5. Bắt buộc dùng kem NEWCHAE?",
+    "p6.a5": "Có thể dùng sản phẩm khác nhưng hiệu quả truyền năng lượng RF có thể giảm. Kem NEWCHAE được thiết kế để tối ưu hóa truyền năng lượng.",
+    "p6.q6": "Q6. NEWCHAE khác gì các thiết bị RF khác?",
+    "p6.a6": "NEWCHAE sử dụng công nghệ đa kênh từ thiết bị chuyên nghiệp. EMS tần số trung duy trì độ đàn hồi lâu hơn. ELP tăng cường hấp thu hoạt chất.",
+    "p6.q7": "Q7. Không bật được thiết bị.",
+    "p6.a7": "Sạc rồi thử lại, hoặc rút cáp sạc rồi thử. Nếu vẫn lỗi, liên hệ dịch vụ khách hàng. Bảo hành: 1 năm.",
+    "p6.q8": "Q8. Không cảm thấy rung.",
+    "p6.a8": "Nhấn giữ nút M 3 giây để bật rung. Tất cả chế độ hoạt động bình thường dù tắt rung.",
+    "p6.spec_eyebrow": "Thông số kỹ thuật",
+    "p6.spec_h2": "Thông số<br>sản phẩm.",
+    "spec.name": "Tên sản phẩm", "spec.model": "Model", "spec.input": "Đầu vào",
+    "spec.battery": "Pin", "spec.modes": "Chế độ", "spec.rf": "RF",
+    "spec.ems": "EMS", "spec.elp": "ELP", "spec.vib": "Rung",
+    "spec.dim": "Kích thước", "spec.weight": "Trọng lượng", "spec.cert": "Chứng nhận",
+    "spec.mfr": "Nhà sản xuất", "spec.origin": "Xuất xứ",
+    "p6.footer": "BRITZMEDI Co., Ltd. · Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, Republic of Korea"
+  }
+};
+
+function applyLang(lang) {
+  const dict = DICT[lang] || DICT.en;
+  const htmlLangs = { en: 'en', ko: 'ko', ja: 'ja', th: 'th', vi: 'vi' };
+  document.documentElement.lang = htmlLangs[lang] || lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('#controls button[data-lang]').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  try { localStorage.setItem('manual-lang', lang); } catch(e) {}
+}
+
+document.querySelectorAll('#controls button[data-lang]').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+});
+
+(function() {
+  const urlLang = new URLSearchParams(location.search).get('lang');
+  const saved = (() => { try { return localStorage.getItem('manual-lang'); } catch(e) { return null; }})();
+  const nav = (navigator.language || 'en').toLowerCase().startsWith('ko') ? 'ko' : 'en';
+  applyLang(urlLang || saved || nav);
+})();
+</script>
+</body>
+</html>
