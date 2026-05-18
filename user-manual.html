@@ -288,7 +288,112 @@
     border-top: 1px solid var(--line);
   }
 
-  /* ============ PAGE 5 — PRECAUTIONS ============ */
+  /* ============ PAGE 4/5/6 — HOW TO USE (ILLUSTRATION) ============ */
+  .howto-page {
+    grid-template-columns: 1fr 1fr;
+    background: var(--cream);
+  }
+  .howto-visual {
+    position: relative; overflow: hidden;
+    background: var(--ivory);
+  }
+  .howto-visual img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .howto-content {
+    padding: 26mm 20mm 20mm 18mm;
+    display: flex; flex-direction: column;
+  }
+  .howto-content .mode-tag {
+    display: inline-block;
+    padding: 5px 14px; margin-bottom: 14px;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: #fff; background: var(--lilac);
+    align-self: flex-start;
+  }
+  .howto-content h2 { margin-bottom: 10px; }
+  .howto-content .mode-freq {
+    font-size: 11px; font-weight: 600; color: var(--lilac);
+    letter-spacing: 0.06em; margin-bottom: 14px;
+  }
+  .howto-content .mode-desc-full {
+    font-size: 11.5px; color: var(--graphite); line-height: 1.65;
+    margin-bottom: 16px; padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .howto-content .step-grid {
+    list-style: none; padding: 0; counter-reset: hs;
+  }
+  .howto-content .step-grid li {
+    position: relative; padding: 7px 0 7px 30px;
+    font-size: 11px; line-height: 1.6; color: var(--graphite);
+    counter-increment: hs;
+  }
+  .howto-content .step-grid li::before {
+    content: counter(hs);
+    position: absolute; left: 0; top: 8px;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--lilac); color: #fff;
+    font-size: 10px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .howto-content .howto-tip {
+    margin-top: auto; padding: 12px 14px;
+    background: var(--ivory);
+    border-left: 3px solid var(--warn);
+    font-size: 10px; color: var(--graphite); line-height: 1.55;
+  }
+
+  /* ============ PAGE 7 — TECH FEATURE ============ */
+  .tech-page {
+    grid-template-columns: 1fr;
+    background: var(--dark); color: #faf6ed;
+  }
+  .tech-inner {
+    padding: 26mm 22mm 20mm 22mm;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 28px;
+    align-items: start;
+  }
+  .tech-left {}
+  .tech-left .eyebrow { color: var(--rose); }
+  .tech-left .eyebrow::before { background: var(--rose); }
+  .tech-left h2 { color: #faf6ed; margin-bottom: 18px; font-size: 38px; }
+  .tech-features {
+    list-style: none; padding: 0;
+  }
+  .tech-features li {
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(250,246,237,0.1);
+    font-size: 11px; line-height: 1.6;
+    color: rgba(250,246,237,0.75);
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .tech-features .feat-icon {
+    flex-shrink: 0; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--rose);
+    margin-top: 6px;
+  }
+  .tech-right {
+    position: relative;
+  }
+  .tech-right img {
+    width: 100%; border-radius: 2px;
+    filter: brightness(1.05) contrast(1.05);
+  }
+  .tech-badge {
+    display: inline-block;
+    padding: 6px 14px; margin-top: 16px;
+    background: rgba(250,246,237,0.1);
+    border: 1px solid rgba(250,246,237,0.15);
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(250,246,237,0.6);
+  }
+
+  /* ============ PAGE 8 — PRECAUTIONS ============ */
   .caution-page {
     grid-template-columns: 1fr;
     background: var(--cream);
@@ -449,7 +554,7 @@
     </div>
   </div>
   <div class="cover-right">
-    <img src="images/product-hero.jpg" alt="NEWCHAE SHOT">
+    <img src="images/newchea black and white.png" alt="NEWCHAE SHOT" style="mix-blend-mode: normal; filter: none;">
   </div>
 </section>
 
@@ -524,55 +629,110 @@
   <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">03</span></div>
 </section>
 
-<!-- ========== PAGE 4 — HOW TO USE MODES ========== -->
-<section class="page modes-page">
+<!-- ========== PAGE 4 — HOW TO USE RF MODE ========== -->
+<section class="page howto-page">
   <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.modes">How to Use Each Mode</span></div>
-  <div class="modes-inner">
-    <div class="mode-block">
-      <div class="mode-tag">GLOW</div>
-      <h3 data-i18n="p4.rf_h">RF Mode</h3>
-      <div class="mode-freq">1 MHz</div>
-      <p class="mode-desc" data-i18n="p4.rf_desc">High-frequency energy penetrates deep into the skin for volume management. Use 2–3 times per week, up to 10 minutes.</p>
-      <ol class="mode-steps">
-        <li data-i18n="p4.rf_s1">Cleanse face with lukewarm water.</li>
-        <li data-i18n="p4.rf_s2">Apply NEWCHAE cream generously over the treatment area.</li>
-        <li data-i18n="p4.rf_s3">Turn on device and select RF mode &amp; level.</li>
-        <li data-i18n="p4.rf_s4">Hold electrode head against skin — a beep signals to move to next area.</li>
-        <li data-i18n="p4.rf_s5">Move from inside to outside of the treatment area.</li>
-      </ol>
-      <div class="mode-tip" data-i18n="p4.rf_tip">Do not apply more than two consecutive shots to the same area. Always start at Level 1.</div>
-    </div>
-    <div class="mode-block">
-      <div class="mode-tag">TONE</div>
-      <h3 data-i18n="p4.ems_h">EMS Mode</h3>
-      <div class="mode-freq">1 KHz</div>
-      <p class="mode-desc" data-i18n="p4.ems_desc">Medium-frequency electrical energy improves skin elasticity and contour management. Use 2–3 times per week, up to 10 minutes.</p>
-      <ol class="mode-steps">
-        <li data-i18n="p4.ems_s1">Cleanse face with lukewarm water.</li>
-        <li data-i18n="p4.ems_s2">Apply NEWCHAE cream generously over the treatment area.</li>
-        <li data-i18n="p4.ems_s3">Turn on device and select EMS mode &amp; level.</li>
-        <li data-i18n="p4.ems_s4">Glide electrode head upward — bottom to top, inside to outside.</li>
-      </ol>
-      <div class="mode-tip" data-i18n="p4.ems_tip">Start at Level 1. Avoid excessive stimulation in one area. Excessive stimulation may cause skin irritation.</div>
-    </div>
-    <div class="mode-block">
-      <div class="mode-tag">BOOST</div>
-      <h3 data-i18n="p4.elp_h">ELP Mode</h3>
-      <div class="mode-freq">5–20 KHz</div>
-      <p class="mode-desc" data-i18n="p4.elp_desc">Electroporation aids absorption of active ingredients in cosmetics. Use 2–3 times per week, up to 10 minutes.</p>
-      <ol class="mode-steps">
-        <li data-i18n="p4.elp_s1">Cleanse face with lukewarm water.</li>
-        <li data-i18n="p4.elp_s2">Apply NEWCHAE cream generously over the treatment area.</li>
-        <li data-i18n="p4.elp_s3">Turn on device and select ELP mode &amp; level.</li>
-        <li data-i18n="p4.elp_s4">Massage in slow circles — inside to outside, bottom to top.</li>
-      </ol>
-      <div class="mode-tip" data-i18n="p4.elp_tip">Start at Level 1. Avoid excessive stimulation in one area. Excessive stimulation may cause skin irritation.</div>
-    </div>
+  <div class="howto-visual">
+    <img src="images/howto-rf.jpeg" alt="RF Mode usage illustration">
+  </div>
+  <div class="howto-content">
+    <div class="mode-tag">GLOW</div>
+    <div class="eyebrow" data-i18n="p4.rf_eyebrow">High-Frequency Care Mode</div>
+    <h2 data-i18n="p4.rf_h">RF Mode</h2>
+    <div class="mode-freq">1 MHz · Automatic Shot System</div>
+    <p class="mode-desc-full" data-i18n="p4.rf_desc">Delivers multi-channel high-frequency energy deep into the skin to help with volume management. Recommended 2–3 times per week, up to 10 minutes per session.</p>
+    <ol class="step-grid">
+      <li data-i18n="p4.rf_s1">Cleanse your face thoroughly with lukewarm water.</li>
+      <li data-i18n="p4.rf_s2">Apply NEWCHAE Peptide Lifting Cream generously, ensuring the electrodes are fully covered.</li>
+      <li data-i18n="p4.rf_s3">Turn on the device and select RF mode &amp; level.</li>
+      <li data-i18n="p4.rf_s4">Hold electrode head against skin — a beep signals the shot is complete, move to the next area.</li>
+      <li data-i18n="p4.rf_s5">Move the electrode head from inside to outside of the face.</li>
+      <li data-i18n="p4.rf_s6">The device automatically turns off after 10 minutes.</li>
+    </ol>
+    <div class="howto-tip" data-i18n="p4.rf_tip">Do not apply more than two consecutive shots to the same area. Always start at Level 1. Lower the level for forehead and around the eyes.</div>
   </div>
   <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">04</span></div>
 </section>
 
-<!-- ========== PAGE 5 — PRECAUTIONS ========== -->
+<!-- ========== PAGE 5 — HOW TO USE EMS MODE ========== -->
+<section class="page howto-page">
+  <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.modes">How to Use Each Mode</span></div>
+  <div class="howto-visual">
+    <img src="images/howto-ems.jpeg" alt="EMS Mode usage illustration">
+  </div>
+  <div class="howto-content">
+    <div class="mode-tag">TONE</div>
+    <div class="eyebrow" data-i18n="p5b.ems_eyebrow">Skin Stimulation Elasticity Mode</div>
+    <h2 data-i18n="p4.ems_h">EMS Mode</h2>
+    <div class="mode-freq">1 KHz · Medium-Frequency</div>
+    <p class="mode-desc-full" data-i18n="p4.ems_desc">Medium-frequency electrical energy is delivered to the skin to help improve skin elasticity and contour management. Recommended 2–3 times per week, up to 10 minutes per session.</p>
+    <ol class="step-grid">
+      <li data-i18n="p4.ems_s1">Cleanse your face thoroughly with lukewarm water.</li>
+      <li data-i18n="p4.ems_s2">Apply NEWCHAE Peptide Lifting Cream generously, ensuring the electrodes are fully covered.</li>
+      <li data-i18n="p4.ems_s3">Turn on the device and select EMS mode &amp; level.</li>
+      <li data-i18n="p4.ems_s4">Glide the electrode head upward — from bottom to top, inside to outside.</li>
+      <li data-i18n="p4.ems_s5">The device automatically turns off after 10 minutes.</li>
+    </ol>
+    <div class="howto-tip" data-i18n="p4.ems_tip">Start at Level 1. Avoid excessive stimulation in one area. Excessive stimulation may cause skin damage or irritation.</div>
+  </div>
+  <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">05</span></div>
+</section>
+
+<!-- ========== PAGE 6 — HOW TO USE ELP MODE ========== -->
+<section class="page howto-page">
+  <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.modes">How to Use Each Mode</span></div>
+  <div class="howto-visual">
+    <img src="images/howto-elp.jpeg" alt="ELP Mode usage illustration">
+  </div>
+  <div class="howto-content">
+    <div class="mode-tag">BOOST</div>
+    <div class="eyebrow" data-i18n="p6b.elp_eyebrow">Electroporation Absorption Mode</div>
+    <h2 data-i18n="p4.elp_h">ELP Mode</h2>
+    <div class="mode-freq">5–20 KHz · Multi-Frequency</div>
+    <p class="mode-desc-full" data-i18n="p4.elp_desc">Various electrical energies aid in the absorption of active ingredients in cosmetics. Recommended 2–3 times per week, up to 10 minutes per session.</p>
+    <ol class="step-grid">
+      <li data-i18n="p4.elp_s1">Cleanse your face thoroughly with lukewarm water.</li>
+      <li data-i18n="p4.elp_s2">Apply NEWCHAE Peptide Lifting Cream generously, ensuring the electrodes are fully covered.</li>
+      <li data-i18n="p4.elp_s3">Turn on the device and select ELP mode &amp; level.</li>
+      <li data-i18n="p4.elp_s4">Massage in slow, small circles — from inside to outside, bottom to top.</li>
+      <li data-i18n="p4.elp_s5">The device automatically turns off after 10 minutes.</li>
+    </ol>
+    <div class="howto-tip" data-i18n="p4.elp_tip">Start at Level 1. Avoid excessive stimulation in one area. Excessive stimulation may cause skin damage or irritation.</div>
+  </div>
+  <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">06</span></div>
+</section>
+
+<!-- ========== PAGE 7 — TECH FEATURE ========== -->
+<section class="page tech-page">
+  <div class="frame-top" style="color: rgba(250,246,237,0.35);"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.tech">Technology</span></div>
+  <div class="tech-inner">
+    <div class="tech-left">
+      <div class="eyebrow" data-i18n="p7.eyebrow">Special Features</div>
+      <h2 data-i18n="p7.h2">Professional<br>Technology.</h2>
+      <ul class="tech-features">
+        <li><span class="feat-icon"></span><span data-i18n="p7.f1">Multi-channel medical device technology with proven clinical capability.</span></li>
+        <li><span class="feat-icon"></span><span data-i18n="p7.f2">Safely delivers high thermal energy deep into the skin via multi-channel low-energy distribution.</span></li>
+        <li><span class="feat-icon"></span><span data-i18n="p7.f3">RF STACK method for deeper heat delivery while preventing skin heat damage.</span></li>
+        <li><span class="feat-icon"></span><span data-i18n="p7.f4">Multi-circuit, multi-electrode core technology for even energy distribution.</span></li>
+        <li><span class="feat-icon"></span><span data-i18n="p7.f5">Concentrated RF energy shot system — activated only upon skin contact for safety.</span></li>
+        <li><span class="feat-icon"></span><span data-i18n="p7.f6">Unparalleled high RF energy output for home-use devices.</span></li>
+        <li><span class="feat-icon"></span><span data-i18n="p7.f7">Medium-frequency EMS for gentle yet effective stimulation.</span></li>
+        <li><span class="feat-icon"></span><span data-i18n="p7.f8">ELP (Electroporation) multi-frequency absorption enhancement.</span></li>
+        <li><span class="feat-icon"></span><span data-i18n="p7.f9">10,000+ micro-vibrations per minute with mode-specific patterns.</span></li>
+        <li><span class="feat-icon"></span><span data-i18n="p7.f10">Medical-grade stainless steel electrodes (not plated) for safety.</span></li>
+        <li><span class="feat-icon"></span><span data-i18n="p7.f11">Samsung SDI high-capacity 3,350mAh battery — 5–6 sessions per charge.</span></li>
+        <li><span class="feat-icon"></span><span data-i18n="p7.f12">Manufactured by a GMP-certified Korean facility.</span></li>
+      </ul>
+    </div>
+    <div class="tech-right">
+      <img src="images/newchea black and white3.png" alt="NEWCHAE SHOT close-up">
+      <div class="tech-badge" data-i18n="p7.badge">Based on TORR RF · Professional Multi-Channel Technology</div>
+    </div>
+  </div>
+  <div class="frame-bot" style="color: rgba(250,246,237,0.35);"><span>NEWCHAE User Manual</span><span class="num" style="color: rgba(250,246,237,0.6);">07</span></div>
+</section>
+
+<!-- ========== PAGE 8 — PRECAUTIONS ========== -->
 <section class="page caution-page">
   <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.caution">Precautions</span></div>
   <div class="caution-inner">
@@ -617,10 +777,10 @@
       </div>
     </div>
   </div>
-  <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">05</span></div>
+  <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">08</span></div>
 </section>
 
-<!-- ========== PAGE 6 — Q&A + SPECIFICATIONS ========== -->
+<!-- ========== PAGE 9 — Q&A + SPECIFICATIONS ========== -->
 <section class="page qa-page">
   <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.qa">Q&amp;A &amp; Specifications</span></div>
   <div class="qa-left">
@@ -657,7 +817,7 @@
       <div class="logo-foot">NEWCHAE</div>
     </div>
   </div>
-  <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">06</span></div>
+  <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">09</span></div>
 </section>
 
 <script>
@@ -712,21 +872,44 @@ const DICT = {
     "p4.rf_s3": "Turn on device and select RF mode & level.",
     "p4.rf_s4": "Hold electrode head against skin — a beep signals to move to next area.",
     "p4.rf_s5": "Move from inside to outside of the treatment area.",
+    "p4.rf_eyebrow": "High-Frequency Care Mode",
+    "p4.rf_s6": "The device automatically turns off after 10 minutes.",
     "p4.rf_tip": "Do not apply more than two consecutive shots to the same area. Always start at Level 1. Lower the level for forehead and around the eyes.",
 
-    "p4.ems_h": "EMS Mode", "p4.ems_desc": "Medium-frequency electrical energy improves skin elasticity and contour management. Use 2–3 times per week, up to 10 minutes.",
-    "p4.ems_s1": "Cleanse face with lukewarm water.",
-    "p4.ems_s2": "Apply NEWCHAE cream generously over the treatment area.",
-    "p4.ems_s3": "Turn on device and select EMS mode & level.",
-    "p4.ems_s4": "Glide electrode head upward — bottom to top, inside to outside.",
-    "p4.ems_tip": "Start at Level 1. Avoid excessive stimulation in one area. Excessive stimulation may cause skin irritation.",
+    "p5b.ems_eyebrow": "Skin Stimulation Elasticity Mode",
+    "p4.ems_h": "EMS Mode", "p4.ems_desc": "Medium-frequency electrical energy is delivered to the skin to help improve skin elasticity and contour management. Recommended 2–3 times per week, up to 10 minutes per session.",
+    "p4.ems_s1": "Cleanse your face thoroughly with lukewarm water.",
+    "p4.ems_s2": "Apply NEWCHAE Peptide Lifting Cream generously, ensuring the electrodes are fully covered.",
+    "p4.ems_s3": "Turn on the device and select EMS mode & level.",
+    "p4.ems_s4": "Glide the electrode head upward — from bottom to top, inside to outside.",
+    "p4.ems_s5": "The device automatically turns off after 10 minutes.",
+    "p4.ems_tip": "Start at Level 1. Avoid excessive stimulation in one area. Excessive stimulation may cause skin damage or irritation.",
 
-    "p4.elp_h": "ELP Mode", "p4.elp_desc": "Electroporation aids absorption of active ingredients in cosmetics. Use 2–3 times per week, up to 10 minutes.",
-    "p4.elp_s1": "Cleanse face with lukewarm water.",
-    "p4.elp_s2": "Apply NEWCHAE cream generously over the treatment area.",
-    "p4.elp_s3": "Turn on device and select ELP mode & level.",
-    "p4.elp_s4": "Massage in slow circles — inside to outside, bottom to top.",
-    "p4.elp_tip": "Start at Level 1. Avoid excessive stimulation in one area. Excessive stimulation may cause skin irritation.",
+    "p6b.elp_eyebrow": "Electroporation Absorption Mode",
+    "p4.elp_h": "ELP Mode", "p4.elp_desc": "Various electrical energies aid in the absorption of active ingredients in cosmetics. Recommended 2–3 times per week, up to 10 minutes per session.",
+    "p4.elp_s1": "Cleanse your face thoroughly with lukewarm water.",
+    "p4.elp_s2": "Apply NEWCHAE Peptide Lifting Cream generously, ensuring the electrodes are fully covered.",
+    "p4.elp_s3": "Turn on the device and select ELP mode & level.",
+    "p4.elp_s4": "Massage in slow, small circles — from inside to outside, bottom to top.",
+    "p4.elp_s5": "The device automatically turns off after 10 minutes.",
+    "p4.elp_tip": "Start at Level 1. Avoid excessive stimulation in one area. Excessive stimulation may cause skin damage or irritation.",
+
+    "nav.tech": "Technology",
+    "p7.eyebrow": "Special Features",
+    "p7.h2": "Professional<br>Technology.",
+    "p7.f1": "Multi-channel medical device technology with proven clinical capability.",
+    "p7.f2": "Safely delivers high thermal energy deep into the skin via multi-channel low-energy distribution.",
+    "p7.f3": "RF STACK method for deeper heat delivery while preventing skin heat damage.",
+    "p7.f4": "Multi-circuit, multi-electrode core technology for deeper and more even energy distribution.",
+    "p7.f5": "Concentrated RF energy shot system — activated only upon skin contact for safety.",
+    "p7.f6": "Unparalleled high RF energy output for home-use devices.",
+    "p7.f7": "Medium-frequency EMS for gentle yet effective stimulation.",
+    "p7.f8": "ELP (Electroporation) multi-frequency absorption enhancement.",
+    "p7.f9": "10,000+ micro-vibrations per minute with mode-specific patterns.",
+    "p7.f10": "Medical-grade stainless steel electrodes (not plated) for safety.",
+    "p7.f11": "Samsung SDI high-capacity 3,350mAh battery — 5–6 sessions per charge.",
+    "p7.f12": "Manufactured by a GMP-certified Korean facility.",
+    "p7.badge": "Based on TORR RF · Professional Multi-Channel Technology",
 
     "p5.eyebrow": "Precautions",
     "p5.h2": "Before<br>You Begin.",
@@ -832,21 +1015,44 @@ const DICT = {
     "p4.rf_s3": "기기를 켜고 RF 모드와 레벨을 선택합니다.",
     "p4.rf_s4": "전극 헤드를 피부에 밀착하면 RF 샷이 작동됩니다. 비프음이 울리면 다음 부위로 이동합니다.",
     "p4.rf_s5": "얼굴 안쪽에서 바깥쪽으로 전극 헤드를 이동합니다.",
+    "p4.rf_eyebrow": "고주파 관리 모드",
+    "p4.rf_s6": "10분 후 자동으로 전원이 꺼집니다.",
     "p4.rf_tip": "같은 부위에 연속 2회 이상 샷을 하지 마세요. 항상 레벨 1부터 시작하세요. 이마와 눈 주위는 레벨을 낮추세요.",
 
-    "p4.ems_h": "EMS 모드", "p4.ems_desc": "중주파 전기 에너지가 피부 탄력과 윤곽 관리에 도움을 줍니다. 주 2~3회, 1회 최대 10분 사용.",
+    "p5b.ems_eyebrow": "피부 자극 탄력 모드",
+    "p4.ems_h": "EMS 모드", "p4.ems_desc": "중주파 전기 에너지를 피부에 전달하여 탄력과 윤곽 관리에 도움을 줍니다. 주 2~3회, 1회 최대 10분 사용 권장.",
     "p4.ems_s1": "미온수로 얼굴을 깨끗이 세안합니다.",
-    "p4.ems_s2": "전극 헤드가 충분히 덮이도록 뉴채 크림을 넉넉히 도포합니다.",
+    "p4.ems_s2": "전극 헤드가 충분히 덮이도록 뉴채 펩타이드 리프팅 크림을 넉넉히 도포합니다.",
     "p4.ems_s3": "기기를 켜고 EMS 모드와 레벨을 선택합니다.",
     "p4.ems_s4": "전극 헤드를 피부에 밀착한 후 아래에서 위로, 안쪽에서 바깥쪽으로 부드럽게 이동합니다.",
+    "p4.ems_s5": "10분 후 자동으로 전원이 꺼집니다.",
     "p4.ems_tip": "레벨 1부터 시작하세요. 한 부위에 과도한 자극을 피하세요. 과도한 자극은 피부 손상을 유발할 수 있습니다.",
 
-    "p4.elp_h": "ELP 모드", "p4.elp_desc": "전기천공으로 화장품 유효 성분의 흡수를 돕습니다. 주 2~3회, 1회 최대 10분 사용.",
+    "p6b.elp_eyebrow": "전기천공 흡수 모드",
+    "p4.elp_h": "ELP 모드", "p4.elp_desc": "다양한 전기 에너지가 화장품 유효 성분의 흡수를 돕습니다. 주 2~3회, 1회 최대 10분 사용 권장.",
     "p4.elp_s1": "미온수로 얼굴을 깨끗이 세안합니다.",
-    "p4.elp_s2": "전극 헤드가 충분히 덮이도록 뉴채 크림을 넉넉히 도포합니다.",
+    "p4.elp_s2": "전극 헤드가 충분히 덮이도록 뉴채 펩타이드 리프팅 크림을 넉넉히 도포합니다.",
     "p4.elp_s3": "기기를 켜고 ELP 모드와 레벨을 선택합니다.",
     "p4.elp_s4": "전극 헤드를 피부에 밀착한 후 천천히 작은 원을 그리며 안쪽에서 바깥쪽, 아래에서 위로 마사지합니다.",
+    "p4.elp_s5": "10분 후 자동으로 전원이 꺼집니다.",
     "p4.elp_tip": "레벨 1부터 시작하세요. 한 부위에 과도한 자극을 피하세요. 과도한 자극은 피부 손상을 유발할 수 있습니다.",
+
+    "nav.tech": "기술 특징",
+    "p7.eyebrow": "특별한 기술",
+    "p7.h2": "전문가급<br>테크놀로지.",
+    "p7.f1": "임상적으로 검증된 멀티채널 의료기기 기술 적용.",
+    "p7.f2": "멀티채널 저에너지 분배로 높은 열에너지를 안전하게 피부 깊숙이 전달.",
+    "p7.f3": "RF STACK 방식으로 피부 열손상 없이 더 깊은 열전달 가능.",
+    "p7.f4": "멀티회로, 멀티전극 코어 기술로 더 깊고 고른 에너지 분배.",
+    "p7.f5": "RF 멀티채널 집중 에너지 샷 시스템 — 피부 접촉 시에만 작동하여 안전.",
+    "p7.f6": "홈케어 기기 중 비교 불가한 높은 RF 에너지 출력.",
+    "p7.f7": "중주파 EMS로 부드럽지만 효과적인 자극.",
+    "p7.f8": "ELP(전기천공) 다중 주파수 흡수 증진.",
+    "p7.f9": "분당 10,000회 이상 마이크로 진동, 모드별 다른 패턴.",
+    "p7.f10": "의료용 스테인리스 스틸 전극 사용 (도금 아님).",
+    "p7.f11": "삼성 SDI 고용량 3,350mAh 배터리 — 1회 충전으로 5~6회 사용.",
+    "p7.f12": "GMP 인증 한국 공장에서 제조.",
+    "p7.badge": "TORR RF 기반 · 전문가급 멀티채널 기술",
 
     "p5.eyebrow": "사용 시 주의사항",
     "p5.h2": "사용 전<br>확인.",
@@ -952,21 +1158,44 @@ const DICT = {
     "p4.rf_s3": "機器の電源を入れ、RFモードとレベルを選択します。",
     "p4.rf_s4": "電極ヘッドを肌に密着させます。ビープ音が鳴ったら次の部位に移動します。",
     "p4.rf_s5": "顔の内側から外側に向かって移動します。",
+    "p4.rf_eyebrow": "高周波ケアモード",
+    "p4.rf_s6": "10分後に自動的に電源がオフになります。",
     "p4.rf_tip": "同じ部位への連続2回以上のショットは避けてください。常にレベル1から開始。額や目元はレベルを下げてください。",
 
-    "p4.ems_h": "EMSモード", "p4.ems_desc": "中周波電気エネルギーが肌の弾力と輪郭管理を改善します。週2〜3回、最大10分使用。",
-    "p4.ems_s1": "ぬるま湯で顔を洗います。",
-    "p4.ems_s2": "電極ヘッドを覆うようにNEWCHAEクリームをたっぷり塗布します。",
+    "p5b.ems_eyebrow": "肌刺激弾力モード",
+    "p4.ems_h": "EMSモード", "p4.ems_desc": "中周波電気エネルギーを肌に届け、弾力と輪郭管理を改善します。週2〜3回、1回最大10分使用推奨。",
+    "p4.ems_s1": "ぬるま湯で顔を丁寧に洗います。",
+    "p4.ems_s2": "電極ヘッドを覆うようにNEWCHAEペプチドリフティングクリームをたっぷり塗布します。",
     "p4.ems_s3": "機器の電源を入れ、EMSモードとレベルを選択します。",
     "p4.ems_s4": "電極ヘッドを肌に密着させ、下から上、内側から外側に優しく滑らせます。",
+    "p4.ems_s5": "10分後に自動的に電源がオフになります。",
     "p4.ems_tip": "レベル1から開始。一箇所への過度な刺激は避けてください。過度な刺激は肌トラブルの原因になります。",
 
-    "p4.elp_h": "ELPモード", "p4.elp_desc": "電気穿孔が化粧品の有効成分の吸収を助けます。週2〜3回、最大10分使用。",
-    "p4.elp_s1": "ぬるま湯で顔を洗います。",
-    "p4.elp_s2": "電極ヘッドを覆うようにNEWCHAEクリームをたっぷり塗布します。",
+    "p6b.elp_eyebrow": "電気穿孔吸収モード",
+    "p4.elp_h": "ELPモード", "p4.elp_desc": "多周波電気エネルギーが化粧品の有効成分の吸収を助けます。週2〜3回、1回最大10分使用推奨。",
+    "p4.elp_s1": "ぬるま湯で顔を丁寧に洗います。",
+    "p4.elp_s2": "電極ヘッドを覆うようにNEWCHAEペプチドリフティングクリームをたっぷり塗布します。",
     "p4.elp_s3": "機器の電源を入れ、ELPモードとレベルを選択します。",
     "p4.elp_s4": "電極ヘッドを肌に密着させ、内側から外側に小さな円を描くようにマッサージします。",
+    "p4.elp_s5": "10分後に自動的に電源がオフになります。",
     "p4.elp_tip": "レベル1から開始。一箇所への過度な刺激は避けてください。過度な刺激は肌トラブルの原因になります。",
+
+    "nav.tech": "テクノロジー",
+    "p7.eyebrow": "特別な技術",
+    "p7.h2": "プロフェッショナル<br>テクノロジー。",
+    "p7.f1": "臨床実証済みのマルチチャネル医療機器技術を採用。",
+    "p7.f2": "マルチチャネル低エネルギー分配で高い熱エネルギーを安全に肌深部に届けます。",
+    "p7.f3": "RF STACK方式で肌の熱損傷を防ぎながら深部まで熱を届けます。",
+    "p7.f4": "マルチ回路・マルチ電極コア技術でより深く均一なエネルギー分配。",
+    "p7.f5": "RF集中エネルギーショットシステム — 肌接触時のみ作動する安全設計。",
+    "p7.f6": "ホームケア機器として比類なき高RF出力。",
+    "p7.f7": "中周波EMSで穏やかかつ効果的な刺激。",
+    "p7.f8": "ELP（電気穿孔）多周波吸収促進。",
+    "p7.f9": "毎分10,000回以上の微振動、モード別パターン。",
+    "p7.f10": "医療グレードステンレス鋼電極使用（メッキではありません）。",
+    "p7.f11": "Samsung SDI大容量3,350mAhバッテリー — 1回の充電で5〜6回使用可能。",
+    "p7.f12": "GMP認証の韓国工場で製造。",
+    "p7.badge": "TORR RF基盤 · プロフェッショナルマルチチャネル技術",
 
     "p5.eyebrow": "使用上の注意",
     "p5.h2": "使用前に<br>ご確認。",
@@ -1072,21 +1301,44 @@ const DICT = {
     "p4.rf_s3": "เปิดเครื่องและเลือกโหมด RF พร้อมระดับ",
     "p4.rf_s4": "แนบหัวอิเล็กโทรดกับผิว — เสียงบี๊ปจะแจ้งให้เลื่อนไปบริเวณถัดไป",
     "p4.rf_s5": "เลื่อนจากด้านในไปด้านนอกของบริเวณที่ดูแล",
+    "p4.rf_eyebrow": "โหมดดูแลความถี่สูง",
+    "p4.rf_s6": "เครื่องจะปิดอัตโนมัติหลัง 10 นาที",
     "p4.rf_tip": "ห้ามยิงเกิน 2 ครั้งติดต่อกันในจุดเดียว เริ่มจากระดับ 1 เสมอ ลดระดับเมื่อใช้บริเวณหน้าผากและรอบดวงตา",
 
-    "p4.ems_h": "โหมด EMS", "p4.ems_desc": "พลังงานไฟฟ้าความถี่กลางช่วยปรับปรุงความยืดหยุ่นและรูปทรงใบหน้า ใช้สัปดาห์ละ 2–3 ครั้ง ครั้งละไม่เกิน 10 นาที",
+    "p5b.ems_eyebrow": "โหมดกระตุ้นความยืดหยุ่น",
+    "p4.ems_h": "โหมด EMS", "p4.ems_desc": "พลังงานไฟฟ้าความถี่กลางส่งถึงผิวเพื่อปรับปรุงความยืดหยุ่นและรูปทรงใบหน้า ใช้สัปดาห์ละ 2–3 ครั้ง ครั้งละไม่เกิน 10 นาที",
     "p4.ems_s1": "ล้างหน้าด้วยน้ำอุ่น",
-    "p4.ems_s2": "ทาครีม NEWCHAE ให้ทั่วบริเวณที่ต้องการดูแล",
+    "p4.ems_s2": "ทาครีม NEWCHAE Peptide Lifting ให้ทั่ว ให้อิเล็กโทรดถูกปกคลุมเต็มที่",
     "p4.ems_s3": "เปิดเครื่องและเลือกโหมด EMS พร้อมระดับ",
     "p4.ems_s4": "เลื่อนหัวอิเล็กโทรดขึ้น — จากล่างขึ้นบน, จากในออกนอก",
+    "p4.ems_s5": "เครื่องจะปิดอัตโนมัติหลัง 10 นาที",
     "p4.ems_tip": "เริ่มจากระดับ 1 หลีกเลี่ยงการกระตุ้นมากเกินไปในจุดเดียว การกระตุ้นมากเกินอาจทำให้ผิวระคายเคือง",
 
-    "p4.elp_h": "โหมด ELP", "p4.elp_desc": "อิเล็กโทรโพเรชันช่วยดูดซึมสารออกฤทธิ์ ใช้สัปดาห์ละ 2–3 ครั้ง ครั้งละไม่เกิน 10 นาที",
+    "p6b.elp_eyebrow": "โหมดอิเล็กโทรโพเรชันดูดซึม",
+    "p4.elp_h": "โหมด ELP", "p4.elp_desc": "พลังงานไฟฟ้าหลายความถี่ช่วยดูดซึมสารออกฤทธิ์ในเครื่องสำอาง ใช้สัปดาห์ละ 2–3 ครั้ง ครั้งละไม่เกิน 10 นาที",
     "p4.elp_s1": "ล้างหน้าด้วยน้ำอุ่น",
-    "p4.elp_s2": "ทาครีม NEWCHAE ให้ทั่วบริเวณที่ต้องการดูแล",
+    "p4.elp_s2": "ทาครีม NEWCHAE Peptide Lifting ให้ทั่ว ให้อิเล็กโทรดถูกปกคลุมเต็มที่",
     "p4.elp_s3": "เปิดเครื่องและเลือกโหมด ELP พร้อมระดับ",
     "p4.elp_s4": "นวดเป็นวงกลมช้าๆ — จากด้านในออกด้านนอก จากล่างขึ้นบน",
+    "p4.elp_s5": "เครื่องจะปิดอัตโนมัติหลัง 10 นาที",
     "p4.elp_tip": "เริ่มจากระดับ 1 หลีกเลี่ยงการกระตุ้นมากเกินไปในจุดเดียว การกระตุ้นมากเกินอาจทำให้ผิวระคายเคือง",
+
+    "nav.tech": "เทคโนโลยี",
+    "p7.eyebrow": "คุณสมบัติพิเศษ",
+    "p7.h2": "เทคโนโลยี<br>ระดับมืออาชีพ",
+    "p7.f1": "เทคโนโลยีอุปกรณ์การแพทย์มัลติแชนแนลที่ผ่านการพิสูจน์ทางคลินิก",
+    "p7.f2": "ส่งพลังงานความร้อนสูงลึกถึงผิวอย่างปลอดภัยผ่านการกระจายพลังงานต่ำหลายช่อง",
+    "p7.f3": "วิธี RF STACK ส่งความร้อนลึกขึ้นโดยป้องกันความเสียหายจากความร้อน",
+    "p7.f4": "เทคโนโลยีแกนมัลติวงจร มัลติอิเล็กโทรด กระจายพลังงานลึกและสม่ำเสมอ",
+    "p7.f5": "ระบบยิงพลังงาน RF เข้มข้น — ทำงานเมื่อสัมผัสผิวเท่านั้นเพื่อความปลอดภัย",
+    "p7.f6": "พลังงาน RF สูงที่ไม่มีใดเทียบได้สำหรับเครื่องใช้ที่บ้าน",
+    "p7.f7": "EMS ความถี่กลางกระตุ้นอ่อนโยนแต่มีประสิทธิภาพ",
+    "p7.f8": "ELP (อิเล็กโทรโพเรชัน) เพิ่มการดูดซึมหลายความถี่",
+    "p7.f9": "สั่นระดับไมโครมากกว่า 10,000 ครั้ง/นาที รูปแบบเฉพาะตามโหมด",
+    "p7.f10": "อิเล็กโทรดสแตนเลสระดับการแพทย์ (ไม่ใช่ชุบ)",
+    "p7.f11": "แบตเตอรี่ Samsung SDI ความจุสูง 3,350mAh — ใช้ได้ 5–6 ครั้งต่อการชาร์จ",
+    "p7.f12": "ผลิตในโรงงานที่ได้รับรอง GMP ในเกาหลี",
+    "p7.badge": "พื้นฐาน TORR RF · เทคโนโลยีมัลติแชนแนลมืออาชีพ",
 
     "p5.eyebrow": "ข้อควรระวัง",
     "p5.h2": "ก่อน<br>เริ่มใช้งาน",
@@ -1192,21 +1444,44 @@ const DICT = {
     "p4.rf_s3": "Bật thiết bị và chọn chế độ RF cùng mức.",
     "p4.rf_s4": "Áp đầu điện cực lên da — tiếng bíp báo hiệu chuyển sang vùng tiếp theo.",
     "p4.rf_s5": "Di chuyển từ trong ra ngoài vùng điều trị.",
+    "p4.rf_eyebrow": "Chế độ Chăm sóc Tần số Cao",
+    "p4.rf_s6": "Thiết bị tự động tắt sau 10 phút.",
     "p4.rf_tip": "Không bắn quá 2 lần liên tiếp trên cùng một vùng. Luôn bắt đầu từ Mức 1. Giảm mức khi sử dụng vùng trán và quanh mắt.",
 
-    "p4.ems_h": "Chế độ EMS", "p4.ems_desc": "Năng lượng điện tần số trung bình cải thiện độ đàn hồi và đường nét khuôn mặt. 2–3 lần/tuần, tối đa 10 phút.",
-    "p4.ems_s1": "Rửa mặt bằng nước ấm.",
-    "p4.ems_s2": "Thoa kem NEWCHAE đều lên vùng cần chăm sóc.",
+    "p5b.ems_eyebrow": "Chế độ Kích thích Đàn hồi Da",
+    "p4.ems_h": "Chế độ EMS", "p4.ems_desc": "Năng lượng điện tần số trung bình truyền đến da giúp cải thiện độ đàn hồi và đường nét khuôn mặt. 2–3 lần/tuần, tối đa 10 phút.",
+    "p4.ems_s1": "Rửa mặt sạch bằng nước ấm.",
+    "p4.ems_s2": "Thoa kem NEWCHAE Peptide Lifting đều, đảm bảo phủ kín điện cực.",
     "p4.ems_s3": "Bật thiết bị và chọn chế độ EMS cùng mức.",
     "p4.ems_s4": "Trượt đầu điện cực hướng lên — từ dưới lên trên, từ trong ra ngoài.",
+    "p4.ems_s5": "Thiết bị tự động tắt sau 10 phút.",
     "p4.ems_tip": "Bắt đầu từ Mức 1. Tránh kích thích quá mức ở một vùng. Kích thích quá mức có thể gây kích ứng da.",
 
-    "p4.elp_h": "Chế độ ELP", "p4.elp_desc": "Điện di giúp hấp thu hoạt chất mỹ phẩm. Sử dụng 2–3 lần/tuần, tối đa 10 phút.",
-    "p4.elp_s1": "Rửa mặt bằng nước ấm.",
-    "p4.elp_s2": "Thoa kem NEWCHAE đều lên vùng cần chăm sóc.",
+    "p6b.elp_eyebrow": "Chế độ Điện di Hấp thu",
+    "p4.elp_h": "Chế độ ELP", "p4.elp_desc": "Năng lượng điện đa tần số hỗ trợ hấp thu hoạt chất mỹ phẩm. 2–3 lần/tuần, tối đa 10 phút.",
+    "p4.elp_s1": "Rửa mặt sạch bằng nước ấm.",
+    "p4.elp_s2": "Thoa kem NEWCHAE Peptide Lifting đều, đảm bảo phủ kín điện cực.",
     "p4.elp_s3": "Bật thiết bị và chọn chế độ ELP cùng mức.",
     "p4.elp_s4": "Massage theo vòng tròn nhỏ chậm — từ trong ra ngoài, từ dưới lên trên.",
+    "p4.elp_s5": "Thiết bị tự động tắt sau 10 phút.",
     "p4.elp_tip": "Bắt đầu từ Mức 1. Tránh kích thích quá mức ở một vùng. Kích thích quá mức có thể gây kích ứng da.",
+
+    "nav.tech": "Công nghệ",
+    "p7.eyebrow": "Tính năng Đặc biệt",
+    "p7.h2": "Công nghệ<br>Chuyên nghiệp.",
+    "p7.f1": "Công nghệ thiết bị y tế đa kênh đã được chứng minh lâm sàng.",
+    "p7.f2": "Truyền năng lượng nhiệt cao an toàn sâu vào da qua phân phối năng lượng thấp đa kênh.",
+    "p7.f3": "Phương pháp RF STACK truyền nhiệt sâu hơn mà không gây tổn thương da.",
+    "p7.f4": "Công nghệ lõi đa mạch, đa điện cực cho phân phối năng lượng sâu và đều hơn.",
+    "p7.f5": "Hệ thống bắn năng lượng RF tập trung — chỉ kích hoạt khi tiếp xúc da để đảm bảo an toàn.",
+    "p7.f6": "Năng lượng RF cao vượt trội cho thiết bị gia đình.",
+    "p7.f7": "EMS tần số trung kích thích nhẹ nhàng nhưng hiệu quả.",
+    "p7.f8": "ELP (Điện di) tăng cường hấp thu đa tần số.",
+    "p7.f9": "Hơn 10.000 rung vi mô/phút với mẫu riêng theo từng chế độ.",
+    "p7.f10": "Điện cực thép không gỉ cấp y tế (không phải mạ).",
+    "p7.f11": "Pin Samsung SDI dung lượng cao 3.350mAh — 5–6 lần sử dụng mỗi lần sạc.",
+    "p7.f12": "Sản xuất tại nhà máy đạt chứng nhận GMP tại Hàn Quốc.",
+    "p7.badge": "Dựa trên TORR RF · Công nghệ Đa kênh Chuyên nghiệp",
 
     "p5.eyebrow": "Lưu ý khi sử dụng",
     "p5.h2": "Trước khi<br>bắt đầu.",
