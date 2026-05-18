@@ -155,36 +155,36 @@
     background: var(--ivory);
   }
   .parts-left {
-    position: relative; overflow: hidden;
+    overflow: hidden;
     background: #0a0a0a;
     display: flex; align-items: center; justify-content: center;
-    padding: 18mm 10mm;
+    padding: 14mm 8mm;
   }
-  .parts-left .device-photo {
-    max-height: 170mm; width: auto; object-fit: contain;
+  .device-diagram {
+    position: relative; display: inline-block;
+  }
+  .device-diagram .device-photo {
+    display: block; max-height: 170mm; width: auto;
     filter: brightness(1.05);
   }
   .marker {
-    position: absolute;
-    display: flex; align-items: center; gap: 0;
-    z-index: 2;
+    position: absolute; z-index: 2;
+    transform: translate(-50%, -50%);
   }
   .marker .num-circle {
-    flex-shrink: 0; width: 24px; height: 24px;
+    width: 26px; height: 26px;
     border-radius: 50%; border: 2px solid rgba(255,255,255,0.9);
     background: var(--lilac);
     display: flex; align-items: center; justify-content: center;
     font-size: 11px; font-weight: 700; color: #fff;
     font-family: 'Inter', sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
   }
-  .marker .marker-line {
-    width: 30px; height: 1.5px; background: rgba(255,255,255,0.5);
-  }
-  .marker-1 { top: 14%; left: 52%; }
-  .marker-2 { top: 44%; left: 58%; }
-  .marker-3 { top: 52%; left: 60%; }
-  .marker-4 { top: 66%; left: 58%; }
-  .marker-5 { top: 78%; left: 52%; }
+  .marker-1 { top: 23.2%; left: 34.2%; }
+  .marker-2 { top: 61.0%; left: 58.4%; }
+  .marker-3 { top: 67.1%; left: 63.4%; }
+  .marker-4 { top: 74.5%; left: 80.6%; }
+  .marker-5 { top: 85.5%; left: 88.9%; }
   .parts-right {
     padding: 22mm 20mm 16mm 16mm;
     display: flex; flex-direction: column;
@@ -615,12 +615,14 @@
 <section class="page parts-page">
   <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.parts">Device Parts & Package</span></div>
   <div class="parts-left">
-    <img class="device-photo" src="images/newchae-parts-diagram.jpg" alt="NEWCHAE SHOT Device">
-    <div class="marker marker-1"><span class="num-circle">1</span><span class="marker-line"></span></div>
-    <div class="marker marker-2"><span class="num-circle">2</span><span class="marker-line"></span></div>
-    <div class="marker marker-3"><span class="num-circle">3</span><span class="marker-line"></span></div>
-    <div class="marker marker-4"><span class="num-circle">4</span><span class="marker-line"></span></div>
-    <div class="marker marker-5"><span class="num-circle">5</span><span class="marker-line"></span></div>
+    <div class="device-diagram">
+      <img class="device-photo" src="images/newchae-parts-diagram.jpg" alt="NEWCHAE SHOT Device">
+      <div class="marker marker-1"><span class="num-circle">1</span></div>
+      <div class="marker marker-2"><span class="num-circle">2</span></div>
+      <div class="marker marker-3"><span class="num-circle">3</span></div>
+      <div class="marker marker-4"><span class="num-circle">4</span></div>
+      <div class="marker marker-5"><span class="num-circle">5</span></div>
+    </div>
   </div>
   <div class="parts-right">
     <div class="eyebrow" data-i18n="p2.eyebrow">Device Overview</div>
