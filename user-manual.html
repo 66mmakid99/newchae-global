@@ -151,45 +151,81 @@
 
   /* ============ PAGE 2 — PARTS & CONTENTS ============ */
   .parts-page {
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
     background: var(--ivory);
   }
   .parts-left {
-    padding: 28mm 14mm 20mm 22mm;
+    position: relative; overflow: hidden;
+    background: #0a0a0a;
+    display: flex; align-items: center; justify-content: center;
+    padding: 18mm 10mm;
+  }
+  .parts-left .device-photo {
+    max-height: 170mm; width: auto; object-fit: contain;
+    filter: brightness(1.05);
+  }
+  .marker {
+    position: absolute;
+    display: flex; align-items: center; gap: 0;
+    z-index: 2;
+  }
+  .marker .num-circle {
+    flex-shrink: 0; width: 24px; height: 24px;
+    border-radius: 50%; border: 2px solid rgba(255,255,255,0.9);
+    background: var(--lilac);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: #fff;
+    font-family: 'Inter', sans-serif;
+  }
+  .marker .marker-line {
+    width: 30px; height: 1.5px; background: rgba(255,255,255,0.5);
+  }
+  .marker-1 { top: 14%; left: 52%; }
+  .marker-2 { top: 44%; left: 58%; }
+  .marker-3 { top: 52%; left: 60%; }
+  .marker-4 { top: 66%; left: 58%; }
+  .marker-5 { top: 78%; left: 52%; }
+  .parts-right {
+    padding: 22mm 20mm 16mm 16mm;
     display: flex; flex-direction: column;
   }
-  .parts-left .eyebrow { margin-bottom: 16px; }
-  .parts-left h2 { margin-bottom: 20px; }
+  .parts-right .eyebrow { margin-bottom: 8px; }
+  .parts-right h2 { margin-bottom: 16px; }
   .part-list {
-    list-style: none; padding: 0; margin-top: 16px;
+    list-style: none; padding: 0; margin: 0;
   }
   .part-list li {
     display: flex; align-items: flex-start; gap: 12px;
-    padding: 8px 0;
+    padding: 7px 0;
     border-bottom: 1px solid var(--line);
-    font-size: 11.5px; color: var(--graphite); line-height: 1.6;
+    font-size: 10.5px; color: var(--graphite); line-height: 1.55;
   }
   .part-list .num-circle {
     flex-shrink: 0; width: 22px; height: 22px;
-    border-radius: 50%; border: 1.5px solid var(--lilac);
+    border-radius: 50%; background: var(--lilac);
     display: flex; align-items: center; justify-content: center;
-    font-size: 10px; font-weight: 600; color: var(--lilac);
-    margin-top: 2px;
+    font-size: 10px; font-weight: 700; color: #fff;
+    margin-top: 1px;
+    font-family: 'Inter', sans-serif;
   }
-  .parts-right {
-    padding: 28mm 22mm 20mm 14mm;
-    display: flex; flex-direction: column;
+  .part-name {
+    font-weight: 600; color: var(--ink);
+    display: block; font-size: 11px;
   }
-  .pkg-title { margin-bottom: 16px; }
+  .part-desc {
+    display: block; color: var(--mute); font-size: 9.5px; margin-top: 1px;
+  }
+  .pkg-section { margin-top: auto; padding-top: 12px; border-top: 1.5px solid var(--line); }
+  .pkg-title { margin-bottom: 10px; }
   .pkg-grid {
     display: grid; grid-template-columns: 1fr 1fr;
-    gap: 12px; margin-top: 12px;
+    gap: 8px;
   }
   .pkg-item {
     background: var(--cream);
     border: 1px solid var(--line);
-    padding: 14px 16px;
-    font-size: 11px; font-weight: 500; color: var(--graphite);
+    padding: 10px 12px;
+    font-size: 10px; font-weight: 500; color: var(--graphite);
     text-align: center;
   }
 
@@ -579,29 +615,31 @@
 <section class="page parts-page">
   <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.parts">Device Parts & Package</span></div>
   <div class="parts-left">
+    <img class="device-photo" src="images/newchae-parts-diagram.jpg" alt="NEWCHAE SHOT Device">
+    <div class="marker marker-1"><span class="num-circle">1</span><span class="marker-line"></span></div>
+    <div class="marker marker-2"><span class="num-circle">2</span><span class="marker-line"></span></div>
+    <div class="marker marker-3"><span class="num-circle">3</span><span class="marker-line"></span></div>
+    <div class="marker marker-4"><span class="num-circle">4</span><span class="marker-line"></span></div>
+    <div class="marker marker-5"><span class="num-circle">5</span><span class="marker-line"></span></div>
+  </div>
+  <div class="parts-right">
     <div class="eyebrow" data-i18n="p2.eyebrow">Device Overview</div>
     <h2 data-i18n="p2.h2">Names of<br>Each Part.</h2>
     <ol class="part-list">
-      <li><span class="num-circle">1</span><span data-i18n="p2.part1">Electrode Head — Skin Contact Electrode</span></li>
-      <li><span class="num-circle">2</span><span data-i18n="p2.part2">Level Indicator — Displays Output Levels 1 / 2 / 3</span></li>
-      <li><span class="num-circle">3</span><span data-i18n="p2.part3">Mode Indicator — Displays RF / EMS / ELP Modes</span></li>
-      <li><span class="num-circle">4</span><span data-i18n="p2.part4">Power Button — Power ON/OFF &amp; Level Selection (1/2/3)</span></li>
-      <li><span class="num-circle">5</span><span data-i18n="p2.part5">Mode Button (M) — Mode Selection &amp; Vibration ON/OFF</span></li>
-      <li><span class="num-circle">6</span><span data-i18n="p2.part6">Charging Port — USB-C Type Charging Cable</span></li>
+      <li><span class="num-circle">1</span><span><span class="part-name" data-i18n="p2.part1_name">Electrode Head</span><span class="part-desc" data-i18n="p2.part1_desc">Skin-contact electrode that delivers RF, EMS and ELP energy.</span></span></li>
+      <li><span class="num-circle">2</span><span><span class="part-name" data-i18n="p2.part2_name">Level Indicator</span><span class="part-desc" data-i18n="p2.part2_desc">Displays current output intensity 1 / 2 / 3.</span></span></li>
+      <li><span class="num-circle">3</span><span><span class="part-name" data-i18n="p2.part3_name">Mode Indicator</span><span class="part-desc" data-i18n="p2.part3_desc">Indicates the active mode: RF / EMS / ELP.</span></span></li>
+      <li><span class="num-circle">4</span><span><span class="part-name" data-i18n="p2.part4_name">Power / Level Button</span><span class="part-desc" data-i18n="p2.part4_desc">Press to power ON/OFF. Short press to cycle levels 1 / 2 / 3.</span></span></li>
+      <li><span class="num-circle">5</span><span><span class="part-name" data-i18n="p2.part5_name">Mode / Vibration Button</span><span class="part-desc" data-i18n="p2.part5_desc">Press to switch modes. Long press toggles micro-vibration.</span></span></li>
     </ol>
-  </div>
-  <div class="parts-right">
-    <div class="eyebrow pkg-title" data-i18n="p2.pkg_eyebrow">Package Contents</div>
-    <h2 data-i18n="p2.pkg_h2">What's in<br>the Box.</h2>
-    <div class="pkg-grid">
-      <div class="pkg-item" data-i18n="p2.pkg1">NEWCHAE SHOT<br>Main Device</div>
-      <div class="pkg-item" data-i18n="p2.pkg2">USB-C<br>Charging Cable</div>
-      <div class="pkg-item" data-i18n="p2.pkg3">Product<br>Pouch</div>
-      <div class="pkg-item" data-i18n="p2.pkg4">User Manual</div>
-    </div>
-    <div class="op-info" style="margin-top: 20px;">
-      <strong data-i18n="p2.cycle_title">Recommended Usage Cycle</strong><br>
-      <span data-i18n="p2.cycle_body">Day 1: RF → Day 2: EMS → Day 3: ELP → Day 4: RF → …<br>Use each mode 2–3 times per week, up to 10 minutes per session.</span>
+    <div class="pkg-section">
+      <div class="eyebrow pkg-title" data-i18n="p2.pkg_eyebrow">Package Contents</div>
+      <div class="pkg-grid">
+        <div class="pkg-item" data-i18n="p2.pkg1">NEWCHAE SHOT<br>Main Device</div>
+        <div class="pkg-item" data-i18n="p2.pkg2">USB-C<br>Charging Cable</div>
+        <div class="pkg-item" data-i18n="p2.pkg3">Product<br>Pouch</div>
+        <div class="pkg-item" data-i18n="p2.pkg4">User Manual</div>
+      </div>
     </div>
   </div>
   <div class="frame-bot"><span>NEWCHAE User Manual</span><span class="num">02</span></div>
@@ -862,18 +900,14 @@ const DICT = {
 
     "p2.eyebrow": "Device Overview",
     "p2.h2": "Names of<br>Each Part.",
-    "p2.part1": "Electrode Head — Skin Contact Electrode",
-    "p2.part2": "Level Indicator — Displays Output Levels 1 / 2 / 3",
-    "p2.part3": "Mode Indicator — Displays RF / EMS / ELP Modes",
-    "p2.part4": "Power Button — Power ON/OFF & Level Selection (1/2/3)",
-    "p2.part5": "Mode Button (M) — Mode Selection & Vibration ON/OFF",
-    "p2.part6": "Charging Port — USB-C Type Charging Cable",
+    "p2.part1_name": "Electrode Head", "p2.part1_desc": "Skin-contact electrode that delivers RF, EMS and ELP energy.",
+    "p2.part2_name": "Level Indicator", "p2.part2_desc": "Displays current output intensity 1 / 2 / 3.",
+    "p2.part3_name": "Mode Indicator", "p2.part3_desc": "Indicates the active mode: RF / EMS / ELP.",
+    "p2.part4_name": "Power / Level Button", "p2.part4_desc": "Press to power ON/OFF. Short press to cycle levels 1 / 2 / 3.",
+    "p2.part5_name": "Mode / Vibration Button", "p2.part5_desc": "Press to switch modes. Long press toggles micro-vibration.",
     "p2.pkg_eyebrow": "Package Contents",
-    "p2.pkg_h2": "What's in<br>the Box.",
     "p2.pkg1": "NEWCHAE SHOT<br>Main Device", "p2.pkg2": "USB-C<br>Charging Cable",
     "p2.pkg3": "Product<br>Pouch", "p2.pkg4": "User Manual",
-    "p2.cycle_title": "Recommended Usage Cycle",
-    "p2.cycle_body": "Day 1: RF → Day 2: EMS → Day 3: ELP → Day 4: RF → …<br>Use each mode 2–3 times per week, up to 10 minutes per session.",
 
     "p3.eyebrow": "Basic Operation",
     "p3.h2": "Power &<br>Controls.",
@@ -1008,18 +1042,14 @@ const DICT = {
 
     "p2.eyebrow": "부품 명칭",
     "p2.h2": "각 부분의<br>명칭.",
-    "p2.part1": "전극 헤드 — 피부 접촉 전극",
-    "p2.part2": "레벨 표시등 — 출력 레벨 1 / 2 / 3 표시",
-    "p2.part3": "모드 표시등 — RF / EMS / ELP 모드 표시",
-    "p2.part4": "전원 버튼 — 전원 ON/OFF 및 레벨 선택 (1/2/3)",
-    "p2.part5": "모드 버튼 (M) — 모드 전환 및 진동 ON/OFF",
-    "p2.part6": "충전 포트 — USB-C 타입 충전 케이블",
+    "p2.part1_name": "전극 헤드", "p2.part1_desc": "RF, EMS, ELP 에너지를 피부에 전달하는 접촉 전극입니다.",
+    "p2.part2_name": "레벨 표시등", "p2.part2_desc": "현재 출력 강도 1 / 2 / 3을 표시합니다.",
+    "p2.part3_name": "모드 표시등", "p2.part3_desc": "활성 모드를 표시합니다: RF / EMS / ELP.",
+    "p2.part4_name": "전원 / 레벨 버튼", "p2.part4_desc": "전원 ON/OFF. 짧게 누르면 레벨 1 / 2 / 3 전환.",
+    "p2.part5_name": "모드 / 진동 버튼", "p2.part5_desc": "모드 전환. 길게 누르면 마이크로 진동 ON/OFF.",
     "p2.pkg_eyebrow": "구성품",
-    "p2.pkg_h2": "패키지<br>구성.",
     "p2.pkg1": "NEWCHAE SHOT<br>본체", "p2.pkg2": "USB-C<br>충전 케이블",
     "p2.pkg3": "제품<br>파우치", "p2.pkg4": "사용 설명서",
-    "p2.cycle_title": "권장 사용 주기",
-    "p2.cycle_body": "1일차: RF → 2일차: EMS → 3일차: ELP → 4일차: RF → …<br>각 모드 주 2~3회, 1회 최대 10분 사용을 권장합니다.",
 
     "p3.eyebrow": "기본 조작법",
     "p3.h2": "전원 &amp;<br>조작.",
@@ -1154,18 +1184,14 @@ const DICT = {
 
     "p2.eyebrow": "各部名称",
     "p2.h2": "各部の<br>名称。",
-    "p2.part1": "電極ヘッド — 肌接触電極",
-    "p2.part2": "レベル表示 — 出力レベル 1 / 2 / 3 表示",
-    "p2.part3": "モード表示 — RF / EMS / ELP モード表示",
-    "p2.part4": "電源ボタン — 電源ON/OFF＆レベル選択（1/2/3）",
-    "p2.part5": "モードボタン（M） — モード切替＆振動ON/OFF",
-    "p2.part6": "充電ポート — USB-Cタイプ充電ケーブル",
+    "p2.part1_name": "電極ヘッド", "p2.part1_desc": "RF・EMS・ELPエネルギーを肌に届ける接触電極。",
+    "p2.part2_name": "レベル表示", "p2.part2_desc": "現在の出力レベル 1 / 2 / 3 を表示。",
+    "p2.part3_name": "モード表示", "p2.part3_desc": "アクティブモードを表示：RF / EMS / ELP。",
+    "p2.part4_name": "電源/レベルボタン", "p2.part4_desc": "電源ON/OFF。短押しでレベル 1 / 2 / 3 切替。",
+    "p2.part5_name": "モード/バイブボタン", "p2.part5_desc": "モード切替。長押しでマイクロ振動ON/OFF。",
     "p2.pkg_eyebrow": "付属品",
-    "p2.pkg_h2": "パッケージ<br>内容。",
     "p2.pkg1": "NEWCHAE SHOT<br>本体", "p2.pkg2": "USB-C<br>充電ケーブル",
     "p2.pkg3": "製品<br>ポーチ", "p2.pkg4": "取扱説明書",
-    "p2.cycle_title": "推奨使用サイクル",
-    "p2.cycle_body": "1日目：RF → 2日目：EMS → 3日目：ELP → 4日目：RF → …<br>各モード週2〜3回、1回最大10分の使用を推奨します。",
 
     "p3.eyebrow": "基本操作",
     "p3.h2": "電源と<br>操作。",
@@ -1300,18 +1326,14 @@ const DICT = {
 
     "p2.eyebrow": "ชิ้นส่วนต่างๆ",
     "p2.h2": "ส่วนประกอบ<br>ของอุปกรณ์",
-    "p2.part1": "หัวอิเล็กโทรด — อิเล็กโทรดสัมผัสผิว",
-    "p2.part2": "ไฟแสดงระดับ — แสดงระดับ 1 / 2 / 3",
-    "p2.part3": "ไฟแสดงโหมด — แสดงโหมด RF / EMS / ELP",
-    "p2.part4": "ปุ่มเปิด/ปิด — เปิด/ปิดเครื่อง และเลือกระดับ (1/2/3)",
-    "p2.part5": "ปุ่มโหมด (M) — เลือกโหมด และเปิด/ปิดการสั่น",
-    "p2.part6": "พอร์ตชาร์จ — สาย USB-C",
+    "p2.part1_name": "หัวอิเล็กโทรด", "p2.part1_desc": "อิเล็กโทรดสัมผัสผิวที่ส่งพลังงาน RF, EMS และ ELP",
+    "p2.part2_name": "ไฟแสดงระดับ", "p2.part2_desc": "แสดงระดับความเข้มปัจจุบัน 1 / 2 / 3",
+    "p2.part3_name": "ไฟแสดงโหมด", "p2.part3_desc": "แสดงโหมดที่ใช้งาน: RF / EMS / ELP",
+    "p2.part4_name": "ปุ่มเปิด/ปิด / ระดับ", "p2.part4_desc": "กดเปิด/ปิดเครื่อง กดสั้นเลือกระดับ 1 / 2 / 3",
+    "p2.part5_name": "ปุ่มโหมด / สั่น", "p2.part5_desc": "กดเปลี่ยนโหมด กดค้างเปิด/ปิดการสั่น",
     "p2.pkg_eyebrow": "อุปกรณ์ในกล่อง",
-    "p2.pkg_h2": "สิ่งที่<br>อยู่ในกล่อง",
     "p2.pkg1": "NEWCHAE SHOT<br>ตัวเครื่อง", "p2.pkg2": "สาย<br>ชาร์จ USB-C",
     "p2.pkg3": "กระเป๋า<br>ใส่เครื่อง", "p2.pkg4": "คู่มือการใช้งาน",
-    "p2.cycle_title": "รอบการใช้งานที่แนะนำ",
-    "p2.cycle_body": "วันที่ 1: RF → วันที่ 2: EMS → วันที่ 3: ELP → วันที่ 4: RF → …<br>ใช้แต่ละโหมดสัปดาห์ละ 2–3 ครั้ง ครั้งละไม่เกิน 10 นาที",
 
     "p3.eyebrow": "การใช้งานเบื้องต้น",
     "p3.h2": "เปิด/ปิด<br>และการควบคุม",
@@ -1446,18 +1468,14 @@ const DICT = {
 
     "p2.eyebrow": "Tổng quan thiết bị",
     "p2.h2": "Tên<br>các bộ phận.",
-    "p2.part1": "Đầu điện cực — Điện cực tiếp xúc da",
-    "p2.part2": "Đèn báo mức — Hiển thị mức 1 / 2 / 3",
-    "p2.part3": "Đèn báo chế độ — Hiển thị chế độ RF / EMS / ELP",
-    "p2.part4": "Nút nguồn — Bật/Tắt & Chọn mức (1/2/3)",
-    "p2.part5": "Nút chế độ (M) — Chọn chế độ & Bật/Tắt rung",
-    "p2.part6": "Cổng sạc — Cáp sạc USB-C",
+    "p2.part1_name": "Đầu điện cực", "p2.part1_desc": "Điện cực tiếp xúc da truyền năng lượng RF, EMS và ELP.",
+    "p2.part2_name": "Đèn báo mức", "p2.part2_desc": "Hiển thị cường độ đầu ra hiện tại 1 / 2 / 3.",
+    "p2.part3_name": "Đèn báo chế độ", "p2.part3_desc": "Hiển thị chế độ đang hoạt động: RF / EMS / ELP.",
+    "p2.part4_name": "Nút nguồn / mức", "p2.part4_desc": "Bật/Tắt nguồn. Nhấn ngắn để chọn mức 1 / 2 / 3.",
+    "p2.part5_name": "Nút chế độ / rung", "p2.part5_desc": "Chuyển chế độ. Nhấn giữ bật/tắt rung micro.",
     "p2.pkg_eyebrow": "Phụ kiện đi kèm",
-    "p2.pkg_h2": "Trong hộp<br>có gì.",
     "p2.pkg1": "NEWCHAE SHOT<br>Thiết bị chính", "p2.pkg2": "Cáp sạc<br>USB-C",
     "p2.pkg3": "Túi đựng<br>sản phẩm", "p2.pkg4": "Sách hướng dẫn",
-    "p2.cycle_title": "Chu kỳ sử dụng khuyến nghị",
-    "p2.cycle_body": "Ngày 1: RF → Ngày 2: EMS → Ngày 3: ELP → Ngày 4: RF → …<br>Mỗi chế độ 2–3 lần/tuần, mỗi lần tối đa 10 phút.",
 
     "p3.eyebrow": "Thao tác cơ bản",
     "p3.h2": "Nguồn &<br>Điều khiển.",
