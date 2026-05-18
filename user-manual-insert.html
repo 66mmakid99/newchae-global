@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEWCHAE — User Manual Insert</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #f6f1e8;
+    --cream: #faf6ed;
+    --sand: #ebe3d1;
+    --ink: #15110c;
+    --graphite: #5a5347;
+    --mute: #8a8275;
+    --lilac: #8b7aa8;
+    --rose: #c9a8a0;
+    --line: #d4cbb8;
+    --dark: #1a1610;
+    --warn: #c4775a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: #ddd8ce;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  :lang(ko) body, :lang(ko) .page { font-family: 'Noto Sans KR', 'Inter', sans-serif; }
+  :lang(zh) body, :lang(zh) .page { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
+  :lang(ja) body, :lang(ja) .page { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+  :lang(th) body, :lang(th) .page { font-family: 'Noto Sans Thai', 'Inter', sans-serif; }
+
+  .page {
+    width: 210mm; height: 297mm;
+    margin: 8mm auto;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    position: relative; overflow: hidden;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* ===== CONTROLS ===== */
+  #controls {
+    position: fixed; top: 0; left: 0; right: 0;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    z-index: 9999;
+    background: rgba(21,17,12,0.92); backdrop-filter: blur(12px);
+    padding: 10px 16px;
+    font-family: 'Inter', sans-serif;
+  }
+  #controls .label {
+    font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-right: 4px;
+  }
+  #controls button {
+    background: transparent; border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.6); padding: 5px 12px;
+    font-size: 11px; font-weight: 500; cursor: pointer;
+    border-radius: 3px; transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  #controls button:hover { background: rgba(255,255,255,0.08); color: #fff; }
+  #controls button.active {
+    background: var(--lilac); border-color: var(--lilac);
+    color: #fff; font-weight: 600;
+  }
+  #controls .sep {
+    width: 1px; height: 20px; background: rgba(255,255,255,0.12); margin: 0 8px;
+  }
+  #controls .dl {
+    background: var(--lilac); border-color: var(--lilac);
+    color: #fff; font-weight: 600; letter-spacing: 0.04em;
+  }
+
+  /* ===== PAGE 1 — FRONT ===== */
+  .p1 { padding: 12mm 14mm 10mm; display: flex; flex-direction: column; }
+
+  .p1-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 8px; border-bottom: 1px solid var(--line);
+    margin-bottom: 10px;
+  }
+  .p1-brand {
+    font-size: 8px; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .p1-title-area { text-align: right; }
+  .p1-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 400; line-height: 1; color: var(--ink);
+    letter-spacing: 0.08em;
+  }
+  :lang(ko) .p1-title, :lang(zh) .p1-title, :lang(ja) .p1-title {
+    font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+  .p1-subtitle {
+    font-size: 8px; font-weight: 500; color: var(--mute);
+    letter-spacing: 0.15em; text-transform: uppercase; margin-top: 2px;
+  }
+
+  /* Hero strip */
+  .p1-hero {
+    display: grid; grid-template-columns: 1fr 1.4fr;
+    gap: 12px; margin-bottom: 10px;
+  }
+  .p1-hero-img {
+    background: var(--dark); border-radius: 3px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    padding: 8px;
+  }
+  .p1-hero-img img { max-height: 100%; max-width: 100%; object-fit: contain; }
+  .p1-hero-info { display: flex; flex-direction: column; justify-content: center; }
+  .p1-hero-info .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400; margin-bottom: 4px; line-height: 1.1;
+  }
+  :lang(ko) .p1-hero-info .product-name,
+  :lang(zh) .p1-hero-info .product-name {
+    font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700;
+  }
+  .p1-hero-info .product-desc {
+    font-size: 9px; line-height: 1.55; color: var(--graphite); margin-bottom: 6px;
+  }
+  .p1-certs {
+    display: flex; gap: 6px; flex-wrap: wrap;
+  }
+  .p1-cert {
+    font-size: 7.5px; font-weight: 600; letter-spacing: 0.12em;
+    padding: 2px 7px; border: 1px solid var(--line); color: var(--graphite);
+  }
+
+  /* Parts section */
+  .p1-parts {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; margin-bottom: 10px;
+    padding: 8px 10px; background: var(--ivory); border-radius: 3px;
+  }
+  .p1-parts-title {
+    grid-column: 1 / -1;
+    font-size: 8px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--lilac);
+  }
+  .part-item {
+    display: flex; align-items: flex-start; gap: 6px;
+    font-size: 8.5px; line-height: 1.45; color: var(--graphite);
+  }
+  .part-num {
+    flex-shrink: 0; width: 15px; height: 15px; border-radius: 50%;
+    border: 1px solid var(--lilac); color: var(--lilac);
+    font-size: 8px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* 3 Modes section */
+  .p1-modes-title {
+    font-size: 8px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--lilac); margin-bottom: 6px;
+  }
+  .p1-modes {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px; flex: 1;
+  }
+  .mode-card {
+    border: 1px solid var(--line); border-radius: 3px;
+    padding: 8px 9px; display: flex; flex-direction: column;
+    background: #fff;
+  }
+  .mode-card .mode-tag {
+    display: inline-block; align-self: flex-start;
+    padding: 2px 7px; margin-bottom: 5px;
+    font-size: 7px; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #fff; background: var(--lilac);
+  }
+  .mode-card .mode-header {
+    display: flex; align-items: flex-start; gap: 8px; margin-bottom: 4px;
+  }
+  .mode-card .mode-header-text { flex: 1; }
+  .mode-card h3 {
+    font-size: 12px; font-weight: 600; margin-bottom: 2px; line-height: 1.2;
+  }
+  .mode-card .mode-freq {
+    font-size: 7.5px; font-weight: 600; color: var(--lilac);
+    letter-spacing: 0.04em; margin-bottom: 4px;
+  }
+  .mode-card .mode-illust {
+    width: 58px; height: 72px; flex-shrink: 0;
+    border: 1px solid var(--line); border-radius: 2px;
+    overflow: hidden; background: var(--ivory);
+  }
+  .mode-card .mode-illust img {
+    width: 100%; height: 100%; object-fit: cover;
+    object-position: center 20%;
+  }
+  .mode-card .mode-desc {
+    font-size: 7.5px; line-height: 1.5; color: var(--graphite);
+    margin-bottom: 5px; padding-bottom: 5px; border-bottom: 1px solid var(--line);
+  }
+  .mode-steps {
+    list-style: none; padding: 0; counter-reset: ms;
+  }
+  .mode-steps li {
+    padding: 1.5px 0 1.5px 14px; position: relative;
+    font-size: 7.5px; line-height: 1.45; color: var(--graphite);
+    counter-increment: ms;
+  }
+  .mode-steps li::before {
+    content: counter(ms);
+    position: absolute; left: 0; top: 2px;
+    width: 11px; height: 11px; border-radius: 50%;
+    background: var(--sand); color: var(--ink);
+    font-size: 7px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .mode-tip {
+    margin-top: auto; padding-top: 4px;
+    font-size: 7px; color: var(--warn); line-height: 1.4;
+    border-top: 1px solid var(--line);
+  }
+
+  /* Cycle bar */
+  .p1-cycle {
+    margin-top: 8px; padding: 5px 10px;
+    background: var(--dark); color: rgba(250,246,237,0.8);
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 7.5px; line-height: 1.4;
+  }
+  .p1-cycle strong { color: var(--rose); font-weight: 600; }
+  .p1-cycle .cycle-visual {
+    font-size: 8px; font-weight: 500; letter-spacing: 0.06em;
+    color: rgba(250,246,237,0.5);
+  }
+
+  /* Footer */
+  .p1-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 6px; padding-top: 5px; border-top: 1px solid var(--line);
+    font-size: 7px; color: var(--mute); letter-spacing: 0.08em;
+  }
+  .p1-footer .page-num { font-weight: 600; color: var(--ink); }
+
+  /* ===== PAGE 2 — BACK ===== */
+  .p2 { padding: 12mm 14mm 10mm; display: flex; flex-direction: column; }
+
+  .p2-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 6px; border-bottom: 1px solid var(--line);
+    margin-bottom: 10px;
+  }
+
+  .p2-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px; flex: 1;
+  }
+
+  /* Precautions */
+  .precaution-col {}
+  .section-eyebrow {
+    font-size: 8px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--lilac); margin-bottom: 6px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-eyebrow::before {
+    content: ''; width: 16px; height: 1px; background: var(--lilac);
+  }
+  .section-h {
+    font-size: 14px; font-weight: 600; margin-bottom: 8px; line-height: 1.2;
+  }
+  .caution-list { list-style: none; padding: 0; }
+  .caution-list li {
+    padding: 2px 0 2px 12px; position: relative;
+    font-size: 7.5px; line-height: 1.5; color: var(--graphite);
+  }
+  .caution-list li::before {
+    content: '—'; position: absolute; left: 0; color: var(--warn); font-weight: 600;
+  }
+
+  .warn-box {
+    background: #fdf6f3; border: 1px solid #e8cfc6;
+    padding: 7px 9px; margin-top: 8px; border-radius: 2px;
+  }
+  .warn-box h4 {
+    font-size: 8px; font-weight: 700; color: var(--warn);
+    margin-bottom: 4px; letter-spacing: 0.05em;
+  }
+  .warn-list { list-style: none; padding: 0; }
+  .warn-list li {
+    padding: 1.5px 0 1.5px 12px; position: relative;
+    font-size: 7px; line-height: 1.45; color: var(--graphite);
+  }
+  .warn-list li::before {
+    content: '!'; position: absolute; left: 0;
+    font-size: 7px; font-weight: 700; color: var(--warn);
+  }
+
+  .storage-box {
+    background: var(--ivory); border: 1px solid var(--line);
+    padding: 7px 9px; margin-top: 8px; border-radius: 2px;
+  }
+  .storage-box h4 {
+    font-size: 8px; font-weight: 600; color: var(--graphite);
+    margin-bottom: 4px;
+  }
+
+  /* Specs column */
+  .specs-col {}
+  .spec-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+  .spec-table tr { border-bottom: 1px solid var(--line); }
+  .spec-table td {
+    padding: 3px 0; font-size: 8px; line-height: 1.4; vertical-align: top;
+  }
+  .spec-table td:first-child {
+    color: var(--mute); width: 60px; font-size: 7.5px;
+  }
+  .spec-table td:last-child { font-weight: 500; }
+
+  /* Q&A */
+  .qa-section { margin-top: 10px; }
+  .qa-item { padding: 3px 0; border-bottom: 1px solid var(--line); }
+  .qa-item .q { font-size: 7.5px; font-weight: 600; color: var(--ink); line-height: 1.4; }
+  .qa-item .a { font-size: 7px; color: var(--graphite); line-height: 1.45; }
+
+  /* Company footer */
+  .p2-company {
+    margin-top: auto; padding-top: 8px; border-top: 1px solid var(--line);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    font-size: 7px; color: var(--mute); line-height: 1.5;
+  }
+  .p2-company strong { color: var(--ink); font-size: 7.5px; }
+  .p2-company .logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 300; color: var(--line);
+    letter-spacing: 0.12em;
+  }
+
+  .p2-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 6px; padding-top: 5px; border-top: 1px solid var(--line);
+    font-size: 7px; color: var(--mute); letter-spacing: 0.08em;
+  }
+  .p2-footer .page-num { font-weight: 600; color: var(--ink); }
+
+  @media print {
+    body { background: white; }
+    #controls { display: none !important; }
+    .page { margin: 0; box-shadow: none; }
+  }
+  @page { size: A4 portrait; margin: 0; }
+</style>
+</head>
+<body>
+
+<div id="controls">
+  <span class="label">Language</span>
+  <button data-lang="en" class="active">EN</button>
+  <button data-lang="ko">KO</button>
+  <button data-lang="zh">ZH</button>
+  <button data-lang="ja">JA</button>
+  <button data-lang="th">TH</button>
+  <button data-lang="vi">VI</button>
+  <div class="sep"></div>
+  <button class="dl" onclick="window.print()">Print / PDF</button>
+</div>
+
+<!-- ===== PAGE 1 — FRONT ===== -->
+<div class="page p1">
+
+  <div class="p1-header">
+    <div class="p1-brand">BRITZMEDI CO., LTD.</div>
+    <div class="p1-title-area">
+      <div class="p1-title">N E W C H A E</div>
+      <div class="p1-subtitle" data-t="subtitle">User Manual · 2026</div>
+    </div>
+  </div>
+
+  <div class="p1-hero">
+    <div class="p1-hero-img">
+      <img src="images/newchea%20black%20and%20white2.png" alt="NEWCHAE SHOT">
+    </div>
+    <div class="p1-hero-info">
+      <div class="product-name">NEWCHAE SHOT</div>
+      <p class="product-desc" data-t="hero_desc">Multi-channel RF · EMS · ELP home beauty device. Professional-grade skin care technology adapted for personal use. Safe output activated upon skin contact.</p>
+      <div class="p1-certs">
+        <span class="p1-cert">KC</span><span class="p1-cert">CE</span><span class="p1-cert">FCC</span><span class="p1-cert">GMP</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="p1-parts">
+    <div class="p1-parts-title" data-t="parts_title">Device Parts</div>
+    <div class="part-item"><span class="part-num">1</span><span data-t="part1">Electrode Head — Skin Contact Electrode</span></div>
+    <div class="part-item"><span class="part-num">2</span><span data-t="part2">Level Indicator — Output Levels 1 / 2 / 3</span></div>
+    <div class="part-item"><span class="part-num">3</span><span data-t="part3">Mode Indicator — RF / EMS / ELP</span></div>
+    <div class="part-item"><span class="part-num">4</span><span data-t="part4">Power Button — ON/OFF & Level (1/2/3)</span></div>
+    <div class="part-item"><span class="part-num">5</span><span data-t="part5">Mode Button (M) — Mode & Vibration</span></div>
+    <div class="part-item"><span class="part-num">6</span><span data-t="part6">Charging Port — USB-C</span></div>
+  </div>
+
+  <div class="p1-modes-title" data-t="modes_title">How to Use — 3 Modes</div>
+  <div class="p1-modes">
+
+    <div class="mode-card">
+      <span class="mode-tag">RF</span>
+      <div class="mode-header">
+        <div class="mode-header-text">
+          <h3 data-t="rf_h">RF Mode</h3>
+          <div class="mode-freq">1 MHz · Auto Shot</div>
+        </div>
+        <div class="mode-illust">
+          <img src="images/howto-rf.jpeg" alt="RF Mode">
+        </div>
+      </div>
+      <p class="mode-desc" data-t="rf_desc">High-frequency energy for deep skin care and volume management.</p>
+      <ol class="mode-steps">
+        <li data-t="rf_s1">Cleanse face with lukewarm water.</li>
+        <li data-t="rf_s2">Apply NEWCHAE cream over treatment area.</li>
+        <li data-t="rf_s3">Select RF mode & level.</li>
+        <li data-t="rf_s4">Hold on skin — beep signals to move.</li>
+        <li data-t="rf_s5">Move inside → outside.</li>
+        <li data-t="rf_s6">Auto-off after 10 min.</li>
+      </ol>
+      <div class="mode-tip" data-t="rf_tip">Max 2 shots per area. Start Level 1.</div>
+    </div>
+
+    <div class="mode-card">
+      <span class="mode-tag">EMS</span>
+      <div class="mode-header">
+        <div class="mode-header-text">
+          <h3 data-t="ems_h">EMS Mode</h3>
+          <div class="mode-freq">1 KHz · Medium Freq.</div>
+        </div>
+        <div class="mode-illust">
+          <img src="images/howto-ems.jpeg" alt="EMS Mode">
+        </div>
+      </div>
+      <p class="mode-desc" data-t="ems_desc">Electrical stimulation for skin elasticity and contour management.</p>
+      <ol class="mode-steps">
+        <li data-t="ems_s1">Cleanse face with lukewarm water.</li>
+        <li data-t="ems_s2">Apply NEWCHAE cream generously.</li>
+        <li data-t="ems_s3">Select EMS mode & level.</li>
+        <li data-t="ems_s4">Glide upward: bottom → top, inside → outside.</li>
+        <li data-t="ems_s5">Auto-off after 10 min.</li>
+      </ol>
+      <div class="mode-tip" data-t="ems_tip">Start Level 1. Avoid over-stimulation.</div>
+    </div>
+
+    <div class="mode-card">
+      <span class="mode-tag">ELP</span>
+      <div class="mode-header">
+        <div class="mode-header-text">
+          <h3 data-t="elp_h">ELP Mode</h3>
+          <div class="mode-freq">5–20 KHz · Multi Freq.</div>
+        </div>
+        <div class="mode-illust">
+          <img src="images/howto-elp.jpeg" alt="ELP Mode">
+        </div>
+      </div>
+      <p class="mode-desc" data-t="elp_desc">Electroporation for enhanced absorption of active ingredients.</p>
+      <ol class="mode-steps">
+        <li data-t="elp_s1">Cleanse face with lukewarm water.</li>
+        <li data-t="elp_s2">Apply NEWCHAE cream generously.</li>
+        <li data-t="elp_s3">Select ELP mode & level.</li>
+        <li data-t="elp_s4">Massage in small circles, inside → outside.</li>
+        <li data-t="elp_s5">Auto-off after 10 min.</li>
+      </ol>
+      <div class="mode-tip" data-t="elp_tip">Start Level 1. Avoid over-stimulation.</div>
+    </div>
+
+  </div>
+
+  <div class="p1-cycle">
+    <div><strong data-t="cycle_label">Recommended Cycle</strong> <span data-t="cycle_text">Use each mode 2–3 times per week, up to 10 minutes per session.</span></div>
+    <div class="cycle-visual">RF → EMS → ELP → RF → …</div>
+  </div>
+
+  <div class="p1-footer">
+    <span>NEWCHAE User Manual</span>
+    <span>Model BD-ERD24NWP</span>
+    <span class="page-num">1 / 2</span>
+  </div>
+
+</div>
+
+<!-- ===== PAGE 2 — BACK ===== -->
+<div class="page p2">
+
+  <div class="p2-header">
+    <div class="p1-brand">BRITZMEDI CO., LTD.</div>
+    <div class="p1-subtitle" data-t="subtitle">User Manual · 2026</div>
+  </div>
+
+  <div class="p2-grid">
+
+    <div class="precaution-col">
+      <div class="section-eyebrow" data-t="precaution_eye">Precautions</div>
+      <div class="section-h" data-t="precaution_h">Before You Begin.</div>
+      <ul class="caution-list">
+        <li data-t="c1">Read the user manual thoroughly before use.</li>
+        <li data-t="c2">Consult a specialist if undergoing skin treatment or have allergies.</li>
+        <li data-t="c3">Do not use if you have a metal allergy.</li>
+        <li data-t="c4">Keep out of reach of children.</li>
+        <li data-t="c5">Do not use with heart disease, acute conditions, or implanted devices.</li>
+        <li data-t="c6">For sensitive skin, patch test on wrist first.</li>
+        <li data-t="c7">After facial surgery, use only after full recovery.</li>
+        <li data-t="c8">Mild stinging or redness may occur, typically resolves in 2–3 days.</li>
+        <li data-t="c9">Avoid using around the eyes or on the throat area.</li>
+        <li data-t="c10">Always start at Level 1. Max 2 shots per area.</li>
+        <li data-t="c11">Do not handle with wet hands or expose to impacts.</li>
+        <li data-t="c12">This is not a medical device. Not for medical treatment.</li>
+      </ul>
+
+      <div class="warn-box">
+        <h4 data-t="warn_h">Warning</h4>
+        <ul class="warn-list">
+          <li data-t="w1">Do not immerse the device in water.</li>
+          <li data-t="w2">Ensure no liquids enter the unit.</li>
+          <li data-t="w3">Do not use near bathtubs, showers, or pools.</li>
+          <li data-t="w4">Do not disassemble the product.</li>
+          <li data-t="w5">Keep away from heat sources — fire risk.</li>
+          <li data-t="w6">Stop use if unusual noise, smell, or smoke occurs.</li>
+        </ul>
+      </div>
+
+      <div class="storage-box">
+        <h4 data-t="storage_h">Storage</h4>
+        <ul class="caution-list">
+          <li data-t="st1">Wipe with wet tissue, dry with soft cloth.</li>
+          <li data-t="st2">Store in cool, dry place away from sunlight.</li>
+          <li data-t="st3">Avoid strong pressure or impacts.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="specs-col">
+      <div class="section-eyebrow" data-t="spec_eye">Specifications</div>
+      <div class="section-h" data-t="spec_h">Product Specs.</div>
+      <table class="spec-table">
+        <tr><td data-t="s_name">Product</td><td>NEWCHAE SHOT</td></tr>
+        <tr><td data-t="s_model">Model</td><td>BD-ERD24NWP</td></tr>
+        <tr><td data-t="s_input">Input</td><td>DC 5V, 1A+ (USB-C)</td></tr>
+        <tr><td data-t="s_battery">Battery</td><td>3.6V, 3,350mAh (Samsung SDI)</td></tr>
+        <tr><td data-t="s_modes">Modes</td><td>RF / EMS / ELP</td></tr>
+        <tr><td>RF</td><td>1 MHz · Max 8W</td></tr>
+        <tr><td>EMS</td><td>1 KHz</td></tr>
+        <tr><td>ELP</td><td>5–20 KHz</td></tr>
+        <tr><td data-t="s_vib">Vibration</td><td>10,000 rpm</td></tr>
+        <tr><td data-t="s_dim">Size</td><td>54 × 50 × 191 mm</td></tr>
+        <tr><td data-t="s_weight">Weight</td><td>567 g</td></tr>
+        <tr><td data-t="s_cert">Cert.</td><td>KC · CE · FCC</td></tr>
+        <tr><td data-t="s_mfr">Mfr.</td><td>BRITZMEDI Co., Ltd.</td></tr>
+        <tr><td data-t="s_origin">Origin</td><td data-t="s_origin_v">South Korea</td></tr>
+      </table>
+
+      <div class="qa-section">
+        <div class="section-eyebrow" data-t="qa_eye">FAQ</div>
+        <div class="qa-item"><p class="q" data-t="q1">Q. Can I use it every day?</p><p class="a" data-t="a1">Yes. Recommended 2–3 times per week per mode, up to 10 min.</p></div>
+        <div class="qa-item"><p class="q" data-t="q2">Q. Must I use NEWCHAE Cream?</p><p class="a" data-t="a2">Others may work but can reduce RF delivery. NEWCHAE Cream is formulated for optimal energy transfer.</p></div>
+        <div class="qa-item"><p class="q" data-t="q3">Q. I am pregnant. Can I use it?</p><p class="a" data-t="a3">Not recommended. Consult your physician.</p></div>
+        <div class="qa-item"><p class="q" data-t="q4">Q. The device won't turn on.</p><p class="a" data-t="a4">Charge the device. Disconnect cable if charging. Warranty: 1 year.</p></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="p2-company">
+    <div>
+      <strong>BRITZMEDI Co., Ltd.</strong><br>
+      <span data-t="addr">Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, Republic of Korea</span><br>
+      <span data-t="contact_info">global@britzmedi.com · www.britzmedi.com</span>
+    </div>
+    <div style="text-align: right; display: flex; flex-direction: column; justify-content: flex-end;">
+      <div class="logo-text">N E W C H A E</div>
+      <div style="font-size: 7px; color: var(--mute); margin-top: 2px;" data-t="copyright">© 2026 BRITZMEDI Co., Ltd. All rights reserved.</div>
+    </div>
+  </div>
+
+  <div class="p2-footer">
+    <span>NEWCHAE User Manual</span>
+    <span>Model BD-ERD24NWP</span>
+    <span class="page-num">2 / 2</span>
+  </div>
+
+</div>
+
+<script>
+const DICT = {
+en: {
+  subtitle: "User Manual · 2026",
+  hero_desc: "Multi-channel RF · EMS · ELP home beauty device. Professional-grade skin care technology adapted for personal use. Safe output activated upon skin contact.",
+  parts_title: "Device Parts",
+  part1: "Electrode Head — Skin Contact Electrode",
+  part2: "Level Indicator — Output Levels 1 / 2 / 3",
+  part3: "Mode Indicator — RF / EMS / ELP",
+  part4: "Power Button — ON/OFF & Level (1/2/3)",
+  part5: "Mode Button (M) — Mode & Vibration",
+  part6: "Charging Port — USB-C",
+  modes_title: "How to Use — 3 Modes",
+  rf_h: "RF Mode", rf_desc: "High-frequency energy for deep skin care and volume management.",
+  rf_s1: "Cleanse face with lukewarm water.", rf_s2: "Apply NEWCHAE cream over treatment area.",
+  rf_s3: "Select RF mode & level.", rf_s4: "Hold on skin — beep signals to move.",
+  rf_s5: "Move inside → outside.", rf_s6: "Auto-off after 10 min.",
+  rf_tip: "Max 2 shots per area. Start Level 1.",
+  ems_h: "EMS Mode", ems_desc: "Electrical stimulation for skin elasticity and contour management.",
+  ems_s1: "Cleanse face with lukewarm water.", ems_s2: "Apply NEWCHAE cream generously.",
+  ems_s3: "Select EMS mode & level.", ems_s4: "Glide upward: bottom → top, inside → outside.",
+  ems_s5: "Auto-off after 10 min.", ems_tip: "Start Level 1. Avoid over-stimulation.",
+  elp_h: "ELP Mode", elp_desc: "Electroporation for enhanced absorption of active ingredients.",
+  elp_s1: "Cleanse face with lukewarm water.", elp_s2: "Apply NEWCHAE cream generously.",
+  elp_s3: "Select ELP mode & level.", elp_s4: "Massage in small circles, inside → outside.",
+  elp_s5: "Auto-off after 10 min.", elp_tip: "Start Level 1. Avoid over-stimulation.",
+  cycle_label: "Recommended Cycle", cycle_text: "Use each mode 2–3 times/week, up to 10 min per session.",
+  precaution_eye: "Precautions", precaution_h: "Before You Begin.",
+  c1: "Read the user manual thoroughly before use.",
+  c2: "Consult a specialist if undergoing skin treatment or have allergies.",
+  c3: "Do not use if you have a metal allergy.",
+  c4: "Keep out of reach of children.",
+  c5: "Do not use with heart disease, acute conditions, or implanted devices.",
+  c6: "For sensitive skin, patch test on wrist first.",
+  c7: "After facial surgery, use only after full recovery.",
+  c8: "Mild stinging or redness may occur, typically resolves in 2–3 days.",
+  c9: "Avoid using around the eyes or on the throat area.",
+  c10: "Always start at Level 1. Max 2 shots per area.",
+  c11: "Do not handle with wet hands or expose to impacts.",
+  c12: "This is not a medical device. Not for medical treatment.",
+  warn_h: "Warning",
+  w1: "Do not immerse the device in water.", w2: "Ensure no liquids enter the unit.",
+  w3: "Do not use near bathtubs, showers, or pools.", w4: "Do not disassemble the product.",
+  w5: "Keep away from heat sources — fire risk.", w6: "Stop use if unusual noise, smell, or smoke occurs.",
+  storage_h: "Storage",
+  st1: "Wipe with wet tissue, dry with soft cloth.", st2: "Store in cool, dry place away from sunlight.",
+  st3: "Avoid strong pressure or impacts.",
+  spec_eye: "Specifications", spec_h: "Product Specs.",
+  s_name: "Product", s_model: "Model", s_input: "Input", s_battery: "Battery",
+  s_modes: "Modes", s_vib: "Vibration", s_dim: "Size", s_weight: "Weight",
+  s_cert: "Cert.", s_mfr: "Mfr.", s_origin: "Origin", s_origin_v: "South Korea",
+  qa_eye: "FAQ",
+  q1: "Q. Can I use it every day?", a1: "Yes. Recommended 2–3 times per week per mode, up to 10 min.",
+  q2: "Q. Must I use NEWCHAE Cream?", a2: "Others may work but can reduce RF delivery. NEWCHAE Cream is formulated for optimal energy transfer.",
+  q3: "Q. I am pregnant. Can I use it?", a3: "Not recommended. Consult your physician.",
+  q4: "Q. The device won't turn on.", a4: "Charge the device. Disconnect cable if charging. Warranty: 1 year.",
+  addr: "Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, Republic of Korea",
+  contact_info: "global@britzmedi.com · www.britzmedi.com",
+  copyright: "© 2026 BRITZMEDI Co., Ltd. All rights reserved."
+},
+ko: {
+  subtitle: "사용설명서 · 2026",
+  hero_desc: "멀티채널 RF · EMS · ELP 홈 뷰티 디바이스. 전문가급 피부 관리 기술을 가정용으로 구현. 피부 접촉 시에만 안전하게 출력됩니다.",
+  parts_title: "각 부분의 명칭",
+  part1: "전극 헤드 — 피부 접촉 전극",
+  part2: "레벨 표시등 — 출력 레벨 1 / 2 / 3",
+  part3: "모드 표시등 — RF / EMS / ELP",
+  part4: "전원 버튼 — 전원 ON/OFF 및 레벨 선택 (1/2/3)",
+  part5: "모드 버튼 (M) — 모드 선택 및 진동 ON/OFF",
+  part6: "충전 단자 — USB-C",
+  modes_title: "사용 방법 — 3가지 모드",
+  rf_h: "RF 모드", rf_desc: "고주파 에너지가 피부 깊숙이 전달되어 볼륨 관리에 도움을 줍니다.",
+  rf_s1: "미온수로 세안합니다.", rf_s2: "뉴채 크림을 시술 부위에 충분히 바릅니다.",
+  rf_s3: "RF 모드와 레벨을 선택합니다.", rf_s4: "전극을 피부에 밀착 — 비프음이 나면 다음 부위로 이동합니다.",
+  rf_s5: "안쪽에서 바깥쪽으로 이동합니다.", rf_s6: "10분 후 자동 종료됩니다.",
+  rf_tip: "같은 부위 최대 2회. 레벨 1부터 시작하세요.",
+  ems_h: "EMS 모드", ems_desc: "중주파 전기 에너지로 피부 탄력과 윤곽 관리에 도움을 줍니다.",
+  ems_s1: "미온수로 세안합니다.", ems_s2: "뉴채 크림을 충분히 바릅니다.",
+  ems_s3: "EMS 모드와 레벨을 선택합니다.", ems_s4: "아래에서 위로, 안쪽에서 바깥쪽으로 밀어 올립니다.",
+  ems_s5: "10분 후 자동 종료됩니다.", ems_tip: "레벨 1부터 시작. 한 부위에 과도한 자극을 피하세요.",
+  elp_h: "ELP 모드", elp_desc: "일렉트로포레이션으로 화장품 유효 성분의 흡수를 도와줍니다.",
+  elp_s1: "미온수로 세안합니다.", elp_s2: "뉴채 크림을 충분히 바릅니다.",
+  elp_s3: "ELP 모드와 레벨을 선택합니다.", elp_s4: "작은 원을 그리며 안쪽에서 바깥쪽으로 마사지합니다.",
+  elp_s5: "10분 후 자동 종료됩니다.", elp_tip: "레벨 1부터 시작. 한 부위에 과도한 자극을 피하세요.",
+  cycle_label: "권장 사용 주기", cycle_text: "각 모드 주 2~3회, 1회 10분 이내 권장.",
+  precaution_eye: "사용 시 주의사항", precaution_h: "사용 전 확인사항",
+  c1: "사용 전 설명서를 충분히 읽어주세요.",
+  c2: "피부 치료 중이거나 알레르기가 있는 경우 전문의와 상담하세요.",
+  c3: "금속 알레르기가 있는 경우 사용하지 마세요.",
+  c4: "어린이의 손이 닿지 않는 곳에 보관하세요.",
+  c5: "심장질환, 급성질환, 체내 삽입장치(심박조율기 등)가 있는 경우 사용하지 마세요.",
+  c6: "민감한 피부는 손목 안쪽에서 먼저 테스트하세요.",
+  c7: "안면 수술 후에는 완전히 회복된 후 사용하세요.",
+  c8: "가벼운 따끔거림이나 홍조가 나타날 수 있으며, 보통 2~3일 내에 사라집니다.",
+  c9: "눈 주위나 목 부위 사용을 피하세요.",
+  c10: "항상 레벨 1부터 시작하세요. 같은 부위 최대 2회.",
+  c11: "젖은 손으로 취급하거나 강한 충격을 주지 마세요.",
+  c12: "본 제품은 의료기기가 아니며 의료 목적으로 사용할 수 없습니다.",
+  warn_h: "경고",
+  w1: "본체를 물에 담그지 마세요.", w2: "본체에 액체가 들어가지 않도록 하세요.",
+  w3: "욕조, 샤워기, 수영장 근처에서 사용하지 마세요.", w4: "제품을 분해하지 마세요.",
+  w5: "열원 가까이 두지 마세요 — 화재 위험.", w6: "이상한 소리, 냄새, 연기 발생 시 즉시 사용을 중단하세요.",
+  storage_h: "보관 방법",
+  st1: "물티슈로 닦은 후 부드러운 천으로 건조하세요.", st2: "직사광선을 피해 서늘하고 건조한 곳에 보관하세요.",
+  st3: "강한 압력이나 충격에 주의하세요.",
+  spec_eye: "제품 사양", spec_h: "제품 스펙",
+  s_name: "제품명", s_model: "모델명", s_input: "입력", s_battery: "배터리",
+  s_modes: "모드", s_vib: "진동", s_dim: "크기", s_weight: "무게",
+  s_cert: "인증", s_mfr: "제조사", s_origin: "원산지", s_origin_v: "대한민국",
+  qa_eye: "자주 묻는 질문",
+  q1: "Q. 매일 사용해도 되나요?", a1: "네. 각 모드 주 2~3회, 1회 10분 이내를 권장합니다.",
+  q2: "Q. 반드시 뉴채 크림을 사용해야 하나요?", a2: "다른 제품도 사용 가능하나 RF 에너지 전달이 감소될 수 있습니다. 뉴채 크림은 에너지 전달에 최적화되어 있습니다.",
+  q3: "Q. 임산부도 사용 가능한가요?", a3: "임산부 및 어린이는 사용을 권장하지 않습니다. 의사와 상담하세요.",
+  q4: "Q. 기기가 켜지지 않아요.", a4: "충전해 주세요. 충전 중이면 케이블을 분리하세요. 보증기간: 구매 후 1년.",
+  addr: "경기도 성남시 중원구 둔촌대로 388 크란츠테크노 1211호",
+  contact_info: "global@britzmedi.com · www.britzmedi.com",
+  copyright: "© 2026 주식회사 브리츠메디. All rights reserved."
+},
+zh: {
+  subtitle: "使用说明书 · 2026",
+  hero_desc: "多通道 RF · EMS · ELP 家用美容仪。将专业级护肤技术融入个人使用。仅在接触皮肤时安全输出能量。",
+  parts_title: "各部位名称",
+  part1: "电极头 — 皮肤接触电极",
+  part2: "级别指示灯 — 输出级别 1 / 2 / 3",
+  part3: "模式指示灯 — RF / EMS / ELP",
+  part4: "电源键 — 开/关及级别选择 (1/2/3)",
+  part5: "模式键 (M) — 模式选择及振动开/关",
+  part6: "充电口 — USB-C",
+  modes_title: "使用方法 — 3种模式",
+  rf_h: "RF 模式", rf_desc: "高频能量深入皮肤，有助于容量管理。",
+  rf_s1: "用温水洁面。", rf_s2: "将NEWCHAE面霜均匀涂抹于护理部位。",
+  rf_s3: "选择RF模式和级别。", rf_s4: "将电极贴紧皮肤——蜂鸣声提示移至下一区域。",
+  rf_s5: "从内向外移动。", rf_s6: "10分钟后自动关闭。",
+  rf_tip: "同一部位最多2次。从1级开始。",
+  ems_h: "EMS 模式", ems_desc: "中频电刺激，有助于皮肤弹性和轮廓管理。",
+  ems_s1: "用温水洁面。", ems_s2: "充分涂抹NEWCHAE面霜。",
+  ems_s3: "选择EMS模式和级别。", ems_s4: "从下向上、从内向外滑动。",
+  ems_s5: "10分钟后自动关闭。", ems_tip: "从1级开始。避免过度刺激。",
+  elp_h: "ELP 模式", elp_desc: "电穿孔技术促进化妆品有效成分的吸收。",
+  elp_s1: "用温水洁面。", elp_s2: "充分涂抹NEWCHAE面霜。",
+  elp_s3: "选择ELP模式和级别。", elp_s4: "以小圆圈方式从内向外按摩。",
+  elp_s5: "10分钟后自动关闭。", elp_tip: "从1级开始。避免过度刺激。",
+  cycle_label: "推荐使用周期", cycle_text: "每种模式每周2~3次，每次不超过10分钟。",
+  precaution_eye: "注意事项", precaution_h: "使用前须知",
+  c1: "使用前请仔细阅读说明书。",
+  c2: "正在接受皮肤治疗或有过敏症状者请咨询专业医生。",
+  c3: "金属过敏者请勿使用。",
+  c4: "请放在儿童触及不到的地方。",
+  c5: "心脏病、急性疾病或体内植入装置（心脏起搏器等）者请勿使用。",
+  c6: "敏感肌肤请先在手腕内侧测试。",
+  c7: "面部手术后请待完全恢复后再使用。",
+  c8: "可能出现轻微刺痛或泛红，通常2~3天内消退。",
+  c9: "避免在眼周或喉部使用。",
+  c10: "请始终从1级开始。同一部位最多2次。",
+  c11: "请勿湿手操作或使产品受到撞击。",
+  c12: "本产品非医疗器械，不可用于医疗目的。",
+  warn_h: "警告",
+  w1: "请勿将主机浸入水中。", w2: "请勿让液体进入主机。",
+  w3: "请勿在浴缸、淋浴或泳池附近使用。", w4: "请勿拆解产品。",
+  w5: "远离热源——有火灾风险。", w6: "如出现异常噪音、气味或烟雾，请立即停止使用。",
+  storage_h: "保管方法",
+  st1: "用湿巾擦拭后用软布擦干。", st2: "避免阳光直射，存放在阴凉干燥处。",
+  st3: "避免强烈压力或撞击。",
+  spec_eye: "产品规格", spec_h: "产品参数",
+  s_name: "产品名称", s_model: "型号", s_input: "输入", s_battery: "电池",
+  s_modes: "模式", s_vib: "振动", s_dim: "尺寸", s_weight: "重量",
+  s_cert: "认证", s_mfr: "制造商", s_origin: "产地", s_origin_v: "韩国",
+  qa_eye: "常见问题",
+  q1: "Q. 可以每天使用吗？", a1: "可以。建议每种模式每周2~3次，每次不超过10分钟。",
+  q2: "Q. 必须使用NEWCHAE面霜吗？", a2: "可使用其他产品，但可能降低RF能量传导。NEWCHAE面霜专为优化能量传导而配方。",
+  q3: "Q. 孕妇可以使用吗？", a3: "不建议孕妇及儿童使用，请咨询医生。",
+  q4: "Q. 设备无法开机。", a4: "请充电。若正在充电请断开电缆。保修期：购买后1年。",
+  addr: "韩国京畿道城南市中原区屯村大路388号 Kranz Techno 1211室",
+  contact_info: "global@britzmedi.com · www.britzmedi.com",
+  copyright: "© 2026 BRITZMEDI Co., Ltd. 版权所有。"
+},
+ja: {
+  subtitle: "取扱説明書 · 2026",
+  hero_desc: "マルチチャンネル RF · EMS · ELP ホーム美容デバイス。プロ仕様のスキンケア技術を家庭用に。肌に触れた時のみ安全に出力。",
+  parts_title: "各部の名称",
+  part1: "電極ヘッド — 肌接触電極",
+  part2: "レベル表示灯 — 出力レベル 1 / 2 / 3",
+  part3: "モード表示灯 — RF / EMS / ELP",
+  part4: "電源ボタン — ON/OFF＆レベル選択 (1/2/3)",
+  part5: "モードボタン (M) — モード選択＆振動 ON/OFF",
+  part6: "充電ポート — USB-C",
+  modes_title: "使い方 — 3つのモード",
+  rf_h: "RF モード", rf_desc: "高周波エネルギーが肌深部に届き、ボリュームケアをサポートします。",
+  rf_s1: "ぬるま湯で洗顔します。", rf_s2: "NEWCHAEクリームをケア部位にたっぷり塗ります。",
+  rf_s3: "RFモードとレベルを選択します。", rf_s4: "電極を肌に密着 — ビープ音で次の部位へ移動。",
+  rf_s5: "内側から外側へ移動します。", rf_s6: "10分後に自動オフ。",
+  rf_tip: "同じ部位は最大2回。レベル1から開始。",
+  ems_h: "EMS モード", ems_desc: "中周波電気刺激で肌の弾力とフェイスラインをケア。",
+  ems_s1: "ぬるま湯で洗顔します。", ems_s2: "NEWCHAEクリームをたっぷり塗ります。",
+  ems_s3: "EMSモードとレベルを選択します。", ems_s4: "下から上へ、内側から外側へ滑らせます。",
+  ems_s5: "10分後に自動オフ。", ems_tip: "レベル1から開始。過度な刺激を避けてください。",
+  elp_h: "ELP モード", elp_desc: "エレクトロポレーションで化粧品有効成分の浸透をサポート。",
+  elp_s1: "ぬるま湯で洗顔します。", elp_s2: "NEWCHAEクリームをたっぷり塗ります。",
+  elp_s3: "ELPモードとレベルを選択します。", elp_s4: "小さな円を描きながら内側から外側へマッサージ。",
+  elp_s5: "10分後に自動オフ。", elp_tip: "レベル1から開始。過度な刺激を避けてください。",
+  cycle_label: "推奨使用サイクル", cycle_text: "各モード週2〜3回、1回10分以内を推奨。",
+  precaution_eye: "注意事項", precaution_h: "ご使用前に",
+  c1: "使用前に取扱説明書をよくお読みください。",
+  c2: "皮膚治療中またはアレルギーのある方は専門医にご相談ください。",
+  c3: "金属アレルギーの方は使用しないでください。",
+  c4: "お子様の手の届かない場所に保管してください。",
+  c5: "心臓疾患、急性疾患、体内埋込装置のある方は使用しないでください。",
+  c6: "敏感肌の方は手首内側でパッチテストを行ってください。",
+  c7: "顔面手術後は完全に回復してからご使用ください。",
+  c8: "軽い刺激や赤みが出ることがありますが、通常2〜3日で治まります。",
+  c9: "目の周りや喉への使用は避けてください。",
+  c10: "必ずレベル1から開始。同じ部位は最大2回まで。",
+  c11: "濡れた手で扱ったり、強い衝撃を与えないでください。",
+  c12: "本製品は医療機器ではありません。医療目的での使用はできません。",
+  warn_h: "警告",
+  w1: "本体を水に浸さないでください。", w2: "本体に液体が入らないようにしてください。",
+  w3: "浴槽、シャワー、プール付近で使用しないでください。", w4: "製品を分解しないでください。",
+  w5: "熱源の近くに置かないでください（火災の危険）。", w6: "異音、異臭、煙が発生した場合は直ちに使用を中止してください。",
+  storage_h: "保管方法",
+  st1: "ウェットティッシュで拭き、柔らかい布で乾かしてください。", st2: "直射日光を避け、涼しく乾燥した場所に保管してください。",
+  st3: "強い圧力や衝撃を避けてください。",
+  spec_eye: "製品仕様", spec_h: "スペック",
+  s_name: "製品名", s_model: "型番", s_input: "入力", s_battery: "バッテリー",
+  s_modes: "モード", s_vib: "振動", s_dim: "サイズ", s_weight: "重量",
+  s_cert: "認証", s_mfr: "製造元", s_origin: "原産国", s_origin_v: "韓国",
+  qa_eye: "よくある質問",
+  q1: "Q. 毎日使えますか？", a1: "はい。各モード週2〜3回、1回10分以内を推奨します。",
+  q2: "Q. NEWCHAEクリームは必須ですか？", a2: "他製品も使用可能ですが、RFエネルギー伝達が低下する可能性があります。NEWCHAEクリームはエネルギー伝達に最適化されています。",
+  q3: "Q. 妊娠中でも使えますか？", a3: "妊婦やお子様の使用は推奨しません。医師にご相談ください。",
+  q4: "Q. 電源が入りません。", a4: "充電してください。充電中の場合はケーブルを外してください。保証期間：購入後1年。",
+  addr: "韓国 京畿道 城南市 中原区 屯村大路388 Kranz Techno 1211号",
+  contact_info: "global@britzmedi.com · www.britzmedi.com",
+  copyright: "© 2026 BRITZMEDI Co., Ltd. All rights reserved."
+},
+th: {
+  subtitle: "คู่มือการใช้งาน · 2026",
+  hero_desc: "อุปกรณ์ความงามที่บ้าน RF · EMS · ELP หลายช่องสัญญาณ เทคโนโลยีดูแลผิวระดับมืออาชีพสำหรับใช้ส่วนตัว ส่งพลังงานอย่างปลอดภัยเมื่อสัมผัสผิวเท่านั้น",
+  parts_title: "ส่วนประกอบของเครื่อง",
+  part1: "หัวอิเล็กโทรด — อิเล็กโทรดสัมผัสผิว",
+  part2: "ไฟแสดงระดับ — ระดับเอาต์พุต 1 / 2 / 3",
+  part3: "ไฟแสดงโหมด — RF / EMS / ELP",
+  part4: "ปุ่มเปิด/ปิด — เปิด/ปิดและเลือกระดับ (1/2/3)",
+  part5: "ปุ่มโหมด (M) — เลือกโหมดและสั่น เปิด/ปิด",
+  part6: "พอร์ตชาร์จ — USB-C",
+  modes_title: "วิธีใช้งาน — 3 โหมด",
+  rf_h: "โหมด RF", rf_desc: "พลังงานความถี่สูงเข้าถึงผิวลึกเพื่อการดูแลปริมาตร",
+  rf_s1: "ล้างหน้าด้วยน้ำอุ่น", rf_s2: "ทาครีม NEWCHAE บริเวณที่ต้องการดูแล",
+  rf_s3: "เลือกโหมด RF และระดับ", rf_s4: "แนบหัวเครื่องกับผิว — เสียงบี๊ปบอกให้ย้ายตำแหน่ง",
+  rf_s5: "เลื่อนจากด้านในไปด้านนอก", rf_s6: "ปิดอัตโนมัติหลัง 10 นาที",
+  rf_tip: "สูงสุด 2 ครั้งต่อจุด เริ่มที่ระดับ 1",
+  ems_h: "โหมด EMS", ems_desc: "กระตุ้นไฟฟ้าความถี่กลางเพื่อความยืดหยุ่นและรูปร่างผิว",
+  ems_s1: "ล้างหน้าด้วยน้ำอุ่น", ems_s2: "ทาครีม NEWCHAE ให้ทั่ว",
+  ems_s3: "เลือกโหมด EMS และระดับ", ems_s4: "เลื่อนขึ้น: ล่างไปบน, ในไปนอก",
+  ems_s5: "ปิดอัตโนมัติหลัง 10 นาที", ems_tip: "เริ่มที่ระดับ 1 หลีกเลี่ยงการกระตุ้นมากเกินไป",
+  elp_h: "โหมด ELP", elp_desc: "อิเล็กโทรโปเรชันช่วยเพิ่มการดูดซึมสารออกฤทธิ์",
+  elp_s1: "ล้างหน้าด้วยน้ำอุ่น", elp_s2: "ทาครีม NEWCHAE ให้ทั่ว",
+  elp_s3: "เลือกโหมด ELP และระดับ", elp_s4: "นวดเป็นวงกลมเล็กๆ จากในไปนอก",
+  elp_s5: "ปิดอัตโนมัติหลัง 10 นาที", elp_tip: "เริ่มที่ระดับ 1 หลีกเลี่ยงการกระตุ้นมากเกินไป",
+  cycle_label: "รอบการใช้งานที่แนะนำ", cycle_text: "แต่ละโหมดสัปดาห์ละ 2-3 ครั้ง ครั้งละไม่เกิน 10 นาที",
+  precaution_eye: "ข้อควรระวัง", precaution_h: "ก่อนใช้งาน",
+  c1: "อ่านคู่มือให้ครบถ้วนก่อนใช้งาน",
+  c2: "ปรึกษาแพทย์หากกำลังรักษาผิวหรือมีอาการแพ้",
+  c3: "ห้ามใช้หากแพ้โลหะ",
+  c4: "เก็บให้พ้นมือเด็ก",
+  c5: "ห้ามใช้กับผู้ป่วยโรคหัวใจ โรคเฉียบพลัน หรือมีอุปกรณ์ฝังในร่างกาย",
+  c6: "ผิวแพ้ง่ายให้ทดสอบที่ข้อมือก่อน",
+  c7: "หลังผ่าตัดใบหน้าให้ใช้หลังฟื้นตัวสมบูรณ์",
+  c8: "อาจมีอาการแสบหรือแดงเล็กน้อย ปกติหายใน 2-3 วัน",
+  c9: "หลีกเลี่ยงบริเวณรอบดวงตาและลำคอ",
+  c10: "เริ่มที่ระดับ 1 เสมอ สูงสุด 2 ครั้งต่อจุด",
+  c11: "ห้ามจับด้วยมือเปียกหรือกระแทกแรง",
+  c12: "ผลิตภัณฑ์นี้ไม่ใช่เครื่องมือแพทย์ ห้ามใช้เพื่อการรักษา",
+  warn_h: "คำเตือน",
+  w1: "ห้ามจุ่มเครื่องลงในน้ำ", w2: "อย่าให้ของเหลวเข้าเครื่อง",
+  w3: "ห้ามใช้ใกล้อ่างอาบน้ำ ฝักบัว หรือสระว่ายน้ำ", w4: "ห้ามถอดแยกชิ้นส่วน",
+  w5: "ห้ามวางใกล้แหล่งความร้อน — เสี่ยงไฟไหม้", w6: "หยุดใช้ทันทีหากมีเสียง กลิ่น หรือควันผิดปกติ",
+  storage_h: "การเก็บรักษา",
+  st1: "เช็ดด้วยทิชชูเปียก แล้วเช็ดแห้งด้วยผ้านุ่ม", st2: "เก็บในที่เย็น แห้ง หลีกเลี่ยงแสงแดดโดยตรง",
+  st3: "หลีกเลี่ยงแรงกดหรือกระแทก",
+  spec_eye: "ข้อมูลจำเพาะ", spec_h: "สเปคผลิตภัณฑ์",
+  s_name: "ชื่อผลิตภัณฑ์", s_model: "รุ่น", s_input: "อินพุต", s_battery: "แบตเตอรี่",
+  s_modes: "โหมด", s_vib: "สั่น", s_dim: "ขนาด", s_weight: "น้ำหนัก",
+  s_cert: "ใบรับรอง", s_mfr: "ผู้ผลิต", s_origin: "แหล่งผลิต", s_origin_v: "เกาหลีใต้",
+  qa_eye: "คำถามที่พบบ่อย",
+  q1: "Q. ใช้ทุกวันได้ไหม?", a1: "ได้ แนะนำแต่ละโหมดสัปดาห์ละ 2-3 ครั้ง ครั้งละ 10 นาที",
+  q2: "Q. ต้องใช้ครีม NEWCHAE เท่านั้นไหม?", a2: "ใช้ผลิตภัณฑ์อื่นได้แต่อาจลดการส่งพลังงาน RF ครีม NEWCHAE ออกแบบมาเพื่อการส่งพลังงานที่ดีที่สุด",
+  q3: "Q. ตั้งครรภ์ใช้ได้ไหม?", a3: "ไม่แนะนำ กรุณาปรึกษาแพทย์",
+  q4: "Q. เครื่องเปิดไม่ติด", a4: "กรุณาชาร์จ หากกำลังชาร์จให้ถอดสายออก รับประกัน: 1 ปี",
+  addr: "Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, สาธารณรัฐเกาหลี",
+  contact_info: "global@britzmedi.com · www.britzmedi.com",
+  copyright: "© 2026 BRITZMEDI Co., Ltd. สงวนลิขสิทธิ์"
+},
+vi: {
+  subtitle: "Hướng dẫn sử dụng · 2026",
+  hero_desc: "Thiết bị làm đẹp tại nhà đa kênh RF · EMS · ELP. Công nghệ chăm sóc da chuyên nghiệp cho sử dụng cá nhân. Xuất năng lượng an toàn khi tiếp xúc da.",
+  parts_title: "Các bộ phận thiết bị",
+  part1: "Đầu điện cực — Điện cực tiếp xúc da",
+  part2: "Đèn báo mức — Mức đầu ra 1 / 2 / 3",
+  part3: "Đèn báo chế độ — RF / EMS / ELP",
+  part4: "Nút nguồn — Bật/Tắt & Chọn mức (1/2/3)",
+  part5: "Nút chế độ (M) — Chọn chế độ & Rung Bật/Tắt",
+  part6: "Cổng sạc — USB-C",
+  modes_title: "Cách sử dụng — 3 Chế độ",
+  rf_h: "Chế độ RF", rf_desc: "Năng lượng tần số cao thâm nhập sâu vào da để quản lý thể tích.",
+  rf_s1: "Rửa mặt bằng nước ấm.", rf_s2: "Thoa kem NEWCHAE lên vùng cần chăm sóc.",
+  rf_s3: "Chọn chế độ RF và mức.", rf_s4: "Áp đầu điện cực lên da — tiếng bíp báo hiệu chuyển vùng.",
+  rf_s5: "Di chuyển từ trong ra ngoài.", rf_s6: "Tự tắt sau 10 phút.",
+  rf_tip: "Tối đa 2 lần/vùng. Bắt đầu từ mức 1.",
+  ems_h: "Chế độ EMS", ems_desc: "Kích thích điện tần số trung bình cho độ đàn hồi và đường nét da.",
+  ems_s1: "Rửa mặt bằng nước ấm.", ems_s2: "Thoa đều kem NEWCHAE.",
+  ems_s3: "Chọn chế độ EMS và mức.", ems_s4: "Trượt lên: dưới lên trên, trong ra ngoài.",
+  ems_s5: "Tự tắt sau 10 phút.", ems_tip: "Bắt đầu mức 1. Tránh kích thích quá mức.",
+  elp_h: "Chế độ ELP", elp_desc: "Điện di giúp tăng hấp thụ hoạt chất mỹ phẩm.",
+  elp_s1: "Rửa mặt bằng nước ấm.", elp_s2: "Thoa đều kem NEWCHAE.",
+  elp_s3: "Chọn chế độ ELP và mức.", elp_s4: "Massage vòng tròn nhỏ, từ trong ra ngoài.",
+  elp_s5: "Tự tắt sau 10 phút.", elp_tip: "Bắt đầu mức 1. Tránh kích thích quá mức.",
+  cycle_label: "Chu kỳ sử dụng khuyến nghị", cycle_text: "Mỗi chế độ 2-3 lần/tuần, tối đa 10 phút/lần.",
+  precaution_eye: "Lưu ý", precaution_h: "Trước khi sử dụng",
+  c1: "Đọc kỹ hướng dẫn trước khi sử dụng.",
+  c2: "Tham khảo bác sĩ nếu đang điều trị da hoặc có dị ứng.",
+  c3: "Không sử dụng nếu dị ứng kim loại.",
+  c4: "Để xa tầm tay trẻ em.",
+  c5: "Không dùng cho người bệnh tim, bệnh cấp tính hoặc có thiết bị cấy ghép.",
+  c6: "Da nhạy cảm nên thử nghiệm ở cổ tay trước.",
+  c7: "Sau phẫu thuật mặt, chỉ sử dụng khi hồi phục hoàn toàn.",
+  c8: "Có thể hơi châm chích hoặc đỏ, thường hết trong 2-3 ngày.",
+  c9: "Tránh sử dụng quanh mắt hoặc vùng cổ họng.",
+  c10: "Luôn bắt đầu từ mức 1. Tối đa 2 lần/vùng.",
+  c11: "Không cầm bằng tay ướt hoặc va đập mạnh.",
+  c12: "Sản phẩm không phải thiết bị y tế. Không dùng cho mục đích y tế.",
+  warn_h: "Cảnh báo",
+  w1: "Không ngâm thiết bị trong nước.", w2: "Không để chất lỏng vào thiết bị.",
+  w3: "Không dùng gần bồn tắm, vòi sen hoặc hồ bơi.", w4: "Không tháo rời sản phẩm.",
+  w5: "Tránh xa nguồn nhiệt — nguy cơ cháy.", w6: "Ngừng sử dụng nếu có tiếng ồn, mùi hoặc khói bất thường.",
+  storage_h: "Bảo quản",
+  st1: "Lau bằng khăn ướt, lau khô bằng vải mềm.", st2: "Bảo quản nơi khô mát, tránh ánh nắng trực tiếp.",
+  st3: "Tránh áp lực mạnh hoặc va đập.",
+  spec_eye: "Thông số kỹ thuật", spec_h: "Thông số sản phẩm",
+  s_name: "Tên SP", s_model: "Model", s_input: "Đầu vào", s_battery: "Pin",
+  s_modes: "Chế độ", s_vib: "Rung", s_dim: "Kích thước", s_weight: "Trọng lượng",
+  s_cert: "Chứng nhận", s_mfr: "Nhà SX", s_origin: "Xuất xứ", s_origin_v: "Hàn Quốc",
+  qa_eye: "Câu hỏi thường gặp",
+  q1: "Q. Có thể dùng hàng ngày?", a1: "Có. Khuyến nghị mỗi chế độ 2-3 lần/tuần, tối đa 10 phút.",
+  q2: "Q. Phải dùng kem NEWCHAE?", a2: "Có thể dùng sản phẩm khác nhưng có thể giảm truyền năng lượng RF. Kem NEWCHAE được tối ưu cho truyền năng lượng.",
+  q3: "Q. Mang thai có dùng được?", a3: "Không khuyến nghị. Hãy tham khảo bác sĩ.",
+  q4: "Q. Không bật được máy.", a4: "Hãy sạc pin. Nếu đang sạc, rút cáp. Bảo hành: 1 năm.",
+  addr: "Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, Hàn Quốc",
+  contact_info: "global@britzmedi.com · www.britzmedi.com",
+  copyright: "© 2026 BRITZMEDI Co., Ltd. Mọi quyền được bảo lưu."
+}
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  const langMap = { en: 'en', ko: 'ko', zh: 'zh', ja: 'ja', th: 'th', vi: 'vi' };
+  document.documentElement.lang = langMap[lang] || 'en';
+
+  document.querySelectorAll('[data-t]').forEach(el => {
+    const key = el.getAttribute('data-t');
+    if (DICT[lang] && DICT[lang][key]) {
+      el.innerHTML = DICT[lang][key];
+    }
+  });
+
+  document.querySelectorAll('#controls button[data-lang]').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+}
+
+document.querySelectorAll('#controls button[data-lang]').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+</script>
+</body>
+</html>
