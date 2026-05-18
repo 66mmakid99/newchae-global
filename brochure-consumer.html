@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEWCHAE — Beauty Collection Brochure</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #f6f1e8;
+    --cream: #faf6ed;
+    --sand: #ebe3d1;
+    --ink: #15110c;
+    --graphite: #5a5347;
+    --mute: #8a8275;
+    --lilac: #8b7aa8;
+    --rose: #c9a8a0;
+    --line: #d4cbb8;
+    --dark: #1a1610;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: #ddd8ce;
+    font-family: 'Inter', -apple-system, 'Noto Sans KR', sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  :lang(ko) body { font-family: 'Noto Sans KR', 'Inter', sans-serif; }
+
+  .page {
+    width: 297mm;
+    height: 210mm;
+    margin: 10mm auto;
+    background: var(--cream);
+    box-shadow: 0 6px 32px rgba(0,0,0,0.14);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    display: grid;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  .frame-top, .frame-bot {
+    position: absolute; left: 16mm; right: 16mm;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--mute); font-weight: 500;
+    z-index: 10;
+  }
+  .frame-top { top: 9mm; }
+  .frame-bot { bottom: 9mm; }
+  .frame-bot .num { color: var(--ink); font-weight: 600; letter-spacing: 0.15em; }
+
+  .serif { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; }
+  :lang(ko) .serif { font-family: 'Noto Serif KR', 'Cormorant Garamond', serif; font-weight: 400; }
+
+  h1, h2, h3, h4 { font-weight: 400; letter-spacing: -0.015em; color: var(--ink); }
+  .display {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 88px; line-height: 0.95; font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+  :lang(ko) .display { font-family: 'Noto Serif KR', serif; font-size: 68px; font-weight: 300; line-height: 1.05; }
+
+  h2 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 42px; line-height: 1.08; font-weight: 400;
+  }
+  :lang(ko) h2 { font-family: 'Noto Serif KR', serif; font-size: 34px; font-weight: 400; }
+
+  h3 { font-size: 16px; line-height: 1.3; font-weight: 500; letter-spacing: -0.005em; }
+  h4 { font-size: 12px; line-height: 1.3; font-weight: 600; letter-spacing: 0.02em; }
+
+  p { font-size: 11.5px; line-height: 1.7; color: var(--graphite); font-weight: 400; }
+  .lead { font-size: 14px; line-height: 1.55; color: var(--ink); font-weight: 400; }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px; font-weight: 600;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--lilac); margin-bottom: 14px;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before {
+    content: ''; width: 24px; height: 1px; background: var(--lilac);
+  }
+  strong { color: var(--ink); font-weight: 600; }
+  .accent { color: var(--lilac); font-weight: 500; }
+
+  .chip {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    background: transparent;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--graphite);
+    margin-right: 6px;
+  }
+
+  /* ============ PAGE 1 — COVER ============ */
+  .cover {
+    grid-template-columns: 1.05fr 1fr;
+    background: var(--cream);
+  }
+  .cover-left {
+    padding: 32mm 16mm 20mm 22mm;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; z-index: 2;
+  }
+  .cover-left .house {
+    display: flex; align-items: center; gap: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em; color: var(--graphite);
+  }
+  .cover-left .house img { height: 18px; width: auto; display: block; }
+  .cover-left .house .divider {
+    width: 1px; height: 14px; background: var(--line);
+  }
+  .cover-title { margin-top: 0; }
+  .cover-title .line {
+    width: 60px; height: 2px; background: var(--lilac);
+    margin-bottom: 22px;
+  }
+  .cover-title .kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--graphite); margin-bottom: 18px;
+  }
+  .cover-title h1 { margin-top: 0; }
+  .cover-title .shot {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-style: italic; font-weight: 300;
+    color: var(--lilac);
+  }
+  .cover-title .sub {
+    font-size: 13.5px; color: var(--graphite);
+    max-width: 110mm; margin-top: 22px; line-height: 1.6;
+  }
+  .cover-left .meta {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-top: 12mm; border-top: 1px solid var(--line);
+  }
+  .cover-left .meta .cert {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.18em; color: var(--ink);
+  }
+  .cover-left .meta .model {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 0.12em; color: var(--graphite);
+    text-transform: uppercase;
+  }
+  .cover-right {
+    background: linear-gradient(135deg, #e8dfc9 0%, #d4c6a8 100%);
+    position: relative; overflow: hidden;
+  }
+  .cover-right img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    mix-blend-mode: multiply;
+    filter: contrast(1.05) saturate(0.9);
+  }
+  .cover-right::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(26,22,16,0.35) 100%);
+  }
+  .cover-right .corner-tag {
+    position: absolute; bottom: 20mm; right: 16mm; z-index: 2;
+    color: #faf6ed;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-weight: 300;
+    font-size: 18px; text-align: right;
+    max-width: 120mm; line-height: 1.4;
+  }
+  :lang(ko) .cover-right .corner-tag { font-family: 'Noto Serif KR', serif; font-style: normal; font-size: 14px; }
+
+  /* ============ PAGE 2 — OVERVIEW ============ */
+  .overview {
+    grid-template-columns: 1fr 1.1fr;
+    background: var(--ivory);
+  }
+  .overview .left-img {
+    position: relative; background: var(--sand); overflow: hidden;
+  }
+  .overview .left-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(0.15) contrast(1.02);
+  }
+  .overview .left-img .overlay {
+    position: absolute; left: 16mm; bottom: 16mm; right: 16mm;
+    color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 22px; font-weight: 300;
+    line-height: 1.35;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+  }
+  :lang(ko) .overview .left-img .overlay { font-family: 'Noto Serif KR', serif; font-style: normal; font-size: 18px; }
+  .overview .right-content {
+    padding: 22mm 22mm 20mm 18mm;
+    display: flex; flex-direction: column;
+  }
+  .overview h2 { margin-top: 6px; }
+  .overview .intro { margin-top: 20px; max-width: 120mm; }
+  .overview .stats {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1px; background: var(--line);
+    margin-top: 28px;
+    border: 1px solid var(--line);
+  }
+  .overview .stat {
+    background: var(--cream); padding: 14px 16px;
+  }
+  .overview .stat .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px; line-height: 1; font-weight: 300; color: var(--ink);
+  }
+  .overview .stat .num.hi { color: var(--lilac); }
+  .overview .stat .lbl {
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--graphite); margin-top: 6px;
+  }
+  .overview .stat .cap { font-size: 10px; color: var(--mute); margin-top: 2px; }
+  .overview .footnote {
+    margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line);
+    font-size: 10px; color: var(--mute); letter-spacing: 0.04em;
+  }
+
+  /* ============ PAGE 3 — THREE MODES ============ */
+  .modes {
+    grid-template-rows: auto 1fr;
+    background: var(--cream);
+    padding: 22mm 18mm 18mm;
+  }
+  .modes .head { max-width: 170mm; }
+  .modes .head h2 { margin-top: 6px; }
+  .modes .head p { margin-top: 14px; max-width: 140mm; }
+  .modes .grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 8mm;
+    margin-top: 14mm;
+  }
+  .mode-card {
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    padding: 14mm 10mm 12mm;
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+  .mode-card .big-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.3em;
+    color: var(--lilac);
+    margin-bottom: 16px;
+  }
+  .mode-card h3 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 32px; font-weight: 400; line-height: 1;
+    margin-bottom: 6px;
+  }
+  :lang(ko) .mode-card h3 { font-family: 'Noto Serif KR', serif; font-size: 26px; }
+  .mode-card .freq {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--graphite);
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .mode-card p { font-size: 11.5px; flex: 1; }
+  .mode-card .tag-ribbon {
+    position: absolute; top: 0; right: 12mm;
+    background: var(--ink); color: var(--cream);
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 0.2em;
+    padding: 8px 14px;
+  }
+  .mode-card.lilac .tag-ribbon { background: var(--lilac); }
+  .mode-card.rose .tag-ribbon { background: var(--rose); color: #fff; }
+
+  /* ============ PAGE 4 — CLINICAL + SPECS ============ */
+  .clinical {
+    grid-template-columns: 1.15fr 1fr;
+    background: var(--ivory);
+  }
+  .clinical .left {
+    padding: 22mm 14mm 20mm 22mm;
+    display: flex; flex-direction: column;
+    border-right: 1px solid var(--line);
+  }
+  .clinical .left h2 { margin-top: 6px; }
+  .clinical .big-stats {
+    display: grid; grid-template-rows: 1fr 1fr;
+    margin-top: 16mm; gap: 10mm; flex: 1;
+  }
+  .clinical .big-stat {
+    display: grid; grid-template-columns: auto 1fr;
+    align-items: center; gap: 16mm;
+  }
+  .clinical .big-stat .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px; font-weight: 300; line-height: 0.85;
+    color: var(--lilac); letter-spacing: -0.03em;
+  }
+  .clinical .big-stat .value .sup { font-size: 48px; vertical-align: super; }
+  .clinical .big-stat .meta .metric {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 26px; font-weight: 400; color: var(--ink);
+  }
+  :lang(ko) .clinical .big-stat .meta .metric { font-family: 'Noto Serif KR', serif; font-size: 22px; }
+  .clinical .big-stat .meta .desc {
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--graphite); margin-top: 4px;
+  }
+  .clinical .src {
+    margin-top: auto; padding-top: 10mm;
+    font-size: 9px; color: var(--mute); letter-spacing: 0.08em;
+  }
+  .clinical .right {
+    padding: 22mm 22mm 20mm 14mm;
+    display: flex; flex-direction: column;
+  }
+  .spec-table { width: 100%; border-collapse: collapse; margin-top: 12mm; }
+  .spec-table tr { border-bottom: 1px solid var(--line); }
+  .spec-table tr:last-child { border-bottom: none; }
+  .spec-table td { padding: 8.5px 0; font-size: 10.5px; vertical-align: top; }
+  .spec-table td:first-child {
+    color: var(--mute); width: 45%;
+    font-size: 9px; letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 600;
+    padding-right: 8px;
+  }
+  .spec-table td:last-child {
+    color: var(--ink); font-weight: 500;
+    font-family: 'Inter', sans-serif;
+  }
+  .clinical .right .box {
+    margin-top: 10mm; padding: 10mm;
+    background: var(--cream); border: 1px solid var(--line);
+  }
+  .clinical .right .box h4 { margin-bottom: 8px; }
+  .clinical .right .box ul { list-style: none; }
+  .clinical .right .box li {
+    font-size: 10.5px; padding: 5px 0; color: var(--ink);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .clinical .right .box li::before {
+    content: '—'; color: var(--lilac); font-weight: 600;
+  }
+
+  /* ============ PAGE 5 — NEWCHAE CREAM ============ */
+  .cream-page {
+    grid-template-columns: 1fr 1.15fr;
+    background: var(--cream);
+  }
+  .cream-page .img-side {
+    position: relative; background: var(--sand); overflow: hidden;
+  }
+  .cream-page .img-side img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: contrast(1.02) saturate(0.95);
+  }
+  .cream-page .img-side::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(21,17,12,0.4) 100%);
+    pointer-events: none;
+  }
+  .cream-page .img-side .vol-tag {
+    position: absolute; bottom: 20mm; left: 16mm; z-index: 2;
+    color: #faf6ed;
+  }
+  .cream-page .img-side .vol-tag .vol {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px; font-weight: 300; line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .cream-page .img-side .vol-tag .vol-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: #d9d2bf; margin-top: 6px;
+  }
+  .cream-page .txt {
+    padding: 22mm 22mm 20mm 18mm;
+    display: flex; flex-direction: column;
+  }
+  .cream-page .txt h2 { margin-top: 6px; }
+  .cream-page .txt .lead { margin-top: 16px; max-width: 130mm; }
+  .cream-page .ingredients {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6mm 8mm; margin-top: 12mm;
+  }
+  .cream-page .ingr {
+    padding-left: 16px; position: relative;
+  }
+  .cream-page .ingr::before {
+    content: ''; position: absolute; left: 0; top: 8px;
+    width: 8px; height: 1px; background: var(--lilac);
+  }
+  .cream-page .ingr .t {
+    font-size: 10.5px; font-weight: 600;
+    color: var(--ink); letter-spacing: 0.02em;
+    margin-bottom: 3px;
+  }
+  .cream-page .ingr .d {
+    font-size: 10px; color: var(--mute); line-height: 1.5;
+  }
+  .cream-page .pair-box {
+    margin-top: auto; padding: 8mm 10mm;
+    background: var(--ivory); border: 1px solid var(--line);
+    border-left: 3px solid var(--lilac);
+  }
+  .cream-page .pair-box h4 {
+    font-size: 10px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--lilac);
+    font-weight: 700; margin-bottom: 8px;
+  }
+  .cream-page .pair-box p { font-size: 11px; color: var(--ink); line-height: 1.6; }
+
+  /* ============ PAGE 6 — YOUR RITUAL ============ */
+  .ritual {
+    grid-template-rows: auto 1fr auto;
+    background: var(--ivory);
+    padding: 22mm 22mm 16mm;
+  }
+  .ritual .head { max-width: 180mm; }
+  .ritual .head h2 { margin-top: 6px; }
+  .ritual .head p { margin-top: 12px; max-width: 150mm; }
+  .ritual .steps {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 8mm; margin-top: 14mm;
+  }
+  .step-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 12mm 10mm 10mm;
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+  .step-card .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px; font-weight: 300; line-height: 0.85;
+    color: var(--line); letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .step-card h3 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 26px; font-weight: 400; line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  :lang(ko) .step-card h3 { font-family: 'Noto Serif KR', serif; font-size: 22px; }
+  .step-card .dur {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--lilac);
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .step-card p { font-size: 11px; flex: 1; }
+  .ritual .foot {
+    margin-top: auto;
+    border-top: 1px solid var(--line);
+    padding-top: 8mm;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr auto;
+    gap: 10mm; align-items: end;
+  }
+  .ritual .foot .lbl {
+    font-size: 9px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--mute);
+    font-weight: 600; margin-bottom: 4px;
+  }
+  .ritual .foot .val {
+    font-size: 13px; color: var(--ink); font-weight: 500;
+    font-family: 'Inter', sans-serif;
+  }
+  .ritual .foot .val.serif {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 20px; font-weight: 400;
+  }
+  :lang(ko) .ritual .foot .val.serif { font-family: 'Noto Serif KR', serif; font-size: 16px; }
+  .ritual .foot .copy { font-size: 9px; color: var(--mute); text-align: right; }
+  .ritual .certs-inline {
+    display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px;
+  }
+  .ritual .certs-inline .chip {
+    padding: 4px 8px; font-size: 8px; margin-right: 0;
+  }
+
+  /* ============ Controls + Print ============ */
+  .controls {
+    position: fixed; top: 20px; right: 20px; z-index: 1000;
+    background: var(--dark); color: #fff; padding: 10px;
+    display: flex; gap: 6px; border-radius: 2px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    font-family: 'Inter', sans-serif;
+  }
+  .controls button {
+    background: transparent; color: #fff;
+    border: 1px solid #3a3530;
+    padding: 8px 12px; font-size: 10px;
+    letter-spacing: 0.15em; cursor: pointer;
+    font-weight: 600; text-transform: uppercase;
+    font-family: inherit;
+  }
+  .controls button.active { background: var(--lilac); border-color: var(--lilac); }
+  .controls button:hover:not(.active) { border-color: #6a635a; }
+  .controls .sep { width: 1px; background: #3a3530; margin: 0 4px; }
+  .controls .print-btn { background: var(--cream); color: var(--ink); border-color: var(--cream); }
+  .controls .print-btn:hover { background: #fff; }
+
+  /* Japanese overrides */
+  :lang(ja) body { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+  :lang(ja) .serif { font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 400; }
+  :lang(ja) .display { font-family: 'Noto Serif JP', serif; font-size: 64px; font-weight: 300; line-height: 1.1; }
+  :lang(ja) h2 { font-family: 'Noto Serif JP', serif; font-size: 32px; font-weight: 400; }
+  :lang(ja) .cover-right .corner-tag { font-family: 'Noto Serif JP', serif; font-style: normal; font-size: 14px; }
+  :lang(ja) .overview .left-img .overlay { font-family: 'Noto Serif JP', serif; font-style: normal; font-size: 18px; }
+  :lang(ja) .mode-card h3 { font-family: 'Noto Serif JP', serif; font-size: 26px; }
+  :lang(ja) .clinical .big-stat .meta .metric { font-family: 'Noto Serif JP', serif; font-size: 22px; }
+  :lang(ja) .step-card h3 { font-family: 'Noto Serif JP', serif; font-size: 22px; }
+  :lang(ja) .ritual .foot .val.serif { font-family: 'Noto Serif JP', serif; font-size: 16px; }
+
+  /* Thai overrides */
+  :lang(th) body { font-family: 'Noto Sans Thai', 'Inter', sans-serif; }
+  :lang(th) .serif { font-family: 'Noto Serif Thai', 'Cormorant Garamond', serif; font-weight: 400; }
+  :lang(th) .display { font-family: 'Noto Serif Thai', serif; font-size: 58px; font-weight: 400; line-height: 1.15; }
+  :lang(th) h2 { font-family: 'Noto Serif Thai', serif; font-size: 30px; font-weight: 400; }
+  :lang(th) .cover-right .corner-tag { font-family: 'Noto Serif Thai', serif; font-style: normal; font-size: 14px; }
+  :lang(th) .overview .left-img .overlay { font-family: 'Noto Serif Thai', serif; font-style: normal; font-size: 17px; line-height: 1.5; }
+  :lang(th) .mode-card h3 { font-family: 'Noto Serif Thai', serif; font-size: 24px; }
+  :lang(th) .clinical .big-stat .meta .metric { font-family: 'Noto Serif Thai', serif; font-size: 20px; }
+  :lang(th) .step-card h3 { font-family: 'Noto Serif Thai', serif; font-size: 20px; }
+  :lang(th) .ritual .foot .val.serif { font-family: 'Noto Serif Thai', serif; font-size: 15px; }
+
+  @page { size: A4 landscape; margin: 0; }
+  @media print {
+    html, body { background: #fff; }
+    .controls { display: none !important; }
+    .page {
+      margin: 0; box-shadow: none;
+      width: 297mm; height: 210mm;
+      page-break-after: always;
+    }
+    .page:last-child { page-break-after: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="controls" id="controls">
+  <button data-lang="en" class="active">EN</button>
+  <button data-lang="gb">UK</button>
+  <button data-lang="ko">KO</button>
+  <button data-lang="ja">JA</button>
+  <button data-lang="th">TH</button>
+  <button data-lang="vi">VI</button>
+  <div class="sep"></div>
+  <button class="print-btn" onclick="window.print()">PDF ↓</button>
+</div>
+
+<!-- ================== PAGE 1 — COVER ================== -->
+<section class="page cover">
+  <div class="cover-left">
+    <div class="house">
+      <img src="images/BRITZMEDI_LOGO_black.svg" alt="BRITZMEDI">
+      <span class="divider"></span>
+      <span>SINCE 2017</span>
+    </div>
+
+    <div class="cover-title">
+      <div class="line"></div>
+      <div class="kicker" data-i18n="cover.kicker">Beauty Collection · 2026</div>
+      <h1 class="display">NEWCHAE</h1>
+      <p class="sub" data-i18n="cover.sub">A three-in-one RF beauty device and its dedicated lifting cream — designed to bring professional skincare results into your daily routine.</p>
+    </div>
+
+    <div class="meta">
+      <div class="cert">KC · CE · FCC · Made in Korea</div>
+      <div class="model">SHOT + CREAM</div>
+    </div>
+  </div>
+  <div class="cover-right">
+    <img src="images/newchea black and white2.png" alt="NEWCHAE SHOT">
+    <div class="corner-tag" data-i18n="cover.quote">"Feel the first-time excitement,<br>every day."</div>
+  </div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span>
+    <span class="num">01 / 06</span>
+  </div>
+</section>
+
+<!-- ================== PAGE 2 — OVERVIEW ================== -->
+<section class="page overview">
+  <div class="left-img">
+    <img src="images/newchea flower and cream.png" alt="NEWCHAE lifestyle">
+    <div class="overlay" data-i18n="p2.overlay">"Three professional technologies,<br>distilled into one daily ritual."</div>
+  </div>
+  <div class="right-content">
+    <div class="eyebrow" data-i18n="p2.eyebrow">What is NEWCHAE</div>
+    <h2 data-i18n="p2.h2">A 3-in-1 beauty device,<br>engineered in Korea.</h2>
+    <p class="lead intro" data-i18n="p2.lead">NEWCHAE SHOT combines RF, EMS, and ELP into a single home-use device. Designed and manufactured by BRITZMEDI — a Korean medical device maker operating since 2017.</p>
+    <p style="margin-top: 14px; max-width: 120mm;" data-i18n="p2.body">Clinically proven to improve skin density by <strong class="accent">48%</strong> and reduce pore size by <strong class="accent">74%</strong> in just two weeks of consistent use.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num">3</div>
+        <div class="lbl" data-i18n="p2.s1">Core Technologies</div>
+        <div class="cap">RF · EMS · ELP</div>
+      </div>
+      <div class="stat">
+        <div class="num">10</div>
+        <div class="lbl" data-i18n="p2.s2">Minutes per Session</div>
+        <div class="cap" data-i18n="p2.s2c">Daily home ritual</div>
+      </div>
+      <div class="stat">
+        <div class="num hi">48<span style="font-size: 24px;">%</span></div>
+        <div class="lbl" data-i18n="p2.s3">Skin Density ↑</div>
+        <div class="cap" data-i18n="p2.s3c">After 2 weeks</div>
+      </div>
+      <div class="stat">
+        <div class="num hi">74<span style="font-size: 24px;">%</span></div>
+        <div class="lbl" data-i18n="p2.s4">Pore Size ↓</div>
+        <div class="cap" data-i18n="p2.s4c">After 2 weeks</div>
+      </div>
+    </div>
+
+    <div class="footnote" data-i18n="p2.src">Source: Korea Institute of Dermatological Sciences · 2-week clinical study</div>
+  </div>
+  <div class="frame-top">
+    <span>NEWCHAE</span>
+    <span data-i18n="nav.overview">OVERVIEW</span>
+  </div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span>
+    <span class="num">02 / 06</span>
+  </div>
+</section>
+
+<!-- ================== PAGE 3 — THREE MODES ================== -->
+<section class="page modes">
+  <div class="head">
+    <div class="eyebrow" data-i18n="p3.eyebrow">3-Mode System</div>
+    <h2 data-i18n="p3.h2">Three modes.<br>One device.</h2>
+    <p class="lead" data-i18n="p3.lead">Each mode uses a distinct frequency optimized for a specific skincare goal — precisely tuned by BRITZMEDI engineers.</p>
+  </div>
+
+  <div class="grid">
+    <div class="mode-card">
+      <div class="tag-ribbon">GLOW</div>
+      <div class="big-num">01 · MODE</div>
+      <h3 data-i18n="p3.m1.h">RF Mode</h3>
+      <div class="freq">1 MHz Radiofrequency</div>
+      <p data-i18n="p3.m1.p">Delivers thermal energy into the deep dermal layer to support collagen activity and strengthen skin firmness from within.</p>
+    </div>
+    <div class="mode-card lilac">
+      <div class="tag-ribbon">TONE</div>
+      <div class="big-num">02 · MODE</div>
+      <h3 data-i18n="p3.m2.h">EMS Mode</h3>
+      <div class="freq">1 KHz Microcurrent</div>
+      <p data-i18n="p3.m2.p">Stimulates facial muscles through gentle micro-currents, helping to tone facial contours and define the jawline.</p>
+    </div>
+    <div class="mode-card rose">
+      <div class="tag-ribbon">BOOST</div>
+      <div class="big-num">03 · MODE</div>
+      <h3 data-i18n="p3.m3.h">ELP Mode</h3>
+      <div class="freq">5–20 KHz Electroporation</div>
+      <p data-i18n="p3.m3.p">Enhances absorption of skincare actives by forming temporary micro-pathways in the skin barrier — without needles.</p>
+    </div>
+  </div>
+
+  <div class="frame-top">
+    <span>NEWCHAE</span>
+    <span data-i18n="nav.product">PRODUCT · 3-MODE SYSTEM</span>
+  </div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span>
+    <span class="num">03 / 06</span>
+  </div>
+</section>
+
+<!-- ================== PAGE 4 — CLINICAL + SPECS ================== -->
+<section class="page clinical">
+  <div class="left">
+    <div class="eyebrow" data-i18n="p4.eyebrow">Clinical Evidence</div>
+    <h2 data-i18n="p4.h2">Proven in<br>two weeks.</h2>
+    <div class="big-stats">
+      <div class="big-stat">
+        <div class="value">+48<span class="sup">%</span></div>
+        <div class="meta">
+          <div class="metric" data-i18n="p4.c1.h">Skin Density</div>
+          <div class="desc" data-i18n="p4.c1.d">Independent 2-Week Study</div>
+        </div>
+      </div>
+      <div class="big-stat">
+        <div class="value">−74<span class="sup">%</span></div>
+        <div class="meta">
+          <div class="metric" data-i18n="p4.c2.h">Pore Size</div>
+          <div class="desc" data-i18n="p4.c2.d">Visible Reduction in 14 Days</div>
+        </div>
+      </div>
+    </div>
+    <div class="src" data-i18n="p4.src">Source: Korea Institute of Dermatological Sciences · Independent clinical study</div>
+  </div>
+  <div class="right">
+    <div class="eyebrow" data-i18n="p4.eyebrow2">Technical Specifications</div>
+    <h2 style="font-size: 28px;" data-i18n="p4.h2b">Built to global<br>standards.</h2>
+    <table class="spec-table">
+      <tr><td data-i18n="spec.model">Model</td><td>BD-ERD24NWP</td></tr>
+      <tr><td data-i18n="spec.battery">Battery</td><td>3.6V · 3,350mAh · Samsung SDI</td></tr>
+      <tr><td data-i18n="spec.charging">Charging</td><td>USB-C · DC 5V, &gt;1A</td></tr>
+      <tr><td data-i18n="spec.modes">Modes</td><td>RF / EMS / ELP</td></tr>
+      <tr><td data-i18n="spec.rfpower">RF Power</td><td>Max 8W @ 1 MHz</td></tr>
+      <tr><td data-i18n="spec.freq">Frequencies</td><td>1 MHz / 1 KHz / 5–20 KHz</td></tr>
+      <tr><td data-i18n="spec.dim">Dimensions</td><td>54 × 50 × 191 mm · 567 g</td></tr>
+      <tr><td data-i18n="spec.cert">Certifications</td><td>KC · CE · FCC · Made in Korea</td></tr>
+    </table>
+
+    <div class="box">
+      <h4 data-i18n="p4.box">What's in the Box</h4>
+      <ul>
+        <li data-i18n="p4.b1">NEWCHAE SHOT Main Device</li>
+        <li data-i18n="p4.b2">USB-C Charging Cable · Travel Pouch</li>
+        <li data-i18n="p4.b3">User Manual (Multi-language)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="frame-top">
+    <span>NEWCHAE</span>
+    <span data-i18n="nav.specs">CLINICAL & SPECIFICATIONS</span>
+  </div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span>
+    <span class="num">04 / 06</span>
+  </div>
+</section>
+
+<!-- ================== PAGE 5 — NEWCHAE CREAM ================== -->
+<section class="page cream-page">
+  <div class="img-side">
+    <img src="images/newchea cream summer.png" alt="NEWCHAE Peptide Lifting Cream">
+    <div class="vol-tag">
+      <div class="vol">80<span style="font-size: 28px; margin-left: 2px;">ml</span></div>
+      <div class="vol-sub" data-i18n="p5.vol_sub">Peptide Lifting Cream</div>
+    </div>
+  </div>
+  <div class="txt">
+    <div class="eyebrow" data-i18n="p5.eyebrow">The Perfect Companion</div>
+    <h2 data-i18n="p5.h2">NEWCHAE<br>Lifting Cream.</h2>
+    <p class="lead" data-i18n="p5.lead">A peptide-enriched cream formulated to work in synergy with NEWCHAE SHOT. Designed to maximize the benefits of each mode — especially ELP electroporation for deeper active delivery.</p>
+
+    <div class="ingredients">
+      <div class="ingr">
+        <div class="t" data-i18n="p5.i1.t">Peptide Complex</div>
+        <div class="d" data-i18n="p5.i1.d">Supports collagen synthesis and skin elasticity from within.</div>
+      </div>
+      <div class="ingr">
+        <div class="t" data-i18n="p5.i2.t">Hyaluronic Acid</div>
+        <div class="d" data-i18n="p5.i2.d">Multi-weight HA for deep hydration across skin layers.</div>
+      </div>
+      <div class="ingr">
+        <div class="t" data-i18n="p5.i3.t">Niacinamide</div>
+        <div class="d" data-i18n="p5.i3.d">Brightens tone and reinforces the skin barrier.</div>
+      </div>
+      <div class="ingr">
+        <div class="t" data-i18n="p5.i4.t">Adenosine</div>
+        <div class="d" data-i18n="p5.i4.d">Clinically recognized anti-wrinkle ingredient by MFDS.</div>
+      </div>
+    </div>
+
+    <div class="pair-box">
+      <h4 data-i18n="p5.pair">Why Pair Device + Cream?</h4>
+      <p data-i18n="p5.pair_p">ELP mode creates temporary micro-pathways in the skin barrier, allowing peptides and actives to penetrate deeper than topical application alone. The cream's texture is optimized for smooth device glide and even energy distribution.</p>
+    </div>
+  </div>
+  <div class="frame-top">
+    <span>NEWCHAE</span>
+    <span data-i18n="nav.cream">PEPTIDE LIFTING CREAM</span>
+  </div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span>
+    <span class="num">05 / 06</span>
+  </div>
+</section>
+
+<!-- ================== PAGE 6 — YOUR RITUAL ================== -->
+<section class="page ritual">
+  <div class="head">
+    <div class="eyebrow" data-i18n="p6.eyebrow">Your Daily Ritual</div>
+    <h2 data-i18n="p6.h2">Three steps.<br>Ten minutes.</h2>
+    <p class="lead" data-i18n="p6.lead">A simple routine that fits into any lifestyle — morning or evening, at home or on the go. Professional-grade results, every day.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <h3 data-i18n="p6.s1.h">Apply</h3>
+      <div class="dur" data-i18n="p6.s1.dur">30 SECONDS</div>
+      <p data-i18n="p6.s1.p">Cleanse your face and apply a generous layer of NEWCHAE Peptide Lifting Cream. The cream acts as both a nourishing treatment and a conductive medium for the device.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <h3 data-i18n="p6.s2.h">Treat</h3>
+      <div class="dur" data-i18n="p6.s2.dur">8–10 MINUTES</div>
+      <p data-i18n="p6.s2.p">Select your mode — GLOW for firmness, TONE for contour, BOOST for absorption — and glide the NEWCHAE SHOT gently across your face and neck.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <h3 data-i18n="p6.s3.h">Glow</h3>
+      <div class="dur" data-i18n="p6.s3.dur">EVERY DAY</div>
+      <p data-i18n="p6.s3.p">Pat remaining cream into skin. With consistent use, experience visibly firmer, more lifted skin. Results begin in as little as two weeks.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div>
+      <div class="eyebrow" data-i18n="p6.trust">Trusted by Design</div>
+      <div class="lbl" data-i18n="p6.made">Made in Korea</div>
+      <div class="val serif">BRITZMEDI Co., Ltd.</div>
+      <div class="certs-inline">
+        <span class="chip">KC</span>
+        <span class="chip">CE</span>
+        <span class="chip">FCC</span>
+        <span class="chip">ISO 13485</span>
+      </div>
+    </div>
+    <div>
+      <div class="lbl" data-i18n="p6.web_lbl">Web</div>
+      <div class="val">newchae-global.pages.dev</div>
+      <div class="lbl" style="margin-top: 8px;" data-i18n="p6.email_lbl">Email</div>
+      <div class="val">sh.lee@britzmedi.com</div>
+    </div>
+    <div>
+      <div class="lbl" data-i18n="p6.year">Established</div>
+      <div class="val serif" style="font-size: 28px;">2017</div>
+    </div>
+    <div class="copy">© 2026<br>BRITZMEDI Co., Ltd.<br>All rights reserved.</div>
+  </div>
+
+  <div class="frame-top">
+    <span>NEWCHAE</span>
+    <span data-i18n="nav.ritual">YOUR DAILY RITUAL</span>
+  </div>
+  <div class="frame-bot">
+    <span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span>
+    <span class="num">06 / 06</span>
+  </div>
+</section>
+
+<script>
+const DICT = {
+  en: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.overview": "OVERVIEW", "nav.product": "PRODUCT · 3-MODE SYSTEM",
+    "nav.specs": "CLINICAL & SPECIFICATIONS", "nav.cream": "PEPTIDE LIFTING CREAM",
+    "nav.ritual": "YOUR DAILY RITUAL",
+
+    "cover.kicker": "Beauty Collection · 2026",
+    "cover.sub": "A three-in-one RF beauty device and its dedicated lifting cream — designed to bring professional skincare results into your daily routine.",
+    "cover.quote": "\"Feel the first-time excitement,<br>every day.\"",
+
+    "p2.eyebrow": "What is NEWCHAE",
+    "p2.overlay": "\"Three professional technologies,<br>distilled into one daily ritual.\"",
+    "p2.h2": "A 3-in-1 beauty device,<br>engineered in Korea.",
+    "p2.lead": "NEWCHAE SHOT combines RF, EMS, and ELP into a single home-use device. Designed and manufactured by BRITZMEDI — a Korean medical device maker operating since 2017.",
+    "p2.body": "Clinically proven to improve skin density by <strong class=\"accent\">48%</strong> and reduce pore size by <strong class=\"accent\">74%</strong> in just two weeks of consistent use.",
+    "p2.s1": "Core Technologies",
+    "p2.s2": "Minutes per Session", "p2.s2c": "Daily home ritual",
+    "p2.s3": "Skin Density ↑", "p2.s3c": "After 2 weeks",
+    "p2.s4": "Pore Size ↓", "p2.s4c": "After 2 weeks",
+    "p2.src": "Source: Korea Institute of Dermatological Sciences · 2-week clinical study",
+
+    "p3.eyebrow": "3-Mode System",
+    "p3.h2": "Three modes.<br>One device.",
+    "p3.lead": "Each mode uses a distinct frequency optimized for a specific skincare goal — precisely tuned by BRITZMEDI engineers.",
+    "p3.m1.h": "RF Mode",
+    "p3.m1.p": "Delivers thermal energy into the deep dermal layer to support collagen activity and strengthen skin firmness from within.",
+    "p3.m2.h": "EMS Mode",
+    "p3.m2.p": "Stimulates facial muscles through gentle micro-currents, helping to tone facial contours and define the jawline.",
+    "p3.m3.h": "ELP Mode",
+    "p3.m3.p": "Enhances absorption of skincare actives by forming temporary micro-pathways in the skin barrier — without needles.",
+
+    "p4.eyebrow": "Clinical Evidence",
+    "p4.h2": "Proven in<br>two weeks.",
+    "p4.c1.h": "Skin Density", "p4.c1.d": "Independent 2-Week Study",
+    "p4.c2.h": "Pore Size", "p4.c2.d": "Visible Reduction in 14 Days",
+    "p4.src": "Source: Korea Institute of Dermatological Sciences · Independent clinical study",
+    "p4.eyebrow2": "Technical Specifications",
+    "p4.h2b": "Built to global<br>standards.",
+    "spec.model": "Model", "spec.battery": "Battery", "spec.charging": "Charging",
+    "spec.modes": "Modes", "spec.rfpower": "RF Power", "spec.freq": "Frequencies",
+    "spec.dim": "Dimensions / Weight", "spec.cert": "Certifications",
+    "p4.box": "What's in the Box",
+    "p4.b1": "NEWCHAE SHOT Main Device",
+    "p4.b2": "USB-C Charging Cable · Travel Pouch",
+    "p4.b3": "User Manual (Multi-language)",
+
+    "p5.eyebrow": "The Perfect Companion",
+    "p5.vol_sub": "Peptide Lifting Cream",
+    "p5.h2": "NEWCHAE<br>Lifting Cream.",
+    "p5.lead": "A peptide-enriched cream formulated to work in synergy with NEWCHAE SHOT. Designed to maximize the benefits of each mode — especially ELP electroporation for deeper active delivery.",
+    "p5.i1.t": "Peptide Complex",
+    "p5.i1.d": "Supports collagen synthesis and skin elasticity from within.",
+    "p5.i2.t": "Hyaluronic Acid",
+    "p5.i2.d": "Multi-weight HA for deep hydration across skin layers.",
+    "p5.i3.t": "Niacinamide",
+    "p5.i3.d": "Brightens tone and reinforces the skin barrier.",
+    "p5.i4.t": "Adenosine",
+    "p5.i4.d": "Clinically recognized anti-wrinkle ingredient by MFDS.",
+    "p5.pair": "Why Pair Device + Cream?",
+    "p5.pair_p": "ELP mode creates temporary micro-pathways in the skin barrier, allowing peptides and actives to penetrate deeper than topical application alone. The cream's texture is optimized for smooth device glide and even energy distribution.",
+
+    "p6.eyebrow": "Your Daily Ritual",
+    "p6.h2": "Three steps.<br>Ten minutes.",
+    "p6.lead": "A simple routine that fits into any lifestyle — morning or evening, at home or on the go. Professional-grade results, every day.",
+    "p6.s1.h": "Apply", "p6.s1.dur": "1 MINUTE",
+    "p6.s1.p": "Cleanse your face and apply a generous layer of NEWCHAE Peptide Lifting Cream. The cream acts as both a nourishing treatment and a conductive medium for the device.",
+    "p6.s2.h": "Treat", "p6.s2.dur": "8–10 MINUTES",
+    "p6.s2.p": "Select your mode — GLOW for firmness, TONE for contour, BOOST for absorption — and glide the NEWCHAE SHOT gently across your face and neck.",
+    "p6.s3.h": "Glow", "p6.s3.dur": "EVERY DAY",
+    "p6.s3.p": "Pat remaining cream into skin. With consistent use, experience visibly firmer, more lifted skin. Results begin in as little as two weeks.",
+    "p6.trust": "Trusted by Design",
+    "p6.made": "Made in Korea",
+    "p6.web_lbl": "Web", "p6.email_lbl": "Email",
+    "p6.year": "Established"
+  },
+  gb: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.overview": "OVERVIEW", "nav.product": "PRODUCT · 3-MODE SYSTEM",
+    "nav.specs": "CLINICAL & SPECIFICATIONS", "nav.cream": "PEPTIDE LIFTING CREAM",
+    "nav.ritual": "YOUR DAILY RITUAL",
+
+    "cover.kicker": "Beauty Collection · 2026",
+    "cover.sub": "A three-in-one RF beauty device and its dedicated lifting cream — designed to bring professional skincare results into your daily routine.",
+    "cover.quote": "\"Feel the first-time excitement,<br>every day.\"",
+
+    "p2.eyebrow": "What is NEWCHAE",
+    "p2.overlay": "\"Three professional technologies,<br>distilled into one daily ritual.\"",
+    "p2.h2": "A 3-in-1 beauty device,<br>engineered in Korea.",
+    "p2.lead": "NEWCHAE SHOT combines RF, EMS, and ELP into a single home-use device. Designed and manufactured by BRITZMEDI — a Korean medical device company established in 2017.",
+    "p2.body": "Clinically demonstrated to improve skin density by <strong class=\"accent\">48%</strong> and reduce pore size by <strong class=\"accent\">74%</strong> in just a fortnight of consistent use.",
+    "p2.s1": "Core Technologies",
+    "p2.s2": "Minutes per Session", "p2.s2c": "Daily home ritual",
+    "p2.s3": "Skin Density ↑", "p2.s3c": "After 2 weeks",
+    "p2.s4": "Pore Size ↓", "p2.s4c": "After 2 weeks",
+    "p2.src": "Source: Korea Institute of Dermatological Sciences · 2-week clinical study",
+
+    "p3.eyebrow": "3-Mode System",
+    "p3.h2": "Three modes.<br>One device.",
+    "p3.lead": "Each mode utilises a distinct frequency optimised for a specific skincare goal — precisely calibrated by BRITZMEDI engineers.",
+    "p3.m1.h": "RF Mode",
+    "p3.m1.p": "Delivers thermal energy into the deep dermal layer to support collagen activity and strengthen skin firmness from within.",
+    "p3.m2.h": "EMS Mode",
+    "p3.m2.p": "Stimulates facial muscles through gentle micro-currents, helping to tone facial contours and define the jawline.",
+    "p3.m3.h": "ELP Mode",
+    "p3.m3.p": "Enhances absorption of skincare actives by forming temporary micro-pathways in the skin barrier — without needles.",
+
+    "p4.eyebrow": "Clinical Evidence",
+    "p4.h2": "Demonstrated in<br>a fortnight.",
+    "p4.c1.h": "Skin Density", "p4.c1.d": "Independent 2-Week Study",
+    "p4.c2.h": "Pore Size", "p4.c2.d": "Visible Reduction in 14 Days",
+    "p4.src": "Source: Korea Institute of Dermatological Sciences · Independent clinical study",
+    "p4.eyebrow2": "Technical Specifications",
+    "p4.h2b": "Built to global<br>standards.",
+    "spec.model": "Model", "spec.battery": "Battery", "spec.charging": "Charging",
+    "spec.modes": "Modes", "spec.rfpower": "RF Power", "spec.freq": "Frequencies",
+    "spec.dim": "Dimensions / Weight", "spec.cert": "Certifications",
+    "p4.box": "What's in the Box",
+    "p4.b1": "NEWCHAE SHOT Main Device",
+    "p4.b2": "USB-C Charging Cable · Travel Pouch",
+    "p4.b3": "User Manual (Multi-language)",
+
+    "p5.eyebrow": "The Perfect Companion",
+    "p5.vol_sub": "Peptide Lifting Cream",
+    "p5.h2": "NEWCHAE<br>Lifting Cream.",
+    "p5.lead": "A peptide-enriched cream specially formulated to work in synergy with NEWCHAE SHOT. Designed to maximise the benefits of each mode — particularly ELP electroporation for deeper active delivery.",
+    "p5.i1.t": "Peptide Complex",
+    "p5.i1.d": "Supports collagen synthesis and skin elasticity from within.",
+    "p5.i2.t": "Hyaluronic Acid",
+    "p5.i2.d": "Multi-weight HA for deep hydration across all skin layers.",
+    "p5.i3.t": "Niacinamide",
+    "p5.i3.d": "Brightens skin tone whilst reinforcing the natural barrier.",
+    "p5.i4.t": "Adenosine",
+    "p5.i4.d": "Clinically recognised anti-wrinkle ingredient approved by MFDS.",
+    "p5.pair": "Why Pair Device + Cream?",
+    "p5.pair_p": "ELP mode creates temporary micro-pathways in the skin barrier, enabling peptides and actives to penetrate more deeply than topical application alone. The cream's texture is optimised for smooth device glide and even energy distribution.",
+
+    "p6.eyebrow": "Your Daily Ritual",
+    "p6.h2": "Three steps.<br>Ten minutes.",
+    "p6.lead": "A straightforward routine that fits into any lifestyle — morning or evening, at home or whilst travelling. Professional-grade results, every day.",
+    "p6.s1.h": "Apply", "p6.s1.dur": "1 MINUTE",
+    "p6.s1.p": "Cleanse your face and apply a generous layer of NEWCHAE Peptide Lifting Cream. The cream serves as both a nourishing treatment and a conductive medium for the device.",
+    "p6.s2.h": "Treat", "p6.s2.dur": "8–10 MINUTES",
+    "p6.s2.p": "Select your mode — GLOW for firmness, TONE for contour, BOOST for absorption — and glide the NEWCHAE SHOT gently across your face and neck.",
+    "p6.s3.h": "Glow", "p6.s3.dur": "EVERY DAY",
+    "p6.s3.p": "Pat remaining cream into the skin. With consistent use, experience visibly firmer, more lifted skin. Results become apparent in as little as a fortnight.",
+    "p6.trust": "Trusted by Design",
+    "p6.made": "Made in Korea",
+    "p6.web_lbl": "Web", "p6.email_lbl": "Email",
+    "p6.year": "Established"
+  },
+  ko: {
+    "frame.brand": "NEWCHAE · 브리츠메디",
+    "nav.overview": "개요", "nav.product": "제품 · 3-모드 시스템",
+    "nav.specs": "임상 & 사양", "nav.cream": "펩타이드 리프팅 크림",
+    "nav.ritual": "데일리 루틴",
+
+    "cover.kicker": "뷰티 컬렉션 · 2026",
+    "cover.sub": "RF, EMS, ELP 세 가지 전문 기술을 하나의 홈케어 디바이스에, 그리고 전용 리프팅 크림까지 — 프로페셔널 스킨케어를 일상으로.",
+    "cover.quote": "\"처음 그 설렘을,<br>매일 느낄 수 있도록.\"",
+
+    "p2.eyebrow": "뉴채란",
+    "p2.overlay": "\"세 가지 전문 기술을<br>하나의 데일리 루틴으로.\"",
+    "p2.h2": "한국에서 설계한<br>3-in-1 뷰티 디바이스.",
+    "p2.lead": "뉴채 샷은 RF, EMS, ELP 세 가지 기술을 하나의 홈케어 디바이스에 통합했습니다. 2017년부터 운영되는 한국 의료기기 제조사 브리츠메디가 직접 설계·생산합니다.",
+    "p2.body": "2주간 꾸준히 사용 시 피부 밀도 <strong class=\"accent\">48%</strong> 증가, 모공 크기 <strong class=\"accent\">74%</strong> 감소가 임상적으로 확인되었습니다.",
+    "p2.s1": "핵심 기술",
+    "p2.s2": "1회 소요 시간", "p2.s2c": "간편한 데일리 루틴",
+    "p2.s3": "피부 밀도 ↑", "p2.s3c": "2주 후",
+    "p2.s4": "모공 크기 ↓", "p2.s4c": "2주 후",
+    "p2.src": "출처: 한국피부과학연구소 · 2주 임상 시험",
+
+    "p3.eyebrow": "3-모드 시스템",
+    "p3.h2": "세 가지 모드.<br>하나의 디바이스.",
+    "p3.lead": "각 모드는 특정 스킨케어 목적에 최적화된 주파수를 사용합니다. 브리츠메디 엔지니어가 정밀하게 튜닝했습니다.",
+    "p3.m1.h": "RF 모드",
+    "p3.m1.p": "진피 심층부에 열 에너지를 전달하여 콜라겐 활성을 돕고, 안에서부터 피부 탄력을 강화합니다.",
+    "p3.m2.h": "EMS 모드",
+    "p3.m2.p": "미세 전류로 얼굴 근육을 부드럽게 자극하여 페이셜 컨투어를 정돈하고 턱선을 정의합니다.",
+    "p3.m3.h": "ELP 모드",
+    "p3.m3.p": "피부 장벽에 일시적인 마이크로 경로를 형성해 주사 없이 스킨케어 유효 성분 흡수를 돕습니다.",
+
+    "p4.eyebrow": "임상 결과",
+    "p4.h2": "2주 만에<br>입증되었습니다.",
+    "p4.c1.h": "피부 밀도", "p4.c1.d": "2주 독립 임상 시험",
+    "p4.c2.h": "모공 크기", "p4.c2.d": "14일 만의 가시적 감소",
+    "p4.src": "출처: 한국피부과학연구소 · 독립 임상 시험",
+    "p4.eyebrow2": "기술 사양",
+    "p4.h2b": "글로벌 기준으로<br>설계되었습니다.",
+    "spec.model": "모델", "spec.battery": "배터리", "spec.charging": "충전",
+    "spec.modes": "모드", "spec.rfpower": "RF 출력", "spec.freq": "주파수",
+    "spec.dim": "크기 / 무게", "spec.cert": "인증",
+    "p4.box": "구성품",
+    "p4.b1": "뉴채 샷 본체",
+    "p4.b2": "USB-C 충전 케이블 · 트래블 파우치",
+    "p4.b3": "사용자 매뉴얼 (다국어)",
+
+    "p5.eyebrow": "최고의 파트너",
+    "p5.vol_sub": "펩타이드 리프팅 크림",
+    "p5.h2": "뉴채<br>리프팅 크림.",
+    "p5.lead": "뉴채 샷과의 시너지를 위해 특별히 개발된 펩타이드 크림. 각 모드의 효과를 극대화하도록 설계되었으며, 특히 ELP 모드와 함께 사용 시 유효 성분의 피부 깊은 전달을 돕습니다.",
+    "p5.i1.t": "펩타이드 복합체",
+    "p5.i1.d": "콜라겐 합성과 피부 탄력을 내부에서 지원합니다.",
+    "p5.i2.t": "히알루론산",
+    "p5.i2.d": "다양한 분자량의 HA가 피부 각 층에 깊은 보습을 전달합니다.",
+    "p5.i3.t": "나이아신아마이드",
+    "p5.i3.d": "피부톤을 밝히고 피부 장벽을 강화합니다.",
+    "p5.i4.t": "아데노신",
+    "p5.i4.d": "식약처 인정 주름 개선 기능성 성분.",
+    "p5.pair": "디바이스 + 크림, 왜 함께?",
+    "p5.pair_p": "ELP 모드는 피부 장벽에 일시적인 마이크로 경로를 만들어, 펩타이드와 유효 성분이 단순 도포보다 훨씬 깊이 침투할 수 있게 합니다. 크림의 텍스처는 디바이스가 부드럽게 미끄러지고 에너지가 고르게 전달되도록 최적화되었습니다.",
+
+    "p6.eyebrow": "데일리 루틴",
+    "p6.h2": "세 단계.<br>십 분.",
+    "p6.lead": "아침이든 저녁이든, 집에서든 여행 중이든 — 어떤 라이프스타일에도 맞는 간편한 루틴. 매일, 전문가급 결과를.",
+    "p6.s1.h": "바르기", "p6.s1.dur": "1분",
+    "p6.s1.p": "세안 후 뉴채 펩타이드 리프팅 크림을 넉넉하게 발라주세요. 크림은 영양 트리트먼트이자 디바이스의 전도 매질 역할을 합니다.",
+    "p6.s2.h": "케어", "p6.s2.dur": "8–10분",
+    "p6.s2.p": "모드를 선택하세요 — GLOW는 탄력, TONE은 윤곽, BOOST는 흡수 — 그리고 뉴채 샷을 얼굴과 목에 부드럽게 글라이딩하세요.",
+    "p6.s3.h": "빛나기", "p6.s3.dur": "매일",
+    "p6.s3.p": "남은 크림을 가볍게 두드려 흡수시키세요. 꾸준히 사용하면 눈에 띄게 탄탄하고 리프팅된 피부를 경험할 수 있습니다. 변화는 빠르면 2주 안에 시작됩니다.",
+    "p6.trust": "신뢰할 수 있는 설계",
+    "p6.made": "한국 제조",
+    "p6.web_lbl": "웹사이트", "p6.email_lbl": "이메일",
+    "p6.year": "설립"
+  },
+  ja: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.overview": "概要", "nav.product": "製品 · 3モードシステム",
+    "nav.specs": "臨床 & 仕様", "nav.cream": "ペプチドリフティングクリーム",
+    "nav.ritual": "デイリールーティン",
+
+    "cover.kicker": "ビューティーコレクション · 2026",
+    "cover.sub": "RF・EMS・ELPの3つのプロ技術を1台に、そして専用リフティングクリーム — プロのスキンケアを毎日のルーティンに。",
+    "cover.quote": "「はじめてのときめきを、<br>毎日に。」",
+
+    "p2.eyebrow": "NEWCHAEとは",
+    "p2.overlay": "「3つのプロ技術を<br>毎日のルーティンに。」",
+    "p2.h2": "韓国で設計された<br>3-in-1 ビューティデバイス。",
+    "p2.lead": "NEWCHAE SHOTはRF・EMS・ELPを1台のホームケアデバイスに統合。2017年より稼働する韓国の医療機器メーカー・ブリッツメディが設計・製造しています。",
+    "p2.body": "2週間の継続使用で、肌密度 <strong class=\"accent\">48%</strong> 向上、毛穴サイズ <strong class=\"accent\">74%</strong> 縮小が臨床的に確認されました。",
+    "p2.s1": "コア技術",
+    "p2.s2": "1回の所要時間", "p2.s2c": "手軽なデイリーケア",
+    "p2.s3": "肌密度 ↑", "p2.s3c": "2週間後",
+    "p2.s4": "毛穴サイズ ↓", "p2.s4c": "2週間後",
+    "p2.src": "出典:韓国皮膚科学研究所 · 2週間臨床試験",
+
+    "p3.eyebrow": "3モードシステム",
+    "p3.h2": "3つのモード。<br>1台のデバイス。",
+    "p3.lead": "各モードは特定のスキンケア目的に最適化された周波数を使用。ブリッツメディのエンジニアが精密にチューニングしています。",
+    "p3.m1.h": "RFモード",
+    "p3.m1.p": "真皮深層部に熱エネルギーを伝え、コラーゲンの活性をサポート。内側から肌のハリを強化します。",
+    "p3.m2.h": "EMSモード",
+    "p3.m2.p": "微弱電流で表情筋を優しく刺激し、フェイスラインを整え、輪郭を引き締めます。",
+    "p3.m3.h": "ELPモード",
+    "p3.m3.p": "肌バリアに一時的なマイクロ経路を形成し、針を使わずにスキンケア成分の浸透をサポートします。",
+
+    "p4.eyebrow": "臨床データ",
+    "p4.h2": "2週間で<br>実証されました。",
+    "p4.c1.h": "肌密度", "p4.c1.d": "2週間独立臨床試験",
+    "p4.c2.h": "毛穴サイズ", "p4.c2.d": "14日間で目に見える縮小",
+    "p4.src": "出典:韓国皮膚科学研究所 · 独立臨床試験",
+    "p4.eyebrow2": "技術仕様",
+    "p4.h2b": "グローバル基準で<br>設計。",
+    "spec.model": "モデル", "spec.battery": "バッテリー", "spec.charging": "充電",
+    "spec.modes": "モード", "spec.rfpower": "RF出力", "spec.freq": "周波数",
+    "spec.dim": "サイズ / 重量", "spec.cert": "認証",
+    "p4.box": "セット内容",
+    "p4.b1": "NEWCHAE SHOT 本体",
+    "p4.b2": "USB-C充電ケーブル · トラベルポーチ",
+    "p4.b3": "取扱説明書(多言語)",
+
+    "p5.eyebrow": "最高のパートナー",
+    "p5.vol_sub": "ペプチドリフティングクリーム",
+    "p5.h2": "NEWCHAE<br>リフティングクリーム。",
+    "p5.lead": "NEWCHAE SHOTとのシナジーのために特別に開発されたペプチドクリーム。各モードの効果を最大化するよう設計、特にELPモードでの有効成分の深層デリバリーをサポートします。",
+    "p5.i1.t": "ペプチド複合体",
+    "p5.i1.d": "コラーゲン合成と肌の弾力を内側からサポート。",
+    "p5.i2.t": "ヒアルロン酸",
+    "p5.i2.d": "複数の分子量HAが肌の各層に深い保湿を届けます。",
+    "p5.i3.t": "ナイアシンアミド",
+    "p5.i3.d": "肌トーンを明るくし、肌バリアを強化します。",
+    "p5.i4.t": "アデノシン",
+    "p5.i4.d": "韓国食薬処認定のシワ改善機能性成分。",
+    "p5.pair": "デバイス+クリーム、なぜ一緒に?",
+    "p5.pair_p": "ELPモードは肌バリアに一時的なマイクロ経路を作り、ペプチドや有効成分を単なる塗布よりはるかに深く浸透させます。クリームのテクスチャーはデバイスの滑らかな滑りとエネルギーの均一な伝達に最適化されています。",
+
+    "p6.eyebrow": "デイリールーティン",
+    "p6.h2": "3つのステップ。<br>10分間。",
+    "p6.lead": "朝でも夜でも、自宅でも外出先でも — どんなライフスタイルにもフィットするシンプルなルーティン。毎日、プロ級の結果を。",
+    "p6.s1.h": "塗る", "p6.s1.dur": "1分",
+    "p6.s1.p": "洗顔後、NEWCHAEペプチドリフティングクリームをたっぷり塗布。クリームは栄養トリートメントとデバイスの導電メディア、両方の役割を果たします。",
+    "p6.s2.h": "ケア", "p6.s2.dur": "8〜10分",
+    "p6.s2.p": "モードを選択 — GLOWはハリ、TONEは輪郭、BOOSTは浸透 — NEWCHAE SHOTを顔と首にやさしく滑らせます。",
+    "p6.s3.h": "輝く", "p6.s3.dur": "毎日",
+    "p6.s3.p": "残ったクリームを優しくパッティングして浸透させます。継続使用で、目に見えてハリのある引き締まった肌を実感。変化は早ければ2週間で始まります。",
+    "p6.trust": "信頼の設計",
+    "p6.made": "韓国製造",
+    "p6.web_lbl": "ウェブ", "p6.email_lbl": "メール",
+    "p6.year": "設立"
+  },
+  th: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.overview": "ภาพรวม", "nav.product": "ผลิตภัณฑ์ · ระบบ 3 โหมด",
+    "nav.specs": "ผลทางคลินิก & สเปก", "nav.cream": "เปปไทด์ ลิฟติ้ง ครีม",
+    "nav.ritual": "รูทีนประจำวัน",
+
+    "cover.kicker": "บิวตี้คอลเลกชัน · 2026",
+    "cover.sub": "อุปกรณ์ความงาม RF 3-in-1 พร้อมครีมลิฟติ้งเฉพาะ — นำผลลัพธ์สกินแคร์ระดับมืออาชีพมาสู่รูทีนประจำวัน",
+    "cover.quote": "\"สัมผัสความตื่นเต้นครั้งแรก<br>ได้ทุกวัน\"",
+
+    "p2.eyebrow": "NEWCHAE คืออะไร",
+    "p2.overlay": "\"สามเทคโนโลยีมืออาชีพ<br>ในรูทีนรายวัน\"",
+    "p2.h2": "อุปกรณ์ความงาม 3-in-1<br>ออกแบบในเกาหลี",
+    "p2.lead": "NEWCHAE SHOT รวม RF, EMS และ ELP ไว้ในอุปกรณ์ใช้ที่บ้านเพียงเครื่องเดียว ออกแบบและผลิตโดย BRITZMEDI ผู้ผลิตเครื่องมือแพทย์จากเกาหลีตั้งแต่ปี 2017",
+    "p2.body": "ได้รับการพิสูจน์ทางคลินิกว่าเพิ่มความหนาแน่นของผิว <strong class=\"accent\">48%</strong> และลดขนาดรูขุมขน <strong class=\"accent\">74%</strong> ภายใน 2 สัปดาห์",
+    "p2.s1": "เทคโนโลยีหลัก",
+    "p2.s2": "นาทีต่อครั้ง", "p2.s2c": "รูทีนง่าย ๆ ทุกวัน",
+    "p2.s3": "ความหนาแน่นผิว ↑", "p2.s3c": "หลัง 2 สัปดาห์",
+    "p2.s4": "ขนาดรูขุมขน ↓", "p2.s4c": "หลัง 2 สัปดาห์",
+    "p2.src": "ที่มา: สถาบันวิทยาศาสตร์ผิวหนังเกาหลี · การศึกษาทางคลินิก 2 สัปดาห์",
+
+    "p3.eyebrow": "ระบบ 3 โหมด",
+    "p3.h2": "สามโหมด<br>ในเครื่องเดียว",
+    "p3.lead": "แต่ละโหมดใช้ความถี่เฉพาะที่ปรับให้เหมาะกับเป้าหมายการดูแลผิว ปรับแต่งอย่างแม่นยำโดยวิศวกร BRITZMEDI",
+    "p3.m1.h": "โหมด RF",
+    "p3.m1.p": "ส่งพลังงานความร้อนสู่ชั้นผิวลึก กระตุ้นคอลลาเจนและเพิ่มความกระชับจากภายใน",
+    "p3.m2.h": "โหมด EMS",
+    "p3.m2.p": "กระตุ้นกล้ามเนื้อใบหน้าด้วยกระแสไฟฟ้าอ่อน ช่วยกระชับรูปหน้าและขอบกราม",
+    "p3.m3.h": "โหมด ELP",
+    "p3.m3.p": "เพิ่มการดูดซึมของสารบำรุงผิวโดยสร้างเส้นทางเล็ก ๆ ชั่วคราวในเกราะผิว โดยไม่ต้องใช้เข็ม",
+
+    "p4.eyebrow": "หลักฐานทางคลินิก",
+    "p4.h2": "พิสูจน์ใน<br>สองสัปดาห์",
+    "p4.c1.h": "ความหนาแน่นของผิว", "p4.c1.d": "การศึกษาอิสระ 2 สัปดาห์",
+    "p4.c2.h": "ขนาดรูขุมขน", "p4.c2.d": "ลดลงเห็นผลใน 14 วัน",
+    "p4.src": "ที่มา: สถาบันวิทยาศาสตร์ผิวหนังเกาหลี · การศึกษาทางคลินิกอิสระ",
+    "p4.eyebrow2": "สเปกทางเทคนิค",
+    "p4.h2b": "สร้างตาม<br>มาตรฐานสากล",
+    "spec.model": "รุ่น", "spec.battery": "แบตเตอรี่", "spec.charging": "การชาร์จ",
+    "spec.modes": "โหมด", "spec.rfpower": "กำลัง RF", "spec.freq": "ความถี่",
+    "spec.dim": "ขนาด / น้ำหนัก", "spec.cert": "การรับรอง",
+    "p4.box": "ในกล่อง",
+    "p4.b1": "เครื่อง NEWCHAE SHOT",
+    "p4.b2": "สาย USB-C · กระเป๋าใส่",
+    "p4.b3": "คู่มือผู้ใช้ (หลายภาษา)",
+
+    "p5.eyebrow": "พาร์ทเนอร์ที่สมบูรณ์แบบ",
+    "p5.vol_sub": "เปปไทด์ ลิฟติ้ง ครีม",
+    "p5.h2": "NEWCHAE<br>ลิฟติ้ง ครีม",
+    "p5.lead": "ครีมเปปไทด์ที่พัฒนาขึ้นเพื่อทำงานร่วมกับ NEWCHAE SHOT ออกแบบให้เพิ่มประสิทธิภาพของแต่ละโหมด โดยเฉพาะ ELP สำหรับการนำส่งสารออกฤทธิ์สู่ชั้นผิวลึก",
+    "p5.i1.t": "เปปไทด์คอมเพล็กซ์",
+    "p5.i1.d": "สนับสนุนการสังเคราะห์คอลลาเจนและความยืดหยุ่นของผิวจากภายใน",
+    "p5.i2.t": "ไฮยาลูโรนิก แอซิด",
+    "p5.i2.d": "HA หลายน้ำหนักโมเลกุลเพื่อให้ความชุ่มชื้นลึกทุกชั้นผิว",
+    "p5.i3.t": "ไนอาซินาไมด์",
+    "p5.i3.d": "ช่วยให้ผิวกระจ่างใสและเสริมเกราะผิว",
+    "p5.i4.t": "อะดีโนซีน",
+    "p5.i4.d": "สารลดริ้วรอยที่ได้รับการรับรองทางคลินิกจาก MFDS",
+    "p5.pair": "ทำไมต้องใช้อุปกรณ์ + ครีมคู่กัน?",
+    "p5.pair_p": "โหมด ELP สร้างเส้นทางเล็ก ๆ ชั่วคราวในเกราะผิว ทำให้เปปไทด์และสารออกฤทธิ์ซึมลึกกว่าการทาเพียงอย่างเดียว เนื้อครีมได้รับการปรับให้อุปกรณ์เลื่อนไหลลื่นและกระจายพลังงานสม่ำเสมอ",
+
+    "p6.eyebrow": "รูทีนประจำวัน",
+    "p6.h2": "สามขั้นตอน<br>สิบนาที",
+    "p6.lead": "รูทีนง่าย ๆ ที่เข้ากับทุกไลฟ์สไตล์ — เช้าหรือเย็น ที่บ้านหรือระหว่างเดินทาง ผลลัพธ์ระดับมืออาชีพ ทุกวัน",
+    "p6.s1.h": "ทา", "p6.s1.dur": "1 นาที",
+    "p6.s1.p": "ล้างหน้าและทา NEWCHAE เปปไทด์ ลิฟติ้ง ครีม ในปริมาณมาก ครีมทำหน้าที่ทั้งบำรุงผิวและเป็นตัวนำสำหรับอุปกรณ์",
+    "p6.s2.h": "ดูแล", "p6.s2.dur": "8–10 นาที",
+    "p6.s2.p": "เลือกโหมด — GLOW เพื่อกระชับ, TONE เพื่อรูปหน้า, BOOST เพื่อการดูดซึม — แล้วเลื่อน NEWCHAE SHOT เบา ๆ บนใบหน้าและลำคอ",
+    "p6.s3.h": "เปล่งประกาย", "p6.s3.dur": "ทุกวัน",
+    "p6.s3.p": "แตะครีมที่เหลือให้ซึมเข้าผิว ด้วยการใช้อย่างสม่ำเสมอ สัมผัสผิวกระชับและยกกระชับอย่างเห็นได้ชัด ผลลัพธ์เริ่มเห็นภายใน 2 สัปดาห์",
+    "p6.trust": "ออกแบบด้วยความไว้วางใจ",
+    "p6.made": "ผลิตในเกาหลี",
+    "p6.web_lbl": "เว็บไซต์", "p6.email_lbl": "อีเมล",
+    "p6.year": "ก่อตั้ง"
+  },
+  vi: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.overview": "TỔNG QUAN", "nav.product": "SẢN PHẨM · HỆ THỐNG 3 CHẾ ĐỘ",
+    "nav.specs": "LÂM SÀNG & THÔNG SỐ", "nav.cream": "KEM NÂNG CƠ PEPTIDE",
+    "nav.ritual": "QUY TRÌNH HẰNG NGÀY",
+
+    "cover.kicker": "Bộ Sưu Tập Làm Đẹp · 2026",
+    "cover.sub": "Thiết bị làm đẹp RF 3-trong-1 cùng kem nâng cơ chuyên dụng — mang kết quả chăm sóc da chuyên nghiệp vào thói quen hằng ngày.",
+    "cover.quote": "\"Cảm nhận sự hứng khởi đầu tiên,<br>mỗi ngày.\"",
+
+    "p2.eyebrow": "NEWCHAE là gì",
+    "p2.overlay": "\"Ba công nghệ chuyên nghiệp,<br>gói gọn trong nghi thức hằng ngày.\"",
+    "p2.h2": "Thiết bị làm đẹp 3-trong-1,<br>thiết kế tại Hàn Quốc.",
+    "p2.lead": "NEWCHAE SHOT kết hợp RF, EMS và ELP trong một thiết bị dùng tại nhà duy nhất. Được thiết kế và sản xuất bởi BRITZMEDI — nhà sản xuất thiết bị y tế Hàn Quốc hoạt động từ 2017.",
+    "p2.body": "Được chứng minh lâm sàng giúp tăng mật độ da <strong class=\"accent\">48%</strong> và thu nhỏ lỗ chân lông <strong class=\"accent\">74%</strong> chỉ sau hai tuần sử dụng đều đặn.",
+    "p2.s1": "Công nghệ cốt lõi",
+    "p2.s2": "Phút mỗi lần", "p2.s2c": "Quy trình nhanh hằng ngày",
+    "p2.s3": "Mật độ da ↑", "p2.s3c": "Sau 2 tuần",
+    "p2.s4": "Lỗ chân lông ↓", "p2.s4c": "Sau 2 tuần",
+    "p2.src": "Nguồn: Viện Khoa học Da liễu Hàn Quốc · Nghiên cứu lâm sàng 2 tuần",
+
+    "p3.eyebrow": "Hệ thống 3 chế độ",
+    "p3.h2": "Ba chế độ.<br>Một thiết bị.",
+    "p3.lead": "Mỗi chế độ sử dụng một tần số riêng được tối ưu cho mục tiêu chăm sóc da cụ thể — được tinh chỉnh bởi các kỹ sư BRITZMEDI.",
+    "p3.m1.h": "Chế độ RF",
+    "p3.m1.p": "Truyền năng lượng nhiệt vào lớp hạ bì sâu để hỗ trợ collagen và củng cố độ săn chắc của da từ bên trong.",
+    "p3.m2.h": "Chế độ EMS",
+    "p3.m2.p": "Kích thích cơ mặt bằng dòng điện vi mô nhẹ nhàng, giúp săn chắc đường nét gương mặt và định hình đường hàm.",
+    "p3.m3.h": "Chế độ ELP",
+    "p3.m3.p": "Tăng cường hấp thu hoạt chất chăm sóc da bằng cách tạo các vi đường tạm thời qua hàng rào da mà không cần kim.",
+
+    "p4.eyebrow": "Bằng chứng lâm sàng",
+    "p4.h2": "Chứng minh trong<br>hai tuần.",
+    "p4.c1.h": "Mật độ da", "p4.c1.d": "Nghiên cứu độc lập 2 tuần",
+    "p4.c2.h": "Lỗ chân lông", "p4.c2.d": "Giảm thấy rõ trong 14 ngày",
+    "p4.src": "Nguồn: Viện Khoa học Da liễu Hàn Quốc · Nghiên cứu lâm sàng độc lập",
+    "p4.eyebrow2": "Thông số kỹ thuật",
+    "p4.h2b": "Đạt chuẩn<br>toàn cầu.",
+    "spec.model": "Model", "spec.battery": "Pin", "spec.charging": "Sạc",
+    "spec.modes": "Chế độ", "spec.rfpower": "Công suất RF", "spec.freq": "Tần số",
+    "spec.dim": "Kích thước / Khối lượng", "spec.cert": "Chứng nhận",
+    "p4.box": "Trong hộp",
+    "p4.b1": "Thiết bị chính NEWCHAE SHOT",
+    "p4.b2": "Cáp sạc USB-C · Túi du lịch",
+    "p4.b3": "Hướng dẫn sử dụng (đa ngôn ngữ)",
+
+    "p5.eyebrow": "Đồng hành hoàn hảo",
+    "p5.vol_sub": "Kem Nâng Cơ Peptide",
+    "p5.h2": "NEWCHAE<br>Lifting Cream.",
+    "p5.lead": "Kem peptide được bào chế để hoạt động cùng NEWCHAE SHOT. Thiết kế tối đa hóa hiệu quả của từng chế độ — đặc biệt là ELP để đưa hoạt chất vào sâu hơn.",
+    "p5.i1.t": "Phức hợp Peptide",
+    "p5.i1.d": "Hỗ trợ tổng hợp collagen và độ đàn hồi da từ bên trong.",
+    "p5.i2.t": "Hyaluronic Acid",
+    "p5.i2.d": "HA đa trọng lượng phân tử cấp ẩm sâu mọi tầng da.",
+    "p5.i3.t": "Niacinamide",
+    "p5.i3.d": "Làm sáng da và củng cố hàng rào bảo vệ da.",
+    "p5.i4.t": "Adenosine",
+    "p5.i4.d": "Thành phần chống nhăn được MFDS công nhận lâm sàng.",
+    "p5.pair": "Tại sao dùng Thiết bị + Kem cùng nhau?",
+    "p5.pair_p": "Chế độ ELP tạo vi đường tạm thời trong hàng rào da, cho phép peptide và hoạt chất thẩm thấu sâu hơn so với chỉ thoa. Kết cấu kem được tối ưu cho thiết bị trượt mượt và phân bố năng lượng đều.",
+
+    "p6.eyebrow": "Quy trình hằng ngày",
+    "p6.h2": "Ba bước.<br>Mười phút.",
+    "p6.lead": "Quy trình đơn giản phù hợp mọi lối sống — sáng hay tối, ở nhà hay đi du lịch. Kết quả chuyên nghiệp, mỗi ngày.",
+    "p6.s1.h": "Thoa", "p6.s1.dur": "1 PHÚT",
+    "p6.s1.p": "Rửa mặt và thoa một lớp dày NEWCHAE Peptide Lifting Cream. Kem vừa là dưỡng chất vừa là môi trường dẫn cho thiết bị.",
+    "p6.s2.h": "Chăm sóc", "p6.s2.dur": "8–10 PHÚT",
+    "p6.s2.p": "Chọn chế độ — GLOW cho săn chắc, TONE cho đường nét, BOOST cho hấp thu — rồi di chuyển NEWCHAE SHOT nhẹ nhàng trên mặt và cổ.",
+    "p6.s3.h": "Tỏa sáng", "p6.s3.dur": "MỖI NGÀY",
+    "p6.s3.p": "Vỗ nhẹ kem còn lại cho thấm. Sử dụng đều đặn, trải nghiệm da săn chắc và nâng cơ rõ rệt. Kết quả bắt đầu chỉ sau 2 tuần.",
+    "p6.trust": "Thiết kế đáng tin cậy",
+    "p6.made": "Sản xuất tại Hàn Quốc",
+    "p6.web_lbl": "Web", "p6.email_lbl": "Email",
+    "p6.year": "Thành lập"
+  }
+};
+
+function applyLang(lang) {
+  const dict = DICT[lang] || DICT.en;
+  const htmlLangs = { gb: 'en-GB', en: 'en', ko: 'ko', ja: 'ja', th: 'th', vi: 'vi' };
+  document.documentElement.lang = htmlLangs[lang] || lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('#controls button[data-lang]').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  try { localStorage.setItem('brochure-consumer-lang', lang); } catch(e) {}
+}
+
+document.querySelectorAll('#controls button[data-lang]').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+});
+
+(function() {
+  const urlLang = new URLSearchParams(location.search).get('lang');
+  const saved = (() => { try { return localStorage.getItem('brochure-consumer-lang'); } catch(e) { return null; }})();
+  const nav = (navigator.language || 'en').toLowerCase().startsWith('ko') ? 'ko' : 'en';
+  applyLang(urlLang || saved || nav);
+})();
+</script>
+</body>
+</html>
