@@ -296,9 +296,26 @@
   .howto-visual {
     position: relative; overflow: hidden;
     background: var(--ivory);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 24mm 12mm 16mm;
   }
-  .howto-visual img {
-    width: 100%; height: 100%; object-fit: cover;
+  .howto-visual .illust-svg {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+  }
+  .howto-visual .illust-svg img {
+    max-height: 120mm; max-width: 100%; object-fit: contain;
+  }
+  .howto-visual .illust-label {
+    margin-top: 12px; text-align: center;
+  }
+  .howto-visual .illust-mode {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--lilac);
+  }
+  .howto-visual .illust-direction {
+    font-size: 10px; color: var(--mute); margin-top: 4px; line-height: 1.5;
   }
   .howto-content {
     padding: 26mm 20mm 20mm 18mm;
@@ -633,7 +650,11 @@
 <section class="page howto-page">
   <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.modes">How to Use Each Mode</span></div>
   <div class="howto-visual">
-    <img src="images/howto-rf.jpeg" alt="RF Mode usage illustration">
+    <div class="illust-svg"><img src="images/howto-rf-illust.svg" alt="RF Mode face illustration"></div>
+    <div class="illust-label">
+      <div class="illust-mode">RF Mode</div>
+      <div class="illust-direction" data-i18n="p4.rf_direction">Hold & shot · Move inside → outside</div>
+    </div>
   </div>
   <div class="howto-content">
     <div class="mode-tag">GLOW</div>
@@ -658,7 +679,11 @@
 <section class="page howto-page">
   <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.modes">How to Use Each Mode</span></div>
   <div class="howto-visual">
-    <img src="images/howto-ems.jpeg" alt="EMS Mode usage illustration">
+    <div class="illust-svg"><img src="images/howto-ems-illust.svg" alt="EMS Mode face illustration"></div>
+    <div class="illust-label">
+      <div class="illust-mode">EMS Mode</div>
+      <div class="illust-direction" data-i18n="p5b.ems_direction">Glide upward · Bottom → top, inside → outside</div>
+    </div>
   </div>
   <div class="howto-content">
     <div class="mode-tag">TONE</div>
@@ -682,7 +707,11 @@
 <section class="page howto-page">
   <div class="frame-top"><span data-i18n="frame.brand">NEWCHAE · BRITZMEDI</span><span data-i18n="nav.modes">How to Use Each Mode</span></div>
   <div class="howto-visual">
-    <img src="images/howto-elp.jpeg" alt="ELP Mode usage illustration">
+    <div class="illust-svg"><img src="images/howto-elp-illust.svg" alt="ELP Mode face illustration"></div>
+    <div class="illust-label">
+      <div class="illust-mode">ELP Mode</div>
+      <div class="illust-direction" data-i18n="p6b.elp_direction">Small circles · Inside → outside, bottom → top</div>
+    </div>
   </div>
   <div class="howto-content">
     <div class="mode-tag">BOOST</div>
@@ -873,10 +902,12 @@ const DICT = {
     "p4.rf_s4": "Hold electrode head against skin — a beep signals to move to next area.",
     "p4.rf_s5": "Move from inside to outside of the treatment area.",
     "p4.rf_eyebrow": "High-Frequency Care Mode",
+    "p4.rf_direction": "Hold & shot · Move inside → outside",
     "p4.rf_s6": "The device automatically turns off after 10 minutes.",
     "p4.rf_tip": "Do not apply more than two consecutive shots to the same area. Always start at Level 1. Lower the level for forehead and around the eyes.",
 
     "p5b.ems_eyebrow": "Skin Stimulation Elasticity Mode",
+    "p5b.ems_direction": "Glide upward · Bottom → top, inside → outside",
     "p4.ems_h": "EMS Mode", "p4.ems_desc": "Medium-frequency electrical energy is delivered to the skin to help improve skin elasticity and contour management. Recommended 2–3 times per week, up to 10 minutes per session.",
     "p4.ems_s1": "Cleanse your face thoroughly with lukewarm water.",
     "p4.ems_s2": "Apply NEWCHAE Peptide Lifting Cream generously, ensuring the electrodes are fully covered.",
@@ -886,6 +917,7 @@ const DICT = {
     "p4.ems_tip": "Start at Level 1. Avoid excessive stimulation in one area. Excessive stimulation may cause skin damage or irritation.",
 
     "p6b.elp_eyebrow": "Electroporation Absorption Mode",
+    "p6b.elp_direction": "Small circles · Inside → outside, bottom → top",
     "p4.elp_h": "ELP Mode", "p4.elp_desc": "Various electrical energies aid in the absorption of active ingredients in cosmetics. Recommended 2–3 times per week, up to 10 minutes per session.",
     "p4.elp_s1": "Cleanse your face thoroughly with lukewarm water.",
     "p4.elp_s2": "Apply NEWCHAE Peptide Lifting Cream generously, ensuring the electrodes are fully covered.",
@@ -1016,10 +1048,12 @@ const DICT = {
     "p4.rf_s4": "전극 헤드를 피부에 밀착하면 RF 샷이 작동됩니다. 비프음이 울리면 다음 부위로 이동합니다.",
     "p4.rf_s5": "얼굴 안쪽에서 바깥쪽으로 전극 헤드를 이동합니다.",
     "p4.rf_eyebrow": "고주파 관리 모드",
+    "p4.rf_direction": "밀착 & 샷 · 안쪽에서 바깥쪽으로 이동",
     "p4.rf_s6": "10분 후 자동으로 전원이 꺼집니다.",
     "p4.rf_tip": "같은 부위에 연속 2회 이상 샷을 하지 마세요. 항상 레벨 1부터 시작하세요. 이마와 눈 주위는 레벨을 낮추세요.",
 
     "p5b.ems_eyebrow": "피부 자극 탄력 모드",
+    "p5b.ems_direction": "위로 밀어올리기 · 아래→위, 안쪽→바깥쪽",
     "p4.ems_h": "EMS 모드", "p4.ems_desc": "중주파 전기 에너지를 피부에 전달하여 탄력과 윤곽 관리에 도움을 줍니다. 주 2~3회, 1회 최대 10분 사용 권장.",
     "p4.ems_s1": "미온수로 얼굴을 깨끗이 세안합니다.",
     "p4.ems_s2": "전극 헤드가 충분히 덮이도록 뉴채 펩타이드 리프팅 크림을 넉넉히 도포합니다.",
@@ -1029,6 +1063,7 @@ const DICT = {
     "p4.ems_tip": "레벨 1부터 시작하세요. 한 부위에 과도한 자극을 피하세요. 과도한 자극은 피부 손상을 유발할 수 있습니다.",
 
     "p6b.elp_eyebrow": "전기천공 흡수 모드",
+    "p6b.elp_direction": "작은 원 그리기 · 안쪽→바깥쪽, 아래→위",
     "p4.elp_h": "ELP 모드", "p4.elp_desc": "다양한 전기 에너지가 화장품 유효 성분의 흡수를 돕습니다. 주 2~3회, 1회 최대 10분 사용 권장.",
     "p4.elp_s1": "미온수로 얼굴을 깨끗이 세안합니다.",
     "p4.elp_s2": "전극 헤드가 충분히 덮이도록 뉴채 펩타이드 리프팅 크림을 넉넉히 도포합니다.",
@@ -1159,10 +1194,12 @@ const DICT = {
     "p4.rf_s4": "電極ヘッドを肌に密着させます。ビープ音が鳴ったら次の部位に移動します。",
     "p4.rf_s5": "顔の内側から外側に向かって移動します。",
     "p4.rf_eyebrow": "高周波ケアモード",
+    "p4.rf_direction": "密着＆ショット · 内側→外側へ移動",
     "p4.rf_s6": "10分後に自動的に電源がオフになります。",
     "p4.rf_tip": "同じ部位への連続2回以上のショットは避けてください。常にレベル1から開始。額や目元はレベルを下げてください。",
 
     "p5b.ems_eyebrow": "肌刺激弾力モード",
+    "p5b.ems_direction": "上に滑らせる · 下→上、内側→外側",
     "p4.ems_h": "EMSモード", "p4.ems_desc": "中周波電気エネルギーを肌に届け、弾力と輪郭管理を改善します。週2〜3回、1回最大10分使用推奨。",
     "p4.ems_s1": "ぬるま湯で顔を丁寧に洗います。",
     "p4.ems_s2": "電極ヘッドを覆うようにNEWCHAEペプチドリフティングクリームをたっぷり塗布します。",
@@ -1172,6 +1209,7 @@ const DICT = {
     "p4.ems_tip": "レベル1から開始。一箇所への過度な刺激は避けてください。過度な刺激は肌トラブルの原因になります。",
 
     "p6b.elp_eyebrow": "電気穿孔吸収モード",
+    "p6b.elp_direction": "小さな円 · 内側→外側、下→上",
     "p4.elp_h": "ELPモード", "p4.elp_desc": "多周波電気エネルギーが化粧品の有効成分の吸収を助けます。週2〜3回、1回最大10分使用推奨。",
     "p4.elp_s1": "ぬるま湯で顔を丁寧に洗います。",
     "p4.elp_s2": "電極ヘッドを覆うようにNEWCHAEペプチドリフティングクリームをたっぷり塗布します。",
@@ -1302,10 +1340,12 @@ const DICT = {
     "p4.rf_s4": "แนบหัวอิเล็กโทรดกับผิว — เสียงบี๊ปจะแจ้งให้เลื่อนไปบริเวณถัดไป",
     "p4.rf_s5": "เลื่อนจากด้านในไปด้านนอกของบริเวณที่ดูแล",
     "p4.rf_eyebrow": "โหมดดูแลความถี่สูง",
+    "p4.rf_direction": "แนบ & ยิง · เลื่อนจากด้านในไปด้านนอก",
     "p4.rf_s6": "เครื่องจะปิดอัตโนมัติหลัง 10 นาที",
     "p4.rf_tip": "ห้ามยิงเกิน 2 ครั้งติดต่อกันในจุดเดียว เริ่มจากระดับ 1 เสมอ ลดระดับเมื่อใช้บริเวณหน้าผากและรอบดวงตา",
 
     "p5b.ems_eyebrow": "โหมดกระตุ้นความยืดหยุ่น",
+    "p5b.ems_direction": "เลื่อนขึ้น · ล่างไปบน, ในไปนอก",
     "p4.ems_h": "โหมด EMS", "p4.ems_desc": "พลังงานไฟฟ้าความถี่กลางส่งถึงผิวเพื่อปรับปรุงความยืดหยุ่นและรูปทรงใบหน้า ใช้สัปดาห์ละ 2–3 ครั้ง ครั้งละไม่เกิน 10 นาที",
     "p4.ems_s1": "ล้างหน้าด้วยน้ำอุ่น",
     "p4.ems_s2": "ทาครีม NEWCHAE Peptide Lifting ให้ทั่ว ให้อิเล็กโทรดถูกปกคลุมเต็มที่",
@@ -1315,6 +1355,7 @@ const DICT = {
     "p4.ems_tip": "เริ่มจากระดับ 1 หลีกเลี่ยงการกระตุ้นมากเกินไปในจุดเดียว การกระตุ้นมากเกินอาจทำให้ผิวระคายเคือง",
 
     "p6b.elp_eyebrow": "โหมดอิเล็กโทรโพเรชันดูดซึม",
+    "p6b.elp_direction": "วงกลมเล็กๆ · ในไปนอก, ล่างไปบน",
     "p4.elp_h": "โหมด ELP", "p4.elp_desc": "พลังงานไฟฟ้าหลายความถี่ช่วยดูดซึมสารออกฤทธิ์ในเครื่องสำอาง ใช้สัปดาห์ละ 2–3 ครั้ง ครั้งละไม่เกิน 10 นาที",
     "p4.elp_s1": "ล้างหน้าด้วยน้ำอุ่น",
     "p4.elp_s2": "ทาครีม NEWCHAE Peptide Lifting ให้ทั่ว ให้อิเล็กโทรดถูกปกคลุมเต็มที่",
@@ -1445,10 +1486,12 @@ const DICT = {
     "p4.rf_s4": "Áp đầu điện cực lên da — tiếng bíp báo hiệu chuyển sang vùng tiếp theo.",
     "p4.rf_s5": "Di chuyển từ trong ra ngoài vùng điều trị.",
     "p4.rf_eyebrow": "Chế độ Chăm sóc Tần số Cao",
+    "p4.rf_direction": "Áp & bắn · Di chuyển từ trong ra ngoài",
     "p4.rf_s6": "Thiết bị tự động tắt sau 10 phút.",
     "p4.rf_tip": "Không bắn quá 2 lần liên tiếp trên cùng một vùng. Luôn bắt đầu từ Mức 1. Giảm mức khi sử dụng vùng trán và quanh mắt.",
 
     "p5b.ems_eyebrow": "Chế độ Kích thích Đàn hồi Da",
+    "p5b.ems_direction": "Trượt lên · Dưới lên trên, trong ra ngoài",
     "p4.ems_h": "Chế độ EMS", "p4.ems_desc": "Năng lượng điện tần số trung bình truyền đến da giúp cải thiện độ đàn hồi và đường nét khuôn mặt. 2–3 lần/tuần, tối đa 10 phút.",
     "p4.ems_s1": "Rửa mặt sạch bằng nước ấm.",
     "p4.ems_s2": "Thoa kem NEWCHAE Peptide Lifting đều, đảm bảo phủ kín điện cực.",
@@ -1458,6 +1501,7 @@ const DICT = {
     "p4.ems_tip": "Bắt đầu từ Mức 1. Tránh kích thích quá mức ở một vùng. Kích thích quá mức có thể gây kích ứng da.",
 
     "p6b.elp_eyebrow": "Chế độ Điện di Hấp thu",
+    "p6b.elp_direction": "Vòng tròn nhỏ · Trong ra ngoài, dưới lên trên",
     "p4.elp_h": "Chế độ ELP", "p4.elp_desc": "Năng lượng điện đa tần số hỗ trợ hấp thu hoạt chất mỹ phẩm. 2–3 lần/tuần, tối đa 10 phút.",
     "p4.elp_s1": "Rửa mặt sạch bằng nước ấm.",
     "p4.elp_s2": "Thoa kem NEWCHAE Peptide Lifting đều, đảm bảo phủ kín điện cực.",
