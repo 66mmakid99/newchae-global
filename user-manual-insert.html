@@ -165,45 +165,46 @@
   }
   .mode-card {
     border: 1px solid var(--line); border-radius: 3px;
-    padding: 8px 9px; display: flex; flex-direction: column;
-    background: #fff;
+    padding: 0; display: flex; flex-direction: column;
+    background: #fff; overflow: hidden;
   }
-  .mode-card .mode-tag {
-    display: inline-block; align-self: flex-start;
-    padding: 2px 7px; margin-bottom: 5px;
+  .mode-card .mode-visual {
+    background: var(--ivory); position: relative;
+    display: flex; align-items: center; justify-content: center;
+    padding: 6px 10px 2px;
+    border-bottom: 1px solid var(--line);
+  }
+  .mode-card .mode-visual img {
+    height: 105px; width: auto;
+    object-fit: contain;
+  }
+  .mode-card .mode-visual .mode-tag {
+    position: absolute; top: 6px; left: 8px;
+    padding: 2px 7px;
     font-size: 7px; font-weight: 700; letter-spacing: 0.18em;
     text-transform: uppercase; color: #fff; background: var(--lilac);
+    line-height: 1.4;
   }
-  .mode-card .mode-header {
-    display: flex; align-items: flex-start; gap: 8px; margin-bottom: 4px;
+  .mode-card .mode-body {
+    padding: 6px 9px 8px; display: flex; flex-direction: column; flex: 1;
   }
-  .mode-card .mode-header-text { flex: 1; }
   .mode-card h3 {
-    font-size: 12px; font-weight: 600; margin-bottom: 2px; line-height: 1.2;
+    font-size: 11px; font-weight: 600; margin-bottom: 1px; line-height: 1.2;
   }
   .mode-card .mode-freq {
-    font-size: 7.5px; font-weight: 600; color: var(--lilac);
-    letter-spacing: 0.04em; margin-bottom: 4px;
-  }
-  .mode-card .mode-illust {
-    width: 58px; height: 72px; flex-shrink: 0;
-    border: 1px solid var(--line); border-radius: 2px;
-    overflow: hidden; background: var(--ivory);
-  }
-  .mode-card .mode-illust img {
-    width: 100%; height: 100%; object-fit: cover;
-    object-position: center 20%;
+    font-size: 7px; font-weight: 600; color: var(--lilac);
+    letter-spacing: 0.04em; margin-bottom: 3px;
   }
   .mode-card .mode-desc {
-    font-size: 7.5px; line-height: 1.5; color: var(--graphite);
-    margin-bottom: 5px; padding-bottom: 5px; border-bottom: 1px solid var(--line);
+    font-size: 7px; line-height: 1.45; color: var(--graphite);
+    margin-bottom: 4px; padding-bottom: 4px; border-bottom: 1px solid var(--line);
   }
   .mode-steps {
     list-style: none; padding: 0; counter-reset: ms;
   }
   .mode-steps li {
     padding: 1.5px 0 1.5px 14px; position: relative;
-    font-size: 7.5px; line-height: 1.45; color: var(--graphite);
+    font-size: 7px; line-height: 1.4; color: var(--graphite);
     counter-increment: ms;
   }
   .mode-steps li::before {
@@ -215,8 +216,8 @@
     display: flex; align-items: center; justify-content: center;
   }
   .mode-tip {
-    margin-top: auto; padding-top: 4px;
-    font-size: 7px; color: var(--warn); line-height: 1.4;
+    margin-top: auto; padding-top: 3px;
+    font-size: 6.5px; color: var(--warn); line-height: 1.35;
     border-top: 1px solid var(--line);
   }
 
@@ -402,70 +403,64 @@
   <div class="p1-modes">
 
     <div class="mode-card">
-      <span class="mode-tag">RF</span>
-      <div class="mode-header">
-        <div class="mode-header-text">
-          <h3 data-t="rf_h">RF Mode</h3>
-          <div class="mode-freq">1 MHz · Auto Shot</div>
-        </div>
-        <div class="mode-illust">
-          <img src="images/howto-rf.jpeg" alt="RF Mode">
-        </div>
+      <div class="mode-visual">
+        <span class="mode-tag">RF</span>
+        <img src="images/howto-rf-illust.svg" alt="RF Mode illustration">
       </div>
-      <p class="mode-desc" data-t="rf_desc">High-frequency energy for deep skin care and volume management.</p>
-      <ol class="mode-steps">
-        <li data-t="rf_s1">Cleanse face with lukewarm water.</li>
-        <li data-t="rf_s2">Apply NEWCHAE cream over treatment area.</li>
-        <li data-t="rf_s3">Select RF mode & level.</li>
-        <li data-t="rf_s4">Hold on skin — beep signals to move.</li>
-        <li data-t="rf_s5">Move inside → outside.</li>
-        <li data-t="rf_s6">Auto-off after 10 min.</li>
-      </ol>
-      <div class="mode-tip" data-t="rf_tip">Max 2 shots per area. Start Level 1.</div>
+      <div class="mode-body">
+        <h3 data-t="rf_h">RF Mode</h3>
+        <div class="mode-freq">1 MHz · Auto Shot</div>
+        <p class="mode-desc" data-t="rf_desc">High-frequency energy for deep skin care and volume management.</p>
+        <ol class="mode-steps">
+          <li data-t="rf_s1">Cleanse face with lukewarm water.</li>
+          <li data-t="rf_s2">Apply NEWCHAE cream over treatment area.</li>
+          <li data-t="rf_s3">Select RF mode & level.</li>
+          <li data-t="rf_s4">Hold on skin — beep signals to move.</li>
+          <li data-t="rf_s5">Move inside → outside.</li>
+          <li data-t="rf_s6">Auto-off after 10 min.</li>
+        </ol>
+        <div class="mode-tip" data-t="rf_tip">Max 2 shots per area. Start Level 1.</div>
+      </div>
     </div>
 
     <div class="mode-card">
-      <span class="mode-tag">EMS</span>
-      <div class="mode-header">
-        <div class="mode-header-text">
-          <h3 data-t="ems_h">EMS Mode</h3>
-          <div class="mode-freq">1 KHz · Medium Freq.</div>
-        </div>
-        <div class="mode-illust">
-          <img src="images/howto-ems.jpeg" alt="EMS Mode">
-        </div>
+      <div class="mode-visual">
+        <span class="mode-tag">EMS</span>
+        <img src="images/howto-ems-illust.svg" alt="EMS Mode illustration">
       </div>
-      <p class="mode-desc" data-t="ems_desc">Electrical stimulation for skin elasticity and contour management.</p>
-      <ol class="mode-steps">
-        <li data-t="ems_s1">Cleanse face with lukewarm water.</li>
-        <li data-t="ems_s2">Apply NEWCHAE cream generously.</li>
-        <li data-t="ems_s3">Select EMS mode & level.</li>
-        <li data-t="ems_s4">Glide upward: bottom → top, inside → outside.</li>
-        <li data-t="ems_s5">Auto-off after 10 min.</li>
-      </ol>
-      <div class="mode-tip" data-t="ems_tip">Start Level 1. Avoid over-stimulation.</div>
+      <div class="mode-body">
+        <h3 data-t="ems_h">EMS Mode</h3>
+        <div class="mode-freq">1 KHz · Medium Freq.</div>
+        <p class="mode-desc" data-t="ems_desc">Electrical stimulation for skin elasticity and contour management.</p>
+        <ol class="mode-steps">
+          <li data-t="ems_s1">Cleanse face with lukewarm water.</li>
+          <li data-t="ems_s2">Apply NEWCHAE cream generously.</li>
+          <li data-t="ems_s3">Select EMS mode & level.</li>
+          <li data-t="ems_s4">Glide upward: bottom → top, inside → outside.</li>
+          <li data-t="ems_s5">Auto-off after 10 min.</li>
+        </ol>
+        <div class="mode-tip" data-t="ems_tip">Start Level 1. Avoid over-stimulation.</div>
+      </div>
     </div>
 
     <div class="mode-card">
-      <span class="mode-tag">ELP</span>
-      <div class="mode-header">
-        <div class="mode-header-text">
-          <h3 data-t="elp_h">ELP Mode</h3>
-          <div class="mode-freq">5–20 KHz · Multi Freq.</div>
-        </div>
-        <div class="mode-illust">
-          <img src="images/howto-elp.jpeg" alt="ELP Mode">
-        </div>
+      <div class="mode-visual">
+        <span class="mode-tag">ELP</span>
+        <img src="images/howto-elp-illust.svg" alt="ELP Mode illustration">
       </div>
-      <p class="mode-desc" data-t="elp_desc">Electroporation for enhanced absorption of active ingredients.</p>
-      <ol class="mode-steps">
-        <li data-t="elp_s1">Cleanse face with lukewarm water.</li>
-        <li data-t="elp_s2">Apply NEWCHAE cream generously.</li>
-        <li data-t="elp_s3">Select ELP mode & level.</li>
-        <li data-t="elp_s4">Massage in small circles, inside → outside.</li>
-        <li data-t="elp_s5">Auto-off after 10 min.</li>
-      </ol>
-      <div class="mode-tip" data-t="elp_tip">Start Level 1. Avoid over-stimulation.</div>
+      <div class="mode-body">
+        <h3 data-t="elp_h">ELP Mode</h3>
+        <div class="mode-freq">5–20 KHz · Multi Freq.</div>
+        <p class="mode-desc" data-t="elp_desc">Electroporation for enhanced absorption of active ingredients.</p>
+        <ol class="mode-steps">
+          <li data-t="elp_s1">Cleanse face with lukewarm water.</li>
+          <li data-t="elp_s2">Apply NEWCHAE cream generously.</li>
+          <li data-t="elp_s3">Select ELP mode & level.</li>
+          <li data-t="elp_s4">Massage in small circles, inside → outside.</li>
+          <li data-t="elp_s5">Auto-off after 10 min.</li>
+        </ol>
+        <div class="mode-tip" data-t="elp_tip">Start Level 1. Avoid over-stimulation.</div>
+      </div>
     </div>
 
   </div>
