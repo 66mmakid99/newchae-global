@@ -82,6 +82,67 @@
   .product-card.torr .card-link {
     color: #c4956a;
   }
+  .doc-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--sand-mist);
+    border: 1px solid var(--sand-mist);
+    border-radius: 2px;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .doc-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 28px;
+    background: var(--warm-ivory);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s ease;
+  }
+  .doc-card:hover {
+    background: #fff;
+  }
+  .doc-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    width: 44px;
+    text-align: center;
+  }
+  .doc-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .doc-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .doc-info p {
+    font-size: 13px;
+    color: var(--soft-graphite);
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .doc-meta {
+    font-size: 11px;
+    color: var(--dusty-lilac);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .doc-arrow {
+    font-size: 18px;
+    color: var(--soft-graphite);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .doc-card:hover .doc-arrow {
+    transform: translateX(4px);
+    color: var(--dusty-lilac);
+  }
   @media (max-width: 900px) {
     .product-cards {
       grid-template-columns: 1fr;
@@ -140,6 +201,67 @@
           <p>RF, EMS, and ELP in a single home-use device. Clinically proven — 48% skin density improvement, 74% pore size reduction in 2 weeks. KC, CE, FCC certified.</p>
           <span class="card-link">View Brochure →</span>
         </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Documents -->
+<section style="padding: 80px 0 0;">
+  <div class="container">
+    <div class="eyebrow" style="text-align: center; margin-bottom: 12px;">Downloads & Resources</div>
+    <h2 style="text-align: center; margin-bottom: 48px;">Product Documents</h2>
+    <div class="doc-grid">
+
+      <a href="product-guide.html" class="doc-card">
+        <div class="doc-icon">📖</div>
+        <div class="doc-info">
+          <h4>Product Guide</h4>
+          <p>15-page illustrated guide — features, specifications, FAQ, and care instructions.</p>
+          <span class="doc-meta">EN · KO · 15 pages</span>
+        </div>
+        <span class="doc-arrow">→</span>
+      </a>
+
+      <a href="brochure.html" class="doc-card">
+        <div class="doc-icon">📄</div>
+        <div class="doc-info">
+          <h4>Professional Brochure</h4>
+          <p>Technical brochure for distributors — clinical data, RF/EMS/ELP technology, certifications.</p>
+          <span class="doc-meta">EN · KO · JA · TH · VI</span>
+        </div>
+        <span class="doc-arrow">→</span>
+      </a>
+
+      <a href="brochure-consumer.html" class="doc-card">
+        <div class="doc-icon">✨</div>
+        <div class="doc-info">
+          <h4>Consumer Brochure</h4>
+          <p>Beauty-focused brochure for end users — skincare benefits, before & after, usage guide.</p>
+          <span class="doc-meta">EN · KO · JA · TH · VI</span>
+        </div>
+        <span class="doc-arrow">→</span>
+      </a>
+
+      <a href="user-manual.html" class="doc-card">
+        <div class="doc-icon">📋</div>
+        <div class="doc-info">
+          <h4>User Manual</h4>
+          <p>Complete operating instructions — safety, modes, step-by-step usage, troubleshooting.</p>
+          <span class="doc-meta">EN · KO · JA · TH · VI · 9 pages</span>
+        </div>
+        <span class="doc-arrow">→</span>
+      </a>
+
+      <a href="user-manual-insert.html" class="doc-card">
+        <div class="doc-icon">📑</div>
+        <div class="doc-info">
+          <h4>Quick Start Insert</h4>
+          <p>In-box quick reference card — essential steps to get started.</p>
+          <span class="doc-meta">EN · KO · JA · TH · VI</span>
+        </div>
+        <span class="doc-arrow">→</span>
       </a>
 
     </div>
