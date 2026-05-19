@@ -113,6 +113,25 @@
 }
 .equip-grid .pg{margin:0}
 
+/* CSS Bar Chart */
+.css-chart{margin:16px 0 20px;padding:16px 20px;background:#fff;border:1px solid var(--sand-mist);border-radius:6px}
+.chart-row{display:flex;align-items:center;margin-bottom:10px;gap:12px}
+.chart-label{font-size:12px;font-weight:600;color:var(--soft-graphite);min-width:120px;text-align:right}
+.chart-bar-wrap{flex:1;background:#f5f4f0;border-radius:4px;height:32px;position:relative}
+.chart-bar{height:100%;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;min-width:40px;transition:width .6s ease}
+.chart-bar span{font-size:12px;font-weight:700;color:#fff}
+.bar-ab{background:var(--dusty-lilac)}
+.bar-b{background:#b8b8b8}
+.chart-ratio{text-align:center;font-size:13px;color:var(--soft-graphite);margin-top:4px;padding-top:8px;border-top:1px solid var(--sand-mist)}
+.chart-ratio strong{color:var(--dusty-lilac);font-size:16px}
+
+/* Age distribution */
+.age-chart{display:flex;align-items:flex-end;gap:3px;height:120px;padding:0 0 24px;margin:16px 0 24px;border-bottom:1px solid var(--sand-mist);position:relative}
+.age-bar{flex:1;background:var(--dusty-lilac);border-radius:3px 3px 0 0;position:relative;min-width:14px;transition:height .4s ease}
+.age-bar:hover{opacity:.8}
+.age-bar .ab-val{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:700;color:var(--dusty-lilac)}
+.age-bar .ab-age{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--soft-graphite);white-space:nowrap}
+
 /* Survey */
 .survey-tbl{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
 .survey-tbl th{padding:8px 12px;background:#f0eeea;border:1px solid #ddd;font-weight:600;text-align:left;font-size:12px}
@@ -467,8 +486,25 @@
       <tbody><tr><td>21명</td><td>21명</td><td>여성</td><td>50.05세</td><td>5.96</td></tr></tbody>
     </table>
 
-    <!-- 차트 이미지 (p19: 연령분포) -->
-    <div class="pg"><img src="efficacy-assets/p019.jpg" alt="피시험자 연령분포 차트" loading="lazy"><span class="pl">P.19 연령분포</span></div>
+    <h4>피시험자 연령분포 (그림 7)</h4>
+    <div class="age-chart">
+      <div class="age-bar" style="height:50%"><span class="ab-val">1</span><span class="ab-age">40</span></div>
+      <div class="age-bar" style="height:50%"><span class="ab-val">1</span><span class="ab-age">42</span></div>
+      <div class="age-bar" style="height:50%"><span class="ab-val">1</span><span class="ab-age">43</span></div>
+      <div class="age-bar" style="height:50%"><span class="ab-val">1</span><span class="ab-age">44</span></div>
+      <div class="age-bar" style="height:100%"><span class="ab-val">2</span><span class="ab-age">45</span></div>
+      <div class="age-bar" style="height:50%"><span class="ab-val">1</span><span class="ab-age">46</span></div>
+      <div class="age-bar" style="height:50%"><span class="ab-val">1</span><span class="ab-age">47</span></div>
+      <div class="age-bar" style="height:100%"><span class="ab-val">2</span><span class="ab-age">49</span></div>
+      <div class="age-bar" style="height:100%"><span class="ab-val">2</span><span class="ab-age">50</span></div>
+      <div class="age-bar" style="height:100%"><span class="ab-val">2</span><span class="ab-age">52</span></div>
+      <div class="age-bar" style="height:50%"><span class="ab-val">1</span><span class="ab-age">53</span></div>
+      <div class="age-bar" style="height:50%"><span class="ab-val">1</span><span class="ab-age">54</span></div>
+      <div class="age-bar" style="height:50%"><span class="ab-val">1</span><span class="ab-age">55</span></div>
+      <div class="age-bar" style="height:50%"><span class="ab-val">1</span><span class="ab-age">56</span></div>
+      <div class="age-bar" style="height:50%"><span class="ab-val">1</span><span class="ab-age">57</span></div>
+      <div class="age-bar" style="height:100%"><span class="ab-val">2</span><span class="ab-age">61</span></div>
+    </div>
 
     <!-- ===== 속탄력 ===== -->
     <div id="r-elasticity" class="result-card">
@@ -499,10 +535,10 @@
       </table>
     </div>
 
-    <!-- 차트 이미지 -->
-    <div class="equip-grid">
-      <div class="pg"><img src="efficacy-assets/p020.jpg" alt="속탄력 결과표" loading="lazy"><span class="pl">P.20</span></div>
-      <div class="pg"><img src="efficacy-assets/p021.jpg" alt="속탄력 차트" loading="lazy"><span class="pl">P.21</span></div>
+    <div class="css-chart">
+      <div class="chart-row"><span class="chart-label">A+B (기기+크림)</span><div class="chart-bar-wrap"><div class="chart-bar bar-ab" style="width:100%"><span>5.34%</span></div></div></div>
+      <div class="chart-row"><span class="chart-label">B (크림 단독)</span><div class="chart-bar-wrap"><div class="chart-bar bar-b" style="width:42%"><span>2.25%</span></div></div></div>
+      <div class="chart-ratio"><strong>2.37&times;</strong> 개선 배수</div>
     </div>
 
     <!-- ===== 겉탄력 ===== -->
@@ -524,9 +560,10 @@
         <tbody><tr><td>2주 후</td><td class="hl">5.07%</td><td>2.79%</td><td class="hl">1.82×</td></tr></tbody>
       </table>
     </div>
-    <div class="equip-grid">
-      <div class="pg"><img src="efficacy-assets/p022.jpg" alt="겉탄력 결과" loading="lazy"><span class="pl">P.22</span></div>
-      <div class="pg"><img src="efficacy-assets/p023.jpg" alt="겉탄력 차트" loading="lazy"><span class="pl">P.23</span></div>
+    <div class="css-chart">
+      <div class="chart-row"><span class="chart-label">A+B (기기+크림)</span><div class="chart-bar-wrap"><div class="chart-bar bar-ab" style="width:100%"><span>5.07%</span></div></div></div>
+      <div class="chart-row"><span class="chart-label">B (크림 단독)</span><div class="chart-bar-wrap"><div class="chart-bar bar-b" style="width:55%"><span>2.79%</span></div></div></div>
+      <div class="chart-ratio"><strong>1.82&times;</strong> 개선 배수</div>
     </div>
 
     <!-- ===== 피부치밀도 ===== -->
@@ -534,44 +571,101 @@
       <h4>4. 피부치밀도 — DUB-Skin Scanner (Density)</h4>
       <p>A+B, B 모두 <strong>p&lt;.001</strong> 유의 증가. A+B vs B도 <strong>p&lt;.001</strong> 유의.</p>
       <table class="data-tbl">
+        <caption>Density 값 변화 (N=21)</caption>
+        <thead><tr><th></th><th colspan="2">A+B</th><th colspan="2">B</th></tr>
+        <tr><th></th><th>사용 전</th><th>2주 후</th><th>사용 전</th><th>2주 후</th></tr></thead>
+        <tbody>
+          <tr><td>평균</td><td>8.41</td><td>10.80</td><td>8.57</td><td>9.69</td></tr>
+          <tr><td>표준편차</td><td>1.59</td><td>1.91</td><td>1.28</td><td>1.34</td></tr>
+        </tbody>
+      </table>
+      <table class="data-tbl">
         <caption>개선율 · 배수</caption>
         <thead><tr><th></th><th>A+B</th><th>B</th><th>배수</th></tr></thead>
-        <tbody><tr><td>2주 후</td><td class="hl">28.48%</td><td>13.01%</td><td class="hl">2.19×</td></tr></tbody>
+        <tbody><tr><td>2주 후</td><td class="hl">28.48%</td><td>13.01%</td><td class="hl">2.19&times;</td></tr></tbody>
       </table>
-    </div>
-    <div class="equip-grid">
-      <div class="pg"><img src="efficacy-assets/p024.jpg" alt="피부치밀도 결과" loading="lazy"><span class="pl">P.24</span></div>
-      <div class="pg"><img src="efficacy-assets/p025.jpg" alt="피부치밀도 차트" loading="lazy"><span class="pl">P.25</span></div>
+      <div class="css-chart">
+          <div class="chart-row"><span class="chart-label">A+B (기기+크림)</span><div class="chart-bar-wrap"><div class="chart-bar bar-ab" style="width:100%"><span>28.48%</span></div></div></div>
+          <div class="chart-row"><span class="chart-label">B (크림 단독)</span><div class="chart-bar-wrap"><div class="chart-bar bar-b" style="width:46%"><span>13.01%</span></div></div></div>
+          <div class="chart-ratio"><strong>2.19x</strong> 개선 배수</div>
+        </div>
+      <table class="data-tbl" style="margin-top:12px">
+          <caption>통계분석</caption>
+          <thead><tr><th>분석</th><th>p-value</th><th>방법</th></tr></thead>
+          <tbody>
+            <tr><td>A+B 사용 전·후</td><td><span class="p-star">.000***</span></td><td>paired t-test</td></tr>
+            <tr><td>B 사용 전·후</td><td><span class="p-star">.000***</span></td><td>paired t-test</td></tr>
+            <tr><td>ΔA+B vs ΔB</td><td><span class="p-star">.000***</span></td><td>Independent t-test</td></tr>
+          </tbody>
+        </table>
     </div>
 
     <!-- ===== 모공 ===== -->
     <div id="r-pores" class="result-card">
       <h4>5. 모공 — ANTERA 3D (Volume)</h4>
-      <p>A+B <strong>p&lt;.001</strong>, B <strong>p&lt;.01</strong> 유의 감소. A+B vs B <strong>p&lt;.05</strong> 유의.</p>
+      <p>A+B <strong>p&lt;.001</strong>, B <strong>p&lt;.05</strong> 유의 감소. A+B vs B <strong>p&lt;.05</strong> 유의.</p>
+      <table class="data-tbl">
+        <caption>Volume 값 변화 (N=21)</caption>
+        <thead><tr><th></th><th colspan="2">A+B</th><th colspan="2">B</th></tr>
+        <tr><th></th><th>사용 전</th><th>2주 후</th><th>사용 전</th><th>2주 후</th></tr></thead>
+        <tbody>
+          <tr><td>평균</td><td>0.56</td><td>0.41</td><td>0.62</td><td>0.56</td></tr>
+          <tr><td>표준편차</td><td>0.32</td><td>0.30</td><td>0.32</td><td>0.29</td></tr>
+        </tbody>
+      </table>
       <table class="data-tbl">
         <caption>개선율 · 배수</caption>
         <thead><tr><th></th><th>A+B</th><th>B</th><th>배수</th></tr></thead>
-        <tbody><tr><td>2주 후</td><td class="hl">26.74%</td><td>8.37%</td><td class="hl">3.20×</td></tr></tbody>
+        <tbody><tr><td>2주 후</td><td class="hl">26.74%</td><td>8.37%</td><td class="hl">3.20&times;</td></tr></tbody>
       </table>
-    </div>
-    <div class="equip-grid">
-      <div class="pg"><img src="efficacy-assets/p026.jpg" alt="모공 결과" loading="lazy"><span class="pl">P.26</span></div>
-      <div class="pg"><img src="efficacy-assets/p027.jpg" alt="모공 차트" loading="lazy"><span class="pl">P.27</span></div>
+      <div class="css-chart">
+          <div class="chart-row"><span class="chart-label">A+B (기기+크림)</span><div class="chart-bar-wrap"><div class="chart-bar bar-ab" style="width:100%"><span>26.74%</span></div></div></div>
+          <div class="chart-row"><span class="chart-label">B (크림 단독)</span><div class="chart-bar-wrap"><div class="chart-bar bar-b" style="width:31%"><span>8.37%</span></div></div></div>
+          <div class="chart-ratio"><strong>3.20x</strong> 개선 배수</div>
+        </div>
+      <table class="data-tbl" style="margin-top:12px">
+          <caption>통계분석</caption>
+          <thead><tr><th>분석</th><th>p-value</th><th>방법</th></tr></thead>
+          <tbody>
+            <tr><td>A+B 사용 전·후</td><td><span class="p-star">.000***</span></td><td>Wilcoxon signed-rank test</td></tr>
+            <tr><td>B 사용 전·후</td><td><span class="p-star">.030*</span></td><td>paired t-test</td></tr>
+            <tr><td>ΔA+B vs ΔB</td><td><span class="p-star">.012*</span></td><td>Mann-Whitney U test</td></tr>
+          </tbody>
+        </table>
     </div>
 
     <!-- ===== 피부 윤기 ===== -->
     <div id="r-glow" class="result-card">
       <h4>6. 피부 윤기 — VISIA-CA (Intensity)</h4>
-      <p>A+B <strong>p&lt;.01</strong>, B <strong>p&lt;.05</strong> 유의 증가. A+B vs B <strong>p&lt;.05</strong> 유의.</p>
+      <p>A+B <strong>p&lt;.001</strong>, B <strong>p&lt;.05</strong> 유의 증가. A+B vs B <strong>p&lt;.05</strong> 유의.</p>
+      <table class="data-tbl">
+        <caption>Intensity 값 변화 (N=21)</caption>
+        <thead><tr><th></th><th colspan="2">A+B</th><th colspan="2">B</th></tr>
+        <tr><th></th><th>사용 전</th><th>2주 후</th><th>사용 전</th><th>2주 후</th></tr></thead>
+        <tbody>
+          <tr><td>평균</td><td>192.72</td><td>196.17</td><td>191.08</td><td>192.58</td></tr>
+          <tr><td>표준편차</td><td>10.88</td><td>10.31</td><td>9.72</td><td>10.21</td></tr>
+        </tbody>
+      </table>
       <table class="data-tbl">
         <caption>개선율 · 배수</caption>
         <thead><tr><th></th><th>A+B</th><th>B</th><th>배수</th></tr></thead>
-        <tbody><tr><td>2주 후</td><td class="hl">1.79%</td><td>0.78%</td><td class="hl">2.28×</td></tr></tbody>
+        <tbody><tr><td>2주 후</td><td class="hl">1.79%</td><td>0.78%</td><td class="hl">2.28&times;</td></tr></tbody>
       </table>
-    </div>
-    <div class="equip-grid">
-      <div class="pg"><img src="efficacy-assets/p028.jpg" alt="윤기 결과" loading="lazy"><span class="pl">P.28</span></div>
-      <div class="pg"><img src="efficacy-assets/p029.jpg" alt="윤기 차트" loading="lazy"><span class="pl">P.29</span></div>
+      <div class="css-chart">
+          <div class="chart-row"><span class="chart-label">A+B (기기+크림)</span><div class="chart-bar-wrap"><div class="chart-bar bar-ab" style="width:100%"><span>1.79%</span></div></div></div>
+          <div class="chart-row"><span class="chart-label">B (크림 단독)</span><div class="chart-bar-wrap"><div class="chart-bar bar-b" style="width:44%"><span>0.78%</span></div></div></div>
+          <div class="chart-ratio"><strong>2.28x</strong> 개선 배수</div>
+        </div>
+      <table class="data-tbl" style="margin-top:12px">
+          <caption>통계분석</caption>
+          <thead><tr><th>분석</th><th>p-value</th><th>방법</th></tr></thead>
+          <tbody>
+            <tr><td>A+B 사용 전·후</td><td><span class="p-star">.000***</span></td><td>Wilcoxon signed-rank test</td></tr>
+            <tr><td>B 사용 전·후</td><td><span class="p-star">.030*</span></td><td>Wilcoxon signed-rank test</td></tr>
+            <tr><td>ΔA+B vs ΔB</td><td><span class="p-star">.012*</span></td><td>Mann-Whitney U test</td></tr>
+          </tbody>
+        </table>
     </div>
 
     <!-- ===== 피부결 ===== -->
@@ -579,31 +673,68 @@
       <h4>7. 피부결 — ANTERA 3D (Ra)</h4>
       <p>A+B <strong>p&lt;.001</strong>, B <strong>p&lt;.01</strong> 유의 감소. A+B vs B <strong>p&lt;.01</strong> 유의.</p>
       <table class="data-tbl">
+        <caption>Texture small 값 변화 (N=21)</caption>
+        <thead><tr><th></th><th colspan="2">A+B</th><th colspan="2">B</th></tr>
+        <tr><th></th><th>사용 전</th><th>2주 후</th><th>사용 전</th><th>2주 후</th></tr></thead>
+        <tbody>
+          <tr><td>평균</td><td>5.93</td><td>5.38</td><td>6.07</td><td>5.80</td></tr>
+          <tr><td>표준편차</td><td>0.57</td><td>0.57</td><td>0.71</td><td>0.81</td></tr>
+        </tbody>
+      </table>
+      <table class="data-tbl">
         <caption>개선율 · 배수</caption>
         <thead><tr><th></th><th>A+B</th><th>B</th><th>배수</th></tr></thead>
-        <tbody><tr><td>2주 후</td><td class="hl">9.26%</td><td>4.37%</td><td class="hl">2.12×</td></tr></tbody>
+        <tbody><tr><td>2주 후</td><td class="hl">9.26%</td><td>4.37%</td><td class="hl">2.12&times;</td></tr></tbody>
       </table>
-    </div>
-    <div class="equip-grid">
-      <div class="pg"><img src="efficacy-assets/p030.jpg" alt="피부결 결과" loading="lazy"><span class="pl">P.30</span></div>
-      <div class="pg"><img src="efficacy-assets/p031.jpg" alt="피부결 차트" loading="lazy"><span class="pl">P.31</span></div>
+      <div class="css-chart">
+          <div class="chart-row"><span class="chart-label">A+B (기기+크림)</span><div class="chart-bar-wrap"><div class="chart-bar bar-ab" style="width:100%"><span>9.26%</span></div></div></div>
+          <div class="chart-row"><span class="chart-label">B (크림 단독)</span><div class="chart-bar-wrap"><div class="chart-bar bar-b" style="width:47%"><span>4.37%</span></div></div></div>
+          <div class="chart-ratio"><strong>2.12x</strong> 개선 배수</div>
+        </div>
+      <table class="data-tbl" style="margin-top:12px">
+          <caption>통계분석</caption>
+          <thead><tr><th>분석</th><th>p-value</th><th>방법</th></tr></thead>
+          <tbody>
+            <tr><td>A+B 사용 전·후</td><td><span class="p-star">.000***</span></td><td>paired t-test</td></tr>
+            <tr><td>B 사용 전·후</td><td><span class="p-star">.001**</span></td><td>paired t-test</td></tr>
+            <tr><td>ΔA+B vs ΔB</td><td><span class="p-star">.006**</span></td><td>Independent t-test</td></tr>
+          </tbody>
+        </table>
     </div>
 
     <!-- ===== 피부 처짐 ===== -->
     <div id="r-sagging" class="result-card">
       <h4>8. 피부 처진 각도 — F-RAY</h4>
-      <p>A+B <strong>p&lt;.01</strong>, B <strong>p&lt;.01</strong> 유의 감소. A+B vs B <strong>p&lt;.05</strong> 유의.</p>
+      <p>A+B <strong>p&lt;.001</strong>, B <strong>p&lt;.01</strong> 유의 감소. A+B vs B <strong>p&lt;.05</strong> 유의.</p>
+      <table class="data-tbl">
+        <caption>피부 각도 값 변화 (N=21)</caption>
+        <thead><tr><th></th><th colspan="2">A+B</th><th colspan="2">B</th></tr>
+        <tr><th></th><th>사용 전</th><th>2주 후</th><th>사용 전</th><th>2주 후</th></tr></thead>
+        <tbody>
+          <tr><td>평균</td><td>26.83</td><td>23.18</td><td>25.23</td><td>23.60</td></tr>
+          <tr><td>표준편차</td><td>5.22</td><td>5.56</td><td>5.24</td><td>4.77</td></tr>
+        </tbody>
+      </table>
       <table class="data-tbl">
         <caption>개선율 · 배수</caption>
         <thead><tr><th></th><th>A+B</th><th>B</th><th>배수</th></tr></thead>
-        <tbody><tr><td>2주 후</td><td class="hl">13.63%</td><td>6.44%</td><td class="hl">2.11×</td></tr></tbody>
+        <tbody><tr><td>2주 후</td><td class="hl">13.63%</td><td>6.44%</td><td class="hl">2.11&times;</td></tr></tbody>
       </table>
+      <div class="css-chart">
+          <div class="chart-row"><span class="chart-label">A+B (기기+크림)</span><div class="chart-bar-wrap"><div class="chart-bar bar-ab" style="width:100%"><span>13.63%</span></div></div></div>
+          <div class="chart-row"><span class="chart-label">B (크림 단독)</span><div class="chart-bar-wrap"><div class="chart-bar bar-b" style="width:47%"><span>6.44%</span></div></div></div>
+          <div class="chart-ratio"><strong>2.11x</strong> 개선 배수</div>
+        </div>
+      <table class="data-tbl" style="margin-top:12px">
+          <caption>통계분석</caption>
+          <thead><tr><th>분석</th><th>p-value</th><th>방법</th></tr></thead>
+          <tbody>
+            <tr><td>A+B 사용 전·후</td><td><span class="p-star">.000***</span></td><td>Wilcoxon signed-rank test</td></tr>
+            <tr><td>B 사용 전·후</td><td><span class="p-star">.004**</span></td><td>Wilcoxon signed-rank test</td></tr>
+            <tr><td>ΔA+B vs ΔB</td><td><span class="p-star">.037*</span></td><td>Mann-Whitney U test</td></tr>
+          </tbody>
+        </table>
     </div>
-    <div class="equip-grid">
-      <div class="pg"><img src="efficacy-assets/p032.jpg" alt="처짐 결과" loading="lazy"><span class="pl">P.32</span></div>
-      <div class="pg"><img src="efficacy-assets/p033.jpg" alt="처짐 차트 1" loading="lazy"><span class="pl">P.33</span></div>
-    </div>
-    <div class="pg"><img src="efficacy-assets/p034.jpg" alt="처짐 차트 2" loading="lazy"><span class="pl">P.34</span></div>
 
     <p style="margin-top:24px"><strong>9. 이상반응 평가:</strong> 시험기간 동안 피시험자 전원에서 피부이상반응(홍반, 부종, 인설, 가려움, 자통, 작열감, 뻣뻣함, 따끔거림)은 관찰되지 않았다.</p>
 
@@ -776,42 +907,177 @@
 
     <!-- 3~7) 나머지 항목은 원본 이미지 아코디언 (정확도 보장) -->
     <div class="metric-block" id="mb-density">
-      <button class="metric-toggle" onclick="toggleMetric('mb-density')"><h4>3. 피부치밀도 — Density 값 + ΔDensity</h4><div><span class="badge">2.19×</span> <span class="arrow">▼</span></div></button>
+      <button class="metric-toggle" onclick="toggleMetric('mb-density')"><h4>3. 피부치밀도 — Density 값 + ΔDensity</h4><div><span class="badge">2.19&times;</span> <span class="arrow">▼</span></div></button>
       <div class="metric-body">
-        <div class="pg"><img src="efficacy-assets/p048.jpg" alt="Density 값" loading="lazy"><span class="pl">P.48</span></div>
-        <div class="pg"><img src="efficacy-assets/p049.jpg" alt="ΔDensity 값" loading="lazy"><span class="pl">P.49</span></div>
+        <table class="detail-tbl"><caption>Density (%) (N=21)</caption>
+          <thead><tr><th>No.</th><th colspan="2">시험제품 A+B</th><th colspan="2">시험제품 B</th><th>ΔA+B</th><th>ΔB</th></tr>
+          <tr><th></th><th>전</th><th>후</th><th>전</th><th>후</th><th></th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="subj-num">1</td><td>7.58</td><td>10.80</td><td>7.82</td><td>8.05</td><td>3.22</td><td>0.23</td></tr>
+            <tr><td class="subj-num">2</td><td>9.44</td><td>12.23</td><td>8.61</td><td>9.04</td><td>2.79</td><td>0.43</td></tr>
+            <tr><td class="subj-num">3</td><td>10.03</td><td>12.83</td><td>9.56</td><td>8.39</td><td>2.80</td><td>-1.17</td></tr>
+            <tr><td class="subj-num">4</td><td>8.72</td><td>10.04</td><td>8.62</td><td>10.52</td><td>1.32</td><td>1.90</td></tr>
+            <tr><td class="subj-num">5</td><td>6.65</td><td>8.19</td><td>9.28</td><td>10.71</td><td>1.54</td><td>1.43</td></tr>
+            <tr><td class="subj-num">6</td><td>7.39</td><td>10.53</td><td>7.58</td><td>10.14</td><td>3.14</td><td>2.56</td></tr>
+            <tr><td class="subj-num">7</td><td>10.09</td><td>12.75</td><td>9.67</td><td>12.15</td><td>2.66</td><td>2.48</td></tr>
+            <tr><td class="subj-num">8</td><td>7.52</td><td>9.88</td><td>6.82</td><td>8.87</td><td>2.36</td><td>2.05</td></tr>
+            <tr><td class="subj-num">9</td><td>6.58</td><td>9.82</td><td>7.97</td><td>8.02</td><td>3.24</td><td>0.05</td></tr>
+            <tr><td class="subj-num">10</td><td>11.20</td><td>14.67</td><td>9.82</td><td>10.32</td><td>3.47</td><td>0.50</td></tr>
+            <tr><td class="subj-num">11</td><td>11.27</td><td>14.37</td><td>11.74</td><td>12.02</td><td>3.10</td><td>0.28</td></tr>
+            <tr><td class="subj-num">12</td><td>10.40</td><td>12.40</td><td>7.11</td><td>8.38</td><td>2.00</td><td>1.27</td></tr>
+            <tr><td class="subj-num">13</td><td>7.71</td><td>9.28</td><td>7.14</td><td>7.45</td><td>1.57</td><td>0.31</td></tr>
+            <tr><td class="subj-num">14</td><td>8.82</td><td>11.90</td><td>8.38</td><td>9.48</td><td>3.08</td><td>1.10</td></tr>
+            <tr><td class="subj-num">15</td><td>7.61</td><td>9.71</td><td>9.32</td><td>10.00</td><td>2.10</td><td>0.68</td></tr>
+            <tr><td class="subj-num">16</td><td>9.77</td><td>11.80</td><td>10.44</td><td>11.82</td><td>2.03</td><td>1.38</td></tr>
+            <tr><td class="subj-num">17</td><td>8.23</td><td>8.74</td><td>9.01</td><td>9.37</td><td>0.51</td><td>0.36</td></tr>
+            <tr><td class="subj-num">18</td><td>6.01</td><td>7.91</td><td>7.75</td><td>9.04</td><td>1.90</td><td>1.29</td></tr>
+            <tr><td class="subj-num">19</td><td>7.00</td><td>10.47</td><td>6.51</td><td>9.67</td><td>3.47</td><td>3.16</td></tr>
+            <tr><td class="subj-num">20</td><td>6.35</td><td>9.29</td><td>8.80</td><td>10.89</td><td>2.94</td><td>2.09</td></tr>
+            <tr><td class="subj-num">21</td><td>8.15</td><td>9.19</td><td>8.11</td><td>9.15</td><td>1.04</td><td>1.04</td></tr>
+            <tr class="row-avg"><td>평균</td><td>8.41</td><td>10.80</td><td>8.57</td><td>9.69</td><td>2.39</td><td>1.12</td></tr>
+            <tr class="row-std"><td>표준편차</td><td>1.59</td><td>1.91</td><td>1.28</td><td>1.34</td><td>0.85</td><td>1.02</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
     <div class="metric-block" id="mb-pores">
-      <button class="metric-toggle" onclick="toggleMetric('mb-pores')"><h4>4. 모공 — Volume 값 + ΔVolume</h4><div><span class="badge">3.20×</span> <span class="arrow">▼</span></div></button>
+      <button class="metric-toggle" onclick="toggleMetric('mb-pores')"><h4>4. 모공 — Volume 값 + ΔVolume</h4><div><span class="badge">3.20&times;</span> <span class="arrow">▼</span></div></button>
       <div class="metric-body">
-        <div class="pg"><img src="efficacy-assets/p050.jpg" alt="Volume 값" loading="lazy"><span class="pl">P.50</span></div>
-        <div class="pg"><img src="efficacy-assets/p051.jpg" alt="ΔVolume 값" loading="lazy"><span class="pl">P.51</span></div>
+        <table class="detail-tbl"><caption>Volume (mm3) (N=21)</caption>
+          <thead><tr><th>No.</th><th colspan="2">시험제품 A+B</th><th colspan="2">시험제품 B</th><th>ΔA+B</th><th>ΔB</th></tr>
+          <tr><th></th><th>전</th><th>후</th><th>전</th><th>후</th><th></th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="subj-num">1</td><td>0.59</td><td>0.38</td><td>0.58</td><td>0.52</td><td>-0.21</td><td>-0.06</td></tr>
+            <tr><td class="subj-num">2</td><td>1.60</td><td>1.59</td><td>1.46</td><td>1.47</td><td>-0.02</td><td>0.01</td></tr>
+            <tr><td class="subj-num">3</td><td>0.59</td><td>0.41</td><td>0.81</td><td>0.58</td><td>-0.18</td><td>-0.23</td></tr>
+            <tr><td class="subj-num">4</td><td>0.59</td><td>0.31</td><td>0.80</td><td>0.60</td><td>-0.28</td><td>-0.20</td></tr>
+            <tr><td class="subj-num">5</td><td>0.51</td><td>0.38</td><td>0.50</td><td>0.47</td><td>-0.13</td><td>-0.03</td></tr>
+            <tr><td class="subj-num">6</td><td>0.24</td><td>0.21</td><td>0.25</td><td>0.31</td><td>-0.03</td><td>0.07</td></tr>
+            <tr><td class="subj-num">7</td><td>1.19</td><td>0.58</td><td>0.81</td><td>0.69</td><td>-0.61</td><td>-0.12</td></tr>
+            <tr><td class="subj-num">8</td><td>0.76</td><td>0.69</td><td>1.16</td><td>0.98</td><td>-0.07</td><td>-0.18</td></tr>
+            <tr><td class="subj-num">9</td><td>0.55</td><td>0.34</td><td>0.86</td><td>0.72</td><td>-0.21</td><td>-0.14</td></tr>
+            <tr><td class="subj-num">10</td><td>0.42</td><td>0.41</td><td>0.42</td><td>0.45</td><td>-0.01</td><td>0.03</td></tr>
+            <tr><td class="subj-num">11</td><td>0.61</td><td>0.45</td><td>0.75</td><td>0.77</td><td>-0.17</td><td>0.02</td></tr>
+            <tr><td class="subj-num">12</td><td>0.55</td><td>0.25</td><td>0.64</td><td>0.63</td><td>-0.30</td><td>-0.01</td></tr>
+            <tr><td class="subj-num">13</td><td>0.72</td><td>0.44</td><td>0.86</td><td>0.70</td><td>-0.27</td><td>-0.16</td></tr>
+            <tr><td class="subj-num">14</td><td>0.27</td><td>0.19</td><td>0.32</td><td>0.27</td><td>-0.08</td><td>-0.05</td></tr>
+            <tr><td class="subj-num">15</td><td>0.36</td><td>0.26</td><td>0.39</td><td>0.42</td><td>-0.09</td><td>0.02</td></tr>
+            <tr><td class="subj-num">16</td><td>0.40</td><td>0.26</td><td>0.17</td><td>0.21</td><td>-0.14</td><td>0.04</td></tr>
+            <tr><td class="subj-num">17</td><td>0.35</td><td>0.26</td><td>0.41</td><td>0.41</td><td>-0.09</td><td>0.00</td></tr>
+            <tr><td class="subj-num">18</td><td>0.24</td><td>0.22</td><td>0.32</td><td>0.32</td><td>-0.02</td><td>0.00</td></tr>
+            <tr><td class="subj-num">19</td><td>0.27</td><td>0.15</td><td>0.35</td><td>0.20</td><td>-0.13</td><td>-0.15</td></tr>
+            <tr><td class="subj-num">20</td><td>0.44</td><td>0.42</td><td>0.61</td><td>0.76</td><td>-0.02</td><td>0.14</td></tr>
+            <tr><td class="subj-num">21</td><td>0.44</td><td>0.37</td><td>0.45</td><td>0.38</td><td>-0.06</td><td>-0.08</td></tr>
+            <tr class="row-avg"><td>평균</td><td>0.56</td><td>0.41</td><td>0.62</td><td>0.56</td><td>-0.15</td><td>-0.05</td></tr>
+            <tr class="row-std"><td>표준편차</td><td>0.32</td><td>0.30</td><td>0.32</td><td>0.29</td><td>0.14</td><td>0.10</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
     <div class="metric-block" id="mb-glow">
-      <button class="metric-toggle" onclick="toggleMetric('mb-glow')"><h4>5. 피부 윤기 — Intensity 값 + ΔIntensity</h4><div><span class="badge">2.28×</span> <span class="arrow">▼</span></div></button>
+      <button class="metric-toggle" onclick="toggleMetric('mb-glow')"><h4>5. 피부 윤기 — Intensity 값 + ΔIntensity</h4><div><span class="badge">2.28&times;</span> <span class="arrow">▼</span></div></button>
       <div class="metric-body">
-        <div class="pg"><img src="efficacy-assets/p052.jpg" alt="intensity 값" loading="lazy"><span class="pl">P.52</span></div>
-        <div class="pg"><img src="efficacy-assets/p053.jpg" alt="Δintensity 값" loading="lazy"><span class="pl">P.53</span></div>
+        <table class="detail-tbl"><caption>Intensity (N=21)</caption>
+          <thead><tr><th>No.</th><th colspan="2">시험제품 A+B</th><th colspan="2">시험제품 B</th><th>ΔA+B</th><th>ΔB</th></tr>
+          <tr><th></th><th>전</th><th>후</th><th>전</th><th>후</th><th></th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="subj-num">1</td><td>181.12</td><td>185.39</td><td>182.93</td><td>183.44</td><td>4.26</td><td>0.51</td></tr>
+            <tr><td class="subj-num">2</td><td>183.37</td><td>188.22</td><td>182.58</td><td>184.98</td><td>4.85</td><td>2.40</td></tr>
+            <tr><td class="subj-num">3</td><td>186.90</td><td>192.20</td><td>189.49</td><td>191.80</td><td>5.31</td><td>2.31</td></tr>
+            <tr><td class="subj-num">4</td><td>196.37</td><td>198.15</td><td>196.67</td><td>195.38</td><td>1.78</td><td>-1.29</td></tr>
+            <tr><td class="subj-num">5</td><td>193.16</td><td>195.23</td><td>196.02</td><td>197.09</td><td>2.07</td><td>1.07</td></tr>
+            <tr><td class="subj-num">6</td><td>195.31</td><td>196.85</td><td>191.82</td><td>192.25</td><td>1.54</td><td>0.43</td></tr>
+            <tr><td class="subj-num">7</td><td>210.27</td><td>211.76</td><td>188.76</td><td>189.19</td><td>1.49</td><td>0.43</td></tr>
+            <tr><td class="subj-num">8</td><td>173.25</td><td>174.70</td><td>177.84</td><td>179.11</td><td>1.44</td><td>1.28</td></tr>
+            <tr><td class="subj-num">9</td><td>196.85</td><td>204.28</td><td>190.73</td><td>197.34</td><td>7.44</td><td>6.61</td></tr>
+            <tr><td class="subj-num">10</td><td>208.50</td><td>212.16</td><td>201.03</td><td>204.50</td><td>3.66</td><td>3.47</td></tr>
+            <tr><td class="subj-num">11</td><td>167.21</td><td>177.69</td><td>171.58</td><td>175.47</td><td>10.48</td><td>3.90</td></tr>
+            <tr><td class="subj-num">12</td><td>183.32</td><td>184.07</td><td>193.45</td><td>193.76</td><td>0.75</td><td>0.31</td></tr>
+            <tr><td class="subj-num">13</td><td>200.70</td><td>202.13</td><td>202.70</td><td>201.36</td><td>1.43</td><td>-1.34</td></tr>
+            <tr><td class="subj-num">14</td><td>191.55</td><td>204.47</td><td>197.59</td><td>206.49</td><td>12.92</td><td>8.90</td></tr>
+            <tr><td class="subj-num">15</td><td>193.74</td><td>195.32</td><td>199.51</td><td>199.60</td><td>1.58</td><td>0.09</td></tr>
+            <tr><td class="subj-num">16</td><td>200.41</td><td>205.35</td><td>196.66</td><td>200.40</td><td>4.94</td><td>3.73</td></tr>
+            <tr><td class="subj-num">17</td><td>201.52</td><td>203.27</td><td>203.22</td><td>204.28</td><td>1.76</td><td>1.06</td></tr>
+            <tr><td class="subj-num">18</td><td>194.88</td><td>196.91</td><td>197.41</td><td>198.98</td><td>2.03</td><td>1.57</td></tr>
+            <tr><td class="subj-num">19</td><td>205.18</td><td>206.53</td><td>200.53</td><td>199.22</td><td>1.35</td><td>-1.31</td></tr>
+            <tr><td class="subj-num">20</td><td>196.07</td><td>196.81</td><td>179.24</td><td>178.28</td><td>0.74</td><td>-0.96</td></tr>
+            <tr><td class="subj-num">21</td><td>187.45</td><td>188.07</td><td>172.94</td><td>171.20</td><td>0.62</td><td>-1.74</td></tr>
+            <tr class="row-avg"><td>평균</td><td>192.72</td><td>196.17</td><td>191.08</td><td>192.58</td><td>3.45</td><td>1.50</td></tr>
+            <tr class="row-std"><td>표준편차</td><td>10.88</td><td>10.31</td><td>9.72</td><td>10.21</td><td>3.31</td><td>2.69</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
     <div class="metric-block" id="mb-texture">
-      <button class="metric-toggle" onclick="toggleMetric('mb-texture')"><h4>6. 피부결 — Texture small 값 + ΔTexture</h4><div><span class="badge">2.12×</span> <span class="arrow">▼</span></div></button>
+      <button class="metric-toggle" onclick="toggleMetric('mb-texture')"><h4>6. 피부결 — Texture small 값 + ΔTexture</h4><div><span class="badge">2.12&times;</span> <span class="arrow">▼</span></div></button>
       <div class="metric-body">
-        <div class="pg"><img src="efficacy-assets/p054.jpg" alt="Texture 값" loading="lazy"><span class="pl">P.54</span></div>
-        <div class="pg"><img src="efficacy-assets/p055.jpg" alt="ΔTexture 값" loading="lazy"><span class="pl">P.55</span></div>
+        <table class="detail-tbl"><caption>Texture small (Ra) (N=21)</caption>
+          <thead><tr><th>No.</th><th colspan="2">시험제품 A+B</th><th colspan="2">시험제품 B</th><th>ΔA+B</th><th>ΔB</th></tr>
+          <tr><th></th><th>전</th><th>후</th><th>전</th><th>후</th><th></th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="subj-num">1</td><td>5.53</td><td>5.05</td><td>5.45</td><td>5.31</td><td>-0.49</td><td>-0.14</td></tr>
+            <tr><td class="subj-num">2</td><td>6.34</td><td>6.40</td><td>6.76</td><td>6.55</td><td>0.06</td><td>-0.21</td></tr>
+            <tr><td class="subj-num">3</td><td>6.29</td><td>5.96</td><td>6.09</td><td>6.63</td><td>-0.32</td><td>0.54</td></tr>
+            <tr><td class="subj-num">4</td><td>6.51</td><td>5.79</td><td>6.75</td><td>6.60</td><td>-0.72</td><td>-0.15</td></tr>
+            <tr><td class="subj-num">5</td><td>6.40</td><td>5.73</td><td>5.46</td><td>5.35</td><td>-0.67</td><td>-0.12</td></tr>
+            <tr><td class="subj-num">6</td><td>4.96</td><td>4.80</td><td>4.81</td><td>4.46</td><td>-0.16</td><td>-0.35</td></tr>
+            <tr><td class="subj-num">7</td><td>6.12</td><td>5.92</td><td>7.17</td><td>6.93</td><td>-0.19</td><td>-0.24</td></tr>
+            <tr><td class="subj-num">8</td><td>6.30</td><td>5.36</td><td>7.21</td><td>7.24</td><td>-0.94</td><td>0.03</td></tr>
+            <tr><td class="subj-num">9</td><td>5.98</td><td>5.43</td><td>6.79</td><td>5.98</td><td>-0.56</td><td>-0.80</td></tr>
+            <tr><td class="subj-num">10</td><td>5.51</td><td>4.77</td><td>5.75</td><td>5.81</td><td>-0.73</td><td>0.06</td></tr>
+            <tr><td class="subj-num">11</td><td>6.17</td><td>5.52</td><td>6.67</td><td>6.30</td><td>-0.66</td><td>-0.37</td></tr>
+            <tr><td class="subj-num">12</td><td>5.53</td><td>5.08</td><td>6.06</td><td>5.55</td><td>-0.45</td><td>-0.51</td></tr>
+            <tr><td class="subj-num">13</td><td>5.33</td><td>5.12</td><td>6.97</td><td>6.58</td><td>-0.21</td><td>-0.39</td></tr>
+            <tr><td class="subj-num">14</td><td>5.93</td><td>4.66</td><td>5.56</td><td>4.85</td><td>-1.27</td><td>-0.71</td></tr>
+            <tr><td class="subj-num">15</td><td>6.03</td><td>5.16</td><td>5.73</td><td>5.31</td><td>-0.88</td><td>-0.42</td></tr>
+            <tr><td class="subj-num">16</td><td>5.66</td><td>4.83</td><td>4.97</td><td>4.73</td><td>-0.83</td><td>-0.23</td></tr>
+            <tr><td class="subj-num">17</td><td>5.24</td><td>4.96</td><td>5.84</td><td>5.16</td><td>-0.28</td><td>-0.68</td></tr>
+            <tr><td class="subj-num">18</td><td>5.28</td><td>4.84</td><td>5.62</td><td>5.37</td><td>-0.45</td><td>-0.25</td></tr>
+            <tr><td class="subj-num">19</td><td>5.41</td><td>4.94</td><td>5.35</td><td>4.73</td><td>-0.48</td><td>-0.62</td></tr>
+            <tr><td class="subj-num">20</td><td>6.54</td><td>5.99</td><td>6.14</td><td>5.86</td><td>-0.55</td><td>-0.28</td></tr>
+            <tr><td class="subj-num">21</td><td>7.38</td><td>6.64</td><td>6.32</td><td>6.58</td><td>-0.75</td><td>0.27</td></tr>
+            <tr class="row-avg"><td>평균</td><td>5.93</td><td>5.38</td><td>6.07</td><td>5.80</td><td>-0.55</td><td>-0.27</td></tr>
+            <tr class="row-std"><td>표준편차</td><td>0.57</td><td>0.57</td><td>0.71</td><td>0.81</td><td>0.31</td><td>0.32</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
     <div class="metric-block" id="mb-sagging">
-      <button class="metric-toggle" onclick="toggleMetric('mb-sagging')"><h4>7. 피부 처짐 — 피부 각도 + Δ피부 각도</h4><div><span class="badge">2.11×</span> <span class="arrow">▼</span></div></button>
+      <button class="metric-toggle" onclick="toggleMetric('mb-sagging')"><h4>7. 피부 처짐 — 피부 각도 + Δ피부 각도</h4><div><span class="badge">2.11&times;</span> <span class="arrow">▼</span></div></button>
       <div class="metric-body">
-        <div class="pg"><img src="efficacy-assets/p056.jpg" alt="피부 각도" loading="lazy"><span class="pl">P.56</span></div>
-        <div class="pg"><img src="efficacy-assets/p057.jpg" alt="Δ피부 각도" loading="lazy"><span class="pl">P.57</span></div>
+        <table class="detail-tbl"><caption>피부 각도 (deg) (N=21)</caption>
+          <thead><tr><th>No.</th><th colspan="2">시험제품 A+B</th><th colspan="2">시험제품 B</th><th>ΔA+B</th><th>ΔB</th></tr>
+          <tr><th></th><th>전</th><th>후</th><th>전</th><th>후</th><th></th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="subj-num">1</td><td>29.68</td><td>26.90</td><td>25.68</td><td>25.47</td><td>2.78</td><td>0.21</td></tr>
+            <tr><td class="subj-num">2</td><td>33.99</td><td>27.43</td><td>40.62</td><td>36.21</td><td>6.56</td><td>4.41</td></tr>
+            <tr><td class="subj-num">3</td><td>24.92</td><td>18.94</td><td>21.59</td><td>21.55</td><td>5.98</td><td>0.04</td></tr>
+            <tr><td class="subj-num">4</td><td>32.35</td><td>30.89</td><td>19.66</td><td>19.08</td><td>1.46</td><td>0.58</td></tr>
+            <tr><td class="subj-num">5</td><td>21.11</td><td>19.83</td><td>22.04</td><td>20.96</td><td>1.28</td><td>1.08</td></tr>
+            <tr><td class="subj-num">6</td><td>27.00</td><td>24.45</td><td>27.63</td><td>27.74</td><td>2.55</td><td>-0.11</td></tr>
+            <tr><td class="subj-num">7</td><td>27.72</td><td>24.71</td><td>20.38</td><td>19.46</td><td>3.01</td><td>0.92</td></tr>
+            <tr><td class="subj-num">8</td><td>25.41</td><td>23.95</td><td>22.23</td><td>22.21</td><td>1.46</td><td>0.02</td></tr>
+            <tr><td class="subj-num">9</td><td>32.43</td><td>31.61</td><td>30.92</td><td>30.21</td><td>0.82</td><td>0.71</td></tr>
+            <tr><td class="subj-num">10</td><td>20.92</td><td>17.20</td><td>18.76</td><td>19.83</td><td>3.72</td><td>-1.07</td></tr>
+            <tr><td class="subj-num">11</td><td>26.92</td><td>27.08</td><td>23.50</td><td>21.10</td><td>-0.16</td><td>2.40</td></tr>
+            <tr><td class="subj-num">12</td><td>24.66</td><td>19.58</td><td>25.22</td><td>22.18</td><td>5.08</td><td>3.04</td></tr>
+            <tr><td class="subj-num">13</td><td>26.96</td><td>22.84</td><td>20.76</td><td>17.21</td><td>4.12</td><td>3.55</td></tr>
+            <tr><td class="subj-num">14</td><td>28.46</td><td>10.92</td><td>23.15</td><td>20.61</td><td>17.54</td><td>2.54</td></tr>
+            <tr><td class="subj-num">15</td><td>30.27</td><td>26.43</td><td>27.11</td><td>23.89</td><td>3.84</td><td>3.22</td></tr>
+            <tr><td class="subj-num">16</td><td>14.88</td><td>13.74</td><td>28.86</td><td>23.93</td><td>1.14</td><td>4.93</td></tr>
+            <tr><td class="subj-num">17</td><td>39.31</td><td>32.96</td><td>28.36</td><td>30.64</td><td>6.35</td><td>-2.28</td></tr>
+            <tr><td class="subj-num">18</td><td>24.69</td><td>22.24</td><td>25.43</td><td>22.43</td><td>2.45</td><td>3.00</td></tr>
+            <tr><td class="subj-num">19</td><td>23.29</td><td>21.02</td><td>33.62</td><td>28.85</td><td>2.27</td><td>4.77</td></tr>
+            <tr><td class="subj-num">20</td><td>23.47</td><td>20.43</td><td>22.77</td><td>24.00</td><td>3.04</td><td>-1.23</td></tr>
+            <tr><td class="subj-num">21</td><td>25.03</td><td>23.54</td><td>21.49</td><td>18.08</td><td>1.49</td><td>3.41</td></tr>
+            <tr class="row-avg"><td>평균</td><td>26.83</td><td>23.18</td><td>25.23</td><td>23.60</td><td>3.66</td><td>1.63</td></tr>
+            <tr class="row-std"><td>표준편차</td><td>5.22</td><td>5.56</td><td>5.24</td><td>4.77</td><td>3.68</td><td>2.08</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
