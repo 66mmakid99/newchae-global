@@ -82,66 +82,205 @@
   .product-card.torr .card-link {
     color: #c4956a;
   }
-  .doc-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    background: var(--sand-mist);
-    border: 1px solid var(--sand-mist);
-    border-radius: 2px;
-    overflow: hidden;
-    max-width: 800px;
-    margin: 0 auto;
+  /* === NEWCHAE Documents Section === */
+  .docs-section {
+    padding: 100px 0 20px;
   }
-  .doc-card {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 24px 28px;
+  .docs-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .docs-header .brand-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--dusty-lilac);
+    border: 1px solid var(--dusty-lilac);
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .docs-header h2 {
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .docs-header .sub {
+    font-size: 15px;
+    color: var(--soft-graphite);
+    line-height: 1.6;
+  }
+
+  .doc-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 960px;
+    margin: 0 auto 24px;
     background: var(--warm-ivory);
+    border-radius: 4px;
+    overflow: hidden;
     text-decoration: none;
     color: inherit;
-    transition: background 0.2s ease;
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
   }
-  .doc-card:hover {
-    background: #fff;
+  .doc-featured:hover {
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
   }
-  .doc-icon {
-    font-size: 28px;
-    flex-shrink: 0;
-    width: 44px;
-    text-align: center;
+  .doc-featured .doc-thumb {
+    aspect-ratio: 4/3;
+    overflow: hidden;
   }
-  .doc-info {
-    flex: 1;
-    min-width: 0;
+  .doc-featured .doc-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
   }
-  .doc-info h4 {
-    font-size: 16px;
+  .doc-featured:hover .doc-thumb img {
+    transform: scale(1.04);
+  }
+  .doc-featured .doc-body {
+    padding: 48px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .doc-body .doc-type {
+    font-size: 10px;
     font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .doc-info p {
-    font-size: 13px;
-    color: var(--soft-graphite);
-    line-height: 1.5;
-    margin-bottom: 6px;
-  }
-  .doc-meta {
-    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
     color: var(--dusty-lilac);
+    margin-bottom: 16px;
+  }
+  .doc-body h3 {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .doc-body .doc-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--soft-graphite);
+    margin-bottom: 24px;
+  }
+  .doc-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .doc-tag {
+    font-size: 10px;
     font-weight: 500;
-    letter-spacing: 0.03em;
-  }
-  .doc-arrow {
-    font-size: 18px;
+    letter-spacing: 0.04em;
+    padding: 4px 10px;
+    background: var(--sand-mist);
+    border-radius: 3px;
     color: var(--soft-graphite);
-    flex-shrink: 0;
-    transition: transform 0.2s ease;
   }
-  .doc-card:hover .doc-arrow {
-    transform: translateX(4px);
+  .doc-tag.highlight {
+    background: var(--dusty-lilac);
+    color: #fff;
+  }
+  .doc-cta {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-black);
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.2s ease;
+  }
+  .doc-featured:hover .doc-cta,
+  .doc-card-v2:hover .doc-cta {
+    gap: 12px;
     color: var(--dusty-lilac);
+  }
+
+  .doc-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .doc-card-v2 {
+    background: var(--warm-ivory);
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
+  }
+  .doc-card-v2:hover {
+    box-shadow: 0 16px 48px rgba(0,0,0,0.07);
+    transform: translateY(-4px);
+  }
+  .doc-card-v2 .doc-thumb {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--sand-mist);
+  }
+  .doc-card-v2 .doc-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .doc-card-v2:hover .doc-thumb img {
+    transform: scale(1.05);
+  }
+  .doc-card-v2 .doc-body {
+    padding: 22px 20px 24px;
+  }
+  .doc-card-v2 .doc-body .doc-type {
+    font-size: 9px;
+    margin-bottom: 10px;
+  }
+  .doc-card-v2 .doc-body h3 {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .doc-card-v2 .doc-body .doc-desc {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--soft-graphite);
+    margin-bottom: 16px;
+  }
+  .doc-card-v2 .doc-tags {
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 900px) {
+    .doc-featured {
+      grid-template-columns: 1fr;
+    }
+    .doc-featured .doc-body {
+      padding: 28px 24px;
+    }
+    .doc-grid-v2 {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+  }
+  @media (max-width: 560px) {
+    .doc-grid-v2 {
+      grid-template-columns: 1fr;
+    }
+    .docs-section {
+      padding: 64px 0 10px;
+    }
   }
   @media (max-width: 900px) {
     .product-cards {
@@ -207,64 +346,112 @@
   </div>
 </section>
 
-<!-- Documents -->
-<section style="padding: 80px 0 0;">
+<!-- NEWCHAE Documents -->
+<section class="docs-section">
   <div class="container">
-    <div class="eyebrow" style="text-align: center; margin-bottom: 12px;">Downloads & Resources</div>
-    <h2 style="text-align: center; margin-bottom: 48px;">Product Documents</h2>
-    <div class="doc-grid">
 
-      <a href="product-guide.html" class="doc-card">
-        <div class="doc-icon">📖</div>
-        <div class="doc-info">
-          <h4>Product Guide</h4>
-          <p>15-page illustrated guide — features, specifications, FAQ, and care instructions.</p>
-          <span class="doc-meta">EN · KO · 15 pages</span>
+    <div class="docs-header">
+      <div class="brand-label">NEWCHAE</div>
+      <h2>제품 자료</h2>
+      <p class="sub">NEWCHAE의 기술, 사용법, 임상 데이터를 담은 공식 자료입니다.<br>웹에서 바로 보거나 PDF로 다운로드할 수 있습니다.</p>
+    </div>
+
+    <!-- Featured: Product Guide -->
+    <a href="product-guide.html" class="doc-featured">
+      <div class="doc-thumb">
+        <img src="images/product-package.jpg" alt="NEWCHAE 제품 구성">
+      </div>
+      <div class="doc-body">
+        <div class="doc-type">종합 안내서 · 15 Pages</div>
+        <h3>제품 소개서</h3>
+        <p class="doc-desc">NEWCHAE의 모든 것을 한 권에. 제품 특징, 구성품 6종, 3가지 모드의 작동 원리, 첫 사용법, 관리 요령, 상세 스펙, 그리고 15개의 자주 묻는 질문까지.</p>
+        <div class="doc-tags">
+          <span class="doc-tag highlight">15페이지</span>
+          <span class="doc-tag">한국어</span>
+          <span class="doc-tag">English</span>
         </div>
-        <span class="doc-arrow">→</span>
+        <span class="doc-cta">자료 보기 →</span>
+      </div>
+    </a>
+
+    <!-- 4-card grid -->
+    <div class="doc-grid-v2">
+
+      <a href="brochure.html" class="doc-card-v2">
+        <div class="doc-thumb">
+          <img src="images/newchae-parts-diagram.jpg" alt="NEWCHAE 기술 스펙">
+        </div>
+        <div class="doc-body">
+          <div class="doc-type">전문가용</div>
+          <h3>기술 브로슈어</h3>
+          <p class="doc-desc">디스트리뷰터 및 전문가를 위한 기술 자료. RF/EMS/ELP 임상 데이터, 인증 정보, 제품 스펙.</p>
+          <div class="doc-tags">
+            <span class="doc-tag">EN</span>
+            <span class="doc-tag">KO</span>
+            <span class="doc-tag">JA</span>
+            <span class="doc-tag">TH</span>
+            <span class="doc-tag">VI</span>
+          </div>
+          <span class="doc-cta">자료 보기 →</span>
+        </div>
       </a>
 
-      <a href="brochure.html" class="doc-card">
-        <div class="doc-icon">📄</div>
-        <div class="doc-info">
-          <h4>Professional Brochure</h4>
-          <p>Technical brochure for distributors — clinical data, RF/EMS/ELP technology, certifications.</p>
-          <span class="doc-meta">EN · KO · JA · TH · VI</span>
+      <a href="brochure-consumer.html" class="doc-card-v2">
+        <div class="doc-thumb">
+          <img src="images/newchea flower and cream.png" alt="NEWCHAE 뷰티 컬렉션">
         </div>
-        <span class="doc-arrow">→</span>
+        <div class="doc-body">
+          <div class="doc-type">소비자용</div>
+          <h3>뷰티 브로슈어</h3>
+          <p class="doc-desc">스킨케어 효과와 사용 경험 중심의 고객용 자료. 비포&애프터, 데일리 루틴 가이드.</p>
+          <div class="doc-tags">
+            <span class="doc-tag">EN</span>
+            <span class="doc-tag">KO</span>
+            <span class="doc-tag">JA</span>
+            <span class="doc-tag">TH</span>
+            <span class="doc-tag">VI</span>
+          </div>
+          <span class="doc-cta">자료 보기 →</span>
+        </div>
       </a>
 
-      <a href="brochure-consumer.html" class="doc-card">
-        <div class="doc-icon">✨</div>
-        <div class="doc-info">
-          <h4>Consumer Brochure</h4>
-          <p>Beauty-focused brochure for end users — skincare benefits, before & after, usage guide.</p>
-          <span class="doc-meta">EN · KO · JA · TH · VI</span>
+      <a href="user-manual.html" class="doc-card-v2">
+        <div class="doc-thumb">
+          <img src="images/howto-rf-4x.png" alt="NEWCHAE 사용법">
         </div>
-        <span class="doc-arrow">→</span>
+        <div class="doc-body">
+          <div class="doc-type">사용설명서 · 9 Pages</div>
+          <h3>사용설명서</h3>
+          <p class="doc-desc">안전 수칙, 모드별 사용법, 단계별 관리 가이드, 문제 해결까지. 처음 사용자를 위한 완전 가이드.</p>
+          <div class="doc-tags">
+            <span class="doc-tag highlight">9페이지</span>
+            <span class="doc-tag">5개 언어</span>
+          </div>
+          <span class="doc-cta">자료 보기 →</span>
+        </div>
       </a>
 
-      <a href="user-manual.html" class="doc-card">
-        <div class="doc-icon">📋</div>
-        <div class="doc-info">
-          <h4>User Manual</h4>
-          <p>Complete operating instructions — safety, modes, step-by-step usage, troubleshooting.</p>
-          <span class="doc-meta">EN · KO · JA · TH · VI · 9 pages</span>
+      <a href="user-manual-insert.html" class="doc-card-v2">
+        <div class="doc-thumb">
+          <img src="images/product-detail.jpg" alt="NEWCHAE 디바이스">
         </div>
-        <span class="doc-arrow">→</span>
-      </a>
-
-      <a href="user-manual-insert.html" class="doc-card">
-        <div class="doc-icon">📑</div>
-        <div class="doc-info">
-          <h4>Quick Start Insert</h4>
-          <p>In-box quick reference card — essential steps to get started.</p>
-          <span class="doc-meta">EN · KO · JA · TH · VI</span>
+        <div class="doc-body">
+          <div class="doc-type">동봉 카드</div>
+          <h3>퀵스타트 가이드</h3>
+          <p class="doc-desc">박스에 동봉되는 간편 시작 카드. 개봉 후 바로 사용할 수 있도록 핵심만 담았습니다.</p>
+          <div class="doc-tags">
+            <span class="doc-tag">EN</span>
+            <span class="doc-tag">KO</span>
+            <span class="doc-tag">JA</span>
+            <span class="doc-tag">TH</span>
+            <span class="doc-tag">VI</span>
+          </div>
+          <span class="doc-cta">자료 보기 →</span>
         </div>
-        <span class="doc-arrow">→</span>
       </a>
 
     </div>
+
   </div>
 </section>
 
