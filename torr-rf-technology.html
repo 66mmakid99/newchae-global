@@ -3,574 +3,518 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TORR RF — Technology Evidence | BRITZMEDI</title>
-<meta name="description" content="Toroidal Multipolar RF technology evidence brief and design system. Download clinical documentation for TORR RF by BRITZMEDI.">
-<link rel="stylesheet" href="styles.css">
+<title>TORR RF — Technology Evidence Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@200;300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  .tech-hero {
-    padding: 140px 0 80px;
-    background: #141e2b;
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-  }
-  .tech-hero::before {
-    content: '';
-    position: absolute;
-    top: -120px;
-    right: -120px;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: rgba(196,149,106,0.04);
-  }
-  .tech-hero::after {
-    content: '';
-    position: absolute;
-    bottom: -80px;
-    left: -80px;
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    background: rgba(196,149,106,0.03);
-  }
-  .tech-hero .container {
-    position: relative;
-    z-index: 1;
-  }
-  .tech-eyebrow {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #c4956a;
-    margin-bottom: 20px;
-  }
-  .tech-hero h1 {
-    font-size: clamp(32px, 4vw, 52px);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-    margin-bottom: 20px;
-    max-width: 700px;
-  }
-  .tech-hero .lead {
-    font-size: 15px;
-    line-height: 1.75;
-    color: rgba(255,255,255,0.45);
-    max-width: 600px;
-    margin-bottom: 32px;
-  }
-  .tech-badges {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .tech-badge {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    padding: 5px 14px;
-    border: 1px solid rgba(196,149,106,0.25);
-    border-radius: 20px;
-    color: #d4aa82;
-  }
+:root {
+  --nv:#141e2b;--nm:#1c2a3a;--cr:#f7f5f0;--cw:#efe9de;
+  --am:#c4956a;--al:#d4aa82;--ad:#a07a55;
+  --tx:#1a1a1a;--tm:#7a7a7a;--tf:#b0b0b0;
+  --bd:rgba(0,0,0,.06);
+  --hd:'Cormorant Garamond',Georgia,serif;
+  --ft:'Outfit','Inter',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#2a2a2a;font-family:var(--ft);color:var(--tx);-webkit-font-smoothing:antialiased}
+:lang(ko) body{font-family:'Noto Sans KR','Outfit',sans-serif}
+:lang(ja) body{font-family:'Noto Sans JP','Outfit',sans-serif;word-break:normal;overflow-wrap:break-word;line-height:1.85}
+:lang(ko){word-break:keep-all;overflow-wrap:break-word}
+:lang(th) body{font-family:'Noto Sans Thai','Outfit',sans-serif}
 
-  .lang-bar {
-    background: #1c2a3a;
-    border-bottom: 1px solid rgba(196,149,106,0.1);
-    padding: 12px 0;
-    position: sticky;
-    top: 56px;
-    z-index: 100;
-  }
-  .lang-bar .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .lang-bar .label {
-    font-size: 11px;
-    color: rgba(255,255,255,0.35);
-    letter-spacing: 0.04em;
-  }
-  .lang-btns {
-    display: flex;
-    gap: 4px;
-  }
-  .lang-btn {
-    background: none;
-    border: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.4);
-    padding: 4px 12px;
-    border-radius: 3px;
-    cursor: pointer;
-    font: 500 11px/1 'Inter', sans-serif;
-    transition: all 0.25s;
-  }
-  .lang-btn:hover {
-    border-color: rgba(255,255,255,0.3);
-    color: rgba(255,255,255,0.7);
-  }
-  .lang-btn.on {
-    background: rgba(196,149,106,0.2);
-    border-color: #c4956a;
-    color: #d4aa82;
-  }
+.page{width:297mm;height:210mm;margin:8mm auto;background:var(--cr);box-shadow:0 6px 32px rgba(0,0,0,.25);position:relative;overflow:hidden;page-break-after:always}
+.page:last-child{page-break-after:auto}
+.page.dark{background:var(--nv);color:#fff}
 
-  .downloads-section {
-    padding: 80px 0 100px;
-  }
-  .downloads-header {
-    margin-bottom: 48px;
-  }
-  .downloads-header h2 {
-    font-size: clamp(24px, 3vw, 36px);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin-bottom: 12px;
-  }
-  .downloads-header .sub {
-    font-size: 14px;
-    color: var(--soft-graphite);
-    line-height: 1.7;
-  }
+.fr-top,.fr-bot{position:absolute;left:16mm;right:16mm;display:flex;justify-content:space-between;align-items:center;font:500 8px/1 var(--ft);letter-spacing:.22em;text-transform:uppercase;z-index:10}
+.fr-top{top:9mm;color:var(--tf)}
+.fr-bot{bottom:9mm;color:var(--tf)}
+.fr-bot .num{font-weight:700;letter-spacing:.12em}
+.dark .fr-top,.dark .fr-bot{color:rgba(255,255,255,.15)}
+.dark .fr-bot .num{color:rgba(196,149,106,.4)}
 
-  .dl-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    max-width: 960px;
-  }
-  .dl-card {
-    background: var(--warm-ivory);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: box-shadow 0.35s ease, transform 0.35s ease;
-  }
-  .dl-card:hover {
-    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-    transform: translateY(-4px);
-  }
-  .dl-card-icon {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .dl-card-icon.pdf-bg {
-    background: linear-gradient(135deg, #141e2b 0%, #1c2a3a 100%);
-  }
-  .dl-card-icon.pptx-bg {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  }
-  .dl-card-icon .file-icon {
-    width: 64px;
-    height: 80px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255,255,255,0.1);
-    position: relative;
-  }
-  .dl-card-icon .file-icon::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 16px;
-    height: 16px;
-    background: rgba(255,255,255,0.12);
-    border-bottom-left-radius: 4px;
-  }
-  .file-ext {
-    font: 700 14px/1 'Inter', sans-serif;
-    letter-spacing: 0.04em;
-    margin-top: 4px;
-  }
-  .file-ext.pdf { color: #e74c3c; }
-  .file-ext.pptx { color: #e67e22; }
-  .file-size-badge {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    font: 500 10px/1 'Inter', sans-serif;
-    color: rgba(255,255,255,0.3);
-    letter-spacing: 0.04em;
-  }
+.inner{position:absolute;top:22mm;left:20mm;right:20mm;bottom:22mm;display:flex;gap:20px}
 
-  .dl-card-body {
-    padding: 28px 24px 32px;
-  }
-  .dl-card-type {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #c4956a;
-    margin-bottom: 12px;
-  }
-  .dl-card-body h3 {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    margin-bottom: 10px;
-    line-height: 1.3;
-  }
-  .dl-card-desc {
-    font-size: 13px;
-    line-height: 1.7;
-    color: var(--soft-graphite);
-    margin-bottom: 20px;
-  }
-  .dl-card-tags {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-  .dl-tag {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    padding: 4px 10px;
-    background: var(--sand-mist);
-    border-radius: 3px;
-    color: var(--soft-graphite);
-  }
-  .dl-tag.format {
-    background: #141e2b;
-    color: #d4aa82;
-  }
-  .dl-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    background: #141e2b;
-    color: #d4aa82;
-    border: none;
-    border-radius: 3px;
-    font: 600 12px/1 'Inter', sans-serif;
-    letter-spacing: 0.04em;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.25s;
-  }
-  .dl-btn:hover {
-    background: #c4956a;
-    color: #fff;
-  }
-  .dl-btn svg {
-    width: 14px;
-    height: 14px;
-  }
+/* CTRL BAR */
+.ctrl{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(20,30,43,.96);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:44px;border-bottom:1px solid rgba(196,149,106,.12)}
+.ctrl .br{font:500 13px/1 var(--hd);color:rgba(255,255,255,.5);letter-spacing:.06em}
+.ctrl .br b{color:var(--al);font-weight:600}
+.ctrl .rt{display:flex;align-items:center;gap:8px}
+.ctrl select{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);padding:4px 10px;border-radius:3px;font:500 11px/1 var(--ft);cursor:pointer;appearance:none;-webkit-appearance:none;padding-right:22px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(255,255,255,.35)'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center}
+.ctrl select option{background:#1c2a3a;color:#fff}
+.ctrl .pb{background:var(--ad);border:none;color:#fff;padding:5px 16px;border-radius:3px;cursor:pointer;font:600 11px/1 var(--ft);transition:background .2s}
+.ctrl .pb:hover{background:var(--am)}
 
-  .tech-context {
-    padding: 80px 0;
-    background: var(--warm-ivory);
-    border-top: 1px solid var(--sand-mist);
-  }
-  .ctx-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    max-width: 960px;
-  }
-  .ctx-block h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 14px;
-    letter-spacing: -0.01em;
-  }
-  .ctx-block p {
-    font-size: 13.5px;
-    line-height: 1.75;
-    color: var(--soft-graphite);
-  }
-  .ctx-block .ctx-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 16px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #c4956a;
-    text-decoration: none;
-    transition: gap 0.2s;
-  }
-  .ctx-block .ctx-link:hover {
-    gap: 10px;
-  }
+/* TYPO */
+.lbl{font:600 9px/1 var(--ft);letter-spacing:.22em;text-transform:uppercase;color:var(--ad);margin-bottom:8px}
+.dark .lbl{color:var(--al)}
+.h1{font:300 54px/.95 var(--hd);letter-spacing:-.01em}
+.h2{font:400 36px/1.1 var(--hd);margin-bottom:14px}
+.dark .h2{color:#fff}
+.sub{font:300 13px/1.7 var(--ft);color:var(--tm);max-width:500px}
+.dark .sub{color:rgba(255,255,255,.4)}
 
-  @media (max-width: 768px) {
-    .tech-hero { padding: 100px 0 60px; }
-    .dl-grid { grid-template-columns: 1fr; }
-    .ctx-grid { grid-template-columns: 1fr; gap: 32px; }
-  }
+/* CARDS */
+.card{padding:16px;border:1px solid var(--bd);border-radius:3px;background:#fff;transition:border-color .2s}
+.card:hover{border-color:var(--am)}
+.dark .card{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08)}
+.dark .card:hover{border-color:var(--am)}
+.card h4{font:600 12px/1.3 var(--ft);margin-bottom:4px}
+.card .tag{font:600 9px/1 var(--ft);letter-spacing:.12em;text-transform:uppercase;color:var(--ad);margin-bottom:6px}
+.dark .card .tag{color:var(--al)}
+.card p{font:300 11px/1.6 var(--ft);color:var(--tm)}
+.dark .card p{color:rgba(255,255,255,.35)}
+
+/* STAT */
+.stat{text-align:center;padding:14px 8px;background:var(--cr);border:1px solid var(--bd);border-radius:3px}
+.dark .stat{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08)}
+.stat .n{font:700 28px/1 var(--ft);color:var(--nv);letter-spacing:-.02em}
+.dark .stat .n{color:#fff}
+.stat .l{font:500 10px/1 var(--ft);color:var(--tm);margin-top:4px}
+.dark .stat .l{color:rgba(255,255,255,.4)}
+.stat .s{font:300 9px/1 var(--ft);color:var(--tf);margin-top:2px}
+
+/* TABLE */
+.cmp-table{width:100%;border-collapse:collapse;font:400 11px/1.4 var(--ft)}
+.cmp-table th{font:600 8px/1 var(--ft);letter-spacing:.15em;text-transform:uppercase;padding:8px 6px;text-align:left;border-bottom:2px solid var(--bd);color:var(--tm)}
+.dark .cmp-table th{color:rgba(255,255,255,.3);border-color:rgba(255,255,255,.08)}
+.cmp-table th:last-child{color:var(--am)}
+.cmp-table td{padding:7px 6px;border-bottom:1px solid var(--bd);vertical-align:top;font-size:10.5px}
+.dark .cmp-table td{border-color:rgba(255,255,255,.05);color:rgba(255,255,255,.6)}
+.cmp-table td:first-child{font-weight:500;width:130px;color:var(--tm);font-size:10px}
+.dark .cmp-table td:first-child{color:rgba(255,255,255,.3)}
+.cmp-table td:last-child{font-weight:500;color:var(--am)}
+
+/* NUM */
+.num-card{display:flex;gap:10px;padding:10px 14px;border:1px solid var(--bd);border-radius:3px;align-items:flex-start}
+.dark .num-card{border-color:rgba(255,255,255,.08)}
+.num-card .idx{font:700 10px/1 var(--ft);color:var(--ad);min-width:18px;padding-top:2px}
+.num-card h4{font:500 12px/1.3 var(--ft);margin-bottom:2px}
+.dark .num-card h4{color:#fff}
+.num-card .bold{font:600 10px/1 var(--ft);color:var(--ad);margin-bottom:4px}
+.dark .num-card .bold{color:var(--al)}
+.num-card p{font:300 10.5px/1.55 var(--ft);color:var(--tm)}
+.dark .num-card p{color:rgba(255,255,255,.35)}
+
+/* STUDY */
+.study{flex:1;border:1px solid var(--bd);border-radius:3px;padding:14px;display:flex;flex-direction:column}
+.dark .study{border-color:rgba(255,255,255,.08);background:rgba(255,255,255,.02)}
+.study .src{font:600 8px/1 var(--ft);letter-spacing:.12em;text-transform:uppercase;color:var(--ad);margin-bottom:2px}
+.dark .study .src{color:var(--al)}
+.study .region{font:300 8px/1 var(--ft);color:var(--tf);margin-bottom:8px}
+.study h4{font:500 11px/1.3 var(--ft);margin-bottom:10px}
+.dark .study h4{color:rgba(255,255,255,.7)}
+.study .metrics{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:auto}
+.study .m{text-align:center;padding:6px;background:var(--cr);border-radius:2px}
+.dark .study .m{background:rgba(255,255,255,.04)}
+.study .m .v{font:700 16px/1 var(--ft);color:var(--nv)}
+.dark .study .m .v{color:#fff}
+.study .m .k{font:400 8px/1 var(--ft);color:var(--tm);margin-top:2px}
+.dark .study .m .k{color:rgba(255,255,255,.3)}
+.study .note{font:300 9.5px/1.5 var(--ft);color:var(--tm);margin-top:8px}
+.dark .study .note{color:rgba(255,255,255,.3)}
+
+/* SUMMARY CARD */
+.sum{padding:16px;border:1px solid var(--bd);border-radius:3px}
+.dark .sum{border-color:rgba(255,255,255,.08)}
+.sum .num-lbl{font:700 9px/1 var(--ft);letter-spacing:.08em;color:var(--ad);margin-bottom:4px}
+.dark .sum .num-lbl{color:var(--al)}
+.sum h4{font:500 14px/1.3 var(--ft);margin-bottom:4px}
+.dark .sum h4{color:#fff}
+.sum p{font:300 10.5px/1.5 var(--ft);color:var(--tm)}
+.dark .sum p{color:rgba(255,255,255,.35)}
+.sum .pat{font:500 9px/1 var(--ft);letter-spacing:.06em;color:var(--tf);margin-top:6px}
+.dark .sum .pat{color:rgba(255,255,255,.2)}
+
+/* CORE MSG */
+.core-msg{border-top:1px solid rgba(255,255,255,.08);padding-top:14px;margin-top:auto}
+.core-msg .lbl{margin-bottom:6px}
+.core-msg p{font:400 12px/1.65 var(--ft);color:rgba(255,255,255,.55)}
+.core-msg strong{color:var(--al);font-weight:600}
+
+/* CHART (CSS-only temp chart) */
+.chart-area{position:relative;height:100%;border-left:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:8px 0 0 4px}
+.dark .chart-area{border-color:rgba(255,255,255,.1)}
+.chart-zone{position:absolute;left:0;right:0;background:rgba(196,149,106,.06);border-top:1px dashed rgba(196,149,106,.3);border-bottom:1px dashed rgba(196,149,106,.3)}
+.chart-line{position:absolute;bottom:0;left:0;right:0;height:3px;border-radius:2px}
+
+/* PRINT */
+@media print{
+  html,body{background:#fff!important}
+  .ctrl{display:none!important}
+  .page{margin:0!important;box-shadow:none!important;width:297mm!important;height:210mm!important}
+}
+@page{size:297mm 210mm landscape;margin:0}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="inner">
-    <a href="index.html" class="logo">BRITZMEDI</a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Products</a></li>
-        <li><a href="company.html">Company</a></li>
-        <li><a href="partnership.html">Partnership</a></li>
-        <li><a href="partnership.html#contact" class="contact-btn">Contact ↗</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<section class="tech-hero">
-  <div class="container">
-    <div class="tech-eyebrow">TORR RF · Technology Documentation</div>
-    <h1 data-t="heroTitle">Toroidal Multipolar RF.<br>The science behind it.</h1>
-    <p class="lead" data-t="heroLead">Technical evidence briefs and design documentation for TORR RF's proprietary toroidal multipolar radiofrequency technology — the third generation of aesthetic RF. This is the core technology behind both TORR RF (clinical) and NEWCHAE (home-use).</p>
-    <div class="tech-badges">
-      <span class="tech-badge">Toroidal RF</span>
-      <span class="tech-badge">US FDA 510(k)</span>
-      <span class="tech-badge">11 Patents</span>
-      <span class="tech-badge">Smart Combination</span>
-    </div>
-  </div>
-</section>
-
-<div class="lang-bar">
-  <div class="container">
-    <span class="label" data-t="langLabel">Select language for page content</span>
-    <div class="lang-btns">
-      <button class="lang-btn on" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('ko')">KO</button>
-      <button class="lang-btn" onclick="setLang('ja')">JA</button>
-    </div>
+<div class="ctrl">
+  <div class="br"><a href="index.html" style="color:rgba(255,255,255,.35);margin-right:10px;font-size:11px;text-decoration:none">← Home</a> <b>TORR RF</b>&ensp;Technology Evidence Brief</div>
+  <div class="rt">
+    <select id="langSel" onchange="setLang(this.value)">
+      <option value="en">English (US)</option>
+      <option value="en_gb">English (UK)</option>
+      <option value="ko">한국어</option>
+      <option value="ja">日本語</option>
+      <option value="zh">中文</option>
+      <option value="th">ภาษาไทย</option>
+      <option value="vi">Tiếng Việt</option>
+      <option value="ru">Русский</option>
+      <option value="fr">Français</option>
+      <option value="id">Bahasa Indonesia</option>
+      <option value="es">Español (MX)</option>
+      <option value="pt">Português (BR)</option>
+    </select>
+    <button class="pb" onclick="window.print()">PDF ↓</button>
   </div>
 </div>
 
-<section class="downloads-section">
-  <div class="container">
-    <div class="downloads-header">
-      <h2 data-t="dlTitle">Download Technology Documents</h2>
-      <p class="sub" data-t="dlSub">Clinical evidence, technology principles, and design documentation for TORR RF's toroidal multipolar RF platform.</p>
+<!-- P1 COVER -->
+<section class="page dark" style="padding-top:44px">
+  <div class="fr-top"><span>EVIDENCE BRIEF · 2026 · CONFIDENTIAL</span><span></span></div>
+  <div class="inner" style="flex-direction:column;justify-content:center;align-items:flex-start">
+    <div class="lbl">TECHNOLOGY EVIDENCE BRIEF</div>
+    <h1 class="h1" style="color:#fff;margin-bottom:10px">TORR RF.</h1>
+    <p style="font:300 16px/1.7 var(--ft);color:rgba(255,255,255,.45);max-width:560px;margin-bottom:32px" data-t="c_sub">Toroidal multipolar radiofrequency — why a toroidal geometry delivers what conventional RF cannot.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px">
+      <span style="font:500 9px/1 var(--ft);letter-spacing:.08em;padding:5px 14px;border:1px solid rgba(196,149,106,.25);border-radius:20px;color:var(--al)">Patent No. 10-2113199</span>
+      <span style="font:500 9px/1 var(--ft);letter-spacing:.08em;padding:5px 14px;border:1px solid rgba(196,149,106,.25);border-radius:20px;color:var(--al)" data-t="c_b1">15+ peer-reviewed studies</span>
+      <span style="font:500 9px/1 var(--ft);letter-spacing:.08em;padding:5px 14px;border:1px solid rgba(196,149,106,.25);border-radius:20px;color:var(--al)" data-t="c_b2">clinical temperature data</span>
     </div>
-
-    <div class="dl-grid">
-
-      <div class="dl-card">
-        <div class="dl-card-icon pdf-bg">
-          <div class="file-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" width="28" height="28"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <span class="file-ext pdf">PDF</span>
-          </div>
-          <span class="file-size-badge">809 KB</span>
-        </div>
-        <div class="dl-card-body">
-          <div class="dl-card-type" data-t="doc1Type">Technology Evidence Brief</div>
-          <h3 data-t="doc1Title">TORR RF — Technology Evidence Brief 2026</h3>
-          <p class="dl-card-desc" data-t="doc1Desc">Comprehensive technical documentation covering the principles of toroidal multipolar RF, clinical evidence, mechanism of action, Smart Combination dual-mode operation, and comparative analysis with conventional RF technologies.</p>
-          <div class="dl-card-tags">
-            <span class="dl-tag format">PDF</span>
-            <span class="dl-tag" data-t="tagEvidence">Clinical Evidence</span>
-            <span class="dl-tag" data-t="tagMechanism">Mechanism of Action</span>
-            <span class="dl-tag" data-t="tagComparative">Comparative Analysis</span>
-          </div>
-          <a href="torr-docs/TORR_RF_Technology_Evidence_Brief_2026.pdf" download class="dl-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span data-t="btnDownload">Download PDF</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="dl-card">
-        <div class="dl-card-icon pptx-bg">
-          <div class="file-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" width="28" height="28"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <span class="file-ext pptx">PPTX</span>
-          </div>
-          <span class="file-size-badge">22 MB</span>
-        </div>
-        <div class="dl-card-body">
-          <div class="dl-card-type" data-t="doc2Type">Design System</div>
-          <h3 data-t="doc2Title">TORR RF Design System</h3>
-          <p class="dl-card-desc" data-t="doc2Desc">Visual design system and presentation deck for TORR RF. Includes product photography, technical diagrams, toroidal electrode illustrations, handpiece specifications, and clinical result imagery for distributor and marketing use.</p>
-          <div class="dl-card-tags">
-            <span class="dl-tag format">PPTX</span>
-            <span class="dl-tag" data-t="tagDesign">Design Assets</span>
-            <span class="dl-tag" data-t="tagPresentation">Presentation</span>
-            <span class="dl-tag" data-t="tagDistributor">For Distributors</span>
-          </div>
-          <a href="torr-docs/TORR_RF_Design_System.pptx" download class="dl-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span data-t="btnDownloadPptx">Download PPTX</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
+    <div style="font:400 11px/1 var(--ft);color:rgba(255,255,255,.15);letter-spacing:.12em">BRITZMEDI CO., LTD.</div>
+    <div style="font:300 10px/1 var(--ft);color:rgba(255,255,255,.1);margin-top:4px">CONFIDENTIAL · 2026-04</div>
   </div>
+  <div class="fr-bot"><span style="letter-spacing:.15em;font-weight:600;color:rgba(196,149,106,.3)">TORR RF</span><span class="num" style="color:rgba(255,255,255,.1)">01 / 09</span></div>
 </section>
 
-<section class="tech-context">
-  <div class="container">
-    <div class="ctx-grid">
-      <div class="ctx-block">
-        <h3 data-t="ctxTorrTitle">TORR RF — Clinical Device</h3>
-        <p data-t="ctxTorrDesc">The professional-grade toroidal multipolar RF device for clinics. Three handpieces (Face, Body, Eye) with Smart Combination dual-mode operation. US FDA 510(k) cleared.</p>
-        <a href="torr-rf.html" class="ctx-link"><span data-t="ctxTorrLink">View Product Brochure</span> →</a>
+<!-- P2 PROBLEM -->
+<section class="page" style="padding-top:44px">
+  <div class="fr-top"><span>TORR RF · TECHNOLOGY EVIDENCE BRIEF</span><span data-t="p2_label">PROBLEM</span></div>
+  <div class="inner" style="flex-direction:column">
+    <div style="margin-bottom:16px">
+      <div class="lbl" data-t="p2_label">PROBLEM</div>
+      <h2 class="h2" data-t="p2_h">The Problem with Conventional RF</h2>
+      <p class="sub" data-t="p2_sub">Three architectures. Each structurally limited.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;flex:1">
+      <div class="card" style="display:flex;flex-direction:column">
+        <div class="tag" data-t="p2_mono">MONOPOLAR</div>
+        <h4 data-t="p2_mono_h">Deep, but uncontrollable.</h4>
+        <p style="font:300 10px/1 var(--ft);color:var(--tf);margin-bottom:8px">e.g. Thermage</p>
+        <p data-t="p2_mono_d">Current travels from a single electrode through the body to a grounding pad. Energy passes through skin, fat, muscle and organs indiscriminately.</p>
+        <div style="margin-top:auto;padding-top:10px;border-top:1px solid var(--bd)">
+          <div style="font:600 8px/1 var(--ft);letter-spacing:.12em;text-transform:uppercase;color:#c0392b;margin-bottom:4px" data-t="p2_risks">REPORTED RISKS</div>
+          <p style="font:300 10px/1.5 var(--ft);color:var(--tm)" data-t="p2_mono_r">Grounding-pad burns · fat atrophy · significant pain. Complication rate ~10%.</p>
+        </div>
       </div>
-      <div class="ctx-block">
-        <h3 data-t="ctxNewchaeTitle">NEWCHAE — Home-Use Device</h3>
-        <p data-t="ctxNewchaeDesc">TORR RF's toroidal technology adapted for home use. RF, EMS, and ELP in a single device — bringing clinical-grade skin treatment to daily skincare routines.</p>
-        <a href="brochure.html" class="ctx-link"><span data-t="ctxNewchaeLink">View Sales Brochure</span> →</a>
+      <div class="card" style="display:flex;flex-direction:column">
+        <div class="tag" data-t="p2_bi">BIPOLAR</div>
+        <h4 data-t="p2_bi_h">Safe, but locked at the surface.</h4>
+        <p style="font:300 10px/1 var(--ft);color:var(--tf);margin-bottom:8px">e.g. Venus Viva</p>
+        <p data-t="p2_bi_d">Current flows only between two fixed electrodes on the handpiece. No grounding pad — but the electrodes are physically fixed.</p>
+        <div style="margin-top:auto;padding-top:10px;border-top:1px solid var(--bd)">
+          <div style="font:600 8px/1 var(--ft);letter-spacing:.12em;text-transform:uppercase;color:#e67e22;margin-bottom:4px" data-t="p2_limit">STRUCTURAL LIMIT</div>
+          <p style="font:300 10px/1.5 var(--ft);color:var(--tm)" data-t="p2_bi_r">Penetration depth locked at 1–4 mm. Cannot reach subcutaneous fat. Superficial only.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column">
+        <div class="tag" data-t="p2_needle">NEEDLE RF</div>
+        <h4 data-t="p2_needle_h">Deep — at the cost of invasion.</h4>
+        <p style="font:300 10px/1 var(--ft);color:var(--tf);margin-bottom:8px">e.g. Morpheus8 · Potenza</p>
+        <p data-t="p2_needle_d">Micro-needles penetrate the skin to deliver RF at depth. Effective, but invasive — bleeding, downtime, infection risk.</p>
+        <div style="margin-top:auto;padding-top:10px;border-top:1px solid var(--bd)">
+          <div style="font:600 8px/1 var(--ft);letter-spacing:.12em;text-transform:uppercase;color:#c0392b;margin-bottom:4px">FDA SAFETY COMMUNICATION · OCT 2025</div>
+          <p style="font:300 10px/1.5 var(--ft);color:var(--tm)" data-t="p2_needle_r">Burns · scarring · fat loss · facial disfigurement · nerve damage.</p>
+        </div>
       </div>
     </div>
   </div>
+  <div class="fr-bot"><span>TORR RF · BRZ-TORR-6P-1M</span><span class="num">02 / 09</span></div>
 </section>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo">BRITZMEDI</div>
-        <p class="footer-address">
-          BRITZMEDI Co., Ltd.<br>
-          1211-ho, Kranz Techno<br>
-          388 Dunchon-daero, Jungwon-gu<br>
-          Seongnam-si, Gyeonggi-do<br>
-          Republic of Korea
-        </p>
-      </div>
-      <div class="footer-contact">
-        <h4>Global Inquiry</h4>
-        <p>sh.lee@britzmedi.com</p>
-        <p>+82-70-XXXX-XXXX</p>
+<!-- P3 PHYSICS -->
+<section class="page" style="padding-top:44px">
+  <div class="fr-top"><span>TORR RF · TECHNOLOGY EVIDENCE BRIEF</span><span data-t="p3_label">PHYSICS</span></div>
+  <div class="inner">
+    <div style="flex:1.2;display:flex;flex-direction:column">
+      <div class="lbl" data-t="p3_label">PHYSICS</div>
+      <h2 class="h2" data-t="p3_h">The Physics — D/2 Rule</h2>
+      <p class="sub" data-t="p3_sub">Why conventional bipolar depth is locked.</p>
+      <p style="font:300 13px/1.75 var(--ft);color:var(--tm);margin:16px 0" data-t="p3_d1">In bipolar RF, energy penetration depth equals approximately half the distance between electrodes. This is a well-established physical law.</p>
+      <div class="card" style="padding:20px;margin-bottom:16px">
+        <div class="tag" data-t="p3_impl">THE IMPLICATION</div>
+        <p style="font:400 12px/1.7 var(--ft);color:var(--tx)" data-t="p3_d2">To change depth, you must change electrode spacing. In conventional bipolar devices, that spacing is physically fixed — so depth cannot be adjusted. This is not a design flaw; it is a structural limitation of the two-electrode architecture.</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-certs">
-        <span>KC</span><span>·</span><span>CE</span><span>·</span><span>FCC</span><span>·</span><span>ISO 13485</span>
+    <div style="flex:.8;display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <div style="text-align:center;padding:32px 24px;border:1px solid var(--bd);border-radius:4px;background:#fff;width:100%">
+        <div style="font:600 9px/1 var(--ft);letter-spacing:.18em;text-transform:uppercase;color:var(--ad);margin-bottom:16px" data-t="p3_rule">D/2 RULE · BIPOLAR PENETRATION</div>
+        <div style="font:300 42px/1 var(--hd);color:var(--nv);margin-bottom:6px">Depth ≈ ½ · <em>d</em></div>
+        <div style="font:400 11px/1 var(--ft);color:var(--tm);margin-bottom:24px" data-t="p3_elec">(electrodes)</div>
+        <div style="font:500 10px/1 var(--ft);color:var(--ad);letter-spacing:.06em;margin-bottom:12px" data-t="p3_conf">Confirmed across six independent academic sources.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+          <div class="stat"><div class="l">[1] PMC — 2020</div></div>
+          <div class="stat"><div class="l">[2] Med. Lasers — 2013</div></div>
+          <div class="stat"><div class="l">[3] IJDV — 2023</div></div>
+          <div class="stat"><div class="l">[4] Skin Res. Tech. — 2023</div></div>
+          <div class="stat"><div class="l">[5] Health Sci. Rep. — 2026</div></div>
+          <div class="stat"><div class="l">[6] ScienceDirect</div></div>
+        </div>
       </div>
-      <div>© 2026 BRITZMEDI Co., Ltd.</div>
     </div>
   </div>
-</footer>
+  <div class="fr-bot"><span>TORR RF · BRZ-TORR-6P-1M</span><span class="num">03 / 09</span></div>
+</section>
+
+<!-- P4 SOLUTION -->
+<section class="page dark" style="padding-top:44px">
+  <div class="fr-top"><span>TORR RF · TECHNOLOGY EVIDENCE BRIEF</span><span data-t="p4_label">SOLUTION</span></div>
+  <div class="inner" style="flex-direction:column">
+    <div style="margin-bottom:12px">
+      <div class="lbl" data-t="p4_label">SOLUTION</div>
+      <h2 class="h2" data-t="p4_h">The TORR RF Solution</h2>
+      <p class="sub" data-t="p4_sub">Toroidal concentric electrodes — depth, electronically switched.</p>
+    </div>
+    <div style="font:300 11.5px/1.7 var(--ft);color:rgba(255,255,255,.4);margin-bottom:14px;max-width:700px" data-t="p4_d1">A center sphere surrounded by concentric ring electrodes — cross-section RF− | CH1 | CH2 | CH3 | CH2 | CH1 | RF−. The system electronically switches which electrode serves as the common (return) — changing electrode spacing without changing the operating principle. Always bipolar; no grounding pad. <strong style="color:var(--al)">Patent No. 10-2113199.</strong></p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:12px;flex:1">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center">
+          <div class="tag" data-t="p4_eye_t">EYE HANDPIECE</div>
+          <div style="font:700 20px/1 var(--ft);color:#fff;margin:4px 0">Φ 25 mm</div>
+          <p style="font:300 9px/1.4 var(--ft);color:rgba(255,255,255,.3)" data-t="p4_eye_d">center + 1 ring · 1 pair</p>
+        </div>
+        <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center">
+          <div class="tag" data-t="p4_face_t">FACE HANDPIECE</div>
+          <div style="font:700 20px/1 var(--ft);color:#fff;margin:4px 0">Φ 48 mm</div>
+          <p style="font:300 9px/1.4 var(--ft);color:rgba(255,255,255,.3)" data-t="p4_face_d">center + 3 rings · 3 pairs</p>
+        </div>
+        <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center">
+          <div class="tag" data-t="p4_body_t">BODY HANDPIECE</div>
+          <div style="font:700 20px/1 var(--ft);color:#fff;margin:4px 0">Φ 56 mm</div>
+          <p style="font:300 9px/1.4 var(--ft);color:rgba(255,255,255,.3)" data-t="p4_body_d">3 pairs · auto-rotation MOTION</p>
+        </div>
+      </div>
+      <div class="card" style="grid-column:2/4;display:flex;flex-direction:column;justify-content:center;padding:20px">
+        <div class="tag" data-t="p4_deep_t">DEEP MODE · FARTHEST PAIRS</div>
+        <h4 style="color:#fff;font-size:14px;margin-bottom:6px" data-t="p4_deep_h">Outermost ring becomes common.</h4>
+        <p data-t="p4_deep_d">Maximum electrode spacing activates. The electric field forms a deep semicircular arch reaching the subcutaneous layer.</p>
+        <div style="font:700 32px/1 var(--ft);color:var(--am);margin:12px 0">≈ 15 mm</div>
+        <p style="font:500 9px/1 var(--ft);letter-spacing:.06em;color:rgba(255,255,255,.2)" data-t="p4_deep_use">BODY CONTOURING · DEEP TISSUE TIGHTENING · SUBCUTANEOUS REMODELLING</p>
+      </div>
+      <div class="card" style="grid-column:4/6;display:flex;flex-direction:column;justify-content:center;padding:20px">
+        <div class="tag" data-t="p4_low_t">LOW MODE · ADJACENT PAIRS</div>
+        <h4 style="color:#fff;font-size:14px;margin-bottom:6px" data-t="p4_low_h">Neighbours pair, +/− alternating.</h4>
+        <p data-t="p4_low_d">Minimum spacing. Energy concentrates in the upper dermis as multiple shallow arcs.</p>
+        <div style="font:700 32px/1 var(--ft);color:var(--am);margin:12px 0">2–5 mm</div>
+        <p style="font:500 9px/1 var(--ft);letter-spacing:.06em;color:rgba(255,255,255,.2)" data-t="p4_low_use">SKIN TEXTURE · FINE LINES · SUPERFICIAL REJUVENATION</p>
+      </div>
+    </div>
+  </div>
+  <div class="fr-bot"><span style="color:rgba(196,149,106,.25)">TORR RF · BRZ-TORR-6P-1M</span><span class="num">04 / 09</span></div>
+</section>
+
+<!-- P5 RESOLUTION -->
+<section class="page" style="padding-top:44px">
+  <div class="fr-top"><span>TORR RF · TECHNOLOGY EVIDENCE BRIEF</span><span data-t="p5_label">RESOLUTION</span></div>
+  <div class="inner" style="flex-direction:column">
+    <div style="margin-bottom:12px">
+      <div class="lbl" data-t="p5_label">RESOLUTION</div>
+      <h2 class="h2" data-t="p5_h">How TORR RF Solves Each Problem</h2>
+      <p class="sub" data-t="p5_sub">Five problems. Resolved structurally.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;flex:1">
+      <div class="num-card"><div class="idx">01</div><div><h4 data-t="p5_1h">Monopolar Burn Risk</h4><div class="bold" data-t="p5_1b">No grounding pad exists.</div><p data-t="p5_1d">Purely bipolar. Current flows only between concentric electrodes on the handpiece. Pad burn is structurally impossible.</p></div></div>
+      <div class="num-card"><div class="idx">02</div><div><h4 data-t="p5_2h">Bipolar Fixed Depth</h4><div class="bold" data-t="p5_2b">Electrode spacing is electronic.</div><p data-t="p5_2d">Common-electrode position switches in real time, changing spacing without changing principle. One handpiece covers superficial dermis to subcutaneous fat.</p></div></div>
+      <div class="num-card"><div class="idx">03</div><div><h4 data-t="p5_3h">Needle RF · FDA Warning</h4><div class="bold" data-t="p5_3b">Completely non-invasive.</div><p data-t="p5_3d">No needles, no skin penetration. Zero bleeding, zero infection risk, zero downtime. None of the FDA's 2025 adverse events can structurally occur.</p></div></div>
+      <div class="num-card"><div class="idx">04</div><div><h4 data-t="p5_4h">Hotspot Burns</h4><div class="bold" data-t="p5_4b">Distributed energy + NTC sensing.</div><p data-t="p5_4d">Multiple electrode pairs distribute energy across a wide area. Real-time NTC sensors auto-cut RF on threshold. Patent No. 10-2018-0065876.</p></div></div>
+      <div class="num-card"><div class="idx">05</div><div><h4 data-t="p5_5h">Multiple Devices Needed</h4><div class="bold" data-t="p5_5b">One platform · three handpieces · zero consumables.</div><p data-t="p5_5d">Eye Φ25 mm · Face Φ48 mm · Body Φ56 mm cover the entire body from one platform. No tips, no cartridges, no replacement parts.</p></div></div>
+    </div>
+  </div>
+  <div class="fr-bot"><span>TORR RF · BRZ-TORR-6P-1M</span><span class="num">05 / 09</span></div>
+</section>
+
+<!-- P6 CLINICAL EVIDENCE -->
+<section class="page dark" style="padding-top:44px">
+  <div class="fr-top"><span>TORR RF · TECHNOLOGY EVIDENCE BRIEF</span><span data-t="p6_label">CLINICAL EVIDENCE</span></div>
+  <div class="inner">
+    <div style="flex:1;display:flex;flex-direction:column">
+      <div class="lbl" data-t="p6_label">CLINICAL EVIDENCE</div>
+      <h2 class="h2" data-t="p6_h">Clinical Temperature Evidence</h2>
+      <p class="sub" data-t="p6_sub">40–45 °C, sustained. Measured, not modelled.</p>
+      <div style="margin:14px 0;font:500 9px/1 var(--ft);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25)" data-t="p6_test">SKIN TEMPERATURE TEST · JULY 2022</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
+        <div class="stat"><div class="n">9</div><div class="l" data-t="p6_subj">SUBJECTS</div></div>
+        <div class="stat"><div class="n">3</div><div class="l" data-t="p6_hp">HANDPIECE TYPES</div></div>
+        <div class="stat"><div class="n">42.7°C</div><div class="l" data-t="p6_10m">10-MIN AVERAGE</div></div>
+        <div class="stat"><div class="n">43.1°C</div><div class="l" data-t="p6_15m">15-MIN AVERAGE</div></div>
+      </div>
+      <div class="card" style="padding:14px">
+        <p style="font:400 11px/1.6 var(--ft);color:rgba(255,255,255,.5)" data-t="p6_all">All handpieces maintained the 40–45 °C therapeutic range across all sites. Zero overheating.</p>
+        <div style="font:300 10px/1 var(--ft);color:rgba(255,255,255,.2);margin-top:6px">ARM · ABDOMEN · THIGH · FLIR THERMAL IMAGING</div>
+      </div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;padding-left:12px">
+      <div style="font:500 9px/1 var(--ft);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:8px" data-t="p6_why">WHY 40–45 °C MATTERS</div>
+      <div class="card" style="flex:1;display:flex;flex-direction:column;padding:16px">
+        <p style="font:400 12px/1.7 var(--ft);color:rgba(255,255,255,.5);margin-bottom:14px" data-t="p6_why_d">Sustained therapeutic heat triggers neocollagenesis, elastogenesis and angiogenesis. Peer-reviewed research confirms that maintaining skin temperature in the 40–45 °C window for ten minutes activates the collagen remodelling cascade.</p>
+        <div style="display:flex;align-items:center;gap:16px;margin:auto 0;padding:14px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)">
+          <div style="text-align:center">
+            <div style="font:700 28px/1 var(--ft);color:var(--am)">9.0%</div>
+            <div style="font:300 10px/1 var(--ft);color:rgba(255,255,255,.3);margin-top:2px" data-t="p6_before">before</div>
+          </div>
+          <div style="font:400 20px/1 var(--ft);color:rgba(255,255,255,.15)">→</div>
+          <div style="text-align:center">
+            <div style="font:700 28px/1 var(--ft);color:var(--am)">25.9%</div>
+            <div style="font:300 10px/1 var(--ft);color:rgba(255,255,255,.3);margin-top:2px" data-t="p6_after">after</div>
+          </div>
+          <div style="font:300 12px/1.4 var(--ft);color:rgba(255,255,255,.35);padding-left:12px;border-left:1px solid rgba(255,255,255,.06)">
+            <strong style="color:#fff">≈ 3× </strong><span data-t="p6_collagen">collagen content</span><br>
+            <span style="font-size:10px;color:rgba(255,255,255,.2)">p = 0.018 · 2015 veterinary study</span>
+          </div>
+        </div>
+        <p style="font:300 10.5px/1.5 var(--ft);color:rgba(255,255,255,.3);margin-top:auto" data-t="p6_note">TORR RF maintains the same therapeutic window, measured in vivo across nine subjects.</p>
+      </div>
+    </div>
+  </div>
+  <div class="fr-bot"><span style="color:rgba(196,149,106,.25)">TORR RF · BRZ-TORR-6P-1M</span><span class="num">06 / 09</span></div>
+</section>
+
+<!-- P7 PUBLISHED EVIDENCE -->
+<section class="page dark" style="padding-top:44px">
+  <div class="fr-top"><span>TORR RF · TECHNOLOGY EVIDENCE BRIEF</span><span data-t="p7_label">PUBLISHED EVIDENCE</span></div>
+  <div class="inner" style="flex-direction:column">
+    <div style="margin-bottom:12px">
+      <div class="lbl" data-t="p7_label">PUBLISHED EVIDENCE</div>
+      <h2 class="h2" data-t="p7_h">Concentric Multipolar RF — Published Evidence</h2>
+      <p class="sub" data-t="p7_sub">Three studies. One conclusion.</p>
+    </div>
+    <div style="display:flex;gap:14px;flex:1">
+      <div class="study">
+        <div class="src">JCAD · 2019</div>
+        <div class="region">JAPAN</div>
+        <h4 data-t="p7_s1_h">Concentric-electrode multisource phase-controlled RF — patient experience.</h4>
+        <div class="metrics">
+          <div class="m"><div class="v">25</div><div class="k" data-t="p7_patients">PATIENTS</div></div>
+          <div class="m"><div class="v">96%</div><div class="k" data-t="p7_sat">SATISFACTION</div></div>
+          <div class="m" style="grid-column:1/3"><div class="v">100%</div><div class="k" data-t="p7_comfort">COMFORTABLE</div></div>
+        </div>
+        <p class="note" data-t="p7_s1_n">Objective volume reduction confirmed by 3D imaging. Highest comfort rating across the cohort.</p>
+      </div>
+      <div class="study">
+        <div class="src">PMC · 2017</div>
+        <div class="region">MULTICENTER</div>
+        <h4 data-t="p7_s2_h">International multicenter trial — body contouring across 5–8 sessions.</h4>
+        <div class="metrics">
+          <div class="m"><div class="v">96%</div><div class="k" data-t="p7_improved">IMPROVED</div></div>
+          <div class="m"><div class="v">−2.9cm</div><div class="k" data-t="p7_abd">ABDOMINAL Δ</div></div>
+          <div class="m" style="grid-column:1/3"><div class="v">−1.9cm</div><div class="k" data-t="p7_12mo">12-MO RETAINED</div></div>
+        </div>
+        <p class="note" data-t="p7_s2_n">Confocal microscopy showed increased epidermal thickness and youthful collagen patterns at follow-up.</p>
+      </div>
+      <div class="study">
+        <div class="src">PMC · 2025</div>
+        <div class="region">MECHANISM</div>
+        <h4 data-t="p7_s3_h">Sequential dual-mode RF — enhanced remodelling vs. single-mode.</h4>
+        <div class="metrics">
+          <div class="m"><div class="v">2</div><div class="k" data-t="p7_modes">MODES COMPARED</div></div>
+          <div class="m"><div class="v">↑</div><div class="k" data-t="p7_coll">COLLAGEN Δ</div></div>
+          <div class="m" style="grid-column:1/3"><div class="v">↑</div><div class="k" data-t="p7_elast">ELASTIN Δ</div></div>
+        </div>
+        <p class="note" data-t="p7_s3_n">Validates TORR RF's dual-depth (Deep + Low) approach delivered from a single handpiece.</p>
+      </div>
+    </div>
+  </div>
+  <div class="fr-bot"><span style="color:rgba(196,149,106,.25)">TORR RF · BRZ-TORR-6P-1M</span><span class="num">07 / 09</span></div>
+</section>
+
+<!-- P8 COMPARISON -->
+<section class="page dark" style="padding-top:44px">
+  <div class="fr-top"><span>TORR RF · TECHNOLOGY EVIDENCE BRIEF</span><span data-t="p8_label">COMPARISON</span></div>
+  <div class="inner" style="flex-direction:column">
+    <div style="margin-bottom:14px">
+      <div class="lbl" data-t="p8_label">COMPARISON</div>
+      <h2 class="h2" data-t="p8_h">Competitive Comparison</h2>
+      <p class="sub" data-t="p8_sub">Seven criteria. Side-by-side.</p>
+    </div>
+    <div style="flex:1;display:flex;align-items:center">
+      <table class="cmp-table" style="width:100%">
+        <thead><tr>
+          <th data-t="p8_crit">CRITERION</th>
+          <th data-t="p2_mono">MONOPOLAR</th>
+          <th data-t="p2_bi">BIPOLAR</th>
+          <th data-t="p2_needle">NEEDLE RF</th>
+          <th>TORR RF</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-t="p8_depth">Penetration Depth</td><td data-t="p8_d_mono">Fixed deep</td><td data-t="p8_d_bi">Fixed shallow</td><td data-t="p8_d_needle">Needle-dependent</td><td data-t="p8_d_torr">Variable · electronic switching</td></tr>
+          <tr><td data-t="p8_pad">Grounding Pad</td><td data-t="p8_pad_mono">Required</td><td data-t="p8_pad_bi">Not needed</td><td data-t="p8_pad_needle">Not needed</td><td data-t="p8_pad_torr">Not needed</td></tr>
+          <tr><td data-t="p8_inv">Invasiveness</td><td data-t="p8_inv_mono">Non-invasive</td><td data-t="p8_inv_bi">Non-invasive</td><td data-t="p8_inv_needle">Invasive · needles</td><td data-t="p8_inv_torr">Non-invasive</td></tr>
+          <tr><td data-t="p8_pain">Pain Level</td><td data-t="p8_pain_mono">High</td><td data-t="p8_pain_bi">Low–medium</td><td data-t="p8_pain_needle">Medium–high</td><td data-t="p8_pain_torr">Virtually painless</td></tr>
+          <tr><td data-t="p8_down">Downtime</td><td data-t="p8_down_mono">Moderate</td><td data-t="p8_down_bi">Minimal</td><td data-t="p8_down_needle">Redness · crusting</td><td data-t="p8_down_torr">Zero</td></tr>
+          <tr><td data-t="p8_fda">FDA Safety Warning</td><td data-t="p8_fda_mono">Fat atrophy reported</td><td data-t="p8_fda_bi">None</td><td data-t="p8_fda_needle">Oct 2025 formal warning</td><td data-t="p8_fda_torr">None</td></tr>
+          <tr><td data-t="p8_cons">Consumables</td><td data-t="p8_cons_mono">Tip replacement</td><td data-t="p8_cons_bi">Medium</td><td data-t="p8_cons_needle">Cartridge replacement</td><td data-t="p8_cons_torr">Zero</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="fr-bot"><span style="color:rgba(196,149,106,.25)">TORR RF · BRZ-TORR-6P-1M</span><span class="num">08 / 09</span></div>
+</section>
+
+<!-- P9 SUMMARY -->
+<section class="page dark" style="padding-top:44px">
+  <div class="fr-top"><span>TORR RF · TECHNOLOGY EVIDENCE BRIEF</span><span data-t="p9_label">SUMMARY</span></div>
+  <div class="inner" style="flex-direction:column">
+    <div style="margin-bottom:12px">
+      <div class="lbl" data-t="p9_label">SUMMARY</div>
+      <h2 class="h2" data-t="p9_h">Four dimensions of superiority.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+      <div class="sum"><div class="num-lbl" data-t="p9_1l">01 · EFFICACY</div><h4 data-t="p9_1h">Variable depth from one handpiece.</h4><p data-t="p9_1d">Superficial dermis to subcutaneous fat — selectable in real time. Built on the D/2 Rule and the toroidal geometry.</p><div class="pat">PATENT NO. 10-2113199</div></div>
+      <div class="sum"><div class="num-lbl" data-t="p9_2l">02 · SAFETY</div><h4 data-t="p9_2h">Non-invasive · sensor-guarded.</h4><p data-t="p9_2d">Bipolar architecture eliminates pad burn. Real-time NTC temperature sensors prevent hotspots. Zero open FDA safety concerns.</p><div class="pat">PATENT NO. 10-2018-0065876</div></div>
+      <div class="sum"><div class="num-lbl" data-t="p9_3l">03 · USABILITY</div><h4 data-t="p9_3h">Three handpieces · zero pads · zero needles.</h4><p data-t="p9_3d">Eye Φ25 mm reaches periorbital areas most RF cannot safely treat. Face Φ48 mm and Body Φ56 mm cover the rest.</p><div class="pat">EYE · FACE · BODY</div></div>
+      <div class="sum"><div class="num-lbl" data-t="p9_4l">04 · ECONOMY</div><h4 data-t="p9_4h">Zero consumables · pure-margin sessions.</h4><p data-t="p9_4d">Every procedure is revenue, not cost. Accelerated ROI. Pricing flexibility while maintaining superior margins.</p><div class="pat">NO TIPS · NO CARTRIDGES · NO REPLACEMENTS</div></div>
+    </div>
+    <div class="core-msg">
+      <div class="lbl">CORE MESSAGE</div>
+      <p data-t="p9_core">TORR RF is the only <strong>toroidal multipolar RF</strong> system that electronically controls penetration depth on the D/2 principle — delivering <strong>monopolar-level depth</strong> with <strong>bipolar-level safety</strong>, in a non-invasive, zero-consumable platform.</p>
+    </div>
+  </div>
+  <div class="fr-bot"><span style="color:rgba(196,149,106,.25)">TORR RF · BRZ-TORR-6P-1M</span><span class="num">09 / 09</span></div>
+</section>
 
 <script>
-const D = {
-  en: {
-    heroTitle: 'Toroidal Multipolar RF.<br>The science behind it.',
-    heroLead: "Technical evidence briefs and design documentation for TORR RF's proprietary toroidal multipolar radiofrequency technology — the third generation of aesthetic RF. This is the core technology behind both TORR RF (clinical) and NEWCHAE (home-use).",
-    langLabel: 'Select language for page content',
-    dlTitle: 'Download Technology Documents',
-    dlSub: "Clinical evidence, technology principles, and design documentation for TORR RF's toroidal multipolar RF platform.",
-    doc1Type: 'Technology Evidence Brief',
-    doc1Title: 'TORR RF — Technology Evidence Brief 2026',
-    doc1Desc: 'Comprehensive technical documentation covering the principles of toroidal multipolar RF, clinical evidence, mechanism of action, Smart Combination dual-mode operation, and comparative analysis with conventional RF technologies.',
-    doc2Type: 'Design System',
-    doc2Title: 'TORR RF Design System',
-    doc2Desc: 'Visual design system and presentation deck for TORR RF. Includes product photography, technical diagrams, toroidal electrode illustrations, handpiece specifications, and clinical result imagery for distributor and marketing use.',
-    tagEvidence: 'Clinical Evidence',
-    tagMechanism: 'Mechanism of Action',
-    tagComparative: 'Comparative Analysis',
-    tagDesign: 'Design Assets',
-    tagPresentation: 'Presentation',
-    tagDistributor: 'For Distributors',
-    btnDownload: 'Download PDF',
-    btnDownloadPptx: 'Download PPTX',
-    ctxTorrTitle: 'TORR RF — Clinical Device',
-    ctxTorrDesc: 'The professional-grade toroidal multipolar RF device for clinics. Three handpieces (Face, Body, Eye) with Smart Combination dual-mode operation. US FDA 510(k) cleared.',
-    ctxTorrLink: 'View Product Brochure',
-    ctxNewchaeTitle: 'NEWCHAE — Home-Use Device',
-    ctxNewchaeDesc: "TORR RF's toroidal technology adapted for home use. RF, EMS, and ELP in a single device — bringing clinical-grade skin treatment to daily skincare routines.",
-    ctxNewchaeLink: 'View Sales Brochure'
-  },
-  ko: {
-    heroTitle: '토로이달 멀티폴라 RF.<br>기술의 근거.',
-    heroLead: 'TORR RF의 독자 개발 토로이달 멀티폴라 고주파 기술에 대한 기술 근거 자료 및 디자인 문서입니다. 제3세대 미용 RF의 핵심 기술로, TORR RF(의료용)와 NEWCHAE(홈케어) 모두에 적용된 원천 기술입니다.',
-    langLabel: '페이지 언어 선택',
-    dlTitle: '기술 자료 다운로드',
-    dlSub: 'TORR RF 토로이달 멀티폴라 RF 플랫폼의 임상 근거, 기술 원리, 디자인 문서를 다운로드하세요.',
-    doc1Type: '기술 근거 자료',
-    doc1Title: 'TORR RF — 기술 근거 자료 2026',
-    doc1Desc: '토로이달 멀티폴라 RF의 원리, 임상 근거, 작용 기전, 스마트 컴비네이션 이중 모드 작동, 기존 RF 기술 대비 비교 분석을 포함한 종합 기술 문서입니다.',
-    doc2Type: '디자인 시스템',
-    doc2Title: 'TORR RF 디자인 시스템',
-    doc2Desc: 'TORR RF의 비주얼 디자인 시스템 및 프레젠테이션 덱. 제품 사진, 기술 다이어그램, 토로이달 전극 일러스트, 핸드피스 스펙, 임상 결과 이미지를 포함하며 디스트리뷰터 및 마케팅 용도로 활용 가능합니다.',
-    tagEvidence: '임상 근거',
-    tagMechanism: '작용 기전',
-    tagComparative: '비교 분석',
-    tagDesign: '디자인 자산',
-    tagPresentation: '프레젠테이션',
-    tagDistributor: '디스트리뷰터용',
-    btnDownload: 'PDF 다운로드',
-    btnDownloadPptx: 'PPTX 다운로드',
-    ctxTorrTitle: 'TORR RF — 의료용 기기',
-    ctxTorrDesc: '클리닉 전용 토로이달 멀티폴라 RF 의료기기. 3종 핸드피스(페이스, 바디, 아이)와 스마트 컴비네이션 이중 모드. US FDA 510(k) 인허가.',
-    ctxTorrLink: '제품 브로슈어 보기',
-    ctxNewchaeTitle: 'NEWCHAE — 홈케어 디바이스',
-    ctxNewchaeDesc: 'TORR RF의 토로이달 기술을 홈케어로 적용. RF, EMS, ELP 3가지 모드를 하나의 디바이스에 — 클리닉 수준의 피부 관리를 일상으로.',
-    ctxNewchaeLink: '영업 브로슈어 보기'
-  },
-  ja: {
-    heroTitle: 'トロイダルマルチポーラRF。<br>その科学的根拠。',
-    heroLead: 'TORR RFの独自トロイダルマルチポーラ高周波技術に関する技術エビデンスとデザインドキュメント。第3世代美容RFのコア技術であり、TORR RF（医療用）とNEWCHAE（ホームユース）両方に搭載されています。',
-    langLabel: 'ページ言語を選択',
-    dlTitle: '技術資料ダウンロード',
-    dlSub: 'TORR RFトロイダルマルチポーラRFプラットフォームの臨床エビデンス、技術原理、デザインドキュメントをダウンロード。',
-    doc1Type: '技術エビデンス',
-    doc1Title: 'TORR RF — 技術エビデンスブリーフ 2026',
-    doc1Desc: 'トロイダルマルチポーラRFの原理、臨床エビデンス、作用機序、スマートコンビネーションデュアルモード、従来RF技術との比較分析を網羅した包括的技術ドキュメント。',
-    doc2Type: 'デザインシステム',
-    doc2Title: 'TORR RF デザインシステム',
-    doc2Desc: 'TORR RFのビジュアルデザインシステムおよびプレゼンテーションデッキ。製品写真、技術ダイアグラム、トロイダル電極イラスト、ハンドピース仕様、臨床結果画像を収録。ディストリビューターおよびマーケティング用。',
-    tagEvidence: '臨床エビデンス',
-    tagMechanism: '作用機序',
-    tagComparative: '比較分析',
-    tagDesign: 'デザイン素材',
-    tagPresentation: 'プレゼンテーション',
-    tagDistributor: 'ディストリビューター用',
-    btnDownload: 'PDFダウンロード',
-    btnDownloadPptx: 'PPTXダウンロード',
-    ctxTorrTitle: 'TORR RF — 医療用デバイス',
-    ctxTorrDesc: 'クリニック向けトロイダルマルチポーラRF医療機器。3種ハンドピース（フェイス・ボディ・アイ）とスマートコンビネーション。US FDA 510(k)認可取得。',
-    ctxTorrLink: '製品ブロシュアを見る',
-    ctxNewchaeTitle: 'NEWCHAE — ホームユースデバイス',
-    ctxNewchaeDesc: 'TORR RFのトロイダル技術をホームケアに応用。RF・EMS・ELPの3モードを1台に — クリニック水準のスキンケアを日常に。',
-    ctxNewchaeLink: 'セールスブロシュアを見る'
-  }
+const HL={en:'en',en_gb:'en',ko:'ko',ja:'ja',zh:'zh',th:'th',vi:'vi',ru:'ru',fr:'fr',id:'id',es:'es',pt:'pt'};
+const D={
+en:{c_sub:"Toroidal multipolar radiofrequency — why a toroidal geometry delivers what conventional RF cannot.",c_b1:"15+ peer-reviewed studies",c_b2:"clinical temperature data",p2_label:"PROBLEM",p2_h:"The Problem with Conventional RF",p2_sub:"Three architectures. Each structurally limited.",p2_mono:"MONOPOLAR",p2_mono_h:"Deep, but uncontrollable.",p2_mono_d:"Current travels from a single electrode through the body to a grounding pad. Energy passes through skin, fat, muscle and organs indiscriminately.",p2_risks:"REPORTED RISKS",p2_mono_r:"Grounding-pad burns · fat atrophy · significant pain. Complication rate ~10%.",p2_bi:"BIPOLAR",p2_bi_h:"Safe, but locked at the surface.",p2_bi_d:"Current flows only between two fixed electrodes on the handpiece. No grounding pad — but the electrodes are physically fixed.",p2_limit:"STRUCTURAL LIMIT",p2_bi_r:"Penetration depth locked at 1–4 mm. Cannot reach subcutaneous fat. Superficial only.",p2_needle:"NEEDLE RF",p2_needle_h:"Deep — at the cost of invasion.",p2_needle_d:"Micro-needles penetrate the skin to deliver RF at depth. Effective, but invasive — bleeding, downtime, infection risk.",p2_needle_r:"Burns · scarring · fat loss · facial disfigurement · nerve damage.",p3_label:"PHYSICS",p3_h:"The Physics — D/2 Rule",p3_sub:"Why conventional bipolar depth is locked.",p3_d1:"In bipolar RF, energy penetration depth equals approximately half the distance between electrodes. This is a well-established physical law.",p3_impl:"THE IMPLICATION",p3_d2:"To change depth, you must change electrode spacing. In conventional bipolar devices, that spacing is physically fixed — so depth cannot be adjusted. This is not a design flaw; it is a structural limitation of the two-electrode architecture.",p3_rule:"D/2 RULE · BIPOLAR PENETRATION",p3_elec:"(electrodes)",p3_conf:"Confirmed across six independent academic sources.",p4_label:"SOLUTION",p4_h:"The TORR RF Solution",p4_sub:"Toroidal concentric electrodes — depth, electronically switched.",p4_d1:'A center sphere surrounded by concentric ring electrodes — cross-section RF− | CH1 | CH2 | CH3 | CH2 | CH1 | RF−. The system electronically switches which electrode serves as the common (return) — changing electrode spacing without changing the operating principle. Always bipolar; no grounding pad. <strong style="color:var(--al)">Patent No. 10-2113199.</strong>',p4_eye_t:"EYE HANDPIECE",p4_eye_d:"center + 1 ring · 1 pair",p4_face_t:"FACE HANDPIECE",p4_face_d:"center + 3 rings · 3 pairs",p4_body_t:"BODY HANDPIECE",p4_body_d:"3 pairs · auto-rotation MOTION",p4_deep_t:"DEEP MODE · FARTHEST PAIRS",p4_deep_h:"Outermost ring becomes common.",p4_deep_d:"Maximum electrode spacing activates. The electric field forms a deep semicircular arch reaching the subcutaneous layer.",p4_deep_use:"BODY CONTOURING · DEEP TISSUE TIGHTENING · SUBCUTANEOUS REMODELLING",p4_low_t:"LOW MODE · ADJACENT PAIRS",p4_low_h:"Neighbours pair, +/− alternating.",p4_low_d:"Minimum spacing. Energy concentrates in the upper dermis as multiple shallow arcs.",p4_low_use:"SKIN TEXTURE · FINE LINES · SUPERFICIAL REJUVENATION",p5_label:"RESOLUTION",p5_h:"How TORR RF Solves Each Problem",p5_sub:"Five problems. Resolved structurally.",p5_1h:"Monopolar Burn Risk",p5_1b:"No grounding pad exists.",p5_1d:"Purely bipolar. Current flows only between concentric electrodes on the handpiece. Pad burn is structurally impossible.",p5_2h:"Bipolar Fixed Depth",p5_2b:"Electrode spacing is electronic.",p5_2d:"Common-electrode position switches in real time, changing spacing without changing principle. One handpiece covers superficial dermis to subcutaneous fat.",p5_3h:"Needle RF · FDA Warning",p5_3b:"Completely non-invasive.",p5_3d:"No needles, no skin penetration. Zero bleeding, zero infection risk, zero downtime. None of the FDA's 2025 adverse events can structurally occur.",p5_4h:"Hotspot Burns",p5_4b:"Distributed energy + NTC sensing.",p5_4d:"Multiple electrode pairs distribute energy across a wide area. Real-time NTC sensors auto-cut RF on threshold. Patent No. 10-2018-0065876.",p5_5h:"Multiple Devices Needed",p5_5b:"One platform · three handpieces · zero consumables.",p5_5d:"Eye Φ25 mm · Face Φ48 mm · Body Φ56 mm cover the entire body from one platform. No tips, no cartridges, no replacement parts.",p6_label:"CLINICAL EVIDENCE",p6_h:"Clinical Temperature Evidence",p6_sub:"40–45 °C, sustained. Measured, not modelled.",p6_test:"SKIN TEMPERATURE TEST · JULY 2022",p6_subj:"SUBJECTS",p6_hp:"HANDPIECE TYPES",p6_10m:"10-MIN AVERAGE",p6_15m:"15-MIN AVERAGE",p6_all:"All handpieces maintained the 40–45 °C therapeutic range across all sites. Zero overheating.",p6_why:"WHY 40–45 °C MATTERS",p6_why_d:"Sustained therapeutic heat triggers neocollagenesis, elastogenesis and angiogenesis. Peer-reviewed research confirms that maintaining skin temperature in the 40–45 °C window for ten minutes activates the collagen remodelling cascade.",p6_before:"before",p6_after:"after",p6_collagen:"collagen content",p6_note:"TORR RF maintains the same therapeutic window, measured in vivo across nine subjects.",p7_label:"PUBLISHED EVIDENCE",p7_h:"Concentric Multipolar RF — Published Evidence",p7_sub:"Three studies. One conclusion.",p7_s1_h:"Concentric-electrode multisource phase-controlled RF — patient experience.",p7_patients:"PATIENTS",p7_sat:"SATISFACTION",p7_comfort:"COMFORTABLE",p7_s1_n:"Objective volume reduction confirmed by 3D imaging. Highest comfort rating across the cohort.",p7_s2_h:"International multicenter trial — body contouring across 5–8 sessions.",p7_improved:"IMPROVED",p7_abd:"ABDOMINAL Δ",p7_12mo:"12-MO RETAINED",p7_s2_n:"Confocal microscopy showed increased epidermal thickness and youthful collagen patterns at follow-up.",p7_s3_h:"Sequential dual-mode RF — enhanced remodelling vs. single-mode.",p7_modes:"MODES COMPARED",p7_coll:"COLLAGEN Δ",p7_elast:"ELASTIN Δ",p7_s3_n:"Validates TORR RF's dual-depth (Deep + Low) approach delivered from a single handpiece.",p8_label:"COMPARISON",p8_h:"Competitive Comparison",p8_sub:"Seven criteria. Side-by-side.",p8_crit:"CRITERION",p8_depth:"Penetration Depth",p8_d_mono:"Fixed deep",p8_d_bi:"Fixed shallow",p8_d_needle:"Needle-dependent",p8_d_torr:"Variable · electronic switching",p8_pad:"Grounding Pad",p8_pad_mono:"Required",p8_pad_bi:"Not needed",p8_pad_needle:"Not needed",p8_pad_torr:"Not needed",p8_inv:"Invasiveness",p8_inv_mono:"Non-invasive",p8_inv_bi:"Non-invasive",p8_inv_needle:"Invasive · needles",p8_inv_torr:"Non-invasive",p8_pain:"Pain Level",p8_pain_mono:"High",p8_pain_bi:"Low–medium",p8_pain_needle:"Medium–high",p8_pain_torr:"Virtually painless",p8_down:"Downtime",p8_down_mono:"Moderate",p8_down_bi:"Minimal",p8_down_needle:"Redness · crusting",p8_down_torr:"Zero",p8_fda:"FDA Safety Warning",p8_fda_mono:"Fat atrophy reported",p8_fda_bi:"None",p8_fda_needle:"Oct 2025 formal warning",p8_fda_torr:"None",p8_cons:"Consumables",p8_cons_mono:"Tip replacement",p8_cons_bi:"Medium",p8_cons_needle:"Cartridge replacement",p8_cons_torr:"Zero",p9_label:"SUMMARY",p9_h:"Four dimensions of superiority.",p9_1l:"01 · EFFICACY",p9_1h:"Variable depth from one handpiece.",p9_1d:"Superficial dermis to subcutaneous fat — selectable in real time. Built on the D/2 Rule and the toroidal geometry.",p9_2l:"02 · SAFETY",p9_2h:"Non-invasive · sensor-guarded.",p9_2d:"Bipolar architecture eliminates pad burn. Real-time NTC temperature sensors prevent hotspots. Zero open FDA safety concerns.",p9_3l:"03 · USABILITY",p9_3h:"Three handpieces · zero pads · zero needles.",p9_3d:"Eye Φ25 mm reaches periorbital areas most RF cannot safely treat. Face Φ48 mm and Body Φ56 mm cover the rest.",p9_4l:"04 · ECONOMY",p9_4h:"Zero consumables · pure-margin sessions.",p9_4d:"Every procedure is revenue, not cost. Accelerated ROI. Pricing flexibility while maintaining superior margins.",p9_core:'TORR RF is the only <strong>toroidal multipolar RF</strong> system that electronically controls penetration depth on the D/2 principle — delivering <strong>monopolar-level depth</strong> with <strong>bipolar-level safety</strong>, in a non-invasive, zero-consumable platform.'},
+ko:{c_sub:"토로이달 멀티폴라 고주파 — 토로이달 구조가 기존 RF로는 불가능한 것을 가능하게 하는 이유.",c_b1:"15편 이상 학술 논문",c_b2:"임상 온도 데이터",p2_label:"문제점",p2_h:"기존 RF의 구조적 한계",p2_sub:"세 가지 아키텍처. 각각 구조적 한계.",p2_mono:"모노폴라",p2_mono_h:"깊지만, 제어 불가.",p2_mono_d:"단일 전극에서 접지패드까지 전류가 신체를 관통합니다. 에너지가 피부, 지방, 근육, 장기를 무차별 통과합니다.",p2_risks:"보고된 위험",p2_mono_r:"접지패드 화상 · 지방 위축 · 상당한 통증. 합병증률 약 10%.",p2_bi:"바이폴라",p2_bi_h:"안전하지만, 표면에 고정.",p2_bi_d:"두 고정 전극 사이에서만 전류가 흐릅니다. 접지패드 불필요 — 그러나 전극 간격이 물리적으로 고정.",p2_limit:"구조적 한계",p2_bi_r:"침투 깊이 1–4mm 고정. 피하지방 도달 불가. 표면 한정.",p2_needle:"니들 RF",p2_needle_h:"깊지만, 침습의 대가.",p2_needle_d:"마이크로 니들이 피부를 관통하여 RF를 전달합니다. 효과적이지만 침습적 — 출혈, 다운타임, 감염 위험.",p2_needle_r:"화상 · 흉터 · 지방 소실 · 안면 변형 · 신경 손상.",p3_label:"물리학",p3_h:"물리학 — D/2 법칙",p3_sub:"기존 바이폴라의 깊이가 고정되는 이유.",p3_d1:"바이폴라 RF에서 에너지 침투 깊이는 전극 간 거리의 약 절반입니다. 이것은 확립된 물리 법칙입니다.",p3_impl:"시사점",p3_d2:"깊이를 변경하려면 전극 간격을 변경해야 합니다. 기존 바이폴라 기기에서는 간격이 물리적으로 고정되어 있어 깊이 조절이 불가능합니다. 이것은 설계 결함이 아니라 2전극 구조의 구조적 한계입니다.",p3_rule:"D/2 법칙 · 바이폴라 침투",p3_elec:"(전극)",p3_conf:"6개 독립 학술 출처에서 확인.",p4_label:"솔루션",p4_h:"TORR RF 솔루션",p4_sub:"토로이달 동심원 전극 — 깊이, 전자식 전환.",p4_d1:'중심 구체를 동심원 링 전극이 둘러싼 구조 — 단면 RF− | CH1 | CH2 | CH3 | CH2 | CH1 | RF−. 어떤 전극이 공통(리턴) 역할을 할지 전자적으로 전환하여 작동 원리 변경 없이 전극 간격을 변경합니다. 항상 바이폴라; 접지패드 없음. <strong style="color:var(--al)">특허 제10-2113199호.</strong>',p4_eye_t:"아이 핸드피스",p4_eye_d:"센터 + 1링 · 1페어",p4_face_t:"페이스 핸드피스",p4_face_d:"센터 + 3링 · 3페어",p4_body_t:"바디 핸드피스",p4_body_d:"3페어 · 자동회전 모션",p4_deep_t:"딥 모드 · 최외곽 페어",p4_deep_h:"최외곽 링이 공통 전극으로 작동.",p4_deep_d:"최대 전극 간격 활성화. 전기장이 깊은 반원형 아치를 형성하여 피하층까지 도달합니다.",p4_deep_use:"바디 컨투어링 · 심부 조직 타이트닝 · 피하 리모델링",p4_low_t:"로우 모드 · 인접 페어",p4_low_h:"인접 전극이 +/− 교대 페어.",p4_low_d:"최소 간격. 에너지가 상부 진피에 다수의 얕은 아크로 집중됩니다.",p4_low_use:"피부결 · 잔주름 · 표면 재생",p5_label:"해결",p5_h:"TORR RF의 문제 해결 방법",p5_sub:"다섯 가지 문제. 구조적으로 해결.",p5_1h:"모노폴라 화상 위험",p5_1b:"접지패드 자체가 없음.",p5_1d:"순수 바이폴라. 핸드피스 위 동심원 전극 사이에서만 전류 흐름. 패드 화상이 구조적으로 불가능.",p5_2h:"바이폴라 고정 깊이",p5_2b:"전극 간격이 전자식.",p5_2d:"공통 전극 위치가 실시간 전환되어 원리 변경 없이 간격 변경. 하나의 핸드피스로 표피부터 피하지방까지 커버.",p5_3h:"니들 RF · FDA 경고",p5_3b:"완전 비침습.",p5_3d:"바늘 없음, 피부 관통 없음. 출혈·감염·다운타임 제로. FDA 2025 부작용 보고 사례가 구조적으로 발생 불가.",p5_4h:"핫스팟 화상",p5_4b:"분산 에너지 + NTC 센싱.",p5_4d:"다수의 전극 페어가 넓은 영역에 에너지 분산. 실시간 NTC 센서가 임계값에서 RF 자동 차단. 특허 제10-2018-0065876호.",p5_5h:"여러 기기 필요",p5_5b:"하나의 플랫폼 · 3종 핸드피스 · 소모품 제로.",p5_5d:"아이 Φ25mm · 페이스 Φ48mm · 바디 Φ56mm으로 한 플랫폼에서 전신 커버. 팁·카트리지·교체 부품 없음.",p6_label:"임상 근거",p6_h:"임상 온도 근거",p6_sub:"40–45°C 지속. 모델이 아닌 실측.",p6_test:"피부 온도 테스트 · 2022년 7월",p6_subj:"피험자",p6_hp:"핸드피스 종류",p6_10m:"10분 평균",p6_15m:"15분 평균",p6_all:"모든 핸드피스가 전 부위에서 40–45°C 치료 범위를 유지. 과열 제로.",p6_why:"40–45°C가 중요한 이유",p6_why_d:"지속적 치료 열이 신콜라겐 생성, 엘라스토제네시스, 혈관신생을 촉발합니다. 10분간 40–45°C를 유지하면 콜라겐 리모델링 캐스케이드가 활성화된다는 학술 연구가 확인되었습니다.",p6_before:"전",p6_after:"후",p6_collagen:"콜라겐 함량",p6_note:"TORR RF는 9명의 피험자에서 생체 내 측정으로 동일한 치료 범위를 유지합니다.",p7_label:"논문 근거",p7_h:"동심원 멀티폴라 RF — 발표된 근거",p7_sub:"세 편의 연구. 하나의 결론.",p7_s1_h:"동심원 전극 다중소스 위상제어 RF — 환자 경험.",p7_patients:"환자수",p7_sat:"만족도",p7_comfort:"편안함",p7_s1_n:"3D 영상으로 객관적 체적 감소 확인. 코호트 내 최고 편안함 평가.",p7_s2_h:"국제 다기관 임상 — 5–8회 세션 바디 컨투어링.",p7_improved:"개선율",p7_abd:"복부 변화",p7_12mo:"12개월 유지",p7_s2_n:"공초점 현미경으로 표피 두께 증가와 젊은 콜라겐 패턴을 추적 관찰에서 확인.",p7_s3_h:"순차적 이중 모드 RF — 단일 모드 대비 향상된 리모델링.",p7_modes:"비교 모드",p7_coll:"콜라겐 변화",p7_elast:"엘라스틴 변화",p7_s3_n:"TORR RF의 이중 깊이(딥+로우) 접근 방식이 하나의 핸드피스에서 유효함을 입증.",p8_label:"비교",p8_h:"경쟁 제품 비교",p8_sub:"7가지 기준. 병렬 비교.",p8_crit:"기준",p8_depth:"침투 깊이",p8_d_mono:"고정 깊이",p8_d_bi:"고정 얕은",p8_d_needle:"니들 의존",p8_d_torr:"가변 · 전자 전환",p8_pad:"접지패드",p8_pad_mono:"필요",p8_pad_bi:"불필요",p8_pad_needle:"불필요",p8_pad_torr:"불필요",p8_inv:"침습성",p8_inv_mono:"비침습",p8_inv_bi:"비침습",p8_inv_needle:"침습 · 니들",p8_inv_torr:"비침습",p8_pain:"통증",p8_pain_mono:"높음",p8_pain_bi:"낮음–중간",p8_pain_needle:"중간–높음",p8_pain_torr:"거의 무통",p8_down:"다운타임",p8_down_mono:"보통",p8_down_bi:"최소",p8_down_needle:"발적·딱지",p8_down_torr:"제로",p8_fda:"FDA 안전 경고",p8_fda_mono:"지방 위축 보고",p8_fda_bi:"없음",p8_fda_needle:"2025.10 공식 경고",p8_fda_torr:"없음",p8_cons:"소모품",p8_cons_mono:"팁 교체",p8_cons_bi:"보통",p8_cons_needle:"카트리지 교체",p8_cons_torr:"제로",p9_label:"요약",p9_h:"네 가지 차원의 우위.",p9_1l:"01 · 효능",p9_1h:"하나의 핸드피스에서 가변 깊이.",p9_1d:"표피부터 피하지방까지 — 실시간 선택 가능. D/2 법칙과 토로이달 구조 기반.",p9_2l:"02 · 안전성",p9_2h:"비침습 · 센서 보호.",p9_2d:"바이폴라 구조로 패드 화상 제거. 실시간 NTC 온도 센서로 핫스팟 방지. 미결 FDA 안전 우려 제로.",p9_3l:"03 · 사용성",p9_3h:"3종 핸드피스 · 패드 제로 · 니들 제로.",p9_3d:"아이 Φ25mm는 대부분의 RF가 안전하게 시술할 수 없는 눈가에 도달. 페이스 Φ48mm와 바디 Φ56mm이 나머지 커버.",p9_4l:"04 · 경제성",p9_4h:"소모품 제로 · 순수 마진 세션.",p9_4d:"모든 시술이 비용이 아닌 수익. 가속화된 ROI. 우수한 마진을 유지하며 가격 유연성 확보.",p9_core:'TORR RF는 D/2 원리로 침투 깊이를 전자적으로 제어하는 유일한 <strong>토로이달 멀티폴라 RF</strong> 시스템으로 — <strong>모노폴라급 깊이</strong>와 <strong>바이폴라급 안전성</strong>을 비침습, 소모품 제로 플랫폼에서 실현합니다.'},
+ja:{c_sub:"トロイダルマルチポーラ高周波 — 従来のRFでは不可能なことをトロイダル構造が実現する理由。",c_b1:"15以上の査読済み論文",c_b2:"臨床温度データ",p2_label:"課題",p2_h:"従来RFの構造的限界",p2_sub:"3つのアーキテクチャ。それぞれ構造的制約あり。",p2_mono:"モノポーラ",p2_mono_h:"深いが、制御不能。",p2_mono_d:"単一電極から接地パッドまで電流が体内を通過。エネルギーは皮膚・脂肪・筋肉・臓器を無差別に通過。",p2_risks:"報告されたリスク",p2_mono_r:"接地パッド熱傷・脂肪萎縮・強い痛み。合併症率約10%。",p2_bi:"バイポーラ",p2_bi_h:"安全だが、表面に固定。",p2_bi_d:"ハンドピース上の2つの固定電極間のみで電流が流れます。接地パッド不要 — しかし電極間隔は物理的に固定。",p2_limit:"構造的制約",p2_bi_r:"浸透深度1–4mmに固定。皮下脂肪に到達不可。表層のみ。",p2_needle:"ニードルRF",p2_needle_h:"深いが、侵襲の代償あり。",p2_needle_d:"マイクロニードルが皮膚を穿刺してRFを深部に届けます。効果的だが侵襲的 — 出血・ダウンタイム・感染リスク。",p2_needle_r:"熱傷・瘢痕・脂肪減少・顔面変形・神経損傷。",p3_label:"物理学",p3_h:"物理学 — D/2法則",p3_sub:"従来バイポーラの深度が固定される理由。",p3_d1:"バイポーラRFにおけるエネルギー浸透深度は、電極間距離の約半分です。これは確立された物理法則です。",p3_impl:"意味",p3_d2:"深度を変えるには電極間隔を変える必要があります。従来のバイポーラ機器では間隔が物理的に固定されているため、深度調整が不可能です。これは設計上の欠陥ではなく、2電極構造の構造的制約です。",p3_rule:"D/2法則 · バイポーラ浸透",p3_elec:"（電極）",p3_conf:"6つの独立した学術情報源で確認。",p4_label:"ソリューション",p4_h:"TORR RFソリューション",p4_sub:"トロイダル同心円電極 — 深度を電子的に切替。",p4_d1:'中心球を同心円リング電極が囲む構造 — 断面 RF− | CH1 | CH2 | CH3 | CH2 | CH1 | RF−。どの電極がコモン（リターン）になるかを電子的に切替え、動作原理を変えずに電極間隔を変更。常にバイポーラ; 接地パッド不要。<strong style="color:var(--al)">特許第10-2113199号。</strong>',p4_eye_t:"アイハンドピース",p4_eye_d:"センター＋1リング・1ペア",p4_face_t:"フェイスハンドピース",p4_face_d:"センター＋3リング・3ペア",p4_body_t:"ボディハンドピース",p4_body_d:"3ペア・自動回転モーション",p4_deep_t:"ディープモード・最外郭ペア",p4_deep_h:"最外郭リングがコモン電極に。",p4_deep_d:"最大電極間隔が有効化。電界が深い半円アーチを形成し皮下層に到達。",p4_deep_use:"ボディコンタリング・深部組織タイトニング・皮下リモデリング",p4_low_t:"ローモード・隣接ペア",p4_low_h:"隣接電極が＋/−交互にペア。",p4_low_d:"最小間隔。エネルギーが上部真皮に複数の浅いアークとして集中。",p4_low_use:"肌質・小じわ・表層リジュビネーション",p5_label:"解決",p5_h:"TORR RFによる各問題の解決",p5_sub:"5つの問題。構造的に解決。",p5_1h:"モノポーラ熱傷リスク",p5_1b:"接地パッドが存在しない。",p5_1d:"純粋バイポーラ。ハンドピース上の同心円電極間のみで電流流通。パッド熱傷は構造的に不可能。",p5_2h:"バイポーラ固定深度",p5_2b:"電極間隔が電子式。",p5_2d:"コモン電極位置がリアルタイムで切替わり、原理変更なく間隔変更。1ハンドピースで表皮から皮下脂肪までカバー。",p5_3h:"ニードルRF・FDA警告",p5_3b:"完全非侵襲。",p5_3d:"針なし、皮膚穿刺なし。出血・感染・ダウンタイムゼロ。FDAの2025年有害事象は構造的に発生不能。",p5_4h:"ホットスポット熱傷",p5_4b:"分散エネルギー＋NTCセンシング。",p5_4d:"複数の電極ペアが広範囲にエネルギー分散。リアルタイムNTCセンサーが閾値でRF自動遮断。特許第10-2018-0065876号。",p5_5h:"複数機器が必要",p5_5b:"1プラットフォーム・3ハンドピース・消耗品ゼロ。",p5_5d:"アイΦ25mm・フェイスΦ48mm・ボディΦ56mmで全身を1プラットフォームからカバー。チップ・カートリッジ・交換部品なし。",p6_label:"臨床エビデンス",p6_h:"臨床温度エビデンス",p6_sub:"40–45°C持続。モデルではなく実測。",p6_test:"皮膚温度テスト・2022年7月",p6_subj:"被験者",p6_hp:"ハンドピース種類",p6_10m:"10分平均",p6_15m:"15分平均",p6_all:"全ハンドピースが全部位で40–45°C治療範囲を維持。過熱ゼロ。",p6_why:"40–45°Cが重要な理由",p6_why_d:"持続的治療熱がネオコラーゲン生成、エラストジェネシス、血管新生を誘発。10分間40–45°Cを維持するとコラーゲンリモデリングカスケードが活性化されることが査読論文で確認。",p6_before:"前",p6_after:"後",p6_collagen:"コラーゲン含有量",p6_note:"TORR RFは9名の被験者でin vivo測定により同じ治療域を維持。",p7_label:"発表エビデンス",p7_h:"同心円マルチポーラRF — 発表されたエビデンス",p7_sub:"3つの研究。1つの結論。",p7_s1_h:"同心円電極マルチソース位相制御RF — 患者体験。",p7_patients:"患者数",p7_sat:"満足度",p7_comfort:"快適性",p7_s1_n:"3Dイメージングで客観的体積減少を確認。コホート内最高の快適性評価。",p7_s2_h:"国際多施設試験 — 5–8セッションのボディコンタリング。",p7_improved:"改善率",p7_abd:"腹部変化",p7_12mo:"12ヶ月維持",p7_s2_n:"共焦点顕微鏡で表皮厚増加と若々しいコラーゲンパターンをフォローアップで確認。",p7_s3_h:"順次デュアルモードRF — シングルモード比でリモデリング向上。",p7_modes:"比較モード",p7_coll:"コラーゲン変化",p7_elast:"エラスチン変化",p7_s3_n:"TORR RFのデュアル深度（ディープ＋ロー）アプローチが1ハンドピースで有効と実証。",p8_label:"比較",p8_h:"競合比較",p8_sub:"7基準。並列比較。",p8_crit:"基準",p8_depth:"浸透深度",p8_d_mono:"固定深",p8_d_bi:"固定浅",p8_d_needle:"ニードル依存",p8_d_torr:"可変・電子切替",p8_pad:"接地パッド",p8_pad_mono:"必要",p8_pad_bi:"不要",p8_pad_needle:"不要",p8_pad_torr:"不要",p8_inv:"侵襲性",p8_inv_mono:"非侵襲",p8_inv_bi:"非侵襲",p8_inv_needle:"侵襲・ニードル",p8_inv_torr:"非侵襲",p8_pain:"痛みレベル",p8_pain_mono:"高い",p8_pain_bi:"低～中",p8_pain_needle:"中～高",p8_pain_torr:"ほぼ無痛",p8_down:"ダウンタイム",p8_down_mono:"中程度",p8_down_bi:"最小",p8_down_needle:"発赤・痂皮",p8_down_torr:"ゼロ",p8_fda:"FDA安全警告",p8_fda_mono:"脂肪萎縮報告あり",p8_fda_bi:"なし",p8_fda_needle:"2025.10公式警告",p8_fda_torr:"なし",p8_cons:"消耗品",p8_cons_mono:"チップ交換",p8_cons_bi:"中程度",p8_cons_needle:"カートリッジ交換",p8_cons_torr:"ゼロ",p9_label:"まとめ",p9_h:"4つの優位性。",p9_1l:"01・有効性",p9_1h:"1ハンドピースで可変深度。",p9_1d:"表皮から皮下脂肪まで — リアルタイム選択可能。D/2法則とトロイダル構造に基づく。",p9_2l:"02・安全性",p9_2h:"非侵襲・センサー保護。",p9_2d:"バイポーラ構造でパッド熱傷を排除。リアルタイムNTC温度センサーでホットスポット防止。未解決のFDA安全懸念ゼロ。",p9_3l:"03・操作性",p9_3h:"3ハンドピース・パッドゼロ・ニードルゼロ。",p9_3d:"アイΦ25mmは他のRFが安全に施術できない眼周囲に到達。フェイスΦ48mmとボディΦ56mmが残りをカバー。",p9_4l:"04・経済性",p9_4h:"消耗品ゼロ・純利益セッション。",p9_4d:"すべての施術がコストではなく収益。加速されたROI。優れたマージンを維持しながら価格設定の柔軟性。",p9_core:'TORR RFは、D/2原理で浸透深度を電子的に制御する唯一の<strong>トロイダルマルチポーラRF</strong>システムであり — <strong>モノポーラ級の深さ</strong>と<strong>バイポーラ級の安全性</strong>を、非侵襲・消耗品ゼロのプラットフォームで実現します。'},
+zh:{c_sub:"环形多极射频 — 环形几何结构如何实现传统RF无法做到的事。",c_b1:"15+篇同行评审论文",c_b2:"临床温度数据",p2_label:"问题",p2_h:"传统RF的结构性局限",p2_sub:"三种架构。各有结构性限制。",p2_mono:"单极",p2_mono_h:"深层但不可控。",p2_mono_d:"电流从单一电极穿过身体到达接地垫。能量无差别通过皮肤、脂肪、肌肉和器官。",p2_risks:"已报告风险",p2_mono_r:"接地垫烧伤·脂肪萎缩·剧烈疼痛。并发症率约10%。",p2_bi:"双极",p2_bi_h:"安全但锁定在表面。",p2_bi_d:"电流仅在手柄上两个固定电极之间流动。无需接地垫——但电极间距物理固定。",p2_limit:"结构限制",p2_bi_r:"穿透深度锁定在1-4mm。无法到达皮下脂肪。仅限表层。",p2_needle:"微针RF",p2_needle_h:"深层——以侵入为代价。",p2_needle_d:"微针穿透皮肤在深处释放RF。有效但有创——出血、恢复期、感染风险。",p2_needle_r:"烧伤·疤痕·脂肪流失·面部畸形·神经损伤。",p3_label:"物理学",p3_h:"物理学 — D/2法则",p3_sub:"传统双极深度被锁定的原因。",p3_d1:"在双极RF中，能量穿透深度约等于电极间距离的一半。这是一个成熟的物理定律。",p3_impl:"启示",p3_d2:"要改变深度，必须改变电极间距。在传统双极设备中，间距物理固定——因此深度无法调整。这不是设计缺陷，而是两电极架构的结构性限制。",p3_rule:"D/2法则·双极穿透",p3_elec:"（电极）",p3_conf:"经六个独立学术来源确认。",p4_label:"解决方案",p4_h:"TORR RF解决方案",p4_sub:"环形同心电极——深度电子切换。",p4_d1:'中心球被同心环形电极环绕——截面 RF− | CH1 | CH2 | CH3 | CH2 | CH1 | RF−。系统电子切换哪个电极作为公共端——在不改变工作原理的情况下改变电极间距。始终双极；无接地垫。<strong style="color:var(--al)">专利号10-2113199。</strong>',p4_eye_t:"眼部手柄",p4_face_t:"面部手柄",p4_body_t:"身体手柄",p4_deep_t:"深层模式·最远极对",p4_deep_h:"最外环成为公共电极。",p4_deep_d:"最大电极间距激活。电场形成深层半圆弧到达皮下层。",p4_low_t:"浅层模式·相邻极对",p4_low_h:"相邻电极+/−交替配对。",p4_low_d:"最小间距。能量以多个浅弧集中在上真皮层。",p5_label:"解决",p5_h:"TORR RF如何解决每个问题",p5_sub:"五个问题。结构性解决。",p5_1h:"单极烧伤风险",p5_1b:"接地垫不存在。",p5_1d:"纯双极。电流仅在手柄同心电极间流动。垫烧伤在结构上不可能。",p5_2h:"双极固定深度",p5_2b:"电极间距为电子式。",p5_2d:"公共电极位置实时切换，无需改变原理即可改变间距。一个手柄覆盖表皮到皮下脂肪。",p5_3h:"微针RF·FDA警告",p5_3b:"完全非侵入性。",p5_3d:"无针、无皮肤穿刺。零出血、零感染、零恢复期。FDA 2025年不良事件在结构上不会发生。",p5_4h:"热点烧伤",p5_4b:"分散能量+NTC传感。",p5_4d:"多电极对在大面积分散能量。实时NTC传感器在阈值自动切断RF。",p5_5h:"需要多台设备",p5_5b:"一个平台·三个手柄·零耗材。",p5_5d:"眼部Φ25mm·面部Φ48mm·身体Φ56mm从一个平台覆盖全身。",p6_label:"临床证据",p6_h:"临床温度证据",p6_sub:"40-45°C持续。实测而非模型。",p6_test:"皮肤温度测试·2022年7月",p6_subj:"受试者",p6_hp:"手柄类型",p6_10m:"10分钟平均",p6_15m:"15分钟平均",p6_all:"所有手柄在所有部位维持40-45°C治疗范围。零过热。",p6_why:"40-45°C重要的原因",p6_why_d:"持续治疗热触发新胶原蛋白生成和血管新生。研究确认维持40-45°C十分钟可激活胶原重塑级联反应。",p6_before:"前",p6_after:"后",p6_collagen:"胶原蛋白含量",p6_note:"TORR RF在9名受试者体内测量中维持相同治疗范围。",p7_label:"发表证据",p7_h:"同心多极RF——已发表证据",p7_sub:"三项研究。一个结论。",p7_s1_h:"同心电极多源相控RF——患者体验。",p7_patients:"患者",p7_sat:"满意度",p7_comfort:"舒适度",p7_s1_n:"3D成像确认客观体积减少。队列中最高舒适度评分。",p7_s2_h:"国际多中心试验——5-8次身体塑形。",p7_improved:"改善率",p7_abd:"腹部变化",p7_12mo:"12月维持",p7_s2_n:"共聚焦显微镜显示表皮厚度增加和年轻胶原模式。",p7_s3_h:"顺序双模式RF——相比单模式增强重塑。",p7_modes:"比较模式",p7_coll:"胶原变化",p7_elast:"弹性蛋白变化",p7_s3_n:"验证TORR RF的双深度方法从单手柄有效。",p8_label:"比较",p8_h:"竞争对比",p8_sub:"七项标准。并列比较。",p8_crit:"标准",p8_depth:"穿透深度",p8_d_mono:"固定深",p8_d_bi:"固定浅",p8_d_needle:"依赖针头",p8_d_torr:"可变·电子切换",p8_pad:"接地垫",p8_pad_mono:"需要",p8_pad_bi:"不需要",p8_pad_needle:"不需要",p8_pad_torr:"不需要",p8_inv:"侵入性",p8_inv_mono:"非侵入",p8_inv_bi:"非侵入",p8_inv_needle:"侵入·针头",p8_inv_torr:"非侵入",p8_pain:"疼痛程度",p8_pain_mono:"高",p8_pain_bi:"低-中",p8_pain_needle:"中-高",p8_pain_torr:"几乎无痛",p8_down:"恢复期",p8_down_mono:"中等",p8_down_bi:"最少",p8_down_needle:"发红·结痂",p8_down_torr:"零",p8_fda:"FDA安全警告",p8_fda_mono:"脂肪萎缩",p8_fda_bi:"无",p8_fda_needle:"2025.10正式警告",p8_fda_torr:"无",p8_cons:"耗材",p8_cons_mono:"更换尖端",p8_cons_bi:"中等",p8_cons_needle:"更换卡匣",p8_cons_torr:"零",p9_label:"总结",p9_h:"四个维度的优势。",p9_1l:"01·疗效",p9_1h:"一个手柄可变深度。",p9_1d:"表皮到皮下脂肪——实时可选。基于D/2法则和环形几何。",p9_2l:"02·安全",p9_2h:"非侵入·传感器保护。",p9_2d:"双极架构消除垫烧伤。实时NTC温度传感器防止热点。零FDA安全顾虑。",p9_3l:"03·易用性",p9_3h:"三手柄·零垫·零针。",p9_3d:"眼部Φ25mm到达大多数RF无法安全治疗的眼周区域。",p9_4l:"04·经济性",p9_4h:"零耗材·纯利润。",p9_4d:"每次治疗都是收入而非成本。加速ROI。",p9_core:'TORR RF是唯一基于D/2原理电子控制穿透深度的<strong>环形多极RF</strong>系统——以非侵入、零耗材平台实现<strong>单极级深度</strong>和<strong>双极级安全</strong>。'}
 };
+D.en_gb=Object.assign({},D.en);D.en_gb.p9_1d=D.en.p9_1d.replace('remodelling','remodelling');
+D.th=Object.assign({},D.en,{p2_h:"ปัญหาของ RF แบบดั้งเดิม",p2_sub:"สถาปัตยกรรม 3 แบบ แต่ละแบบมีข้อจำกัดเชิงโครงสร้าง",p3_h:"ฟิสิกส์ — กฎ D/2",p4_h:"โซลูชัน TORR RF",p5_h:"TORR RF แก้ปัญหาแต่ละข้ออย่างไร",p6_h:"หลักฐานอุณหภูมิทางคลินิก",p7_h:"หลักฐานที่ตีพิมพ์",p8_h:"การเปรียบเทียบกับคู่แข่ง",p9_h:"ความเหนือกว่า 4 มิติ"});
+D.vi=Object.assign({},D.en,{p2_h:"Vấn đề với RF truyền thống",p2_sub:"Ba kiến trúc. Mỗi loại có giới hạn cấu trúc.",p3_h:"Vật lý — Quy tắc D/2",p4_h:"Giải pháp TORR RF",p5_h:"TORR RF giải quyết từng vấn đề",p6_h:"Bằng chứng nhiệt độ lâm sàng",p7_h:"Bằng chứng đã công bố",p8_h:"So sánh cạnh tranh",p9_h:"Bốn chiều vượt trội."});
+D.ru=Object.assign({},D.en,{p2_h:"Проблемы традиционного RF",p2_sub:"Три архитектуры. Каждая структурно ограничена.",p3_h:"Физика — правило D/2",p4_h:"Решение TORR RF",p5_h:"Как TORR RF решает каждую проблему",p6_h:"Клинические данные о температуре",p7_h:"Опубликованные данные",p8_h:"Сравнение с конкурентами",p9_h:"Четыре измерения превосходства."});
+D.fr=Object.assign({},D.en,{p2_h:"Le problème du RF conventionnel",p2_sub:"Trois architectures. Chacune structurellement limitée.",p3_h:"La physique — Règle D/2",p4_h:"La solution TORR RF",p5_h:"Comment TORR RF résout chaque problème",p6_h:"Preuves cliniques de température",p7_h:"Preuves publiées",p8_h:"Comparaison concurrentielle",p9_h:"Quatre dimensions de supériorité."});
+D.id=Object.assign({},D.en,{p2_h:"Masalah dengan RF Konvensional",p2_sub:"Tiga arsitektur. Masing-masing terbatas secara struktural.",p3_h:"Fisika — Aturan D/2",p4_h:"Solusi TORR RF",p5_h:"Bagaimana TORR RF menyelesaikan setiap masalah",p6_h:"Bukti suhu klinis",p7_h:"Bukti yang dipublikasikan",p8_h:"Perbandingan kompetitif",p9_h:"Empat dimensi keunggulan."});
+D.es=Object.assign({},D.en,{p2_h:"El problema del RF convencional",p2_sub:"Tres arquitecturas. Cada una estructuralmente limitada.",p3_h:"La física — Regla D/2",p4_h:"La solución TORR RF",p5_h:"Cómo TORR RF resuelve cada problema",p6_h:"Evidencia clínica de temperatura",p7_h:"Evidencia publicada",p8_h:"Comparación competitiva",p9_h:"Cuatro dimensiones de superioridad."});
+D.pt=Object.assign({},D.en,{p2_h:"O problema do RF convencional",p2_sub:"Três arquiteturas. Cada uma estruturalmente limitada.",p3_h:"A física — Regra D/2",p4_h:"A solução TORR RF",p5_h:"Como o TORR RF resolve cada problema",p6_h:"Evidência clínica de temperatura",p7_h:"Evidência publicada",p8_h:"Comparação competitiva",p9_h:"Quatro dimensões de superioridade."});
 
-let lang = 'en';
-
-function setLang(l) {
-  lang = l;
-  document.documentElement.lang = l;
-  document.querySelectorAll('.lang-btn').forEach(b =>
-    b.classList.toggle('on', b.textContent.trim() === l.toUpperCase())
-  );
-  const s = D[l];
-  if (!s) return;
-  document.querySelectorAll('[data-t]').forEach(el => {
-    const k = el.getAttribute('data-t');
-    if (s[k] != null) el.innerHTML = s[k];
+let lang='en';
+function setLang(l){
+  lang=l;
+  document.documentElement.lang=HL[l]||l;
+  document.getElementById('langSel').value=l;
+  const s=D[l]||D.en;
+  document.querySelectorAll('[data-t]').forEach(el=>{
+    const k=el.getAttribute('data-t');
+    if(s[k]!=null) el.innerHTML=s[k];
   });
-  localStorage.setItem('torr-tech-lang', l);
+  localStorage.setItem('torr-tech-lang',l);
 }
-
-const urlLang = new URLSearchParams(location.search).get('lang');
-const saved = localStorage.getItem('torr-tech-lang');
-const nav = navigator.language.startsWith('ko') ? 'ko' : navigator.language.startsWith('ja') ? 'ja' : 'en';
-setLang(urlLang || saved || nav);
+const urlL=new URLSearchParams(location.search).get('lang');
+const saved=localStorage.getItem('torr-tech-lang');
+const nav=navigator.language.startsWith('ko')?'ko':navigator.language.startsWith('ja')?'ja':navigator.language.startsWith('zh')?'zh':'en';
+setLang(urlL||saved||nav);
 </script>
-
 </body>
 </html>
