@@ -69,6 +69,13 @@
   #controls .sep {
     width: 1px; height: 20px; background: rgba(255,255,255,0.12); margin: 0 8px;
   }
+  #controls select {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
+    color: #fff; padding: 5px 10px; font-size: 11px; font-weight: 500;
+    border-radius: 3px; font-family: 'Inter', sans-serif; cursor: pointer;
+    outline: none;
+  }
+  #controls select option { background: #1a1610; color: #fff; }
   #controls .dl {
     background: var(--lilac); border-color: var(--lilac);
     color: #fff; font-weight: 600; letter-spacing: 0.04em;
@@ -356,12 +363,20 @@
 
 <div id="controls">
   <span class="label">Language</span>
-  <button data-lang="en" class="active">EN</button>
-  <button data-lang="ko">KO</button>
-  <button data-lang="zh">ZH</button>
-  <button data-lang="ja">JA</button>
-  <button data-lang="th">TH</button>
-  <button data-lang="vi">VI</button>
+  <select id="lang-select" onchange="setLang(this.value)">
+    <option value="en">English (US)</option>
+    <option value="en_gb">English (UK)</option>
+    <option value="ko">한국어</option>
+    <option value="ja">日本語</option>
+    <option value="zh">中文</option>
+    <option value="th">ไทย</option>
+    <option value="vi">Tiếng Việt</option>
+    <option value="ru">Русский</option>
+    <option value="fr">Français</option>
+    <option value="id">Bahasa Indonesia</option>
+    <option value="es">Español (MX)</option>
+    <option value="pt">Português (BR)</option>
+  </select>
   <div class="sep"></div>
   <button class="dl" onclick="window.print()">Print / PDF</button>
 </div>
@@ -929,6 +944,354 @@ vi: {
   addr: "Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, Hàn Quốc",
   contact_info: "global@britzmedi.com · www.britzmedi.com",
   copyright: "© 2026 BRITZMEDI Co., Ltd. Mọi quyền được bảo lưu."
+},
+en_gb: {
+  subtitle: "User Manual · 2026",
+  hero_desc: "Multi-channel RF · EMS · ELP home beauty device. Professional-grade skin care technology adapted for personal use. Safe output activated upon skin contact.",
+  parts_title: "Device Parts",
+  part1: "Electrode Head — Skin Contact Electrode",
+  part2: "Level Indicator — Output Levels 1 / 2 / 3",
+  part3: "Mode Indicator — RF / EMS / ELP",
+  part4: "Power Button — ON/OFF & Level (1/2/3)",
+  part5: "Mode Button (M) — Mode & Vibration",
+  part6: "Charging Port — USB-C",
+  modes_title: "How to Use — 3 Modes",
+  rf_h: "RF Mode", rf_desc: "High-frequency energy for deep skin care and volume management.",
+  rf_s1: "Cleanse face with lukewarm water.", rf_s2: "Apply NEWCHAE cream over treatment area.",
+  rf_s3: "Select RF mode & level.", rf_s4: "Hold on skin — beep signals to move.",
+  rf_s5: "Move inside → outside.", rf_s6: "Auto-off after 10 min.",
+  rf_tip: "Max 2 shots per area. Start Level 1.",
+  ems_h: "EMS Mode", ems_desc: "Electrical stimulation for skin elasticity and contour management.",
+  ems_s1: "Cleanse face with lukewarm water.", ems_s2: "Apply NEWCHAE cream generously.",
+  ems_s3: "Select EMS mode & level.", ems_s4: "Glide upward: bottom → top, inside → outside.",
+  ems_s5: "Auto-off after 10 min.", ems_tip: "Start Level 1. Avoid over-stimulation.",
+  elp_h: "ELP Mode", elp_desc: "Electroporation for enhanced absorption of active ingredients.",
+  elp_s1: "Cleanse face with lukewarm water.", elp_s2: "Apply NEWCHAE cream generously.",
+  elp_s3: "Select ELP mode & level.", elp_s4: "Massage in small circles, inside → outside.",
+  elp_s5: "Auto-off after 10 min.", elp_tip: "Start Level 1. Avoid over-stimulation.",
+  cycle_label: "Recommended Cycle", cycle_text: "Use each mode 2–3 times/week, up to 10 min per session.",
+  precaution_eye: "Precautions", precaution_h: "Before You Begin.",
+  c1: "Read the user manual thoroughly before use.",
+  c2: "Consult a specialist if undergoing skin treatment or have allergies.",
+  c3: "Do not use if you have a metal allergy.",
+  c4: "Keep out of reach of children.",
+  c5: "Do not use with heart disease, acute conditions, or implanted devices.",
+  c6: "For sensitive skin, patch test on wrist first.",
+  c7: "After facial surgery, use only after full recovery.",
+  c8: "Mild stinging or redness may occur, typically resolves in 2–3 days.",
+  c9: "Avoid using around the eyes or on the throat area.",
+  c10: "Always start at Level 1. Max 2 shots per area.",
+  c11: "Do not handle with wet hands or expose to impacts.",
+  c12: "This is not a medical device. Not for medical treatment.",
+  warn_h: "Warning",
+  w1: "Do not immerse the device in water.", w2: "Ensure no liquids enter the unit.",
+  w3: "Do not use near bathtubs, showers, or pools.", w4: "Do not disassemble the product.",
+  w5: "Keep away from heat sources — fire risk.", w6: "Stop use if unusual noise, smell, or smoke occurs.",
+  storage_h: "Storage",
+  st1: "Wipe with wet tissue, dry with soft cloth.", st2: "Store in cool, dry place away from sunlight.",
+  st3: "Avoid strong pressure or impacts.",
+  spec_eye: "Specifications", spec_h: "Product Specs.",
+  s_name: "Product", s_model: "Model", s_input: "Input", s_battery: "Battery",
+  s_modes: "Modes", s_vib: "Vibration", s_dim: "Size", s_weight: "Weight",
+  s_cert: "Cert.", s_mfr: "Mfr.", s_origin: "Origin", s_origin_v: "South Korea",
+  qa_eye: "FAQ",
+  q1: "Q. Can I use it every day?", a1: "Yes. Recommended 2–3 times per week per mode, up to 10 min.",
+  q2: "Q. Must I use NEWCHAE Cream?", a2: "Others may work but can reduce RF delivery. NEWCHAE Cream is formulated for optimal energy transfer.",
+  q3: "Q. I am pregnant. Can I use it?", a3: "Not recommended. Consult your physician.",
+  q4: "Q. The device won't turn on.", a4: "Charge the device. Disconnect cable if charging. Warranty: 1 year.",
+  addr: "Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, Republic of Korea",
+  contact_info: "global@britzmedi.com · www.britzmedi.com",
+  copyright: "© 2026 BRITZMEDI Co., Ltd. All rights reserved."
+},
+ru: {
+  subtitle: "Руководство пользователя · 2026",
+  hero_desc: "Многоканальное устройство RF · EMS · ELP для домашнего ухода. Профессиональная технология ухода за кожей для личного использования. Безопасная подача энергии только при контакте с кожей.",
+  parts_title: "Компоненты устройства",
+  part1: "Электродная головка — контактный электрод",
+  part2: "Индикатор уровня — уровни мощности 1 / 2 / 3",
+  part3: "Индикатор режима — RF / EMS / ELP",
+  part4: "Кнопка питания — Вкл/Выкл и уровень (1/2/3)",
+  part5: "Кнопка режима (M) — Режим и вибрация",
+  part6: "Порт зарядки — USB-C",
+  modes_title: "Инструкция — 3 режима",
+  rf_h: "Режим RF", rf_desc: "Высокочастотная энергия для глубокого ухода и управления объёмом.",
+  rf_s1: "Умойте лицо тёплой водой.", rf_s2: "Нанесите крем NEWCHAE на зону ухода.",
+  rf_s3: "Выберите режим RF и уровень.", rf_s4: "Прижмите к коже — звуковой сигнал укажет перейти дальше.",
+  rf_s5: "Двигайтесь изнутри наружу.", rf_s6: "Автоотключение через 10 мин.",
+  rf_tip: "Макс. 2 раза на одну зону. Начинайте с уровня 1.",
+  ems_h: "Режим EMS", ems_desc: "Электростимуляция для эластичности кожи и контурного моделирования.",
+  ems_s1: "Умойте лицо тёплой водой.", ems_s2: "Обильно нанесите крем NEWCHAE.",
+  ems_s3: "Выберите режим EMS и уровень.", ems_s4: "Скользите снизу вверх, изнутри наружу.",
+  ems_s5: "Автоотключение через 10 мин.", ems_tip: "Начинайте с уровня 1. Избегайте чрезмерной стимуляции.",
+  elp_h: "Режим ELP", elp_desc: "Электропорация для усиленного проникновения активных компонентов.",
+  elp_s1: "Умойте лицо тёплой водой.", elp_s2: "Обильно нанесите крем NEWCHAE.",
+  elp_s3: "Выберите режим ELP и уровень.", elp_s4: "Массируйте маленькими кругами, изнутри наружу.",
+  elp_s5: "Автоотключение через 10 мин.", elp_tip: "Начинайте с уровня 1. Избегайте чрезмерной стимуляции.",
+  cycle_label: "Рекомендуемый цикл", cycle_text: "Каждый режим 2–3 раза в неделю, до 10 мин за сеанс.",
+  precaution_eye: "Меры предосторожности", precaution_h: "Перед использованием",
+  c1: "Внимательно прочитайте руководство перед использованием.",
+  c2: "Проконсультируйтесь со специалистом при лечении кожи или аллергии.",
+  c3: "Не используйте при аллергии на металлы.",
+  c4: "Храните в недоступном для детей месте.",
+  c5: "Не используйте при заболеваниях сердца, острых состояниях или имплантированных устройствах.",
+  c6: "При чувствительной коже сначала проведите тест на запястье.",
+  c7: "После операций на лице используйте только после полного восстановления.",
+  c8: "Возможно лёгкое покалывание или покраснение, обычно проходит за 2–3 дня.",
+  c9: "Избегайте использования вокруг глаз и в области горла.",
+  c10: "Всегда начинайте с уровня 1. Макс. 2 раза на одну зону.",
+  c11: "Не берите мокрыми руками и не подвергайте ударам.",
+  c12: "Это не медицинское устройство. Не для медицинских целей.",
+  warn_h: "Предупреждение",
+  w1: "Не погружайте устройство в воду.", w2: "Не допускайте попадания жидкости внутрь.",
+  w3: "Не используйте вблизи ванн, душевых или бассейнов.", w4: "Не разбирайте устройство.",
+  w5: "Держите вдали от источников тепла — риск пожара.", w6: "Прекратите использование при появлении шума, запаха или дыма.",
+  storage_h: "Хранение",
+  st1: "Протрите влажной салфеткой, высушите мягкой тканью.", st2: "Храните в прохладном сухом месте, избегая прямых солнечных лучей.",
+  st3: "Избегайте сильного давления и ударов.",
+  spec_eye: "Характеристики", spec_h: "Спецификации",
+  s_name: "Продукт", s_model: "Модель", s_input: "Вход", s_battery: "Аккумулятор",
+  s_modes: "Режимы", s_vib: "Вибрация", s_dim: "Размер", s_weight: "Вес",
+  s_cert: "Сертиф.", s_mfr: "Производитель", s_origin: "Страна", s_origin_v: "Южная Корея",
+  qa_eye: "Часто задаваемые вопросы",
+  q1: "Q. Можно ли использовать каждый день?", a1: "Да. Рекомендуется 2–3 раза в неделю на режим, до 10 мин.",
+  q2: "Q. Обязательно использовать крем NEWCHAE?", a2: "Можно другие средства, но передача RF-энергии может снизиться. Крем NEWCHAE оптимизирован для передачи энергии.",
+  q3: "Q. Можно ли при беременности?", a3: "Не рекомендуется. Проконсультируйтесь с врачом.",
+  q4: "Q. Устройство не включается.", a4: "Зарядите устройство. При зарядке отключите кабель. Гарантия: 1 год.",
+  addr: "Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, Республика Корея",
+  contact_info: "global@britzmedi.com · www.britzmedi.com",
+  copyright: "© 2026 BRITZMEDI Co., Ltd. Все права защищены."
+},
+fr: {
+  subtitle: "Manuel d'utilisation · 2026",
+  hero_desc: "Appareil de beauté multicanal RF · EMS · ELP à domicile. Technologie de soin professionnel adaptée à l'usage personnel. Émission sécurisée uniquement au contact de la peau.",
+  parts_title: "Composants de l'appareil",
+  part1: "Tête d'électrode — Électrode de contact cutané",
+  part2: "Indicateur de niveau — Niveaux 1 / 2 / 3",
+  part3: "Indicateur de mode — RF / EMS / ELP",
+  part4: "Bouton d'alimentation — Marche/Arrêt et niveau (1/2/3)",
+  part5: "Bouton de mode (M) — Mode et vibration",
+  part6: "Port de charge — USB-C",
+  modes_title: "Mode d'emploi — 3 modes",
+  rf_h: "Mode RF", rf_desc: "Énergie haute fréquence pour le soin en profondeur et la gestion du volume.",
+  rf_s1: "Nettoyez le visage à l'eau tiède.", rf_s2: "Appliquez la crème NEWCHAE sur la zone à traiter.",
+  rf_s3: "Sélectionnez le mode RF et le niveau.", rf_s4: "Maintenez sur la peau — le bip indique de changer de zone.",
+  rf_s5: "Déplacez de l'intérieur vers l'extérieur.", rf_s6: "Arrêt automatique après 10 min.",
+  rf_tip: "Max. 2 applications par zone. Commencez au niveau 1.",
+  ems_h: "Mode EMS", ems_desc: "Stimulation électrique pour l'élasticité et le modelage des contours.",
+  ems_s1: "Nettoyez le visage à l'eau tiède.", ems_s2: "Appliquez généreusement la crème NEWCHAE.",
+  ems_s3: "Sélectionnez le mode EMS et le niveau.", ems_s4: "Glissez de bas en haut, de l'intérieur vers l'extérieur.",
+  ems_s5: "Arrêt automatique après 10 min.", ems_tip: "Commencez au niveau 1. Évitez la surstimulation.",
+  elp_h: "Mode ELP", elp_desc: "Électroporation pour une absorption optimale des principes actifs.",
+  elp_s1: "Nettoyez le visage à l'eau tiède.", elp_s2: "Appliquez généreusement la crème NEWCHAE.",
+  elp_s3: "Sélectionnez le mode ELP et le niveau.", elp_s4: "Massez en petits cercles, de l'intérieur vers l'extérieur.",
+  elp_s5: "Arrêt automatique après 10 min.", elp_tip: "Commencez au niveau 1. Évitez la surstimulation.",
+  cycle_label: "Cycle recommandé", cycle_text: "Chaque mode 2 à 3 fois/semaine, max. 10 min par séance.",
+  precaution_eye: "Précautions", precaution_h: "Avant utilisation",
+  c1: "Lisez attentivement le manuel avant utilisation.",
+  c2: "Consultez un spécialiste si vous suivez un traitement cutané ou avez des allergies.",
+  c3: "Ne pas utiliser en cas d'allergie aux métaux.",
+  c4: "Tenir hors de portée des enfants.",
+  c5: "Ne pas utiliser en cas de maladie cardiaque, d'affection aiguë ou de dispositifs implantés.",
+  c6: "Pour les peaux sensibles, effectuez d'abord un test sur le poignet.",
+  c7: "Après une chirurgie faciale, n'utilisez qu'après rétablissement complet.",
+  c8: "De légers picotements ou rougeurs peuvent survenir, disparaissant généralement en 2–3 jours.",
+  c9: "Évitez l'utilisation autour des yeux et sur la gorge.",
+  c10: "Commencez toujours au niveau 1. Max. 2 applications par zone.",
+  c11: "Ne manipulez pas avec les mains mouillées et évitez les chocs.",
+  c12: "Ceci n'est pas un dispositif médical. Non destiné à un usage médical.",
+  warn_h: "Avertissement",
+  w1: "Ne pas immerger l'appareil dans l'eau.", w2: "Ne pas laisser de liquide pénétrer dans l'appareil.",
+  w3: "Ne pas utiliser près de baignoires, douches ou piscines.", w4: "Ne pas démonter le produit.",
+  w5: "Éloigner des sources de chaleur — risque d'incendie.", w6: "Cessez l'utilisation en cas de bruit, d'odeur ou de fumée anormale.",
+  storage_h: "Conservation",
+  st1: "Essuyez avec un tissu humide, séchez avec un chiffon doux.", st2: "Conservez dans un endroit frais et sec, à l'abri du soleil.",
+  st3: "Évitez les pressions fortes ou les chocs.",
+  spec_eye: "Spécifications", spec_h: "Caractéristiques",
+  s_name: "Produit", s_model: "Modèle", s_input: "Entrée", s_battery: "Batterie",
+  s_modes: "Modes", s_vib: "Vibration", s_dim: "Dimensions", s_weight: "Poids",
+  s_cert: "Certif.", s_mfr: "Fabricant", s_origin: "Origine", s_origin_v: "Corée du Sud",
+  qa_eye: "Foire aux questions",
+  q1: "Q. Peut-on l'utiliser quotidiennement ?", a1: "Oui. 2 à 3 fois par semaine par mode, max. 10 min.",
+  q2: "Q. La crème NEWCHAE est-elle obligatoire ?", a2: "D'autres produits sont possibles, mais la transmission RF peut diminuer. La crème NEWCHAE est optimisée pour la transmission d'énergie.",
+  q3: "Q. Utilisable pendant la grossesse ?", a3: "Non recommandé. Consultez votre médecin.",
+  q4: "Q. L'appareil ne s'allume pas.", a4: "Rechargez-le. Débranchez le câble si en charge. Garantie : 1 an.",
+  addr: "Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, République de Corée",
+  contact_info: "global@britzmedi.com · www.britzmedi.com",
+  copyright: "© 2026 BRITZMEDI Co., Ltd. Tous droits réservés."
+},
+id: {
+  subtitle: "Panduan Pengguna · 2026",
+  hero_desc: "Perangkat kecantikan rumahan multi-kanal RF · EMS · ELP. Teknologi perawatan kulit profesional untuk penggunaan pribadi. Output energi aman hanya saat menyentuh kulit.",
+  parts_title: "Bagian-bagian Perangkat",
+  part1: "Kepala Elektroda — Elektroda Kontak Kulit",
+  part2: "Indikator Level — Level Output 1 / 2 / 3",
+  part3: "Indikator Mode — RF / EMS / ELP",
+  part4: "Tombol Daya — ON/OFF & Level (1/2/3)",
+  part5: "Tombol Mode (M) — Mode & Getaran",
+  part6: "Port Pengisian — USB-C",
+  modes_title: "Cara Penggunaan — 3 Mode",
+  rf_h: "Mode RF", rf_desc: "Energi frekuensi tinggi untuk perawatan kulit mendalam dan manajemen volume.",
+  rf_s1: "Bersihkan wajah dengan air hangat.", rf_s2: "Oleskan krim NEWCHAE pada area perawatan.",
+  rf_s3: "Pilih mode RF & level.", rf_s4: "Tempelkan pada kulit — bunyi bip tanda pindah area.",
+  rf_s5: "Gerakkan dari dalam ke luar.", rf_s6: "Mati otomatis setelah 10 menit.",
+  rf_tip: "Maks. 2 kali per area. Mulai dari Level 1.",
+  ems_h: "Mode EMS", ems_desc: "Stimulasi listrik untuk elastisitas kulit dan manajemen kontur.",
+  ems_s1: "Bersihkan wajah dengan air hangat.", ems_s2: "Oleskan krim NEWCHAE secara merata.",
+  ems_s3: "Pilih mode EMS & level.", ems_s4: "Geser ke atas: bawah ke atas, dalam ke luar.",
+  ems_s5: "Mati otomatis setelah 10 menit.", ems_tip: "Mulai Level 1. Hindari stimulasi berlebihan.",
+  elp_h: "Mode ELP", elp_desc: "Elektroporasi untuk meningkatkan penyerapan bahan aktif.",
+  elp_s1: "Bersihkan wajah dengan air hangat.", elp_s2: "Oleskan krim NEWCHAE secara merata.",
+  elp_s3: "Pilih mode ELP & level.", elp_s4: "Pijat dengan gerakan melingkar kecil, dari dalam ke luar.",
+  elp_s5: "Mati otomatis setelah 10 menit.", elp_tip: "Mulai Level 1. Hindari stimulasi berlebihan.",
+  cycle_label: "Siklus yang Direkomendasikan", cycle_text: "Setiap mode 2–3 kali/minggu, maks. 10 menit per sesi.",
+  precaution_eye: "Perhatian", precaution_h: "Sebelum Penggunaan",
+  c1: "Baca panduan dengan seksama sebelum digunakan.",
+  c2: "Konsultasikan dengan spesialis jika sedang menjalani perawatan kulit atau memiliki alergi.",
+  c3: "Jangan gunakan jika alergi logam.",
+  c4: "Jauhkan dari jangkauan anak-anak.",
+  c5: "Jangan gunakan pada penderita penyakit jantung, kondisi akut, atau perangkat implan.",
+  c6: "Untuk kulit sensitif, lakukan uji tempel di pergelangan tangan terlebih dahulu.",
+  c7: "Setelah operasi wajah, gunakan hanya setelah pemulihan penuh.",
+  c8: "Rasa kesemutan ringan atau kemerahan mungkin terjadi, biasanya hilang dalam 2–3 hari.",
+  c9: "Hindari penggunaan di sekitar mata atau area tenggorokan.",
+  c10: "Selalu mulai dari Level 1. Maks. 2 kali per area.",
+  c11: "Jangan pegang dengan tangan basah atau benturkan.",
+  c12: "Ini bukan perangkat medis. Tidak untuk pengobatan medis.",
+  warn_h: "Peringatan",
+  w1: "Jangan rendam perangkat dalam air.", w2: "Pastikan tidak ada cairan masuk ke perangkat.",
+  w3: "Jangan gunakan di dekat bak mandi, shower, atau kolam.", w4: "Jangan bongkar produk.",
+  w5: "Jauhkan dari sumber panas — risiko kebakaran.", w6: "Hentikan penggunaan jika ada suara, bau, atau asap tidak normal.",
+  storage_h: "Penyimpanan",
+  st1: "Lap dengan tisu basah, keringkan dengan kain lembut.", st2: "Simpan di tempat sejuk dan kering, hindari sinar matahari langsung.",
+  st3: "Hindari tekanan atau benturan keras.",
+  spec_eye: "Spesifikasi", spec_h: "Spesifikasi Produk",
+  s_name: "Produk", s_model: "Model", s_input: "Input", s_battery: "Baterai",
+  s_modes: "Mode", s_vib: "Getaran", s_dim: "Ukuran", s_weight: "Berat",
+  s_cert: "Sertifikasi", s_mfr: "Produsen", s_origin: "Asal", s_origin_v: "Korea Selatan",
+  qa_eye: "Pertanyaan Umum",
+  q1: "Q. Bolehkah digunakan setiap hari?", a1: "Ya. Disarankan 2–3 kali per minggu per mode, maks. 10 menit.",
+  q2: "Q. Harus menggunakan krim NEWCHAE?", a2: "Produk lain bisa digunakan tetapi dapat mengurangi transmisi RF. Krim NEWCHAE diformulasikan untuk transmisi energi optimal.",
+  q3: "Q. Boleh digunakan saat hamil?", a3: "Tidak disarankan. Konsultasikan dengan dokter.",
+  q4: "Q. Perangkat tidak mau menyala.", a4: "Isi daya perangkat. Lepas kabel jika sedang mengisi daya. Garansi: 1 tahun.",
+  addr: "Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, Republik Korea",
+  contact_info: "global@britzmedi.com · www.britzmedi.com",
+  copyright: "© 2026 BRITZMEDI Co., Ltd. Hak cipta dilindungi."
+},
+es: {
+  subtitle: "Manual de Usuario · 2026",
+  hero_desc: "Dispositivo de belleza multicanal RF · EMS · ELP para uso en casa. Tecnología profesional de cuidado de la piel para uso personal. Emisión segura solo al contacto con la piel.",
+  parts_title: "Partes del Dispositivo",
+  part1: "Cabezal de Electrodo — Electrodo de contacto",
+  part2: "Indicador de Nivel — Niveles 1 / 2 / 3",
+  part3: "Indicador de Modo — RF / EMS / ELP",
+  part4: "Botón de Encendido — ON/OFF y Nivel (1/2/3)",
+  part5: "Botón de Modo (M) — Modo y Vibración",
+  part6: "Puerto de Carga — USB-C",
+  modes_title: "Modo de Uso — 3 Modos",
+  rf_h: "Modo RF", rf_desc: "Energía de alta frecuencia para el cuidado profundo y manejo de volumen.",
+  rf_s1: "Lava tu rostro con agua tibia.", rf_s2: "Aplica la crema NEWCHAE en el área a tratar.",
+  rf_s3: "Selecciona el modo RF y el nivel.", rf_s4: "Mantén en la piel — el pitido indica cambiar de zona.",
+  rf_s5: "Mueve de adentro hacia afuera.", rf_s6: "Apagado automático después de 10 min.",
+  rf_tip: "Máx. 2 aplicaciones por zona. Comienza en Nivel 1.",
+  ems_h: "Modo EMS", ems_desc: "Estimulación eléctrica para elasticidad y contorno de la piel.",
+  ems_s1: "Lava tu rostro con agua tibia.", ems_s2: "Aplica generosamente la crema NEWCHAE.",
+  ems_s3: "Selecciona el modo EMS y el nivel.", ems_s4: "Desliza hacia arriba: de abajo hacia arriba, de adentro hacia afuera.",
+  ems_s5: "Apagado automático después de 10 min.", ems_tip: "Comienza en Nivel 1. Evita la sobreestimulación.",
+  elp_h: "Modo ELP", elp_desc: "Electroporación para mejorar la absorción de ingredientes activos.",
+  elp_s1: "Lava tu rostro con agua tibia.", elp_s2: "Aplica generosamente la crema NEWCHAE.",
+  elp_s3: "Selecciona el modo ELP y el nivel.", elp_s4: "Masajea en círculos pequeños, de adentro hacia afuera.",
+  elp_s5: "Apagado automático después de 10 min.", elp_tip: "Comienza en Nivel 1. Evita la sobreestimulación.",
+  cycle_label: "Ciclo Recomendado", cycle_text: "Cada modo 2–3 veces/semana, máx. 10 min por sesión.",
+  precaution_eye: "Precauciones", precaution_h: "Antes de Usar",
+  c1: "Lee el manual completo antes de usar.",
+  c2: "Consulta a un especialista si estás en tratamiento dermatológico o tienes alergias.",
+  c3: "No uses si tienes alergia a los metales.",
+  c4: "Mantén fuera del alcance de los niños.",
+  c5: "No uses con enfermedades cardíacas, condiciones agudas o dispositivos implantados.",
+  c6: "Para piel sensible, realiza primero una prueba en la muñeca.",
+  c7: "Después de cirugía facial, usa solo tras recuperación completa.",
+  c8: "Puede haber leve hormigueo o enrojecimiento, normalmente desaparece en 2–3 días.",
+  c9: "Evita usar alrededor de los ojos o en la zona de la garganta.",
+  c10: "Siempre comienza en Nivel 1. Máx. 2 aplicaciones por zona.",
+  c11: "No manipules con las manos mojadas ni expongas a golpes.",
+  c12: "Este no es un dispositivo médico. No es para tratamiento médico.",
+  warn_h: "Advertencia",
+  w1: "No sumerjas el dispositivo en agua.", w2: "Evita que entre líquido en el dispositivo.",
+  w3: "No uses cerca de bañeras, duchas o albercas.", w4: "No desarmes el producto.",
+  w5: "Mantén alejado de fuentes de calor — riesgo de incendio.", w6: "Deja de usar si detectas ruido, olor o humo inusual.",
+  storage_h: "Almacenamiento",
+  st1: "Limpia con toallita húmeda, seca con paño suave.", st2: "Almacena en lugar fresco y seco, lejos de la luz solar.",
+  st3: "Evita presión fuerte o golpes.",
+  spec_eye: "Especificaciones", spec_h: "Datos Técnicos",
+  s_name: "Producto", s_model: "Modelo", s_input: "Entrada", s_battery: "Batería",
+  s_modes: "Modos", s_vib: "Vibración", s_dim: "Tamaño", s_weight: "Peso",
+  s_cert: "Certif.", s_mfr: "Fabricante", s_origin: "Origen", s_origin_v: "Corea del Sur",
+  qa_eye: "Preguntas Frecuentes",
+  q1: "Q. ¿Puedo usarlo todos los días?", a1: "Sí. Se recomienda 2–3 veces por semana por modo, máx. 10 min.",
+  q2: "Q. ¿Es obligatorio usar la crema NEWCHAE?", a2: "Puedes usar otros productos, pero la transmisión RF puede reducirse. La crema NEWCHAE está formulada para transmisión óptima.",
+  q3: "Q. ¿Puedo usarlo estando embarazada?", a3: "No se recomienda. Consulta a tu médico.",
+  q4: "Q. El dispositivo no enciende.", a4: "Cárgalo. Si está cargando, desconecta el cable. Garantía: 1 año.",
+  addr: "Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, República de Corea",
+  contact_info: "global@britzmedi.com · www.britzmedi.com",
+  copyright: "© 2026 BRITZMEDI Co., Ltd. Todos los derechos reservados."
+},
+pt: {
+  subtitle: "Manual do Usuário · 2026",
+  hero_desc: "Dispositivo de beleza multicanal RF · EMS · ELP para uso doméstico. Tecnologia profissional de cuidados com a pele para uso pessoal. Emissão segura apenas ao contato com a pele.",
+  parts_title: "Partes do Dispositivo",
+  part1: "Cabeça do Eletrodo — Eletrodo de contato",
+  part2: "Indicador de Nível — Níveis 1 / 2 / 3",
+  part3: "Indicador de Modo — RF / EMS / ELP",
+  part4: "Botão Liga/Desliga — ON/OFF e Nível (1/2/3)",
+  part5: "Botão de Modo (M) — Modo e Vibração",
+  part6: "Porta de Carregamento — USB-C",
+  modes_title: "Como Usar — 3 Modos",
+  rf_h: "Modo RF", rf_desc: "Energia de alta frequência para cuidados profundos e gerenciamento de volume.",
+  rf_s1: "Lave o rosto com água morna.", rf_s2: "Aplique o creme NEWCHAE na área de tratamento.",
+  rf_s3: "Selecione o modo RF e o nível.", rf_s4: "Mantenha na pele — o bipe indica para mudar de área.",
+  rf_s5: "Mova de dentro para fora.", rf_s6: "Desligamento automático após 10 min.",
+  rf_tip: "Máx. 2 aplicações por área. Comece no Nível 1.",
+  ems_h: "Modo EMS", ems_desc: "Estimulação elétrica para elasticidade e contorno da pele.",
+  ems_s1: "Lave o rosto com água morna.", ems_s2: "Aplique generosamente o creme NEWCHAE.",
+  ems_s3: "Selecione o modo EMS e o nível.", ems_s4: "Deslize para cima: de baixo para cima, de dentro para fora.",
+  ems_s5: "Desligamento automático após 10 min.", ems_tip: "Comece no Nível 1. Evite estimulação excessiva.",
+  elp_h: "Modo ELP", elp_desc: "Eletroporação para melhor absorção de ingredientes ativos.",
+  elp_s1: "Lave o rosto com água morna.", elp_s2: "Aplique generosamente o creme NEWCHAE.",
+  elp_s3: "Selecione o modo ELP e o nível.", elp_s4: "Massageie em pequenos círculos, de dentro para fora.",
+  elp_s5: "Desligamento automático após 10 min.", elp_tip: "Comece no Nível 1. Evite estimulação excessiva.",
+  cycle_label: "Ciclo Recomendado", cycle_text: "Cada modo 2–3 vezes/semana, máx. 10 min por sessão.",
+  precaution_eye: "Precauções", precaution_h: "Antes de Usar",
+  c1: "Leia o manual completamente antes de usar.",
+  c2: "Consulte um especialista se estiver em tratamento dermatológico ou tiver alergias.",
+  c3: "Não use se tiver alergia a metais.",
+  c4: "Mantenha fora do alcance de crianças.",
+  c5: "Não use com doenças cardíacas, condições agudas ou dispositivos implantados.",
+  c6: "Para pele sensível, faça primeiro um teste no pulso.",
+  c7: "Após cirurgia facial, use somente após recuperação completa.",
+  c8: "Pode ocorrer leve formigamento ou vermelhidão, geralmente desaparece em 2–3 dias.",
+  c9: "Evite usar ao redor dos olhos ou na região da garganta.",
+  c10: "Sempre comece no Nível 1. Máx. 2 aplicações por área.",
+  c11: "Não manuseie com as mãos molhadas nem exponha a impactos.",
+  c12: "Este não é um dispositivo médico. Não se destina a tratamento médico.",
+  warn_h: "Aviso",
+  w1: "Não mergulhe o dispositivo na água.", w2: "Não permita que líquidos entrem no dispositivo.",
+  w3: "Não use perto de banheiras, chuveiros ou piscinas.", w4: "Não desmonte o produto.",
+  w5: "Mantenha longe de fontes de calor — risco de incêndio.", w6: "Pare de usar se houver ruído, odor ou fumaça incomum.",
+  storage_h: "Armazenamento",
+  st1: "Limpe com lenço úmido, seque com pano macio.", st2: "Armazene em local fresco e seco, longe da luz solar direta.",
+  st3: "Evite pressão forte ou impactos.",
+  spec_eye: "Especificações", spec_h: "Dados Técnicos",
+  s_name: "Produto", s_model: "Modelo", s_input: "Entrada", s_battery: "Bateria",
+  s_modes: "Modos", s_vib: "Vibração", s_dim: "Tamanho", s_weight: "Peso",
+  s_cert: "Certif.", s_mfr: "Fabricante", s_origin: "Origem", s_origin_v: "Coreia do Sul",
+  qa_eye: "Perguntas Frequentes",
+  q1: "Q. Posso usar todos os dias?", a1: "Sim. 2–3 vezes por semana por modo, máx. 10 min.",
+  q2: "Q. É obrigatório usar o creme NEWCHAE?", a2: "Outros produtos podem ser usados, mas a transmissão RF pode diminuir. O creme NEWCHAE é formulado para transmissão ideal.",
+  q3: "Q. Posso usar durante a gravidez?", a3: "Não recomendado. Consulte seu médico.",
+  q4: "Q. O dispositivo não liga.", a4: "Carregue-o. Se estiver carregando, desconecte o cabo. Garantia: 1 ano.",
+  addr: "Kranz Techno 1211-ho, 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Gyeonggi-do, República da Coreia",
+  contact_info: "global@britzmedi.com · www.britzmedi.com",
+  copyright: "© 2026 BRITZMEDI Co., Ltd. Todos os direitos reservados."
 }
 };
 
@@ -936,8 +1299,8 @@ let currentLang = 'en';
 
 function setLang(lang) {
   currentLang = lang;
-  const langMap = { en: 'en', ko: 'ko', zh: 'zh', ja: 'ja', th: 'th', vi: 'vi' };
-  document.documentElement.lang = langMap[lang] || 'en';
+  const htmlLang = { en:'en', en_gb:'en', ko:'ko', zh:'zh', ja:'ja', th:'th', vi:'vi', ru:'ru', fr:'fr', id:'id', es:'es', pt:'pt' };
+  document.documentElement.lang = htmlLang[lang] || 'en';
 
   document.querySelectorAll('[data-t]').forEach(el => {
     const key = el.getAttribute('data-t');
@@ -946,14 +1309,9 @@ function setLang(lang) {
     }
   });
 
-  document.querySelectorAll('#controls button[data-lang]').forEach(b => {
-    b.classList.toggle('active', b.dataset.lang === lang);
-  });
+  const sel = document.getElementById('lang-select');
+  if (sel) sel.value = lang;
 }
-
-document.querySelectorAll('#controls button[data-lang]').forEach(btn => {
-  btn.addEventListener('click', () => setLang(btn.dataset.lang));
-});
 </script>
 </body>
 </html>

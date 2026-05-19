@@ -503,6 +503,13 @@
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     font-family: 'Inter', sans-serif;
   }
+  .controls select {
+    background: rgba(255,255,255,0.08); border: 1px solid #3a3530;
+    color: #fff; padding: 8px 10px; font-size: 10px;
+    letter-spacing: 0.05em; cursor: pointer; font-weight: 500;
+    font-family: inherit; outline: none;
+  }
+  .controls select option { background: #2a2520; color: #fff; }
   .controls button {
     background: transparent; color: #fff;
     border: 1px solid #3a3530;
@@ -511,8 +518,6 @@
     font-weight: 600; text-transform: uppercase;
     font-family: inherit;
   }
-  .controls button.active { background: var(--lilac); border-color: var(--lilac); }
-  .controls button:hover:not(.active) { border-color: #6a635a; }
   .controls .sep { width: 1px; background: #3a3530; margin: 0 4px; }
   .controls .print-btn { background: var(--cream); color: var(--ink); border-color: var(--cream); }
   .controls .print-btn:hover { background: #fff; }
@@ -557,12 +562,20 @@
 <body>
 
 <div class="controls" id="controls">
-  <button data-lang="en" class="active">EN</button>
-  <button data-lang="gb">UK</button>
-  <button data-lang="ko">KO</button>
-  <button data-lang="ja">JA</button>
-  <button data-lang="th">TH</button>
-  <button data-lang="vi">VI</button>
+  <select id="lang-select" onchange="setLang(this.value)">
+    <option value="en">English (US)</option>
+    <option value="en_gb">English (UK)</option>
+    <option value="ko">한국어</option>
+    <option value="ru">Русский</option>
+    <option value="fr">Français</option>
+    <option value="ja">日本語</option>
+    <option value="zh">中文</option>
+    <option value="th">ภาษาไทย</option>
+    <option value="vi">Tiếng Việt</option>
+    <option value="id">Bahasa Indonesia</option>
+    <option value="es">Español (MX)</option>
+    <option value="pt">Português (BR)</option>
+  </select>
   <div class="sep"></div>
   <button class="print-btn" onclick="window.print()">PDF ↓</button>
 </div>
@@ -932,7 +945,7 @@ const DICT = {
     "p6.web_lbl": "Web", "p6.email_lbl": "Email",
     "p6.year": "Established"
   },
-  gb: {
+  en_gb: {
     "frame.brand": "NEWCHAE · BRITZMEDI",
     "nav.overview": "OVERVIEW", "nav.product": "PRODUCT · 3-MODE SYSTEM",
     "nav.specs": "CLINICAL & SPECIFICATIONS", "nav.cream": "PEPTIDE LIFTING CREAM",
@@ -1306,32 +1319,343 @@ const DICT = {
     "p6.made": "Sản xuất tại Hàn Quốc",
     "p6.web_lbl": "Web", "p6.email_lbl": "Email",
     "p6.year": "Thành lập"
+  },
+  ru: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.overview": "ОБЗОР", "nav.product": "ПРОДУКТ · 3 РЕЖИМА",
+    "nav.specs": "КЛИНИКА И ХАРАКТЕРИСТИКИ", "nav.cream": "ПЕПТИДНЫЙ ЛИФТИНГ-КРЕМ",
+    "nav.ritual": "ВАШ ЕЖЕДНЕВНЫЙ РИТУАЛ",
+    "cover.kicker": "Коллекция красоты · 2026",
+    "cover.sub": "RF бьюти-устройство 3-в-1 и специальный лифтинг-крем — разработаны, чтобы привнести профессиональный уход за кожей в ваш ежедневный ритуал.",
+    "cover.quote": "\"Ощутите волнение первого раза<br>каждый день.\"",
+    "p2.eyebrow": "Что такое NEWCHAE",
+    "p2.overlay": "\"Три профессиональные технологии,<br>воплощённые в одном ежедневном ритуале.\"",
+    "p2.h2": "Бьюти-устройство 3-в-1,<br>разработано в Корее.",
+    "p2.lead": "NEWCHAE SHOT объединяет RF, EMS и ELP в одном домашнем устройстве. Разработано и произведено компанией BRITZMEDI — корейским производителем медицинского оборудования с 2017 года.",
+    "p2.body": "Клинически доказано: улучшение плотности кожи на <strong class=\"accent\">48%</strong> и уменьшение пор на <strong class=\"accent\">74%</strong> всего за две недели.",
+    "p2.s1": "Ключевые технологии",
+    "p2.s2": "Минут за сеанс", "p2.s2c": "Ежедневный ритуал",
+    "p2.s3": "Плотность кожи ↑", "p2.s3c": "Через 2 недели",
+    "p2.s4": "Размер пор ↓", "p2.s4c": "Через 2 недели",
+    "p2.src": "Источник: Korea Institute of Dermatological Sciences · 2-недельное клиническое исследование",
+    "p3.eyebrow": "Система 3 режимов", "p3.h2": "Три режима.<br>Одно устройство.",
+    "p3.lead": "Каждый режим использует частоту, оптимизированную для конкретной задачи ухода за кожей.",
+    "p3.m1.h": "Режим RF", "p3.m1.p": "Тепловая энергия проникает в глубокий дермальный слой, поддерживая коллагеновую активность и укрепляя упругость кожи.",
+    "p3.m2.h": "Режим EMS", "p3.m2.p": "Мягкие микротоки стимулируют лицевые мышцы, подтягивая контуры и определяя линию подбородка.",
+    "p3.m3.h": "Режим ELP", "p3.m3.p": "Создаёт временные микроканалы в кожном барьере для более глубокого проникновения активных ингредиентов — без игл.",
+    "p4.eyebrow": "Клинические данные", "p4.h2": "Доказано за<br>две недели.",
+    "p4.c1.h": "Плотность кожи", "p4.c1.d": "Независимое 2-недельное исследование",
+    "p4.c2.h": "Размер пор", "p4.c2.d": "Видимое уменьшение за 14 дней",
+    "p4.src": "Источник: Korea Institute of Dermatological Sciences · Независимое клиническое исследование",
+    "p4.eyebrow2": "Технические характеристики", "p4.h2b": "По мировым<br>стандартам.",
+    "spec.model": "Модель", "spec.battery": "Аккумулятор", "spec.charging": "Зарядка",
+    "spec.modes": "Режимы", "spec.rfpower": "Мощность RF", "spec.freq": "Частоты",
+    "spec.dim": "Размеры / Масса", "spec.cert": "Сертификаты",
+    "p4.box": "Комплектация", "p4.b1": "Основное устройство NEWCHAE SHOT",
+    "p4.b2": "Кабель USB-C · Дорожный чехол", "p4.b3": "Руководство (многоязычное)",
+    "p5.eyebrow": "Идеальный компаньон", "p5.vol_sub": "Пептидный лифтинг-крем",
+    "p5.h2": "NEWCHAE<br>Лифтинг-крем.",
+    "p5.lead": "Крем с пептидами, разработанный для синергии с NEWCHAE SHOT. Максимизирует эффект каждого режима — особенно ELP для глубокой доставки активных ингредиентов.",
+    "p5.i1.t": "Пептидный комплекс", "p5.i1.d": "Поддерживает синтез коллагена и эластичность кожи.",
+    "p5.i2.t": "Гиалуроновая кислота", "p5.i2.d": "Многомолекулярная ГК для глубокого увлажнения всех слоёв кожи.",
+    "p5.i3.t": "Ниацинамид", "p5.i3.d": "Выравнивает тон и укрепляет кожный барьер.",
+    "p5.i4.t": "Аденозин", "p5.i4.d": "Клинически признанный MFDS антивозрастной ингредиент.",
+    "p5.pair": "Зачем сочетать устройство + крем?",
+    "p5.pair_p": "Режим ELP создаёт временные микроканалы в кожном барьере, позволяя пептидам и активным ингредиентам проникать глубже. Текстура крема оптимизирована для плавного скольжения и равномерного распределения энергии.",
+    "p6.eyebrow": "Ваш ежедневный ритуал", "p6.h2": "Три шага.<br>Десять минут.",
+    "p6.lead": "Простой ритуал для любого стиля жизни — утром или вечером, дома или в дороге. Профессиональные результаты каждый день.",
+    "p6.s1.h": "Нанесение", "p6.s1.dur": "1 МИНУТА",
+    "p6.s1.p": "Очистите лицо и обильно нанесите NEWCHAE Peptide Lifting Cream. Крем служит и уходом, и проводящей средой.",
+    "p6.s2.h": "Процедура", "p6.s2.dur": "8–10 МИНУТ",
+    "p6.s2.p": "Выберите режим — GLOW для упругости, TONE для контура, BOOST для впитывания — и проводите NEWCHAE SHOT по лицу и шее.",
+    "p6.s3.h": "Сияние", "p6.s3.dur": "КАЖДЫЙ ДЕНЬ",
+    "p6.s3.p": "Вбейте остатки крема в кожу. При регулярном использовании кожа становится заметно более упругой и подтянутой. Результаты — уже через 2 недели.",
+    "p6.trust": "Доверие через качество", "p6.made": "Произведено в Корее",
+    "p6.web_lbl": "Сайт", "p6.email_lbl": "Email", "p6.year": "Основание"
+  },
+  fr: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.overview": "APERÇU", "nav.product": "PRODUIT · SYSTÈME 3 MODES",
+    "nav.specs": "CLINIQUE ET SPÉCIFICATIONS", "nav.cream": "CRÈME LIFTING PEPTIDE",
+    "nav.ritual": "VOTRE RITUEL QUOTIDIEN",
+    "cover.kicker": "Collection beauté · 2026",
+    "cover.sub": "Un appareil de beauté RF 3-en-1 et sa crème lifting dédiée — conçus pour apporter des résultats professionnels dans votre routine quotidienne.",
+    "cover.quote": "\"Retrouvez l'émotion de la première fois,<br>chaque jour.\"",
+    "p2.eyebrow": "Qu'est-ce que NEWCHAE",
+    "p2.overlay": "\"Trois technologies professionnelles,<br>condensées en un rituel quotidien.\"",
+    "p2.h2": "Un appareil de beauté 3-en-1,<br>conçu en Corée.",
+    "p2.lead": "NEWCHAE SHOT combine RF, EMS et ELP en un seul appareil domestique. Conçu et fabriqué par BRITZMEDI — fabricant coréen de dispositifs médicaux depuis 2017.",
+    "p2.body": "Cliniquement prouvé : densité cutanée améliorée de <strong class=\"accent\">48%</strong> et pores réduits de <strong class=\"accent\">74%</strong> en deux semaines.",
+    "p2.s1": "Technologies clés", "p2.s2": "Minutes par séance", "p2.s2c": "Rituel quotidien",
+    "p2.s3": "Densité cutanée ↑", "p2.s3c": "Après 2 semaines",
+    "p2.s4": "Taille des pores ↓", "p2.s4c": "Après 2 semaines",
+    "p2.src": "Source : Korea Institute of Dermatological Sciences · Étude clinique de 2 semaines",
+    "p3.eyebrow": "Système 3 modes", "p3.h2": "Trois modes.<br>Un seul appareil.",
+    "p3.lead": "Chaque mode utilise une fréquence optimisée pour un objectif skincare spécifique — calibré par les ingénieurs BRITZMEDI.",
+    "p3.m1.h": "Mode RF", "p3.m1.p": "Énergie thermique dans la couche dermique profonde pour soutenir le collagène et la fermeté de la peau.",
+    "p3.m2.h": "Mode EMS", "p3.m2.p": "Micro-courants doux stimulent les muscles faciaux pour tonifier les contours et la mâchoire.",
+    "p3.m3.h": "Mode ELP", "p3.m3.p": "Crée des micro-canaux temporaires dans la barrière cutanée pour une pénétration plus profonde des actifs — sans aiguilles.",
+    "p4.eyebrow": "Preuves cliniques", "p4.h2": "Prouvé en<br>deux semaines.",
+    "p4.c1.h": "Densité cutanée", "p4.c1.d": "Étude indépendante de 2 semaines",
+    "p4.c2.h": "Taille des pores", "p4.c2.d": "Réduction visible en 14 jours",
+    "p4.src": "Source : Korea Institute of Dermatological Sciences · Étude clinique indépendante",
+    "p4.eyebrow2": "Spécifications techniques", "p4.h2b": "Aux normes<br>mondiales.",
+    "spec.model": "Modèle", "spec.battery": "Batterie", "spec.charging": "Charge",
+    "spec.modes": "Modes", "spec.rfpower": "Puissance RF", "spec.freq": "Fréquences",
+    "spec.dim": "Dimensions / Poids", "spec.cert": "Certifications",
+    "p4.box": "Contenu de la boîte", "p4.b1": "Appareil principal NEWCHAE SHOT",
+    "p4.b2": "Câble USB-C · Pochette de voyage", "p4.b3": "Manuel (multilingue)",
+    "p5.eyebrow": "Le compagnon idéal", "p5.vol_sub": "Crème lifting peptide",
+    "p5.h2": "NEWCHAE<br>Crème lifting.",
+    "p5.lead": "Une crème enrichie en peptides formulée pour agir en synergie avec NEWCHAE SHOT. Maximise les bénéfices de chaque mode — surtout l'ELP pour une pénétration plus profonde.",
+    "p5.i1.t": "Complexe peptidique", "p5.i1.d": "Soutient la synthèse du collagène et l'élasticité de la peau.",
+    "p5.i2.t": "Acide hyaluronique", "p5.i2.d": "AH multi-poids pour une hydratation profonde de toutes les couches.",
+    "p5.i3.t": "Niacinamide", "p5.i3.d": "Illumine le teint et renforce la barrière cutanée.",
+    "p5.i4.t": "Adénosine", "p5.i4.d": "Ingrédient anti-rides reconnu cliniquement par le MFDS.",
+    "p5.pair": "Pourquoi associer appareil + crème ?",
+    "p5.pair_p": "Le mode ELP crée des micro-canaux temporaires permettant aux peptides de pénétrer plus profondément. La texture de la crème est optimisée pour un glissement fluide et une distribution uniforme de l'énergie.",
+    "p6.eyebrow": "Votre rituel quotidien", "p6.h2": "Trois étapes.<br>Dix minutes.",
+    "p6.lead": "Une routine simple qui s'adapte à tout mode de vie — matin ou soir, chez soi ou en déplacement. Résultats professionnels, chaque jour.",
+    "p6.s1.h": "Appliquer", "p6.s1.dur": "1 MINUTE",
+    "p6.s1.p": "Nettoyez et appliquez généreusement la crème NEWCHAE Peptide Lifting Cream. Elle sert de soin et de milieu conducteur.",
+    "p6.s2.h": "Traiter", "p6.s2.dur": "8–10 MINUTES",
+    "p6.s2.p": "Sélectionnez votre mode — GLOW pour la fermeté, TONE pour les contours, BOOST pour l'absorption — et glissez le NEWCHAE SHOT sur le visage et le cou.",
+    "p6.s3.h": "Éclat", "p6.s3.dur": "CHAQUE JOUR",
+    "p6.s3.p": "Tapotez le reste de crème. Avec une utilisation régulière, observez une peau visiblement plus ferme et liftée. Résultats dès deux semaines.",
+    "p6.trust": "Confiance par le design", "p6.made": "Fabriqué en Corée",
+    "p6.web_lbl": "Web", "p6.email_lbl": "Email", "p6.year": "Fondation"
+  },
+  zh: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.overview": "概述", "nav.product": "产品 · 三模式系统",
+    "nav.specs": "临床与规格", "nav.cream": "肽类提拉面霜",
+    "nav.ritual": "您的日常仪式",
+    "cover.kicker": "美丽系列 · 2026",
+    "cover.sub": "三合一射频美容设备及专属提拉面霜——将专业护肤效果带入您的日常生活。",
+    "cover.quote": "\"每天，都感受初次的心动。\"",
+    "p2.eyebrow": "什么是 NEWCHAE",
+    "p2.overlay": "\"三项专业技术，<br>凝练为每日护肤仪式。\"",
+    "p2.h2": "三合一美容设备，<br>韩国研发制造。",
+    "p2.lead": "NEWCHAE SHOT将RF、EMS和ELP集成于一台家用设备中。由BRITZMEDI设计与制造——一家自2017年运营的韩国医疗器械制造商。",
+    "p2.body": "临床证实：仅两周持续使用，皮肤密度提升<strong class=\"accent\">48%</strong>，毛孔缩小<strong class=\"accent\">74%</strong>。",
+    "p2.s1": "核心技术", "p2.s2": "每次分钟", "p2.s2c": "每日居家仪式",
+    "p2.s3": "皮肤密度 ↑", "p2.s3c": "2周后",
+    "p2.s4": "毛孔大小 ↓", "p2.s4c": "2周后",
+    "p2.src": "来源：韩国皮肤科学研究院 · 2周临床研究",
+    "p3.eyebrow": "三模式系统", "p3.h2": "三种模式。<br>一台设备。",
+    "p3.lead": "每种模式使用针对特定护肤目标优化的频率——由BRITZMEDI工程师精准调校。",
+    "p3.m1.h": "RF模式", "p3.m1.p": "将热能传递到真皮深层，支持胶原蛋白活性，增强皮肤紧致度。",
+    "p3.m2.h": "EMS模式", "p3.m2.p": "温和微电流刺激面部肌肉，紧致轮廓和下颌线。",
+    "p3.m3.h": "ELP模式", "p3.m3.p": "在皮肤屏障中形成临时微通道，增强活性成分深层吸收——无需针头。",
+    "p4.eyebrow": "临床证据", "p4.h2": "两周，<br>有效验证。",
+    "p4.c1.h": "皮肤密度", "p4.c1.d": "独立2周研究",
+    "p4.c2.h": "毛孔大小", "p4.c2.d": "14天内可见缩小",
+    "p4.src": "来源：韩国皮肤科学研究院 · 独立临床研究",
+    "p4.eyebrow2": "技术规格", "p4.h2b": "符合全球<br>标准。",
+    "spec.model": "型号", "spec.battery": "电池", "spec.charging": "充电",
+    "spec.modes": "模式", "spec.rfpower": "RF功率", "spec.freq": "频率",
+    "spec.dim": "尺寸 / 重量", "spec.cert": "认证",
+    "p4.box": "包装内容", "p4.b1": "NEWCHAE SHOT 主机",
+    "p4.b2": "USB-C充电线 · 旅行袋", "p4.b3": "使用手册（多语言）",
+    "p5.eyebrow": "完美搭档", "p5.vol_sub": "肽类提拉面霜",
+    "p5.h2": "NEWCHAE<br>提拉面霜。",
+    "p5.lead": "富含肽类的面霜，专为与NEWCHAE SHOT协同使用而设计。最大化每种模式的效果——尤其是ELP电穿孔深层输送活性成分。",
+    "p5.i1.t": "肽类复合物", "p5.i1.d": "支持胶原蛋白合成和皮肤弹性。",
+    "p5.i2.t": "透明质酸", "p5.i2.d": "多分子量HA深层保湿所有皮肤层。",
+    "p5.i3.t": "烟酰胺", "p5.i3.d": "提亮肤色并强化皮肤屏障。",
+    "p5.i4.t": "腺苷", "p5.i4.d": "MFDS临床认可的抗皱成分。",
+    "p5.pair": "为什么要搭配设备+面霜？",
+    "p5.pair_p": "ELP模式在皮肤屏障中创建临时微通道，使肽类和活性成分比单纯涂抹渗透更深。面霜质地经过优化，确保设备顺滑滑动和能量均匀分布。",
+    "p6.eyebrow": "您的日常仪式", "p6.h2": "三步骤。<br>十分钟。",
+    "p6.lead": "简单的日常流程适合任何生活方式——早晨或晚间，居家或出行。每天享受专业级效果。",
+    "p6.s1.h": "涂抹", "p6.s1.dur": "1分钟",
+    "p6.s1.p": "洁面后大量涂抹NEWCHAE Peptide Lifting Cream。面霜既是滋养护理品也是设备的导电介质。",
+    "p6.s2.h": "护理", "p6.s2.dur": "8–10分钟",
+    "p6.s2.p": "选择模式——GLOW紧致、TONE塑形、BOOST吸收——然后将NEWCHAE SHOT轻柔滑过面部和颈部。",
+    "p6.s3.h": "焕发光彩", "p6.s3.dur": "每天",
+    "p6.s3.p": "轻拍剩余面霜使其吸收。坚持使用，皮肤明显更紧致、更提升。仅两周即可见效果。",
+    "p6.trust": "品质铸就信赖", "p6.made": "韩国制造",
+    "p6.web_lbl": "网站", "p6.email_lbl": "邮箱", "p6.year": "成立"
+  },
+  id: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.overview": "IKHTISAR", "nav.product": "PRODUK · SISTEM 3 MODE",
+    "nav.specs": "KLINIS & SPESIFIKASI", "nav.cream": "KRIM LIFTING PEPTIDA",
+    "nav.ritual": "RITUAL HARIAN ANDA",
+    "cover.kicker": "Koleksi Kecantikan · 2026",
+    "cover.sub": "Perangkat kecantikan RF 3-in-1 dan krim lifting khusus — dirancang untuk membawa hasil perawatan kulit profesional ke rutinitas harian Anda.",
+    "cover.quote": "\"Rasakan kegembiraan pertama kali,<br>setiap hari.\"",
+    "p2.eyebrow": "Apa itu NEWCHAE",
+    "p2.overlay": "\"Tiga teknologi profesional,<br>disarikan dalam satu ritual harian.\"",
+    "p2.h2": "Perangkat kecantikan 3-in-1,<br>dirancang di Korea.",
+    "p2.lead": "NEWCHAE SHOT menggabungkan RF, EMS, dan ELP dalam satu perangkat rumahan. Dirancang dan diproduksi oleh BRITZMEDI — produsen perangkat medis Korea sejak 2017.",
+    "p2.body": "Terbukti klinis meningkatkan kepadatan kulit <strong class=\"accent\">48%</strong> dan mengurangi ukuran pori <strong class=\"accent\">74%</strong> hanya dalam dua minggu.",
+    "p2.s1": "Teknologi Inti", "p2.s2": "Menit per Sesi", "p2.s2c": "Ritual harian",
+    "p2.s3": "Kepadatan Kulit ↑", "p2.s3c": "Setelah 2 minggu",
+    "p2.s4": "Ukuran Pori ↓", "p2.s4c": "Setelah 2 minggu",
+    "p2.src": "Sumber: Korea Institute of Dermatological Sciences · Studi klinis 2 minggu",
+    "p3.eyebrow": "Sistem 3 Mode", "p3.h2": "Tiga mode.<br>Satu perangkat.",
+    "p3.lead": "Setiap mode menggunakan frekuensi berbeda yang dioptimalkan untuk tujuan perawatan kulit tertentu.",
+    "p3.m1.h": "Mode RF", "p3.m1.p": "Energi termal ke lapisan dermis dalam untuk mendukung aktivitas kolagen dan memperkuat kekencangan kulit.",
+    "p3.m2.h": "Mode EMS", "p3.m2.p": "Mikro-arus lembut merangsang otot wajah untuk mengencangkan kontur dan garis rahang.",
+    "p3.m3.h": "Mode ELP", "p3.m3.p": "Membentuk jalur mikro sementara di skin barrier untuk penyerapan bahan aktif lebih dalam — tanpa jarum.",
+    "p4.eyebrow": "Bukti Klinis", "p4.h2": "Terbukti dalam<br>dua minggu.",
+    "p4.c1.h": "Kepadatan Kulit", "p4.c1.d": "Studi Independen 2 Minggu",
+    "p4.c2.h": "Ukuran Pori", "p4.c2.d": "Pengurangan Terlihat dalam 14 Hari",
+    "p4.src": "Sumber: Korea Institute of Dermatological Sciences · Studi klinis independen",
+    "p4.eyebrow2": "Spesifikasi Teknis", "p4.h2b": "Sesuai standar<br>global.",
+    "spec.model": "Model", "spec.battery": "Baterai", "spec.charging": "Pengisian",
+    "spec.modes": "Mode", "spec.rfpower": "Daya RF", "spec.freq": "Frekuensi",
+    "spec.dim": "Dimensi / Berat", "spec.cert": "Sertifikasi",
+    "p4.box": "Isi Kemasan", "p4.b1": "Perangkat Utama NEWCHAE SHOT",
+    "p4.b2": "Kabel USB-C · Pouch Perjalanan", "p4.b3": "Panduan Pengguna (Multi-bahasa)",
+    "p5.eyebrow": "Pendamping Sempurna", "p5.vol_sub": "Krim Lifting Peptida",
+    "p5.h2": "NEWCHAE<br>Krim Lifting.",
+    "p5.lead": "Krim kaya peptida yang diformulasikan untuk bekerja sinergis dengan NEWCHAE SHOT. Memaksimalkan manfaat setiap mode — terutama ELP untuk pengiriman aktif lebih dalam.",
+    "p5.i1.t": "Kompleks Peptida", "p5.i1.d": "Mendukung sintesis kolagen dan elastisitas kulit.",
+    "p5.i2.t": "Asam Hialuronat", "p5.i2.d": "HA multi-berat untuk hidrasi mendalam semua lapisan kulit.",
+    "p5.i3.t": "Niacinamide", "p5.i3.d": "Mencerahkan kulit dan memperkuat skin barrier.",
+    "p5.i4.t": "Adenosine", "p5.i4.d": "Bahan anti-kerut yang diakui klinis oleh MFDS.",
+    "p5.pair": "Mengapa Padukan Perangkat + Krim?",
+    "p5.pair_p": "Mode ELP menciptakan jalur mikro sementara di skin barrier, memungkinkan peptida meresap lebih dalam. Tekstur krim dioptimalkan untuk geseran perangkat yang mulus dan distribusi energi merata.",
+    "p6.eyebrow": "Ritual Harian Anda", "p6.h2": "Tiga langkah.<br>Sepuluh menit.",
+    "p6.lead": "Rutinitas sederhana untuk gaya hidup apa pun — pagi atau malam, di rumah atau bepergian. Hasil profesional, setiap hari.",
+    "p6.s1.h": "Oleskan", "p6.s1.dur": "1 MENIT",
+    "p6.s1.p": "Bersihkan wajah dan oleskan NEWCHAE Peptide Lifting Cream dengan murah hati. Krim berfungsi sebagai perawatan dan media konduktif.",
+    "p6.s2.h": "Rawat", "p6.s2.dur": "8–10 MENIT",
+    "p6.s2.p": "Pilih mode — GLOW untuk kekencangan, TONE untuk kontur, BOOST untuk penyerapan — dan geser NEWCHAE SHOT di wajah dan leher.",
+    "p6.s3.h": "Bersinar", "p6.s3.dur": "SETIAP HARI",
+    "p6.s3.p": "Tepuk sisa krim agar meresap. Penggunaan konsisten menghasilkan kulit lebih kencang dan terangkat. Hasil mulai terlihat dalam 2 minggu.",
+    "p6.trust": "Kepercayaan Melalui Desain", "p6.made": "Dibuat di Korea",
+    "p6.web_lbl": "Web", "p6.email_lbl": "Email", "p6.year": "Didirikan"
+  },
+  es: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.overview": "RESUMEN", "nav.product": "PRODUCTO · SISTEMA 3 MODOS",
+    "nav.specs": "CLÍNICA Y ESPECIFICACIONES", "nav.cream": "CREMA LIFTING CON PÉPTIDOS",
+    "nav.ritual": "TU RITUAL DIARIO",
+    "cover.kicker": "Colección de belleza · 2026",
+    "cover.sub": "Un dispositivo de belleza RF 3 en 1 y su crema lifting dedicada — diseñados para llevar resultados profesionales a tu rutina diaria.",
+    "cover.quote": "\"Siente la emoción de la primera vez,<br>todos los días.\"",
+    "p2.eyebrow": "Qué es NEWCHAE",
+    "p2.overlay": "\"Tres tecnologías profesionales,<br>condensadas en un ritual diario.\"",
+    "p2.h2": "Un dispositivo de belleza 3 en 1,<br>diseñado en Corea.",
+    "p2.lead": "NEWCHAE SHOT combina RF, EMS y ELP en un solo dispositivo doméstico. Diseñado y fabricado por BRITZMEDI — fabricante coreano de dispositivos médicos desde 2017.",
+    "p2.body": "Clínicamente comprobado: mejora la densidad de la piel en un <strong class=\"accent\">48%</strong> y reduce los poros en un <strong class=\"accent\">74%</strong> en solo dos semanas.",
+    "p2.s1": "Tecnologías clave", "p2.s2": "Minutos por sesión", "p2.s2c": "Ritual diario",
+    "p2.s3": "Densidad de piel ↑", "p2.s3c": "Después de 2 semanas",
+    "p2.s4": "Tamaño de poros ↓", "p2.s4c": "Después de 2 semanas",
+    "p2.src": "Fuente: Korea Institute of Dermatological Sciences · Estudio clínico de 2 semanas",
+    "p3.eyebrow": "Sistema 3 modos", "p3.h2": "Tres modos.<br>Un dispositivo.",
+    "p3.lead": "Cada modo usa una frecuencia optimizada para un objetivo de cuidado de piel específico — calibrado por ingenieros BRITZMEDI.",
+    "p3.m1.h": "Modo RF", "p3.m1.p": "Energía térmica en la capa dérmica profunda para apoyar el colágeno y la firmeza de la piel.",
+    "p3.m2.h": "Modo EMS", "p3.m2.p": "Microcorrientes suaves estimulan los músculos faciales para tonificar contornos y definir la mandíbula.",
+    "p3.m3.h": "Modo ELP", "p3.m3.p": "Crea micro-canales temporales en la barrera cutánea para una absorción más profunda de activos — sin agujas.",
+    "p4.eyebrow": "Evidencia clínica", "p4.h2": "Comprobado en<br>dos semanas.",
+    "p4.c1.h": "Densidad de piel", "p4.c1.d": "Estudio independiente de 2 semanas",
+    "p4.c2.h": "Tamaño de poros", "p4.c2.d": "Reducción visible en 14 días",
+    "p4.src": "Fuente: Korea Institute of Dermatological Sciences · Estudio clínico independiente",
+    "p4.eyebrow2": "Especificaciones técnicas", "p4.h2b": "Con estándares<br>globales.",
+    "spec.model": "Modelo", "spec.battery": "Batería", "spec.charging": "Carga",
+    "spec.modes": "Modos", "spec.rfpower": "Potencia RF", "spec.freq": "Frecuencias",
+    "spec.dim": "Dimensiones / Peso", "spec.cert": "Certificaciones",
+    "p4.box": "Contenido de la caja", "p4.b1": "Dispositivo principal NEWCHAE SHOT",
+    "p4.b2": "Cable USB-C · Funda de viaje", "p4.b3": "Manual de usuario (multilingüe)",
+    "p5.eyebrow": "El compañero perfecto", "p5.vol_sub": "Crema lifting con péptidos",
+    "p5.h2": "NEWCHAE<br>Crema lifting.",
+    "p5.lead": "Una crema enriquecida con péptidos formulada para trabajar en sinergia con NEWCHAE SHOT. Maximiza los beneficios de cada modo — especialmente ELP para una entrega más profunda de activos.",
+    "p5.i1.t": "Complejo de péptidos", "p5.i1.d": "Apoya la síntesis de colágeno y la elasticidad de la piel.",
+    "p5.i2.t": "Ácido hialurónico", "p5.i2.d": "AH multi-peso para hidratación profunda en todas las capas.",
+    "p5.i3.t": "Niacinamida", "p5.i3.d": "Ilumina el tono y refuerza la barrera cutánea.",
+    "p5.i4.t": "Adenosina", "p5.i4.d": "Ingrediente antiarrugas reconocido clínicamente por MFDS.",
+    "p5.pair": "¿Por qué combinar dispositivo + crema?",
+    "p5.pair_p": "El modo ELP crea micro-canales temporales en la barrera cutánea, permitiendo que los péptidos penetren más profundamente. La textura de la crema está optimizada para un deslizamiento suave y distribución uniforme de energía.",
+    "p6.eyebrow": "Tu ritual diario", "p6.h2": "Tres pasos.<br>Diez minutos.",
+    "p6.lead": "Una rutina simple para cualquier estilo de vida — mañana o noche, en casa o de viaje. Resultados profesionales, todos los días.",
+    "p6.s1.h": "Aplica", "p6.s1.dur": "1 MINUTO",
+    "p6.s1.p": "Limpia tu rostro y aplica generosamente la crema NEWCHAE Peptide Lifting Cream. Funciona como tratamiento y medio conductor.",
+    "p6.s2.h": "Trata", "p6.s2.dur": "8–10 MINUTOS",
+    "p6.s2.p": "Selecciona tu modo — GLOW para firmeza, TONE para contorno, BOOST para absorción — y desliza el NEWCHAE SHOT por el rostro y cuello.",
+    "p6.s3.h": "Brilla", "p6.s3.dur": "CADA DÍA",
+    "p6.s3.p": "Da golpecitos con el resto de la crema. Con uso constante, experimenta piel visiblemente más firme y levantada. Resultados desde dos semanas.",
+    "p6.trust": "Confianza por diseño", "p6.made": "Hecho en Corea",
+    "p6.web_lbl": "Web", "p6.email_lbl": "Correo", "p6.year": "Fundación"
+  },
+  pt: {
+    "frame.brand": "NEWCHAE · BRITZMEDI",
+    "nav.overview": "VISÃO GERAL", "nav.product": "PRODUTO · SISTEMA 3 MODOS",
+    "nav.specs": "CLÍNICA E ESPECIFICAÇÕES", "nav.cream": "CREME LIFTING COM PEPTÍDEOS",
+    "nav.ritual": "SEU RITUAL DIÁRIO",
+    "cover.kicker": "Coleção de beleza · 2026",
+    "cover.sub": "Um dispositivo de beleza RF 3 em 1 e seu creme lifting dedicado — projetados para trazer resultados profissionais à sua rotina diária.",
+    "cover.quote": "\"Sinta a emoção da primeira vez,<br>todos os dias.\"",
+    "p2.eyebrow": "O que é NEWCHAE",
+    "p2.overlay": "\"Três tecnologias profissionais,<br>destiladas em um ritual diário.\"",
+    "p2.h2": "Um dispositivo de beleza 3 em 1,<br>projetado na Coreia.",
+    "p2.lead": "NEWCHAE SHOT combina RF, EMS e ELP em um único dispositivo doméstico. Projetado e fabricado pela BRITZMEDI — fabricante coreano de dispositivos médicos desde 2017.",
+    "p2.body": "Clinicamente comprovado: melhora a densidade da pele em <strong class=\"accent\">48%</strong> e reduz os poros em <strong class=\"accent\">74%</strong> em apenas duas semanas.",
+    "p2.s1": "Tecnologias principais", "p2.s2": "Minutos por sessão", "p2.s2c": "Ritual diário",
+    "p2.s3": "Densidade da pele ↑", "p2.s3c": "Após 2 semanas",
+    "p2.s4": "Tamanho dos poros ↓", "p2.s4c": "Após 2 semanas",
+    "p2.src": "Fonte: Korea Institute of Dermatological Sciences · Estudo clínico de 2 semanas",
+    "p3.eyebrow": "Sistema 3 modos", "p3.h2": "Três modos.<br>Um dispositivo.",
+    "p3.lead": "Cada modo usa uma frequência otimizada para um objetivo específico de cuidado — calibrada pelos engenheiros da BRITZMEDI.",
+    "p3.m1.h": "Modo RF", "p3.m1.p": "Energia térmica na camada dérmica profunda para apoiar o colágeno e a firmeza da pele.",
+    "p3.m2.h": "Modo EMS", "p3.m2.p": "Microcorrentes suaves estimulam os músculos faciais para tonificar contornos e definir a mandíbula.",
+    "p3.m3.h": "Modo ELP", "p3.m3.p": "Cria micro-canais temporários na barreira da pele para absorção mais profunda de ativos — sem agulhas.",
+    "p4.eyebrow": "Evidência clínica", "p4.h2": "Comprovado em<br>duas semanas.",
+    "p4.c1.h": "Densidade da pele", "p4.c1.d": "Estudo independente de 2 semanas",
+    "p4.c2.h": "Tamanho dos poros", "p4.c2.d": "Redução visível em 14 dias",
+    "p4.src": "Fonte: Korea Institute of Dermatological Sciences · Estudo clínico independente",
+    "p4.eyebrow2": "Especificações técnicas", "p4.h2b": "Em padrões<br>globais.",
+    "spec.model": "Modelo", "spec.battery": "Bateria", "spec.charging": "Carregamento",
+    "spec.modes": "Modos", "spec.rfpower": "Potência RF", "spec.freq": "Frequências",
+    "spec.dim": "Dimensões / Peso", "spec.cert": "Certificações",
+    "p4.box": "Conteúdo da caixa", "p4.b1": "Dispositivo principal NEWCHAE SHOT",
+    "p4.b2": "Cabo USB-C · Bolsa de viagem", "p4.b3": "Manual do usuário (multilíngue)",
+    "p5.eyebrow": "O companheiro perfeito", "p5.vol_sub": "Creme lifting com peptídeos",
+    "p5.h2": "NEWCHAE<br>Creme lifting.",
+    "p5.lead": "Um creme enriquecido com peptídeos formulado para trabalhar em sinergia com NEWCHAE SHOT. Maximiza os benefícios de cada modo — especialmente ELP para entrega mais profunda de ativos.",
+    "p5.i1.t": "Complexo de peptídeos", "p5.i1.d": "Apoia a síntese de colágeno e a elasticidade da pele.",
+    "p5.i2.t": "Ácido hialurônico", "p5.i2.d": "AH multi-peso para hidratação profunda em todas as camadas.",
+    "p5.i3.t": "Niacinamida", "p5.i3.d": "Ilumina o tom e reforça a barreira da pele.",
+    "p5.i4.t": "Adenosina", "p5.i4.d": "Ingrediente antirrugas reconhecido clinicamente pelo MFDS.",
+    "p5.pair": "Por que combinar dispositivo + creme?",
+    "p5.pair_p": "O modo ELP cria micro-canais temporários na barreira da pele, permitindo que peptídeos penetrem mais profundamente. A textura do creme é otimizada para deslizamento suave e distribuição uniforme de energia.",
+    "p6.eyebrow": "Seu ritual diário", "p6.h2": "Três passos.<br>Dez minutos.",
+    "p6.lead": "Uma rotina simples que se adapta a qualquer estilo de vida — manhã ou noite, em casa ou viajando. Resultados profissionais, todos os dias.",
+    "p6.s1.h": "Aplicar", "p6.s1.dur": "1 MINUTO",
+    "p6.s1.p": "Limpe o rosto e aplique generosamente o NEWCHAE Peptide Lifting Cream. O creme funciona como tratamento e meio condutor.",
+    "p6.s2.h": "Tratar", "p6.s2.dur": "8–10 MINUTOS",
+    "p6.s2.p": "Selecione o modo — GLOW para firmeza, TONE para contorno, BOOST para absorção — e deslize o NEWCHAE SHOT pelo rosto e pescoço.",
+    "p6.s3.h": "Brilhar", "p6.s3.dur": "TODOS OS DIAS",
+    "p6.s3.p": "Dê leves toques com o restante do creme. Com uso consistente, experimente pele visivelmente mais firme e elevada. Resultados em apenas duas semanas.",
+    "p6.trust": "Confiança pelo design", "p6.made": "Fabricado na Coreia",
+    "p6.web_lbl": "Web", "p6.email_lbl": "Email", "p6.year": "Fundação"
   }
 };
 
-function applyLang(lang) {
+const htmlLang = { en:'en', en_gb:'en', ko:'ko', ru:'ru', fr:'fr', ja:'ja', zh:'zh', th:'th', vi:'vi', id:'id', es:'es', pt:'pt' };
+
+function setLang(lang) {
   const dict = DICT[lang] || DICT.en;
-  const htmlLangs = { gb: 'en-GB', en: 'en', ko: 'ko', ja: 'ja', th: 'th', vi: 'vi' };
-  document.documentElement.lang = htmlLangs[lang] || lang;
+  const fall = DICT.en;
+  document.documentElement.lang = htmlLang[lang] || lang;
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (dict[key] !== undefined) el.innerHTML = dict[key];
+    else if (fall[key] !== undefined) el.innerHTML = fall[key];
   });
-  document.querySelectorAll('#controls button[data-lang]').forEach(b => {
-    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
-  });
+  const sel = document.getElementById('lang-select');
+  if (sel) sel.value = lang;
   try { localStorage.setItem('brochure-consumer-lang', lang); } catch(e) {}
 }
-
-document.querySelectorAll('#controls button[data-lang]').forEach(btn => {
-  btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
-});
 
 (function() {
   const urlLang = new URLSearchParams(location.search).get('lang');
   const saved = (() => { try { return localStorage.getItem('brochure-consumer-lang'); } catch(e) { return null; }})();
   const nav = (navigator.language || 'en').toLowerCase().startsWith('ko') ? 'ko' : 'en';
-  applyLang(urlLang || saved || nav);
+  setLang(urlLang || saved || nav);
 })();
 </script>
 </body>
