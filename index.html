@@ -270,13 +270,13 @@
       padding: 28px 24px;
     }
     .doc-grid-v2 {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr !important;
       gap: 16px;
     }
   }
   @media (max-width: 560px) {
     .doc-grid-v2 {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr !important;
     }
     .docs-section {
       padding: 64px 0 10px;
@@ -356,26 +356,26 @@
       <p class="sub">NEWCHAE의 기술, 사용법, 임상 데이터를 담은 공식 자료입니다.<br>웹에서 바로 보거나 PDF로 다운로드할 수 있습니다.</p>
     </div>
 
-    <!-- Featured: Product Guide -->
-    <a href="product-guide.html" class="doc-featured">
+    <!-- Featured: Efficacy Report -->
+    <a href="efficacy.html" class="doc-featured">
       <div class="doc-thumb">
-        <img src="images/product-package.jpg" alt="NEWCHAE 제품 구성">
+        <img src="efficacy-assets/p001.jpg" alt="NEWCHAE 인체적용시험 보고서">
       </div>
       <div class="doc-body">
-        <div class="doc-type">종합 안내서 · 15 Pages</div>
-        <h3>제품 소개서</h3>
-        <p class="doc-desc">NEWCHAE의 모든 것을 한 권에. 제품 특징, 구성품 6종, 3가지 모드의 작동 원리, 첫 사용법, 관리 요령, 상세 스펙, 그리고 15개의 자주 묻는 질문까지.</p>
+        <div class="doc-type">임상시험 보고서 · 115 Pages</div>
+        <h3>인체적용시험 보고서</h3>
+        <p class="doc-desc">한국피부과학연구원(KIDS) 수행. NEWCHAE 리프팅 샷 + 펩타이드 크림 병용 효과 — 모공 3.20×, 탄력 2.37×, 윤기 2.28× 개선. 21명 피험자, 7개 항목 모두 통계적 유의.</p>
         <div class="doc-tags">
-          <span class="doc-tag highlight">15페이지</span>
+          <span class="doc-tag highlight">115페이지</span>
+          <span class="doc-tag">임상 근거</span>
           <span class="doc-tag">한국어</span>
-          <span class="doc-tag">English</span>
         </div>
-        <span class="doc-cta">자료 보기 →</span>
+        <span class="doc-cta">보고서 열람 →</span>
       </div>
     </a>
 
-    <!-- 4-card grid -->
-    <div class="doc-grid-v2">
+    <!-- 5-card grid -->
+    <div class="doc-grid-v2" style="grid-template-columns: repeat(5, 1fr);">
 
       <a href="brochure.html" class="doc-card-v2">
         <div class="doc-thumb">
@@ -445,6 +445,23 @@
             <span class="doc-tag">JA</span>
             <span class="doc-tag">TH</span>
             <span class="doc-tag">VI</span>
+          </div>
+          <span class="doc-cta">자료 보기 →</span>
+        </div>
+      </a>
+
+      <a href="product-guide.html" class="doc-card-v2">
+        <div class="doc-thumb">
+          <img src="images/product-package.jpg" alt="NEWCHAE 제품 구성">
+        </div>
+        <div class="doc-body">
+          <div class="doc-type">종합 안내서 · 15 Pages</div>
+          <h3>제품 소개서</h3>
+          <p class="doc-desc">NEWCHAE의 모든 것. 제품 특징, 구성품, 모드 원리, 사용법, 스펙, FAQ.</p>
+          <div class="doc-tags">
+            <span class="doc-tag highlight">15페이지</span>
+            <span class="doc-tag">KO</span>
+            <span class="doc-tag">EN</span>
           </div>
           <span class="doc-cta">자료 보기 →</span>
         </div>

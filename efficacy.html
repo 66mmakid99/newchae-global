@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEWCHAE Lifting Shot — 인체적용시험 보고서 | BRITZMEDI</title>
+<meta name="description" content="NEWCHAE 리프팅 샷 + 펩타이드 리프팅 크림 인체적용시험 결과. 한국피부과학연구원(KIDS) 임상시험 보고서 115페이지 전문.">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* === Efficacy Report Viewer === */
+.report-hero {
+  background: linear-gradient(180deg, #f8f7f4 0%, var(--warm-ivory) 100%);
+  padding: 100px 0 60px;
+  text-align: center;
+}
+.report-hero .eyebrow {
+  color: var(--dusty-lilac);
+  margin-bottom: 16px;
+}
+.report-hero h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+.report-hero .lead {
+  max-width: 680px;
+  margin: 0 auto 32px;
+  font-size: 15px;
+  color: var(--soft-graphite);
+  line-height: 1.7;
+}
+.report-meta {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.report-meta .meta-item {
+  text-align: center;
+}
+.report-meta .meta-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--soft-graphite);
+  margin-bottom: 4px;
+}
+.report-meta .meta-value {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Key Results Banner */
+.results-banner {
+  background: #fff;
+  border: 1px solid var(--sand-mist);
+  border-radius: 8px;
+  max-width: 960px;
+  margin: 0 auto 0;
+  padding: 32px 40px;
+}
+.results-banner h3 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dusty-lilac);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
+}
+.result-item {
+  text-align: center;
+}
+.result-item .ratio {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 700;
+  color: var(--ink-black);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.result-item .ratio span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--soft-graphite);
+}
+.result-item .metric-name {
+  font-size: 11px;
+  color: var(--soft-graphite);
+  line-height: 1.3;
+}
+
+/* Sticky TOC Sidebar + Main Layout */
+.report-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 0;
+  max-width: 1280px;
+  margin: 48px auto 0;
+  padding: 0 24px;
+}
+.report-toc {
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  padding: 24px 20px 24px 0;
+  border-right: 1px solid var(--sand-mist);
+}
+.report-toc h4 {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--soft-graphite);
+  margin-bottom: 16px;
+}
+.report-toc a {
+  display: block;
+  font-size: 13px;
+  color: var(--soft-graphite);
+  padding: 6px 12px;
+  border-radius: 4px;
+  line-height: 1.4;
+  transition: all 0.2s;
+  margin-bottom: 2px;
+}
+.report-toc a:hover,
+.report-toc a.active {
+  background: var(--sand-mist);
+  color: var(--ink-black);
+}
+.report-toc a.active {
+  font-weight: 600;
+}
+.toc-divider {
+  height: 1px;
+  background: var(--sand-mist);
+  margin: 10px 0;
+}
+
+/* Main content */
+.report-main {
+  padding: 24px 0 80px 40px;
+}
+
+/* Section headers */
+.section-header {
+  padding: 40px 0 20px;
+}
+.section-header h2 {
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.section-header .section-desc {
+  font-size: 14px;
+  color: var(--soft-graphite);
+  line-height: 1.6;
+}
+.section-header .page-range {
+  font-size: 11px;
+  color: var(--dusty-lilac);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* Page images */
+.page-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.page-img-wrap {
+  background: #fff;
+  border: 1px solid var(--sand-mist);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  position: relative;
+}
+.page-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.page-label {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(28,28,28,0.6);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.04em;
+}
+
+/* Back to top */
+.back-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  background: var(--dusty-lilac);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 100;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.back-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.back-top:hover {
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .report-layout {
+    grid-template-columns: 1fr;
+  }
+  .report-toc {
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid var(--sand-mist);
+    max-height: none;
+    padding: 16px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .report-toc h4 {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .report-toc a {
+    font-size: 12px;
+    padding: 4px 10px;
+    white-space: nowrap;
+  }
+  .toc-divider { display: none; }
+  .report-main {
+    padding: 24px 0 60px;
+  }
+  .results-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .report-meta {
+    gap: 20px;
+  }
+}
+@media (max-width: 560px) {
+  .report-hero {
+    padding: 80px 0 40px;
+  }
+  .results-banner {
+    padding: 24px 20px;
+  }
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 12px;
+  }
+  .report-meta {
+    gap: 16px;
+  }
+}
+
+/* Print */
+@media print {
+  .report-toc, .back-top, header, footer { display: none !important; }
+  .report-layout { grid-template-columns: 1fr; }
+  .report-main { padding: 0; }
+  .page-img-wrap { break-inside: avoid; page-break-inside: avoid; box-shadow: none; border: none; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <a href="index.html" class="logo">BRITZMEDI</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Products</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="partnership.html">Partnership</a></li>
+        <li><a href="partnership.html#contact" class="contact-btn">Contact ↗</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="report-hero">
+  <div class="container">
+    <div class="eyebrow">KIDS-BCK087-BRZ · 한국피부과학연구원</div>
+    <h1>NEWCHAE 리프팅 샷<br>인체적용시험 보고서</h1>
+    <p class="lead">NEWCHAE Lifting Shot(고주파 뷰티 디바이스) + NEWCHAE Peptide Lifting Cream의 병용 효과를 검증한 인체적용시험 결과 전문 (115페이지). 한국피부과학연구원(KIDS) 수행.</p>
+
+    <div class="report-meta">
+      <div class="meta-item">
+        <div class="meta-label">시험기관</div>
+        <div class="meta-value">한국피부과학연구원</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">피험자</div>
+        <div class="meta-value">여성 21명 (40~61세)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">시험기간</div>
+        <div class="meta-value">2주간 (2024.01)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">설계</div>
+        <div class="meta-value">화장품 단독 vs 기기+화장품</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">페이지</div>
+        <div class="meta-value">115페이지 전문</div>
+      </div>
+    </div>
+
+    <div class="results-banner">
+      <h3>핵심 결과 — 기기+화장품 vs 화장품 단독 개선 비율</h3>
+      <div class="results-grid">
+        <div class="result-item">
+          <div class="ratio">3.20<span>×</span></div>
+          <div class="metric-name">모공 축소</div>
+        </div>
+        <div class="result-item">
+          <div class="ratio">2.37<span>×</span></div>
+          <div class="metric-name">탄력 개선</div>
+        </div>
+        <div class="result-item">
+          <div class="ratio">2.28<span>×</span></div>
+          <div class="metric-name">윤기 증가</div>
+        </div>
+        <div class="result-item">
+          <div class="ratio">2.19<span>×</span></div>
+          <div class="metric-name">피부 밀도</div>
+        </div>
+        <div class="result-item">
+          <div class="ratio">2.12<span>×</span></div>
+          <div class="metric-name">결 개선</div>
+        </div>
+        <div class="result-item">
+          <div class="ratio">2.11<span>×</span></div>
+          <div class="metric-name">처짐 개선</div>
+        </div>
+        <div class="result-item">
+          <div class="ratio">1.82<span>×</span></div>
+          <div class="metric-name">탄탄함</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Layout: TOC + Pages -->
+<div class="report-layout">
+
+  <!-- Sticky TOC -->
+  <nav class="report-toc" id="toc">
+    <h4>목차</h4>
+    <a href="#cover" class="active">표지</a>
+    <a href="#toc-page">목차</a>
+    <a href="#submission">제출문</a>
+    <div class="toc-divider"></div>
+    <a href="#info">시험 정보</a>
+    <a href="#summary">요약문</a>
+    <a href="#purpose">시험 목적·기간·기관</a>
+    <div class="toc-divider"></div>
+    <a href="#methods">시험 방법</a>
+    <a href="#results">시험 결과</a>
+    <a href="#survey">설문조사</a>
+    <a href="#conclusion">결론</a>
+    <a href="#references">참고문헌</a>
+    <div class="toc-divider"></div>
+    <a href="#appendix1">부록 1: 상세 데이터</a>
+    <a href="#appendix2">부록 2: 임상 사진</a>
+    <a href="#appendix3">부록 3~6: 기타</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="report-main">
+
+    <!-- 표지 (p1) -->
+    <div id="cover" class="section-header">
+      <h2>표지</h2>
+      <div class="page-range">Page 1</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p001.jpg" alt="인체적용시험 보고서 표지" loading="eager">
+        <span class="page-label">P.1</span>
+      </div>
+    </div>
+
+    <!-- 목차 (p2) -->
+    <div id="toc-page" class="section-header">
+      <h2>목차</h2>
+      <div class="page-range">Page 2</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p002.jpg" alt="목차" loading="lazy">
+        <span class="page-label">P.2</span>
+      </div>
+    </div>
+
+    <!-- 제출문 (p3) -->
+    <div id="submission" class="section-header">
+      <h2>제출문</h2>
+      <div class="page-range">Page 3</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p003.jpg" alt="제출문" loading="lazy">
+        <span class="page-label">P.3</span>
+      </div>
+    </div>
+
+    <!-- 시험 정보 (p4-5) -->
+    <div id="info" class="section-header">
+      <h2>시험 정보</h2>
+      <div class="section-desc">시험 개요, 의뢰자·수행자 정보, 시험 물질 정보</div>
+      <div class="page-range">Pages 4–5</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p004.jpg" alt="시험 정보 1" loading="lazy">
+        <span class="page-label">P.4</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p005.jpg" alt="시험 정보 2" loading="lazy">
+        <span class="page-label">P.5</span>
+      </div>
+    </div>
+
+    <!-- 요약문 (p6-9) -->
+    <div id="summary" class="section-header">
+      <h2>요약문</h2>
+      <div class="section-desc">시험 설계, 주요 결과 요약, 통계적 유의성 요약</div>
+      <div class="page-range">Pages 6–9</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p006.jpg" alt="요약문 1" loading="lazy">
+        <span class="page-label">P.6</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p007.jpg" alt="요약문 2" loading="lazy">
+        <span class="page-label">P.7</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p008.jpg" alt="요약문 3" loading="lazy">
+        <span class="page-label">P.8</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p009.jpg" alt="요약문 4" loading="lazy">
+        <span class="page-label">P.9</span>
+      </div>
+    </div>
+
+    <!-- 시험 목적·기간·기관 (p10) -->
+    <div id="purpose" class="section-header">
+      <h2>시험 목적 · 기간 · 기관</h2>
+      <div class="page-range">Page 10</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p010.jpg" alt="시험 목적" loading="lazy">
+        <span class="page-label">P.10</span>
+      </div>
+    </div>
+
+    <!-- 시험 방법 (p11-18) -->
+    <div id="methods" class="section-header">
+      <h2>시험 방법</h2>
+      <div class="section-desc">기기 측정 장비 (DTM, Ballistometer, DUB-Skin Scanner, ANTERA 3D, VISIA-CA, F-RAY), 시험 설계, 측정 항목, 통계 분석 방법</div>
+      <div class="page-range">Pages 11–18</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p011.jpg" alt="시험 방법 1" loading="lazy">
+        <span class="page-label">P.11</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p012.jpg" alt="시험 방법 2" loading="lazy">
+        <span class="page-label">P.12</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p013.jpg" alt="시험 방법 3" loading="lazy">
+        <span class="page-label">P.13</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p014.jpg" alt="시험 방법 4" loading="lazy">
+        <span class="page-label">P.14</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p015.jpg" alt="시험 방법 5" loading="lazy">
+        <span class="page-label">P.15</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p016.jpg" alt="시험 방법 6" loading="lazy">
+        <span class="page-label">P.16</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p017.jpg" alt="시험 방법 7" loading="lazy">
+        <span class="page-label">P.17</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p018.jpg" alt="시험 방법 8" loading="lazy">
+        <span class="page-label">P.18</span>
+      </div>
+    </div>
+
+    <!-- 시험 결과 (p19-34) -->
+    <div id="results" class="section-header">
+      <h2>시험 결과</h2>
+      <div class="section-desc">7개 평가 항목별 기기 측정 결과 (모공, 탄력, 윤기, 밀도, 결, 처짐, 탄탄함) — 막대 차트, 통계 표, p-value 포함</div>
+      <div class="page-range">Pages 19–34</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p019.jpg" alt="시험 결과 1" loading="lazy">
+        <span class="page-label">P.19</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p020.jpg" alt="시험 결과 2" loading="lazy">
+        <span class="page-label">P.20</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p021.jpg" alt="시험 결과 3" loading="lazy">
+        <span class="page-label">P.21</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p022.jpg" alt="시험 결과 4" loading="lazy">
+        <span class="page-label">P.22</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p023.jpg" alt="시험 결과 5" loading="lazy">
+        <span class="page-label">P.23</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p024.jpg" alt="시험 결과 6" loading="lazy">
+        <span class="page-label">P.24</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p025.jpg" alt="시험 결과 7" loading="lazy">
+        <span class="page-label">P.25</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p026.jpg" alt="시험 결과 8" loading="lazy">
+        <span class="page-label">P.26</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p027.jpg" alt="시험 결과 9" loading="lazy">
+        <span class="page-label">P.27</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p028.jpg" alt="시험 결과 10" loading="lazy">
+        <span class="page-label">P.28</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p029.jpg" alt="시험 결과 11" loading="lazy">
+        <span class="page-label">P.29</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p030.jpg" alt="시험 결과 12" loading="lazy">
+        <span class="page-label">P.30</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p031.jpg" alt="시험 결과 13" loading="lazy">
+        <span class="page-label">P.31</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p032.jpg" alt="시험 결과 14" loading="lazy">
+        <span class="page-label">P.32</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p033.jpg" alt="시험 결과 15" loading="lazy">
+        <span class="page-label">P.33</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p034.jpg" alt="시험 결과 16" loading="lazy">
+        <span class="page-label">P.34</span>
+      </div>
+    </div>
+
+    <!-- 설문조사 (p35-38) -->
+    <div id="survey" class="section-header">
+      <h2>설문조사</h2>
+      <div class="section-desc">피험자 자기 평가 설문 결과 — 효과 체감도, 만족도</div>
+      <div class="page-range">Pages 35–38</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p035.jpg" alt="설문조사 1" loading="lazy">
+        <span class="page-label">P.35</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p036.jpg" alt="설문조사 2" loading="lazy">
+        <span class="page-label">P.36</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p037.jpg" alt="설문조사 3" loading="lazy">
+        <span class="page-label">P.37</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p038.jpg" alt="설문조사 4" loading="lazy">
+        <span class="page-label">P.38</span>
+      </div>
+    </div>
+
+    <!-- 결론 (p39-40) -->
+    <div id="conclusion" class="section-header">
+      <h2>결론</h2>
+      <div class="section-desc">시험 결과 종합 및 결론</div>
+      <div class="page-range">Pages 39–40</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p039.jpg" alt="결론 1" loading="lazy">
+        <span class="page-label">P.39</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p040.jpg" alt="결론 2" loading="lazy">
+        <span class="page-label">P.40</span>
+      </div>
+    </div>
+
+    <!-- 참고문헌 (p41) -->
+    <div id="references" class="section-header">
+      <h2>참고문헌</h2>
+      <div class="page-range">Page 41</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p041.jpg" alt="참고문헌" loading="lazy">
+        <span class="page-label">P.41</span>
+      </div>
+    </div>
+
+    <!-- 부록 1: 상세 데이터 (p42-60) -->
+    <div id="appendix1" class="section-header">
+      <h2>부록 1: 상세 측정 데이터</h2>
+      <div class="section-desc">피험자별 상세 측정 수치 — 7개 평가항목 개별 데이터 테이블</div>
+      <div class="page-range">Pages 42–60</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p042.jpg" alt="부록 표지" loading="lazy">
+        <span class="page-label">P.42</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p043.jpg" alt="상세 데이터 1" loading="lazy">
+        <span class="page-label">P.43</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p044.jpg" alt="상세 데이터 2" loading="lazy">
+        <span class="page-label">P.44</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p045.jpg" alt="상세 데이터 3" loading="lazy">
+        <span class="page-label">P.45</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p046.jpg" alt="상세 데이터 4" loading="lazy">
+        <span class="page-label">P.46</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p047.jpg" alt="상세 데이터 5" loading="lazy">
+        <span class="page-label">P.47</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p048.jpg" alt="상세 데이터 6" loading="lazy">
+        <span class="page-label">P.48</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p049.jpg" alt="상세 데이터 7" loading="lazy">
+        <span class="page-label">P.49</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p050.jpg" alt="상세 데이터 8" loading="lazy">
+        <span class="page-label">P.50</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p051.jpg" alt="상세 데이터 9" loading="lazy">
+        <span class="page-label">P.51</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p052.jpg" alt="상세 데이터 10" loading="lazy">
+        <span class="page-label">P.52</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p053.jpg" alt="상세 데이터 11" loading="lazy">
+        <span class="page-label">P.53</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p054.jpg" alt="상세 데이터 12" loading="lazy">
+        <span class="page-label">P.54</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p055.jpg" alt="상세 데이터 13" loading="lazy">
+        <span class="page-label">P.55</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p056.jpg" alt="상세 데이터 14" loading="lazy">
+        <span class="page-label">P.56</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p057.jpg" alt="상세 데이터 15" loading="lazy">
+        <span class="page-label">P.57</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p058.jpg" alt="상세 데이터 16" loading="lazy">
+        <span class="page-label">P.58</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p059.jpg" alt="상세 데이터 17" loading="lazy">
+        <span class="page-label">P.59</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p060.jpg" alt="상세 데이터 18" loading="lazy">
+        <span class="page-label">P.60</span>
+      </div>
+    </div>
+
+    <!-- 부록 2: 임상 사진 (p61-100) -->
+    <div id="appendix2" class="section-header">
+      <h2>부록 2: 임상 사진</h2>
+      <div class="section-desc">피험자별 Before/After 임상 사진 — 기기+화장품 적용 부위 vs 화장품 단독 부위</div>
+      <div class="page-range">Pages 61–100</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p061.jpg" alt="임상 사진 1" loading="lazy">
+        <span class="page-label">P.61</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p062.jpg" alt="임상 사진 2" loading="lazy">
+        <span class="page-label">P.62</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p063.jpg" alt="임상 사진 3" loading="lazy">
+        <span class="page-label">P.63</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p064.jpg" alt="임상 사진 4" loading="lazy">
+        <span class="page-label">P.64</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p065.jpg" alt="임상 사진 5" loading="lazy">
+        <span class="page-label">P.65</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p066.jpg" alt="임상 사진 6" loading="lazy">
+        <span class="page-label">P.66</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p067.jpg" alt="임상 사진 7" loading="lazy">
+        <span class="page-label">P.67</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p068.jpg" alt="임상 사진 8" loading="lazy">
+        <span class="page-label">P.68</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p069.jpg" alt="임상 사진 9" loading="lazy">
+        <span class="page-label">P.69</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p070.jpg" alt="임상 사진 10" loading="lazy">
+        <span class="page-label">P.70</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p071.jpg" alt="임상 사진 11" loading="lazy">
+        <span class="page-label">P.71</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p072.jpg" alt="임상 사진 12" loading="lazy">
+        <span class="page-label">P.72</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p073.jpg" alt="임상 사진 13" loading="lazy">
+        <span class="page-label">P.73</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p074.jpg" alt="임상 사진 14" loading="lazy">
+        <span class="page-label">P.74</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p075.jpg" alt="임상 사진 15" loading="lazy">
+        <span class="page-label">P.75</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p076.jpg" alt="임상 사진 16" loading="lazy">
+        <span class="page-label">P.76</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p077.jpg" alt="임상 사진 17" loading="lazy">
+        <span class="page-label">P.77</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p078.jpg" alt="임상 사진 18" loading="lazy">
+        <span class="page-label">P.78</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p079.jpg" alt="임상 사진 19" loading="lazy">
+        <span class="page-label">P.79</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p080.jpg" alt="임상 사진 20" loading="lazy">
+        <span class="page-label">P.80</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p081.jpg" alt="임상 사진 21" loading="lazy">
+        <span class="page-label">P.81</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p082.jpg" alt="임상 사진 22" loading="lazy">
+        <span class="page-label">P.82</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p083.jpg" alt="임상 사진 23" loading="lazy">
+        <span class="page-label">P.83</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p084.jpg" alt="임상 사진 24" loading="lazy">
+        <span class="page-label">P.84</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p085.jpg" alt="임상 사진 25" loading="lazy">
+        <span class="page-label">P.85</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p086.jpg" alt="임상 사진 26" loading="lazy">
+        <span class="page-label">P.86</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p087.jpg" alt="임상 사진 27" loading="lazy">
+        <span class="page-label">P.87</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p088.jpg" alt="임상 사진 28" loading="lazy">
+        <span class="page-label">P.88</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p089.jpg" alt="임상 사진 29" loading="lazy">
+        <span class="page-label">P.89</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p090.jpg" alt="임상 사진 30" loading="lazy">
+        <span class="page-label">P.90</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p091.jpg" alt="임상 사진 31" loading="lazy">
+        <span class="page-label">P.91</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p092.jpg" alt="임상 사진 32" loading="lazy">
+        <span class="page-label">P.92</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p093.jpg" alt="임상 사진 33" loading="lazy">
+        <span class="page-label">P.93</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p094.jpg" alt="임상 사진 34" loading="lazy">
+        <span class="page-label">P.94</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p095.jpg" alt="임상 사진 35" loading="lazy">
+        <span class="page-label">P.95</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p096.jpg" alt="임상 사진 36" loading="lazy">
+        <span class="page-label">P.96</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p097.jpg" alt="임상 사진 37" loading="lazy">
+        <span class="page-label">P.97</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p098.jpg" alt="임상 사진 38" loading="lazy">
+        <span class="page-label">P.98</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p099.jpg" alt="임상 사진 39" loading="lazy">
+        <span class="page-label">P.99</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p100.jpg" alt="임상 사진 40" loading="lazy">
+        <span class="page-label">P.100</span>
+      </div>
+    </div>
+
+    <!-- 부록 3~6: 기타 (p101-115) -->
+    <div id="appendix3" class="section-header">
+      <h2>부록 3~6</h2>
+      <div class="section-desc">성분 정보, 안전성 인증서, 시험 연구원 이력, 시험 장비 상세</div>
+      <div class="page-range">Pages 101–115</div>
+    </div>
+    <div class="page-group">
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p101.jpg" alt="부록 3-6 시작" loading="lazy">
+        <span class="page-label">P.101</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p102.jpg" alt="부록 102" loading="lazy">
+        <span class="page-label">P.102</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p103.jpg" alt="부록 103" loading="lazy">
+        <span class="page-label">P.103</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p104.jpg" alt="부록 104" loading="lazy">
+        <span class="page-label">P.104</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p105.jpg" alt="부록 105" loading="lazy">
+        <span class="page-label">P.105</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p106.jpg" alt="부록 106" loading="lazy">
+        <span class="page-label">P.106</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p107.jpg" alt="부록 107" loading="lazy">
+        <span class="page-label">P.107</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p108.jpg" alt="부록 108" loading="lazy">
+        <span class="page-label">P.108</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p109.jpg" alt="부록 109" loading="lazy">
+        <span class="page-label">P.109</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p110.jpg" alt="부록 110" loading="lazy">
+        <span class="page-label">P.110</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p111.jpg" alt="부록 111" loading="lazy">
+        <span class="page-label">P.111</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p112.jpg" alt="부록 112" loading="lazy">
+        <span class="page-label">P.112</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p113.jpg" alt="부록 113" loading="lazy">
+        <span class="page-label">P.113</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p114.jpg" alt="부록 114" loading="lazy">
+        <span class="page-label">P.114</span>
+      </div>
+      <div class="page-img-wrap">
+        <img src="efficacy-assets/p115.jpg" alt="부록 115" loading="lazy">
+        <span class="page-label">P.115</span>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Back to Top -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">BRITZMEDI</div>
+        <p class="footer-address">
+          BRITZMEDI Co., Ltd.<br>
+          1211-ho, Kranz Techno<br>
+          388 Dunchon-daero, Jungwon-gu<br>
+          Seongnam-si, Gyeonggi-do<br>
+          Republic of Korea
+        </p>
+      </div>
+      <div class="footer-contact">
+        <h4>Global Inquiry</h4>
+        <p>sh.lee@britzmedi.com</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Back-to-top button visibility
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('visible', window.scrollY > 600);
+});
+
+// Active TOC highlighting
+const tocLinks = document.querySelectorAll('#toc a');
+const sections = [];
+tocLinks.forEach(link => {
+  const id = link.getAttribute('href')?.slice(1);
+  if (id) {
+    const el = document.getElementById(id);
+    if (el) sections.push({ el, link });
+  }
+});
+
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const scrollY = window.scrollY + 120;
+      let current = sections[0];
+      for (const s of sections) {
+        if (s.el.offsetTop <= scrollY) current = s;
+      }
+      tocLinks.forEach(l => l.classList.remove('active'));
+      if (current) current.link.classList.add('active');
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+</script>
+
+</body>
+</html>
