@@ -113,6 +113,16 @@
 }
 .equip-grid .pg{margin:0}
 
+/* Researcher & appendix content */
+.pub-list,.patent-list{list-style:none;padding:0;margin:0 0 16px}
+.pub-list li,.patent-list li{font-size:12px;line-height:1.7;padding:6px 0 6px 16px;border-bottom:1px solid #f0eeea;position:relative;color:#444}
+.pub-list li::before{content:"";position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--dusty-lilac)}
+.patent-list li::before{content:"";position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:1px;background:var(--soft-graphite)}
+.pub-list li em{font-style:italic;color:var(--dusty-lilac)}
+.researcher-item{padding-bottom:4px;margin-bottom:4px;border-bottom:1px dashed #e8e6e1}
+.researcher-item:last-child{border-bottom:none}
+.r-title{font-weight:400;font-size:13px;color:var(--soft-graphite)}
+
 /* CSS Bar Chart */
 .css-chart{margin:16px 0 20px;padding:16px 20px;background:#fff;border:1px solid var(--sand-mist);border-radius:6px}
 .chart-row{display:flex;align-items:center;margin-bottom:10px;gap:12px}
@@ -1161,36 +1171,529 @@
     <!-- ===== 별첨 3~6 ===== -->
     <div id="appendix3" class="sec">
       <h2>별첨 3~6</h2>
-      <div class="sd">시험제품 전성분 · 안전성 확인서 · 연구자 약력 · 주요설비 (p.88~115)</div>
+      <div class="sd">시험제품 전성분 &middot; 안전성 확인서 &middot; 연구자 약력 &middot; 주요설비 (p.88~115)</div>
     </div>
-    <div class="pg"><img src="efficacy-assets/p088.jpg" alt="별첨 3 시험제품 전성분" loading="lazy"><span class="pl">P.88</span></div>
+
+    <h3>별첨 3 — 시험제품 전성분</h3>
+    <div class="result-card">
+      <h4>뉴채 펩타이드 리프팅 크림 (시험제품 B)</h4>
+      <p style="font-size:13px;line-height:2;color:var(--soft-graphite);word-break:keep-all">정제수, 다이프로필렌글라이콜, 글리세린, 나이아신아마이드, 하이드로제네이티드폴리데센, 폴리글리세릴-3메틸글루코오스다이스테아레이트, 세테아릴알코올, 글리세레스-25피씨에이아이소스테아레이트, 1,2-헥산다이올, 하이드록시아세토페논, 비닐다이메티콘, 글리세릴스테아레이트, 카보머, 암모늄아크릴로일다이메틸타우레이트/브이피코폴리머, 트로메타민, 향료, 다이소듐이디티에이, 아데노신, 판테놀, 아스코빅애씨드, 부틸렌글라이콜, 에틸헥실글리세린, 하얀장미꽃추출물, 유자추출물, 포도주추출물, 수크로오스, 미네랄솔트, 에스에이치-올리고펩타이드-1, 폴리솔베이트20, 레시틴, 에스에이치-데카펩타이드-9, 아세틸헥사펩타이드-8, 펜타펩타이드-37, 에스에이치-옥타펩타이드-4, 에스에이치-올리고펩타이드-2, 에스에이치-폴리펩타이드-4, 에스에이치-폴리펩타이드-11</p>
+    </div>
+
+    <h3>별첨 4 — 시험제품 안전성 확인서</h3>
     <div class="pg"><img src="efficacy-assets/p089.jpg" alt="별첨 4 안전성 확인서" loading="lazy"><span class="pl">P.89</span></div>
-    <div class="pg"><img src="efficacy-assets/p090.jpg" alt="별첨 5 연구자 약력 1" loading="lazy"><span class="pl">P.90</span></div>
-    <div class="pg"><img src="efficacy-assets/p091.jpg" alt="별첨 5 연구경력 2" loading="lazy"><span class="pl">P.91</span></div>
-    <div class="pg"><img src="efficacy-assets/p092.jpg" alt="별첨 5 연구실적 3" loading="lazy"><span class="pl">P.92</span></div>
-    <div class="pg"><img src="efficacy-assets/p093.jpg" alt="별첨 5 연구실적 4" loading="lazy"><span class="pl">P.93</span></div>
-    <div class="pg"><img src="efficacy-assets/p094.jpg" alt="별첨 5 연구실적 5" loading="lazy"><span class="pl">P.94</span></div>
-    <div class="pg"><img src="efficacy-assets/p095.jpg" alt="별첨 5 연구실적 6" loading="lazy"><span class="pl">P.95</span></div>
-    <div class="pg"><img src="efficacy-assets/p096.jpg" alt="별첨 5 연구실적 7" loading="lazy"><span class="pl">P.96</span></div>
-    <div class="pg"><img src="efficacy-assets/p097.jpg" alt="별첨 5 연구실적 8" loading="lazy"><span class="pl">P.97</span></div>
-    <div class="pg"><img src="efficacy-assets/p098.jpg" alt="별첨 5 국내외 특허" loading="lazy"><span class="pl">P.98</span></div>
-    <div class="pg"><img src="efficacy-assets/p099.jpg" alt="별첨 5 특허 계속" loading="lazy"><span class="pl">P.99</span></div>
-    <div class="pg"><img src="efficacy-assets/p100.jpg" alt="별첨 5 시험담당자 약력" loading="lazy"><span class="pl">P.100</span></div>
-    <div class="pg"><img src="efficacy-assets/p101.jpg" alt="별첨 5 담당자 경력" loading="lazy"><span class="pl">P.101</span></div>
-    <div class="pg"><img src="efficacy-assets/p102.jpg" alt="별첨 5 담당자 연구실적" loading="lazy"><span class="pl">P.102</span></div>
-    <div class="pg"><img src="efficacy-assets/p103.jpg" alt="별첨 5 연구실적 계속" loading="lazy"><span class="pl">P.103</span></div>
-    <div class="pg"><img src="efficacy-assets/p104.jpg" alt="별첨 5 연구실적 계속" loading="lazy"><span class="pl">P.104</span></div>
-    <div class="pg"><img src="efficacy-assets/p105.jpg" alt="별첨 5 연구실적 계속" loading="lazy"><span class="pl">P.105</span></div>
-    <div class="pg"><img src="efficacy-assets/p106.jpg" alt="별첨 6 주요설비 1" loading="lazy"><span class="pl">P.106</span></div>
-    <div class="pg"><img src="efficacy-assets/p107.jpg" alt="별첨 6 주요설비 2" loading="lazy"><span class="pl">P.107</span></div>
-    <div class="pg"><img src="efficacy-assets/p108.jpg" alt="별첨 6 주요설비 3" loading="lazy"><span class="pl">P.108</span></div>
-    <div class="pg"><img src="efficacy-assets/p109.jpg" alt="별첨 6 주요설비 4" loading="lazy"><span class="pl">P.109</span></div>
-    <div class="pg"><img src="efficacy-assets/p110.jpg" alt="별첨 6 주요설비 5" loading="lazy"><span class="pl">P.110</span></div>
-    <div class="pg"><img src="efficacy-assets/p111.jpg" alt="별첨 6 주요설비 6" loading="lazy"><span class="pl">P.111</span></div>
-    <div class="pg"><img src="efficacy-assets/p112.jpg" alt="별첨 6 주요설비 7" loading="lazy"><span class="pl">P.112</span></div>
-    <div class="pg"><img src="efficacy-assets/p113.jpg" alt="별첨 6 주요설비 8" loading="lazy"><span class="pl">P.113</span></div>
-    <div class="pg"><img src="efficacy-assets/p114.jpg" alt="별첨 6 주요설비 9" loading="lazy"><span class="pl">P.114</span></div>
-    <div class="pg"><img src="efficacy-assets/p115.jpg" alt="별첨 6 주요설비 10" loading="lazy"><span class="pl">P.115</span></div>
+
+    <h3>별첨 5 — 시험기관 연구자의 약력 및 연구경력</h3>
+    <div class="metric-block" id="mb-r-ahn">
+      <button class="metric-toggle" onclick="toggleMetric('mb-r-ahn')">
+        <h4>1. 안 인 숙 (연구원장 · 이학박사)</h4>
+        <div><span class="badge">SCI 57편 · 특허 36건</span> <span class="arrow">&#9660;</span></div>
+      </button>
+      <div class="metric-body">
+        <table class="info-tbl">
+          <tr><th>2005.09 – 2008.02</th><td>건국대학교 향장학(뷰티화장품학) 석사</td></tr>
+          <tr><th>2010.03 – 2013.02</th><td>건국대학교 향장생물학 박사</td></tr>
+          <tr><th>2011.12 – 2015.07</th><td>(주)비앤진 대표이사</td></tr>
+          <tr><th>2015.10 – 2017.10</th><td>제1~3회 한중화장품산업 국제공동포럼 주최자</td></tr>
+          <tr><th>2015.07 – 현재</th><td>(주)진셀팜 대표이사</td></tr>
+          <tr><th>2015.07 – 현재</th><td>한국피부과학연구원 연구원장</td></tr>
+          <tr><th>2017.01 – 현재</th><td>식약처 화장품의약외품 산·학·연·관 연구협의회 위원</td></tr>
+          <tr><th>2017.01 – 현재</th><td>식약처 소비자위해예방평가위원회 위원</td></tr>
+          <tr><th>2017.01 – 현재</th><td>아시안뷰티화장품학술지(한국연구재단등재지) 편집위원</td></tr>
+          <tr><th>2017.01 – 현재</th><td>Biomedical Dermatology(국제저명 영문학술지) 편집위원</td></tr>
+          <tr><th>2017.01 – 현재</th><td>중국퍼스널케어제품 화장품산업기술혁신전략연합 특별 전문가(한국대표)</td></tr>
+          <tr><th>2017.01 – 현재</th><td>겟잇뷰티(CJ On Style TV채널) 고정패널(화장품전문가)</td></tr>
+          <tr><th>2017.03 – 현재</th><td>건국대학교 화장품공학과 산학겸임교수</td></tr>
+          <tr><th>2019.01 – 현재</th><td>부탁해요 여신님(대만 뷰티프로그램) 고정패널</td></tr>
+        </table>
+        <h4 style="margin-top:20px">수상경력</h4>
+        <table class="info-tbl">
+          <tr><th>2007년</th><td>대한피부미용학회 우수논문상</td></tr>
+          <tr><th>2008년</th><td>건국대학교 산업대학원장상</td></tr>
+          <tr><th>2009년</th><td>대한피부미용학회 표창장</td></tr>
+          <tr><th>2016년</th><td>서울 한중 FTA 1주년 파트너십 유공자 포상</td></tr>
+        </table>
+        <h4 style="margin-top:20px">국제저명 SCI급 학술논문 (57편)</h4>
+        <ul class="pub-list">
+          <li>Heo MJ, Choi SY, Lee C, et al. (2020) Perphenazine Attenuates the Pro-Inflammatory Responses in Mouse Models of Th2-Type Allergic Dermatitis. <em>Int. J. Mol. Sci.</em>, 21: E3241.</li>
+          <li>Choi M, Choi YM, Choi SY, et al. (2020) Glucose Metabolism Regulates Expression of Hair-Inductive Genes of Dermal Papilla Spheres via Histone Acetylation. <em>Sci. Rep.</em>, 10: 4887.</li>
+          <li>Heo MJ, Lee C, Choi SY, et al. (2020) Nintedanib ameliorates animal model of dermatitis. <em>Sci. Rep.</em>, 10: 4493.</li>
+          <li>Choi SY, Heo MJ, Lee C, et al. (2020) 2-deoxy-d-glucose Ameliorates Animal Models of Dermatitis. <em>Biomedicines.</em>, 8: 20.</li>
+          <li>Choi M, Choi YM, An IS, et al. (2020) E3 ligase RCHY1 negatively regulates HDAC2. <em>Biochem. Biophys. Res. Commun.</em>, 521: 37-41.</li>
+          <li>Lee YR, Bae S, Kim JY, et al. (2019) Monoterpenoid Loliolide Regulates Hair Follicle Inductivity of Human Dermal Papilla Cells by Activating the Akt/&beta;-Catenin Signaling Pathway. <em>J. Microbiol. Biotechnol.</em>, 29: 1830-1840.</li>
+          <li>Lee J, An S, Jung JH, et al. (2019) MUL1 E3 ligase regulates the antitumor effects of metformin in chemoresistant ovarian cancer cells via AKT degradation. <em>Int. J. Oncol.</em>, 54: 1833-1842.</li>
+          <li>Kim HM, Jung JH, Kim JY, et al. (2019) The Protective Effect of Violaxanthin from <em>Nannochloropsis oceanica</em> against Ultraviolet B-Induced Damage in Normal Human Dermal Fibroblasts. <em>Photochem. Photobiol.</em>, 95: 595-604.</li>
+          <li>Lee A, Kim JY, Heo J, et al. (2018) The Inhibition of Melanogenesis via the PKA and ERK Signaling Pathways by <em>Chlamydomonas reinhardtii</em> Extract in B16F10 Melanoma Cells and Artificial Human Skin Equivalents. <em>J. Microbiol. Biotechnol.</em>, 28: 2121-2132.</li>
+          <li>Hahn HJ, Kim KB, An IS, et al. (2017) Protective effects of rosmarinic acid against hydrogen peroxide-induced cellular senescence and the inflammatory response in normal human dermal fibroblasts. <em>Mol. Med. Rep.</em>, 16: 9763-9769.</li>
+          <li>Choi YM, An S, Lee J, et al. (2017) Titrated extract of <em>Centella asiatica</em> increases hair inductive property through inhibition of STAT signaling pathway in three-dimensional spheroid cultured human dermal papilla cells. <em>Biosci. Biotechnol. Biochem.</em>, 81: 2323-2329.</li>
+          <li>Kim K, An S, Choi BG, et al. (2017) Arctiin regulates collagen type 1&alpha; chain 1 mRNA expression in human dermal fibroblasts via the miR-378b-SIRT6 axis. <em>Mol. Med. Rep.</em>, 16: 9120-9124.</li>
+          <li>Joo D, An S, Choi BG, et al. (2017) MicroRNA-378b regulates &alpha;-1-type 1 collagen expression via sirtuin 6 interference. <em>Mol. Med. Rep.</em>, 16: 8520-8524.</li>
+          <li>Lee JJ, Kim KB, Heo J, et al. (2017) Protective effect of <em>Arthrospira platensis</em> extracts against ultraviolet B-induced cellular senescence through inhibition of DNA damage and matrix metalloproteinase-1 expression in human dermal fibroblasts. <em>J. Photochem. Photobiol. B.</em>, 173: 196-203.</li>
+          <li>An S, Cha HJ, Ko JM, et al. (2017) Kinetin Improves Barrier Function of the Skin by Modulating Keratinocyte Differentiation Markers. <em>Ann. Dermatol.</em>, 29: 6-12.</li>
+          <li>Kwon SB, An S, Kim MJ, et al. (2017) Phytosphingosine-1-phosphate and epidermal growth factor synergistically restore extracellular matrix in human dermal fibroblasts in vitro and in vivo. <em>Int. J. Mol. Med.</em>, 39: 741-748.</li>
+          <li>Youn HJ, Kim KB, Han HS, et al. (2017) 23-Hydroxytormentic Acid Protects Human Dermal Fibroblasts by Attenuating UVA-induced Oxidative Stress. <em>Photoimmunol. Photomed.</em>, 33: 92-100.</li>
+          <li>Lee J, An S, Choi YM, et al. (2017) TRIAD1 Is a Novel Transcriptional Target of p53 and Regulates Nutlin-3a-Induced Cell Death. <em>J. Cell. Biochem.</em>, 118: 1733-1740.</li>
+          <li>Lee J, An S, Choi YM, et al. (2016) Musashi-2 is a novel regulator of paclitaxel sensitivity in ovarian cancer cells. <em>Int. J. Oncol.</em>, 49: 1945-1952.</li>
+          <li>Hahn HJ, Jung HJ, Schrammek-Drusios MC, et al. (2016) Instrumental evaluation of anti-aging effects of cosmetic formulations containing palmitoyl peptides, <em>Silybum marianum</em> seed oil, vitamin E and other functional ingredients on aged human skin. <em>Exp. Ther. Med.</em>, 12: 1171-1176.</li>
+          <li>Choi S, Youn J, Kim K, et al. (2016) Apigenin inhibits UVA-induced cytotoxicity in vitro and prevents signs of skin aging in vivo. <em>Int. J. Mol. Med.</em>, 38: 627-634.</li>
+          <li>Lee JJ, An S, Kim KB, et al. (2016) Extract of <em>Ettlia sp.</em> YC001 exerts photoprotective effects against UVB irradiation in normal human dermal fibroblasts. <em>J. Microbiol. Biotechnol.</em>, 28: 775-783.</li>
+          <li>Shin S, Kim K, Lee MJ, et al. (2016) Epigallocatechin Gallate-Mediated Alteration of the MicroRNA Expression Profile in 5&alpha;-Dihydrotestosterone-Treated Human Dermal Papilla Cells. <em>Ann. Dermatol.</em>, 28: 327-334.</li>
+          <li>Cha HJ, He C, Zhao H, et al. (2016) Intercellular and intracellular functions of ceramides and their metabolites in skin (Review). <em>Int. J. Mol. Med.</em>, 38: 16-20.</li>
+          <li>Choi SJ, Lee SN, Kim K, et al. (2016) Biological effects of rutin on skin aging. <em>Int. J. Mol. Med.</em>, 38: 357-363.</li>
+          <li>Joo DH, Cha HJ, Kim K, et al. (2015) Benzo(a)pyrene represses melanogenesis in B16F10 mouse melanoma cells. <em>Mol. Cell. Toxicol.</em>, 11: 349-355.</li>
+          <li>Bae S, An IS, An S. (2015) Development of a high-throughput screening system for identification of novel reagents regulating DNA damage in human dermal fibroblasts. <em>Acta. Pharm.</em>, 65: 331-341.</li>
+          <li>Lee KM, An S, Lee OK, et al. (2015) Analysis of changes in microRNA expression profiles in response to the troxerutin-mediated antioxidant effect in human dermal papilla cells. <em>Mol. Med. Rep.</em>, 12: 2650-2660.</li>
+          <li>Lee BM, An S, Kim SY, et al. (2015) Topical application of a cleanser containing extracts of <em>Diospyros kaki</em> folium, <em>Polygonum cuspidatum</em> and <em>Castanea crenata</em> var. dulcis reduces skin oil content and pore size in human skin. <em>Biomed. Rep.</em>, 3: 343-346.</li>
+          <li>Lee MJ, Cha HJ, Lim KM, et al. (2015) Analysis of the microRNA expression profile of normal human dermal papilla cells treated with 5&alpha;-dihydrotestosterone. <em>Mol. Med. Rep.</em>, 12: 1205-1212.</li>
+          <li>Lee OK, Cha HJ, Lee MJ, et al. (2015) Implication of microRNA regulation in para-phenylenediamine-induced cell death and senescence in normal human hair dermal papilla cells. <em>Mol. Med. Rep.</em>, 12: 921-936.</li>
+          <li>Cha HJ, Lee OK, Kim SY, et al. (2015) MicroRNA expression profiling of p-phenylenediamine treatment in human keratinocyte cellline. <em>Mol. Cell. Toxicol.</em>, 11: 19-28.</li>
+          <li>Cha HJ, Bae S, Kim K, et al. (2015) Overdosage of methylparaben induces cellular senescence in vitro and in vivo. <em>J. Invest. Dermatol.</em>, 135: 609-612.</li>
+          <li>Bae S, Kim K, Cha HJ, et al. (2015) Low-dose &gamma;-irradiation induces dual radio-adaptive responses depending on the post-irradiation time by altering microRNA expression profiles in normal human dermal fibroblasts. <em>Int. J. Mol. Med.</em>, 35: 227-237.</li>
+          <li>Bae S, Lim K, Cha H, et al. (2014) Arctiin blocks hydrogen peroxide-induced senescence and cell death though microRNA expression changes in human dermal papilla cells. <em>Biol. Res.</em>, 47: 50.</li>
+          <li>Cha HJ, Kim OY, Lee GT, et al. (2014) Identification of ultraviolet B radiation-induced microRNAs in normal human dermal papilla cells. <em>Mol. Med. Rep.</em>, 10: 1663-1670.</li>
+          <li>Kim KB, Kim K, Bae S, et al. (2014) MicroRNA-1290 promotes asiatic acid-induced apoptosis by decreasing BCL2 protein level in A549 non-small cell lung carcinoma cells. <em>Oncol. Rep.</em>, 32: 1029-1036.</li>
+          <li>Bae S, Kim K, Cha HJ, et al. (2014) Altered microRNA expression profiles are involved in resistance to low-dose ionizing radiation in the absence of BMI1 in human dermal fibroblasts. <em>Int. J. Oncol.</em>, 45: 1618-1628.</li>
+          <li>Cha HJ, Lee GT, Lee KS, et al. (2014) Photoprotective effect of arctiin against ultraviolet B-induced damage in HaCaT keratinocytes is mediated by microRNA expression changes. <em>Mol. Med. Rep.</em>, 10: 1363-1370.</li>
+          <li>Kwon KJ, Bae S, Kim K, et al. (2014) Asiaticoside, a component of <em>Centella asiatica</em>, inhibits melanogenesis in B16F10 mouse melanoma. <em>Mol. Med. Rep.</em>, 10: 503-507.</li>
+          <li>Kim OY, Cha HJ, Ahn KJ, et al. (2014) Identification of microRNAs involved in growth arrest and cell death in hydrogen peroxide-treated human dermal papilla cells. <em>Mol. Med. Rep.</em>, 10: 145-154.</li>
+          <li>Cha HJ, Lee KS, Lee GT, et al. (2014) Altered miRNA expression profiles are involved in the protective effects of troxerutin against ultraviolet B radiation in normal human dermal fibroblasts. <em>Int. J. Mol. Med.</em>, 33: 957-963.</li>
+          <li>Lee KS, Cha HJ, Lee GT, et al. (2014) Troxerutin induces protective effects against ultraviolet B radiation through the alteration of microRNA expression in human HaCaT keratinocyte cells. <em>Int. J. Mol. Med.</em>, 33: 934-942.</li>
+          <li>Lee GT, Cha HJ, Lee KS, et al. (2014) Arctiin induces an UVB protective effect in human dermal fibroblast cells through microRNA expression changes. <em>Int. J. Mol. Med.</em>, 33: 640-648.</li>
+          <li>Bae S, Lee EJ, Lee JH, et al. (2014) Oridonin protects HaCaT keratinocytes against hydrogen peroxide-induced oxidative stress by altering microRNA expression. <em>Int. J. Mol. Med.</em>, 33: 185-193.</li>
+          <li>Lee EJ, Cha HJ, Ahn KJ, et al. (2013) Oridonin exerts protective effects against hydrogen peroxide-induced damage by altering microRNA expression profiles in human dermal fibroblasts. <em>Int. J. Mol. Med.</em>, 32: 1345-1354.</li>
+          <li>An IS, An S, Park S, et al. (2013) Involvement of microRNAs in epigallocatechin gallate-mediated UVB protection in human dermal fibroblasts. <em>Oncol. Rep.</em>, 29: 253-259.</li>
+          <li>An IS, An S, Kwon KJ, et al. (2013) Ginsenoside Rh2 mediates changes in the microRNA expression profile of human non-small cell lung cancer A549 cells. <em>Oncol. Rep.</em>, 29: 523-528.</li>
+          <li>Kim K, An S, Cha HJ, et al. (2012) Lenalidomide induces apoptosis and alters gene expression in non-small cell lung cancer cells. <em>Oncol. Left.</em>, 5: 588-592.</li>
+          <li>An IS, An S, Choe TO, et al. (2012) <em>Centella asiatica</em> protects against UVB-induced HaCaT keratinocyte damage through microRNA expression changes. <em>Int. J. Mol. Med.</em>, 30: 1349-1356.</li>
+          <li>An IS, An S, Kang SM, et al. (2012) Titrated extract of <em>Centella asiatica</em> provides a UVB protective effect by altering microRNA expression profiles in human dermal fibroblasts. <em>Int. J. Mol. Med.</em>, 30: 1194-1202.</li>
+          <li>Bae S, Kim SY, Jung JH, et al. (2012) Akt is negatively regulated by the MULAN E3 ligase. <em>Cell Res.</em>, 22: 873-885.</li>
+          <li>Bae S, Jeong HJ, Cha HJ, et al. (2012) The hypoxia-mimetic agent cobalt chloride induces cell cycle arrest and alters gene expression in U266 multiple myeloma cells. <em>Int. J. Mol. Med.</em>, 30: 1180-1186.</li>
+          <li>Bae S, Jung JH, An IS, et al. (2012) TRIAD1 is negatively regulated by the MDM2 E3 ligase. <em>Oncol. Rep.</em>, 28: 1924-1928.</li>
+          <li>Bae S, Jung JH, Kim K, et al. (2012) TRIAD1 inhibits MDM2-mediated p53 ubiquitination and degradation. <em>FEBS Lett.</em>, 586: 3057-3063.</li>
+          <li>Choi YM, An S, Lee EM, et al. (2012) CYP1A1 is a target of miR-892a-mediated posttranscriptional repression. <em>Int. J. Oncol.</em>, 41: 331-336.</li>
+          <li>Bae S, Lee EM, Cha HJ, et al. (2011) Resveratrol alters microRNA expression profiles in A549 human non-small cell lung cancer cells. <em>Mol. Cells</em>, 32: 243-249.</li>
+        </ul>
+        <h4 style="margin-top:20px">한국연구재단등재 학술논문 (30편)</h4>
+        <ul class="pub-list">
+          <li>김지예, 배승희, 정진혁 외. (2018) <em>Coptis chinensis</em> 추출물의 JNK/AP1 Axis을 통한 인간진피 섬유아세포 내 MMP1 발현 억제 효능. <em>Asian J. Beauty. Cosmetol.</em>, 16: 427-435.</li>
+          <li>정인, 안인숙, 안성관. (2018) 국가별 베이스 메이크업 제품의 색상 비교. <em>Asian J. Beauty. Cosmetol.</em>, 16: 277-286.</li>
+          <li>최미나, 나은주, 안인숙 외. (2018) 인간 진피섬유아세포에서의 하이드록시티로졸의 산화억제 효능. <em>Asian J. Beauty. Cosmetol.</em>, 16: 113-121.</li>
+          <li>용희정, 김규리, 안진정 외. (2018) Embelin의 세포사멸 억제 및 항염 효능. <em>Asian J. Beauty. Cosmetol.</em>, 16: 103-112.</li>
+          <li>이송정, 한효선, 안인숙 외. (2016) Amentoflavone의 항염증 및 세포 보호 효과. <em>Asian J. Beauty. Cosmetol.</em>, 14: 201-211.</li>
+          <li>김경숙, 한송희, 안인숙 외. (2016) UVA가 유도하는 산화적 스트레스에 Ellagic Acid가 미치는 인간 모유두 세포 보호효과. <em>Asian J. Beauty. Cosmetol.</em>, 14: 191-200.</li>
+          <li>김기쁨, 조아령, 차화준 외. (2015) Sericine과 Alpha-Mangostin의 주름개선 상승효과. <em>대한피부미용학회지</em>, 13: 729-734.</li>
+          <li>최민화, 배승희, 권승빈 외. (2015) Silica gel을 이용한 피부세포 수화능력 비교분석 연구. <em>대한피부미용학회지</em>, 13: 615-621.</li>
+          <li>차화준, 권승빈, 김지현 외. (2015) Image J 프로그램을 사용한 모공측정 및 노화도의 새로운 정량분석법 개발과 화장품 인체적용시험에의 활용. <em>대한피부미용학회지</em>, 13: 477-482.</li>
+          <li>조정남, 안인숙, 장현희 외. (2015) 귀리추출물을 함유한 크림이 중년여성의 안면홍조 완화에 미치는 효과. <em>대한피부미용학회지</em>, 13: 361-366.</li>
+          <li>김수연, 김민정, 안규중 외. (2015) 과산화수소(H&#8322;O&#8322;)에 의해 유도된 인간 각질형성세포주 손상에 대한 키네틴(Kinetin)의 항산화 효과. <em>대한피부미용학회지</em>, 13: 59-64.</li>
+          <li>조지희, 윤혜정, 안규중 외. (2015) 10대 여고생들의 입술화장품 사용이 입술에 미치는 영향. <em>대한피부미용학회지</em>, 13: 27-34.</li>
+          <li>조춘희, 김수연, 안인숙. (2014) 병풀(<em>Centella asiatica</em>) 추출물을 이용한 20~50대 여성의 두피 홍반 개선 효과. <em>대한피부미용학회지</em>, 12: 921-927.</li>
+          <li>김수영, 임정옥, 안인숙 외. (2014) 코코넛오일이 피부장벽 기능에 미치는 효과. <em>대한피부미용학회지</em>, 12: 907-914.</li>
+          <li>김기쁨, 이정주, 허진아 외. (2014) <em>Chlorella vulgaris</em> 미세조류 추출물의 자외선B 의존적 인간 진피섬유아세포 손상에 대한 보호 효능 연구. <em>대한피부미용학회지</em>, 12: 479-486.</li>
+          <li>김가람, 차훈, 송희경 외. (2014) 당유자 미숙과 동결건조 추출물이 멜라닌 생성에 미치는 영향. <em>대한피부미용학회지</em>, 12: 403-408.</li>
+          <li>이민지, 김현수, 조아령 외. (2014) 갈락토미세스 발효여과물을 함유한 에센스타입 화장료가 각질, 모공, 피지, 피부밝기, 여드름 개선에 미치는 영향. <em>대한피부미용학회지</em>, 12: 77-84.</li>
+          <li>오봉윤, 이유석, 강정화 외. (2013) 토마토 잎 초임계 추출물의 피부 색소침착 억제 효과. <em>대한피부미용학회지</em>, 11: 1129-1136.</li>
+          <li>최성진, 백승우, 최민화 외. (2013) 카올린, 아데노신 및 식물복합추출물이 함유된 안면팩의 피부개선 효과. <em>대한피부미용학회지</em>, 11: 993-1000.</li>
+          <li>오봉윤, 이유석, 남승희 외. (2013) 딸기 식물체 추출물의 미백 및 주름 개선 효과. <em>대한피부미용학회지</em>, 11: 969-974.</li>
+          <li>정인, 안인숙, 안성관. (2013) 성인여드름 피부의 자외선차단제 사용 실태 및 물리적 자외선차단제의 세안 방법에 따른 세정력 비교 연구. <em>대한피부미용학회지</em>, 11: 959-968.</li>
+          <li>권승빈, 이강태, 최성진 외. (2013) 글리세린, 히알루론산, 실리콘 오일이 피부의 보습 및 경피수분손실량에 미치는 효과. <em>대한피부미용학회지</em>, 11: 761-768.</li>
+          <li>윤영민, 배승희, 안성관 외. (2013) 자외선(Ultraviolet)이 피부 및 피부세포 내 신호전달체계에 미치는 영향. <em>대한피부미용학회지</em>, 11: 417-426.</li>
+          <li>강윤숙, 이나경, 안인숙. (2013) 피부관리실의 직무환경이 직업안정성에 미치는 영향. <em>대한피부미용학회지</em>, 11: 269-274.</li>
+          <li>이보미, 권승빈, 안성관 외. (2013) 국내 화장품 표시·광고 관리 가이드라인 및 실증에 관한 규정. <em>대한피부미용학회지</em>, 11: 11-15.</li>
+          <li>윤영민, 최성진, 박우정 외. (2012) <em>Bifidobacterium longum</em> 추출물의 자외선B에 대한 인간 진피섬유아세포 보호 효능. <em>대한피부미용학회지</em>, 10: 887-891.</li>
+          <li>권경자, 김수연, 안인숙. (2012) 골근테라피(Skeletal Muscle Therapy)가 20-30대 남성 얼굴 크기 변화에 미치는 영향. <em>대한피부미용학회지</em>, 10: 803-808.</li>
+          <li>홍미선, 윤영민, 안성관 외. (2012) 인간 진피 섬유아세포에서 천연성분 쿼세틴의 작용기전. <em>대한피부미용학회지</em>, 10: 571-579.</li>
+          <li>안인숙, 김지혜, 유회숙 외. (2007) B16F10 mouse melanoma 세포에서의 L-cysteine에 의한 멜라닌 생성 억제. <em>대한피부미용학회지</em>, 5: 239-246.</li>
+          <li>박인애, 안인숙. (2007) 유화제와 액정 형성에 관한 연구. <em>대한피부미용학회지</em>, 5: 119-129.</li>
+        </ul>
+        <h4 style="margin-top:20px">국내외 특허 (36건)</h4>
+        <ul class="patent-list">
+          <li>천연 복합 추출물을 유효성분으로 함유하는 안티폴루션 화장료 조성물 (2019.04.30)</li>
+          <li>청호 추출물, 은행잎 추출물 및 무화과 추출물을 유효성분으로 포함하는 항균 및 항염 조성물 (2018.12.06)</li>
+          <li>비올라잔틴을 유효성분으로 포함하는 화장료 조성물 (2017.12.14)</li>
+          <li>폴리스타틴 유래 생리활성 펩타이드, 및 이의 용도 (2017.08.22)</li>
+          <li>청호 복합 추출물을 유효성분으로 포함하는 모낭충 제거용 화장료 조성물 (2017.06.01)</li>
+          <li>나노클로롭시스 오세아니카 추출물을 유효성분으로 포함하는 화장료 조성물 (2016.12.28)</li>
+          <li>부레옥잠 추출물을 유효성분으로 함유하는 화장료 조성물 (2016.12.08)</li>
+          <li>관음죽 및 인도 고무나무 추출물을 유효성분으로 함유하는 중금속 또는 미세먼지 제거용 화장료 조성물 (2016.08.18)</li>
+          <li>국화 추출물을 유효성분으로 함유하는 중금속 또는 미세먼지 제거용 화장료 조성물 (2016.08.18)</li>
+          <li>인도 보리수 나무 추출물을 유효성분으로 함유하는 중금속 또는 미세먼지 제거용 화장료 조성물 (2016.08.18)</li>
+          <li>모발 성장 촉진 활성을 가지는 펩타이드, 및 이의 용도 (2016.08.17)</li>
+          <li>미백 활성이 우수한 펩타이드, 및 이의 용도 (2016.08.17)</li>
+          <li>미세먼지 흡착 및 제거용 펩타이드, 및 이의 용도 (2016.08.17)</li>
+          <li>백모증 개선 효과를 가지는 펩타이드, 및 이의 용도 (2016.08.17)</li>
+          <li>주름 개선 및 미백 효과를 가지는 펩타이드, 및 이의 용도 (2016.08.17)</li>
+          <li>주름 개선 및 항노화 효과를 가지는 펩타이드, 및 이의 용도 (2016.08.17)</li>
+          <li>주름 개선 활성 및 피부 개선 효과를 가지는 펩타이드, 및 이의 용도 (2016.08.17)</li>
+          <li>주름 개선용 펩타이드, 및 이의 용도 (2016.08.17)</li>
+          <li>지방분해 촉진 효과를 가지는 펩타이드, 및 이의 용도 (2016.08.17)</li>
+          <li>피부 상태 개선 및 모발 성장 촉진 효과를 가지는 펩타이드, 및 이의 용도 (2016.08.17)</li>
+          <li>항염 활성 및 피부 개선 효과를 가지는 펩타이드, 및 이의 용도 (2016.08.17)</li>
+          <li>항염증 활성을 가지는 펩타이드, 및 이의 용도 (2016.08.17)</li>
+          <li>식물공장유래 병풀 추출물을 유효성분으로 하는 피부개선용 조성물 및 증식성 피부 질환 예방 또는 치료용 조성물 (2016.03.14)</li>
+          <li>개똥쑥 발효 추출물을 유효성분으로 하는 피부개선용 조성물 (2016.02.29)</li>
+          <li>오미자 발효 추출물을 유효성분으로 하는 미백 및 피부개선용 조성물 (2016.02.29)</li>
+          <li>복합효모 균체 파쇄 발효배양액을 유효성분으로 하는 피부개선용 조성물 및 증식성 피부질환 예방 또는 치료용 조성물 (2016.02.26)</li>
+          <li>산호수 및 벵갈고무나무 수지 추출물을 유효성분으로 하는 미세먼지 흡착 및 제거용 화장료 조성물 (2016.02.26)</li>
+          <li>기린초 발효 추출물을 유효성분으로 하는 피부개선용 조성물 및 증식성 피부질환 예방 또는 치료용 조성물 (2016.02.19)</li>
+          <li>복합유산균 파쇄액 및 마치현의 발효 추출물을 유효성분으로 하는 피부개선용 조성물 및 증식성 피부질환 예방 또는 치료용 조성물 (2016.02.19)</li>
+          <li>영생초 및 바다제비집 복합발효 추출물을 유효성분으로 하는 피부개선용 조성물 및 증식성 피부질환 예방 또는 치료용 조성물 (2016.02.19)</li>
+          <li>클리나칸투스 누탄스 추출물을 유효성분으로 포함하는 피부 개선용 화장료 조성물 (2014.11.11)</li>
+          <li>MITF의 조절자 및 멜라닌 색소성 질환 치료제로서의 STUB1 용도 (2014.08.29)</li>
+          <li>바다제비집 및 병풀의 복합발효추출물을 유효성분으로 포함하는 피부 자극 완화용 조성물 (2013.07.02)</li>
+          <li>피부 임상시험을 위한 기준점 설정 방법 및 장치 (2013.01.09)</li>
+          <li>피부 외용제 테스트 방법 (2021.05.28)</li>
+          <li>피부 분석 방법 (2021.07.12)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="metric-block" id="mb-r-kwon">
+      <button class="metric-toggle" onclick="toggleMetric('mb-r-kwon')">
+        <h4>2. 권 승 빈 (연구소장 · 이학박사)</h4>
+        <div><span class="badge">SCI 5편 · 특허 3건</span> <span class="arrow">&#9660;</span></div>
+      </button>
+      <div class="metric-body">
+        <table class="info-tbl">
+          <tr><th>2011.03 – 2014.02</th><td>건국대학교 생물공학과 박사</td></tr>
+          <tr><th>2009.08 – 2012.02</th><td>경일대학교, 선린대학, 수성대학교 등 강의교수</td></tr>
+          <tr><th>2011.08 – 2012.02</th><td>수성대학교·교육과학기술부 산업수요맞춤형 교육과정개발위원</td></tr>
+          <tr><th>2012.10 – 현재</th><td>한국피부과학연구원 연구소장</td></tr>
+          <tr><th>2014.03 – 2016.06</th><td>건국대학교 미래지식교육원 강의교수</td></tr>
+          <tr><th>2016.01 – 현재</th><td>Asian Journal of Beauty and Cosmetology 논문심사위원</td></tr>
+          <tr><th>2017.09 – 2023.02</th><td>건국대학교 화장품공학과 산학겸임교수</td></tr>
+          <tr><th>2022.09 – 현재</th><td>한국신뢰성보증연구협동조합(KSQA) 정회원</td></tr>
+          <tr><th>2023.05 – 현재</th><td>한국동물실험대체법학회 정회원</td></tr>
+        </table>
+        <h4 style="margin-top:20px">수상경력</h4>
+        <table class="info-tbl">
+          <tr><th>2007년</th><td>국제뷰티산업학회 우수논문상</td></tr>
+        </table>
+        <h4 style="margin-top:20px">국제저명 SCI급 학술논문 (5편)</h4>
+        <ul class="pub-list">
+          <li>Kwon SB, An S, et al. (2017) Phytosphingosine-1-phosphate and epidermal growth factor synergistically restore extracellular matrix in human dermal fibroblasts in vitro and in vivo. <em>Int. J. Mol. Med.</em>, 39: 741-748.</li>
+          <li>Hahn HJ, Jung HJ, et al. (2016) Instrumental evaluation of anti-aging effects of cosmetic formulations. <em>Exp. Ther. Med.</em>, 12: 1171-1176.</li>
+          <li>Choi SJ, Lee SN, et al. (2016) Biological effects of rutin on skin aging. <em>Int. J. Mol. Med.</em>, 38: 357-363.</li>
+          <li>Cha HJ, Bae S, Kim K, et al. (2015) Overdosage of methylparaben induces cellular senescence in vitro and in vivo. <em>J. Invest. Dermatol.</em>, 135: 609-612.</li>
+          <li>Cha HJ, Lee KS, Lee GT, et al. (2014) Altered miRNA expression profiles are involved in the protective effects of troxerutin against UVB radiation. <em>Int. J. Mol. Med.</em>, 33: 957-963.</li>
+        </ul>
+        <h4 style="margin-top:20px">한국연구재단등재 학술논문 (8편)</h4>
+        <ul class="pub-list">
+          <li>주예은, 권승빈 외. (2022) Effects of 'NEOGEN V.BIOME LIPOSOME&trade;' on the Increased Expression of COL1A1 and HAS2 mRNA in Human Dermal Fibroblasts. <em>Asian J Beauty Cosmetol.</em>, 20(4): 451-459.</li>
+          <li>최민화, 배승희, 권승빈 외. (2015) Silica gel을 이용한 피부세포 수화능력 비교분석 연구. <em>대한피부미용학회지</em>, 13: 615-621.</li>
+          <li>차화준, 권승빈, 김지현 외. (2015) Image J 프로그램을 사용한 모공측정 및 노화도의 새로운 정량분석법 개발. <em>대한피부미용학회지</em>, 13: 477-482.</li>
+          <li>이보미, 이경록, 권승빈 외. (2014) 감나무 잎 추출물 등을 함유한 화장료의 안전성 및 인체효능평가 연구. <em>대한피부미용학회지</em>, 12: 361-370.</li>
+          <li>김지현, 조아령, 권승빈. (2014) 아시아 마사지 테크닉. <em>대한피부미용학회지</em>, 12: 9-15.</li>
+          <li>오봉윤, 이유석, 남승희 외. (2013) 딸기 식물체 추출물의 미백 및 주름 개선 효과. <em>대한피부미용학회지</em>, 11: 969-974.</li>
+          <li>권승빈, 이강태, 최성진 외. (2013) 글리세린, 히알루론산, 실리콘 오일이 피부의 보습 및 경피수분손실량에 미치는 효과. <em>대한피부미용학회지</em>, 11: 761-768.</li>
+          <li>이보미, 권승빈, 안성관 외. (2013) 국내 화장품 표시·광고 관리 가이드라인 및 실증에 관한 규정. <em>대한피부미용학회지</em>, 11: 11-15.</li>
+        </ul>
+        <h4 style="margin-top:20px">국내외 특허 (3건)</h4>
+        <ul class="patent-list">
+          <li>피부 임상시험을 위한 기준점 설정 방법 및 장치 (2013.01.09)</li>
+          <li>피부 외용제 테스트 방법 (2021.05.28)</li>
+          <li>피부 분석 방법 (2021.07.12)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="metric-block" id="mb-r-others">
+      <button class="metric-toggle" onclick="toggleMetric('mb-r-others')">
+        <h4>3. 기타 연구원 (12명)</h4>
+        <div><span class="badge">연구실장 · 주임 · 선임</span> <span class="arrow">&#9660;</span></div>
+      </button>
+      <div class="metric-body">
+        <div class="researcher-item">
+          <h4>김 윤 <span class="r-title">(연구실장)</span></h4>
+          <p class="note">중앙대학교 식물응용과학과 학사 (2012.02)</p>
+          <table class="info-tbl" style="margin-bottom:16px">
+            <tr><th>2012.04 – 2018.02</th><td>대한피부과학연구소 선임연구원</td></tr>
+            <tr><th>2018.06 – 2022.02</th><td>피엔케이피부임상연구센타 책임연구원</td></tr>
+            <tr><th>2022.03 – 현재</th><td>한국피부과학연구원 연구실장</td></tr>
+          </table>
+          <div style="margin-bottom:20px"></div>
+        </div>
+        <div class="researcher-item">
+          <h4>조 민 지 <span class="r-title">(연구실장)</span></h4>
+          <p class="note">건국대학교 산업대학원 향장학과 석사 (2018.08)</p>
+          <table class="info-tbl" style="margin-bottom:16px">
+            <tr><th>2015.03 – 현재</th><td>한국피부과학연구원 연구실장</td></tr>
+          </table>
+          <p class="note" style="margin-bottom:20px">특허: 피부 외용제 테스트 방법 (2021.05.28)</p>
+        </div>
+        <div class="researcher-item">
+          <h4>김 현 경 <span class="r-title">(주임연구원)</span></h4>
+          <p class="note">상지대학교 화학과 학사 (2017.02)</p>
+          <table class="info-tbl" style="margin-bottom:16px">
+            <tr><th>2018.01 – 현재</th><td>한국피부과학연구원 주임연구원</td></tr>
+          </table>
+          <p class="note" style="margin-bottom:20px">특허: 피부 분석 방법 (2021.07.12)</p>
+        </div>
+        <div class="researcher-item">
+          <h4>황 윤 진 <span class="r-title">(주임연구원)</span></h4>
+          <p class="note">성신여자대학교 생명과학과 학사 (2013.02)</p>
+          <table class="info-tbl" style="margin-bottom:16px">
+            <tr><th>2016.02 – 현재</th><td>한국피부과학연구원 주임연구원</td></tr>
+          </table>
+          <div style="margin-bottom:20px"></div>
+        </div>
+        <div class="researcher-item">
+          <h4>박 소 연 <span class="r-title">(주임연구원)</span></h4>
+          <p class="note">경상대학교 생명화학공학과 학사 (2017.08)</p>
+          <table class="info-tbl" style="margin-bottom:16px">
+            <tr><th>2018.05 – 현재</th><td>한국피부과학연구원 주임연구원</td></tr>
+          </table>
+          <div style="margin-bottom:20px"></div>
+        </div>
+        <div class="researcher-item">
+          <h4>고 희 영 <span class="r-title">(주임연구원)</span></h4>
+          <p class="note">숙명여자대학교 생명과학과 학사 (2012.02)</p>
+          <table class="info-tbl" style="margin-bottom:16px">
+            <tr><th>2017.05 – 현재</th><td>한국피부과학연구원 주임연구원</td></tr>
+          </table>
+          <p class="note" style="margin-bottom:20px">특허: 피부 분석 방법 (2021.07.12)</p>
+        </div>
+        <div class="researcher-item">
+          <h4>안 현 정 <span class="r-title">(주임연구원)</span></h4>
+          <p class="note">수원대학교 신소재공학과 학사 (2017.02)</p>
+          <table class="info-tbl" style="margin-bottom:16px">
+            <tr><th>2017.11 – 현재</th><td>한국피부과학연구원 주임연구원</td></tr>
+          </table>
+          <div style="margin-bottom:20px"></div>
+        </div>
+        <div class="researcher-item">
+          <h4>박 채 리 <span class="r-title">(연구원)</span></h4>
+          <p class="note">삼육대학교 화학생명과학과 학사 (2021.02)</p>
+          <table class="info-tbl" style="margin-bottom:16px">
+            <tr><th>2021.09 – 현재</th><td>한국피부과학연구원 연구원</td></tr>
+          </table>
+          <div style="margin-bottom:20px"></div>
+        </div>
+        <div class="researcher-item">
+          <h4>김 미 지 <span class="r-title">(연구원)</span></h4>
+          <p class="note">수원과학대학교 미용예술 전문학사 (2019.02)</p>
+          <table class="info-tbl" style="margin-bottom:16px">
+            <tr><th>2019.01 – 2022.02</th><td>피엔케이피부임상연구센타 보조연구원</td></tr>
+            <tr><th>2022.03 – 현재</th><td>한국피부과학연구원 연구원</td></tr>
+          </table>
+          <div style="margin-bottom:20px"></div>
+        </div>
+        <div class="researcher-item">
+          <h4>김 명 선 <span class="r-title">(연구원)</span></h4>
+          <p class="note">이화여자대학교 화학나노과학과 학사 (2018.08)</p>
+          <table class="info-tbl" style="margin-bottom:16px">
+            <tr><th>2019.08 – 2022.03</th><td>피엔케이피부임상연구센타 연구원</td></tr>
+            <tr><th>2023.01 – 현재</th><td>한국피부과학연구원 연구원</td></tr>
+          </table>
+          <div style="margin-bottom:20px"></div>
+        </div>
+        <div class="researcher-item">
+          <h4>주 예 은 <span class="r-title">(선임연구원)</span></h4>
+          <p class="note">건국대학교 일반대학원 화장품공학과 박사 (2018.02)</p>
+          <table class="info-tbl" style="margin-bottom:16px">
+            <tr><th>2016.04 – 현재</th><td>한국피부과학연구원 선임연구원</td></tr>
+          </table>
+          <div style="margin-bottom:20px"></div>
+        </div>
+        <div class="researcher-item">
+          <h4>신 상 훈 <span class="r-title">(선임연구원)</span></h4>
+          <p class="note">건국대학교 생물공학과 박사수료 (2016.03)</p>
+          <table class="info-tbl" style="margin-bottom:16px">
+            <tr><th>2016.04 – 현재</th><td>한국피부과학연구원 선임연구원</td></tr>
+          </table>
+          <div style="margin-bottom:20px"></div>
+        </div>
+      </div>
+    </div>
+    <div class="metric-block" id="mb-r-kimgr">
+      <button class="metric-toggle" onclick="toggleMetric('mb-r-kimgr')">
+        <h4>4. 김 가 람 (신뢰성 보증 책임자 · 공학박사)</h4>
+        <div><span class="badge">SCI 15편</span> <span class="arrow">&#9660;</span></div>
+      </button>
+      <div class="metric-body">
+        <table class="info-tbl">
+          <tr><th>2010.03 – 2012.02</th><td>건국대학교 일반대학원 생물공학과 석사</td></tr>
+          <tr><th>2012.03 – 2016.08</th><td>건국대학교 일반대학원 생물공학과 박사</td></tr>
+          <tr><th>2012.03 – 2020.04</th><td>한국피부과학연구원 선임연구원</td></tr>
+          <tr><th>2020.05 – 현재</th><td>한국피부과학연구원 신뢰성 보증 책임자</td></tr>
+          <tr><th>2018.03 – 현재</th><td>건국대학교 화장품공학과 산학겸임교수</td></tr>
+        </table>
+        <h4 style="margin-top:20px">국제저명 SCI급 학술논문 (15편)</h4>
+        <ul class="pub-list">
+          <li>Lee J, An S, Jung JH, et al. (2019) MUL1 E3 ligase regulates the antitumor effects of metformin in chemoresistant ovarian cancer cells via AKT degradation. <em>Int. J. Oncol.</em>, 54: 1833-1842.</li>
+          <li>Kim K, An S, Choi BG, et al. (2017) Arctiin regulates collagen type 1&alpha; chain 1 mRNA expression in human dermal fibroblasts via the miR-378b-SIRT6 axis. <em>Mol. Med. Rep.</em>, 16: 9120-9124.</li>
+          <li>Joo DH, An S, Choi BG, et al. (2017) MicroRNA-378b regulates &alpha;-1-type 1 collagen expression via sirtuin 6 interference. <em>Mol. Med. Rep.</em>, 16: 8520-8524.</li>
+          <li>Shin S, Kim K, Lee MJ, et al. (2016) Epigallocatechin Gallate-Mediated Alteration of the MicroRNA Expression Profile in 5&alpha;-DHT-Treated Human Dermal Papilla Cells. <em>Ann. Dermatol.</em>, 28: 327-334.</li>
+          <li>Choi S, Youn J, Kim K, et al. (2016) Apigenin inhibits UVA-induced cytotoxicity in vitro and prevents signs of skin aging in vivo. <em>Int. J. Mol. Med.</em>, 38: 627-634.</li>
+          <li>Hahn HJ, Youn HJ, Cha HJ, et al. (2016) Single Low-Dose Radiation Induced Regulation of Keratinocyte Differentiation. <em>Ann. Dermatol.</em>, 28: 433-437.</li>
+          <li>Cha HJ, Bae S, Kim K, et al. (2015) Overdosage of methylparaben induces cellular senescence in vitro and in vivo. <em>J. Invest. Dermatol.</em>, 135: 609-612.</li>
+          <li>Bae S, Kim K, Cha HJ, et al. (2015) Low-dose &gamma;-irradiation induces dual radio-adaptive responses. <em>Int. J. Mol. Med.</em>, 35: 227-237.</li>
+          <li>Bae S, Kim K, Cha HJ, et al. (2014) Altered microRNA expression profiles are involved in resistance to low-dose ionizing radiation. <em>Int. J. Oncol.</em>, 45: 1618-1628.</li>
+          <li>Kim K, An S, Cha HJ, et al. (2012) Lenalidomide induces apoptosis and alters gene expression in non-small cell lung cancer cells. <em>Oncol. Left.</em>, 5: 588-592.</li>
+          <li>Bae S, Kim SY, Jung JH, et al. (2012) Akt is negatively regulated by the MULAN E3 ligase. <em>Cell Res.</em>, 22: 873-885.</li>
+          <li>Bae S, Jeong HJ, Cha HJ, et al. (2012) The hypoxia-mimetic agent cobalt chloride induces cell cycle arrest. <em>Int. J. Mol. Med.</em>, 30: 1180-1186.</li>
+          <li>Bae S, Jung JH, Kim K, et al. (2012) TRIAD1 inhibits MDM2-mediated p53 ubiquitination and degradation. <em>FEBS Lett.</em>, 586: 3057-3063.</li>
+          <li>Choi YM, An S, Lee EM, et al. (2012) CYP1A1 is a target of miR-892a-mediated posttranscriptional repression. <em>Int. J. Oncol.</em>, 41: 331-336.</li>
+          <li>Bae S, Lee EM, Cha HJ, et al. (2011) Resveratrol alters microRNA expression profiles in A549 human non-small cell lung cancer cells. <em>Mol. Cells</em>, 32: 243-249.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>별첨 6 — 시험기관의 주요설비</h3>
+    <div class="result-card">
+      <h4>1. 일반사항</h4>
+      <p style="font-size:13px;line-height:1.8;color:var(--soft-graphite)">한국피부과학연구원은 식품의약품안전처의 '화장품법' 등 관련 법규를 기준으로, 실평수 약 2,783.63㎡ 규모의 연구시설을 설치·운영하고 있습니다. 전체 시설은 시험의 신뢰성에 영향을 주는 간섭을 최소화하고, 항온항습설비 등을 통해 전체 임상시험 공간을 제어합니다. 시험결과의 신뢰성을 위하여 시험검사 장소의 출입은 통제되고 제한되며, 모든 시험검사 시설 및 설비는 품질매뉴얼의 관리체계에 따라 정기적으로 점검·기록 관리되고 있습니다.</p>
+    </div>
+    <div class="metric-block" id="mb-facilities">
+      <button class="metric-toggle" onclick="toggleMetric('mb-facilities')">
+        <h4>2. 주요 내부시설 (35실)</h4>
+        <div><span class="badge">2,783㎡</span> <span class="arrow">&#9660;</span></div>
+      </button>
+      <div class="metric-body">
+        <table class="data-tbl">
+          <thead><tr><th style="width:55%">연구실명</th><th>영문명</th></tr></thead>
+          <tbody>
+          <tr><td style="font-weight:600">세콤보안 및 폐쇄회로TV 보안섹터</td><td style="color:var(--soft-graphite);font-size:12px">SECOM and CCTV Security Sector</td></tr>
+          <tr><td style="font-weight:600">항온항습섹터</td><td style="color:var(--soft-graphite);font-size:12px">Constant Temperature and Humidity Sector</td></tr>
+          <tr><td style="font-weight:600">임상자료분석실</td><td style="color:var(--soft-graphite);font-size:12px">Clinical Data Analysis Room</td></tr>
+          <tr><td style="font-weight:600">임상효능평가실</td><td style="color:var(--soft-graphite);font-size:12px">Clinical Efficacy Room</td></tr>
+          <tr><td style="font-weight:600">유효성평가실</td><td style="color:var(--soft-graphite);font-size:12px">Efficacy Evaluation Room</td></tr>
+          <tr><td style="font-weight:600">안전성평가실</td><td style="color:var(--soft-graphite);font-size:12px">Safety Evaluation Room</td></tr>
+          <tr><td style="font-weight:600">기능성평가실</td><td style="color:var(--soft-graphite);font-size:12px">Functional Evaluation Room</td></tr>
+          <tr><td style="font-weight:600">자외선조사실</td><td style="color:var(--soft-graphite);font-size:12px">UV Irradiation Room</td></tr>
+          <tr><td style="font-weight:600">내수성평가실</td><td style="color:var(--soft-graphite);font-size:12px">Waterproof Evaluation Room</td></tr>
+          <tr><td style="font-weight:600">세포효능평가실</td><td style="color:var(--soft-graphite);font-size:12px">Cellular Efficacy Room</td></tr>
+          <tr><td style="font-weight:600">3차원 피부세포배양실</td><td style="color:var(--soft-graphite);font-size:12px">3D Skin Cell Culture Room</td></tr>
+          <tr><td style="font-weight:600">3차원 입체영상처리실</td><td style="color:var(--soft-graphite);font-size:12px">3D Image Processing Room</td></tr>
+          <tr><td style="font-weight:600">비임상시험 분석기기실</td><td style="color:var(--soft-graphite);font-size:12px">In vitro Experiment Equipment Room</td></tr>
+          <tr><td style="font-weight:600">촬영실</td><td style="color:var(--soft-graphite);font-size:12px">Studio</td></tr>
+          <tr><td style="font-weight:600">자료보관실</td><td style="color:var(--soft-graphite);font-size:12px">Data Storage Room</td></tr>
+          <tr><td style="font-weight:600">세안실</td><td style="color:var(--soft-graphite);font-size:12px">Washing Room</td></tr>
+          <tr><td style="font-weight:600">피시험자 대기실</td><td style="color:var(--soft-graphite);font-size:12px">Volunteer Waiting Room</td></tr>
+          <tr><td style="font-weight:600">피시험자 상담실</td><td style="color:var(--soft-graphite);font-size:12px">Volunteer Counseling Room</td></tr>
+          <tr><td style="font-weight:600">피시험자 탈의실</td><td style="color:var(--soft-graphite);font-size:12px">Volunteer Locker Room</td></tr>
+          <tr><td style="font-weight:600">회의실</td><td style="color:var(--soft-graphite);font-size:12px">Conference Room</td></tr>
+          <tr><td style="font-weight:600">연구원장실</td><td style="color:var(--soft-graphite);font-size:12px">Office for Director</td></tr>
+          <tr><td style="font-weight:600">연구원실</td><td style="color:var(--soft-graphite);font-size:12px">Office for Researchers</td></tr>
+          <tr><td style="font-weight:600">행정실</td><td style="color:var(--soft-graphite);font-size:12px">Administrative Office</td></tr>
+          <tr><td style="font-weight:600">현미경실</td><td style="color:var(--soft-graphite);font-size:12px">Microscope Room</td></tr>
+          <tr><td style="font-weight:600">암실 및 영상필름 분석실</td><td style="color:var(--soft-graphite);font-size:12px">Dark Room and Film Analysis Room</td></tr>
+          <tr><td style="font-weight:600">창고</td><td style="color:var(--soft-graphite);font-size:12px">Storage Room</td></tr>
+          <tr><td style="font-weight:600">분자표적신약연구실</td><td style="color:var(--soft-graphite);font-size:12px">Molecular Targeted Drug and Biomedical Research Lab</td></tr>
+          <tr><td style="font-weight:600">세포배양 및 세포분석실</td><td style="color:var(--soft-graphite);font-size:12px">Cell Culture and Analysis Room</td></tr>
+          <tr><td style="font-weight:600">DNA 및 유전자분석실</td><td style="color:var(--soft-graphite);font-size:12px">DNA and Gene Analysis Room</td></tr>
+          <tr><td style="font-weight:600">단백질 및 효소분석실</td><td style="color:var(--soft-graphite);font-size:12px">Protein and Enzyme Analysis Room</td></tr>
+          <tr><td style="font-weight:600">미생물배양 및 분석실</td><td style="color:var(--soft-graphite);font-size:12px">Microorganism Culture and Analysis Room</td></tr>
+          <tr><td style="font-weight:600">고기능성물질 스크리닝실</td><td style="color:var(--soft-graphite);font-size:12px">Highly Functional Biomaterial Screening Room</td></tr>
+          <tr><td style="font-weight:600">생리활성물질 분리정제실</td><td style="color:var(--soft-graphite);font-size:12px">Bioactive Material Isolation and Purification Room</td></tr>
+          <tr><td style="font-weight:600">초정밀소재분석실</td><td style="color:var(--soft-graphite);font-size:12px">Super Precisional Material Analysis Room</td></tr>
+          <tr><td style="font-weight:600">냉장냉동고 및 항온기실</td><td style="color:var(--soft-graphite);font-size:12px">Freezer and Incubator Room</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="metric-block" id="mb-equipment">
+      <button class="metric-toggle" onclick="toggleMetric('mb-equipment')">
+        <h4>3. 주요 시험기기 (87종)</h4>
+        <div><span class="badge">피부분석기 A~k 포함</span> <span class="arrow">&#9660;</span></div>
+      </button>
+      <div class="metric-body">
+        <table class="data-tbl">
+          <thead><tr><th style="width:50%">시험기기명</th><th>규격 및 제조사</th></tr></thead>
+          <tbody>
+          <tr><td style="font-weight:500">항온항습 냉난방공조시스템</td><td style="color:var(--soft-graphite);font-size:12px">Homsys, Korea</td></tr>
+          <tr><td style="font-weight:500">3차원 피부 및 바디 멀티 스캐닝 입체분석시스템</td><td style="color:var(--soft-graphite);font-size:12px">PRIMOS 3D, GFMesstechnik GmbH, Germany</td></tr>
+          <tr><td style="font-weight:500">3차원 피부 및 바디 라이트 멀티 스캐닝 입체분석시스템</td><td style="color:var(--soft-graphite);font-size:12px">PRIMOS Lite 3D (45&times;30), GFMesstechnik GmbH, Germany</td></tr>
+          <tr><td style="font-weight:500">3차원 얼굴 및 피부 라이트 스캐닝 입체분석시스템</td><td style="color:var(--soft-graphite);font-size:12px">PRIMOS Lite 3D (18&times;13), GFMesstechnik GmbH, Germany</td></tr>
+          <tr><td style="font-weight:500">3차원 피부 및 바디 멀티 스캐닝 입체분석시스템</td><td style="color:var(--soft-graphite);font-size:12px">VECTRA XT 3D, Canfield Scientific, USA</td></tr>
+          <tr><td style="font-weight:500">자외선조사기</td><td style="color:var(--soft-graphite);font-size:12px">Solar Simulator, Solar Light Company, USA</td></tr>
+          <tr><td style="font-weight:500">피부분석기 A — DUB Skin Scanner</td><td style="color:var(--soft-graphite);font-size:12px">Taberna Pro Medicum GmbH, Germany</td></tr>
+          <tr><td style="font-weight:500">피부분석기 B — DermaLab USB</td><td style="color:var(--soft-graphite);font-size:12px">Cortex Technology, Denmark</td></tr>
+          <tr><td style="font-weight:500">피부분석기 C — Robo Skin CS50</td><td style="color:var(--soft-graphite);font-size:12px">Inforward, Japan</td></tr>
+          <tr><td style="font-weight:500">피부분석기 D — DMS II Colorimeter</td><td style="color:var(--soft-graphite);font-size:12px">Cortex Technology, Denmark</td></tr>
+          <tr><td style="font-weight:500">피부분석기 E — Colorimeter CR-400/410</td><td style="color:var(--soft-graphite);font-size:12px">Konica Minolta, Japan</td></tr>
+          <tr><td style="font-weight:500">피부분석기 F — Spectrophotometer CM-2600D</td><td style="color:var(--soft-graphite);font-size:12px">Konica Minolta, Japan</td></tr>
+          <tr><td style="font-weight:500">피부분석기 G — Multi Dermasope Probes MPA5</td><td style="color:var(--soft-graphite);font-size:12px">Courage+Khazaka Electronic, Germany</td></tr>
+          <tr><td style="font-weight:500">피부분석기 H — Multi Gloss 268 PLUS</td><td style="color:var(--soft-graphite);font-size:12px">Konica Minolta, Japan</td></tr>
+          <tr><td style="font-weight:500">피부분석기 I — ANTERA 3D</td><td style="color:var(--soft-graphite);font-size:12px">Miravex, Ireland</td></tr>
+          <tr><td style="font-weight:500">피부분석기 J — Epsilon E100</td><td style="color:var(--soft-graphite);font-size:12px">Biox Systems, UK</td></tr>
+          <tr><td style="font-weight:500">피부분석기 K — DermaVision Pro</td><td style="color:var(--soft-graphite);font-size:12px">OptoBioMed, Korea</td></tr>
+          <tr><td style="font-weight:500">피부분석기 L — DermaView Pro</td><td style="color:var(--soft-graphite);font-size:12px">OptoBioMed, Korea</td></tr>
+          <tr><td style="font-weight:500">피부분석기 M — KONG PC Camera</td><td style="color:var(--soft-graphite);font-size:12px">Bomtech, Korea</td></tr>
+          <tr><td style="font-weight:500">피부분석기 N — FLUKE-Ti105 Thermal Imager</td><td style="color:var(--soft-graphite);font-size:12px">Fluke, USA</td></tr>
+          <tr><td style="font-weight:500">피부분석기 O — Ballistometer BLS780</td><td style="color:var(--soft-graphite);font-size:12px">Dia-Stron, UK</td></tr>
+          <tr><td style="font-weight:500">피부분석기 P — Dermal Torque Meter DTM310</td><td style="color:var(--soft-graphite);font-size:12px">Dia-Stron, UK</td></tr>
+          <tr><td style="font-weight:500">피부분석기 Q — Facial Stage DM-3</td><td style="color:var(--soft-graphite);font-size:12px">MORITEX, Japan</td></tr>
+          <tr><td style="font-weight:500">피부분석기 R — Skin Diagnosis System SDM</td><td style="color:var(--soft-graphite);font-size:12px">Bomtech, Korea</td></tr>
+          <tr><td style="font-weight:500">피부분석기 S — SKIN-O-MAT</td><td style="color:var(--soft-graphite);font-size:12px">Cosmomed, Germany</td></tr>
+          <tr><td style="font-weight:500">피부분석기 T — Vapometer</td><td style="color:var(--soft-graphite);font-size:12px">Delfin Technologies, Finland</td></tr>
+          <tr><td style="font-weight:500">피부분석기 U — MoistureMeterD</td><td style="color:var(--soft-graphite);font-size:12px">Delfin Technologies, Finland</td></tr>
+          <tr><td style="font-weight:500">피부분석기 V — MoistureMeterD Compact</td><td style="color:var(--soft-graphite);font-size:12px">Delfin Technologies, Finland</td></tr>
+          <tr><td style="font-weight:500">피부분석기 W — SkinColorCatch</td><td style="color:var(--soft-graphite);font-size:12px">Delfin Technologies, Finland</td></tr>
+          <tr><td style="font-weight:500">피부분석기 X — SkinGlossMeter</td><td style="color:var(--soft-graphite);font-size:12px">Delfin Technologies, Finland</td></tr>
+          <tr><td style="font-weight:500">피부분석기 Y — JANUS-1</td><td style="color:var(--soft-graphite);font-size:12px">PIE, Korea</td></tr>
+          <tr><td style="font-weight:500">피부분석기 Z — TiVi8000Micro</td><td style="color:var(--soft-graphite);font-size:12px">Wheels Bridge AB, Sweden</td></tr>
+          <tr><td style="font-weight:500">피부분석기 a — Folliscope</td><td style="color:var(--soft-graphite);font-size:12px">LeadM, Korea</td></tr>
+          <tr><td style="font-weight:500">피부분석기 b — Dino-Lite Premier AM4113T</td><td style="color:var(--soft-graphite);font-size:12px">AnMo Electronics, Taiwan</td></tr>
+          <tr><td style="font-weight:500">피부분석기 c — VISIA Complexion Analysis</td><td style="color:var(--soft-graphite);font-size:12px">Canfield Scientific, USA</td></tr>
+          <tr><td style="font-weight:500">피부분석기 d — F-Ray</td><td style="color:var(--soft-graphite);font-size:12px">BEYOUNG, Korea</td></tr>
+          <tr><td style="font-weight:500">피부분석기 e — MTT175 Miniature Tensile Tester</td><td style="color:var(--soft-graphite);font-size:12px">Dia-Stron, UK</td></tr>
+          <tr><td style="font-weight:500">피부분석기 f — HC 103</td><td style="color:var(--soft-graphite);font-size:12px">Mettler-Toledo, Switzerland</td></tr>
+          <tr><td style="font-weight:500">피부분석기 g — Handy Digital Electrostatic Fieldmeter FMX-004</td><td style="color:var(--soft-graphite);font-size:12px">SIMCO ion, Japan</td></tr>
+          <tr><td style="font-weight:500">피부분석기 h — VISIA Clinical Research</td><td style="color:var(--soft-graphite);font-size:12px">Canfield Scientific, USA</td></tr>
+          <tr><td style="font-weight:500">피부분석기 i — Translucency probe TLS850</td><td style="color:var(--soft-graphite);font-size:12px">Dia-Stron, UK</td></tr>
+          <tr><td style="font-weight:500">피부분석기 j — Visioscan VC 20plus</td><td style="color:var(--soft-graphite);font-size:12px">Courage+Khazaka Electronic, Germany</td></tr>
+          <tr><td style="font-weight:500">피부분석기 k — Tewameter TM300</td><td style="color:var(--soft-graphite);font-size:12px">Courage+Khazaka Electronic, Germany</td></tr>
+          <tr><td style="font-weight:500">적외선 조사기 IR300</td><td style="color:var(--soft-graphite);font-size:12px">Daekyoung, Korea</td></tr>
+          <tr><td style="font-weight:500">냉풍기 BKCF-16R01K</td><td style="color:var(--soft-graphite);font-size:12px">Bokuk, Korea</td></tr>
+          <tr><td style="font-weight:500">중형제습기 NED-050P</td><td style="color:var(--soft-graphite);font-size:12px">Nawooel, Korea</td></tr>
+          <tr><td style="font-weight:500">전기 온풍기 NE-80S</td><td style="color:var(--soft-graphite);font-size:12px">Nawooel, Korea</td></tr>
+          <tr><td style="font-weight:500">유속/풍속 측정기 FLOWATCH</td><td style="color:var(--soft-graphite);font-size:12px">JDC INSTRUMENTS, Switzerland</td></tr>
+          <tr><td style="font-weight:500">순환수조 Nady BM-205</td><td style="color:var(--soft-graphite);font-size:12px">BuyMed, China</td></tr>
+          <tr><td style="font-weight:500">회전형 점도계 Viscometer</td><td style="color:var(--soft-graphite);font-size:12px">Fungilab, Spain</td></tr>
+          <tr><td style="font-weight:500">자외선 분광광도계</td><td style="color:var(--soft-graphite);font-size:12px">Amersham Biosciences, USA</td></tr>
+          <tr><td style="font-weight:500">가시부 분광광도계</td><td style="color:var(--soft-graphite);font-size:12px">Amersham Biosciences, USA</td></tr>
+          <tr><td style="font-weight:500">디지털 광학현미경</td><td style="color:var(--soft-graphite);font-size:12px">AMG, USA</td></tr>
+          <tr><td style="font-weight:500">광학현미경</td><td style="color:var(--soft-graphite);font-size:12px">Olympus/Nikon, Japan</td></tr>
+          <tr><td style="font-weight:500">실시간 유전자 증폭반응장치 Real-Time PCR System</td><td style="color:var(--soft-graphite);font-size:12px">Bioer, China</td></tr>
+          <tr><td style="font-weight:500">유전자 증폭반응장치 PCR Machine</td><td style="color:var(--soft-graphite);font-size:12px">China/USA</td></tr>
+          <tr><td style="font-weight:500">유전자·단백질 이미지 분석장치</td><td style="color:var(--soft-graphite);font-size:12px">Australia/USA</td></tr>
+          <tr><td style="font-weight:500">세포배양기 Skin Cell Incubator</td><td style="color:var(--soft-graphite);font-size:12px">Japan/Germany</td></tr>
+          <tr><td style="font-weight:500">액체질소 저장탱크 Liquid Nitrogen Tank</td><td style="color:var(--soft-graphite);font-size:12px">Germany/USA</td></tr>
+          <tr><td style="font-weight:500">시험관 혼합기 Vortex Mixer</td><td style="color:var(--soft-graphite);font-size:12px">Scientific Industries, USA</td></tr>
+          <tr><td style="font-weight:500">고·중·저속 원심분리기 Centrifuge</td><td style="color:var(--soft-graphite);font-size:12px">Korea/Japan</td></tr>
+          <tr><td style="font-weight:500">초저온 냉동고 Deep Freezer</td><td style="color:var(--soft-graphite);font-size:12px">Korea/Japan</td></tr>
+          <tr><td style="font-weight:500">증류수 제조장치 Water Purification System</td><td style="color:var(--soft-graphite);font-size:12px">Genesis, Korea</td></tr>
+          <tr><td style="font-weight:500">초순수 제조장치 Mili-Q Integral</td><td style="color:var(--soft-graphite);font-size:12px">Millipore, USA</td></tr>
+          <tr><td style="font-weight:500">무균실험대 Clean Bench</td><td style="color:var(--soft-graphite);font-size:12px">Sejong Plus, Korea</td></tr>
+          <tr><td style="font-weight:500">호모믹서 Homomixer</td><td style="color:var(--soft-graphite);font-size:12px">Korea/Japan</td></tr>
+          <tr><td style="font-weight:500">pH 측정기</td><td style="color:var(--soft-graphite);font-size:12px">Korea/Japan</td></tr>
+          <tr><td style="font-weight:500">자동피펫·멀티피펫</td><td style="color:var(--soft-graphite);font-size:12px">Gilson, USA</td></tr>
+          <tr><td style="font-weight:500">증기가압멸균기 Autoclave</td><td style="color:var(--soft-graphite);font-size:12px">Korea/Japan</td></tr>
+          <tr><td style="font-weight:500">기체 크로마토그래프 분석시스템 GC</td><td style="color:var(--soft-graphite);font-size:12px">Agilent Technologies, USA</td></tr>
+          <tr><td style="font-weight:500">액체 크로마토그래프 분석시스템 HPLC</td><td style="color:var(--soft-graphite);font-size:12px">Agilent Technologies, USA</td></tr>
+          <tr><td style="font-weight:500">박층 크로마토그래프 분석시스템 TLC</td><td style="color:var(--soft-graphite);font-size:12px">Agilent Technologies, USA</td></tr>
+          <tr><td style="font-weight:500">자동분리 분석분획시스템 SepBox 2D-250</td><td style="color:var(--soft-graphite);font-size:12px">Sepiatec, Germany</td></tr>
+          <tr><td style="font-weight:500">초소량 분광광도계 Vis-UV Nanodrop</td><td style="color:var(--soft-graphite);font-size:12px">Maestrogen, USA</td></tr>
+          <tr><td style="font-weight:500">형광 마이크로플레이트 분석기</td><td style="color:var(--soft-graphite);font-size:12px">Molecular Devices, USA</td></tr>
+          <tr><td style="font-weight:500">마이크로플레이트 분석기</td><td style="color:var(--soft-graphite);font-size:12px">Bio-Rad, USA</td></tr>
+          <tr><td style="font-weight:500">형광현미경 Fluorescence Microscopy System</td><td style="color:var(--soft-graphite);font-size:12px">Carl Zeiss, Germany</td></tr>
+          <tr><td style="font-weight:500">DNA/RNA 혼성화 배양기</td><td style="color:var(--soft-graphite);font-size:12px">Robbins Scientific, USA</td></tr>
+          <tr><td style="font-weight:500">유전자칩 반응분석시스템</td><td style="color:var(--soft-graphite);font-size:12px">Agilent Technologies, USA</td></tr>
+          <tr><td style="font-weight:500">유전자칩 스캐너 Array Scanner</td><td style="color:var(--soft-graphite);font-size:12px">Agilent Technologies, USA</td></tr>
+          <tr><td style="font-weight:500">유전자 전기영동시스템</td><td style="color:var(--soft-graphite);font-size:12px">Bio-Rad, USA</td></tr>
+          <tr><td style="font-weight:500">단백질 전기영동시스템</td><td style="color:var(--soft-graphite);font-size:12px">Bio-Rad, USA</td></tr>
+          <tr><td style="font-weight:500">미생물 자동 동정장치 Sherlock</td><td style="color:var(--soft-graphite);font-size:12px">Midi, USA</td></tr>
+          <tr><td style="font-weight:500">동결건조기 Freeze Dryer</td><td style="color:var(--soft-graphite);font-size:12px">Ilshin Bio Base, Korea</td></tr>
+          <tr><td style="font-weight:500">저온냉장 실험챔버 Cold Chamber</td><td style="color:var(--soft-graphite);font-size:12px">Hanbaek Scientific, Korea</td></tr>
+          <tr><td style="font-weight:500">진공농축기 Rotary Evaporator</td><td style="color:var(--soft-graphite);font-size:12px">Eyela, Japan</td></tr>
+          <tr><td style="font-weight:500">초음파분쇄시스템 Sonication System</td><td style="color:var(--soft-graphite);font-size:12px">Sonic Vibra-Cell, USA</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="note" style="text-align:center;margin-top:40px;padding:20px;border-top:1px solid var(--sand-mist)">
+      서울특별시 송파구 법원로11길 25, 에이동 6층(문정동, 에이치비지니스파크)
+    </div>
 
   </main>
 </div>
