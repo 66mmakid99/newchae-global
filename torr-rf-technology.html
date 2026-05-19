@@ -142,6 +142,9 @@ html,body{background:#2a2a2a;font-family:var(--ft);color:var(--tx);-webkit-font-
   html,body{background:#fff!important}
   .ctrl{display:none!important}
   .page{margin:0!important;box-shadow:none!important;width:297mm!important;height:210mm!important}
+  img{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .dark{-webkit-print-color-adjust:exact;print-color-adjust:exact;background:var(--nv)!important;color:#fff!important}
+  .stat,.card,.study,.sum,.num-card{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 @page{size:297mm 210mm landscape;margin:0}
 </style>
@@ -172,6 +175,7 @@ html,body{background:#2a2a2a;font-family:var(--ft);color:var(--tx);-webkit-font-
 <!-- P1 COVER -->
 <section class="page dark" style="padding-top:44px">
   <div class="fr-top"><span>EVIDENCE BRIEF · 2026 · CONFIDENTIAL</span><span></span></div>
+  <img src="torr-assets/toroidal-rings.png" alt="" style="position:absolute;right:-40mm;top:10mm;width:200mm;height:200mm;opacity:.08;pointer-events:none">
   <div class="inner" style="flex-direction:column;justify-content:center;align-items:flex-start">
     <div class="lbl">TECHNOLOGY EVIDENCE BRIEF</div>
     <h1 class="h1" style="color:#fff;margin-bottom:10px">TORR RF.</h1>
@@ -276,37 +280,52 @@ html,body{background:#2a2a2a;font-family:var(--ft);color:var(--tx);-webkit-font-
       <p class="sub" data-t="p4_sub">Toroidal concentric electrodes — depth, electronically switched.</p>
     </div>
     <div style="font:300 11.5px/1.7 var(--ft);color:rgba(255,255,255,.4);margin-bottom:14px;max-width:700px" data-t="p4_d1">A center sphere surrounded by concentric ring electrodes — cross-section RF− | CH1 | CH2 | CH3 | CH2 | CH1 | RF−. The system electronically switches which electrode serves as the common (return) — changing electrode spacing without changing the operating principle. Always bipolar; no grounding pad. <strong style="color:var(--al)">Patent No. 10-2113199.</strong></p>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:12px;flex:1">
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:12px">
+      <div class="card" style="display:flex;align-items:center;gap:12px;padding:10px 14px">
+        <img src="torr-assets/hp-eye.jpg" alt="Eye handpiece" style="width:64px;height:64px;object-fit:cover;border-radius:3px;flex-shrink:0">
+        <div>
           <div class="tag" data-t="p4_eye_t">EYE HANDPIECE</div>
           <div style="font:700 20px/1 var(--ft);color:#fff;margin:4px 0">Φ 25 mm</div>
           <p style="font:300 9px/1.4 var(--ft);color:rgba(255,255,255,.3)" data-t="p4_eye_d">center + 1 ring · 1 pair</p>
         </div>
-        <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center">
+      </div>
+      <div class="card" style="display:flex;align-items:center;gap:12px;padding:10px 14px">
+        <img src="torr-assets/hp-face.jpg" alt="Face handpiece" style="width:64px;height:64px;object-fit:cover;border-radius:3px;flex-shrink:0">
+        <div>
           <div class="tag" data-t="p4_face_t">FACE HANDPIECE</div>
           <div style="font:700 20px/1 var(--ft);color:#fff;margin:4px 0">Φ 48 mm</div>
           <p style="font:300 9px/1.4 var(--ft);color:rgba(255,255,255,.3)" data-t="p4_face_d">center + 3 rings · 3 pairs</p>
         </div>
-        <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center">
+      </div>
+      <div class="card" style="display:flex;align-items:center;gap:12px;padding:10px 14px">
+        <img src="torr-assets/hp-body.jpg" alt="Body handpiece" style="width:64px;height:64px;object-fit:cover;border-radius:3px;flex-shrink:0">
+        <div>
           <div class="tag" data-t="p4_body_t">BODY HANDPIECE</div>
           <div style="font:700 20px/1 var(--ft);color:#fff;margin:4px 0">Φ 56 mm</div>
           <p style="font:300 9px/1.4 var(--ft);color:rgba(255,255,255,.3)" data-t="p4_body_d">3 pairs · auto-rotation MOTION</p>
         </div>
       </div>
-      <div class="card" style="grid-column:2/4;display:flex;flex-direction:column;justify-content:center;padding:20px">
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;flex:1">
+      <div class="card" style="display:flex;flex-direction:column;padding:16px">
         <div class="tag" data-t="p4_deep_t">DEEP MODE · FARTHEST PAIRS</div>
         <h4 style="color:#fff;font-size:14px;margin-bottom:6px" data-t="p4_deep_h">Outermost ring becomes common.</h4>
         <p data-t="p4_deep_d">Maximum electrode spacing activates. The electric field forms a deep semicircular arch reaching the subcutaneous layer.</p>
-        <div style="font:700 32px/1 var(--ft);color:var(--am);margin:12px 0">≈ 15 mm</div>
-        <p style="font:500 9px/1 var(--ft);letter-spacing:.06em;color:rgba(255,255,255,.2)" data-t="p4_deep_use">BODY CONTOURING · DEEP TISSUE TIGHTENING · SUBCUTANEOUS REMODELLING</p>
+        <img src="torr-assets/cross-deep.png" alt="Deep mode cross-section — ≈15mm penetration" style="width:100%;max-height:72px;object-fit:contain;margin:8px 0;border-radius:3px">
+        <div style="display:flex;align-items:center;gap:10px;margin-top:auto">
+          <div style="font:700 28px/1 var(--ft);color:var(--am)">≈ 15 mm</div>
+          <p style="font:500 8px/1.3 var(--ft);letter-spacing:.04em;color:rgba(255,255,255,.2)" data-t="p4_deep_use">BODY CONTOURING · DEEP TISSUE TIGHTENING · SUBCUTANEOUS REMODELLING</p>
+        </div>
       </div>
-      <div class="card" style="grid-column:4/6;display:flex;flex-direction:column;justify-content:center;padding:20px">
+      <div class="card" style="display:flex;flex-direction:column;padding:16px">
         <div class="tag" data-t="p4_low_t">LOW MODE · ADJACENT PAIRS</div>
         <h4 style="color:#fff;font-size:14px;margin-bottom:6px" data-t="p4_low_h">Neighbours pair, +/− alternating.</h4>
         <p data-t="p4_low_d">Minimum spacing. Energy concentrates in the upper dermis as multiple shallow arcs.</p>
-        <div style="font:700 32px/1 var(--ft);color:var(--am);margin:12px 0">2–5 mm</div>
-        <p style="font:500 9px/1 var(--ft);letter-spacing:.06em;color:rgba(255,255,255,.2)" data-t="p4_low_use">SKIN TEXTURE · FINE LINES · SUPERFICIAL REJUVENATION</p>
+        <img src="torr-assets/cross-low.png" alt="Low mode cross-section — 2–5mm penetration" style="width:100%;max-height:72px;object-fit:contain;margin:8px 0;border-radius:3px">
+        <div style="display:flex;align-items:center;gap:10px;margin-top:auto">
+          <div style="font:700 28px/1 var(--ft);color:var(--am)">2–5 mm</div>
+          <p style="font:500 8px/1.3 var(--ft);letter-spacing:.04em;color:rgba(255,255,255,.2)" data-t="p4_low_use">SKIN TEXTURE · FINE LINES · SUPERFICIAL REJUVENATION</p>
+        </div>
       </div>
     </div>
   </div>
@@ -341,39 +360,53 @@ html,body{background:#2a2a2a;font-family:var(--ft);color:var(--tx);-webkit-font-
       <div class="lbl" data-t="p6_label">CLINICAL EVIDENCE</div>
       <h2 class="h2" data-t="p6_h">Clinical Temperature Evidence</h2>
       <p class="sub" data-t="p6_sub">40–45 °C, sustained. Measured, not modelled.</p>
-      <div style="margin:14px 0;font:500 9px/1 var(--ft);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25)" data-t="p6_test">SKIN TEMPERATURE TEST · JULY 2022</div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
+      <div style="margin:10px 0 8px;font:500 9px/1 var(--ft);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25)" data-t="p6_test">SKIN TEMPERATURE TEST · JULY 2022</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px">
         <div class="stat"><div class="n">9</div><div class="l" data-t="p6_subj">SUBJECTS</div></div>
         <div class="stat"><div class="n">3</div><div class="l" data-t="p6_hp">HANDPIECE TYPES</div></div>
         <div class="stat"><div class="n">42.7°C</div><div class="l" data-t="p6_10m">10-MIN AVERAGE</div></div>
         <div class="stat"><div class="n">43.1°C</div><div class="l" data-t="p6_15m">15-MIN AVERAGE</div></div>
       </div>
-      <div class="card" style="padding:14px">
-        <p style="font:400 11px/1.6 var(--ft);color:rgba(255,255,255,.5)" data-t="p6_all">All handpieces maintained the 40–45 °C therapeutic range across all sites. Zero overheating.</p>
-        <div style="font:300 10px/1 var(--ft);color:rgba(255,255,255,.2);margin-top:6px">ARM · ABDOMEN · THIGH · FLIR THERMAL IMAGING</div>
+      <div class="card" style="padding:10px;margin-bottom:10px">
+        <p style="font:400 10px/1.5 var(--ft);color:rgba(255,255,255,.5)" data-t="p6_all">All handpieces maintained the 40–45 °C therapeutic range across all sites. Zero overheating.</p>
+        <div style="font:300 9px/1 var(--ft);color:rgba(255,255,255,.2);margin-top:4px">ARM · ABDOMEN · THIGH · FLIR THERMAL IMAGING</div>
+      </div>
+      <div style="font:600 8px/1 var(--ft);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:6px">MEAN SKIN TEMPERATURE · 0–15 MIN · ALL HANDPIECES</div>
+      <div style="flex:1;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:3px;padding:4px;display:flex;align-items:center;justify-content:center;min-height:80px">
+        <img src="torr-assets/temp-chart.png" alt="Temperature curve: Eye, Face, Body handpieces 36–45°C over 15 minutes" style="width:100%;height:100%;object-fit:contain">
       </div>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;padding-left:12px">
       <div style="font:500 9px/1 var(--ft);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:8px" data-t="p6_why">WHY 40–45 °C MATTERS</div>
-      <div class="card" style="flex:1;display:flex;flex-direction:column;padding:16px">
-        <p style="font:400 12px/1.7 var(--ft);color:rgba(255,255,255,.5);margin-bottom:14px" data-t="p6_why_d">Sustained therapeutic heat triggers neocollagenesis, elastogenesis and angiogenesis. Peer-reviewed research confirms that maintaining skin temperature in the 40–45 °C window for ten minutes activates the collagen remodelling cascade.</p>
-        <div style="display:flex;align-items:center;gap:16px;margin:auto 0;padding:14px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)">
-          <div style="text-align:center">
-            <div style="font:700 28px/1 var(--ft);color:var(--am)">9.0%</div>
-            <div style="font:300 10px/1 var(--ft);color:rgba(255,255,255,.3);margin-top:2px" data-t="p6_before">before</div>
-          </div>
-          <div style="font:400 20px/1 var(--ft);color:rgba(255,255,255,.15)">→</div>
-          <div style="text-align:center">
-            <div style="font:700 28px/1 var(--ft);color:var(--am)">25.9%</div>
-            <div style="font:300 10px/1 var(--ft);color:rgba(255,255,255,.3);margin-top:2px" data-t="p6_after">after</div>
-          </div>
-          <div style="font:300 12px/1.4 var(--ft);color:rgba(255,255,255,.35);padding-left:12px;border-left:1px solid rgba(255,255,255,.06)">
-            <strong style="color:#fff">≈ 3× </strong><span data-t="p6_collagen">collagen content</span><br>
-            <span style="font-size:10px;color:rgba(255,255,255,.2)">p = 0.018 · 2015 veterinary study</span>
-          </div>
-        </div>
-        <p style="font:300 10.5px/1.5 var(--ft);color:rgba(255,255,255,.3);margin-top:auto" data-t="p6_note">TORR RF maintains the same therapeutic window, measured in vivo across nine subjects.</p>
+      <div class="card" style="display:flex;flex-direction:column;padding:14px;margin-bottom:10px">
+        <p style="font:400 11.5px/1.65 var(--ft);color:rgba(255,255,255,.5)" data-t="p6_why_d">Sustained therapeutic heat triggers neocollagenesis, elastogenesis and angiogenesis. Peer-reviewed research confirms that maintaining skin temperature in the 40–45 °C window for ten minutes activates the collagen remodelling cascade.</p>
       </div>
+      <div style="display:flex;align-items:center;gap:14px;padding:12px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:3px;margin-bottom:10px">
+        <div style="text-align:center">
+          <div style="font:700 26px/1 var(--ft);color:var(--am)">9.0%</div>
+          <div style="font:300 9px/1 var(--ft);color:rgba(255,255,255,.3);margin-top:2px" data-t="p6_before">before</div>
+        </div>
+        <div style="font:400 18px/1 var(--ft);color:rgba(255,255,255,.15)">→</div>
+        <div style="text-align:center">
+          <div style="font:700 26px/1 var(--ft);color:var(--am)">25.9%</div>
+          <div style="font:300 9px/1 var(--ft);color:rgba(255,255,255,.3);margin-top:2px" data-t="p6_after">after</div>
+        </div>
+        <div style="font:300 11px/1.4 var(--ft);color:rgba(255,255,255,.35);padding-left:10px;border-left:1px solid rgba(255,255,255,.06)">
+          <strong style="color:#fff">≈ 3× </strong><span data-t="p6_collagen">collagen content</span><br>
+          <span style="font-size:9px;color:rgba(255,255,255,.2)">p = 0.018 · 2015 veterinary study</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;flex:1">
+        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:3px;overflow:hidden;display:flex;flex-direction:column">
+          <img src="torr-assets/thermal-deep.jpg" alt="FLIR thermal — Deep mode" style="width:100%;flex:1;object-fit:cover">
+          <div style="padding:4px 6px;font:500 8px/1 var(--ft);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.25);text-align:center">Target-Deep</div>
+        </div>
+        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:3px;overflow:hidden;display:flex;flex-direction:column">
+          <img src="torr-assets/thermal-low.jpg" alt="FLIR thermal — Low mode" style="width:100%;flex:1;object-fit:cover">
+          <div style="padding:4px 6px;font:500 8px/1 var(--ft);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.25);text-align:center">Target-Low</div>
+        </div>
+      </div>
+      <p style="font:300 9.5px/1.5 var(--ft);color:rgba(255,255,255,.25);margin-top:8px" data-t="p6_note">TORR RF maintains the same therapeutic window, measured in vivo across nine subjects.</p>
     </div>
   </div>
   <div class="fr-bot"><span style="color:rgba(196,149,106,.25)">TORR RF · BRZ-TORR-6P-1M</span><span class="num">06 / 09</span></div>
