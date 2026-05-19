@@ -73,6 +73,44 @@
 
 /* Equipment photos */
 .equip-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 24px}
+
+/* Appendix: Detailed data tables */
+.detail-tbl{width:100%;border-collapse:collapse;margin:0 0 32px;font-size:12px;font-variant-numeric:tabular-nums}
+.detail-tbl th{padding:7px 8px;background:#f0eeea;border:1px solid #ddd;font-weight:600;text-align:center;font-size:11px;position:sticky;top:0;z-index:2}
+.detail-tbl td{padding:6px 8px;border:1px solid #e8e6e1;text-align:center}
+.detail-tbl tr:nth-child(even) td{background:#fafaf7}
+.detail-tbl tr:hover td{background:#f0eee8}
+.detail-tbl .row-avg td{background:#ede9e0;font-weight:600;border-top:2px solid #ccc}
+.detail-tbl .row-std td{background:#f5f3ee;font-weight:500;font-style:italic}
+.detail-tbl .num-col{font-variant-numeric:tabular-nums;font-family:'Inter',monospace}
+.detail-tbl .subj-num{font-weight:600;color:var(--soft-graphite);background:#f5f4f0;text-align:left;padding-left:12px}
+
+/* Metric accordion */
+.metric-block{margin-bottom:8px}
+.metric-toggle{width:100%;text-align:left;padding:14px 20px;background:#fff;border:1px solid var(--sand-mist);border-radius:6px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:all .2s}
+.metric-toggle:hover{background:#fafaf7;border-color:#ccc}
+.metric-toggle h4{font-size:14px;font-weight:600;margin:0}
+.metric-toggle .badge{font-size:11px;font-weight:600;color:var(--dusty-lilac);background:#f3f0f8;padding:3px 10px;border-radius:12px}
+.metric-toggle .arrow{font-size:14px;color:var(--soft-graphite);transition:transform .2s}
+.metric-block.open .arrow{transform:rotate(180deg)}
+.metric-body{display:none;padding:16px 0 8px;overflow-x:auto}
+.metric-block.open .metric-body{display:block}
+.metric-block.open .metric-toggle{border-radius:6px 6px 0 0;border-bottom:none;background:#fafaf7}
+
+/* Photo grid for clinical images */
+.photo-section{margin-bottom:40px}
+.photo-section h4{font-size:15px;margin:0 0 16px}
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.photo-card{background:#fff;border:1px solid var(--sand-mist);border-radius:6px;overflow:hidden}
+.photo-card .photo-label{padding:10px 14px;font-size:12px;font-weight:600;color:var(--soft-graphite);border-bottom:1px solid var(--sand-mist);display:flex;justify-content:space-between}
+.photo-card .photo-label span{color:var(--dusty-lilac);font-weight:500}
+.photo-card img{width:100%;height:auto;display:block}
+
+@media(max-width:560px){
+  .photo-grid{grid-template-columns:1fr}
+  .detail-tbl{font-size:11px}
+  .detail-tbl th,.detail-tbl td{padding:4px 5px}
+}
 .equip-grid .pg{margin:0}
 
 /* Survey */
@@ -650,97 +688,242 @@
       KAHAN, V., et al. Stress, immunity and skin collagen integrity. Brain, behavior, and immunity, 2009, 23.8: 1089-1095.
     </p>
 
-    <!-- ===== 부록 1: 상세 데이터 ===== -->
+    <!-- ===== 부록 1: 상세 데이터 (아코디언) ===== -->
     <div id="appendix1" class="sec">
       <h2>별첨 1: 시험결과에 대한 세부자료</h2>
-      <div class="sd">피시험자별 상세 측정 수치 — 7개 평가항목 개별 데이터 (p.42~60)</div>
+      <div class="sd">피시험자별 상세 측정 수치 — 7개 평가항목 × 21명, 아코디언으로 펼쳐보기</div>
     </div>
-    <div class="pg"><img src="efficacy-assets/p042.jpg" alt="별첨 표지" loading="lazy"><span class="pl">P.42</span></div>
-    <div class="pg"><img src="efficacy-assets/p043.jpg" alt="세부자료 1" loading="lazy"><span class="pl">P.43</span></div>
-    <div class="pg"><img src="efficacy-assets/p044.jpg" alt="세부자료 2" loading="lazy"><span class="pl">P.44</span></div>
-    <div class="pg"><img src="efficacy-assets/p045.jpg" alt="세부자료 3" loading="lazy"><span class="pl">P.45</span></div>
-    <div class="pg"><img src="efficacy-assets/p046.jpg" alt="세부자료 4" loading="lazy"><span class="pl">P.46</span></div>
-    <div class="pg"><img src="efficacy-assets/p047.jpg" alt="세부자료 5" loading="lazy"><span class="pl">P.47</span></div>
-    <div class="pg"><img src="efficacy-assets/p048.jpg" alt="세부자료 6" loading="lazy"><span class="pl">P.48</span></div>
-    <div class="pg"><img src="efficacy-assets/p049.jpg" alt="세부자료 7" loading="lazy"><span class="pl">P.49</span></div>
-    <div class="pg"><img src="efficacy-assets/p050.jpg" alt="세부자료 8" loading="lazy"><span class="pl">P.50</span></div>
-    <div class="pg"><img src="efficacy-assets/p051.jpg" alt="세부자료 9" loading="lazy"><span class="pl">P.51</span></div>
-    <div class="pg"><img src="efficacy-assets/p052.jpg" alt="세부자료 10" loading="lazy"><span class="pl">P.52</span></div>
-    <div class="pg"><img src="efficacy-assets/p053.jpg" alt="세부자료 11" loading="lazy"><span class="pl">P.53</span></div>
-    <div class="pg"><img src="efficacy-assets/p054.jpg" alt="세부자료 12" loading="lazy"><span class="pl">P.54</span></div>
-    <div class="pg"><img src="efficacy-assets/p055.jpg" alt="세부자료 13" loading="lazy"><span class="pl">P.55</span></div>
-    <div class="pg"><img src="efficacy-assets/p056.jpg" alt="세부자료 14" loading="lazy"><span class="pl">P.56</span></div>
-    <div class="pg"><img src="efficacy-assets/p057.jpg" alt="세부자료 15" loading="lazy"><span class="pl">P.57</span></div>
-    <div class="pg"><img src="efficacy-assets/p058.jpg" alt="세부자료 16" loading="lazy"><span class="pl">P.58</span></div>
-    <div class="pg"><img src="efficacy-assets/p059.jpg" alt="세부자료 17" loading="lazy"><span class="pl">P.59</span></div>
-    <div class="pg"><img src="efficacy-assets/p060.jpg" alt="세부자료 18" loading="lazy"><span class="pl">P.60</span></div>
 
-    <!-- ===== 부록 2: 임상 사진 ===== -->
+    <p class="note">피시험자 21명의 기본정보: 40~61세 성인 여성, 평균 50.05세 (표준편차 5.96). 항목 클릭 시 전체 데이터 표를 확인할 수 있습니다.</p>
+
+    <!-- 1) 속탄력 Ur/Ue -->
+    <div class="metric-block" id="mb-urue">
+      <button class="metric-toggle" onclick="toggleMetric('mb-urue')">
+        <h4>1. 속탄력 — Ur/Ue 값 + ΔUr/Ue</h4>
+        <div><span class="badge">2.37×</span> <span class="arrow">▼</span></div>
+      </button>
+      <div class="metric-body">
+        <table class="detail-tbl"><caption>Ur/Ue 값 (N=21)</caption>
+          <thead><tr><th>No.</th><th colspan="2">시험제품 A+B</th><th colspan="2">시험제품 B</th><th>ΔA+B</th><th>ΔB</th></tr>
+          <tr><th></th><th>사용 전</th><th>2주 후</th><th>사용 전</th><th>2주 후</th><th></th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="subj-num">1</td><td>0.54</td><td>0.56</td><td>0.52</td><td>0.53</td><td>0.02</td><td>0.01</td></tr>
+            <tr><td class="subj-num">2</td><td>0.50</td><td>0.54</td><td>0.53</td><td>0.54</td><td>0.04</td><td>0.01</td></tr>
+            <tr><td class="subj-num">3</td><td>0.50</td><td>0.52</td><td>0.48</td><td>0.50</td><td>0.02</td><td>0.02</td></tr>
+            <tr><td class="subj-num">4</td><td>0.52</td><td>0.54</td><td>0.52</td><td>0.53</td><td>0.02</td><td>0.01</td></tr>
+            <tr><td class="subj-num">5</td><td>0.55</td><td>0.58</td><td>0.50</td><td>0.50</td><td>0.03</td><td>0.00</td></tr>
+            <tr><td class="subj-num">6</td><td>0.53</td><td>0.55</td><td>0.51</td><td>0.52</td><td>0.02</td><td>0.01</td></tr>
+            <tr><td class="subj-num">7</td><td>0.51</td><td>0.55</td><td>0.47</td><td>0.49</td><td>0.04</td><td>0.02</td></tr>
+            <tr><td class="subj-num">8</td><td>0.51</td><td>0.54</td><td>0.52</td><td>0.53</td><td>0.03</td><td>0.01</td></tr>
+            <tr><td class="subj-num">9</td><td>0.50</td><td>0.53</td><td>0.48</td><td>0.48</td><td>0.03</td><td>0.00</td></tr>
+            <tr><td class="subj-num">10</td><td>0.49</td><td>0.53</td><td>0.53</td><td>0.54</td><td>0.04</td><td>0.01</td></tr>
+            <tr><td class="subj-num">11</td><td>0.54</td><td>0.56</td><td>0.54</td><td>0.55</td><td>0.02</td><td>0.01</td></tr>
+            <tr><td class="subj-num">12</td><td>0.46</td><td>0.50</td><td>0.47</td><td>0.49</td><td>0.04</td><td>0.02</td></tr>
+            <tr><td class="subj-num">13</td><td>0.49</td><td>0.51</td><td>0.54</td><td>0.56</td><td>0.02</td><td>0.02</td></tr>
+            <tr><td class="subj-num">14</td><td>0.55</td><td>0.58</td><td>0.56</td><td>0.57</td><td>0.03</td><td>0.01</td></tr>
+            <tr><td class="subj-num">15</td><td>0.51</td><td>0.54</td><td>0.49</td><td>0.50</td><td>0.03</td><td>0.01</td></tr>
+            <tr><td class="subj-num">16</td><td>0.44</td><td>0.46</td><td>0.44</td><td>0.44</td><td>0.02</td><td>0.00</td></tr>
+            <tr><td class="subj-num">17</td><td>0.53</td><td>0.55</td><td>0.54</td><td>0.54</td><td>0.02</td><td>0.00</td></tr>
+            <tr><td class="subj-num">18</td><td>0.44</td><td>0.47</td><td>0.49</td><td>0.51</td><td>0.03</td><td>0.02</td></tr>
+            <tr><td class="subj-num">19</td><td>0.53</td><td>0.56</td><td>0.52</td><td>0.54</td><td>0.03</td><td>0.02</td></tr>
+            <tr><td class="subj-num">20</td><td>0.50</td><td>0.52</td><td>0.51</td><td>0.52</td><td>0.02</td><td>0.01</td></tr>
+            <tr><td class="subj-num">21</td><td>0.53</td><td>0.55</td><td>0.51</td><td>0.53</td><td>0.02</td><td>0.02</td></tr>
+            <tr class="row-avg"><td>평균</td><td>0.51</td><td>0.54</td><td>0.51</td><td>0.52</td><td>0.03</td><td>0.01</td></tr>
+            <tr class="row-std"><td>표준편차</td><td>0.03</td><td>0.03</td><td>0.03</td><td>0.03</td><td>0.01</td><td>0.01</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 2) 겉탄력 CoR -->
+    <div class="metric-block" id="mb-cor">
+      <button class="metric-toggle" onclick="toggleMetric('mb-cor')">
+        <h4>2. 겉탄력 — CoR 값 + ΔCoR</h4>
+        <div><span class="badge">1.82×</span> <span class="arrow">▼</span></div>
+      </button>
+      <div class="metric-body">
+        <table class="detail-tbl"><caption>CoR 값 (N=21)</caption>
+          <thead><tr><th>No.</th><th colspan="2">A+B</th><th colspan="2">B</th><th>ΔA+B</th><th>ΔB</th></tr>
+          <tr><th></th><th>전</th><th>후</th><th>전</th><th>후</th><th></th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="subj-num">1</td><td>0.51</td><td>0.53</td><td>0.51</td><td>0.52</td><td>0.02</td><td>0.01</td></tr>
+            <tr><td class="subj-num">2</td><td>0.54</td><td>0.58</td><td>0.56</td><td>0.58</td><td>0.04</td><td>0.02</td></tr>
+            <tr><td class="subj-num">3</td><td>0.53</td><td>0.56</td><td>0.58</td><td>0.60</td><td>0.03</td><td>0.02</td></tr>
+            <tr><td class="subj-num">4</td><td>0.51</td><td>0.54</td><td>0.51</td><td>0.52</td><td>0.03</td><td>0.01</td></tr>
+            <tr><td class="subj-num">5</td><td>0.55</td><td>0.58</td><td>0.54</td><td>0.55</td><td>0.03</td><td>0.01</td></tr>
+            <tr><td class="subj-num">6</td><td>0.63</td><td>0.66</td><td>0.61</td><td>0.63</td><td>0.03</td><td>0.02</td></tr>
+            <tr><td class="subj-num">7</td><td>0.54</td><td>0.57</td><td>0.51</td><td>0.52</td><td>0.03</td><td>0.01</td></tr>
+            <tr><td class="subj-num">8</td><td>0.50</td><td>0.52</td><td>0.51</td><td>0.52</td><td>0.02</td><td>0.01</td></tr>
+            <tr><td class="subj-num">9</td><td>0.55</td><td>0.58</td><td>0.59</td><td>0.61</td><td>0.03</td><td>0.02</td></tr>
+            <tr><td class="subj-num">10</td><td>0.56</td><td>0.58</td><td>0.55</td><td>0.56</td><td>0.02</td><td>0.01</td></tr>
+            <tr><td class="subj-num">11</td><td>0.59</td><td>0.62</td><td>0.61</td><td>0.63</td><td>0.03</td><td>0.02</td></tr>
+            <tr><td class="subj-num">12</td><td>0.63</td><td>0.66</td><td>0.60</td><td>0.61</td><td>0.03</td><td>0.01</td></tr>
+            <tr><td class="subj-num">13</td><td>0.54</td><td>0.56</td><td>0.58</td><td>0.60</td><td>0.02</td><td>0.02</td></tr>
+            <tr><td class="subj-num">14</td><td>0.55</td><td>0.58</td><td>0.56</td><td>0.58</td><td>0.03</td><td>0.02</td></tr>
+            <tr><td class="subj-num">15</td><td>0.53</td><td>0.56</td><td>0.54</td><td>0.56</td><td>0.03</td><td>0.02</td></tr>
+            <tr><td class="subj-num">16</td><td>0.58</td><td>0.61</td><td>0.58</td><td>0.60</td><td>0.03</td><td>0.02</td></tr>
+            <tr><td class="subj-num">17</td><td>0.53</td><td>0.55</td><td>0.58</td><td>0.59</td><td>0.02</td><td>0.01</td></tr>
+            <tr><td class="subj-num">18</td><td>0.57</td><td>0.60</td><td>0.59</td><td>0.61</td><td>0.03</td><td>0.02</td></tr>
+            <tr><td class="subj-num">19</td><td>0.55</td><td>0.58</td><td>0.55</td><td>0.56</td><td>0.03</td><td>0.01</td></tr>
+            <tr><td class="subj-num">20</td><td>0.55</td><td>0.58</td><td>0.56</td><td>0.58</td><td>0.03</td><td>0.02</td></tr>
+            <tr><td class="subj-num">21</td><td>0.59</td><td>0.62</td><td>0.60</td><td>0.62</td><td>0.03</td><td>0.02</td></tr>
+            <tr class="row-avg"><td>평균</td><td>0.55</td><td>0.58</td><td>0.56</td><td>0.58</td><td>0.03</td><td>0.02</td></tr>
+            <tr class="row-std"><td>표준편차</td><td>0.03</td><td>0.04</td><td>0.03</td><td>0.04</td><td>0.01</td><td>0.01</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 3~7) 나머지 항목은 원본 이미지 아코디언 (정확도 보장) -->
+    <div class="metric-block" id="mb-density">
+      <button class="metric-toggle" onclick="toggleMetric('mb-density')"><h4>3. 피부치밀도 — Density 값 + ΔDensity</h4><div><span class="badge">2.19×</span> <span class="arrow">▼</span></div></button>
+      <div class="metric-body">
+        <div class="pg"><img src="efficacy-assets/p048.jpg" alt="Density 값" loading="lazy"><span class="pl">P.48</span></div>
+        <div class="pg"><img src="efficacy-assets/p049.jpg" alt="ΔDensity 값" loading="lazy"><span class="pl">P.49</span></div>
+      </div>
+    </div>
+
+    <div class="metric-block" id="mb-pores">
+      <button class="metric-toggle" onclick="toggleMetric('mb-pores')"><h4>4. 모공 — Volume 값 + ΔVolume</h4><div><span class="badge">3.20×</span> <span class="arrow">▼</span></div></button>
+      <div class="metric-body">
+        <div class="pg"><img src="efficacy-assets/p050.jpg" alt="Volume 값" loading="lazy"><span class="pl">P.50</span></div>
+        <div class="pg"><img src="efficacy-assets/p051.jpg" alt="ΔVolume 값" loading="lazy"><span class="pl">P.51</span></div>
+      </div>
+    </div>
+
+    <div class="metric-block" id="mb-glow">
+      <button class="metric-toggle" onclick="toggleMetric('mb-glow')"><h4>5. 피부 윤기 — Intensity 값 + ΔIntensity</h4><div><span class="badge">2.28×</span> <span class="arrow">▼</span></div></button>
+      <div class="metric-body">
+        <div class="pg"><img src="efficacy-assets/p052.jpg" alt="intensity 값" loading="lazy"><span class="pl">P.52</span></div>
+        <div class="pg"><img src="efficacy-assets/p053.jpg" alt="Δintensity 값" loading="lazy"><span class="pl">P.53</span></div>
+      </div>
+    </div>
+
+    <div class="metric-block" id="mb-texture">
+      <button class="metric-toggle" onclick="toggleMetric('mb-texture')"><h4>6. 피부결 — Texture small 값 + ΔTexture</h4><div><span class="badge">2.12×</span> <span class="arrow">▼</span></div></button>
+      <div class="metric-body">
+        <div class="pg"><img src="efficacy-assets/p054.jpg" alt="Texture 값" loading="lazy"><span class="pl">P.54</span></div>
+        <div class="pg"><img src="efficacy-assets/p055.jpg" alt="ΔTexture 값" loading="lazy"><span class="pl">P.55</span></div>
+      </div>
+    </div>
+
+    <div class="metric-block" id="mb-sagging">
+      <button class="metric-toggle" onclick="toggleMetric('mb-sagging')"><h4>7. 피부 처짐 — 피부 각도 + Δ피부 각도</h4><div><span class="badge">2.11×</span> <span class="arrow">▼</span></div></button>
+      <div class="metric-body">
+        <div class="pg"><img src="efficacy-assets/p056.jpg" alt="피부 각도" loading="lazy"><span class="pl">P.56</span></div>
+        <div class="pg"><img src="efficacy-assets/p057.jpg" alt="Δ피부 각도" loading="lazy"><span class="pl">P.57</span></div>
+      </div>
+    </div>
+
+    <!-- ===== 부록 2: 임상 사진 (장비별 분류) ===== -->
     <div id="appendix2" class="sec">
       <h2>별첨 2: 인체적용시험 사진자료</h2>
-      <div class="sd">피시험자별 Before/After 임상 사진 (p.61~100)</div>
+      <div class="sd">5가지 측정장비별 Before/After 임상 사진 — 피시험자 21명 전원</div>
     </div>
-    <div class="pg"><img src="efficacy-assets/p061.jpg" alt="임상 사진 1" loading="lazy"><span class="pl">P.61</span></div>
-    <div class="pg"><img src="efficacy-assets/p062.jpg" alt="임상 사진 2" loading="lazy"><span class="pl">P.62</span></div>
-    <div class="pg"><img src="efficacy-assets/p063.jpg" alt="임상 사진 3" loading="lazy"><span class="pl">P.63</span></div>
-    <div class="pg"><img src="efficacy-assets/p064.jpg" alt="임상 사진 4" loading="lazy"><span class="pl">P.64</span></div>
-    <div class="pg"><img src="efficacy-assets/p065.jpg" alt="임상 사진 5" loading="lazy"><span class="pl">P.65</span></div>
-    <div class="pg"><img src="efficacy-assets/p066.jpg" alt="임상 사진 6" loading="lazy"><span class="pl">P.66</span></div>
-    <div class="pg"><img src="efficacy-assets/p067.jpg" alt="임상 사진 7" loading="lazy"><span class="pl">P.67</span></div>
-    <div class="pg"><img src="efficacy-assets/p068.jpg" alt="임상 사진 8" loading="lazy"><span class="pl">P.68</span></div>
-    <div class="pg"><img src="efficacy-assets/p069.jpg" alt="임상 사진 9" loading="lazy"><span class="pl">P.69</span></div>
-    <div class="pg"><img src="efficacy-assets/p070.jpg" alt="임상 사진 10" loading="lazy"><span class="pl">P.70</span></div>
-    <div class="pg"><img src="efficacy-assets/p071.jpg" alt="임상 사진 11" loading="lazy"><span class="pl">P.71</span></div>
-    <div class="pg"><img src="efficacy-assets/p072.jpg" alt="임상 사진 12" loading="lazy"><span class="pl">P.72</span></div>
-    <div class="pg"><img src="efficacy-assets/p073.jpg" alt="임상 사진 13" loading="lazy"><span class="pl">P.73</span></div>
-    <div class="pg"><img src="efficacy-assets/p074.jpg" alt="임상 사진 14" loading="lazy"><span class="pl">P.74</span></div>
-    <div class="pg"><img src="efficacy-assets/p075.jpg" alt="임상 사진 15" loading="lazy"><span class="pl">P.75</span></div>
-    <div class="pg"><img src="efficacy-assets/p076.jpg" alt="임상 사진 16" loading="lazy"><span class="pl">P.76</span></div>
-    <div class="pg"><img src="efficacy-assets/p077.jpg" alt="임상 사진 17" loading="lazy"><span class="pl">P.77</span></div>
-    <div class="pg"><img src="efficacy-assets/p078.jpg" alt="임상 사진 18" loading="lazy"><span class="pl">P.78</span></div>
-    <div class="pg"><img src="efficacy-assets/p079.jpg" alt="임상 사진 19" loading="lazy"><span class="pl">P.79</span></div>
-    <div class="pg"><img src="efficacy-assets/p080.jpg" alt="임상 사진 20" loading="lazy"><span class="pl">P.80</span></div>
-    <div class="pg"><img src="efficacy-assets/p081.jpg" alt="임상 사진 21" loading="lazy"><span class="pl">P.81</span></div>
-    <div class="pg"><img src="efficacy-assets/p082.jpg" alt="임상 사진 22" loading="lazy"><span class="pl">P.82</span></div>
-    <div class="pg"><img src="efficacy-assets/p083.jpg" alt="임상 사진 23" loading="lazy"><span class="pl">P.83</span></div>
-    <div class="pg"><img src="efficacy-assets/p084.jpg" alt="임상 사진 24" loading="lazy"><span class="pl">P.84</span></div>
-    <div class="pg"><img src="efficacy-assets/p085.jpg" alt="임상 사진 25" loading="lazy"><span class="pl">P.85</span></div>
-    <div class="pg"><img src="efficacy-assets/p086.jpg" alt="임상 사진 26" loading="lazy"><span class="pl">P.86</span></div>
-    <div class="pg"><img src="efficacy-assets/p087.jpg" alt="임상 사진 27" loading="lazy"><span class="pl">P.87</span></div>
-    <div class="pg"><img src="efficacy-assets/p088.jpg" alt="임상 사진 28" loading="lazy"><span class="pl">P.88</span></div>
-    <div class="pg"><img src="efficacy-assets/p089.jpg" alt="임상 사진 29" loading="lazy"><span class="pl">P.89</span></div>
-    <div class="pg"><img src="efficacy-assets/p090.jpg" alt="임상 사진 30" loading="lazy"><span class="pl">P.90</span></div>
-    <div class="pg"><img src="efficacy-assets/p091.jpg" alt="임상 사진 31" loading="lazy"><span class="pl">P.91</span></div>
-    <div class="pg"><img src="efficacy-assets/p092.jpg" alt="임상 사진 32" loading="lazy"><span class="pl">P.92</span></div>
-    <div class="pg"><img src="efficacy-assets/p093.jpg" alt="임상 사진 33" loading="lazy"><span class="pl">P.93</span></div>
-    <div class="pg"><img src="efficacy-assets/p094.jpg" alt="임상 사진 34" loading="lazy"><span class="pl">P.94</span></div>
-    <div class="pg"><img src="efficacy-assets/p095.jpg" alt="임상 사진 35" loading="lazy"><span class="pl">P.95</span></div>
-    <div class="pg"><img src="efficacy-assets/p096.jpg" alt="임상 사진 36" loading="lazy"><span class="pl">P.96</span></div>
-    <div class="pg"><img src="efficacy-assets/p097.jpg" alt="임상 사진 37" loading="lazy"><span class="pl">P.97</span></div>
-    <div class="pg"><img src="efficacy-assets/p098.jpg" alt="임상 사진 38" loading="lazy"><span class="pl">P.98</span></div>
-    <div class="pg"><img src="efficacy-assets/p099.jpg" alt="임상 사진 39" loading="lazy"><span class="pl">P.99</span></div>
-    <div class="pg"><img src="efficacy-assets/p100.jpg" alt="임상 사진 40" loading="lazy"><span class="pl">P.100</span></div>
 
-    <!-- ===== 부록 3~6 ===== -->
+    <!-- DUB-Skin Scanner (피부치밀도) p58-63 -->
+    <div class="photo-section">
+      <h4>1. DUB-Skin Scanner — 피부치밀도 분석 사진</h4>
+      <p class="note">피시험자 1~21번. 왼쪽 2컬럼: A+B 도포부위(기기+크림), 오른쪽 2컬럼: B 도포부위(크림 단독). 각각 사용 전·2주 사용 후.</p>
+      <div class="photo-grid">
+        <div class="photo-card"><div class="photo-label">피시험자 1~3 <span>DUB-Skin Scanner</span></div><img src="efficacy-assets/p058.jpg" alt="DUB 피시험자 1-3" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 4~7 <span>DUB-Skin Scanner</span></div><img src="efficacy-assets/p059.jpg" alt="DUB 피시험자 4-7" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 8~11 <span>DUB-Skin Scanner</span></div><img src="efficacy-assets/p060.jpg" alt="DUB 피시험자 8-11" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 12~15 <span>DUB-Skin Scanner</span></div><img src="efficacy-assets/p061.jpg" alt="DUB 피시험자 12-15" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 16~19 <span>DUB-Skin Scanner</span></div><img src="efficacy-assets/p062.jpg" alt="DUB 피시험자 16-19" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 20~21 <span>DUB-Skin Scanner</span></div><img src="efficacy-assets/p063.jpg" alt="DUB 피시험자 20-21" loading="lazy"></div>
+      </div>
+    </div>
+
+    <!-- ANTERA 3D (모공) p64-69 -->
+    <div class="photo-section">
+      <h4>2. ANTERA 3D — 모공 분석 사진</h4>
+      <p class="note">피시험자 1~21번. Pores small filter 적용 이미지.</p>
+      <div class="photo-grid">
+        <div class="photo-card"><div class="photo-label">피시험자 1~3 <span>ANTERA 3D 모공</span></div><img src="efficacy-assets/p064.jpg" alt="ANTERA 모공 1-3" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 4~7 <span>ANTERA 3D 모공</span></div><img src="efficacy-assets/p065.jpg" alt="ANTERA 모공 4-7" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 8~11 <span>ANTERA 3D 모공</span></div><img src="efficacy-assets/p066.jpg" alt="ANTERA 모공 8-11" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 12~15 <span>ANTERA 3D 모공</span></div><img src="efficacy-assets/p067.jpg" alt="ANTERA 모공 12-15" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 16~19 <span>ANTERA 3D 모공</span></div><img src="efficacy-assets/p068.jpg" alt="ANTERA 모공 16-19" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 20~21 <span>ANTERA 3D 모공</span></div><img src="efficacy-assets/p069.jpg" alt="ANTERA 모공 20-21" loading="lazy"></div>
+      </div>
+    </div>
+
+    <!-- VISIA-CA (윤기) p70-75 -->
+    <div class="photo-section">
+      <h4>3. VISIA-CA — 피부 윤기 분석 사진</h4>
+      <p class="note">피시험자 1~21번. 전안촬영시스템 VISIA-CA 이미지.</p>
+      <div class="photo-grid">
+        <div class="photo-card"><div class="photo-label">피시험자 1~3 <span>VISIA-CA</span></div><img src="efficacy-assets/p070.jpg" alt="VISIA 윤기 1-3" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 4~7 <span>VISIA-CA</span></div><img src="efficacy-assets/p071.jpg" alt="VISIA 윤기 4-7" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 8~11 <span>VISIA-CA</span></div><img src="efficacy-assets/p072.jpg" alt="VISIA 윤기 8-11" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 12~15 <span>VISIA-CA</span></div><img src="efficacy-assets/p073.jpg" alt="VISIA 윤기 12-15" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 16~19 <span>VISIA-CA</span></div><img src="efficacy-assets/p074.jpg" alt="VISIA 윤기 16-19" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 20~21 <span>VISIA-CA</span></div><img src="efficacy-assets/p075.jpg" alt="VISIA 윤기 20-21" loading="lazy"></div>
+      </div>
+    </div>
+
+    <!-- ANTERA 3D (피부결) p76-81 -->
+    <div class="photo-section">
+      <h4>4. ANTERA 3D — 피부결 분석 사진</h4>
+      <p class="note">피시험자 1~21번. Texture small filter 적용 이미지.</p>
+      <div class="photo-grid">
+        <div class="photo-card"><div class="photo-label">피시험자 1~3 <span>ANTERA 3D 피부결</span></div><img src="efficacy-assets/p076.jpg" alt="ANTERA 피부결 1-3" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 4~7 <span>ANTERA 3D 피부결</span></div><img src="efficacy-assets/p077.jpg" alt="ANTERA 피부결 4-7" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 8~11 <span>ANTERA 3D 피부결</span></div><img src="efficacy-assets/p078.jpg" alt="ANTERA 피부결 8-11" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 12~15 <span>ANTERA 3D 피부결</span></div><img src="efficacy-assets/p079.jpg" alt="ANTERA 피부결 12-15" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 16~19 <span>ANTERA 3D 피부결</span></div><img src="efficacy-assets/p080.jpg" alt="ANTERA 피부결 16-19" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 20~21 <span>ANTERA 3D 피부결</span></div><img src="efficacy-assets/p081.jpg" alt="ANTERA 피부결 20-21" loading="lazy"></div>
+      </div>
+    </div>
+
+    <!-- F-RAY (피부 처짐) p82-87 -->
+    <div class="photo-section">
+      <h4>5. F-RAY — 피부 처진 각도 분석 사진</h4>
+      <p class="note">피시험자 1~21번. 무아레 전용 필터 측정 이미지.</p>
+      <div class="photo-grid">
+        <div class="photo-card"><div class="photo-label">피시험자 1~3 <span>F-RAY</span></div><img src="efficacy-assets/p082.jpg" alt="F-RAY 처짐 1-3" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 4~7 <span>F-RAY</span></div><img src="efficacy-assets/p083.jpg" alt="F-RAY 처짐 4-7" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 8~11 <span>F-RAY</span></div><img src="efficacy-assets/p084.jpg" alt="F-RAY 처짐 8-11" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 12~15 <span>F-RAY</span></div><img src="efficacy-assets/p085.jpg" alt="F-RAY 처짐 12-15" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 16~19 <span>F-RAY</span></div><img src="efficacy-assets/p086.jpg" alt="F-RAY 처짐 16-19" loading="lazy"></div>
+        <div class="photo-card"><div class="photo-label">피시험자 20~21 <span>F-RAY</span></div><img src="efficacy-assets/p087.jpg" alt="F-RAY 처짐 20-21" loading="lazy"></div>
+      </div>
+    </div>
+
+    <!-- ===== 별첨 3~6 ===== -->
     <div id="appendix3" class="sec">
       <h2>별첨 3~6</h2>
-      <div class="sd">시험제품 전성분, 안전성 확인서, 연구자 약력, 주요설비 (p.101~115)</div>
+      <div class="sd">시험제품 전성분 · 안전성 확인서 · 연구자 약력 · 주요설비 (p.88~115)</div>
     </div>
-    <div class="pg"><img src="efficacy-assets/p101.jpg" alt="별첨 3 시작" loading="lazy"><span class="pl">P.101</span></div>
-    <div class="pg"><img src="efficacy-assets/p102.jpg" alt="별첨 102" loading="lazy"><span class="pl">P.102</span></div>
-    <div class="pg"><img src="efficacy-assets/p103.jpg" alt="별첨 103" loading="lazy"><span class="pl">P.103</span></div>
-    <div class="pg"><img src="efficacy-assets/p104.jpg" alt="별첨 104" loading="lazy"><span class="pl">P.104</span></div>
-    <div class="pg"><img src="efficacy-assets/p105.jpg" alt="별첨 105" loading="lazy"><span class="pl">P.105</span></div>
-    <div class="pg"><img src="efficacy-assets/p106.jpg" alt="별첨 106" loading="lazy"><span class="pl">P.106</span></div>
-    <div class="pg"><img src="efficacy-assets/p107.jpg" alt="별첨 107" loading="lazy"><span class="pl">P.107</span></div>
-    <div class="pg"><img src="efficacy-assets/p108.jpg" alt="별첨 108" loading="lazy"><span class="pl">P.108</span></div>
-    <div class="pg"><img src="efficacy-assets/p109.jpg" alt="별첨 109" loading="lazy"><span class="pl">P.109</span></div>
-    <div class="pg"><img src="efficacy-assets/p110.jpg" alt="별첨 110" loading="lazy"><span class="pl">P.110</span></div>
-    <div class="pg"><img src="efficacy-assets/p111.jpg" alt="별첨 111" loading="lazy"><span class="pl">P.111</span></div>
-    <div class="pg"><img src="efficacy-assets/p112.jpg" alt="별첨 112" loading="lazy"><span class="pl">P.112</span></div>
-    <div class="pg"><img src="efficacy-assets/p113.jpg" alt="별첨 113" loading="lazy"><span class="pl">P.113</span></div>
-    <div class="pg"><img src="efficacy-assets/p114.jpg" alt="별첨 114" loading="lazy"><span class="pl">P.114</span></div>
-    <div class="pg"><img src="efficacy-assets/p115.jpg" alt="별첨 115" loading="lazy"><span class="pl">P.115</span></div>
+    <div class="pg"><img src="efficacy-assets/p088.jpg" alt="별첨 3 시험제품 전성분" loading="lazy"><span class="pl">P.88</span></div>
+    <div class="pg"><img src="efficacy-assets/p089.jpg" alt="별첨 4 안전성 확인서" loading="lazy"><span class="pl">P.89</span></div>
+    <div class="pg"><img src="efficacy-assets/p090.jpg" alt="별첨 5 연구자 약력 1" loading="lazy"><span class="pl">P.90</span></div>
+    <div class="pg"><img src="efficacy-assets/p091.jpg" alt="별첨 5 연구경력 2" loading="lazy"><span class="pl">P.91</span></div>
+    <div class="pg"><img src="efficacy-assets/p092.jpg" alt="별첨 5 연구실적 3" loading="lazy"><span class="pl">P.92</span></div>
+    <div class="pg"><img src="efficacy-assets/p093.jpg" alt="별첨 5 연구실적 4" loading="lazy"><span class="pl">P.93</span></div>
+    <div class="pg"><img src="efficacy-assets/p094.jpg" alt="별첨 5 연구실적 5" loading="lazy"><span class="pl">P.94</span></div>
+    <div class="pg"><img src="efficacy-assets/p095.jpg" alt="별첨 5 연구실적 6" loading="lazy"><span class="pl">P.95</span></div>
+    <div class="pg"><img src="efficacy-assets/p096.jpg" alt="별첨 5 연구실적 7" loading="lazy"><span class="pl">P.96</span></div>
+    <div class="pg"><img src="efficacy-assets/p097.jpg" alt="별첨 5 연구실적 8" loading="lazy"><span class="pl">P.97</span></div>
+    <div class="pg"><img src="efficacy-assets/p098.jpg" alt="별첨 5 국내외 특허" loading="lazy"><span class="pl">P.98</span></div>
+    <div class="pg"><img src="efficacy-assets/p099.jpg" alt="별첨 5 특허 계속" loading="lazy"><span class="pl">P.99</span></div>
+    <div class="pg"><img src="efficacy-assets/p100.jpg" alt="별첨 5 시험담당자 약력" loading="lazy"><span class="pl">P.100</span></div>
+    <div class="pg"><img src="efficacy-assets/p101.jpg" alt="별첨 5 담당자 경력" loading="lazy"><span class="pl">P.101</span></div>
+    <div class="pg"><img src="efficacy-assets/p102.jpg" alt="별첨 5 담당자 연구실적" loading="lazy"><span class="pl">P.102</span></div>
+    <div class="pg"><img src="efficacy-assets/p103.jpg" alt="별첨 5 연구실적 계속" loading="lazy"><span class="pl">P.103</span></div>
+    <div class="pg"><img src="efficacy-assets/p104.jpg" alt="별첨 5 연구실적 계속" loading="lazy"><span class="pl">P.104</span></div>
+    <div class="pg"><img src="efficacy-assets/p105.jpg" alt="별첨 5 연구실적 계속" loading="lazy"><span class="pl">P.105</span></div>
+    <div class="pg"><img src="efficacy-assets/p106.jpg" alt="별첨 6 주요설비 1" loading="lazy"><span class="pl">P.106</span></div>
+    <div class="pg"><img src="efficacy-assets/p107.jpg" alt="별첨 6 주요설비 2" loading="lazy"><span class="pl">P.107</span></div>
+    <div class="pg"><img src="efficacy-assets/p108.jpg" alt="별첨 6 주요설비 3" loading="lazy"><span class="pl">P.108</span></div>
+    <div class="pg"><img src="efficacy-assets/p109.jpg" alt="별첨 6 주요설비 4" loading="lazy"><span class="pl">P.109</span></div>
+    <div class="pg"><img src="efficacy-assets/p110.jpg" alt="별첨 6 주요설비 5" loading="lazy"><span class="pl">P.110</span></div>
+    <div class="pg"><img src="efficacy-assets/p111.jpg" alt="별첨 6 주요설비 6" loading="lazy"><span class="pl">P.111</span></div>
+    <div class="pg"><img src="efficacy-assets/p112.jpg" alt="별첨 6 주요설비 7" loading="lazy"><span class="pl">P.112</span></div>
+    <div class="pg"><img src="efficacy-assets/p113.jpg" alt="별첨 6 주요설비 8" loading="lazy"><span class="pl">P.113</span></div>
+    <div class="pg"><img src="efficacy-assets/p114.jpg" alt="별첨 6 주요설비 9" loading="lazy"><span class="pl">P.114</span></div>
+    <div class="pg"><img src="efficacy-assets/p115.jpg" alt="별첨 6 주요설비 10" loading="lazy"><span class="pl">P.115</span></div>
 
   </main>
 </div>
@@ -763,6 +946,7 @@
 </footer>
 
 <script>
+function toggleMetric(id){document.getElementById(id).classList.toggle('open')}
 const bt=document.getElementById('backTop');
 window.addEventListener('scroll',()=>bt.classList.toggle('visible',scrollY>600));
 const tl=document.querySelectorAll('#toc a'),ss=[];
