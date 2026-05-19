@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TORR RF — Product Brochure | BRITZMEDI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--nv:#141e2b;--nm:#1c2a3a;--cr:#f7f5f0;--cw:#efe9de;--am:#c4956a;--al:#d4aa82;--ad:#a07a55;--tx:#1a1a1a;--tm:#7a7a7a;--tf:#b0b0b0;--bd:rgba(0,0,0,.06);--hd:'Cormorant Garamond',Georgia,serif;--ft:'Outfit',sans-serif}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{font-family:var(--ft);background:var(--cr);color:var(--tx);-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all}
+:lang(ja){word-break:normal;overflow-wrap:break-word;line-height:1.85}
+:lang(ko){word-break:keep-all;overflow-wrap:break-word}
+::selection{background:var(--am);color:#fff}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:48px;background:rgba(20,30,43,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(196,149,106,.15)}
+.nav .br{font:500 14px/1 var(--hd);color:rgba(255,255,255,.65);letter-spacing:.06em}.nav .br b{color:var(--al);font-weight:600}
+.nav .ct{display:flex;align-items:center;gap:3px}
+.lb{background:none;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);padding:3px 10px;border-radius:3px;cursor:pointer;font:500 11px/1 var(--ft);transition:all .25s}
+.lb:hover{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)}
+.lb.on{background:rgba(196,149,106,.2);border-color:var(--am);color:var(--al)}
+.pb{background:var(--ad);border:none;color:#fff;padding:4px 14px;border-radius:3px;cursor:pointer;font:600 11px/1 var(--ft);margin-left:10px;transition:background .2s}
+.pb:hover{background:var(--am)}.pb:disabled{opacity:.4;cursor:wait}
+/* SLIDES */
+.sl{width:100vw;height:100vh;scroll-snap-align:start;position:relative;overflow:hidden;display:flex}
+.si{width:100%;max-width:1400px;margin:0 auto;height:100%;display:flex;position:relative;padding-top:48px}
+.sf{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;padding:14px 40px 16px;font:400 9.5px/1 var(--ft);letter-spacing:.06em}
+.sf .sfl{text-transform:uppercase;letter-spacing:.14em;font-weight:600}
+.lbl{font:600 10px/1 var(--ft);letter-spacing:.2em;text-transform:uppercase;color:var(--ad);margin-bottom:6px}
+.h2{font:400 42px/1.1 var(--hd);margin-bottom:16px}
+@keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* S1 COVER */
+.s1{background:var(--cr)}.s1 .si{align-items:center;padding:48px 0 0}
+.s1l{flex:1;padding:0 64px;animation:fu .8s ease both}
+.s1t{font:300 11px/1 var(--ft);letter-spacing:.22em;text-transform:uppercase;color:var(--ad);margin-bottom:6px}
+.s1s{font:300 12px/1 var(--ft);color:var(--tm);margin-bottom:36px}
+.s1-logo{width:320px;height:auto;margin-bottom:8px;animation:fu .8s ease both}
+.s1h{font:700 72px/.95 var(--ft);color:var(--tx);margin-bottom:6px;letter-spacing:-.03em}
+.s1d{font:300 15px/1.7 var(--ft);color:var(--tm);max-width:440px;margin:18px 0 28px}
+.s1c{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.s1cp{font:500 9.5px/1 var(--ft);letter-spacing:.08em;padding:5px 14px;border:1px solid var(--bd);border-radius:24px;color:var(--ad)}
+.s1m{font:400 11px/1 var(--ft);color:var(--tf);margin-top:4px}
+.s1r{width:46%;display:flex;align-items:center;justify-content:center;position:relative}
+.s1r img{max-height:78vh;width:auto;filter:drop-shadow(0 8px 40px rgba(0,0,0,.12));animation:fu .8s .15s ease both}
+.s1q{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);font:italic 400 13px/1.55 var(--hd);color:var(--tf);text-align:center;white-space:nowrap}
+.s1 .sf{color:var(--tf)}.s1 .sf .sfl{color:var(--ad)}
+
+/* S2 OVERVIEW */
+.s2{background:#fff}.s2 .si{flex-direction:column;padding:72px 64px 40px}
+.s2t{display:flex;gap:44px;flex:1}
+.s2x{flex:1.2;font:300 14px/1.8 var(--ft);color:var(--tm)}.s2x p{margin-bottom:14px}
+.s2x strong{color:var(--tx);font-weight:600}
+.s2g{flex:.75;display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start;margin-top:6px}
+.sc{background:var(--cr);border:1px solid var(--bd);padding:20px 16px;border-radius:3px;transition:transform .2s}.sc:hover{transform:translateY(-2px)}
+.scn{font:700 34px/1 var(--ft);color:var(--nv);letter-spacing:-.02em}.scl{font:500 11px/1 var(--ft);color:var(--tx);margin-top:5px;letter-spacing:.02em}.scs{font:300 10px/1 var(--ft);color:var(--tf);margin-top:3px}
+.s2 .sf{color:var(--tf)}.s2 .sf .sfl{color:var(--ad)}
+
+/* S3 TECHNOLOGY */
+.s3{background:var(--cr)}.s3 .si{gap:0}
+.s3l{flex:1;padding:72px 44px 40px 64px;display:flex;flex-direction:column}
+.s3i{font:300 13px/1.7 var(--ft);color:var(--tm);margin-bottom:24px;max-width:460px}
+.mcs{display:flex;flex-direction:column;gap:12px}
+.mc{display:flex;gap:16px;padding:18px;border:1px solid var(--bd);border-radius:3px;background:#fff;transition:border-color .2s}.mc:hover{border-color:var(--am)}
+.mci{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 13px/1 var(--ft);color:#fff;flex-shrink:0}
+.mci.dp{background:var(--nv)}.mci.lw{background:var(--ad)}
+.mc h4{font:600 13px/1.3 var(--ft);margin-bottom:2px}.mc .md{font:500 11px/1 var(--ft);color:var(--ad);margin-bottom:4px}.mc p{font:300 11.5px/1.55 var(--ft);color:var(--tm)}
+.s3r{width:42%;background:var(--nv);display:flex;flex-direction:column;padding:64px 32px 36px;position:relative;overflow:hidden}
+.s3r::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:rgba(196,149,106,.06)}
+.s3r .lbl{color:var(--al);margin-bottom:14px}
+.gtl{display:flex;flex-direction:column}
+.gi{display:flex;gap:12px;padding:10px 0 10px 18px;border-left:2px solid rgba(255,255,255,.08);position:relative}
+.gi::before{content:'';position:absolute;left:-5px;top:16px;width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15)}
+.gi.nw{border-left-color:var(--am)}.gi.nw::before{background:var(--am);width:10px;height:10px;left:-6px;top:15px;box-shadow:0 0 12px rgba(196,149,106,.4)}
+.gil{font:700 10px/1 var(--ft);letter-spacing:.08em;color:rgba(255,255,255,.35);margin-bottom:3px}.gi.nw .gil{color:var(--al)}
+.gin{font:500 12px/1.3 var(--ft);color:rgba(255,255,255,.8)}.gid{font:300 10px/1.4 var(--ft);color:rgba(255,255,255,.3);margin-top:2px}
+.s3th{display:flex;gap:12px;margin-top:auto;padding-top:20px}
+.s3th>div{flex:1}
+.s3th img{width:100%;border-radius:4px;border:1px solid rgba(255,255,255,.1)}
+.s3th .th-label{font:600 10px/1 var(--ft);letter-spacing:.12em;text-transform:uppercase;color:var(--al);text-align:center;margin-top:8px}
+.s3 .sf{color:var(--tf)}.s3 .sf .sfl{color:var(--ad)}
+
+/* S4 HANDPIECES */
+.s4{background:var(--nv)}.s4 .si{flex-direction:column;padding:64px 56px 40px}
+.s4 .lbl{color:var(--al)}.s4 .h2{color:#fff;margin-bottom:10px}
+.s4s{font:300 13px/1.5 var(--ft);color:rgba(255,255,255,.4);margin-bottom:16px}
+.hpg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;flex:1}
+.hc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:4px;display:flex;flex-direction:column;overflow:hidden;transition:border-color .3s}.hc:hover{border-color:var(--am)}
+.hc-img{width:100%;height:200px;overflow:hidden}.hc-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.hc:hover .hc-img img{transform:scale(1.03)}
+.hc-body{padding:16px 16px 14px;flex:1;display:flex;flex-direction:column}
+.hct{font:600 10px/1 var(--ft);letter-spacing:.15em;text-transform:uppercase;color:var(--am);margin-bottom:3px}
+.hc h3{font:400 24px/1.1 var(--hd);margin-bottom:8px;color:#fff}
+.hc-desc{font:300 11px/1.55 var(--ft);color:rgba(255,255,255,.4);margin-bottom:10px}
+.hsp{display:flex;flex-direction:column;gap:4px;margin-top:auto}
+.hsr{display:flex;justify-content:space-between;font:400 11px/1 var(--ft);padding:3px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.hsr .k{color:rgba(255,255,255,.3)}.hsr .v{font-weight:500;color:rgba(255,255,255,.65)}
+.s4 .sf{color:rgba(255,255,255,.12)}.s4 .sf .sfl{color:rgba(196,149,106,.35)}
+
+/* S5 FEATURES */
+.s5{background:#fff}.s5 .si{gap:0}
+.s5l{flex:1;padding:72px 40px 40px 64px;display:flex;flex-direction:column}
+.fg{display:flex;flex-direction:column;gap:10px;flex:1}
+.fc{display:flex;gap:14px;padding:14px 16px;border:1px solid var(--bd);border-radius:3px;background:var(--cr);transition:border-color .25s;align-items:flex-start}.fc:hover{border-color:var(--am)}
+.fcn{font:600 10px/1 var(--ft);color:var(--ad);letter-spacing:.08em;min-width:20px;padding-top:2px}
+.fc h4{font:500 13px/1.3 var(--ft);margin-bottom:3px}.fc p{font:300 11px/1.5 var(--ft);color:var(--tm)}
+.s5r{width:40%;overflow:hidden;position:relative}
+.s5r img{width:100%;height:100%;object-fit:cover}
+.s5 .sf{color:var(--tf)}.s5 .sf .sfl{color:var(--ad)}
+
+
+/* S6C CLINICAL */
+.s6c{background:var(--nv)}.s6c .si{flex-direction:column;padding:64px 56px 40px}
+.s6c .lbl{color:var(--al)}.s6c .h2{color:#fff;margin-bottom:6px}
+.s6c-sub{font:300 12px/1.5 var(--ft);color:rgba(255,255,255,.35);margin-bottom:20px}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;flex:1}
+.cl-card{border:1px solid rgba(255,255,255,.08);border-radius:4px;overflow:hidden;background:rgba(255,255,255,.02)}
+.cl-card img{width:100%;display:block}
+.cl-card .cl-info{padding:10px 12px}
+.cl-card .cl-area{font:600 10px/1 var(--ft);letter-spacing:.12em;text-transform:uppercase;color:var(--am)}
+.cl-card .cl-detail{font:300 10px/1.4 var(--ft);color:rgba(255,255,255,.35);margin-top:3px}
+.cl-bottom{display:flex;gap:14px;margin-top:14px}
+.cl-evidence{flex:1;border:1px solid rgba(255,255,255,.08);border-radius:4px;overflow:hidden;background:rgba(255,255,255,.02);display:flex;align-items:center;gap:16px;padding:12px 16px}
+.cl-evidence img{height:120px;width:auto;border-radius:3px}
+.cl-evidence .cl-ev-text h4{font:600 12px/1.3 var(--ft);color:#fff;margin-bottom:4px}
+.cl-evidence .cl-ev-text p{font:300 10.5px/1.5 var(--ft);color:rgba(255,255,255,.4)}
+.s6c .sf{color:rgba(255,255,255,.12)}.s6c .sf .sfl{color:rgba(196,149,106,.35)}
+
+/* S6 SPECS */
+.s6{background:var(--cr)}.s6 .si{gap:0}
+.s6l{flex:1;padding:72px 40px 40px 64px;display:flex;flex-direction:column}
+.st{width:100%;border-collapse:collapse}.st tr{border-bottom:1px solid var(--bd)}
+.st td{padding:9px 0;font:400 13px/1.4 var(--ft);vertical-align:top}.st td:first-child{color:var(--tm);width:130px;font-size:12px}.st td:last-child{font-weight:500}
+.s6r{width:38%;background:var(--nv);color:#fff;padding:72px 30px 40px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.s6r::after{content:'';position:absolute;bottom:-40px;left:-40px;width:160px;height:160px;border-radius:50%;border:1px solid rgba(196,149,106,.08)}
+.s6r h3{font:400 24px/1.2 var(--hd);margin-bottom:18px}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ci{border:1px solid rgba(255,255,255,.1);padding:12px 10px;border-radius:3px;text-align:center;transition:border-color .2s}.ci:hover{border-color:var(--am)}
+.cin{font:700 15px/1 var(--ft);letter-spacing:.06em}.cid{font:300 10px/1 var(--ft);color:rgba(255,255,255,.4);margin-top:3px}
+.ptb{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08)}
+.ptb .lbl{color:var(--al);margin-bottom:5px}.ptb p{font:300 11.5px/1.6 var(--ft);color:rgba(255,255,255,.5)}
+.s6 .sf{color:var(--tf)}.s6 .sf .sfl{color:var(--ad)}
+
+/* S7 COMPANY */
+.s7{background:#fff}.s7 .si{gap:0}
+.s7l{flex:1;padding:72px 44px 40px 64px;display:flex;flex-direction:column;justify-content:center}
+.s7-logo{width:100px;opacity:.12;margin-bottom:20px}
+.s7d{font:300 13.5px/1.75 var(--ft);color:var(--tm);margin-bottom:24px;max-width:480px}
+.csg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cs{text-align:center;padding:14px 8px;background:var(--cr);border:1px solid var(--bd);border-radius:3px}
+.csn{font:400 28px/1 var(--hd);color:var(--nv)}.csl{font:400 10px/1 var(--ft);color:var(--tm);margin-top:4px}
+.s7r{width:40%;background:var(--cw);padding:72px 36px 40px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.ab h4{font:600 10px/1 var(--ft);letter-spacing:.14em;text-transform:uppercase;color:var(--ad);margin-bottom:7px}
+.ab p{font:300 12px/1.65 var(--ft);color:var(--tm)}
+.lb2{background:#fff;border:1px solid var(--bd);padding:16px;border-radius:3px}
+.lb2 h4{font:600 10px/1 var(--ft);letter-spacing:.14em;text-transform:uppercase;color:var(--ad);margin-bottom:5px}.lb2 p{font:400 12px/1.5 var(--ft)}
+.s7 .sf{color:var(--tf)}.s7 .sf .sfl{color:var(--ad)}
+
+/* S8 CONTACT */
+.s8{background:var(--nv)}.s8::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(196,149,106,.05) 0%,transparent 50%)}
+.s8 .si{align-items:center}
+.s8l{flex:1;padding:0 64px;display:flex;flex-direction:column;justify-content:center}
+.s8 .lbl{color:var(--al)}.s8 .h2{color:#fff}
+.s8d{font:300 14px/1.75 var(--ft);color:rgba(255,255,255,.4);margin-bottom:32px;max-width:440px}
+.cir{display:flex;flex-direction:column;gap:14px}
+.cr{display:flex;align-items:center;gap:14px}
+.cr .cl{font:500 10px/1 var(--ft);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);width:80px}
+.cr .cv{font:400 14px/1 var(--ft);color:rgba(255,255,255,.65)}
+.s8r{width:40%;display:flex;align-items:center;justify-content:center}
+.s8m{text-align:center}
+.s8m .lg{font:300 48px/1 var(--hd);color:rgba(255,255,255,.08)}
+.s8m .co{font:300 11px/1 var(--ft);letter-spacing:.2em;color:rgba(255,255,255,.12);margin-top:12px}
+.s8m .pr{font:300 12px/2 var(--ft);color:rgba(255,255,255,.08);margin-top:24px}
+.s8m .cp{font:300 10px/1.5 var(--ft);color:rgba(255,255,255,.06);margin-top:40px;border-top:1px solid rgba(255,255,255,.04);padding-top:14px}
+.s8 .sf{color:rgba(255,255,255,.1)}.s8 .sf .sfl{color:rgba(196,149,106,.25)}
+/* OVERLAY */
+.pov{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.75);align-items:center;justify-content:center}.pov.on{display:flex}
+.pov-b{background:#fff;padding:36px 52px;border-radius:8px;text-align:center;font:400 14px/1 var(--ft)}
+.pov-s{width:28px;height:28px;border:3px solid #eee;border-top-color:var(--ad);border-radius:50%;animation:sp .7s linear infinite;margin:0 auto 14px}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media(max-width:1024px){html{scroll-snap-type:none}.sl{height:auto;min-height:100vh}.si{flex-direction:column!important;padding:60px 24px 60px!important}.s1r,.s3r,.s5r,.s6r,.s7r,.s8r{width:100%!important}.s1h{font-size:48px!important}.h2{font-size:32px!important}.hpg{grid-template-columns:1fr!important}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="br"><a href="index.html" style="color:rgba(255,255,255,.4);margin-right:12px;font-size:12px;text-decoration:none">← Home</a><b>TORR RF</b>&ensp;Product Brochure</div><div class="ct"><button class="lb on" onclick="setLang('en')">EN</button><button class="lb" onclick="setLang('ko')">KO</button><button class="lb" onclick="setLang('ja')">JA</button><button class="pb" id="pB" onclick="mkPDF()">PDF ↓</button></div></nav>
+<div class="pov" id="pov"><div class="pov-b"><div class="pov-s"></div><div data-t="pm">Generating PDF…</div></div></div>
+
+<!-- P1 COVER -->
+<section class="sl s1" id="s1"><div class="si">
+<div class="s1l"><div class="s1t">BRITZMEDI</div><div class="s1s" data-t="cs">Product Brochure · 2026</div>
+<h1 class="s1h">TORR RF</h1>
+<p class="s1d" data-t="cd">A non-invasive radiofrequency medical device for skin tightening and body contouring. Powered by proprietary toroidal multipolar technology — the third generation of RF.</p>
+<div class="s1c"><span class="s1cp">US FDA 510(k)</span><span class="s1cp">MFDS</span><span class="s1cp">ISO 13485</span><span class="s1cp">GMP</span></div>
+<div class="s1m">Model MTX-C1</div></div>
+<div class="s1r"><img src="torr-assets/device.jpg" alt="TORR RF"><div class="s1q" data-t="cq">"Third-generation RF. Precision without compromise."</div></div>
+</div><div class="sf"><div><span class="sfl">TORR RF</span> · BRITZMEDI CO., LTD.</div><div>01 / 09</div></div></section>
+
+<!-- P2 OVERVIEW -->
+<section class="sl s2" id="s2"><div class="si">
+<div class="lbl" data-t="ol">What is TORR RF</div>
+<h2 class="h2" data-t="ot">Toroidal Multipolar RF. Made in Korea.</h2>
+<div class="s2t"><div class="s2x">
+<p data-t="o1">TORR RF is a professional aesthetic medical device that delivers multi-wave radiofrequency energy through a patented toroidal electrode array. Unlike conventional monopolar or bipolar systems, the toroidal architecture creates a 3D electromagnetic field — enabling uniform energy distribution across multiple tissue depths simultaneously.</p>
+<p data-t="o2">The <strong>Smart Combination</strong> system integrates monopolar-grade deep penetration (5–15mm) and bipolar-grade surface precision (2.5–5mm) into a single handpiece. Clinicians switch between Deep Mode and Low Mode to target everything from subdermal fat to superficial fine lines — without changing handpieces, without cooling systems, without grounding pads.</p>
+<p data-t="o3">Designed and manufactured by BRITZMEDI in Seongnam, Korea. US FDA 510(k) cleared (K212561), MFDS Class III licensed (No. 22-156), ISO 13485:2016 certified, GMP compliant. <strong>Zero consumables</strong> — no cartridges, no tips, no recurring costs.</p>
+</div><div class="s2g">
+<div class="sc"><div class="scn">3</div><div class="scl" data-t="sh">Handpieces</div><div class="scs">Face · Body · Eye</div></div>
+<div class="sc"><div class="scn">55W</div><div class="scl" data-t="sp">Max Power</div><div class="scs" data-t="sps">Low power, high efficacy</div></div>
+<div class="sc"><div class="scn">10mm</div><div class="scl" data-t="sd">Max Depth</div><div class="scs" data-t="sds">No cooling needed</div></div>
+<div class="sc"><div class="scn">0</div><div class="scl" data-t="sn">Consumables</div><div class="scs" data-t="sns">Zero recurring cost</div></div>
+</div></div>
+</div><div class="sf"><div><span class="sfl">TORR RF</span> · OVERVIEW</div><div>02 / 09</div></div></section>
+
+<!-- P3 TECHNOLOGY -->
+<section class="sl s3" id="s3"><div class="si">
+<div class="s3l"><div class="lbl" data-t="tl">Core Technology</div>
+<h2 class="h2" data-t="tt">Smart Combination.<br>Two modes, one handpiece.</h2>
+<p class="s3i" data-t="ti">The toroidal multipolar electrode array enables dual-mode operation — combining monopolar-grade deep penetration with bipolar-grade surface precision. No cooling system. No grounding pad.</p>
+<div class="mcs">
+<div class="mc"><div class="mci dp">D</div><div><h4 data-t="dT">Deep Mode — Monopolar Path</h4><div class="md" data-t="dD">Target: 5–15mm+ (subdermal to fat)</div><p data-t="dP">Long-path current flows between distant ring electrodes. Deep tightening, lifting, localized fat reduction, submental contouring.</p></div></div>
+<div class="mc"><div class="mci lw">L</div><div><h4 data-t="lT">Low Mode — Bipolar Path</h4><div class="md" data-t="lD">Target: 2.5–5mm (superficial to mid-dermis)</div><p data-t="lP">Short-path current between adjacent ring electrodes. Fine wrinkles, pore refinement, texture improvement, collagen remodeling.</p></div></div>
+</div></div>
+<div class="s3r"><div class="lbl" data-t="el">RF Technology Evolution</div>
+<div class="gtl">
+<div class="gi"><div><div class="gil">GEN 1</div><div class="gin" data-t="g1">Bipolar RF</div><div class="gid" data-t="g1d">Shallow 1–4mm. TriPollar, Venus Legacy</div></div></div>
+<div class="gi"><div><div class="gil">GEN 2</div><div class="gin" data-t="g2">Monopolar RF</div><div class="gid" data-t="g2d">Deep but dispersive. Thermage, BTL Exilis</div></div></div>
+<div class="gi"><div><div class="gil">GEN 2.5</div><div class="gin" data-t="g25">Monopolar + Ultrasound</div><div class="gid" data-t="g25d">Cooling-dependent. BTL Exilis Ultra 360</div></div></div>
+<div class="gi nw"><div><div class="gil">GEN 3</div><div class="gin" data-t="g3">Toroidal Multipolar</div><div class="gid" data-t="g3d">3D field. No cooling, no pad. TORR RF</div></div></div>
+</div>
+<div class="s3th">
+<div><img src="torr-assets/thermal-deep.jpg" alt="Target Deep"><div class="th-label">DEEP MODE</div></div>
+<div><img src="torr-assets/thermal-low.jpg" alt="Target Low"><div class="th-label">LOW MODE</div></div>
+</div>
+</div>
+</div><div class="sf"><div><span class="sfl">TORR RF</span> · TECHNOLOGY</div><div>03 / 09</div></div></section>
+
+<!-- P4 HANDPIECES -->
+<section class="sl s4" id="s4"><div class="si">
+<div class="lbl" data-t="hl">Multiple Applicators</div>
+<h2 class="h2" data-t="ht">Three handpieces. Full coverage.</h2>
+<p class="s4s" data-t="hs">Each handpiece delivers optimal volumetric thermal heating to different target depths from 1.5mm to 10mm.</p>
+<div class="hpg">
+<div class="hc"><div class="hc-img"><img src="torr-assets/hp-face.jpg" alt="Face"></div><div class="hc-body"><div class="hct" data-t="hft">Facial</div><h3 data-t="hfn">Face</h3><p class="hc-desc" data-t="hfd">The primary handpiece for full-face treatments. Toroidal electrode array with 40mm contact area delivers uniform RF energy for skin tightening, wrinkle reduction, and jawline contouring.</p><div class="hsp"><div class="hsr"><span class="k" data-t="hsz">Size</span><span class="v">Ø 40mm</span></div><div class="hsr"><span class="k" data-t="hdp">Depth</span><span class="v">2.5 – 6mm</span></div><div class="hsr"><span class="k" data-t="hwt">Weight</span><span class="v">387g</span></div></div></div></div>
+<div class="hc"><div class="hc-img"><img src="torr-assets/hp-body.jpg" alt="Body"></div><div class="hc-body"><div class="hct" data-t="hbt">Body</div><h3 data-t="hbn">Body</h3><p class="hc-desc" data-t="hbd">The largest handpiece with patented auto circular motion head. 50mm electrode covers abdomen, flanks, thighs, and arms. Deep mode reaches up to 10mm for fat reduction and cellulite.</p><div class="hsp"><div class="hsr"><span class="k" data-t="hsz">Size</span><span class="v">Ø 50mm</span></div><div class="hsr"><span class="k" data-t="hdp">Depth</span><span class="v">3.5 – 10mm</span></div><div class="hsr"><span class="k" data-t="hwt">Weight</span><span class="v">873g</span></div></div></div></div>
+<div class="hc"><div class="hc-img"><img src="torr-assets/hp-eye.jpg" alt="Eye"></div><div class="hc-body"><div class="hct" data-t="het">Periorbital</div><h3 data-t="hen">Eye</h3><p class="hc-desc" data-t="hed">Precision-engineered micro handpiece for the delicate periorbital area. 20mm electrode enables safe, targeted treatment around eyes — where most RF devices cannot reach.</p><div class="hsp"><div class="hsr"><span class="k" data-t="hsz">Size</span><span class="v">Ø 20mm</span></div><div class="hsr"><span class="k" data-t="hdp">Depth</span><span class="v">1.5 – 3mm</span></div><div class="hsr"><span class="k" data-t="hwt">Weight</span><span class="v">240g</span></div></div></div></div>
+</div>
+</div><div class="sf"><div><span class="sfl">TORR RF</span> · APPLICATORS</div><div>04 / 09</div></div></section>
+
+<!-- P5 FEATURES -->
+<section class="sl s5" id="s5"><div class="si">
+<div class="s5l"><div class="lbl" data-t="fl">Key Features</div>
+<h2 class="h2" data-t="ft">Five technologies in every treatment.</h2>
+<div class="fg">
+<div class="fc"><div class="fcn">01</div><div><h4 data-t="f1t">Auto Circular Motion Head</h4><p data-t="f1d">Patented automatic circular motion enhances operator convenience and patient comfort on large treatment areas.</p></div></div>
+<div class="fc"><div class="fcn">02</div><div><h4 data-t="f2t">Real-Time Temperature Control</h4><p data-t="f2d">Continuous skin temperature monitoring ensures uniform, safe energy delivery with adjustable settings.</p></div></div>
+<div class="fc"><div class="fcn">03</div><div><h4 data-t="f3t">Selectable Penetration Depth</h4><p data-t="f3d">Dual depth options via Smart Combination allow tailored treatment by indication and patient condition.</p></div></div>
+<div class="fc"><div class="fcn">04</div><div><h4 data-t="f4t">Multi-Pulse Mode</h4><p data-t="f4d">Controlled pulse intervals with low individual energy enable safe thermal accumulation for effective delivery.</p></div></div>
+<div class="fc"><div class="fcn">05</div><div><h4 data-t="f5t">Vibro-Comfort Mode</h4><p data-t="f5d">Minimized direct heat sensation through vibration enhances patient comfort during treatment.</p></div></div>
+</div></div>
+<div class="s5r"><img src="torr-assets/handpiece-detail.jpg" alt="TORR RF Handpiece Detail"></div>
+</div><div class="sf"><div><span class="sfl">TORR RF</span> · FEATURES</div><div>05 / 09</div></div></section>
+
+
+<!-- P6 CLINICAL EVIDENCE -->
+<section class="sl s6c" id="s6c"><div class="si">
+<div class="lbl" data-t="clL">Clinical Evidence</div>
+<h2 class="h2" data-t="clT">Proven results across all treatment areas.</h2>
+<p class="s6c-sub" data-t="clS">Before and after clinical photographs. Results may vary by individual.</p>
+<div class="cl-grid">
+<div class="cl-card"><img src="torr-assets/clinical-face.jpg" alt="Face - Jawline"><div class="cl-info"><div class="cl-area" data-t="clFace">Face — Jawline &amp; V-Line</div><div class="cl-detail" data-t="clFaceD">Before tx → After 3rd treatment</div></div></div>
+<div class="cl-card"><img src="torr-assets/clinical-naso.jpg" alt="Face - Nasolabial"><div class="cl-info"><div class="cl-area" data-t="clNaso">Face — Nasolabial Fold</div><div class="cl-detail" data-t="clNasoD">Before tx → After 2nd treatment</div></div></div>
+<div class="cl-card"><img src="torr-assets/clinical-eye.jpg" alt="Eye - Periorbital"><div class="cl-info"><div class="cl-area" data-t="clEye">Eye — Periorbital Wrinkles</div><div class="cl-detail" data-t="clEyeD">Before tx → After 2nd treatment</div></div></div>
+</div>
+<div class="cl-bottom">
+<div class="cl-card" style="flex:1"><img src="torr-assets/clinical-body.jpg" alt="Body - Abdomen"><div class="cl-info"><div class="cl-area" data-t="clBody">Body — Abdominal Contouring</div><div class="cl-detail" data-t="clBodyD">Before tx → After 5th treatment</div></div></div>
+<div class="cl-evidence"><img src="torr-assets/clinical-temp.jpg" alt="Temperature Control"><div class="cl-ev-text"><h4 data-t="clTempT">Real-Time Temperature Control</h4><p data-t="clTempD">Skin surface temperature reaches target (41–42°C) within 1 minute and maintains stable plateau throughout the treatment session.</p></div></div>
+<div class="cl-evidence"><img src="torr-assets/clinical-thermal.jpg" alt="Thermal Progression"><div class="cl-ev-text"><h4 data-t="clThrmT">Uniform Thermal Distribution</h4><p data-t="clThrmD">Thermal imaging at 1, 3, 5, and 7 minutes shows progressive, uniform heating pattern — characteristic of toroidal multipolar RF.</p></div></div>
+</div>
+</div><div class="sf"><div><span class="sfl">TORR RF</span> · CLINICAL EVIDENCE</div><div>06 / 09</div></div></section>
+
+<!-- P7 SPECS -->
+<section class="sl s6" id="s6"><div class="si">
+<div class="s6l"><div class="lbl" data-t="xl">Technical Specifications</div>
+<h2 class="h2" data-t="xt">Built to clinical standards.</h2>
+<table class="st">
+<tr><td data-t="xn">Product Name</td><td>TORR RF</td></tr>
+<tr><td data-t="xm">Model</td><td>MTX-C1</td></tr>
+<tr><td data-t="xc">Classification</td><td data-t="xcv">Class III Medical Device (MFDS)</td></tr>
+<tr><td data-t="xe">Electrode</td><td data-t="xev">Toroidal Multipolar (CH1/CH2/CH3)</td></tr>
+<tr><td data-t="xf">Frequency</td><td>1–10 MHz Multi-Wave</td></tr>
+<tr><td data-t="xp">Power</td><td>Max 55W</td></tr>
+<tr><td data-t="xr">Depth Range</td><td>1.5 – 10mm</td></tr>
+<tr><td data-t="xd">Display</td><td>10.1" TFT-LCD Touchscreen</td></tr>
+<tr><td data-t="xi">Input</td><td>AC 85–264V, 50/60Hz</td></tr>
+<tr><td data-t="xo">Cooling</td><td data-t="xov">Not required</td></tr>
+<tr><td data-t="xs">Consumables</td><td data-t="xsv">None</td></tr>
+</table></div>
+<div class="s6r"><h3 data-t="ct">Global Certifications</h3>
+<div class="cg"><div class="ci"><div class="cin">FDA</div><div class="cid">510(k) K212561</div></div><div class="ci"><div class="cin">MFDS</div><div class="cid" data-t="cm">License 22-156</div></div><div class="ci"><div class="cin">ISO</div><div class="cid">13485:2016</div></div><div class="ci"><div class="cin">GMP</div><div class="cid" data-t="cg">MFDS Certified</div></div></div>
+<div class="ptb"><div class="lbl" data-t="pl">Patents</div><p data-t="pd">11 registered patents including RF thermal systems and segmented electrode designs. 1 international patent. 6 additional pending.</p></div>
+</div>
+</div><div class="sf"><div><span class="sfl">TORR RF</span> · SPECIFICATIONS</div><div>07 / 09</div></div></section>
+
+<!-- P7 COMPANY -->
+<section class="sl s7" id="s7"><div class="si">
+<div class="s7l">
+<img class="s7-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NDguMDQ1NzI3IDkzMy4xMDE2NTMiPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC02NTAuMDAwMDAwLDE1MDMuMDAwMDAwKSBzY2FsZSgwLjEwMDAwMCwtMC4xMDAwMDApIiBmaWxsPSIjMDAwMDAwIj4KPHBhdGggZD0iTTY1MDcgMTUwMjMgbC03IC02IDAgLTcxNCAwIC03MTMgMjk5MCAwIDI5OTAgMCAwIC03MDAgMCAtNzAwIC0yOTkwCjAgLTI5OTAgMCAwIC0xOTM1IDAgLTE5MzUgMjM3NiAwIDIzNzYgMCAtMTIgMTUgLTEzIDE2IC04NiA2NiAtODYgNjcgLTExNSA5MQotMTE1IDkxIC0zMzAgMjU5IC0zMzAgMjU5IC0xODAgMTQxIC0xODAgMTQxIC0xODggMTQ3IC0xODggMTQ3IC03MDQgMCAtNzA1IDAKMCA1MDUgMCA1MDUgMTI0MyAwIDEyNDIgMCAxMDUgLTc4IDEwNSAtNzkgMjEwIC0xNTMgMjEwIC0xNTMgMTEwIC04MiAxMTAgLTgxCjE1MCAtMTA5IDE1MCAtMTA4IDMzNSAtMjQ1IDMzNSAtMjQ1IDcwIC01MiA3MCAtNTIgMTcwIC0xMjUgMTcwIC0xMjQgNTE3Ci0zODIgNTE3IC0zODIgNzEgMCA3MCAwIDAgNzE5IDAgNzE4IC00NDEgMzY5IC00NDIgMzY5IC03OCA2NSAtNzggNjUgMTcgMTYKMTcgMTcgMzA1IDIxNyAzMDUgMjE4IDE5NyAxNDEgMTk4IDE0MSAwIDE4MjggMCAxODI3IC0zNzMzIDAgLTM3MzQgMCAtNiAtN3oiLz4KPHBhdGggZD0iTTY1MDcgNzAwNCBsLTcgLTcgMCAtNjQ5IDAgLTY0OSA2ODggMyA2ODcgNCA1OCAxNyA1OCAxNyA0MiAyMSA0MgoyMSAzOCAzNyAzOSAzNiAyMCAzOSAxOSAzOCAxMCA2MCAxMCA1OSAtMTEgNTkgLTExIDYwIC0xNyAzNyAtMTcgMzggLTI4IDM3Ci0yOSAzNyAtNDcgMzAgLTQ3IDMxIC0zOSAxMyAtMzkgMTQgNDQgMjQgNDQgMjQgMzEgNDEgMzIgNDEgMTMgNjIgMTMgNjEgLTEyCjU3IC0xMSA1NiAtMjUgNDMgLTI1IDQyIC0zMiAyOCAtMzMgMjcgLTYwIDI4IC02MCAyOCAtNzUgMTcgLTc1IDE2IC01OTAgNQotNTkwIDQgLTggLTd6IG0xMTMzIC0zNDAgbDM1IC0yMCAxNCAtMjggMTMgLTI4IC05IC0zMiAtOCAtMzEgLTM1IC0xNyAtMzUKLTE4IC0zNzcgMCAtMzc4IDAgMCAxMDEgMCAxMDEgMzczIC00IDM3MiAtMyAzNSAtMjF6IG0xMDIgLTQ3NiBsMzYgLTE2IDExCi0yMCAxMSAtMjEgMCAtMjkgMCAtMjkgLTE4IC0xNiAtMTggLTE3IC01NCAtMTAgLTUzIC0xMCAtMzk4IDAgLTM5OSAwIDAgOTYgMAo5NSA0MjMgLTMgNDIyIC0zIDM3IC0xN3oiLz4KPHBhdGggZD0iTTkzNzggNzAwMyBsLTE4IC00IDAgLTY1MCAwIC02NDkgMTc1IDAgMTc1IDAgMCAyMjAgMCAyMjAgMjE4IDAgMjE3CjAgMjEzIC0yMjAgMjE0IC0yMjAgMjMxIDAgMjMyIDAgLTIyMCAyMjAgLTIxOSAyMTkgNCA0IDUgMyA3MyAyOCA3MiAyOCA2MCA0NAo2MCA0NCAzNCA0NyAzNSA0OCAxOCA1NSAxOCA1NSAwIDg1IDAgODUgLTE5IDU1IC0xOSA1NSAtNjEgNjEgLTYyIDYyIC01OSAzMAotNjAgMzAgLTU1IDE2IC01NSAxNyAtMTU1IDkgLTE1NSAxMCAtNDQwIC0xIC00NDAgLTIgLTE3IC00eiBtMTE1OSAtMzQxIGw0MgotMjIgMTEgLTE5IDEwIC0yMCAwIC0zMSAwIC0zMSAtMTEgLTIxIC0xMSAtMjAgLTM2IC0xNiAtMzcgLTE3IC0zOTcgLTMgLTM5OAotMyAwIDExNiAwIDExNyAzOTMgLTQgMzkyIC0zIDQyIC0yM3oiLz4KPHBhdGggZD0iTTEyMjIwIDcwMDEgbC0yNSAtNyAtMyAtMzkgLTMgLTQwIDYgLTExMiA3IC0xMTMgNTQxIC0yIDU0MiAtMyAtMjU1Ci0xNjggLTI1NSAtMTY5IC0yOTMgLTE5MSAtMjkyIC0xOTIgNSAtMjkgNSAtMjkgMCAtMTAzIDAgLTEwNCA4OTAgMCA4OTAgMCAwCjE2MCAwIDE2MCAtNTY3IDAgLTU2OCAwIDI1IDIwIDI1IDIwIDQ4MCAzMDggNDgwIDMwOSA2MyAzOSA2MiAzOSAtMiAxMjUgLTMKMTI1IC04NjUgMiAtODY1IDEgLTI1IC03eiIvPgo8L2c+Cjwvc3ZnPgo=" alt="BRITZMEDI">
+<div class="lbl" data-t="cl">The Company Behind TORR RF</div>
+<h2 class="h2" data-t="ctt">A Korean medical device maker, by design.</h2>
+<p class="s7d" data-t="cdd">BRITZMEDI Co., Ltd. specializes in advanced aesthetic and skin care technologies. Built on years of precision engineering experience, we design and manufacture devices that combine clinical performance with thoughtful, user-centered design. Full in-house R&D, manufacturing, QA, and after-sales support.</p>
+<div class="csg"><div class="cs"><div class="csn">2017</div><div class="csl" data-t="cf">Founded</div></div><div class="cs"><div class="csn">11</div><div class="csl" data-t="cp">Patents</div></div><div class="cs"><div class="csn">5</div><div class="csl" data-t="ctm">Trademarks</div></div><div class="cs"><div class="csn">FDA</div><div class="csl" data-t="crr">Registered</div></div></div>
+</div>
+<div class="s7r"><div class="ab"><h4 data-t="al">Manufacturer Address</h4><p data-t="av">1211-ho, Kranz Techno<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do, Korea</p></div><div class="ab"><h4 data-t="ml">MFDS License</h4><p data-t="mv">Manufacturing License No. <strong>6044</strong><br>Product License No. <strong>22-156</strong></p></div><div class="lb2"><h4>FDA Registration</h4><p>Establishment Registration &amp; Device Listing<br>510(k): <strong>K212561</strong></p></div></div>
+</div><div class="sf"><div><span class="sfl">BRITZMEDI</span> · COMPANY</div><div>08 / 09</div></div></section>
+
+<!-- P8 CONTACT -->
+<section class="sl s8" id="s8"><div class="si">
+<div class="s8l"><div class="lbl" data-t="ctl">Partnership &amp; Contact</div>
+<h2 class="h2" data-t="cth">Bring TORR RF to your market.</h2>
+<p class="s8d" data-t="ctd">We work with exclusive distributors who can lead regulatory registration and market development in their territory. Full documentation, training, and clinical support provided.</p>
+<div class="cir">
+<div class="cr"><span class="cl">Email</span><span class="cv">sh.lee@britzmedi.com</span></div>
+<div class="cr"><span class="cl" data-t="ctr">Response</span><span class="cv" data-t="ctrv">Within 24 hours</span></div>
+<div class="cr"><span class="cl" data-t="cthr">Hours</span><span class="cv" data-t="cthrv">Mon–Fri · 9:00–18:00 KST</span></div>
+<div class="cr"><span class="cl">Web</span><span class="cv">www.britzmedi.com</span></div>
+</div></div>
+<div class="s8r"><div class="s8m"><div class="lg">TORR RF</div><div class="co">BRITZMEDI CO., LTD.</div><div class="pr">TORR RF · ULBLANC · NEWCHAE</div><div class="cp">© 2026 BRITZMEDI Co., Ltd.<br>All rights reserved.</div></div></div>
+</div><div class="sf"><div><span class="sfl">TORR RF</span> · PARTNERSHIP &amp; CONTACT</div><div>09 / 09</div></div></section>
+
+<script>
+const D={en:{cs:"Product Brochure · 2026",cd:"A non-invasive radiofrequency medical device for skin tightening and body contouring. Powered by proprietary toroidal multipolar technology — the third generation of RF.",cq:'"Third-generation RF. Precision without compromise."',ol:"What is TORR RF",ot:"Toroidal Multipolar RF. Made in Korea.",o1:"TORR RF is a professional aesthetic medical device that delivers multi-wave radiofrequency energy through a patented toroidal electrode array. Unlike conventional monopolar or bipolar systems, the toroidal architecture creates a 3D electromagnetic field — enabling uniform energy distribution across multiple tissue depths simultaneously.",o2:'The <strong>Smart Combination</strong> system integrates monopolar-grade deep penetration (5–15mm) and bipolar-grade surface precision (2.5–5mm) into a single handpiece. Clinicians switch between Deep Mode and Low Mode to target everything from subdermal fat to superficial fine lines — without changing handpieces, without cooling systems, without grounding pads.',o3:'Designed and manufactured by BRITZMEDI in Seongnam, Korea. US FDA 510(k) cleared (K212561), MFDS Class III licensed (No. 22-156), ISO 13485:2016 certified, GMP compliant. <strong>Zero consumables</strong> — no cartridges, no tips, no recurring costs.',sh:"Handpieces",sp:"Max Power",sps:"Low power, high efficacy",sd:"Max Depth",sds:"No cooling needed",sn:"Consumables",sns:"Zero recurring cost",tl:"Core Technology",tt:"Smart Combination.<br>Two modes, one handpiece.",ti:"The toroidal multipolar electrode array enables dual-mode operation — combining monopolar-grade deep penetration with bipolar-grade surface precision. No cooling system. No grounding pad.",dT:"Deep Mode — Monopolar Path",dD:"Target: 5–15mm+ (subdermal to fat)",dP:"Long-path current flows between distant ring electrodes. Deep tightening, lifting, localized fat reduction, submental contouring.",lT:"Low Mode — Bipolar Path",lD:"Target: 2.5–5mm (superficial to mid-dermis)",lP:"Short-path current between adjacent ring electrodes. Fine wrinkles, pore refinement, texture improvement, collagen remodeling.",el:"RF Technology Evolution",g1:"Bipolar RF",g1d:"Shallow 1–4mm. TriPollar, Venus Legacy",g2:"Monopolar RF",g2d:"Deep but dispersive. Thermage, BTL Exilis",g25:"Monopolar + Ultrasound",g25d:"Cooling-dependent. BTL Exilis Ultra 360",g3:"Toroidal Multipolar",g3d:"3D field. No cooling, no pad. TORR RF",hl:"Multiple Applicators",ht:"Three handpieces. Full coverage.",hs:"Each handpiece delivers optimal volumetric thermal heating to different target depths from 1.5mm to 10mm.",hft:"Facial",hfn:"Face",hbt:"Body",hbn:"Body",het:"Periorbital",hen:"Eye",hfd:"The primary handpiece for full-face treatments. Toroidal electrode array with 40mm contact area delivers uniform RF energy for skin tightening, wrinkle reduction, and jawline contouring.",hbd:"The largest handpiece with patented auto circular motion head. 50mm electrode covers abdomen, flanks, thighs, and arms. Deep mode reaches up to 10mm for fat reduction and cellulite.",hed:"Precision-engineered micro handpiece for the delicate periorbital area. 20mm electrode enables safe, targeted treatment around eyes — where most RF devices cannot reach.",hsz:"Size",hdp:"Depth",hwt:"Weight",fl:"Key Features",ft:"Five technologies in every treatment.",f1t:"Auto Circular Motion Head",f1d:"Patented automatic circular motion enhances operator convenience and patient comfort on large treatment areas.",f2t:"Real-Time Temperature Control",f2d:"Continuous skin temperature monitoring ensures uniform, safe energy delivery with adjustable settings.",f3t:"Selectable Penetration Depth",f3d:"Dual depth options via Smart Combination allow tailored treatment by indication and patient condition.",f4t:"Multi-Pulse Mode",f4d:"Controlled pulse intervals with low individual energy enable safe thermal accumulation for effective delivery.",f5t:"Vibro-Comfort Mode",f5d:"Minimized direct heat sensation through vibration enhances patient comfort during treatment.",xl:"Technical Specifications",xt:"Built to clinical standards.",xn:"Product Name",xm:"Model",xc:"Classification",xcv:"Class III Medical Device (MFDS)",xe:"Electrode",xev:"Toroidal Multipolar (CH1/CH2/CH3)",xf:"Frequency",xp:"Power",xr:"Depth Range",xd:"Display",xi:"Input",xo:"Cooling",xov:"Not required",xs:"Consumables",xsv:"None",ct:"Global Certifications",cm:"License 22-156",cg:"MFDS Certified",pl:"Patents",pd:"11 registered patents including RF thermal systems and segmented electrode designs. 1 international patent. 6 additional pending.",cl:"The Company Behind TORR RF",ctt:"A Korean medical device maker, by design.",cdd:"BRITZMEDI Co., Ltd. specializes in advanced aesthetic and skin care technologies. Built on years of precision engineering experience, we design and manufacture devices that combine clinical performance with thoughtful, user-centered design. Full in-house R&D, manufacturing, QA, and after-sales support.",cf:"Founded",cp:"Patents",ctm:"Trademarks",crr:"Registered",al:"Manufacturer Address",av:"1211-ho, Kranz Techno<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do, Korea",ml:"MFDS License",mv:'Manufacturing License No. <strong>6044</strong><br>Product License No. <strong>22-156</strong>',ctl:"Partnership & Contact",cth:"Bring TORR RF to your market.",ctd:"We work with exclusive distributors who can lead regulatory registration and market development in their territory. Full documentation, training, and clinical support provided.",ctr:"Response",ctrv:"Within 24 hours",cthr:"Hours",cthrv:"Mon–Fri · 9:00–18:00 KST",pm:"Generating PDF…",clL:"Clinical Evidence",clT:"Proven results across all treatment areas.",clS:"Before and after clinical photographs. Results may vary by individual.",clFace:"Face — Jawline & V-Line",clFaceD:"Before tx → After 3rd treatment",clNaso:"Face — Nasolabial Fold",clNasoD:"Before tx → After 2nd treatment",clEye:"Eye — Periorbital Wrinkles",clEyeD:"Before tx → After 2nd treatment",clBody:"Body — Abdominal Contouring",clBodyD:"Before tx → After 5th treatment",clTempT:"Real-Time Temperature Control",clTempD:"Skin surface temperature reaches target (41–42°C) within 1 minute and maintains stable plateau throughout treatment.",clThrmT:"Uniform Thermal Distribution",clThrmD:"Thermal imaging at 1, 3, 5, and 7 minutes shows progressive, uniform heating — characteristic of toroidal multipolar RF."},
+ko:{cs:"제품 브로셔 · 2026",cd:"비침습 고주파 에너지를 활용한 피부 타이트닝 및 바디 컨투어링 의료기기. 독자 개발 토로이달 멀티폴라 기술 — 제3세대 RF.",cq:'"3세대 RF. 타협 없는 정밀함."',ol:"TORR RF란",ot:"토로이달 멀티폴라 RF. 대한민국 제조.",o1:"TORR RF는 특허 등록된 토로이달 전극 배열을 통해 멀티웨이브 고주파 에너지를 전달하는 전문 미용 의료기기입니다. 기존의 모노폴라·바이폴라 시스템과 달리 토로이달 구조가 3D 전자기장을 형성하여 여러 조직 깊이에 균일한 에너지를 동시에 전달합니다.",o2:'<strong>스마트 컴비네이션</strong> 시스템이 모노폴라급 심부 침투(5–15mm)와 바이폴라급 표면 정밀도(2.5–5mm)를 단일 핸드피스에 통합합니다. 딥 모드와 로우 모드를 전환하여 피하지방부터 표면 잔주름까지 — 핸드피스 교체 없이, 쿨링 없이, 접지패드 없이 시술합니다.',o3:'BRITZMEDI가 성남에서 설계·제조. US FDA 510(k)(K212561), 식약처 3등급 허가(제허 22-156호), ISO 13485:2016 인증, GMP 적합. <strong>소모품 제로</strong> — 카트리지, 팁, 추가 비용 없음.',sh:"핸드피스",sp:"최대 출력",sps:"저출력, 고효율",sd:"최대 깊이",sds:"쿨링 불필요",sn:"소모품",sns:"추가 비용 제로",tl:"핵심 기술",tt:"스마트 컴비네이션.<br>두 가지 모드, 하나의 핸드피스.",ti:"토로이달 멀티폴라 전극이 이중 모드 작동을 구현 — 모노폴라급 심부 침투와 바이폴라급 표면 정밀도를 결합. 쿨링·접지패드 불필요.",dT:"딥 모드 — 모노폴라 경로",dD:"타겟: 5–15mm+ (진피하~지방층)",dP:"원거리 링 전극 간 장경로 전류. 심부 타이트닝, 리프팅, 국소 지방 감소.",lT:"로우 모드 — 바이폴라 경로",lD:"타겟: 2.5–5mm (표피~중진피)",lP:"인접 링 전극 간 단경로 전류. 잔주름, 모공·피부결 개선, 콜라겐 리모델링.",el:"RF 기술 진화",g1:"바이폴라 RF",g1d:"얕은 1–4mm",g2:"모노폴라 RF",g2d:"깊지만 분산",g25:"모노폴라 + 초음파",g25d:"쿨링 의존",g3:"토로이달 멀티폴라",g3d:"3D 필드. 쿨링·패드 불필요. TORR RF",hl:"다중 어플리케이터",ht:"3종 핸드피스. 전 부위 대응.",hs:"각 핸드피스는 1.5mm~10mm 깊이에 최적화되어 있습니다.",hft:"안면부",hfn:"페이스",hbt:"신체부",hbn:"바디",het:"눈 주위",hen:"아이",hfd:"풀페이스 시술을 위한 주력 핸드피스. 40mm 토로이달 전극이 피부 타이트닝, 주름 개선, 턱라인 컨투어링에 균일한 RF 에너지를 전달합니다.",hbd:"특허 자동 원형 모션 헤드를 장착한 최대형 핸드피스. 50mm 전극으로 복부, 옆구리, 허벅지, 팔을 커버. 딥 모드 10mm까지 지방 감소와 셀룰라이트에 효과적.",hed:"섬세한 눈가 시술을 위한 정밀 마이크로 핸드피스. 20mm 전극으로 대부분의 RF 기기가 도달할 수 없는 눈 주위를 안전하고 정확하게 시술.",hsz:"시술 면적",hdp:"깊이",hwt:"무게",fl:"핵심 기능",ft:"모든 시술에 적용되는 5가지 기술.",f1t:"자동 원형 모션 헤드",f1d:"특허 자동 원형 모션이 넓은 시술 부위에서 편의와 편안함을 높입니다.",f2t:"실시간 온도 제어",f2d:"지속적 피부 온도 모니터링으로 균일·안전한 에너지 전달.",f3t:"선택적 침투 깊이",f3d:"스마트 컴비네이션의 이중 깊이로 맞춤 시술.",f4t:"멀티 펄스 모드",f4d:"제어된 펄스 간격과 낮은 에너지로 안전한 열 축적.",f5t:"바이브로 컴포트 모드",f5d:"진동으로 직접 열감을 최소화하여 편안한 시술.",xl:"기술 사양",xt:"임상 기준에 부합하는 설계.",xn:"제품명",xm:"모델명",xc:"분류",xcv:"3등급 의료기기 (식약처)",xe:"전극",xev:"토로이달 멀티폴라 (CH1/CH2/CH3)",xf:"주파수",xp:"출력",xr:"깊이 범위",xd:"디스플레이",xi:"입력 전원",xo:"쿨링",xov:"불필요",xs:"소모품",xsv:"없음",ct:"글로벌 인증",cm:"제허 22-156호",cg:"식약처 GMP",pl:"특허",pd:"RF 열 시스템·분할 전극 포함 등록 특허 11건, 국제 특허 1건, 출원 6건.",cl:"TORR RF의 제조사",ctt:"의료기기 제조사로서의 기술력.",cdd:"브리츠메디는 첨단 미용·피부 기술 전문 기업입니다. 정밀 엔지니어링 경험으로 임상 성능과 사용자 중심 설계를 결합한 의료기기를 설계·제조합니다. R&D부터 사후 서비스까지 전 과정 자체 수행.",cf:"설립",cp:"등록 특허",ctm:"상표",crr:"등록",al:"제조사 주소",av:"대한민국 경기도 성남시 중원구<br>둔촌대로 388, 크란츠테크노 1211호",ml:"식약처 허가",mv:'제조업허가 제<strong>6044</strong>호<br>제품허가 제허<strong>22-156</strong>호',ctl:"파트너십 및 문의",cth:"귀사의 시장에 TORR RF를 소개하세요.",ctd:"규제 인허가와 시장 개발을 주도할 독점 유통 파트너를 찾습니다. 모든 문서·교육·임상 지원 제공.",ctr:"응답",ctrv:"24시간 이내",cthr:"업무시간",cthrv:"월–금 · 09:00–18:00 KST",pm:"PDF 생성 중…",clL:"임상 결과",clT:"전 시술 부위에서 입증된 효과.",clS:"시술 전후 임상 사진입니다. 개인에 따라 결과가 다를 수 있습니다.",clFace:"안면부 — 턱라인 & V라인",clFaceD:"시술 전 → 3회 시술 후",clNaso:"안면부 — 팔자주름",clNasoD:"시술 전 → 2회 시술 후",clEye:"눈 주위 — 눈가 주름",clEyeD:"시술 전 → 2회 시술 후",clBody:"바디 — 복부 컨투어링",clBodyD:"시술 전 → 5회 시술 후",clTempT:"실시간 온도 제어",clTempD:"피부 표면 온도가 1분 이내에 목표 온도(41–42°C)에 도달하고, 시술 내내 안정적으로 유지됩니다.",clThrmT:"균일한 열 분포",clThrmD:"1, 3, 5, 7분 시점의 열화상으로 점진적이고 균일한 가열 패턴 확인 — 토로이달 멀티폴라 RF의 특징."},
+ja:{cs:"製品ブロシュア · 2026",cd:"非侵襲的高周波によるスキンタイトニング・ボディコンタリング医療機器。独自のトロイダルマルチポーラ（CH1/CH2/CH3）技術 — 第3世代RF。",cq:'"第3世代RF。妥協なき精密さ。"',ol:"TORR RFとは",ot:"トロイダルマルチポーラRF。韓国製。",o1:"TORR RFは、特許取得済みのトロイダル電極アレイを通じてマルチウェーブ高周波エネルギーを照射するプロフェッショナル美容医療機器です。従来のモノポーラ・バイポーラシステムとは異なり、トロイダル構造が3D電磁場を形成し、複数の組織深度に均一なエネルギーを同時に照射します。",o2:'<strong>スマートコンビネーション</strong>がモノポーラ級深部浸透（5–15mm）とバイポーラ級表面精度（2.5–5mm）を1ハンドピースに統合。ディープ/ローモード切替で皮下脂肪から表面小じわまで — ハンドピース交換・冷却・接地パッド不要。',o3:'韓国BRITZMEDIが設計・製造。US FDA 510(k)認可（K212561）、MFDSクラスIII許可（22-156号）、ISO 13485:2016認証取得。<strong>消耗品ゼロ</strong> — カートリッジ、チップ、追加コスト一切なし。',sh:"ハンドピース",sp:"最大出力",sps:"低出力・高効果",sd:"最大深度",sds:"冷却不要",sn:"消耗品",sns:"コストゼロ",tl:"コア技術",tt:"スマートコンビネーション。<br>2モード、1ハンドピース。",ti:"トロイダル電極でデュアルモード — モノポーラ級深部とバイポーラ級表面精度を融合。冷却・接地パッド不要。",dT:"ディープモード — モノポーラ経路",dD:"ターゲット: 5–15mm+（皮下～脂肪層）",dP:"遠距離リング電極間の長経路電流。深部タイトニング、リフティング。",lT:"ローモード — バイポーラ経路",lD:"ターゲット: 2.5–5mm（表層～中真皮）",lP:"隣接電極間の短経路。小じわ、毛穴、肌質改善。",el:"RF技術の進化",g1:"バイポーラRF",g1d:"浅い1–4mm",g2:"モノポーラRF",g2d:"深いが分散",g25:"モノポーラ＋超音波",g25d:"冷却依存",g3:"トロイダルマルチポーラ",g3d:"3Dフィールド。冷却・パッド不要。TORR RF",hl:"マルチアプリケーター",ht:"3種ハンドピース。完全カバレッジ。",hs:"各ハンドピースは1.5mm〜10mmに最適化。",hft:"顔面部",hfn:"フェイス",hbt:"ボディ部",hbn:"ボディ",het:"眼周囲",hen:"アイ",hfd:"フルフェイス施術用メインハンドピース。40mmトロイダル電極がスキンタイトニング、しわ改善、ジョーラインコンタリングに均一RF照射。",hbd:"特許自動サーキュラーモーションヘッド搭載の最大ハンドピース。50mm電極で腹部・脇腹・太もも・腕をカバー。ディープモード10mmで脂肪減少に。",hed:"デリケートな眼周囲用精密マイクロハンドピース。20mm電極で多くのRF機器が届かない目元を安全に施術。",hsz:"面積",hdp:"深度",hwt:"重量",fl:"主要機能",ft:"すべての施術に5つの技術。",f1t:"自動サーキュラーモーション",f1d:"特許自動円運動で利便性と快適性を向上。",f2t:"リアルタイム温度制御",f2d:"皮膚温度モニタリングで均一・安全な照射。",f3t:"選択可能な浸透深度",f3d:"デュアル深度でカスタマイズ施術。",f4t:"マルチパルスモード",f4d:"制御パルスで安全な熱蓄積。",f5t:"バイブロコンフォートモード",f5d:"振動で熱感を最小化。",xl:"技術仕様",xt:"臨床基準に準拠した設計。",xn:"製品名",xm:"モデル",xc:"分類",xcv:"クラスIII（MFDS）",xe:"電極",xev:"トロイダルマルチポーラ",xf:"周波数",xp:"出力",xr:"深度範囲",xd:"ディスプレイ",xi:"入力電源",xo:"冷却",xov:"不要",xs:"消耗品",xsv:"なし",ct:"グローバル認証",cm:"韓国許可 22-156号",cg:"MFDS GMP",pl:"特許",pd:"RF熱システム・分割電極含む登録11件、国際1件、出願6件。",cl:"TORR RFを開発した企業",ctt:"韓国発、医療機器メーカーの設計思想。",cdd:"BRITZMEDI Co., Ltd.は美容・スキンケア技術を専門とする韓国の医療機器メーカーです。精密エンジニアリングの経験を基に、臨床性能とユーザー中心設計を融合した機器を開発・製造。R&Dからアフターサービスまで全工程を自社で対応しています。",cf:"設立",cp:"特許",ctm:"商標",crr:"登録",al:"製造元所在地",av:"韓国 京畿道 城南市 中院区<br>屯村大路 388, クランツテクノ 1211号",ml:"MFDS許可",mv:'製造業許可 第<strong>6044</strong>号<br>製品許可 第<strong>22-156</strong>号',ctl:"パートナーシップ＆お問い合わせ",cth:"貴社の市場にTORR RFを。",ctd:"規制登録と市場開発をリードできる独占販売パートナーを探しています。すべてのドキュメント、トレーニング、臨床サポートを提供いたします。",ctr:"応答",ctrv:"24時間以内",cthr:"営業時間",cthrv:"月～金 · 9:00–18:00 KST",pm:"PDF生成中…",clL:"臨床エビデンス",clT:"全施術部位で実証された効果。",clS:"施術前後の臨床写真です。結果には個人差があります。",clFace:"フェイス — ジョーライン＆Vライン",clFaceD:"施術前 → 3回施術後",clNaso:"フェイス — ほうれい線",clNasoD:"施術前 → 2回施術後",clEye:"アイ — 眼周囲のしわ",clEyeD:"施術前 → 2回施術後",clBody:"ボディ — 腹部コンタリング",clBodyD:"施術前 → 5回施術後",clTempT:"リアルタイム温度制御",clTempD:"皮膚表面温度が1分以内にターゲット温度に到達し、施術中安定的に維持。",clThrmT:"均一な熱分布",clThrmD:"1, 3, 5, 7分時点のサーモグラフィで均一な加熱パターンを確認。"}
+};
+let lang='en';
+function setLang(l){lang=l;document.documentElement.lang=l;document.querySelectorAll('.lb').forEach(b=>b.classList.toggle('on',b.textContent.trim()===l.toUpperCase()));const s=D[l];if(!s)return;document.querySelectorAll('[data-t]').forEach(el=>{const k=el.getAttribute('data-t');if(s[k]!=null)el.innerHTML=s[k]})}
+async function mkPDF(){const b=document.getElementById('pB'),o=document.getElementById('pov');b.disabled=true;o.classList.add('on');try{const{jsPDF}=window.jspdf;const p=new jsPDF({orientation:'landscape',unit:'px',format:[1280,720]});const ss=document.querySelectorAll('.sl');for(let i=0;i<ss.length;i++){const c=await html2canvas(ss[i],{scale:2,useCORS:true,backgroundColor:null});if(i>0)p.addPage([1280,720],'landscape');p.addImage(c.toDataURL('image/jpeg',.92),'JPEG',0,0,1280,720)}p.save(`TORR_RF_Brochure_${lang.toUpperCase()}_2026.pdf`)}catch(e){console.error(e);alert('PDF failed.')}finally{b.disabled=false;o.classList.remove('on')}}
+</script>
+</body>
+</html>

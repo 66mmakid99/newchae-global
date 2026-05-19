@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TORR RF — Technology Evidence | BRITZMEDI</title>
+<meta name="description" content="Toroidal Multipolar RF technology evidence brief and design system. Download clinical documentation for TORR RF by BRITZMEDI.">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .tech-hero {
+    padding: 140px 0 80px;
+    background: #141e2b;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .tech-hero::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(196,149,106,0.04);
+  }
+  .tech-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: rgba(196,149,106,0.03);
+  }
+  .tech-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+  .tech-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #c4956a;
+    margin-bottom: 20px;
+  }
+  .tech-hero h1 {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    max-width: 700px;
+  }
+  .tech-hero .lead {
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.45);
+    max-width: 600px;
+    margin-bottom: 32px;
+  }
+  .tech-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .tech-badge {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 5px 14px;
+    border: 1px solid rgba(196,149,106,0.25);
+    border-radius: 20px;
+    color: #d4aa82;
+  }
+
+  .lang-bar {
+    background: #1c2a3a;
+    border-bottom: 1px solid rgba(196,149,106,0.1);
+    padding: 12px 0;
+    position: sticky;
+    top: 56px;
+    z-index: 100;
+  }
+  .lang-bar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .lang-bar .label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.04em;
+  }
+  .lang-btns {
+    display: flex;
+    gap: 4px;
+  }
+  .lang-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.4);
+    padding: 4px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font: 500 11px/1 'Inter', sans-serif;
+    transition: all 0.25s;
+  }
+  .lang-btn:hover {
+    border-color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.7);
+  }
+  .lang-btn.on {
+    background: rgba(196,149,106,0.2);
+    border-color: #c4956a;
+    color: #d4aa82;
+  }
+
+  .downloads-section {
+    padding: 80px 0 100px;
+  }
+  .downloads-header {
+    margin-bottom: 48px;
+  }
+  .downloads-header h2 {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .downloads-header .sub {
+    font-size: 14px;
+    color: var(--soft-graphite);
+    line-height: 1.7;
+  }
+
+  .dl-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 960px;
+  }
+  .dl-card {
+    background: var(--warm-ivory);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
+  }
+  .dl-card:hover {
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+  }
+  .dl-card-icon {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .dl-card-icon.pdf-bg {
+    background: linear-gradient(135deg, #141e2b 0%, #1c2a3a 100%);
+  }
+  .dl-card-icon.pptx-bg {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+  .dl-card-icon .file-icon {
+    width: 64px;
+    height: 80px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+  }
+  .dl-card-icon .file-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    background: rgba(255,255,255,0.12);
+    border-bottom-left-radius: 4px;
+  }
+  .file-ext {
+    font: 700 14px/1 'Inter', sans-serif;
+    letter-spacing: 0.04em;
+    margin-top: 4px;
+  }
+  .file-ext.pdf { color: #e74c3c; }
+  .file-ext.pptx { color: #e67e22; }
+  .file-size-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    font: 500 10px/1 'Inter', sans-serif;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.04em;
+  }
+
+  .dl-card-body {
+    padding: 28px 24px 32px;
+  }
+  .dl-card-type {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c4956a;
+    margin-bottom: 12px;
+  }
+  .dl-card-body h3 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .dl-card-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--soft-graphite);
+    margin-bottom: 20px;
+  }
+  .dl-card-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .dl-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 4px 10px;
+    background: var(--sand-mist);
+    border-radius: 3px;
+    color: var(--soft-graphite);
+  }
+  .dl-tag.format {
+    background: #141e2b;
+    color: #d4aa82;
+  }
+  .dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #141e2b;
+    color: #d4aa82;
+    border: none;
+    border-radius: 3px;
+    font: 600 12px/1 'Inter', sans-serif;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .dl-btn:hover {
+    background: #c4956a;
+    color: #fff;
+  }
+  .dl-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .tech-context {
+    padding: 80px 0;
+    background: var(--warm-ivory);
+    border-top: 1px solid var(--sand-mist);
+  }
+  .ctx-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    max-width: 960px;
+  }
+  .ctx-block h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .ctx-block p {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--soft-graphite);
+  }
+  .ctx-block .ctx-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #c4956a;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .ctx-block .ctx-link:hover {
+    gap: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .tech-hero { padding: 100px 0 60px; }
+    .dl-grid { grid-template-columns: 1fr; }
+    .ctx-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <a href="index.html" class="logo">BRITZMEDI</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Products</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="partnership.html">Partnership</a></li>
+        <li><a href="partnership.html#contact" class="contact-btn">Contact ↗</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="tech-hero">
+  <div class="container">
+    <div class="tech-eyebrow">TORR RF · Technology Documentation</div>
+    <h1 data-t="heroTitle">Toroidal Multipolar RF.<br>The science behind it.</h1>
+    <p class="lead" data-t="heroLead">Technical evidence briefs and design documentation for TORR RF's proprietary toroidal multipolar radiofrequency technology — the third generation of aesthetic RF. This is the core technology behind both TORR RF (clinical) and NEWCHAE (home-use).</p>
+    <div class="tech-badges">
+      <span class="tech-badge">Toroidal RF</span>
+      <span class="tech-badge">US FDA 510(k)</span>
+      <span class="tech-badge">11 Patents</span>
+      <span class="tech-badge">Smart Combination</span>
+    </div>
+  </div>
+</section>
+
+<div class="lang-bar">
+  <div class="container">
+    <span class="label" data-t="langLabel">Select language for page content</span>
+    <div class="lang-btns">
+      <button class="lang-btn on" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('ko')">KO</button>
+      <button class="lang-btn" onclick="setLang('ja')">JA</button>
+    </div>
+  </div>
+</div>
+
+<section class="downloads-section">
+  <div class="container">
+    <div class="downloads-header">
+      <h2 data-t="dlTitle">Download Technology Documents</h2>
+      <p class="sub" data-t="dlSub">Clinical evidence, technology principles, and design documentation for TORR RF's toroidal multipolar RF platform.</p>
+    </div>
+
+    <div class="dl-grid">
+
+      <div class="dl-card">
+        <div class="dl-card-icon pdf-bg">
+          <div class="file-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" width="28" height="28"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span class="file-ext pdf">PDF</span>
+          </div>
+          <span class="file-size-badge">809 KB</span>
+        </div>
+        <div class="dl-card-body">
+          <div class="dl-card-type" data-t="doc1Type">Technology Evidence Brief</div>
+          <h3 data-t="doc1Title">TORR RF — Technology Evidence Brief 2026</h3>
+          <p class="dl-card-desc" data-t="doc1Desc">Comprehensive technical documentation covering the principles of toroidal multipolar RF, clinical evidence, mechanism of action, Smart Combination dual-mode operation, and comparative analysis with conventional RF technologies.</p>
+          <div class="dl-card-tags">
+            <span class="dl-tag format">PDF</span>
+            <span class="dl-tag" data-t="tagEvidence">Clinical Evidence</span>
+            <span class="dl-tag" data-t="tagMechanism">Mechanism of Action</span>
+            <span class="dl-tag" data-t="tagComparative">Comparative Analysis</span>
+          </div>
+          <a href="torr-docs/TORR_RF_Technology_Evidence_Brief_2026.pdf" download class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-t="btnDownload">Download PDF</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="dl-card">
+        <div class="dl-card-icon pptx-bg">
+          <div class="file-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" width="28" height="28"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span class="file-ext pptx">PPTX</span>
+          </div>
+          <span class="file-size-badge">22 MB</span>
+        </div>
+        <div class="dl-card-body">
+          <div class="dl-card-type" data-t="doc2Type">Design System</div>
+          <h3 data-t="doc2Title">TORR RF Design System</h3>
+          <p class="dl-card-desc" data-t="doc2Desc">Visual design system and presentation deck for TORR RF. Includes product photography, technical diagrams, toroidal electrode illustrations, handpiece specifications, and clinical result imagery for distributor and marketing use.</p>
+          <div class="dl-card-tags">
+            <span class="dl-tag format">PPTX</span>
+            <span class="dl-tag" data-t="tagDesign">Design Assets</span>
+            <span class="dl-tag" data-t="tagPresentation">Presentation</span>
+            <span class="dl-tag" data-t="tagDistributor">For Distributors</span>
+          </div>
+          <a href="torr-docs/TORR_RF_Design_System.pptx" download class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-t="btnDownloadPptx">Download PPTX</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="tech-context">
+  <div class="container">
+    <div class="ctx-grid">
+      <div class="ctx-block">
+        <h3 data-t="ctxTorrTitle">TORR RF — Clinical Device</h3>
+        <p data-t="ctxTorrDesc">The professional-grade toroidal multipolar RF device for clinics. Three handpieces (Face, Body, Eye) with Smart Combination dual-mode operation. US FDA 510(k) cleared.</p>
+        <a href="torr-rf.html" class="ctx-link"><span data-t="ctxTorrLink">View Product Brochure</span> →</a>
+      </div>
+      <div class="ctx-block">
+        <h3 data-t="ctxNewchaeTitle">NEWCHAE — Home-Use Device</h3>
+        <p data-t="ctxNewchaeDesc">TORR RF's toroidal technology adapted for home use. RF, EMS, and ELP in a single device — bringing clinical-grade skin treatment to daily skincare routines.</p>
+        <a href="brochure.html" class="ctx-link"><span data-t="ctxNewchaeLink">View Sales Brochure</span> →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">BRITZMEDI</div>
+        <p class="footer-address">
+          BRITZMEDI Co., Ltd.<br>
+          1211-ho, Kranz Techno<br>
+          388 Dunchon-daero, Jungwon-gu<br>
+          Seongnam-si, Gyeonggi-do<br>
+          Republic of Korea
+        </p>
+      </div>
+      <div class="footer-contact">
+        <h4>Global Inquiry</h4>
+        <p>sh.lee@britzmedi.com</p>
+        <p>+82-70-XXXX-XXXX</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-certs">
+        <span>KC</span><span>·</span><span>CE</span><span>·</span><span>FCC</span><span>·</span><span>ISO 13485</span>
+      </div>
+      <div>© 2026 BRITZMEDI Co., Ltd.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const D = {
+  en: {
+    heroTitle: 'Toroidal Multipolar RF.<br>The science behind it.',
+    heroLead: "Technical evidence briefs and design documentation for TORR RF's proprietary toroidal multipolar radiofrequency technology — the third generation of aesthetic RF. This is the core technology behind both TORR RF (clinical) and NEWCHAE (home-use).",
+    langLabel: 'Select language for page content',
+    dlTitle: 'Download Technology Documents',
+    dlSub: "Clinical evidence, technology principles, and design documentation for TORR RF's toroidal multipolar RF platform.",
+    doc1Type: 'Technology Evidence Brief',
+    doc1Title: 'TORR RF — Technology Evidence Brief 2026',
+    doc1Desc: 'Comprehensive technical documentation covering the principles of toroidal multipolar RF, clinical evidence, mechanism of action, Smart Combination dual-mode operation, and comparative analysis with conventional RF technologies.',
+    doc2Type: 'Design System',
+    doc2Title: 'TORR RF Design System',
+    doc2Desc: 'Visual design system and presentation deck for TORR RF. Includes product photography, technical diagrams, toroidal electrode illustrations, handpiece specifications, and clinical result imagery for distributor and marketing use.',
+    tagEvidence: 'Clinical Evidence',
+    tagMechanism: 'Mechanism of Action',
+    tagComparative: 'Comparative Analysis',
+    tagDesign: 'Design Assets',
+    tagPresentation: 'Presentation',
+    tagDistributor: 'For Distributors',
+    btnDownload: 'Download PDF',
+    btnDownloadPptx: 'Download PPTX',
+    ctxTorrTitle: 'TORR RF — Clinical Device',
+    ctxTorrDesc: 'The professional-grade toroidal multipolar RF device for clinics. Three handpieces (Face, Body, Eye) with Smart Combination dual-mode operation. US FDA 510(k) cleared.',
+    ctxTorrLink: 'View Product Brochure',
+    ctxNewchaeTitle: 'NEWCHAE — Home-Use Device',
+    ctxNewchaeDesc: "TORR RF's toroidal technology adapted for home use. RF, EMS, and ELP in a single device — bringing clinical-grade skin treatment to daily skincare routines.",
+    ctxNewchaeLink: 'View Sales Brochure'
+  },
+  ko: {
+    heroTitle: '토로이달 멀티폴라 RF.<br>기술의 근거.',
+    heroLead: 'TORR RF의 독자 개발 토로이달 멀티폴라 고주파 기술에 대한 기술 근거 자료 및 디자인 문서입니다. 제3세대 미용 RF의 핵심 기술로, TORR RF(의료용)와 NEWCHAE(홈케어) 모두에 적용된 원천 기술입니다.',
+    langLabel: '페이지 언어 선택',
+    dlTitle: '기술 자료 다운로드',
+    dlSub: 'TORR RF 토로이달 멀티폴라 RF 플랫폼의 임상 근거, 기술 원리, 디자인 문서를 다운로드하세요.',
+    doc1Type: '기술 근거 자료',
+    doc1Title: 'TORR RF — 기술 근거 자료 2026',
+    doc1Desc: '토로이달 멀티폴라 RF의 원리, 임상 근거, 작용 기전, 스마트 컴비네이션 이중 모드 작동, 기존 RF 기술 대비 비교 분석을 포함한 종합 기술 문서입니다.',
+    doc2Type: '디자인 시스템',
+    doc2Title: 'TORR RF 디자인 시스템',
+    doc2Desc: 'TORR RF의 비주얼 디자인 시스템 및 프레젠테이션 덱. 제품 사진, 기술 다이어그램, 토로이달 전극 일러스트, 핸드피스 스펙, 임상 결과 이미지를 포함하며 디스트리뷰터 및 마케팅 용도로 활용 가능합니다.',
+    tagEvidence: '임상 근거',
+    tagMechanism: '작용 기전',
+    tagComparative: '비교 분석',
+    tagDesign: '디자인 자산',
+    tagPresentation: '프레젠테이션',
+    tagDistributor: '디스트리뷰터용',
+    btnDownload: 'PDF 다운로드',
+    btnDownloadPptx: 'PPTX 다운로드',
+    ctxTorrTitle: 'TORR RF — 의료용 기기',
+    ctxTorrDesc: '클리닉 전용 토로이달 멀티폴라 RF 의료기기. 3종 핸드피스(페이스, 바디, 아이)와 스마트 컴비네이션 이중 모드. US FDA 510(k) 인허가.',
+    ctxTorrLink: '제품 브로슈어 보기',
+    ctxNewchaeTitle: 'NEWCHAE — 홈케어 디바이스',
+    ctxNewchaeDesc: 'TORR RF의 토로이달 기술을 홈케어로 적용. RF, EMS, ELP 3가지 모드를 하나의 디바이스에 — 클리닉 수준의 피부 관리를 일상으로.',
+    ctxNewchaeLink: '영업 브로슈어 보기'
+  },
+  ja: {
+    heroTitle: 'トロイダルマルチポーラRF。<br>その科学的根拠。',
+    heroLead: 'TORR RFの独自トロイダルマルチポーラ高周波技術に関する技術エビデンスとデザインドキュメント。第3世代美容RFのコア技術であり、TORR RF（医療用）とNEWCHAE（ホームユース）両方に搭載されています。',
+    langLabel: 'ページ言語を選択',
+    dlTitle: '技術資料ダウンロード',
+    dlSub: 'TORR RFトロイダルマルチポーラRFプラットフォームの臨床エビデンス、技術原理、デザインドキュメントをダウンロード。',
+    doc1Type: '技術エビデンス',
+    doc1Title: 'TORR RF — 技術エビデンスブリーフ 2026',
+    doc1Desc: 'トロイダルマルチポーラRFの原理、臨床エビデンス、作用機序、スマートコンビネーションデュアルモード、従来RF技術との比較分析を網羅した包括的技術ドキュメント。',
+    doc2Type: 'デザインシステム',
+    doc2Title: 'TORR RF デザインシステム',
+    doc2Desc: 'TORR RFのビジュアルデザインシステムおよびプレゼンテーションデッキ。製品写真、技術ダイアグラム、トロイダル電極イラスト、ハンドピース仕様、臨床結果画像を収録。ディストリビューターおよびマーケティング用。',
+    tagEvidence: '臨床エビデンス',
+    tagMechanism: '作用機序',
+    tagComparative: '比較分析',
+    tagDesign: 'デザイン素材',
+    tagPresentation: 'プレゼンテーション',
+    tagDistributor: 'ディストリビューター用',
+    btnDownload: 'PDFダウンロード',
+    btnDownloadPptx: 'PPTXダウンロード',
+    ctxTorrTitle: 'TORR RF — 医療用デバイス',
+    ctxTorrDesc: 'クリニック向けトロイダルマルチポーラRF医療機器。3種ハンドピース（フェイス・ボディ・アイ）とスマートコンビネーション。US FDA 510(k)認可取得。',
+    ctxTorrLink: '製品ブロシュアを見る',
+    ctxNewchaeTitle: 'NEWCHAE — ホームユースデバイス',
+    ctxNewchaeDesc: 'TORR RFのトロイダル技術をホームケアに応用。RF・EMS・ELPの3モードを1台に — クリニック水準のスキンケアを日常に。',
+    ctxNewchaeLink: 'セールスブロシュアを見る'
+  }
+};
+
+let lang = 'en';
+
+function setLang(l) {
+  lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('on', b.textContent.trim() === l.toUpperCase())
+  );
+  const s = D[l];
+  if (!s) return;
+  document.querySelectorAll('[data-t]').forEach(el => {
+    const k = el.getAttribute('data-t');
+    if (s[k] != null) el.innerHTML = s[k];
+  });
+  localStorage.setItem('torr-tech-lang', l);
+}
+
+const urlLang = new URLSearchParams(location.search).get('lang');
+const saved = localStorage.getItem('torr-tech-lang');
+const nav = navigator.language.startsWith('ko') ? 'ko' : navigator.language.startsWith('ja') ? 'ja' : 'en';
+setLang(urlLang || saved || nav);
+</script>
+
+</body>
+</html>
