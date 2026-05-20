@@ -181,16 +181,6 @@ tr.open .c-toggle { transform: rotate(180deg); }
   padding-top: 8px; border-top: 1px solid var(--sand-mist); margin-top: auto;
 }
 
-/* Update */
-.update-section { padding: 80px 0 100px; }
-.update-section h2 { margin-bottom: 6px; }
-.update-section .sub { font-size: 15px; color: var(--soft-graphite); margin-bottom: 32px; }
-.upd-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.upd-card { padding: 24px 20px; border: 1px solid var(--sand-mist); border-radius: 2px; }
-.upd-card .upd-num { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--dusty-lilac); margin-bottom: 10px; }
-.upd-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
-.upd-card p { font-size: 13px; color: var(--soft-graphite); line-height: 1.6; }
-.upd-card code { font-size: 11px; background: var(--sand-mist); padding: 1px 5px; border-radius: 2px; }
 
 /* Responsive */
 @media (max-width: 960px) {
@@ -221,7 +211,6 @@ tr.open .c-toggle { transform: rotate(180deg); }
 }
 @media (max-width: 640px) {
   .mkt-grid { grid-template-columns:1fr; }
-  .upd-grid { grid-template-columns:1fr; }
   .prod-table th { width:100px; padding:10px 12px; font-size:12px; }
   .prod-table td { padding:10px 12px; font-size:13px; }
 }
@@ -486,20 +475,6 @@ tr.open .c-toggle { transform: rotate(180deg); }
   </div>
 </section>
 
-<!-- How to Update -->
-<section class="update-section">
-  <div class="container">
-    <div class="eyebrow" data-i18n="upd.ey">유지보수</div>
-    <h2 data-i18n="upd.h2">페이지 업데이트 방법</h2>
-    <p class="sub" data-i18n="upd.sub">텍스트 에디터로 누구나 수정할 수 있습니다.</p>
-    <div class="upd-grid">
-      <div class="upd-card"><div class="upd-num">01</div><h4 data-i18n="u1.h">인증서 추가</h4><p data-i18n="u1.p"><code>certs/</code>에 PDF를 넣고, 테이블 행(<code>&lt;tr&gt;</code> 쌍)을 복사해서 텍스트를 수정하세요.</p></div>
-      <div class="upd-card"><div class="upd-num">02</div><h4 data-i18n="u2.h">시장 추가</h4><p data-i18n="u2.p"><code>mkt-card</code> 블록을 복사하고 국기, 이름, 상태, 체크리스트를 변경하세요.</p></div>
-      <div class="upd-card"><div class="upd-num">03</div><h4 data-i18n="u3.h">배포</h4><p data-i18n="u3.p"><code>git add . && git commit && git push</code> &mdash; 2분 내 반영.</p></div>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -533,8 +508,7 @@ en:{"hero.ey":"Product Certification Summary","hero.h1":"NEWCHAE Certifications"
 "doc.footer":"Reference summary for partner due diligence. Original certificates via PDF links above. Printable: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
 "mkt.ey":"Market Coverage","mkt.h2":"Where Can NEWCHAE Sell?","mkt.sub":"Which markets are ready, partially covered, or need additional certifications.",
 "ms.ready":"✓ Ready","ms.todo2":"2 to-do","ms.todo1":"1 to-do","ms.new":"New cert needed","ms.low":"Low barrier",
-"m1.note":"Coupang, Naver, offline — all clear.","m2.c4":"Whole-product RoHS DoC","m2.c5":"EU Authorized Rep","m2.note":"Core tests done. Need EU rep + full DoC.","m3.c2":"US Responsible Party","m3.c3":"UN 38.3 (air shipping)","m3.note":"FCC done. Need US address + air freight cert.","m4.c1":"CE accepted (currently valid)","m4.c2":"UK Responsible Person","m4.note":"CE still accepted. Appoint UK person to enter.","m5.c1":"PSE mark required","m5.c2":"MIC exempt (no wireless)","m5.note":"PSE required. Existing data may expedite.","m6.c1":"RCM mark (self-declare OK)","m6.note":"Self-declare using CE/FCC test reports.",
-"upd.ey":"Maintenance","upd.h2":"How to Update","upd.sub":"Non-developers can update with a text editor.","u1.h":"Add a certificate","u1.p":"Drop PDF into <code>certs/</code>. Copy a table row pair and edit text.","u2.h":"Add a market","u2.p":"Copy a <code>mkt-card</code> block. Change flag, name, status, checklist.","u3.h":"Deploy","u3.p":"<code>git add . && git commit && git push</code> — live in 2 min."},
+"m1.note":"Coupang, Naver, offline — all clear.","m2.c4":"Whole-product RoHS DoC","m2.c5":"EU Authorized Rep","m2.note":"Core tests done. Need EU rep + full DoC.","m3.c2":"US Responsible Party","m3.c3":"UN 38.3 (air shipping)","m3.note":"FCC done. Need US address + air freight cert.","m4.c1":"CE accepted (currently valid)","m4.c2":"UK Responsible Person","m4.note":"CE still accepted. Appoint UK person to enter.","m5.c1":"PSE mark required","m5.c2":"MIC exempt (no wireless)","m5.note":"PSE required. Existing data may expedite.","m6.c1":"RCM mark (self-declare OK)","m6.note":"Self-declare using CE/FCC test reports."},
 
 ja:{"hero.ey":"製品認証概要","hero.h1":"NEWCHAE 認証一覧","hero.lead":"3市場で6件の認証を取得。各行をクリックすると、その認証の役割を分かりやすく説明します。",
 "ft.addr":"BRITZMEDI Co., Ltd.<br>京畿道 城南市 中院区 屯村大路 388<br>クランツテクノ 1211号","ft.inq":"海外事業お問い合わせ",
@@ -555,8 +529,7 @@ ja:{"hero.ey":"製品認証概要","hero.h1":"NEWCHAE 認証一覧","hero.lead":
 "doc.footer":"パートナーデューデリジェンス用参考資料。認証書原本は上記PDFリンクからダウンロード可能。印刷用: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
 "mkt.ey":"市場カバレッジ","mkt.h2":"どこで販売できる？","mkt.sub":"即時参入可能・部分保有・追加認証必要な市場を一覧で確認。",
 "ms.ready":"✓ 準備完了","ms.todo2":"2件残り","ms.todo1":"1件残り","ms.new":"新規必要","ms.low":"参入容易",
-"m1.note":"Coupang、Naver、オフライン — すべて可能。","m2.c4":"完製品RoHS DoC","m2.c5":"EU公認代理人","m2.note":"核心テスト完了。EU代理人+DoC必要。","m3.c2":"US責任当事者","m3.c3":"UN 38.3（航空輸送）","m3.note":"FCC完了。米国住所+航空輸送認証必要。","m4.c1":"CE認定（現在有効）","m4.c2":"UK責任者","m4.note":"CE認定有効。UK責任者指定で参入可。","m5.c1":"PSEマーク必要","m5.c2":"MIC免除（無線なし）","m5.note":"PSE必須。既存データで手続き短縮可能。","m6.c1":"RCMマーク（自己宣言可）","m6.note":"CE/FCC試験報告書で自己宣言可能。",
-"upd.ey":"メンテナンス","upd.h2":"更新方法","upd.sub":"テキストエディタで誰でも更新できます。","u1.h":"認証書追加","u1.p":"<code>certs/</code>にPDFを入れ、テーブル行ペアをコピーしてテキストを編集。","u2.h":"市場追加","u2.p":"<code>mkt-card</code>ブロックをコピーし、国旗・名称・ステータス・チェックリストを変更。","u3.h":"デプロイ","u3.p":"<code>git add . && git commit && git push</code> — 2分で反映。"},
+"m1.note":"Coupang、Naver、オフライン — すべて可能。","m2.c4":"完製品RoHS DoC","m2.c5":"EU公認代理人","m2.note":"核心テスト完了。EU代理人+DoC必要。","m3.c2":"US責任当事者","m3.c3":"UN 38.3（航空輸送）","m3.note":"FCC完了。米国住所+航空輸送認証必要。","m4.c1":"CE認定（現在有効）","m4.c2":"UK責任者","m4.note":"CE認定有効。UK責任者指定で参入可。","m5.c1":"PSEマーク必要","m5.c2":"MIC免除（無線なし）","m5.note":"PSE必須。既存データで手続き短縮可能。","m6.c1":"RCMマーク（自己宣言可）","m6.note":"CE/FCC試験報告書で自己宣言可能。"},
 
 zh:{"hero.ey":"产品认证摘要","hero.h1":"NEWCHAE 认证一览","hero.lead":"3个市场6项认证。点击任意行查看通俗说明。",
 "ft.addr":"BRITZMEDI Co., Ltd.<br>京畿道 城南市 中院区 屯村大路 388<br>Kranz Techno 1211号","ft.inq":"海外业务咨询",
@@ -577,8 +550,7 @@ zh:{"hero.ey":"产品认证摘要","hero.h1":"NEWCHAE 认证一览","hero.lead":
 "doc.footer":"合作伙伴尽职调查参考资料。认证原件可通过上方PDF链接下载。打印版: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
 "mkt.ey":"市场覆盖","mkt.h2":"可以在哪里销售？","mkt.sub":"一览即时可售、部分覆盖和需要额外认证的市场。",
 "ms.ready":"✓ 可售","ms.todo2":"2项待办","ms.todo1":"1项待办","ms.new":"需新认证","ms.low":"门槛低",
-"m1.note":"Coupang、Naver、线下——全部可售。","m2.c4":"整机RoHS DoC","m2.c5":"欧盟授权代表","m2.note":"核心测试完成。需欧盟代表+DoC。","m3.c2":"美国责任方","m3.c3":"UN 38.3（航空运输）","m3.note":"FCC完成。需美国地址+航空运输认证。","m4.c1":"CE认可（当前有效）","m4.c2":"英国责任人","m4.note":"CE仍被认可。指定英国责任人即可进入。","m5.c1":"需PSE标志","m5.c2":"MIC豁免（无无线）","m5.note":"需PSE。现有数据可加快流程。","m6.c1":"RCM标志（可自我声明）","m6.note":"可使用CE/FCC测试报告自我声明。",
-"upd.ey":"维护","upd.h2":"如何更新","upd.sub":"任何人都可用文本编辑器更新。","u1.h":"添加认证","u1.p":"将PDF放入<code>certs/</code>，复制表格行对并编辑文字。","u2.h":"添加市场","u2.p":"复制<code>mkt-card</code>块，修改国旗、名称、状态、清单。","u3.h":"部署","u3.p":"<code>git add . && git commit && git push</code> — 2分钟生效。"},
+"m1.note":"Coupang、Naver、线下——全部可售。","m2.c4":"整机RoHS DoC","m2.c5":"欧盟授权代表","m2.note":"核心测试完成。需欧盟代表+DoC。","m3.c2":"美国责任方","m3.c3":"UN 38.3（航空运输）","m3.note":"FCC完成。需美国地址+航空运输认证。","m4.c1":"CE认可（当前有效）","m4.c2":"英国责任人","m4.note":"CE仍被认可。指定英国责任人即可进入。","m5.c1":"需PSE标志","m5.c2":"MIC豁免（无无线）","m5.note":"需PSE。现有数据可加快流程。","m6.c1":"RCM标志（可自我声明）","m6.note":"可使用CE/FCC测试报告自我声明。"},
 
 th:{"hero.ey":"สรุปใบรับรองผลิตภัณฑ์","hero.h1":"ใบรับรอง NEWCHAE","hero.lead":"6 ใบรับรองใน 3 ตลาด คลิกแถวใดก็ได้เพื่อดูคำอธิบายง่ายๆ",
 "ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, Republic of Korea","ft.inq":"สอบถามธุรกิจต่างประเทศ",
@@ -596,8 +568,7 @@ th:{"hero.ey":"สรุปใบรับรองผลิตภัณฑ์",
 "doc.footer":"เอกสารอ้างอิงสำหรับการตรวจสอบคู่ค้า ต้นฉบับใบรับรองดาวน์โหลดจากลิงก์ PDF ด้านบน พิมพ์ได้: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
 "mkt.ey":"ความครอบคลุมตลาด","mkt.h2":"ขายได้ที่ไหน?","mkt.sub":"ดูตลาดที่พร้อม ครอบคลุมบางส่วน หรือต้องการใบรับรองเพิ่ม",
 "ms.ready":"✓ พร้อม","ms.todo2":"เหลือ 2 รายการ","ms.todo1":"เหลือ 1 รายการ","ms.new":"ต้องการใหม่","ms.low":"เข้าง่าย",
-"m1.note":"Coupang, Naver, ออฟไลน์ — พร้อมทั้งหมด","m2.c4":"RoHS DoC ผลิตภัณฑ์เต็ม","m2.c5":"ตัวแทนอนุญาต EU","m2.note":"ทดสอบหลักเสร็จ ต้องการตัวแทน EU + DoC","m3.c2":"ผู้รับผิดชอบ US","m3.c3":"UN 38.3 (ขนส่งทางอากาศ)","m3.note":"FCC เสร็จ ต้องการที่อยู่ US + ใบรับรองขนส่ง","m4.c1":"ยอมรับ CE (ปัจจุบันใช้ได้)","m4.c2":"ผู้รับผิดชอบ UK","m4.note":"CE ยังใช้ได้ แต่งตั้งผู้รับผิดชอบ UK เพื่อเข้าตลาด","m5.c1":"ต้องการ PSE","m5.c2":"ยกเว้น MIC (ไม่มีไร้สาย)","m5.note":"ต้องการ PSE ข้อมูลเดิมช่วยเร่งกระบวนการ","m6.c1":"RCM (ประกาศตนเองได้)","m6.note":"ใช้รายงาน CE/FCC ประกาศตนเองได้",
-"upd.ey":"การบำรุงรักษา","upd.h2":"วิธีอัปเดต","upd.sub":"ใครก็แก้ไขได้ด้วยโปรแกรมแก้ไขข้อความ","u1.h":"เพิ่มใบรับรอง","u1.p":"ใส่ PDF ใน <code>certs/</code> คัดลอกแถวตารางแล้วแก้ไขข้อความ","u2.h":"เพิ่มตลาด","u2.p":"คัดลอก <code>mkt-card</code> แล้วเปลี่ยนธง ชื่อ สถานะ รายการ","u3.h":"เผยแพร่","u3.p":"<code>git add . && git commit && git push</code> — 2 นาที"},
+"m1.note":"Coupang, Naver, ออฟไลน์ — พร้อมทั้งหมด","m2.c4":"RoHS DoC ผลิตภัณฑ์เต็ม","m2.c5":"ตัวแทนอนุญาต EU","m2.note":"ทดสอบหลักเสร็จ ต้องการตัวแทน EU + DoC","m3.c2":"ผู้รับผิดชอบ US","m3.c3":"UN 38.3 (ขนส่งทางอากาศ)","m3.note":"FCC เสร็จ ต้องการที่อยู่ US + ใบรับรองขนส่ง","m4.c1":"ยอมรับ CE (ปัจจุบันใช้ได้)","m4.c2":"ผู้รับผิดชอบ UK","m4.note":"CE ยังใช้ได้ แต่งตั้งผู้รับผิดชอบ UK เพื่อเข้าตลาด","m5.c1":"ต้องการ PSE","m5.c2":"ยกเว้น MIC (ไม่มีไร้สาย)","m5.note":"ต้องการ PSE ข้อมูลเดิมช่วยเร่งกระบวนการ","m6.c1":"RCM (ประกาศตนเองได้)","m6.note":"ใช้รายงาน CE/FCC ประกาศตนเองได้"},
 
 vi:{"hero.ey":"Tóm tắt chứng nhận sản phẩm","hero.h1":"Chứng nhận NEWCHAE","hero.lead":"6 chứng nhận tại 3 thị trường. Nhấn vào hàng bất kỳ để xem giải thích dễ hiểu.",
 "ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, Republic of Korea","ft.inq":"Liên hệ kinh doanh quốc tế",
@@ -618,8 +589,7 @@ vi:{"hero.ey":"Tóm tắt chứng nhận sản phẩm","hero.h1":"Chứng nhận
 "doc.footer":"Tài liệu tham khảo cho đối tác. Bản gốc tải từ link PDF phía trên. In: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
 "mkt.ey":"Phạm vi thị trường","mkt.h2":"Bán được ở đâu?","mkt.sub":"Xem thị trường sẵn sàng, bán phần hoặc cần thêm chứng nhận.",
 "ms.ready":"✓ Sẵn sàng","ms.todo2":"Còn 2 việc","ms.todo1":"Còn 1 việc","ms.new":"Cần mới","ms.low":"Dễ vào",
-"m1.note":"Coupang, Naver, offline — tất cả OK.","m2.c4":"RoHS DoC toàn sản phẩm","m2.c5":"Đại diện EU","m2.note":"Test xong. Cần đại diện EU + DoC.","m3.c2":"Bên chịu trách nhiệm US","m3.c3":"UN 38.3 (vận chuyển hàng không)","m3.note":"FCC xong. Cần địa chỉ US + chứng nhận vận chuyển.","m4.c1":"CE được chấp nhận","m4.c2":"Người chịu trách nhiệm UK","m4.note":"CE vẫn có hiệu lực. Chỉ định người UK để vào.","m5.c1":"Cần PSE","m5.c2":"Miễn MIC (không wireless)","m5.note":"Cần PSE. Dữ liệu hiện có giúp đẩy nhanh.","m6.c1":"RCM (tự khai báo OK)","m6.note":"Tự khai báo bằng báo cáo CE/FCC.",
-"upd.ey":"Bảo trì","upd.h2":"Cách cập nhật","upd.sub":"Ai cũng có thể cập nhật bằng trình soạn thảo.","u1.h":"Thêm chứng nhận","u1.p":"Đặt PDF vào <code>certs/</code>. Sao chép cặp hàng và sửa văn bản.","u2.h":"Thêm thị trường","u2.p":"Sao chép <code>mkt-card</code>, đổi cờ, tên, trạng thái.","u3.h":"Triển khai","u3.p":"<code>git add . && git commit && git push</code> — 2 phút."},
+"m1.note":"Coupang, Naver, offline — tất cả OK.","m2.c4":"RoHS DoC toàn sản phẩm","m2.c5":"Đại diện EU","m2.note":"Test xong. Cần đại diện EU + DoC.","m3.c2":"Bên chịu trách nhiệm US","m3.c3":"UN 38.3 (vận chuyển hàng không)","m3.note":"FCC xong. Cần địa chỉ US + chứng nhận vận chuyển.","m4.c1":"CE được chấp nhận","m4.c2":"Người chịu trách nhiệm UK","m4.note":"CE vẫn có hiệu lực. Chỉ định người UK để vào.","m5.c1":"Cần PSE","m5.c2":"Miễn MIC (không wireless)","m5.note":"Cần PSE. Dữ liệu hiện có giúp đẩy nhanh.","m6.c1":"RCM (tự khai báo OK)","m6.note":"Tự khai báo bằng báo cáo CE/FCC."},
 
 id:{"hero.ey":"Ringkasan Sertifikasi Produk","hero.h1":"Sertifikasi NEWCHAE","hero.lead":"6 sertifikasi di 3 pasar. Klik baris mana saja untuk penjelasan mudah.",
 "ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, Republic of Korea","ft.inq":"Pertanyaan Bisnis Internasional",
@@ -640,8 +610,7 @@ id:{"hero.ey":"Ringkasan Sertifikasi Produk","hero.h1":"Sertifikasi NEWCHAE","he
 "doc.footer":"Referensi untuk due diligence mitra. Sertifikat asli via link PDF di atas. Cetak: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
 "mkt.ey":"Cakupan Pasar","mkt.h2":"Di mana bisa dijual?","mkt.sub":"Pasar yang siap, sebagian, atau perlu sertifikasi tambahan.",
 "ms.ready":"✓ Siap","ms.todo2":"2 tersisa","ms.todo1":"1 tersisa","ms.new":"Perlu baru","ms.low":"Mudah masuk",
-"m1.note":"Coupang, Naver, offline — semua OK.","m2.c4":"RoHS DoC produk penuh","m2.c5":"Perwakilan EU","m2.note":"Tes inti selesai. Perlu perwakilan EU + DoC.","m3.c2":"Pihak bertanggung jawab US","m3.c3":"UN 38.3 (pengiriman udara)","m3.note":"FCC selesai. Perlu alamat US + sertifikat udara.","m4.c1":"CE diterima (berlaku)","m4.c2":"Penanggung jawab UK","m4.note":"CE masih berlaku. Tunjuk penanggung jawab UK.","m5.c1":"Perlu PSE","m5.c2":"MIC dikecualikan","m5.note":"PSE wajib. Data yang ada bisa mempercepat.","m6.c1":"RCM (deklarasi mandiri OK)","m6.note":"Deklarasi mandiri menggunakan laporan CE/FCC.",
-"upd.ey":"Pemeliharaan","upd.h2":"Cara Update","upd.sub":"Siapa pun bisa update dengan text editor.","u1.h":"Tambah sertifikat","u1.p":"Taruh PDF di <code>certs/</code>. Salin pasangan baris tabel dan edit teks.","u2.h":"Tambah pasar","u2.p":"Salin blok <code>mkt-card</code>, ubah bendera, nama, status.","u3.h":"Deploy","u3.p":"<code>git add . && git commit && git push</code> — 2 menit."},
+"m1.note":"Coupang, Naver, offline — semua OK.","m2.c4":"RoHS DoC produk penuh","m2.c5":"Perwakilan EU","m2.note":"Tes inti selesai. Perlu perwakilan EU + DoC.","m3.c2":"Pihak bertanggung jawab US","m3.c3":"UN 38.3 (pengiriman udara)","m3.note":"FCC selesai. Perlu alamat US + sertifikat udara.","m4.c1":"CE diterima (berlaku)","m4.c2":"Penanggung jawab UK","m4.note":"CE masih berlaku. Tunjuk penanggung jawab UK.","m5.c1":"Perlu PSE","m5.c2":"MIC dikecualikan","m5.note":"PSE wajib. Data yang ada bisa mempercepat.","m6.c1":"RCM (deklarasi mandiri OK)","m6.note":"Deklarasi mandiri menggunakan laporan CE/FCC."},
 
 fr:{"hero.ey":"Résumé des certifications","hero.h1":"Certifications NEWCHAE","hero.lead":"6 certifications sur 3 marchés. Cliquez sur une ligne pour une explication simple.",
 "ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, R&eacute;publique de Cor&eacute;e","ft.inq":"Demande commerciale internationale",
@@ -662,8 +631,7 @@ fr:{"hero.ey":"Résumé des certifications","hero.h1":"Certifications NEWCHAE","
 "doc.footer":"Document de référence. Certificats originaux via les liens PDF ci-dessus. Version imprimable : <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
 "mkt.ey":"Couverture marché","mkt.h2":"Où peut-on vendre ?","mkt.sub":"Marchés prêts, partiellement couverts ou nécessitant des certifications supplémentaires.",
 "ms.ready":"✓ Prêt","ms.todo2":"2 à faire","ms.todo1":"1 à faire","ms.new":"Nouveau requis","ms.low":"Accès facile",
-"m1.note":"Coupang, Naver, offline — tout OK.","m2.c4":"DoC RoHS produit complet","m2.c5":"Représentant autorisé UE","m2.note":"Tests principaux terminés. Besoin rep. UE + DoC.","m3.c2":"Partie responsable US","m3.c3":"UN 38.3 (transport aérien)","m3.note":"FCC terminé. Besoin adresse US + cert. transport.","m4.c1":"CE accepté (en vigueur)","m4.c2":"Personne responsable UK","m4.note":"CE encore accepté. Nommer une personne UK.","m5.c1":"PSE requis","m5.c2":"MIC exempté (pas de sans-fil)","m5.note":"PSE requis. Données existantes peuvent accélérer.","m6.c1":"RCM (auto-déclaration OK)","m6.note":"Auto-déclaration avec rapports CE/FCC.",
-"upd.ey":"Maintenance","upd.h2":"Comment mettre à jour","upd.sub":"Tout le monde peut modifier avec un éditeur texte.","u1.h":"Ajouter un certificat","u1.p":"Mettez le PDF dans <code>certs/</code>. Copiez une paire de lignes et éditez.","u2.h":"Ajouter un marché","u2.p":"Copiez un bloc <code>mkt-card</code>, changez drapeau, nom, statut.","u3.h":"Déployer","u3.p":"<code>git add . && git commit && git push</code> — 2 min."},
+"m1.note":"Coupang, Naver, offline — tout OK.","m2.c4":"DoC RoHS produit complet","m2.c5":"Représentant autorisé UE","m2.note":"Tests principaux terminés. Besoin rep. UE + DoC.","m3.c2":"Partie responsable US","m3.c3":"UN 38.3 (transport aérien)","m3.note":"FCC terminé. Besoin adresse US + cert. transport.","m4.c1":"CE accepté (en vigueur)","m4.c2":"Personne responsable UK","m4.note":"CE encore accepté. Nommer une personne UK.","m5.c1":"PSE requis","m5.c2":"MIC exempté (pas de sans-fil)","m5.note":"PSE requis. Données existantes peuvent accélérer.","m6.c1":"RCM (auto-déclaration OK)","m6.note":"Auto-déclaration avec rapports CE/FCC."},
 
 es:{"hero.ey":"Resumen de certificaciones","hero.h1":"Certificaciones NEWCHAE","hero.lead":"6 certificaciones en 3 mercados. Haz clic en cualquier fila para ver la explicación.",
 "ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, Rep&uacute;blica de Corea","ft.inq":"Consulta comercial internacional",
@@ -684,8 +652,7 @@ es:{"hero.ey":"Resumen de certificaciones","hero.h1":"Certificaciones NEWCHAE","
 "doc.footer":"Referencia para due diligence. Certificados originales vía enlaces PDF arriba. Imprimible: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
 "mkt.ey":"Cobertura de mercado","mkt.h2":"¿Dónde se puede vender?","mkt.sub":"Mercados listos, parciales o que necesitan certificaciones adicionales.",
 "ms.ready":"✓ Listo","ms.todo2":"2 pendientes","ms.todo1":"1 pendiente","ms.new":"Se necesita nuevo","ms.low":"Fácil acceso",
-"m1.note":"Coupang, Naver, offline — todo listo.","m2.c4":"RoHS DoC producto completo","m2.c5":"Representante autorizado UE","m2.note":"Pruebas principales listas. Falta rep. UE + DoC.","m3.c2":"Parte responsable US","m3.c3":"UN 38.3 (envío aéreo)","m3.note":"FCC listo. Falta dirección US + cert. aéreo.","m4.c1":"CE aceptado (vigente)","m4.c2":"Persona responsable UK","m4.note":"CE aún aceptado. Designar persona UK.","m5.c1":"Se necesita PSE","m5.c2":"MIC exento (sin inalámbrico)","m5.note":"PSE requerido. Datos existentes pueden acelerar.","m6.c1":"RCM (autodeclaración OK)","m6.note":"Autodeclaración con informes CE/FCC.",
-"upd.ey":"Mantenimiento","upd.h2":"Cómo actualizar","upd.sub":"Cualquiera puede actualizar con un editor de texto.","u1.h":"Agregar certificado","u1.p":"Pon el PDF en <code>certs/</code>. Copia un par de filas y edita.","u2.h":"Agregar mercado","u2.p":"Copia un bloque <code>mkt-card</code>, cambia bandera, nombre, estado.","u3.h":"Desplegar","u3.p":"<code>git add . && git commit && git push</code> — 2 min."},
+"m1.note":"Coupang, Naver, offline — todo listo.","m2.c4":"RoHS DoC producto completo","m2.c5":"Representante autorizado UE","m2.note":"Pruebas principales listas. Falta rep. UE + DoC.","m3.c2":"Parte responsable US","m3.c3":"UN 38.3 (envío aéreo)","m3.note":"FCC listo. Falta dirección US + cert. aéreo.","m4.c1":"CE aceptado (vigente)","m4.c2":"Persona responsable UK","m4.note":"CE aún aceptado. Designar persona UK.","m5.c1":"Se necesita PSE","m5.c2":"MIC exento (sin inalámbrico)","m5.note":"PSE requerido. Datos existentes pueden acelerar.","m6.c1":"RCM (autodeclaración OK)","m6.note":"Autodeclaración con informes CE/FCC."},
 
 pt:{"hero.ey":"Resumo de certificações","hero.h1":"Certificações NEWCHAE","hero.lead":"6 certificações em 3 mercados. Clique em qualquer linha para ver a explicação.",
 "ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, Rep&uacute;blica da Coreia","ft.inq":"Consulta comercial internacional",
@@ -706,8 +673,7 @@ pt:{"hero.ey":"Resumo de certificações","hero.h1":"Certificações NEWCHAE","h
 "doc.footer":"Referência para due diligence. Certificados via links PDF acima. Imprimível: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
 "mkt.ey":"Cobertura de mercado","mkt.h2":"Onde pode vender?","mkt.sub":"Mercados prontos, parciais ou que precisam de certificações adicionais.",
 "ms.ready":"✓ Pronto","ms.todo2":"2 pendentes","ms.todo1":"1 pendente","ms.new":"Necessário novo","ms.low":"Fácil acesso",
-"m1.note":"Coupang, Naver, offline — tudo OK.","m2.c4":"RoHS DoC produto completo","m2.c5":"Representante autorizado UE","m2.note":"Testes prontos. Falta rep. UE + DoC.","m3.c2":"Parte responsável US","m3.c3":"UN 38.3 (envio aéreo)","m3.note":"FCC pronto. Falta endereço US + cert. aéreo.","m4.c1":"CE aceito (vigente)","m4.c2":"Pessoa responsável UK","m4.note":"CE ainda aceito. Designar pessoa UK.","m5.c1":"PSE necessário","m5.c2":"MIC isento (sem wireless)","m5.note":"PSE obrigatório. Dados existentes podem acelerar.","m6.c1":"RCM (autodeclaração OK)","m6.note":"Autodeclaração com relatórios CE/FCC.",
-"upd.ey":"Manutenção","upd.h2":"Como atualizar","upd.sub":"Qualquer pessoa pode atualizar com editor de texto.","u1.h":"Adicionar certificado","u1.p":"Coloque o PDF em <code>certs/</code>. Copie um par de linhas e edite.","u2.h":"Adicionar mercado","u2.p":"Copie um bloco <code>mkt-card</code>, mude bandeira, nome, status.","u3.h":"Implantar","u3.p":"<code>git add . && git commit && git push</code> — 2 min."},
+"m1.note":"Coupang, Naver, offline — tudo OK.","m2.c4":"RoHS DoC produto completo","m2.c5":"Representante autorizado UE","m2.note":"Testes prontos. Falta rep. UE + DoC.","m3.c2":"Parte responsável US","m3.c3":"UN 38.3 (envio aéreo)","m3.note":"FCC pronto. Falta endereço US + cert. aéreo.","m4.c1":"CE aceito (vigente)","m4.c2":"Pessoa responsável UK","m4.note":"CE ainda aceito. Designar pessoa UK.","m5.c1":"PSE necessário","m5.c2":"MIC isento (sem wireless)","m5.note":"PSE obrigatório. Dados existentes podem acelerar.","m6.c1":"RCM (autodeclaração OK)","m6.note":"Autodeclaração com relatórios CE/FCC."},
 
 ru:{"hero.ey":"Сводка сертификатов","hero.h1":"Сертификаты NEWCHAE","hero.lead":"6 сертификатов для 3 рынков. Нажмите на строку для простого объяснения.",
 "ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, Республика Корея","ft.inq":"Международный бизнес-запрос",
@@ -728,8 +694,7 @@ ru:{"hero.ey":"Сводка сертификатов","hero.h1":"Сертифи�
 "doc.footer":"Справочный документ для due diligence. Оригиналы по ссылкам PDF выше. Для печати: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
 "mkt.ey":"Покрытие рынков","mkt.h2":"Где можно продавать?","mkt.sub":"Готовые, частично покрытые и требующие дополнительных сертификатов рынки.",
 "ms.ready":"✓ Готово","ms.todo2":"Осталось 2","ms.todo1":"Осталось 1","ms.new":"Нужен новый","ms.low":"Лёгкий вход",
-"m1.note":"Coupang, Naver, офлайн — всё ОК.","m2.c4":"RoHS DoC всего продукта","m2.c5":"Уполномоченный представитель ЕС","m2.note":"Основные тесты пройдены. Нужен представитель ЕС + DoC.","m3.c2":"Ответственная сторона US","m3.c3":"UN 38.3 (авиаперевозка)","m3.note":"FCC пройден. Нужен адрес US + авиасертификат.","m4.c1":"CE принят (действует)","m4.c2":"Ответственное лицо UK","m4.note":"CE ещё действует. Назначить лицо UK.","m5.c1":"Нужен PSE","m5.c2":"MIC не требуется (нет wireless)","m5.note":"PSE обязателен. Имеющиеся данные ускорят процесс.","m6.c1":"RCM (самодекларация ОК)","m6.note":"Самодекларация на основе отчётов CE/FCC.",
-"upd.ey":"Обслуживание","upd.h2":"Как обновить","upd.sub":"Обновить может любой в текстовом редакторе.","u1.h":"Добавить сертификат","u1.p":"Поместите PDF в <code>certs/</code>. Скопируйте пару строк таблицы и отредактируйте.","u2.h":"Добавить рынок","u2.p":"Скопируйте блок <code>mkt-card</code>, измените флаг, название, статус.","u3.h":"Развернуть","u3.p":"<code>git add . && git commit && git push</code> — 2 мин."}
+"m1.note":"Coupang, Naver, офлайн — всё ОК.","m2.c4":"RoHS DoC всего продукта","m2.c5":"Уполномоченный представитель ЕС","m2.note":"Основные тесты пройдены. Нужен представитель ЕС + DoC.","m3.c2":"Ответственная сторона US","m3.c3":"UN 38.3 (авиаперевозка)","m3.note":"FCC пройден. Нужен адрес US + авиасертификат.","m4.c1":"CE принят (действует)","m4.c2":"Ответственное лицо UK","m4.note":"CE ещё действует. Назначить лицо UK.","m5.c1":"Нужен PSE","m5.c2":"MIC не требуется (нет wireless)","m5.note":"PSE обязателен. Имеющиеся данные ускорят процесс.","m6.c1":"RCM (самодекларация ОК)","m6.note":"Самодекларация на основе отчётов CE/FCC."}
 };
 
 DICT.en_gb = Object.assign({}, DICT.en);
