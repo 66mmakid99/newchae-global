@@ -1,156 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NEWCHAE Certifications — BRITZMEDI</title>
 <meta name="description" content="NEWCHAE home-use RF beauty device certifications: KC, CE, FCC, RoHS. See what each certification means and which markets they cover.">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ========= Hero (compact) ========= */
+:lang(ko) body { font-family: 'Pretendard', -apple-system, sans-serif; }
+:lang(ja) body { font-family: 'Noto Sans JP', -apple-system, sans-serif; }
+:lang(zh) body { font-family: 'Noto Sans SC', -apple-system, sans-serif; }
+:lang(th) body { font-family: 'Noto Sans Thai', -apple-system, sans-serif; }
+
+/* ========= Lang Selector ========= */
+.lang-bar {
+  position: fixed; top: 77px; right: 0; z-index: 90;
+  background: rgba(245,244,240,0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--sand-mist);
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  padding: 6px 10px;
+}
+.lang-bar select {
+  font-family: inherit;
+  font-size: 13px;
+  padding: 6px 8px;
+  border: 1px solid var(--sand-mist);
+  border-radius: 2px;
+  background: var(--warm-ivory);
+  color: var(--ink-black);
+  cursor: pointer;
+}
+
+/* ========= Hero ========= */
 .cert-hero { padding: 100px 0 48px; }
 .cert-hero .lead { max-width: 640px; }
 
 /* ========= Product Info ========= */
 .prod-section { padding: 0 0 64px; }
 .prod-table {
-  width: 100%;
-  max-width: 800px;
+  width: 100%; max-width: 800px;
   border-collapse: collapse;
   border: 1px solid var(--sand-mist);
-  border-radius: 2px;
   overflow: hidden;
 }
 .prod-table tr { border-bottom: 1px solid var(--sand-mist); }
 .prod-table tr:last-child { border-bottom: none; }
 .prod-table th {
-  text-align: left;
-  padding: 14px 20px;
-  width: 160px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--soft-graphite);
-  background: var(--sand-mist);
-  vertical-align: top;
-  letter-spacing: 0.02em;
+  text-align: left; padding: 14px 20px; width: 140px;
+  font-size: 13px; font-weight: 600; color: var(--soft-graphite);
+  background: var(--sand-mist); vertical-align: top;
 }
 .prod-table td {
-  padding: 14px 20px;
-  font-size: 14px;
-  color: var(--ink-black);
-  background: var(--warm-ivory);
+  padding: 14px 20px; font-size: 14px;
+  color: var(--ink-black); background: var(--warm-ivory);
 }
 
 /* ========= Cert Table ========= */
 .cert-section { padding: 64px 0; }
 .cert-section h2 { margin-bottom: 6px; }
-.cert-section .sub {
-  font-size: 15px;
-  color: var(--soft-graphite);
-  margin-bottom: 32px;
-}
+.cert-section .sub { font-size: 15px; color: var(--soft-graphite); margin-bottom: 32px; }
 
-.c-wrap {
-  border: 1px solid var(--sand-mist);
-  border-radius: 2px;
-  overflow: hidden;
-}
-.c-table {
-  width: 100%;
-  border-collapse: collapse;
-}
+.c-wrap { border: 1px solid var(--sand-mist); border-radius: 2px; overflow: hidden; }
+.c-table { width: 100%; border-collapse: collapse; }
 .c-table thead th {
-  text-align: left;
-  padding: 12px 16px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--soft-graphite);
-  background: var(--sand-mist);
-  border-bottom: 1px solid rgba(28,28,28,0.08);
-  white-space: nowrap;
+  text-align: left; padding: 12px 16px;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--soft-graphite); background: var(--sand-mist);
+  border-bottom: 1px solid rgba(28,28,28,0.08); white-space: nowrap;
 }
 .c-table thead th.center { text-align: center; }
 .c-table tbody tr {
   border-bottom: 1px solid var(--sand-mist);
-  cursor: pointer;
-  transition: background 0.12s;
+  cursor: pointer; transition: background 0.12s;
 }
 .c-table tbody tr:last-child { border-bottom: none; }
 .c-table tbody tr:hover { background: rgba(233,231,224,0.5); }
 .c-table tbody tr.open { background: var(--sand-mist); }
-.c-table td {
-  padding: 16px 16px;
-  font-size: 14px;
-  vertical-align: top;
-}
-.c-table td.c-market {
-  white-space: nowrap;
-  font-weight: 600;
-  font-size: 13px;
-}
+.c-table td { padding: 16px; font-size: 14px; vertical-align: top; }
+.c-table td.c-market { white-space: nowrap; font-weight: 600; font-size: 13px; }
 .c-table td.c-market .flag { margin-right: 6px; font-size: 16px; }
 .c-table td.c-type { font-weight: 600; }
-.c-table td.c-no {
-  font-size: 12px;
-  color: var(--soft-graphite);
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  word-break: break-all;
-}
-.c-table td.c-body {
-  font-size: 13px;
-  color: var(--soft-graphite);
-}
-.c-table td.c-std {
-  font-size: 12px;
-  color: var(--soft-graphite);
-  line-height: 1.6;
-}
-.c-table td.c-date {
-  white-space: nowrap;
-  font-size: 13px;
-  font-weight: 500;
-}
+.c-table td.c-no { font-size: 12px; color: var(--soft-graphite); font-weight: 500; word-break: break-all; }
+.c-table td.c-body { font-size: 13px; color: var(--soft-graphite); }
+.c-table td.c-std { font-size: 12px; color: var(--soft-graphite); line-height: 1.6; }
+.c-table td.c-date { white-space: nowrap; font-size: 13px; font-weight: 500; }
 .c-table td.c-dl { text-align: center; white-space: nowrap; }
 .c-dl-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--ink-black);
-  padding: 5px 12px;
-  border: 1px solid var(--ink-black);
-  border-radius: 2px;
-  text-decoration: none;
-  transition: all 0.15s;
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 11px; font-weight: 600; color: var(--ink-black);
+  padding: 5px 12px; border: 1px solid var(--ink-black);
+  border-radius: 2px; text-decoration: none; transition: all 0.15s;
 }
 .c-dl-link:hover { background: var(--ink-black); color: var(--warm-ivory); }
 .c-dl-link svg { width: 11px; height: 11px; }
 .c-toggle {
-  text-align: center;
-  color: var(--soft-graphite);
-  font-size: 14px;
-  transition: transform 0.2s;
-  user-select: none;
-  width: 32px;
+  text-align: center; color: var(--soft-graphite);
+  font-size: 14px; transition: transform 0.2s; user-select: none; width: 32px;
 }
 tr.open .c-toggle { transform: rotate(180deg); }
 
-/* ========= Expand (explain) ========= */
-.c-explain {
-  display: none;
-}
+/* Expand */
+.c-explain { display: none; }
 .c-explain.open { display: table-row; }
-.c-explain td {
-  padding: 0;
-  background: var(--warm-ivory);
-}
+.c-explain td { padding: 0; background: var(--warm-ivory); }
 .explain-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
   border-top: 1px solid var(--sand-mist);
 }
 .explain-inner > div {
@@ -159,205 +117,135 @@ tr.open .c-toggle { transform: rotate(180deg); }
 }
 .explain-inner > div:last-child { border-right: none; }
 .explain-inner h5 {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--dusty-lilac);
-  margin-bottom: 8px;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--dusty-lilac); margin-bottom: 8px;
 }
-.explain-inner p {
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--soft-graphite);
+.explain-inner p { font-size: 13px; line-height: 1.7; color: var(--soft-graphite); }
+.explain-inner p strong { color: var(--ink-black); font-weight: 500; }
+.ct-meta {
+  display: flex; gap: 32px; padding: 16px 28px;
+  background: var(--sand-mist); font-size: 12px; color: var(--soft-graphite);
+  border-top: 1px solid rgba(28,28,28,0.06); flex-wrap: wrap;
 }
-.explain-inner p strong {
-  color: var(--ink-black);
-  font-weight: 500;
-}
+.ct-meta span strong { font-weight: 600; color: var(--ink-black); }
 
-/* ========= Battery & Notes ========= */
+/* Battery & Notes */
 .notes-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border: 1px solid var(--sand-mist);
-  border-top: none;
-  border-radius: 0 0 2px 2px;
-  overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--sand-mist); border-top: none; overflow: hidden;
 }
-.notes-box {
-  padding: 24px 28px;
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--soft-graphite);
-}
-.notes-box:first-child {
-  background: var(--sand-mist);
-  border-right: 1px solid rgba(28,28,28,0.06);
-}
+.notes-box { padding: 24px 28px; font-size: 13px; line-height: 1.7; color: var(--soft-graphite); }
+.notes-box:first-child { background: var(--sand-mist); border-right: 1px solid rgba(28,28,28,0.06); }
 .notes-box:last-child { background: var(--warm-ivory); }
 .notes-box h4 {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-black);
-  margin-bottom: 12px;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-black); margin-bottom: 12px;
 }
 .notes-box p { margin-bottom: 6px; }
 .notes-box p:last-child { margin-bottom: 0; }
 .notes-box strong { color: var(--ink-black); font-weight: 600; }
 .note-bullet { margin-bottom: 8px; }
 .note-bullet:last-child { margin-bottom: 0; }
+.doc-footer {
+  padding: 24px 0 0; text-align: center;
+  font-size: 12px; color: var(--soft-graphite);
+}
+.doc-footer a { color: var(--dusty-lilac); text-decoration: underline; }
 
-/* ========= Market Coverage ========= */
+/* Market */
 .market-section { padding: 64px 0; }
 .market-section h2 { margin-bottom: 6px; }
-.market-section .sub {
-  font-size: 15px;
-  color: var(--soft-graphite);
-  margin-bottom: 32px;
-}
+.market-section .sub { font-size: 15px; color: var(--soft-graphite); margin-bottom: 32px; }
 .mkt-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--sand-mist);
-  border: 1px solid var(--sand-mist);
-  border-radius: 2px;
-  overflow: hidden;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--sand-mist);
+  border: 1px solid var(--sand-mist); border-radius: 2px; overflow: hidden;
 }
-.mkt-card {
-  background: var(--warm-ivory);
-  padding: 24px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.mkt-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.mkt-top h4 {
-  font-size: 15px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
+.mkt-card { background: var(--warm-ivory); padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+.mkt-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.mkt-top h4 { font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 7px; }
 .mkt-top .mf { font-size: 18px; }
 .mkt-sts {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 3px 9px;
-  border-radius: 2px;
-  white-space: nowrap;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; padding: 3px 9px; border-radius: 2px; white-space: nowrap;
 }
 .mkt-sts.ok { background: #d1fae5; color: #065f46; }
 .mkt-sts.part { background: #fef3c7; color: #92400e; }
 .mkt-sts.none { background: var(--sand-mist); color: var(--soft-graphite); }
-.mkt-checks {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.mkt-checks li {
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--soft-graphite);
-  padding: 3px 0;
-  display: flex;
-  gap: 6px;
-  align-items: baseline;
-}
+.mkt-checks { list-style: none; padding: 0; margin: 0; }
+.mkt-checks li { font-size: 13px; line-height: 1.5; color: var(--soft-graphite); padding: 3px 0; display: flex; gap: 6px; align-items: baseline; }
 .ck { color: #059669; font-weight: 700; }
 .ar { color: #d97706; }
 .mkt-note {
-  font-size: 12px;
-  color: var(--soft-graphite);
-  line-height: 1.5;
-  padding-top: 8px;
-  border-top: 1px solid var(--sand-mist);
-  margin-top: auto;
+  font-size: 12px; color: var(--soft-graphite); line-height: 1.5;
+  padding-top: 8px; border-top: 1px solid var(--sand-mist); margin-top: auto;
 }
 
-/* ========= Footer note ========= */
-.doc-footer {
-  padding: 24px 0 0;
-  text-align: center;
-  font-size: 12px;
-  color: var(--soft-graphite);
-  letter-spacing: 0.02em;
-}
-.doc-footer a { color: var(--dusty-lilac); text-decoration: underline; }
-
-/* ========= How to Update ========= */
+/* Update */
 .update-section { padding: 80px 0 100px; }
 .update-section h2 { margin-bottom: 6px; }
 .update-section .sub { font-size: 15px; color: var(--soft-graphite); margin-bottom: 32px; }
-.upd-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.upd-card {
-  padding: 24px 20px;
-  border: 1px solid var(--sand-mist);
-  border-radius: 2px;
-}
-.upd-card .upd-num {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--dusty-lilac);
-  margin-bottom: 10px;
-}
+.upd-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.upd-card { padding: 24px 20px; border: 1px solid var(--sand-mist); border-radius: 2px; }
+.upd-card .upd-num { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--dusty-lilac); margin-bottom: 10px; }
 .upd-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
 .upd-card p { font-size: 13px; color: var(--soft-graphite); line-height: 1.6; }
 .upd-card code { font-size: 11px; background: var(--sand-mist); padding: 1px 5px; border-radius: 2px; }
 
-/* ========= Responsive ========= */
+/* Responsive */
 @media (max-width: 960px) {
   .c-table thead { display: none; }
-  .c-table, .c-table tbody, .c-table tr, .c-table td {
-    display: block;
+  .c-table { display: block; }
+  .c-table tbody { display: block; }
+  .c-table tbody tr:not(.c-explain) {
+    display: grid; padding: 16px;
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-rows: auto auto; gap: 4px 12px; align-items: center;
   }
-  .c-table tbody tr {
-    padding: 16px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto auto;
-    gap: 4px 12px;
-    align-items: center;
-  }
-  .c-table td.c-market { grid-row: 1; grid-column: 1; padding: 0; }
-  .c-table td.c-type { grid-row: 1; grid-column: 2; padding: 0; }
-  .c-table td.c-toggle-cell { grid-row: 1; grid-column: 3; padding: 0; }
-  .c-table td.c-std { grid-row: 2; grid-column: 1 / -1; padding: 4px 0 0; font-size: 12px; }
-  .c-table td.c-no,
-  .c-table td.c-body,
-  .c-table td.c-date,
-  .c-table td.c-dl { display: none; }
-  .c-explain td { display: block; }
-  .explain-inner { grid-template-columns: 1fr; }
-  .explain-inner > div { border-right: none; border-bottom: 1px solid var(--sand-mist); }
-  .explain-inner > div:last-child { border-bottom: none; }
-  .notes-grid { grid-template-columns: 1fr; }
-  .notes-box:first-child { border-right: none; border-bottom: 1px solid rgba(28,28,28,0.06); }
-  .mkt-grid { grid-template-columns: 1fr 1fr; }
+  .c-table tbody tr:not(.c-explain) td { display: block; padding: 0; }
+  .c-table td.c-market { grid-row:1; grid-column:1; }
+  .c-table td.c-type { grid-row:1; grid-column:2; }
+  .c-table td.c-dl { grid-row:1; grid-column:3; }
+  .c-table td.c-toggle-cell { grid-row:1; grid-column:4; }
+  .c-table td.c-std { grid-row:2; grid-column:1/-1; padding-top:4px !important; font-size:12px; }
+  .c-table td.c-no, .c-table td.c-body, .c-table td.c-date { display:none !important; }
+  .c-explain { display: none; }
+  .c-explain.open { display: table-row; }
+  .c-explain td { display: block; padding: 0; }
+  .explain-inner { grid-template-columns:1fr; }
+  .explain-inner > div { border-right:none; border-bottom:1px solid var(--sand-mist); }
+  .explain-inner > div:last-child { border-bottom:none; }
+  .notes-grid { grid-template-columns:1fr; }
+  .notes-box:first-child { border-right:none; border-bottom:1px solid rgba(28,28,28,0.06); }
+  .mkt-grid { grid-template-columns:1fr 1fr; }
 }
 @media (max-width: 640px) {
-  .mkt-grid { grid-template-columns: 1fr; }
-  .upd-grid { grid-template-columns: 1fr; }
-  .prod-table th { width: 100px; padding: 10px 12px; font-size: 12px; }
-  .prod-table td { padding: 10px 12px; font-size: 13px; }
+  .mkt-grid { grid-template-columns:1fr; }
+  .upd-grid { grid-template-columns:1fr; }
+  .prod-table th { width:100px; padding:10px 12px; font-size:12px; }
+  .prod-table td { padding:10px 12px; font-size:13px; }
 }
 </style>
 </head>
 <body>
+
+<!-- Lang selector -->
+<div class="lang-bar">
+  <select id="lang-select" onchange="setLang(this.value)">
+    <option value="ko">한국어</option>
+    <option value="en">English</option>
+    <option value="ja">日本語</option>
+    <option value="zh">中文</option>
+    <option value="th">ภาษาไทย</option>
+    <option value="vi">Tiếng Việt</option>
+    <option value="id">Bahasa Indonesia</option>
+    <option value="fr">Français</option>
+    <option value="es">Español</option>
+    <option value="pt">Português</option>
+    <option value="ru">Русский</option>
+    <option value="en_gb">English (UK)</option>
+  </select>
+</div>
 
 <header>
   <div class="inner">
@@ -374,47 +262,44 @@ tr.open .c-toggle { transform: rotate(180deg); }
   </div>
 </header>
 
-
-<!-- ========= Hero ========= -->
+<!-- Hero -->
 <section class="cert-hero">
   <div class="container">
-    <div class="eyebrow fade-up">Product Certification Summary</div>
-    <h1 class="fade-up delay-1" style="margin-bottom:20px;">NEWCHAE Certifications</h1>
-    <p class="lead fade-up delay-2">6 certifications across 3 markets. Click any row to see what it means in plain language.</p>
+    <div class="eyebrow fade-up" data-i18n="hero.ey">제품 인증 요약</div>
+    <h1 class="fade-up delay-1" style="margin-bottom:20px;" data-i18n="hero.h1">NEWCHAE 인증 현황</h1>
+    <p class="lead fade-up delay-2" data-i18n="hero.lead">보유 인증 6건, 진출 가능 시장 3개. 각 행을 클릭하면 해당 인증이 어떤 역할을 하는지 쉽게 설명해 드립니다.</p>
   </div>
 </section>
 
-
-<!-- ========= Product & Manufacturer ========= -->
+<!-- Product Info -->
 <section class="prod-section">
   <div class="container">
     <table class="prod-table">
-      <tr><th>Product</th><td>NEWCHAE Shot &middot; Skin Care Device (Personal Care / Home Use)</td></tr>
-      <tr><th>Model</th><td>BD-ERD24NWP &nbsp;(EU variant: BD-ERD24NC)</td></tr>
-      <tr><th>Manufacturer</th><td>BRITZMEDI Co., Ltd. &middot; 1F, 2, Gisan-ro 87beon-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</td></tr>
-      <tr><th>Contact</th><td>Jaekyeom Na &nbsp;&middot;&nbsp; jk.na@britzmedi.co.kr &nbsp;&middot;&nbsp; +82-70-4348-7244</td></tr>
+      <tr><th data-i18n="p.lbl.prod">제품</th><td>NEWCHAE Shot &middot; 피부관리기 (개인용 / 가정용)</td></tr>
+      <tr><th data-i18n="p.lbl.model">모델</th><td>BD-ERD24NWP &nbsp;(EU: BD-ERD24NC)</td></tr>
+      <tr><th data-i18n="p.lbl.mfr">제조사</th><td data-i18n="p.val.mfr">(주)브리츠메디 &middot; 경기도 성남시 중원구 둔촌대로 388, 크란츠테크노 1211호</td></tr>
+      <tr><th data-i18n="p.lbl.contact">담당자</th><td>나재겸 &middot; jk.na@britzmedi.co.kr &middot; 070-4348-7244</td></tr>
     </table>
   </div>
 </section>
 
-
-<!-- ========= Certifications by Market ========= -->
+<!-- Certifications Table -->
 <section class="cert-section">
   <div class="container">
-    <div class="eyebrow">Certifications by Market</div>
-    <h2>6 Certificates</h2>
-    <p class="sub">Click any row for a plain-language explanation of what it is, its scope, and why it matters.</p>
+    <div class="eyebrow" data-i18n="ct.ey">시장별 인증 현황</div>
+    <h2 data-i18n="ct.h2">보유 인증 6건</h2>
+    <p class="sub" data-i18n="ct.sub">각 행을 클릭하면 해당 인증이 무엇인지, 어떤 범위에 적용되는지, 왜 필요한지 쉽게 설명합니다.</p>
 
     <div class="c-wrap">
       <table class="c-table">
         <thead>
           <tr>
-            <th>Market</th>
-            <th>Type</th>
-            <th>Certificate / Report No.</th>
-            <th>Issuing Body</th>
-            <th>Applied Standards / Directive</th>
-            <th>Issued</th>
+            <th data-i18n="th.market">시장</th>
+            <th data-i18n="th.type">유형</th>
+            <th data-i18n="th.no">인증서 번호</th>
+            <th data-i18n="th.body">발급기관</th>
+            <th data-i18n="th.std">적용 표준 / 지침</th>
+            <th data-i18n="th.issued">발급일</th>
             <th class="center">PDF</th>
             <th></th>
           </tr>
@@ -423,359 +308,453 @@ tr.open .c-toggle { transform: rotate(180deg); }
 
           <!-- 1. KC EMC -->
           <tr onclick="toggleRow(this)">
-            <td class="c-market"><span class="flag">&#127472;&#127479;</span>Korea</td>
-            <td class="c-type">KC EMC (Device)</td>
+            <td class="c-market"><span class="flag">&#127472;&#127479;</span><span data-i18n="mk.kr">한국</span></td>
+            <td class="c-type" data-i18n="c1.type">KC 전자파적합성 (본체)</td>
             <td class="c-no">KR24-HEK0239</td>
             <td class="c-body">Eurofins KCTL</td>
-            <td class="c-std">Korea Radio Act Art. 8 &mdash; KS C 9814-1, KS C 9814-2 (EMC for household appliances)</td>
+            <td class="c-std">Korea Radio Act Art. 8 &mdash; KS C 9814-1, KS C 9814-2</td>
             <td class="c-date">2024-04-05</td>
             <td class="c-dl"><a class="c-dl-link" href="certs/KC_EMC_Device_KR24-HEK0239.pdf" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3v14m-6-6l6 6 6-6M5 21h14"/></svg>PDF</a></td>
             <td class="c-toggle-cell"><span class="c-toggle">&#9662;</span></td>
           </tr>
-          <tr class="c-explain">
-            <td colspan="8">
-              <div class="explain-inner">
-                <div>
-                  <h5>What is this?</h5>
-                  <p>Proves NEWCHAE <strong>doesn't interfere with other electronics</strong> (Wi-Fi, TV, etc.) and isn't affected by them either. It passed Korea's official electromagnetic compatibility test for household appliances.</p>
-                </div>
-                <div>
-                  <h5>Scope</h5>
-                  <p><strong>The device body itself</strong> &mdash; the main unit that emits RF, EMS, and ELP energy. Separate from the battery certification below.</p>
-                </div>
-                <div>
-                  <h5>Why it matters</h5>
-                  <p>Required for <strong>legal sale in South Korea</strong>. Cannot list on Coupang, Naver, or any Korean retail without it. Also serves as baseline evidence for CE and FCC applications.</p>
-                </div>
-              </div>
-            </td>
-          </tr>
+          <tr class="c-explain"><td colspan="8">
+            <div class="explain-inner">
+              <div><h5 data-i18n="ex.what">이게 뭔가요?</h5><p data-i18n="c1.wp">NEWCHAE 기기가 <strong>다른 전자기기를 방해하지 않고</strong>, 반대로 <strong>다른 기기의 영향도 받지 않는다</strong>는 것을 증명합니다. 한국의 공식 전자파적합성(EMC) 시험을 통과했습니다.</p></div>
+              <div><h5 data-i18n="ex.scope">적용 범위</h5><p data-i18n="c1.sp"><strong>기기 본체</strong>에 해당합니다 &mdash; RF, EMS, ELP 에너지를 방출하는 메인 유닛. 사용 중 Wi-Fi, TV 등 다른 기기에 영향을 주지 않음을 확인합니다. 배터리는 별도 인증.</p></div>
+              <div><h5 data-i18n="ex.why">왜 필요한가요?</h5><p data-i18n="c1.yp"><strong>한국 내 합법적 판매에 필수.</strong> 이 인증 없이는 쿠팡, 네이버 쇼핑 등에 등록할 수 없습니다. CE, FCC 신청 시 기초 자료로도 활용됩니다.</p></div>
+            </div>
+          </td></tr>
 
           <!-- 2. KC Battery -->
           <tr onclick="toggleRow(this)">
-            <td class="c-market"><span class="flag">&#127472;&#127479;</span>Korea</td>
-            <td class="c-type">KC Safety (Battery)</td>
+            <td class="c-market"><span class="flag">&#127472;&#127479;</span><span data-i18n="mk.kr">한국</span></td>
+            <td class="c-type" data-i18n="c2.type">KC 안전확인 (배터리)</td>
             <td class="c-no">XH100102-18019D</td>
             <td class="c-body">KTC</td>
-            <td class="c-std">KC 62133:2019-02 &mdash; Li-ion battery safety (Applicant: EJENs Co., Ltd.)</td>
+            <td class="c-std">KC 62133:2019-02 &mdash; Li-ion battery safety (EJENs Co., Ltd.)</td>
             <td class="c-date">2020-06-26</td>
             <td class="c-dl"><a class="c-dl-link" href="certs/KC_Battery_LI-35E_XH100102-18019D.pdf" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3v14m-6-6l6 6 6-6M5 21h14"/></svg>PDF</a></td>
             <td class="c-toggle-cell"><span class="c-toggle">&#9662;</span></td>
           </tr>
-          <tr class="c-explain">
-            <td colspan="8">
-              <div class="explain-inner">
-                <div>
-                  <h5>What is this?</h5>
-                  <p>The built-in lithium battery (Samsung SDI cells, assembled by EJENs) <strong>won't overheat, catch fire, or explode</strong>. Passed overcharge, short circuit, drop, high temperature, and crush tests.</p>
-                </div>
-                <div>
-                  <h5>Scope</h5>
-                  <p><strong>The rechargeable battery pack only</strong> (LI-35E 101, 3.6V/3,350mAh). Korean law requires separate safety certification for the device body and its battery.</p>
-                </div>
-                <div>
-                  <h5>Why it matters</h5>
-                  <p>Korean marketplaces require <strong>both KC EMC + KC Battery</strong> to list any rechargeable beauty device. This pair is the entry ticket to the Korean market.</p>
-                </div>
-              </div>
-            </td>
-          </tr>
+          <tr class="c-explain"><td colspan="8">
+            <div class="explain-inner">
+              <div><h5 data-i18n="ex.what">이게 뭔가요?</h5><p data-i18n="c2.wp">내장 리튬 배터리(삼성SDI 셀, 이젠스 조립)가 <strong>과열·발화·폭발하지 않는다</strong>는 것을 증명합니다. 과충전, 단락, 낙하, 고온, 압착 테스트를 모두 통과했습니다.</p></div>
+              <div><h5 data-i18n="ex.scope">적용 범위</h5><p data-i18n="c2.sp"><strong>충전식 배터리 팩만</strong> 해당합니다 (LI-35E 101, 3.6V/3,350mAh). 한국법상 기기 본체와 배터리는 별도로 안전 인증을 받아야 합니다.</p></div>
+              <div><h5 data-i18n="ex.why">왜 필요한가요?</h5><p data-i18n="c2.yp">한국 마켓플레이스에 충전식 미용기기를 등록하려면 <strong>KC EMC + KC 배터리 인증 모두</strong> 제출해야 합니다. 이 두 인증이 한국 시장 진입의 필수 요건입니다.</p></div>
+            </div>
+          </td></tr>
 
           <!-- 3. CE EMC -->
           <tr onclick="toggleRow(this)">
             <td class="c-market"><span class="flag">&#127466;&#127482;</span>EU</td>
-            <td class="c-type">CE (EMC)</td>
+            <td class="c-type" data-i18n="c3.type">CE EMC 적합성</td>
             <td class="c-no">KR24-SEC0221</td>
             <td class="c-body">Eurofins KCTL</td>
-            <td class="c-std">EMC Directive 2014/30/EU &mdash; EN IEC 55014-1:2021, EN IEC 55014-2:2021, EN/IEC 61000-3-2, EN/IEC 61000-3-3</td>
+            <td class="c-std">EMC Directive 2014/30/EU &mdash; EN IEC 55014-1/2:2021, EN 61000-3-2/3-3</td>
             <td class="c-date">2024-10-18</td>
             <td class="c-dl"><a class="c-dl-link" href="certs/CE_EMC_KR24-SEC0221.pdf" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3v14m-6-6l6 6 6-6M5 21h14"/></svg>PDF</a></td>
             <td class="c-toggle-cell"><span class="c-toggle">&#9662;</span></td>
           </tr>
-          <tr class="c-explain">
-            <td colspan="8">
-              <div class="explain-inner">
-                <div>
-                  <h5>What is this?</h5>
-                  <p>The CE mark is <strong>Europe's mandatory safety passport</strong>. This cert covers EMC &mdash; proving the device plays nicely with other electronics. Covers both the NWP and NC models.</p>
-                </div>
-                <div>
-                  <h5>Scope</h5>
-                  <p><strong>All 27 EU member states + EEA</strong> (Norway, Iceland, Liechtenstein). UK also accepts CE. Recognized as baseline in Turkey, Israel, and parts of Southeast Asia.</p>
-                </div>
-                <div>
-                  <h5>Why it matters</h5>
-                  <p>Without CE marking, <strong>EU customs will reject shipments</strong>. The single most important cert for European market access. Required by Amazon EU and all European distributors.</p>
-                </div>
-              </div>
-            </td>
-          </tr>
+          <tr class="c-explain"><td colspan="8">
+            <div class="explain-inner">
+              <div><h5 data-i18n="ex.what">이게 뭔가요?</h5><p data-i18n="c3.wp">CE 마크는 <strong>유럽의 필수 안전 인증</strong>입니다. 이 인증은 EMC(전자파 양립성)를 다루며, 기기가 유럽 내 다른 전자기기와 문제 없이 함께 사용할 수 있음을 증명합니다. NWP, NC 두 모델 모두 포함.</p></div>
+              <div><h5 data-i18n="ex.scope">적용 범위</h5><p data-i18n="c3.sp"><strong>EU 27개 회원국 + EEA</strong> (노르웨이, 아이슬란드, 리히텐슈타인). 영국도 현재 CE를 인정합니다. 터키, 이스라엘, 동남아 일부에서도 기초 인증으로 활용됩니다.</p></div>
+              <div><h5 data-i18n="ex.why">왜 필요한가요?</h5><p data-i18n="c3.yp">CE 마크 없이는 <strong>유럽 세관에서 통관이 거부</strong>됩니다. 유럽 시장 진입을 위한 가장 중요한 단일 인증입니다. Amazon EU, 유럽 유통사 모두 요구합니다.</p></div>
+            </div>
+          </td></tr>
 
           <!-- 4. EU Battery -->
           <tr onclick="toggleRow(this)">
             <td class="c-market"><span class="flag">&#127466;&#127482;</span>EU</td>
-            <td class="c-type">Battery Safety</td>
+            <td class="c-type" data-i18n="c4.type">배터리 안전 (EN 62133-2)</td>
             <td class="c-no">KR24-YBC0009</td>
             <td class="c-body">Eurofins KCTL</td>
-            <td class="c-std">IEC 62133-2:2017+AMD1:2021, EN 62133-2:2017+A1:2021 (Battery: EJENs LI-35E 101)</td>
+            <td class="c-std">IEC 62133-2:2017+AMD1:2021, EN 62133-2:2017+A1:2021</td>
             <td class="c-date">2024-08-29</td>
             <td class="c-dl"><a class="c-dl-link" href="certs/EU_Battery_EN62133-2_KR24-YBC0009.pdf" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3v14m-6-6l6 6 6-6M5 21h14"/></svg>PDF</a></td>
             <td class="c-toggle-cell"><span class="c-toggle">&#9662;</span></td>
           </tr>
-          <tr class="c-explain">
-            <td colspan="8">
-              <div class="explain-inner">
-                <div>
-                  <h5>What is this?</h5>
-                  <p>EU equivalent of Korea's battery safety cert. The battery passed <strong>European safety standards</strong> for overheating, short-circuit, crushing, and abnormal charging.</p>
-                </div>
-                <div>
-                  <h5>Scope</h5>
-                  <p><strong>Battery pack for EU market entry.</strong> Works alongside CE EMC &mdash; together they cover electromagnetic safety and battery safety, the two main requirements.</p>
-                </div>
-                <div>
-                  <h5>Why it matters</h5>
-                  <p>Required to complete the <strong>CE Declaration of Conformity</strong>. Amazon EU and many European retailers explicitly request this certificate before listing.</p>
-                </div>
-              </div>
-            </td>
-          </tr>
+          <tr class="c-explain"><td colspan="8">
+            <div class="explain-inner">
+              <div><h5 data-i18n="ex.what">이게 뭔가요?</h5><p data-i18n="c4.wp">한국 KC 배터리 안전 인증의 <strong>유럽 버전</strong>입니다. 배터리가 유럽 안전 기준에 따라 과열, 단락, 압착, 이상 충전 테스트를 통과했습니다.</p></div>
+              <div><h5 data-i18n="ex.scope">적용 범위</h5><p data-i18n="c4.sp"><strong>EU 시장 진입을 위한 배터리 팩.</strong> 위의 CE EMC 인증과 함께 사용됩니다. 둘이 합쳐져 전자파 안전 + 배터리 안전이라는 두 가지 핵심 요건을 충족합니다.</p></div>
+              <div><h5 data-i18n="ex.why">왜 필요한가요?</h5><p data-i18n="c4.yp"><strong>CE 적합성 선언서</strong>를 완성하는 데 배터리 안전 근거가 필수입니다. Amazon EU와 유럽 주요 리테일러들이 등록 전에 이 인증서를 명시적으로 요청합니다.</p></div>
+            </div>
+          </td></tr>
 
           <!-- 5. FCC -->
           <tr onclick="toggleRow(this)">
-            <td class="c-market"><span class="flag">&#127482;&#127480;</span>US</td>
+            <td class="c-market"><span class="flag">&#127482;&#127480;</span><span data-i18n="mk.us">미국</span></td>
             <td class="c-type">FCC SDoC</td>
             <td class="c-no">KR24-YEF0068</td>
-            <td class="c-body">BRITZMEDI (Self-declaration)</td>
+            <td class="c-body" data-i18n="c5.body">BRITZMEDI (자기적합선언)</td>
             <td class="c-std">FCC Rules Part 15 &mdash; Supplier's Declaration of Conformity</td>
             <td class="c-date">2024</td>
             <td class="c-dl"><a class="c-dl-link" href="certs/FCC_SDoC_KR24-YEF0068.pdf" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3v14m-6-6l6 6 6-6M5 21h14"/></svg>PDF</a></td>
             <td class="c-toggle-cell"><span class="c-toggle">&#9662;</span></td>
           </tr>
-          <tr class="c-explain">
-            <td colspan="8">
-              <div class="explain-inner">
-                <div>
-                  <h5>What is this?</h5>
-                  <p>The FCC requires all US-sold electronics <strong>don't cause harmful radio interference</strong>. NEWCHAE has no wireless, so it qualifies as "unintentional radiator" &mdash; SDoC is sufficient, no full FCC ID needed.</p>
-                </div>
-                <div>
-                  <h5>Scope</h5>
-                  <p><strong>Entire United States.</strong> Covers unintentional radio emissions. Note: a US-based "Responsible Party" address still needs to be designated for full compliance.</p>
-                </div>
-                <div>
-                  <h5>Why it matters</h5>
-                  <p>Amazon US, Walmart, and other retailers <strong>require FCC compliance docs</strong> to list electronic devices. Also useful for Canada (ISED) preparation.</p>
-                </div>
-              </div>
-            </td>
-          </tr>
+          <tr class="c-explain"><td colspan="8">
+            <div class="explain-inner">
+              <div><h5 data-i18n="ex.what">이게 뭔가요?</h5><p data-i18n="c5.wp">FCC는 미국에서 판매되는 모든 전자기기가 <strong>유해한 전파 간섭을 일으키지 않을 것</strong>을 요구합니다. NEWCHAE는 무선통신(블루투스/Wi-Fi)이 없어 Part 15 "비의도적 방사체"로 분류되며, SDoC(자기적합선언)로 충분합니다.</p></div>
+              <div><h5 data-i18n="ex.scope">적용 범위</h5><p data-i18n="c5.sp"><strong>미국 전역.</strong> 비의도적 전파 방출을 커버합니다. 참고: 완전한 규정 준수를 위해 미국 내 "책임 당사자(Responsible Party)" 주소 지정이 필요합니다.</p></div>
+              <div><h5 data-i18n="ex.why">왜 필요한가요?</h5><p data-i18n="c5.yp">Amazon US, Walmart 등 미국 리테일러는 전자기기 등록 전에 <strong>FCC 적합성 서류를 요구</strong>합니다. 캐나다(ISED) 진출 준비에도 유용합니다.</p></div>
+            </div>
+          </td></tr>
 
           <!-- 6. RoHS -->
           <tr onclick="toggleRow(this)">
-            <td class="c-market"><span class="flag">&#127758;</span>EU / Global</td>
-            <td class="c-type">RoHS (Housing)</td>
+            <td class="c-market"><span class="flag">&#127758;</span><span data-i18n="mk.gl">EU / 글로벌</span></td>
+            <td class="c-type" data-i18n="c6.type">RoHS (외장재)</td>
             <td class="c-no">F690101/LF-CTSAYAA24-01205</td>
             <td class="c-body">SGS Korea</td>
-            <td class="c-std">IEC 62321 series &mdash; RoHS 10 substances (PMMA housing material; supplier: LX MMA Corp.) All N.D.</td>
+            <td class="c-std">IEC 62321 series &mdash; RoHS 10 substances (PMMA; LX MMA Corp.) All N.D.</td>
             <td class="c-date">2024-01-15</td>
             <td class="c-dl"><a class="c-dl-link" href="certs/RoHS_Housing_PMMA_SGS_F690101.pdf" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3v14m-6-6l6 6 6-6M5 21h14"/></svg>PDF</a></td>
             <td class="c-toggle-cell"><span class="c-toggle">&#9662;</span></td>
           </tr>
-          <tr class="c-explain">
-            <td colspan="8">
-              <div class="explain-inner">
-                <div>
-                  <h5>What is this?</h5>
-                  <p>RoHS = Restriction of Hazardous Substances. The outer casing (PMMA acrylic) is <strong>free of toxic heavy metals, flame retardants, and phthalates</strong> &mdash; all 10 restricted substances: "Not Detected."</p>
-                </div>
-                <div>
-                  <h5>Scope</h5>
-                  <p><strong>External housing material only</strong> (PMMA by LX MMA Corp.), not the entire device. A whole-product RoHS DoC covering all components would strengthen EU compliance.</p>
-                </div>
-                <div>
-                  <h5>Why it matters</h5>
-                  <p>EU and many Asian markets <strong>ban harmful substances above certain thresholds</strong>. Tested by SGS, a globally recognized lab &mdash; carries weight with distributors and customs.</p>
-                </div>
-              </div>
-            </td>
-          </tr>
+          <tr class="c-explain"><td colspan="8">
+            <div class="explain-inner">
+              <div><h5 data-i18n="ex.what">이게 뭔가요?</h5><p data-i18n="c6.wp">RoHS = 유해물질 사용 제한. 기기 외장 케이스(PMMA 아크릴)에 <strong>독성 중금속, 난연제, 프탈레이트가 없음</strong>을 확인합니다. 10대 규제 물질 모두 "불검출(N.D.)".</p></div>
+              <div><h5 data-i18n="ex.scope">적용 범위</h5><p data-i18n="c6.sp"><strong>외장 하우징 소재만</strong> 해당 (LX MMA 공급 PMMA). 완제품 전체가 아닙니다. EU 완전 준수를 위해서는 모든 부품을 포함한 완제품 RoHS 적합성 선언서(DoC)가 권장됩니다.</p></div>
+              <div><h5 data-i18n="ex.why">왜 필요한가요?</h5><p data-i18n="c6.yp">EU와 아시아 다수 시장이 <strong>유해물질 함유 제품의 판매를 금지</strong>합니다. 세계적 시험기관 SGS가 발급하여 유통사와 세관에서 신뢰도가 높습니다.</p></div>
+            </div>
+          </td></tr>
 
         </tbody>
       </table>
 
-      <!-- Battery & Notes (below table, like the PDF) -->
       <div class="notes-grid">
         <div class="notes-box">
-          <h4>Internal Battery</h4>
-          <p><strong>Supplier:</strong> EJENs Co., Ltd. (Republic of Korea)</p>
-          <p><strong>Model:</strong> LI-35E 101 &middot; 3.6 V / 3,350 mAh &middot; Li-ion 1S1P</p>
-          <p><strong>Cell:</strong> Samsung SDI INR18650-35E (TUV SUD PSB certified)</p>
+          <h4 data-i18n="bat.h">내장 배터리</h4>
+          <p><strong data-i18n="bat.supplier.l">공급사:</strong> EJENs Co., Ltd. (대한민국)</p>
+          <p><strong data-i18n="bat.model.l">모델:</strong> LI-35E 101 &middot; 3.6V / 3,350mAh &middot; Li-ion 1S1P</p>
+          <p><strong data-i18n="bat.cell.l">셀:</strong> Samsung SDI INR18650-35E (TUV SUD PSB 인증)</p>
         </div>
         <div class="notes-box">
-          <h4>Scope &amp; Notes</h4>
-          <div class="note-bullet"><strong>CE marking:</strong> Verified under EMC Directive 2014/30/EU. Personal care / cosmetic-use device.</div>
-          <div class="note-bullet"><strong>FCC:</strong> Supplier's Declaration of Conformity under FCC Part 15.</div>
-          <div class="note-bullet"><strong>RoHS:</strong> Housing PMMA verified compliant. Full product-level DoC available on request.</div>
-          <div class="note-bullet"><strong>Origin:</strong> Republic of Korea (brand holder &amp; final assembly).</div>
+          <h4 data-i18n="scope.h">범위 및 참고사항</h4>
+          <div class="note-bullet" data-i18n="scope.ce"><strong>CE 마킹:</strong> EMC Directive 2014/30/EU 검증 완료. 개인용 미용기기 카테고리.</div>
+          <div class="note-bullet" data-i18n="scope.fcc"><strong>FCC:</strong> FCC Part 15 기준 자기적합선언(SDoC).</div>
+          <div class="note-bullet" data-i18n="scope.rohs"><strong>RoHS:</strong> 하우징 PMMA 적합 확인. 완제품 DoC는 요청 시 제공.</div>
+          <div class="note-bullet" data-i18n="scope.origin"><strong>원산지:</strong> 대한민국 (브랜드 보유사 및 최종 조립).</div>
         </div>
       </div>
-    </div><!-- /c-wrap -->
-
-    <div class="doc-footer">
-      Reference summary for partner due diligence. Original certificate documents available via PDF links above.<br>
-      Printable version: <a href="cert-docs/NEWCHAE_Certification_Summary.pdf" target="_blank">PDF</a> &middot; <a href="cert-docs/NEWCHAE_Certification_Summary.docx" target="_blank">DOCX</a>
     </div>
+
+    <div class="doc-footer" data-i18n="doc.footer">파트너 실사용 참고 자료입니다. 인증서 원본은 위 PDF 링크에서 다운로드할 수 있습니다. 인쇄용: <a href="cert-docs/NEWCHAE_Certification_Summary.pdf" target="_blank">PDF</a> &middot; <a href="cert-docs/NEWCHAE_Certification_Summary.docx" target="_blank">DOCX</a></div>
   </div>
 </section>
 
-
-<!-- ========= Market Coverage ========= -->
+<!-- Market Coverage -->
 <section class="market-section">
   <div class="container">
-    <div class="eyebrow">Market Coverage</div>
-    <h2>Where Can NEWCHAE Sell?</h2>
-    <p class="sub">Which markets are ready, partially covered, or need additional certifications.</p>
+    <div class="eyebrow" data-i18n="mkt.ey">시장별 커버리지</div>
+    <h2 data-i18n="mkt.h2">어디서 판매할 수 있나요?</h2>
+    <p class="sub" data-i18n="mkt.sub">즉시 진출 가능, 부분 보유, 추가 인증 필요 시장을 한눈에 확인하세요.</p>
 
     <div class="mkt-grid">
       <div class="mkt-card">
-        <div class="mkt-top">
-          <h4><span class="mf">&#127472;&#127479;</span> Korea</h4>
-          <span class="mkt-sts ok">&#10003; Ready</span>
-        </div>
-        <ul class="mkt-checks">
-          <li><span class="ck">&#10003;</span> KC EMC (device)</li>
-          <li><span class="ck">&#10003;</span> KC Safety (battery)</li>
-        </ul>
-        <div class="mkt-note">Coupang, Naver, offline &mdash; all clear.</div>
+        <div class="mkt-top"><h4><span class="mf">&#127472;&#127479;</span> <span data-i18n="mk.kr">한국</span></h4><span class="mkt-sts ok" data-i18n="ms.ready">&#10003; 즉시 가능</span></div>
+        <ul class="mkt-checks"><li><span class="ck">&#10003;</span> KC EMC</li><li><span class="ck">&#10003;</span> KC Safety</li></ul>
+        <div class="mkt-note" data-i18n="m1.note">쿠팡, 네이버, 오프라인 &mdash; 모두 가능.</div>
       </div>
       <div class="mkt-card">
-        <div class="mkt-top">
-          <h4><span class="mf">&#127466;&#127482;</span> EU</h4>
-          <span class="mkt-sts part">2 to-do</span>
-        </div>
-        <ul class="mkt-checks">
-          <li><span class="ck">&#10003;</span> CE EMC</li>
-          <li><span class="ck">&#10003;</span> Battery EN 62133-2</li>
-          <li><span class="ck">&#10003;</span> RoHS (housing)</li>
-          <li><span class="ar">&#8594;</span> Whole-product RoHS DoC</li>
-          <li><span class="ar">&#8594;</span> EU Authorized Rep</li>
-        </ul>
-        <div class="mkt-note">Core tests done. Need EU rep + full DoC.</div>
+        <div class="mkt-top"><h4><span class="mf">&#127466;&#127482;</span> EU</h4><span class="mkt-sts part" data-i18n="ms.todo2">2건 남음</span></div>
+        <ul class="mkt-checks"><li><span class="ck">&#10003;</span> CE EMC</li><li><span class="ck">&#10003;</span> EN 62133-2</li><li><span class="ck">&#10003;</span> RoHS</li><li><span class="ar">&#8594;</span> <span data-i18n="m2.c4">완제품 RoHS DoC</span></li><li><span class="ar">&#8594;</span> <span data-i18n="m2.c5">EU 공인 대리인</span></li></ul>
+        <div class="mkt-note" data-i18n="m2.note">핵심 시험 완료. EU 대리인 지정 + 적합성 선언서 필요.</div>
       </div>
       <div class="mkt-card">
-        <div class="mkt-top">
-          <h4><span class="mf">&#127482;&#127480;</span> USA</h4>
-          <span class="mkt-sts part">2 to-do</span>
-        </div>
-        <ul class="mkt-checks">
-          <li><span class="ck">&#10003;</span> FCC SDoC (Part 15)</li>
-          <li><span class="ar">&#8594;</span> US Responsible Party</li>
-          <li><span class="ar">&#8594;</span> UN 38.3 (battery shipping)</li>
-        </ul>
-        <div class="mkt-note">FCC done. Need US address + air freight cert.</div>
+        <div class="mkt-top"><h4><span class="mf">&#127482;&#127480;</span> <span data-i18n="mk.us">미국</span></h4><span class="mkt-sts part" data-i18n="ms.todo2">2건 남음</span></div>
+        <ul class="mkt-checks"><li><span class="ck">&#10003;</span> FCC SDoC</li><li><span class="ar">&#8594;</span> <span data-i18n="m3.c2">US 책임 당사자</span></li><li><span class="ar">&#8594;</span> <span data-i18n="m3.c3">UN 38.3 (항공운송)</span></li></ul>
+        <div class="mkt-note" data-i18n="m3.note">FCC 완료. 미국 주소 + 항공운송 인증 필요.</div>
       </div>
       <div class="mkt-card">
-        <div class="mkt-top">
-          <h4><span class="mf">&#127468;&#127463;</span> UK</h4>
-          <span class="mkt-sts part">1 to-do</span>
-        </div>
-        <ul class="mkt-checks">
-          <li><span class="ck">&#10003;</span> CE marking (accepted)</li>
-          <li><span class="ar">&#8594;</span> UK Responsible Person</li>
-        </ul>
-        <div class="mkt-note">CE still accepted. Appoint UK rep to enter.</div>
+        <div class="mkt-top"><h4><span class="mf">&#127468;&#127463;</span> <span data-i18n="mk.uk">영국</span></h4><span class="mkt-sts part" data-i18n="ms.todo1">1건 남음</span></div>
+        <ul class="mkt-checks"><li><span class="ck">&#10003;</span> <span data-i18n="m4.c1">CE 인정 (현재 유효)</span></li><li><span class="ar">&#8594;</span> <span data-i18n="m4.c2">UK 책임자</span></li></ul>
+        <div class="mkt-note" data-i18n="m4.note">CE가 아직 인정됨. UK 책임자 지정 시 진입 가능.</div>
       </div>
       <div class="mkt-card">
-        <div class="mkt-top">
-          <h4><span class="mf">&#127471;&#127477;</span> Japan</h4>
-          <span class="mkt-sts none">New cert</span>
-        </div>
-        <ul class="mkt-checks">
-          <li><span class="ar">&#8594;</span> PSE mark required</li>
-          <li><span class="ck">&#10003;</span> MIC exempt (no wireless)</li>
-        </ul>
-        <div class="mkt-note">PSE required. Existing data may expedite.</div>
+        <div class="mkt-top"><h4><span class="mf">&#127471;&#127477;</span> <span data-i18n="mk.jp">일본</span></h4><span class="mkt-sts none" data-i18n="ms.new">신규 필요</span></div>
+        <ul class="mkt-checks"><li><span class="ar">&#8594;</span> <span data-i18n="m5.c1">PSE 마크 필요</span></li><li><span class="ck">&#10003;</span> <span data-i18n="m5.c2">MIC 면제 (무선 없음)</span></li></ul>
+        <div class="mkt-note" data-i18n="m5.note">PSE 필수. 기존 시험 자료로 절차 단축 가능.</div>
       </div>
       <div class="mkt-card">
-        <div class="mkt-top">
-          <h4><span class="mf">&#127462;&#127482;</span> AU / NZ</h4>
-          <span class="mkt-sts none">Low barrier</span>
-        </div>
-        <ul class="mkt-checks">
-          <li><span class="ar">&#8594;</span> RCM mark (self-declare OK)</li>
-          <li><span class="ar">&#8594;</span> ACMA registration</li>
-        </ul>
-        <div class="mkt-note">Self-declare using CE/FCC test reports.</div>
+        <div class="mkt-top"><h4><span class="mf">&#127462;&#127482;</span> <span data-i18n="mk.au">호주 / NZ</span></h4><span class="mkt-sts none" data-i18n="ms.low">진입 용이</span></div>
+        <ul class="mkt-checks"><li><span class="ar">&#8594;</span> <span data-i18n="m6.c1">RCM 마크 (자기선언 가능)</span></li><li><span class="ar">&#8594;</span> ACMA</li></ul>
+        <div class="mkt-note" data-i18n="m6.note">CE/FCC 시험 보고서로 자기선언 가능.</div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ========= How to Update ========= -->
+<!-- How to Update -->
 <section class="update-section">
   <div class="container">
-    <div class="eyebrow">Maintenance</div>
-    <h2>How to Update</h2>
-    <p class="sub">Non-developers can update with a text editor.</p>
+    <div class="eyebrow" data-i18n="upd.ey">유지보수</div>
+    <h2 data-i18n="upd.h2">페이지 업데이트 방법</h2>
+    <p class="sub" data-i18n="upd.sub">텍스트 에디터로 누구나 수정할 수 있습니다.</p>
     <div class="upd-grid">
-      <div class="upd-card">
-        <div class="upd-num">01</div>
-        <h4>Add a certificate</h4>
-        <p>Drop PDF into <code>certs/</code>. Copy a table row (<code>&lt;tr&gt;</code> pair) and edit text.</p>
-      </div>
-      <div class="upd-card">
-        <div class="upd-num">02</div>
-        <h4>Add a market</h4>
-        <p>Copy a <code>mkt-card</code> block. Change flag, name, status, checklist.</p>
-      </div>
-      <div class="upd-card">
-        <div class="upd-num">03</div>
-        <h4>Deploy</h4>
-        <p><code>git add . && git commit && git push</code> &mdash; live in 2 min.</p>
-      </div>
+      <div class="upd-card"><div class="upd-num">01</div><h4 data-i18n="u1.h">인증서 추가</h4><p data-i18n="u1.p"><code>certs/</code>에 PDF를 넣고, 테이블 행(<code>&lt;tr&gt;</code> 쌍)을 복사해서 텍스트를 수정하세요.</p></div>
+      <div class="upd-card"><div class="upd-num">02</div><h4 data-i18n="u2.h">시장 추가</h4><p data-i18n="u2.p"><code>mkt-card</code> 블록을 복사하고 국기, 이름, 상태, 체크리스트를 변경하세요.</p></div>
+      <div class="upd-card"><div class="upd-num">03</div><h4 data-i18n="u3.h">배포</h4><p data-i18n="u3.p"><code>git add . && git commit && git push</code> &mdash; 2분 내 반영.</p></div>
     </div>
   </div>
 </section>
 
-
-<!-- Footer -->
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo">BRITZMEDI</div>
-        <p class="footer-address">BRITZMEDI Co., Ltd.<br>1211-ho, Kranz Techno<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Republic of Korea</p>
-      </div>
-      <div class="footer-contact">
-        <h4>Global Inquiry</h4>
-        <p>sh.lee@britzmedi.com</p>
-        <p>+82-70-XXXX-XXXX</p>
-      </div>
+      <div class="footer-brand"><div class="logo">BRITZMEDI</div><p class="footer-address" data-i18n="ft.addr">(주)브리츠메디<br>경기도 성남시 중원구 둔촌대로 388<br>크란츠테크노, 1211호</p></div>
+      <div class="footer-contact"><h4 data-i18n="ft.inq">해외사업 문의</h4><p>sh.lee@britzmedi.com</p><p>+82-70-XXXX-XXXX</p></div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-certs"><span>KC</span><span>&middot;</span><span>CE</span><span>&middot;</span><span>FCC</span><span>&middot;</span><span>ISO 13485</span></div>
-      <div>&copy; 2026 BRITZMEDI Co., Ltd.</div>
-    </div>
+    <div class="footer-bottom"><div class="footer-certs"><span>KC</span><span>&middot;</span><span>CE</span><span>&middot;</span><span>FCC</span><span>&middot;</span><span>ISO 13485</span></div><div>&copy; 2026 BRITZMEDI Co., Ltd.</div></div>
   </div>
 </footer>
 
 <script>
-function toggleRow(tr) {
-  var explain = tr.nextElementSibling;
-  var wasOpen = tr.classList.contains('open');
-  document.querySelectorAll('.c-table tbody tr.open').forEach(function(r) {
-    r.classList.remove('open');
+function toggleRow(tr){var e=tr.nextElementSibling,o=tr.classList.contains('open');document.querySelectorAll('.c-table tbody tr.open').forEach(function(r){r.classList.remove('open')});document.querySelectorAll('.c-explain.open').forEach(function(x){x.classList.remove('open')});if(!o){tr.classList.add('open');e.classList.add('open')}}
+
+const DICT={
+en:{"hero.ey":"Product Certification Summary","hero.h1":"NEWCHAE Certifications","hero.lead":"6 certifications across 3 markets. Click any row to see what it means in plain language.",
+"ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, Republic of Korea","ft.inq":"Global Inquiry",
+"p.lbl.prod":"Product","p.lbl.model":"Model","p.lbl.mfr":"Manufacturer","p.lbl.contact":"Contact","p.val.mfr":"BRITZMEDI Co., Ltd. &middot; 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Kranz Techno #1211",
+"ct.ey":"Certifications by Market","ct.h2":"6 Certificates","ct.sub":"Click any row for a plain-language explanation of what it is, its scope, and why it matters.",
+"th.market":"Market","th.type":"Type","th.no":"Certificate No.","th.body":"Issuing Body","th.std":"Applied Standards","th.issued":"Issued",
+"mk.kr":"Korea","mk.us":"USA","mk.uk":"UK","mk.jp":"Japan","mk.au":"AU / NZ","mk.gl":"EU / Global",
+"c1.type":"KC EMC (Device)","c2.type":"KC Safety (Battery)","c3.type":"CE EMC Attestation","c4.type":"Battery Safety (EN 62133-2)","c5.body":"BRITZMEDI (Self-declaration)","c6.type":"RoHS (Housing)",
+"ex.what":"What is this?","ex.scope":"Scope","ex.why":"Why it matters",
+"c1.wp":"Proves NEWCHAE <strong>doesn't interfere with other electronics</strong> and <strong>isn't affected by them either</strong>. Passed Korea's official EMC test for household appliances.","c1.sp":"<strong>The device body</strong> — the main unit emitting RF, EMS, and ELP energy. Confirms it won't disrupt Wi-Fi, TV, etc. Battery has its own cert below.","c1.yp":"Required for <strong>legal sale in South Korea</strong>. Cannot list on Coupang, Naver, or any Korean retail without it. Also serves as baseline for CE and FCC.",
+"c2.wp":"The built-in lithium battery (Samsung SDI cells, assembled by EJENs) <strong>won't overheat, catch fire, or explode</strong>. Passed overcharge, short circuit, drop, high temperature, and crush tests.","c2.sp":"<strong>The rechargeable battery pack only</strong> (LI-35E 101, 3.6V/3,350mAh). Korean law requires separate certifications for the device body and its battery.","c2.yp":"Korean marketplaces require <strong>both KC EMC + KC Battery</strong> to list any rechargeable beauty device. This pair is the entry ticket to the Korean market.",
+"c3.wp":"The CE mark is <strong>Europe's mandatory safety stamp</strong>. This cert covers EMC — the device works safely alongside other electronics. Covers both NWP and NC models.","c3.sp":"<strong>All 27 EU member states + EEA</strong> (Norway, Iceland, Liechtenstein). UK also accepts CE. Recognized as baseline in Turkey, Israel, and parts of Southeast Asia.","c3.yp":"Without CE marking, <strong>EU customs will reject shipments</strong>. The single most important cert for European market access. Required by Amazon EU and all European distributors.",
+"c4.wp":"EU equivalent of Korea's battery safety cert. The battery passed <strong>European safety standards</strong> for overheating, short-circuit, crushing, and abnormal charging.","c4.sp":"<strong>Battery pack for EU market entry.</strong> Works with CE EMC above — together they cover electromagnetic safety and battery safety.","c4.yp":"Required to complete the <strong>CE Declaration of Conformity</strong>. Amazon EU and many European retailers explicitly request this certificate.",
+"c5.wp":"The FCC requires all US-sold electronics <strong>don't cause harmful radio interference</strong>. Since NEWCHAE has no Bluetooth/Wi-Fi, it qualifies as \"unintentional radiator\" under Part 15 — SDoC is sufficient.","c5.sp":"<strong>Entire United States.</strong> Covers unintentional radio emissions. Note: a US-based \"Responsible Party\" address needs to be designated for full compliance.","c5.yp":"Amazon US, Walmart, and other retailers <strong>require FCC compliance docs</strong> to list electronic devices. Also useful for Canada (ISED) preparation.",
+"c6.wp":"RoHS = Restriction of Hazardous Substances. The outer casing (PMMA acrylic) is <strong>free of toxic heavy metals, flame retardants, and phthalates</strong> — all 10 restricted substances: \"Not Detected.\"","c6.sp":"<strong>External housing material only</strong> (PMMA by LX MMA Corp.), not the entire device. A whole-product RoHS DoC would strengthen EU compliance.","c6.yp":"EU and many Asian markets <strong>ban harmful substances above certain thresholds</strong>. Tested by SGS, a globally recognized lab — carries weight with distributors and customs.",
+"bat.h":"Internal Battery","bat.supplier.l":"Supplier:","bat.model.l":"Model:","bat.cell.l":"Cell:",
+"scope.h":"Scope & Notes","scope.ce":"<strong>CE marking:</strong> Verified under EMC Directive 2014/30/EU. Personal care / cosmetic-use device.","scope.fcc":"<strong>FCC:</strong> Supplier's Declaration of Conformity under FCC Part 15.","scope.rohs":"<strong>RoHS:</strong> Housing PMMA verified compliant. Full product-level DoC available on request.","scope.origin":"<strong>Origin:</strong> Republic of Korea (brand holder & final assembly).",
+"doc.footer":"Reference summary for partner due diligence. Original certificates via PDF links above. Printable: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
+"mkt.ey":"Market Coverage","mkt.h2":"Where Can NEWCHAE Sell?","mkt.sub":"Which markets are ready, partially covered, or need additional certifications.",
+"ms.ready":"✓ Ready","ms.todo2":"2 to-do","ms.todo1":"1 to-do","ms.new":"New cert needed","ms.low":"Low barrier",
+"m1.note":"Coupang, Naver, offline — all clear.","m2.c4":"Whole-product RoHS DoC","m2.c5":"EU Authorized Rep","m2.note":"Core tests done. Need EU rep + full DoC.","m3.c2":"US Responsible Party","m3.c3":"UN 38.3 (air shipping)","m3.note":"FCC done. Need US address + air freight cert.","m4.c1":"CE accepted (currently valid)","m4.c2":"UK Responsible Person","m4.note":"CE still accepted. Appoint UK person to enter.","m5.c1":"PSE mark required","m5.c2":"MIC exempt (no wireless)","m5.note":"PSE required. Existing data may expedite.","m6.c1":"RCM mark (self-declare OK)","m6.note":"Self-declare using CE/FCC test reports.",
+"upd.ey":"Maintenance","upd.h2":"How to Update","upd.sub":"Non-developers can update with a text editor.","u1.h":"Add a certificate","u1.p":"Drop PDF into <code>certs/</code>. Copy a table row pair and edit text.","u2.h":"Add a market","u2.p":"Copy a <code>mkt-card</code> block. Change flag, name, status, checklist.","u3.h":"Deploy","u3.p":"<code>git add . && git commit && git push</code> — live in 2 min."},
+
+ja:{"hero.ey":"製品認証概要","hero.h1":"NEWCHAE 認証一覧","hero.lead":"3市場で6件の認証を取得。各行をクリックすると、その認証の役割を分かりやすく説明します。",
+"ft.addr":"BRITZMEDI Co., Ltd.<br>京畿道 城南市 中院区 屯村大路 388<br>クランツテクノ 1211号","ft.inq":"海外事業お問い合わせ",
+"p.lbl.prod":"製品","p.lbl.model":"型番","p.lbl.mfr":"製造元","p.lbl.contact":"担当者","p.val.mfr":"BRITZMEDI Co., Ltd. &middot; 京畿道 城南市 中院区 屯村大路 388, クランツテクノ 1211号",
+"ct.ey":"市場別認証一覧","ct.h2":"取得済み認証 6件","ct.sub":"各行をクリックすると、認証の内容・範囲・必要性を分かりやすく説明します。",
+"th.market":"市場","th.type":"種類","th.no":"認証番号","th.body":"発行機関","th.std":"適用規格","th.issued":"発行日",
+"mk.kr":"韓国","mk.us":"米国","mk.uk":"英国","mk.jp":"日本","mk.au":"豪州 / NZ","mk.gl":"EU / 全世界",
+"c1.type":"KC EMC（本体）","c2.type":"KC 安全認証（バッテリー）","c3.type":"CE EMC 適合証明","c4.type":"バッテリー安全（EN 62133-2）","c5.body":"BRITZMEDI（自己適合宣言）","c6.type":"RoHS（外装材）",
+"ex.what":"これは何？","ex.scope":"適用範囲","ex.why":"なぜ必要？",
+"c1.wp":"NEWCHAEが<strong>他の電子機器に干渉せず</strong>、<strong>影響も受けない</strong>ことを証明。韓国の公式EMC試験に合格しました。","c1.sp":"<strong>機器本体</strong>が対象 — RF・EMS・ELPエネルギーを放出するメインユニット。バッテリーは別途認証。","c1.yp":"<strong>韓国国内販売に必須。</strong>この認証なしではCoupang、Naverなどに出品できません。CE・FCC申請の基礎資料にもなります。",
+"c2.wp":"内蔵リチウムバッテリー（Samsung SDIセル）が<strong>過熱・発火・爆発しない</strong>ことを証明。過充電・短絡・落下・高温・圧壊テストに合格。","c2.sp":"<strong>充電式バッテリーパックのみ</strong>（LI-35E 101、3.6V/3,350mAh）。韓国法では本体とバッテリーに別々の認証が必要です。","c2.yp":"韓国のマーケットプレイスでは<strong>KC EMC + KC バッテリーの両方</strong>が必要。この2つが韓国市場参入の必須条件です。",
+"c3.wp":"CEマークは<strong>欧州の必須安全認証</strong>。EMC適合を証明し、NWP・NCの両モデルをカバーします。","c3.sp":"<strong>EU27カ国 + EEA</strong>（ノルウェー、アイスランド等）。英国もCEを認めています。トルコ、イスラエル、東南アジアでも基礎認証として活用。","c3.yp":"CEマークなしでは<strong>EU税関で通関拒否</strong>されます。欧州市場アクセスに最も重要な単一認証です。",
+"c4.wp":"韓国バッテリー安全認証の<strong>欧州版</strong>。過熱、短絡、圧壊、異常充電の欧州安全基準テストに合格。","c4.sp":"<strong>EU市場参入用バッテリーパック。</strong>CE EMCと合わせて電磁安全+バッテリー安全の2要件を満たします。","c4.yp":"<strong>CE適合宣言書</strong>の完成にバッテリー安全の証拠が必要。Amazon EUなど欧州小売業者が明示的に要求します。",
+"c5.wp":"FCCは米国販売の全電子機器に<strong>有害な電波干渉を起こさないこと</strong>を要求。NEWCHAEは無線なしのため、Part 15「非意図的放射」のSDoC（自己適合宣言）で十分です。","c5.sp":"<strong>米国全土。</strong>非意図的電波放出をカバー。完全準拠には米国内「責任当事者」の住所指定が必要です。","c5.yp":"Amazon US・Walmartなどの米国小売業者は<strong>FCC適合書類を要求</strong>します。カナダ（ISED）準備にも有用。",
+"c6.wp":"RoHS＝有害物質使用制限。外装ケース（PMMAアクリル）に<strong>有害重金属・難燃剤・フタル酸エステル類が不含</strong> — 10種規制物質すべて「不検出」。","c6.sp":"<strong>外装ハウジング材のみ</strong>（LX MMA供給PMMA）。完製品全体ではありません。EU完全準拠には全部品対象のRoHS DoC推奨。","c6.yp":"EUとアジア多数市場が<strong>有害物質含有製品の販売を禁止</strong>。世界的試験機関SGSが発行し、流通業者・税関での信頼度が高い。",
+"bat.h":"内蔵バッテリー","bat.supplier.l":"供給元:","bat.model.l":"型番:","bat.cell.l":"セル:",
+"scope.h":"範囲と備考","scope.ce":"<strong>CEマーキング:</strong> EMC指令2014/30/EU準拠。個人用美容機器カテゴリー。","scope.fcc":"<strong>FCC:</strong> FCC Part 15に基づく自己適合宣言。","scope.rohs":"<strong>RoHS:</strong> ハウジングPMMA適合確認。完製品DoCはご要望に応じ提供。","scope.origin":"<strong>原産地:</strong> 大韓民国（ブランド保有・最終組立）。",
+"doc.footer":"パートナーデューデリジェンス用参考資料。認証書原本は上記PDFリンクからダウンロード可能。印刷用: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
+"mkt.ey":"市場カバレッジ","mkt.h2":"どこで販売できる？","mkt.sub":"即時参入可能・部分保有・追加認証必要な市場を一覧で確認。",
+"ms.ready":"✓ 準備完了","ms.todo2":"2件残り","ms.todo1":"1件残り","ms.new":"新規必要","ms.low":"参入容易",
+"m1.note":"Coupang、Naver、オフライン — すべて可能。","m2.c4":"完製品RoHS DoC","m2.c5":"EU公認代理人","m2.note":"核心テスト完了。EU代理人+DoC必要。","m3.c2":"US責任当事者","m3.c3":"UN 38.3（航空輸送）","m3.note":"FCC完了。米国住所+航空輸送認証必要。","m4.c1":"CE認定（現在有効）","m4.c2":"UK責任者","m4.note":"CE認定有効。UK責任者指定で参入可。","m5.c1":"PSEマーク必要","m5.c2":"MIC免除（無線なし）","m5.note":"PSE必須。既存データで手続き短縮可能。","m6.c1":"RCMマーク（自己宣言可）","m6.note":"CE/FCC試験報告書で自己宣言可能。",
+"upd.ey":"メンテナンス","upd.h2":"更新方法","upd.sub":"テキストエディタで誰でも更新できます。","u1.h":"認証書追加","u1.p":"<code>certs/</code>にPDFを入れ、テーブル行ペアをコピーしてテキストを編集。","u2.h":"市場追加","u2.p":"<code>mkt-card</code>ブロックをコピーし、国旗・名称・ステータス・チェックリストを変更。","u3.h":"デプロイ","u3.p":"<code>git add . && git commit && git push</code> — 2分で反映。"},
+
+zh:{"hero.ey":"产品认证摘要","hero.h1":"NEWCHAE 认证一览","hero.lead":"3个市场6项认证。点击任意行查看通俗说明。",
+"ft.addr":"BRITZMEDI Co., Ltd.<br>京畿道 城南市 中院区 屯村大路 388<br>Kranz Techno 1211号","ft.inq":"海外业务咨询",
+"p.lbl.prod":"产品","p.lbl.model":"型号","p.lbl.mfr":"制造商","p.lbl.contact":"联系人","p.val.mfr":"BRITZMEDI Co., Ltd. &middot; 京畿道 城南市 中院区 屯村大路 388, Kranz Techno 1211号",
+"ct.ey":"按市场分类","ct.h2":"已获认证 6项","ct.sub":"点击任意行，了解该认证的含义、范围和重要性。",
+"th.market":"市场","th.type":"类型","th.no":"证书编号","th.body":"发证机构","th.std":"适用标准","th.issued":"签发日",
+"mk.kr":"韩国","mk.us":"美国","mk.uk":"英国","mk.jp":"日本","mk.au":"澳洲 / 新西兰","mk.gl":"欧盟 / 全球",
+"c1.type":"KC EMC（主机）","c2.type":"KC 安全认证（电池）","c3.type":"CE EMC 合格证","c4.type":"电池安全（EN 62133-2）","c5.body":"BRITZMEDI（自我声明）","c6.type":"RoHS（外壳材料）",
+"ex.what":"这是什么？","ex.scope":"适用范围","ex.why":"为什么重要？",
+"c1.wp":"证明NEWCHAE设备<strong>不会干扰其他电子设备</strong>，也<strong>不受其他设备影响</strong>。通过韩国官方EMC测试。","c1.sp":"<strong>设备主机</strong>——发出RF、EMS和ELP能量的主体单元。电池另有单独认证。","c1.yp":"<strong>韩国合法销售必需。</strong>无此认证无法在Coupang、Naver等平台上架。也是CE、FCC申请的基础资料。",
+"c2.wp":"内置锂电池（三星SDI电芯）<strong>不会过热、起火或爆炸</strong>。通过过充、短路、跌落、高温、挤压测试。","c2.sp":"<strong>仅限充电电池组</strong>（LI-35E 101，3.6V/3,350mAh）。韩国法律要求设备主机和电池分别认证。","c2.yp":"韩国电商平台要求<strong>同时提交KC EMC + KC电池认证</strong>才能上架充电式美容仪。",
+"c3.wp":"CE标志是<strong>欧洲强制安全认证</strong>。本证书涵盖EMC方面，证明设备可安全与其他电子设备共存。涵盖NWP和NC两个型号。","c3.sp":"<strong>欧盟27个成员国 + EEA</strong>。英国目前也接受CE。在土耳其、以色列、东南亚部分地区也作为基础认证。","c3.yp":"没有CE标志，<strong>欧盟海关将拒绝通关</strong>。进入欧洲市场最重要的单一认证。Amazon EU和所有欧洲经销商都要求此证。",
+"c4.wp":"韩国电池安全认证的<strong>欧洲版本</strong>。电池通过了过热、短路、挤压、异常充电的欧洲安全标准测试。","c4.sp":"<strong>欧盟市场准入用电池组。</strong>与CE EMC配合使用，共同满足电磁安全+电池安全两大要求。","c4.yp":"完成<strong>CE符合性声明</strong>需要电池安全证据。Amazon EU等欧洲零售商明确要求此证书。",
+"c5.wp":"FCC要求在美国销售的所有电子设备<strong>不得造成有害无线电干扰</strong>。NEWCHAE无蓝牙/Wi-Fi，属Part 15"非有意辐射体"，SDoC即可。","c5.sp":"<strong>美国全境。</strong>覆盖非有意无线电辐射。注意：完全合规需指定美国"责任方"地址。","c5.yp":"Amazon US、Walmart等美国零售商<strong>要求FCC合规文件</strong>才能上架电子产品。",
+"c6.wp":"RoHS = 有害物质限制。外壳（PMMA亚克力）<strong>不含有毒重金属、阻燃剂和邻苯二甲酸酯</strong>——10种限制物质均"未检出"。","c6.sp":"<strong>仅限外壳材料</strong>（LX MMA供应的PMMA），非整机。完善欧盟合规建议补充整机RoHS DoC。","c6.yp":"欧盟和亚洲多个市场<strong>禁止销售有害物质超标产品</strong>。由全球知名检测机构SGS出具，在经销商和海关中具有较高公信力。",
+"bat.h":"内置电池","bat.supplier.l":"供应商:","bat.model.l":"型号:","bat.cell.l":"电芯:",
+"scope.h":"范围与备注","scope.ce":"<strong>CE标志:</strong> EMC指令2014/30/EU验证。个人护理/美容类设备。","scope.fcc":"<strong>FCC:</strong> 依据FCC Part 15的供应商符合性声明。","scope.rohs":"<strong>RoHS:</strong> 外壳PMMA已验证合规。整机DoC可应要求提供。","scope.origin":"<strong>原产地:</strong> 韩国（品牌持有方及最终组装）。",
+"doc.footer":"合作伙伴尽职调查参考资料。认证原件可通过上方PDF链接下载。打印版: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
+"mkt.ey":"市场覆盖","mkt.h2":"可以在哪里销售？","mkt.sub":"一览即时可售、部分覆盖和需要额外认证的市场。",
+"ms.ready":"✓ 可售","ms.todo2":"2项待办","ms.todo1":"1项待办","ms.new":"需新认证","ms.low":"门槛低",
+"m1.note":"Coupang、Naver、线下——全部可售。","m2.c4":"整机RoHS DoC","m2.c5":"欧盟授权代表","m2.note":"核心测试完成。需欧盟代表+DoC。","m3.c2":"美国责任方","m3.c3":"UN 38.3（航空运输）","m3.note":"FCC完成。需美国地址+航空运输认证。","m4.c1":"CE认可（当前有效）","m4.c2":"英国责任人","m4.note":"CE仍被认可。指定英国责任人即可进入。","m5.c1":"需PSE标志","m5.c2":"MIC豁免（无无线）","m5.note":"需PSE。现有数据可加快流程。","m6.c1":"RCM标志（可自我声明）","m6.note":"可使用CE/FCC测试报告自我声明。",
+"upd.ey":"维护","upd.h2":"如何更新","upd.sub":"任何人都可用文本编辑器更新。","u1.h":"添加认证","u1.p":"将PDF放入<code>certs/</code>，复制表格行对并编辑文字。","u2.h":"添加市场","u2.p":"复制<code>mkt-card</code>块，修改国旗、名称、状态、清单。","u3.h":"部署","u3.p":"<code>git add . && git commit && git push</code> — 2分钟生效。"},
+
+th:{"hero.ey":"สรุปใบรับรองผลิตภัณฑ์","hero.h1":"ใบรับรอง NEWCHAE","hero.lead":"6 ใบรับรองใน 3 ตลาด คลิกแถวใดก็ได้เพื่อดูคำอธิบายง่ายๆ",
+"ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, Republic of Korea","ft.inq":"สอบถามธุรกิจต่างประเทศ",
+"p.lbl.prod":"ผลิตภัณฑ์","p.lbl.model":"รุ่น","p.lbl.mfr":"ผู้ผลิต","p.lbl.contact":"ผู้ติดต่อ","p.val.mfr":"BRITZMEDI Co., Ltd. &middot; 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Kranz Techno #1211",
+"ct.ey":"ใบรับรองตามตลาด","ct.h2":"ใบรับรอง 6 ฉบับ","ct.sub":"คลิกแถวเพื่อดูว่าใบรับรองนั้นคืออะไร ครอบคลุมอะไร และสำคัญอย่างไร",
+"th.market":"ตลาด","th.type":"ประเภท","th.no":"เลขที่ใบรับรอง","th.body":"หน่วยงานออก","th.std":"มาตรฐาน","th.issued":"วันที่ออก",
+"mk.kr":"เกาหลี","mk.us":"สหรัฐฯ","mk.uk":"สหราชอาณาจักร","mk.jp":"ญี่ปุ่น","mk.au":"ออสเตรเลีย / NZ","mk.gl":"EU / ทั่วโลก",
+"c1.type":"KC EMC (ตัวเครื่อง)","c2.type":"KC ความปลอดภัย (แบตเตอรี่)","c3.type":"CE EMC","c4.type":"ความปลอดภัยแบตฯ (EN 62133-2)","c5.body":"BRITZMEDI (ประกาศตนเอง)","c6.type":"RoHS (วัสดุตัวเรือน)",
+"ex.what":"นี่คืออะไร?","ex.scope":"ขอบเขต","ex.why":"ทำไมถึงสำคัญ?",
+"c1.wp":"พิสูจน์ว่า NEWCHAE <strong>ไม่รบกวนอุปกรณ์อิเล็กทรอนิกส์อื่น</strong> และ<strong>ไม่ได้รับผลกระทบ</strong>จากอุปกรณ์อื่นเช่นกัน ผ่านการทดสอบ EMC อย่างเป็นทางการของเกาหลี","c1.sp":"<strong>ตัวเครื่องหลัก</strong> — หน่วยที่ปล่อยพลังงาน RF, EMS และ ELP แบตเตอรี่มีใบรับรองแยกต่างหาก","c1.yp":"<strong>จำเป็นสำหรับการขายในเกาหลีใต้</strong> ไม่สามารถลงขายบน Coupang หรือ Naver ได้หากไม่มี",
+"c2.wp":"แบตเตอรี่ลิเธียมในตัว (เซลล์ Samsung SDI) <strong>ไม่ร้อนเกิน ไม่ลุกไหม้ ไม่ระเบิด</strong> ผ่านการทดสอบอัดไฟเกิน ลัดวงจร ตกกระแทก ความร้อนสูง และแรงกด","c2.sp":"<strong>เฉพาะแบตเตอรี่ชาร์จได้</strong> (LI-35E 101) กฎหมายเกาหลีกำหนดให้ตัวเครื่องและแบตฯ ต้องรับรองแยกกัน","c2.yp":"แพลตฟอร์มเกาหลีต้องการ <strong>KC EMC + KC แบตเตอรี่ทั้งคู่</strong>จึงจะลงขายเครื่องมือความงามชาร์จได้",
+"c3.wp":"เครื่องหมาย CE คือ<strong>ใบผ่านด้านความปลอดภัยบังคับของยุโรป</strong> ครอบคลุมทั้งรุ่น NWP และ NC","c3.sp":"<strong>สมาชิก EU 27 ประเทศ + EEA</strong> สหราชอาณาจักรยังยอมรับ CE ด้วย","c3.yp":"หากไม่มีเครื่องหมาย CE <strong>ศุลกากร EU จะปฏิเสธการนำเข้า</strong>","c4.wp":"เทียบเท่าใบรับรองความปลอดภัยแบตเตอรี่ KC <strong>เวอร์ชันยุโรป</strong>","c4.sp":"<strong>แบตเตอรี่สำหรับเข้าตลาด EU</strong> ใช้ร่วมกับ CE EMC ข้างต้น","c4.yp":"จำเป็นเพื่อจัดทำ <strong>CE Declaration of Conformity</strong>","c5.wp":"FCC กำหนดว่าอุปกรณ์ทุกชนิดที่ขายในสหรัฐฯ <strong>ต้องไม่ก่อให้เกิดการรบกวนคลื่นวิทยุที่เป็นอันตราย</strong>","c5.sp":"<strong>ทั่วสหรัฐอเมริกา</strong> ต้องกำหนดที่อยู่ \"Responsible Party\" ในสหรัฐฯ","c5.yp":"Amazon US, Walmart <strong>ต้องการเอกสาร FCC</strong> ก่อนลงรายการสินค้าอิเล็กทรอนิกส์","c6.wp":"RoHS = การจำกัดสารอันตราย ตัวเรือน (PMMA) <strong>ปราศจากโลหะหนัก สารหน่วงไฟ และพทาเลต</strong> — สาร 10 ชนิด \"ไม่พบ\"","c6.sp":"<strong>เฉพาะวัสดุตัวเรือนเท่านั้น</strong> (PMMA จาก LX MMA) ไม่ใช่ผลิตภัณฑ์ทั้งชิ้น","c6.yp":"EU และตลาดเอเชียหลายแห่ง<strong>ห้ามขายผลิตภัณฑ์ที่มีสารอันตรายเกินเกณฑ์</strong> ทดสอบโดย SGS",
+"bat.h":"แบตเตอรี่ในตัว","bat.supplier.l":"ผู้จัดจำหน่าย:","bat.model.l":"รุ่น:","bat.cell.l":"เซลล์:",
+"scope.h":"ขอบเขตและหมายเหตุ","scope.ce":"<strong>CE:</strong> ตรวจสอบตาม EMC Directive 2014/30/EU อุปกรณ์ดูแลผิวส่วนบุคคล","scope.fcc":"<strong>FCC:</strong> ประกาศตนเองตาม FCC Part 15","scope.rohs":"<strong>RoHS:</strong> PMMA ตัวเรือนผ่านการตรวจ DoC ระดับผลิตภัณฑ์มีให้ตามคำขอ","scope.origin":"<strong>แหล่งกำเนิด:</strong> สาธารณรัฐเกาหลี",
+"doc.footer":"เอกสารอ้างอิงสำหรับการตรวจสอบคู่ค้า ต้นฉบับใบรับรองดาวน์โหลดจากลิงก์ PDF ด้านบน พิมพ์ได้: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
+"mkt.ey":"ความครอบคลุมตลาด","mkt.h2":"ขายได้ที่ไหน?","mkt.sub":"ดูตลาดที่พร้อม ครอบคลุมบางส่วน หรือต้องการใบรับรองเพิ่ม",
+"ms.ready":"✓ พร้อม","ms.todo2":"เหลือ 2 รายการ","ms.todo1":"เหลือ 1 รายการ","ms.new":"ต้องการใหม่","ms.low":"เข้าง่าย",
+"m1.note":"Coupang, Naver, ออฟไลน์ — พร้อมทั้งหมด","m2.c4":"RoHS DoC ผลิตภัณฑ์เต็ม","m2.c5":"ตัวแทนอนุญาต EU","m2.note":"ทดสอบหลักเสร็จ ต้องการตัวแทน EU + DoC","m3.c2":"ผู้รับผิดชอบ US","m3.c3":"UN 38.3 (ขนส่งทางอากาศ)","m3.note":"FCC เสร็จ ต้องการที่อยู่ US + ใบรับรองขนส่ง","m4.c1":"ยอมรับ CE (ปัจจุบันใช้ได้)","m4.c2":"ผู้รับผิดชอบ UK","m4.note":"CE ยังใช้ได้ แต่งตั้งผู้รับผิดชอบ UK เพื่อเข้าตลาด","m5.c1":"ต้องการ PSE","m5.c2":"ยกเว้น MIC (ไม่มีไร้สาย)","m5.note":"ต้องการ PSE ข้อมูลเดิมช่วยเร่งกระบวนการ","m6.c1":"RCM (ประกาศตนเองได้)","m6.note":"ใช้รายงาน CE/FCC ประกาศตนเองได้",
+"upd.ey":"การบำรุงรักษา","upd.h2":"วิธีอัปเดต","upd.sub":"ใครก็แก้ไขได้ด้วยโปรแกรมแก้ไขข้อความ","u1.h":"เพิ่มใบรับรอง","u1.p":"ใส่ PDF ใน <code>certs/</code> คัดลอกแถวตารางแล้วแก้ไขข้อความ","u2.h":"เพิ่มตลาด","u2.p":"คัดลอก <code>mkt-card</code> แล้วเปลี่ยนธง ชื่อ สถานะ รายการ","u3.h":"เผยแพร่","u3.p":"<code>git add . && git commit && git push</code> — 2 นาที"},
+
+vi:{"hero.ey":"Tóm tắt chứng nhận sản phẩm","hero.h1":"Chứng nhận NEWCHAE","hero.lead":"6 chứng nhận tại 3 thị trường. Nhấn vào hàng bất kỳ để xem giải thích dễ hiểu.",
+"ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, Republic of Korea","ft.inq":"Liên hệ kinh doanh quốc tế",
+"p.lbl.prod":"Sản phẩm","p.lbl.model":"Mẫu","p.lbl.mfr":"Nhà sản xuất","p.lbl.contact":"Liên hệ","p.val.mfr":"BRITZMEDI Co., Ltd. &middot; 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Kranz Techno #1211",
+"ct.ey":"Chứng nhận theo thị trường","ct.h2":"6 chứng nhận","ct.sub":"Nhấn vào hàng để xem nội dung, phạm vi và tầm quan trọng.",
+"th.market":"Thị trường","th.type":"Loại","th.no":"Số chứng nhận","th.body":"Cơ quan cấp","th.std":"Tiêu chuẩn","th.issued":"Ngày cấp",
+"mk.kr":"Hàn Quốc","mk.us":"Mỹ","mk.uk":"Anh","mk.jp":"Nhật Bản","mk.au":"Úc / NZ","mk.gl":"EU / Toàn cầu",
+"c1.type":"KC EMC (Thân máy)","c2.type":"KC An toàn (Pin)","c3.type":"CE EMC","c4.type":"An toàn pin (EN 62133-2)","c5.body":"BRITZMEDI (Tự khai báo)","c6.type":"RoHS (Vỏ ngoài)",
+"ex.what":"Đây là gì?","ex.scope":"Phạm vi","ex.why":"Tại sao quan trọng?",
+"c1.wp":"Chứng minh NEWCHAE <strong>không gây nhiễu các thiết bị điện tử khác</strong> và <strong>không bị ảnh hưởng</strong> bởi chúng.","c1.sp":"<strong>Thân máy chính</strong> — phát năng lượng RF, EMS và ELP. Pin có chứng nhận riêng.","c1.yp":"<strong>Bắt buộc để bán hợp pháp tại Hàn Quốc.</strong> Không thể đăng bán trên Coupang, Naver mà không có.",
+"c2.wp":"Pin lithium tích hợp (Samsung SDI) <strong>không quá nhiệt, bốc cháy hay nổ</strong>. Đã qua kiểm tra sạc quá, đoản mạch, rơi, nhiệt cao và ép.","c2.sp":"<strong>Chỉ bộ pin sạc</strong> (LI-35E 101). Luật Hàn Quốc yêu cầu chứng nhận riêng cho thân máy và pin.","c2.yp":"Sàn thương mại Hàn Quốc yêu cầu <strong>cả KC EMC + KC Pin</strong> để đăng bán thiết bị làm đẹp sạc được.",
+"c3.wp":"CE là <strong>giấy thông hành an toàn bắt buộc của châu Âu</strong>. Bao gồm cả model NWP và NC.","c3.sp":"<strong>27 nước EU + EEA.</strong> Anh cũng chấp nhận CE. Được công nhận tại Thổ Nhĩ Kỳ, Israel, Đông Nam Á.","c3.yp":"Không có CE, <strong>hải quan EU sẽ từ chối thông quan</strong>.",
+"c4.wp":"Phiên bản <strong>châu Âu</strong> của chứng nhận an toàn pin KC.","c4.sp":"<strong>Pin cho thị trường EU.</strong> Kết hợp với CE EMC đáp ứng hai yêu cầu chính.","c4.yp":"Cần thiết để hoàn thành <strong>Tuyên bố phù hợp CE</strong>.",
+"c5.wp":"FCC yêu cầu tất cả thiết bị bán tại Mỹ <strong>không gây nhiễu vô tuyến có hại</strong>. NEWCHAE không có Bluetooth/Wi-Fi nên SDoC là đủ.","c5.sp":"<strong>Toàn nước Mỹ.</strong> Cần chỉ định địa chỉ \"Responsible Party\" tại Mỹ.","c5.yp":"Amazon US, Walmart <strong>yêu cầu tài liệu FCC</strong> trước khi đăng bán.",
+"c6.wp":"RoHS = Hạn chế chất nguy hại. Vỏ ngoài (PMMA) <strong>không chứa kim loại nặng, chất chống cháy, phthalate</strong> — 10 chất đều \"Không phát hiện\".","c6.sp":"<strong>Chỉ vật liệu vỏ ngoài</strong> (PMMA từ LX MMA), không phải toàn bộ sản phẩm.","c6.yp":"EU và nhiều thị trường châu Á <strong>cấm sản phẩm có chất nguy hại vượt ngưỡng</strong>. Kiểm nghiệm bởi SGS.",
+"bat.h":"Pin tích hợp","bat.supplier.l":"Nhà cung cấp:","bat.model.l":"Mẫu:","bat.cell.l":"Cell:",
+"scope.h":"Phạm vi & Ghi chú","scope.ce":"<strong>CE:</strong> Đã xác minh theo EMC Directive 2014/30/EU.","scope.fcc":"<strong>FCC:</strong> Tự khai báo theo FCC Part 15.","scope.rohs":"<strong>RoHS:</strong> PMMA vỏ đã kiểm tra. DoC toàn sản phẩm có khi yêu cầu.","scope.origin":"<strong>Xuất xứ:</strong> Hàn Quốc.",
+"doc.footer":"Tài liệu tham khảo cho đối tác. Bản gốc tải từ link PDF phía trên. In: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
+"mkt.ey":"Phạm vi thị trường","mkt.h2":"Bán được ở đâu?","mkt.sub":"Xem thị trường sẵn sàng, bán phần hoặc cần thêm chứng nhận.",
+"ms.ready":"✓ Sẵn sàng","ms.todo2":"Còn 2 việc","ms.todo1":"Còn 1 việc","ms.new":"Cần mới","ms.low":"Dễ vào",
+"m1.note":"Coupang, Naver, offline — tất cả OK.","m2.c4":"RoHS DoC toàn sản phẩm","m2.c5":"Đại diện EU","m2.note":"Test xong. Cần đại diện EU + DoC.","m3.c2":"Bên chịu trách nhiệm US","m3.c3":"UN 38.3 (vận chuyển hàng không)","m3.note":"FCC xong. Cần địa chỉ US + chứng nhận vận chuyển.","m4.c1":"CE được chấp nhận","m4.c2":"Người chịu trách nhiệm UK","m4.note":"CE vẫn có hiệu lực. Chỉ định người UK để vào.","m5.c1":"Cần PSE","m5.c2":"Miễn MIC (không wireless)","m5.note":"Cần PSE. Dữ liệu hiện có giúp đẩy nhanh.","m6.c1":"RCM (tự khai báo OK)","m6.note":"Tự khai báo bằng báo cáo CE/FCC.",
+"upd.ey":"Bảo trì","upd.h2":"Cách cập nhật","upd.sub":"Ai cũng có thể cập nhật bằng trình soạn thảo.","u1.h":"Thêm chứng nhận","u1.p":"Đặt PDF vào <code>certs/</code>. Sao chép cặp hàng và sửa văn bản.","u2.h":"Thêm thị trường","u2.p":"Sao chép <code>mkt-card</code>, đổi cờ, tên, trạng thái.","u3.h":"Triển khai","u3.p":"<code>git add . && git commit && git push</code> — 2 phút."},
+
+id:{"hero.ey":"Ringkasan Sertifikasi Produk","hero.h1":"Sertifikasi NEWCHAE","hero.lead":"6 sertifikasi di 3 pasar. Klik baris mana saja untuk penjelasan mudah.",
+"ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, Republic of Korea","ft.inq":"Pertanyaan Bisnis Internasional",
+"p.lbl.prod":"Produk","p.lbl.model":"Model","p.lbl.mfr":"Produsen","p.lbl.contact":"Kontak","p.val.mfr":"BRITZMEDI Co., Ltd. &middot; 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Kranz Techno #1211",
+"ct.ey":"Sertifikasi per Pasar","ct.h2":"6 Sertifikat","ct.sub":"Klik baris untuk penjelasan apa itu, cakupannya, dan mengapa penting.",
+"th.market":"Pasar","th.type":"Jenis","th.no":"No. Sertifikat","th.body":"Lembaga Penerbit","th.std":"Standar","th.issued":"Diterbitkan",
+"mk.kr":"Korea","mk.us":"AS","mk.uk":"Inggris","mk.jp":"Jepang","mk.au":"Australia / NZ","mk.gl":"EU / Global",
+"c1.type":"KC EMC (Perangkat)","c2.type":"KC Keamanan (Baterai)","c3.type":"CE EMC","c4.type":"Keamanan Baterai (EN 62133-2)","c5.body":"BRITZMEDI (Deklarasi mandiri)","c6.type":"RoHS (Material Casing)",
+"ex.what":"Apa ini?","ex.scope":"Cakupan","ex.why":"Mengapa penting?",
+"c1.wp":"Membuktikan NEWCHAE <strong>tidak mengganggu perangkat elektronik lain</strong> dan <strong>tidak terpengaruh</strong> olehnya. Lulus uji EMC resmi Korea.","c1.sp":"<strong>Bodi perangkat utama</strong> — unit yang memancarkan RF, EMS, dan ELP. Baterai disertifikasi terpisah.","c1.yp":"<strong>Wajib untuk penjualan legal di Korea Selatan.</strong> Tidak bisa listing di Coupang atau Naver tanpa ini.",
+"c2.wp":"Baterai lithium internal (sel Samsung SDI) <strong>tidak akan overheat, terbakar, atau meledak</strong>. Lulus uji overcharge, short circuit, jatuh, suhu tinggi, dan tekanan.","c2.sp":"<strong>Hanya paket baterai isi ulang</strong> (LI-35E 101). Hukum Korea mewajibkan sertifikasi terpisah untuk perangkat dan baterai.","c2.yp":"Marketplace Korea membutuhkan <strong>KC EMC + KC Baterai keduanya</strong> untuk listing perangkat kecantikan isi ulang.",
+"c3.wp":"Tanda CE adalah <strong>paspor keamanan wajib Eropa</strong>. Mencakup model NWP dan NC.","c3.sp":"<strong>27 negara EU + EEA.</strong> UK juga menerima CE.","c3.yp":"Tanpa CE, <strong>bea cukai EU akan menolak pengiriman</strong>.",
+"c4.wp":"Setara Eropa dari sertifikasi keamanan baterai KC Korea.","c4.sp":"<strong>Paket baterai untuk masuk pasar EU.</strong> Bersama CE EMC memenuhi dua persyaratan utama.","c4.yp":"Diperlukan untuk melengkapi <strong>CE Declaration of Conformity</strong>.",
+"c5.wp":"FCC mengharuskan semua perangkat yang dijual di AS <strong>tidak menyebabkan interferensi radio berbahaya</strong>. NEWCHAE tanpa Bluetooth/Wi-Fi, SDoC cukup.","c5.sp":"<strong>Seluruh AS.</strong> Perlu menunjuk alamat \"Responsible Party\" di AS.","c5.yp":"Amazon US, Walmart <strong>membutuhkan dokumen FCC</strong> sebelum listing.",
+"c6.wp":"RoHS = Pembatasan Zat Berbahaya. Casing (PMMA) <strong>bebas logam berat beracun, flame retardant, dan ftalat</strong> — 10 zat: \"Tidak Terdeteksi\".","c6.sp":"<strong>Hanya material casing luar</strong> (PMMA dari LX MMA), bukan seluruh produk.","c6.yp":"EU dan banyak pasar Asia <strong>melarang produk dengan zat berbahaya melebihi ambang batas</strong>. Diuji oleh SGS.",
+"bat.h":"Baterai Internal","bat.supplier.l":"Pemasok:","bat.model.l":"Model:","bat.cell.l":"Sel:",
+"scope.h":"Cakupan & Catatan","scope.ce":"<strong>CE:</strong> Diverifikasi EMC Directive 2014/30/EU.","scope.fcc":"<strong>FCC:</strong> Deklarasi mandiri FCC Part 15.","scope.rohs":"<strong>RoHS:</strong> PMMA casing terverifikasi. DoC produk tersedia atas permintaan.","scope.origin":"<strong>Asal:</strong> Republik Korea.",
+"doc.footer":"Referensi untuk due diligence mitra. Sertifikat asli via link PDF di atas. Cetak: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
+"mkt.ey":"Cakupan Pasar","mkt.h2":"Di mana bisa dijual?","mkt.sub":"Pasar yang siap, sebagian, atau perlu sertifikasi tambahan.",
+"ms.ready":"✓ Siap","ms.todo2":"2 tersisa","ms.todo1":"1 tersisa","ms.new":"Perlu baru","ms.low":"Mudah masuk",
+"m1.note":"Coupang, Naver, offline — semua OK.","m2.c4":"RoHS DoC produk penuh","m2.c5":"Perwakilan EU","m2.note":"Tes inti selesai. Perlu perwakilan EU + DoC.","m3.c2":"Pihak bertanggung jawab US","m3.c3":"UN 38.3 (pengiriman udara)","m3.note":"FCC selesai. Perlu alamat US + sertifikat udara.","m4.c1":"CE diterima (berlaku)","m4.c2":"Penanggung jawab UK","m4.note":"CE masih berlaku. Tunjuk penanggung jawab UK.","m5.c1":"Perlu PSE","m5.c2":"MIC dikecualikan","m5.note":"PSE wajib. Data yang ada bisa mempercepat.","m6.c1":"RCM (deklarasi mandiri OK)","m6.note":"Deklarasi mandiri menggunakan laporan CE/FCC.",
+"upd.ey":"Pemeliharaan","upd.h2":"Cara Update","upd.sub":"Siapa pun bisa update dengan text editor.","u1.h":"Tambah sertifikat","u1.p":"Taruh PDF di <code>certs/</code>. Salin pasangan baris tabel dan edit teks.","u2.h":"Tambah pasar","u2.p":"Salin blok <code>mkt-card</code>, ubah bendera, nama, status.","u3.h":"Deploy","u3.p":"<code>git add . && git commit && git push</code> — 2 menit."},
+
+fr:{"hero.ey":"Résumé des certifications","hero.h1":"Certifications NEWCHAE","hero.lead":"6 certifications sur 3 marchés. Cliquez sur une ligne pour une explication simple.",
+"ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, R&eacute;publique de Cor&eacute;e","ft.inq":"Demande commerciale internationale",
+"p.lbl.prod":"Produit","p.lbl.model":"Modèle","p.lbl.mfr":"Fabricant","p.lbl.contact":"Contact","p.val.mfr":"BRITZMEDI Co., Ltd. &middot; 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Kranz Techno #1211",
+"ct.ey":"Certifications par marché","ct.h2":"6 certificats","ct.sub":"Cliquez sur une ligne pour comprendre ce que c'est, sa portée et pourquoi c'est important.",
+"th.market":"Marché","th.type":"Type","th.no":"N° de certificat","th.body":"Organisme","th.std":"Normes","th.issued":"Date",
+"mk.kr":"Corée","mk.us":"États-Unis","mk.uk":"Royaume-Uni","mk.jp":"Japon","mk.au":"Australie / NZ","mk.gl":"UE / Mondial",
+"c1.type":"KC EMC (Appareil)","c2.type":"KC Sécurité (Batterie)","c3.type":"CE EMC","c4.type":"Sécurité batterie (EN 62133-2)","c5.body":"BRITZMEDI (Auto-déclaration)","c6.type":"RoHS (Boîtier)",
+"ex.what":"C'est quoi ?","ex.scope":"Portée","ex.why":"Pourquoi c'est important ?",
+"c1.wp":"Prouve que NEWCHAE <strong>n'interfère pas avec d'autres appareils</strong> et <strong>n'est pas affecté</strong> par eux. A passé le test EMC officiel coréen.","c1.sp":"<strong>Le boîtier principal</strong> — l'unité émettant RF, EMS et ELP. La batterie a sa propre certification.","c1.yp":"<strong>Obligatoire pour la vente en Corée du Sud.</strong> Impossible de vendre sur Coupang ou Naver sans.",
+"c2.wp":"La batterie lithium intégrée (cellules Samsung SDI) <strong>ne surchauffe pas, ne prend pas feu et n'explose pas</strong>.","c2.sp":"<strong>Uniquement le pack batterie</strong> (LI-35E 101). La loi coréenne exige des certifications séparées.","c2.yp":"Les marketplaces coréennes exigent <strong>KC EMC + KC Batterie</strong> pour les appareils de beauté rechargeables.",
+"c3.wp":"Le marquage CE est le <strong>passeport de sécurité obligatoire européen</strong>. Couvre les modèles NWP et NC.","c3.sp":"<strong>27 pays de l'UE + EEE.</strong> Le Royaume-Uni accepte aussi le CE.","c3.yp":"Sans marquage CE, <strong>les douanes de l'UE refuseront les envois</strong>.",
+"c4.wp":"Équivalent européen de la certification batterie KC. Passé les <strong>normes de sécurité européennes</strong>.","c4.sp":"<strong>Batterie pour le marché UE.</strong> Avec le CE EMC, couvre les deux exigences principales.","c4.yp":"Nécessaire pour compléter la <strong>Déclaration de Conformité CE</strong>.",
+"c5.wp":"La FCC exige que tous les appareils vendus aux É.-U. <strong>ne causent pas d'interférences radio nocives</strong>. SDoC suffit pour NEWCHAE (pas de Bluetooth/Wi-Fi).","c5.sp":"<strong>Tout le territoire américain.</strong> Nécessite un \"Responsible Party\" aux É.-U.","c5.yp":"Amazon US, Walmart <strong>exigent les documents FCC</strong> pour lister des appareils électroniques.",
+"c6.wp":"RoHS = Restriction des substances dangereuses. Le boîtier (PMMA) est <strong>exempt de métaux lourds, retardateurs de flamme et phtalates</strong> — 10 substances : « Non détecté ».","c6.sp":"<strong>Uniquement le matériau du boîtier</strong> (PMMA de LX MMA), pas le produit entier.","c6.yp":"L'UE et de nombreux marchés asiatiques <strong>interdisent les substances dangereuses au-delà de certains seuils</strong>. Testé par SGS.",
+"bat.h":"Batterie interne","bat.supplier.l":"Fournisseur :","bat.model.l":"Modèle :","bat.cell.l":"Cellule :",
+"scope.h":"Portée et notes","scope.ce":"<strong>CE :</strong> Vérifié selon Directive EMC 2014/30/UE. Appareil de soin personnel.","scope.fcc":"<strong>FCC :</strong> Auto-déclaration selon FCC Part 15.","scope.rohs":"<strong>RoHS :</strong> PMMA boîtier conforme. DoC produit complet disponible sur demande.","scope.origin":"<strong>Origine :</strong> République de Corée.",
+"doc.footer":"Document de référence. Certificats originaux via les liens PDF ci-dessus. Version imprimable : <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
+"mkt.ey":"Couverture marché","mkt.h2":"Où peut-on vendre ?","mkt.sub":"Marchés prêts, partiellement couverts ou nécessitant des certifications supplémentaires.",
+"ms.ready":"✓ Prêt","ms.todo2":"2 à faire","ms.todo1":"1 à faire","ms.new":"Nouveau requis","ms.low":"Accès facile",
+"m1.note":"Coupang, Naver, offline — tout OK.","m2.c4":"DoC RoHS produit complet","m2.c5":"Représentant autorisé UE","m2.note":"Tests principaux terminés. Besoin rep. UE + DoC.","m3.c2":"Partie responsable US","m3.c3":"UN 38.3 (transport aérien)","m3.note":"FCC terminé. Besoin adresse US + cert. transport.","m4.c1":"CE accepté (en vigueur)","m4.c2":"Personne responsable UK","m4.note":"CE encore accepté. Nommer une personne UK.","m5.c1":"PSE requis","m5.c2":"MIC exempté (pas de sans-fil)","m5.note":"PSE requis. Données existantes peuvent accélérer.","m6.c1":"RCM (auto-déclaration OK)","m6.note":"Auto-déclaration avec rapports CE/FCC.",
+"upd.ey":"Maintenance","upd.h2":"Comment mettre à jour","upd.sub":"Tout le monde peut modifier avec un éditeur texte.","u1.h":"Ajouter un certificat","u1.p":"Mettez le PDF dans <code>certs/</code>. Copiez une paire de lignes et éditez.","u2.h":"Ajouter un marché","u2.p":"Copiez un bloc <code>mkt-card</code>, changez drapeau, nom, statut.","u3.h":"Déployer","u3.p":"<code>git add . && git commit && git push</code> — 2 min."},
+
+es:{"hero.ey":"Resumen de certificaciones","hero.h1":"Certificaciones NEWCHAE","hero.lead":"6 certificaciones en 3 mercados. Haz clic en cualquier fila para ver la explicación.",
+"ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, Rep&uacute;blica de Corea","ft.inq":"Consulta comercial internacional",
+"p.lbl.prod":"Producto","p.lbl.model":"Modelo","p.lbl.mfr":"Fabricante","p.lbl.contact":"Contacto","p.val.mfr":"BRITZMEDI Co., Ltd. &middot; 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Kranz Techno #1211",
+"ct.ey":"Certificaciones por mercado","ct.h2":"6 certificados","ct.sub":"Haz clic en cualquier fila para entender qué es, su alcance y por qué importa.",
+"th.market":"Mercado","th.type":"Tipo","th.no":"N.° de certificado","th.body":"Organismo emisor","th.std":"Normas","th.issued":"Emitido",
+"mk.kr":"Corea","mk.us":"EE.UU.","mk.uk":"Reino Unido","mk.jp":"Japón","mk.au":"Australia / NZ","mk.gl":"UE / Global",
+"c1.type":"KC EMC (Dispositivo)","c2.type":"KC Seguridad (Batería)","c3.type":"CE EMC","c4.type":"Seguridad batería (EN 62133-2)","c5.body":"BRITZMEDI (Autodeclaración)","c6.type":"RoHS (Carcasa)",
+"ex.what":"¿Qué es?","ex.scope":"Alcance","ex.why":"¿Por qué importa?",
+"c1.wp":"Demuestra que NEWCHAE <strong>no interfiere con otros dispositivos</strong> y <strong>no se ve afectado</strong> por ellos. Aprobó la prueba EMC oficial de Corea.","c1.sp":"<strong>El cuerpo del dispositivo</strong> — la unidad que emite RF, EMS y ELP. La batería tiene certificación aparte.","c1.yp":"<strong>Obligatorio para venta legal en Corea del Sur.</strong> No se puede listar en Coupang ni Naver sin esto.",
+"c2.wp":"La batería de litio integrada (celdas Samsung SDI) <strong>no se sobrecalienta, no se incendia ni explota</strong>.","c2.sp":"<strong>Solo el paquete de batería</strong> (LI-35E 101). La ley coreana requiere certificaciones separadas.","c2.yp":"Los marketplaces coreanos requieren <strong>KC EMC + KC Batería</strong> para dispositivos de belleza recargables.",
+"c3.wp":"El marcado CE es el <strong>pasaporte de seguridad obligatorio de Europa</strong>. Cubre modelos NWP y NC.","c3.sp":"<strong>27 países de la UE + EEE.</strong> El Reino Unido también acepta CE.","c3.yp":"Sin marcado CE, <strong>las aduanas de la UE rechazarán los envíos</strong>.",
+"c4.wp":"Equivalente europeo de la certificación de seguridad de batería KC. Pasó <strong>estándares europeos</strong>.","c4.sp":"<strong>Batería para el mercado de la UE.</strong> Junto con CE EMC, cubre los dos requisitos principales.","c4.yp":"Necesario para completar la <strong>Declaración de Conformidad CE</strong>.",
+"c5.wp":"La FCC requiere que los dispositivos vendidos en EE.UU. <strong>no causen interferencia de radio dañina</strong>. SDoC es suficiente para NEWCHAE.","c5.sp":"<strong>Todo EE.UU.</strong> Se necesita designar un \"Responsible Party\" en EE.UU.","c5.yp":"Amazon US, Walmart <strong>requieren documentos FCC</strong> para listar electrónicos.",
+"c6.wp":"RoHS = Restricción de Sustancias Peligrosas. La carcasa (PMMA) está <strong>libre de metales pesados, retardantes de llama y ftalatos</strong> — 10 sustancias: \"No Detectado\".","c6.sp":"<strong>Solo el material de la carcasa</strong> (PMMA de LX MMA), no el producto completo.","c6.yp":"La UE y muchos mercados asiáticos <strong>prohíben productos con sustancias peligrosas</strong>. Probado por SGS.",
+"bat.h":"Batería interna","bat.supplier.l":"Proveedor:","bat.model.l":"Modelo:","bat.cell.l":"Celda:",
+"scope.h":"Alcance y notas","scope.ce":"<strong>CE:</strong> Verificado bajo Directiva EMC 2014/30/UE.","scope.fcc":"<strong>FCC:</strong> Autodeclaración según FCC Part 15.","scope.rohs":"<strong>RoHS:</strong> PMMA carcasa verificado. DoC del producto completo disponible.","scope.origin":"<strong>Origen:</strong> República de Corea.",
+"doc.footer":"Referencia para due diligence. Certificados originales vía enlaces PDF arriba. Imprimible: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
+"mkt.ey":"Cobertura de mercado","mkt.h2":"¿Dónde se puede vender?","mkt.sub":"Mercados listos, parciales o que necesitan certificaciones adicionales.",
+"ms.ready":"✓ Listo","ms.todo2":"2 pendientes","ms.todo1":"1 pendiente","ms.new":"Se necesita nuevo","ms.low":"Fácil acceso",
+"m1.note":"Coupang, Naver, offline — todo listo.","m2.c4":"RoHS DoC producto completo","m2.c5":"Representante autorizado UE","m2.note":"Pruebas principales listas. Falta rep. UE + DoC.","m3.c2":"Parte responsable US","m3.c3":"UN 38.3 (envío aéreo)","m3.note":"FCC listo. Falta dirección US + cert. aéreo.","m4.c1":"CE aceptado (vigente)","m4.c2":"Persona responsable UK","m4.note":"CE aún aceptado. Designar persona UK.","m5.c1":"Se necesita PSE","m5.c2":"MIC exento (sin inalámbrico)","m5.note":"PSE requerido. Datos existentes pueden acelerar.","m6.c1":"RCM (autodeclaración OK)","m6.note":"Autodeclaración con informes CE/FCC.",
+"upd.ey":"Mantenimiento","upd.h2":"Cómo actualizar","upd.sub":"Cualquiera puede actualizar con un editor de texto.","u1.h":"Agregar certificado","u1.p":"Pon el PDF en <code>certs/</code>. Copia un par de filas y edita.","u2.h":"Agregar mercado","u2.p":"Copia un bloque <code>mkt-card</code>, cambia bandera, nombre, estado.","u3.h":"Desplegar","u3.p":"<code>git add . && git commit && git push</code> — 2 min."},
+
+pt:{"hero.ey":"Resumo de certificações","hero.h1":"Certificações NEWCHAE","hero.lead":"6 certificações em 3 mercados. Clique em qualquer linha para ver a explicação.",
+"ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, Rep&uacute;blica da Coreia","ft.inq":"Consulta comercial internacional",
+"p.lbl.prod":"Produto","p.lbl.model":"Modelo","p.lbl.mfr":"Fabricante","p.lbl.contact":"Contato","p.val.mfr":"BRITZMEDI Co., Ltd. &middot; 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Kranz Techno #1211",
+"ct.ey":"Certificações por mercado","ct.h2":"6 certificados","ct.sub":"Clique em qualquer linha para entender o que é, seu escopo e por que importa.",
+"th.market":"Mercado","th.type":"Tipo","th.no":"N.° do certificado","th.body":"Órgão emissor","th.std":"Normas","th.issued":"Emitido",
+"mk.kr":"Coreia","mk.us":"EUA","mk.uk":"Reino Unido","mk.jp":"Japão","mk.au":"Austrália / NZ","mk.gl":"UE / Global",
+"c1.type":"KC EMC (Dispositivo)","c2.type":"KC Segurança (Bateria)","c3.type":"CE EMC","c4.type":"Segurança bateria (EN 62133-2)","c5.body":"BRITZMEDI (Autodeclaração)","c6.type":"RoHS (Carcaça)",
+"ex.what":"O que é isso?","ex.scope":"Escopo","ex.why":"Por que importa?",
+"c1.wp":"Prova que o NEWCHAE <strong>não interfere com outros eletrônicos</strong> e <strong>não é afetado</strong> por eles.","c1.sp":"<strong>O corpo do dispositivo</strong> — a unidade que emite RF, EMS e ELP. Bateria tem certificação separada.","c1.yp":"<strong>Obrigatório para venda legal na Coreia do Sul.</strong>",
+"c2.wp":"A bateria de lítio interna (células Samsung SDI) <strong>não superaquece, não pega fogo nem explode</strong>.","c2.sp":"<strong>Apenas o pack de bateria</strong> (LI-35E 101). A lei coreana exige certificações separadas.","c2.yp":"Marketplaces coreanos exigem <strong>KC EMC + KC Bateria</strong> para listar dispositivos recarregáveis.",
+"c3.wp":"A marca CE é o <strong>passaporte de segurança obrigatório da Europa</strong>. Cobre modelos NWP e NC.","c3.sp":"<strong>27 países da UE + EEE.</strong> O Reino Unido também aceita CE.","c3.yp":"Sem marca CE, <strong>alfândegas da UE rejeitarão os envios</strong>.",
+"c4.wp":"Equivalente europeu da certificação de bateria KC.","c4.sp":"<strong>Bateria para o mercado da UE.</strong> Com CE EMC, cobre os dois requisitos principais.","c4.yp":"Necessário para completar a <strong>Declaração de Conformidade CE</strong>.",
+"c5.wp":"A FCC exige que dispositivos nos EUA <strong>não causem interferência de rádio</strong>. SDoC é suficiente para NEWCHAE.","c5.sp":"<strong>Todo os EUA.</strong> É necessário designar um \"Responsible Party\" nos EUA.","c5.yp":"Amazon US, Walmart <strong>exigem documentos FCC</strong> para listar eletrônicos.",
+"c6.wp":"RoHS = Restrição de Substâncias Perigosas. A carcaça (PMMA) é <strong>livre de metais pesados, retardantes de chama e ftalatos</strong> — 10 substâncias: \"Não Detectado\".","c6.sp":"<strong>Apenas o material da carcaça</strong> (PMMA da LX MMA), não o produto inteiro.","c6.yp":"UE e muitos mercados asiáticos <strong>proíbem substâncias perigosas acima dos limites</strong>. Testado pela SGS.",
+"bat.h":"Bateria interna","bat.supplier.l":"Fornecedor:","bat.model.l":"Modelo:","bat.cell.l":"Célula:",
+"scope.h":"Escopo e notas","scope.ce":"<strong>CE:</strong> Verificado sob Diretiva EMC 2014/30/UE.","scope.fcc":"<strong>FCC:</strong> Autodeclaração FCC Part 15.","scope.rohs":"<strong>RoHS:</strong> PMMA verificado. DoC do produto disponível sob demanda.","scope.origin":"<strong>Origem:</strong> República da Coreia.",
+"doc.footer":"Referência para due diligence. Certificados via links PDF acima. Imprimível: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
+"mkt.ey":"Cobertura de mercado","mkt.h2":"Onde pode vender?","mkt.sub":"Mercados prontos, parciais ou que precisam de certificações adicionais.",
+"ms.ready":"✓ Pronto","ms.todo2":"2 pendentes","ms.todo1":"1 pendente","ms.new":"Necessário novo","ms.low":"Fácil acesso",
+"m1.note":"Coupang, Naver, offline — tudo OK.","m2.c4":"RoHS DoC produto completo","m2.c5":"Representante autorizado UE","m2.note":"Testes prontos. Falta rep. UE + DoC.","m3.c2":"Parte responsável US","m3.c3":"UN 38.3 (envio aéreo)","m3.note":"FCC pronto. Falta endereço US + cert. aéreo.","m4.c1":"CE aceito (vigente)","m4.c2":"Pessoa responsável UK","m4.note":"CE ainda aceito. Designar pessoa UK.","m5.c1":"PSE necessário","m5.c2":"MIC isento (sem wireless)","m5.note":"PSE obrigatório. Dados existentes podem acelerar.","m6.c1":"RCM (autodeclaração OK)","m6.note":"Autodeclaração com relatórios CE/FCC.",
+"upd.ey":"Manutenção","upd.h2":"Como atualizar","upd.sub":"Qualquer pessoa pode atualizar com editor de texto.","u1.h":"Adicionar certificado","u1.p":"Coloque o PDF em <code>certs/</code>. Copie um par de linhas e edite.","u2.h":"Adicionar mercado","u2.p":"Copie um bloco <code>mkt-card</code>, mude bandeira, nome, status.","u3.h":"Implantar","u3.p":"<code>git add . && git commit && git push</code> — 2 min."},
+
+ru:{"hero.ey":"Сводка сертификатов","hero.h1":"Сертификаты NEWCHAE","hero.lead":"6 сертификатов для 3 рынков. Нажмите на строку для простого объяснения.",
+"ft.addr":"BRITZMEDI Co., Ltd.<br>388 Dunchon-daero, Jungwon-gu<br>Seongnam-si, Gyeonggi-do<br>Kranz Techno #1211, Республика Корея","ft.inq":"Международный бизнес-запрос",
+"p.lbl.prod":"Продукт","p.lbl.model":"Модель","p.lbl.mfr":"Производитель","p.lbl.contact":"Контакт","p.val.mfr":"BRITZMEDI Co., Ltd. &middot; 388 Dunchon-daero, Jungwon-gu, Seongnam-si, Kranz Techno #1211",
+"ct.ey":"Сертификаты по рынкам","ct.h2":"6 сертификатов","ct.sub":"Нажмите на строку, чтобы понять, что это, какова сфера действия и почему это важно.",
+"th.market":"Рынок","th.type":"Тип","th.no":"Номер сертификата","th.body":"Орган","th.std":"Стандарты","th.issued":"Дата",
+"mk.kr":"Корея","mk.us":"США","mk.uk":"Великобритания","mk.jp":"Япония","mk.au":"Австралия / НЗ","mk.gl":"ЕС / Глобально",
+"c1.type":"KC EMC (устройство)","c2.type":"KC безопасность (батарея)","c3.type":"CE EMC","c4.type":"Безопасность батареи (EN 62133-2)","c5.body":"BRITZMEDI (самодекларация)","c6.type":"RoHS (корпус)",
+"ex.what":"Что это?","ex.scope":"Область действия","ex.why":"Почему это важно?",
+"c1.wp":"Подтверждает, что NEWCHAE <strong>не создаёт помех другим устройствам</strong> и <strong>не подвержен их влиянию</strong>. Прошёл официальный тест EMC Кореи.","c1.sp":"<strong>Корпус устройства</strong> — основной блок, излучающий RF, EMS и ELP. Батарея сертифицируется отдельно.","c1.yp":"<strong>Обязателен для легальной продажи в Южной Корее.</strong> Без него нельзя разместить товар на Coupang или Naver.",
+"c2.wp":"Встроенная литиевая батарея (ячейки Samsung SDI) <strong>не перегревается, не воспламеняется и не взрывается</strong>.","c2.sp":"<strong>Только аккумуляторный блок</strong> (LI-35E 101). Закон Кореи требует отдельных сертификатов.","c2.yp":"Корейские маркетплейсы требуют <strong>KC EMC + KC батарея</strong> для перезаряжаемых бьюти-устройств.",
+"c3.wp":"Маркировка CE — <strong>обязательный паспорт безопасности Европы</strong>. Покрывает модели NWP и NC.","c3.sp":"<strong>27 стран ЕС + ЕЭЗ.</strong> Великобритания тоже принимает CE.","c3.yp":"Без CE <strong>таможня ЕС откажет во ввозе</strong>.",
+"c4.wp":"Европейский аналог корейского сертификата безопасности батареи.","c4.sp":"<strong>Батарея для рынка ЕС.</strong> Вместе с CE EMC покрывает оба основных требования.","c4.yp":"Необходим для <strong>Декларации соответствия CE</strong>.",
+"c5.wp":"FCC требует, чтобы все устройства в США <strong>не создавали вредных радиопомех</strong>. Для NEWCHAE достаточно SDoC.","c5.sp":"<strong>Вся территория США.</strong> Необходимо назначить «Responsible Party» в США.","c5.yp":"Amazon US, Walmart <strong>требуют документы FCC</strong> для электроники.",
+"c6.wp":"RoHS = ограничение опасных веществ. Корпус (PMMA) <strong>не содержит тяжёлых металлов, антипиренов и фталатов</strong> — все 10 веществ: «Не обнаружено».","c6.sp":"<strong>Только материал корпуса</strong> (PMMA от LX MMA), не весь продукт.","c6.yp":"ЕС и многие азиатские рынки <strong>запрещают продукцию с опасными веществами выше порога</strong>. Протестировано SGS.",
+"bat.h":"Встроенная батарея","bat.supplier.l":"Поставщик:","bat.model.l":"Модель:","bat.cell.l":"Ячейка:",
+"scope.h":"Область и примечания","scope.ce":"<strong>CE:</strong> Проверено по Директиве EMC 2014/30/EU.","scope.fcc":"<strong>FCC:</strong> Самодекларация по FCC Part 15.","scope.rohs":"<strong>RoHS:</strong> PMMA корпуса подтверждён. DoC продукта — по запросу.","scope.origin":"<strong>Происхождение:</strong> Республика Корея.",
+"doc.footer":"Справочный документ для due diligence. Оригиналы по ссылкам PDF выше. Для печати: <a href=\"cert-docs/NEWCHAE_Certification_Summary.pdf\" target=\"_blank\">PDF</a> · <a href=\"cert-docs/NEWCHAE_Certification_Summary.docx\" target=\"_blank\">DOCX</a>",
+"mkt.ey":"Покрытие рынков","mkt.h2":"Где можно продавать?","mkt.sub":"Готовые, частично покрытые и требующие дополнительных сертификатов рынки.",
+"ms.ready":"✓ Готово","ms.todo2":"Осталось 2","ms.todo1":"Осталось 1","ms.new":"Нужен новый","ms.low":"Лёгкий вход",
+"m1.note":"Coupang, Naver, офлайн — всё ОК.","m2.c4":"RoHS DoC всего продукта","m2.c5":"Уполномоченный представитель ЕС","m2.note":"Основные тесты пройдены. Нужен представитель ЕС + DoC.","m3.c2":"Ответственная сторона US","m3.c3":"UN 38.3 (авиаперевозка)","m3.note":"FCC пройден. Нужен адрес US + авиасертификат.","m4.c1":"CE принят (действует)","m4.c2":"Ответственное лицо UK","m4.note":"CE ещё действует. Назначить лицо UK.","m5.c1":"Нужен PSE","m5.c2":"MIC не требуется (нет wireless)","m5.note":"PSE обязателен. Имеющиеся данные ускорят процесс.","m6.c1":"RCM (самодекларация ОК)","m6.note":"Самодекларация на основе отчётов CE/FCC.",
+"upd.ey":"Обслуживание","upd.h2":"Как обновить","upd.sub":"Обновить может любой в текстовом редакторе.","u1.h":"Добавить сертификат","u1.p":"Поместите PDF в <code>certs/</code>. Скопируйте пару строк таблицы и отредактируйте.","u2.h":"Добавить рынок","u2.p":"Скопируйте блок <code>mkt-card</code>, измените флаг, название, статус.","u3.h":"Развернуть","u3.p":"<code>git add . && git commit && git push</code> — 2 мин."}
+};
+
+DICT.en_gb = Object.assign({}, DICT.en);
+
+const htmlLang={en:'en',en_gb:'en',ko:'ko',ja:'ja',zh:'zh',th:'th',vi:'vi',id:'id',fr:'fr',es:'es',pt:'pt',ru:'ru'};
+
+function setLang(lang){
+  var dict=DICT[lang]||{};
+  var fall=DICT.en;
+  document.documentElement.lang=htmlLang[lang]||lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key=el.getAttribute('data-i18n');
+    if(dict[key]!==undefined) el.innerHTML=dict[key];
+    else if(lang!=='ko' && fall[key]!==undefined) el.innerHTML=fall[key];
   });
-  document.querySelectorAll('.c-explain.open').forEach(function(e) {
-    e.classList.remove('open');
-  });
-  if (!wasOpen) {
-    tr.classList.add('open');
-    explain.classList.add('open');
-  }
+  var sel=document.getElementById('lang-select');
+  if(sel) sel.value=lang;
+  try{localStorage.setItem('cert-lang',lang)}catch(e){}
 }
+
+(function(){
+  var u=new URLSearchParams(location.search).get('lang');
+  var s=(function(){try{return localStorage.getItem('cert-lang')}catch(e){return null}})();
+  setLang(u||s||'ko');
+})();
 </script>
 
 </body>
